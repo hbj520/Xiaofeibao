@@ -1,0 +1,25 @@
+platform :ios, '8.0'
+target 'ConsumeTreasure' do
+pod "AFNetworking", "~> 2.0"
+pod 'MSDynamicsDrawerViewController'
+pod "RATreeView", "~> 0.9.1"
+pod 'HMSegmentedControl@hons82', '~> 1.3.1'
+pod 'MBProgressHUD', '~> 0.8'
+pod 'SDWebImage', '~>3.6'
+pod "TSMessages"
+pod 'Masonry'
+pod 'MJRefresh'
+pod 'TTTAttributedLabel', '~> 1.13.4'
+pod 'JDStatusBarNotification'
+pod 'FMDB'
+pod 'TPKeyboardAvoiding', '~> 1.2.10'
+pod 'UMengSocialCOM', '~> 5.2.1'
+
+use_frameworks!
+
+# Pods for pack_ijkplayer
+
+
+pod 'ReactiveCocoa', '~> 4.1.0'
+
+end
