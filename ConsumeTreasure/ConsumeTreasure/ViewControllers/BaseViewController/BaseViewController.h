@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  BaseViewController.h
 //  ConsumeTreasure
 //
 //  Created by youyou on 9/28/16.
 //  Copyright © 2016 youyou. All rights reserved.
-// 
+//  根控制器baseviewcontroller
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BaseViewController : UIViewController
 
 @end
-
