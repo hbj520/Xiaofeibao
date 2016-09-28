@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
+		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
+		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
+		ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95471D9B8E94008927C7 /* Union.storyboard */; };
+		ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95491D9B8EA2008927C7 /* Mine.storyboard */; };
 		ABF4E27B1D9B5E58006AD23C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E27A1D9B5E58006AD23C /* main.m */; };
 		ABF4E27E1D9B5E58006AD23C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E27D1D9B5E58006AD23C /* AppDelegate.m */; };
 		ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E2801D9B5E58006AD23C /* ViewController.m */; };
@@ -41,6 +45,11 @@
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABCB95401D9B8D72008927C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		ABCB95421D9B8E56008927C7 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
+		ABCB95431D9B8E56008927C7 /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
+		ABCB95451D9B8E88008927C7 /* Hompage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hompage.storyboard; sourceTree = "<group>"; };
+		ABCB95471D9B8E94008927C7 /* Union.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Union.storyboard; sourceTree = "<group>"; };
+		ABCB95491D9B8EA2008927C7 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		ABF4E2761D9B5E57006AD23C /* ConsumeTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsumeTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4E27A1D9B5E58006AD23C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABF4E27C1D9B5E58006AD23C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,6 +175,8 @@
 		ABCB95371D9B89FC008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				ABCB95421D9B8E56008927C7 /* HomepageViewController.h */,
+				ABCB95431D9B8E56008927C7 /* HomepageViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -208,6 +219,9 @@
 		ABCB953D1D9B8A35008927C7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				ABCB95451D9B8E88008927C7 /* Hompage.storyboard */,
+				ABCB95471D9B8E94008927C7 /* Union.storyboard */,
+				ABCB95491D9B8EA2008927C7 /* Mine.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -395,8 +409,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */,
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
+				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
+				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +489,7 @@
 			files = (
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
+				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 			);
