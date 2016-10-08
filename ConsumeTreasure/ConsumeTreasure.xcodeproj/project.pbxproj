@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB608C231D9CB7AF00194FC2 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C221D9CB7AF00194FC2 /* Config.m */; };
+		AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C261D9CBBDD00194FC2 /* CompressUtils.m */; };
+		AB608C2D1D9CBBDD00194FC2 /* EncryptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C281D9CBBDD00194FC2 /* EncryptUtils.m */; };
+		AB608C2E1D9CBBDD00194FC2 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C2A1D9CBBDD00194FC2 /* GTMBase64.m */; };
+		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
+		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
 		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
@@ -46,6 +52,19 @@
 /* Begin PBXFileReference section */
 		0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
+		AB608C211D9CB7AF00194FC2 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		AB608C221D9CB7AF00194FC2 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		AB608C251D9CBBDD00194FC2 /* CompressUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompressUtils.h; sourceTree = "<group>"; };
+		AB608C261D9CBBDD00194FC2 /* CompressUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompressUtils.m; sourceTree = "<group>"; };
+		AB608C271D9CBBDD00194FC2 /* EncryptUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptUtils.h; sourceTree = "<group>"; };
+		AB608C281D9CBBDD00194FC2 /* EncryptUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptUtils.m; sourceTree = "<group>"; };
+		AB608C291D9CBBDD00194FC2 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		AB608C2A1D9CBBDD00194FC2 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		AB608C2B1D9CBBDD00194FC2 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		AB608C2F1D9D0B1200194FC2 /* NSObject+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNetworking.h"; sourceTree = "<group>"; };
+		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
+		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
+		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABCB95401D9B8D72008927C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABCB95421D9B8E56008927C7 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
@@ -119,6 +138,42 @@
 				0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB608C1B1D9CB66D00194FC2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AB608C201D9CB7A900194FC2 /* Helper */,
+				AB608C1C1D9CB67700194FC2 /* API */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AB608C1C1D9CB67700194FC2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AB608C2F1D9D0B1200194FC2 /* NSObject+AFNetworking.h */,
+				AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */,
+				AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */,
+				AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AB608C201D9CB7A900194FC2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AB608C251D9CBBDD00194FC2 /* CompressUtils.h */,
+				AB608C261D9CBBDD00194FC2 /* CompressUtils.m */,
+				AB608C271D9CBBDD00194FC2 /* EncryptUtils.h */,
+				AB608C281D9CBBDD00194FC2 /* EncryptUtils.m */,
+				AB608C291D9CBBDD00194FC2 /* GTMBase64.h */,
+				AB608C2A1D9CBBDD00194FC2 /* GTMBase64.m */,
+				AB608C2B1D9CBBDD00194FC2 /* GTMDefines.h */,
+				AB608C211D9CB7AF00194FC2 /* Config.h */,
+				AB608C221D9CB7AF00194FC2 /* Config.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		ABCB95301D9B8972008927C7 /* Models */ = {
@@ -275,6 +330,7 @@
 		ABF4E2781D9B5E58006AD23C /* ConsumeTreasure */ = {
 			isa = PBXGroup;
 			children = (
+				AB608C1B1D9CB66D00194FC2 /* Util */,
 				ABCB95301D9B8972008927C7 /* Models */,
 				ABCB95311D9B8972008927C7 /* Resource */,
 				ABCB95321D9B8972008927C7 /* ViewControllers */,
@@ -505,9 +561,15 @@
 				ABCB954D1D9BEE8A008927C7 /* MineTableViewController.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
+				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
+				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
+				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.m in Sources */,
+				AB608C2D1D9CBBDD00194FC2 /* EncryptUtils.m in Sources */,
+				AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */,
+				AB608C2E1D9CBBDD00194FC2 /* GTMBase64.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 				ABCB95531D9BF719008927C7 /* HotShopModel.m in Sources */,
 			);
