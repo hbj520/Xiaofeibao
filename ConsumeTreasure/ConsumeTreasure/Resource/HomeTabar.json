@@ -1,0 +1,23 @@
+{
+    "tabBarMenus":
+    [
+     {
+     "image":"homepagetab",
+     "select_image":"homepagetab",
+     "title":"首页",
+     "storybordId":"homepageSB"
+     },
+     {
+     "image":"collection",
+     "select_image":"collection",
+     "title":"联盟",
+     "storybordId":"UnionSB"
+     },
+     {
+     "image":"minetab",
+     "select_image":"minetab",
+     "title":"我",
+     "storybordId":"mineSB"
+     }
+     ]
+}
