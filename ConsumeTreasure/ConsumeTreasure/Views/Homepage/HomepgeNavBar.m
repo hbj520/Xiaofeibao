@@ -17,6 +17,9 @@
     [super awakeFromNib];
      [self createUI];
 }
+- (void)setCityName:(NSString *)cityName{
+    
+}
 /*
 - (void)drawRect:(CGRect)rect {
     
@@ -25,9 +28,6 @@
 }
  */
 - (void)createUI{
-    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
-    testView.backgroundColor = [UIColor redColor];
-    self.titleView = testView;
     
 }
 

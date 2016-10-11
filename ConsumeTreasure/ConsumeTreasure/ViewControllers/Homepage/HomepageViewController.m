@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self addNavTitle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,7 +27,13 @@
 - (IBAction)sao:(id)sender {
      [self performSegueWithIdentifier:@"scanSegue" sender:nil];
 }
-
+#pragma mark -PrivateMethod 
+- (void)addNavTitle{
+    NSString *navTitle = @"消费宝";
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+     self.navigationItem.title = navTitle;
+}
 /*
 #pragma mark - Navigation
 
