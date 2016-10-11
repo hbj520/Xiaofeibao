@@ -45,7 +45,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
        menusVCs = [NSMutableArray array];
-    self.tabBar.tintColor = [UIColor yellowColor];
+    self.tabBar.tintColor = [UIColor redColor];
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"HomeTabar" ofType:@"json"];
     NSData *data = [[NSData alloc] initWithContentsOfFile:path];
