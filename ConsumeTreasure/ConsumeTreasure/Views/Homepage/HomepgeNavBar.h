@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HomepgeNavBar : UINavigationItem
-
+@property (nonatomic,strong) NSString *cityName;
 @end

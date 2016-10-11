@@ -300,8 +300,8 @@
 		ABCB953A1D9B8A05008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */,
 				D1F275B01DAD0C20005B9849 /* HomepgeNavBar.h */,
+				D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */,
 				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */,
 				D1F2759E1DAD0A5A005B9849 /* ScanerView */,
