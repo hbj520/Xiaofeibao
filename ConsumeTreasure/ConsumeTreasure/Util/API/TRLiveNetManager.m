@@ -4,7 +4,7 @@
 //
 //  Created by liwendong on 16/3/7.
 //  Copyright © 2016年 lwd. All rights reserved.
-//
+//  wangqi
 
 #import "TRLiveNetManager.h"
 #import "NSObject+AFNetworking.h"

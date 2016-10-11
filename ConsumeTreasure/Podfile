@@ -15,11 +15,4 @@ pod 'FMDB'
 pod 'TPKeyboardAvoiding', '~> 1.2.10'
 pod 'UMengSocialCOM', '~> 5.2.1'
 
-use_frameworks!
-
-# Pods for pack_ijkplayer
-
-
-pod 'ReactiveCocoa', '~> 4.1.0'
-
 end

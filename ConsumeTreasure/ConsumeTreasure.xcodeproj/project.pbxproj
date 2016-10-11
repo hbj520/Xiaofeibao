@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */; };
 		AB608C231D9CB7AF00194FC2 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C221D9CB7AF00194FC2 /* Config.m */; };
 		AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C261D9CBBDD00194FC2 /* CompressUtils.m */; };
 		AB608C2D1D9CBBDD00194FC2 /* EncryptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C281D9CBBDD00194FC2 /* EncryptUtils.m */; };
@@ -31,7 +32,6 @@
 		ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF4E2871D9B5E58006AD23C /* LaunchScreen.storyboard */; };
 		ABF4E2941D9B5E58006AD23C /* ConsumeTreasureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E2931D9B5E58006AD23C /* ConsumeTreasureTests.m */; };
 		ABF4E29F1D9B5E58006AD23C /* ConsumeTreasureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */; };
-		F443E150C2B1DD7596B29A8B /* Pods_ConsumeTreasure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF521A192BA8FE611A421C84 /* Pods_ConsumeTreasure.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,7 @@
 /* Begin PBXFileReference section */
 		0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
+		6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB608C211D9CB7AF00194FC2 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		AB608C221D9CB7AF00194FC2 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		AB608C251D9CBBDD00194FC2 /* CompressUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompressUtils.h; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		ABF4E29A1D9B5E58006AD23C /* ConsumeTreasureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConsumeTreasureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsumeTreasureUITests.m; sourceTree = "<group>"; };
 		ABF4E2A01D9B5E58006AD23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF521A192BA8FE611A421C84 /* Pods_ConsumeTreasure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConsumeTreasure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F443E150C2B1DD7596B29A8B /* Pods_ConsumeTreasure.framework in Frameworks */,
+				5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,7 @@
 		578EB4AF2E4319123E151ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FF521A192BA8FE611A421C84 /* Pods_ConsumeTreasure.framework */,
+				6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -468,6 +468,7 @@
 				TargetAttributes = {
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = MGR47JT33V;
 					};
 					ABF4E28E1D9B5E58006AD23C = {
 						CreatedOnToolsVersion = 7.3;
@@ -742,6 +743,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = MGR47JT33V;
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -756,6 +758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = MGR47JT33V;
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
