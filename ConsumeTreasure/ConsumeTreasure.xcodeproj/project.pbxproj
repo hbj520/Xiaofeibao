@@ -32,6 +32,13 @@
 		ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF4E2871D9B5E58006AD23C /* LaunchScreen.storyboard */; };
 		ABF4E2941D9B5E58006AD23C /* ConsumeTreasureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E2931D9B5E58006AD23C /* ConsumeTreasureTests.m */; };
 		ABF4E29F1D9B5E58006AD23C /* ConsumeTreasureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */; };
+		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
+		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
+		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
+		D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A61DAD0B6E005B9849 /* ScanerVC.m */; };
+		D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */; };
+		D1F275B31DAD0C20005B9849 /* HomepgeNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */; };
+		D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +107,19 @@
 		ABF4E29A1D9B5E58006AD23C /* ConsumeTreasureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConsumeTreasureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsumeTreasureUITests.m; sourceTree = "<group>"; };
 		ABF4E2A01D9B5E58006AD23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
+		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
+		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
+		D1F275A11DAD0A5A005B9849 /* ScanerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanerView.h; sourceTree = "<group>"; };
+		D1F275A21DAD0A5A005B9849 /* ScanerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanerView.m; sourceTree = "<group>"; };
+		D1F275A51DAD0B6E005B9849 /* ScanerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanerVC.h; sourceTree = "<group>"; };
+		D1F275A61DAD0B6E005B9849 /* ScanerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanerVC.m; sourceTree = "<group>"; };
+		D1F275A91DAD0B93005B9849 /* UIAlertView+flash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+flash.h"; sourceTree = "<group>"; };
+		D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+flash.m"; sourceTree = "<group>"; };
+		D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepgeNavBar.m; sourceTree = "<group>"; };
+		D1F275B01DAD0C20005B9849 /* HomepgeNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepgeNavBar.h; sourceTree = "<group>"; };
+		D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumeHomepageHeaderView.m; sourceTree = "<group>"; };
+		D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumeHomepageHeaderView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +168,7 @@
 		AB608C1B1D9CB66D00194FC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D1F275A81DAD0B86005B9849 /* Category */,
 				AB608C201D9CB7A900194FC2 /* Helper */,
 				AB608C1C1D9CB67700194FC2 /* API */,
 			);
@@ -227,6 +248,8 @@
 			children = (
 				ABCB95511D9BF719008927C7 /* HotShopModel.h */,
 				ABCB95521D9BF719008927C7 /* HotShopModel.m */,
+				D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */,
+				D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -250,6 +273,8 @@
 			children = (
 				ABCB95421D9B8E56008927C7 /* HomepageViewController.h */,
 				ABCB95431D9B8E56008927C7 /* HomepageViewController.m */,
+				D1F275A51DAD0B6E005B9849 /* ScanerVC.h */,
+				D1F275A61DAD0B6E005B9849 /* ScanerVC.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -275,6 +300,11 @@
 		ABCB953A1D9B8A05008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */,
+				D1F275B01DAD0C20005B9849 /* HomepgeNavBar.h */,
+				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
+				D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */,
+				D1F2759E1DAD0A5A005B9849 /* ScanerView */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -398,6 +428,33 @@
 			path = ConsumeTreasureUITests;
 			sourceTree = "<group>";
 		};
+		D1F2759E1DAD0A5A005B9849 /* ScanerView */ = {
+			isa = PBXGroup;
+			children = (
+				D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */,
+				D1F275A01DAD0A5A005B9849 /* Masonry */,
+				D1F275A11DAD0A5A005B9849 /* ScanerView.h */,
+				D1F275A21DAD0A5A005B9849 /* ScanerView.m */,
+			);
+			path = ScanerView;
+			sourceTree = "<group>";
+		};
+		D1F275A01DAD0A5A005B9849 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		D1F275A81DAD0B86005B9849 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D1F275A91DAD0B93005B9849 /* UIAlertView+flash.h */,
+				D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -511,6 +568,7 @@
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
+				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,15 +644,21 @@
 			files = (
 				ABCB954D1D9BEE8A008927C7 /* MineTableViewController.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
+				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
+				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
+				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.m in Sources */,
 				AB608C2D1D9CBBDD00194FC2 /* EncryptUtils.m in Sources */,
+				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
+				D1F275B31DAD0C20005B9849 /* HomepgeNavBar.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
+				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */,
 				AB608C2E1D9CBBDD00194FC2 /* GTMBase64.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,

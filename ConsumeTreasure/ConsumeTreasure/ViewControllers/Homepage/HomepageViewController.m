@@ -23,6 +23,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)sao:(id)sender {
+     [self performSegueWithIdentifier:@"scanSegue" sender:nil];
+}
 
 /*
 #pragma mark - Navigation
