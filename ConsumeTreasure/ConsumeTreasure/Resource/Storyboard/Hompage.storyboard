@@ -92,6 +92,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cDu-ke-Ygk" customClass="HomepgeNavBar"/>
                     <connections>
+                        <outlet property="loactionBtn" destination="9PJ-n5-V5v" id="xXK-cU-84n"/>
+                        <outlet property="locationImageView" destination="fAm-Xr-A8U" id="vfl-XH-byo"/>
+                        <outlet property="locationPlace" destination="Caq-xu-sZE" id="vP6-9b-Pda"/>
                         <segue destination="HtT-XV-v4f" kind="push" identifier="scanSegue" id="L5V-yg-jny"/>
                     </connections>
                 </viewController>

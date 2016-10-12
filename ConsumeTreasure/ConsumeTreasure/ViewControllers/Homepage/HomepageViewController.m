@@ -8,6 +8,9 @@
 
 #import "HomepageViewController.h"
 @interface HomepageViewController ()
+@property (strong, nonatomic) IBOutlet UIView *loactionBtn;
+@property (strong, nonatomic) IBOutlet UILabel *locationPlace;
+@property (strong, nonatomic) IBOutlet UIImageView *locationImageView;
 
 @end
 
@@ -16,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self addNavBar];
+    [self addLocationBtn];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -30,6 +33,14 @@
      [self performSegueWithIdentifier:@"scanSegue" sender:nil];
 }
 #pragma mark -PrivateMethod 
+- (void)addLocationBtn{
+    UIGestureRecognizer *tapLocation = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(TapLocation:)];
+    self.loactionBtn.userInteractionEnabled = YES;
+    [self.loactionBtn addGestureRecognizer:tapLocation];
+}
+- (void)TapLocation:(UIGestureRecognizer *)ges{
+    
+}
 /*
 #pragma mark - Navigation
 
