@@ -33,6 +33,8 @@
 		ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF4E2871D9B5E58006AD23C /* LaunchScreen.storyboard */; };
 		ABF4E2941D9B5E58006AD23C /* ConsumeTreasureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E2931D9B5E58006AD23C /* ConsumeTreasureTests.m */; };
 		ABF4E29F1D9B5E58006AD23C /* ConsumeTreasureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */; };
+		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
+		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -109,6 +111,9 @@
 		ABF4E29A1D9B5E58006AD23C /* ConsumeTreasureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConsumeTreasureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsumeTreasureUITests.m; sourceTree = "<group>"; };
 		ABF4E2A01D9B5E58006AD23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
+		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
+		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -302,10 +307,12 @@
 		ABCB953A1D9B8A05008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */,
 				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F2759E1DAD0A5A005B9849 /* ScanerView */,
+				D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */,
+				D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */,
+				D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -568,6 +575,7 @@
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
+				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
@@ -647,6 +655,7 @@
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
+				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,

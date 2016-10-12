@@ -7,7 +7,9 @@
 //
 
 #import "HomepageViewController.h"
-@interface HomepageViewController ()
+#import "HomePageFirstTableViewCell.h"
+@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -17,7 +19,55 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //[self addNavBar];
+    
+    
+    [self creatUI];
 }
+
+- (void)creatUI{
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 170;
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomePageFirstTableViewCell" bundle:nil] forCellReuseIdentifier:@"FirstHomeCell"];
+}
+
+#pragma mark - UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 1;
+    }else if (section == 1){
+        return 2;
+    }else{
+        return 10;
+    }
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0) {
+        HomePageFirstTableViewCell *firstCell = [tableView dequeueReusableCellWithIdentifier:@"FirstHomeCell"];
+        if (firstCell == nil) {
+            firstCell = [[[NSBundle mainBundle] loadNibNamed:@"HomePageFirstTableViewCell" owner:self options:nil] lastObject];
+        }
+        firstCell.selectionStyle = 0;
+        return firstCell;
+
+    }else{
+        HomePageFirstTableViewCell *firstCell = [tableView dequeueReusableCellWithIdentifier:@"FirstHomeCell"];
+        if (firstCell == nil) {
+            firstCell = [[[NSBundle mainBundle] loadNibNamed:@"HomePageFirstTableViewCell" owner:self options:nil] lastObject];
+        }
+        firstCell.selectionStyle = 0;
+        return firstCell;
+
+    }
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
@@ -26,9 +76,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)sao:(id)sender {
-     [self performSegueWithIdentifier:@"scanSegue" sender:nil];
-}
+
 #pragma mark -PrivateMethod 
 /*
 #pragma mark - Navigation

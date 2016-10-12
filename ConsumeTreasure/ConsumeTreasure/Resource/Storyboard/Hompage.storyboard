@@ -36,15 +36,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpb-rp-6ec">
-                                <frame key="frameInset" minX="63" minY="157" width="192" height="151"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.70645205980000003" blue="0.2405069732" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="sao:" destination="0Q2-6J-unF" eventType="touchUpInside" id="Uze-Z2-nRH"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UN-Ap-M5X">
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PJ-n5-V5v">
@@ -82,22 +73,30 @@
                                     <constraint firstAttribute="height" constant="65" id="KPj-We-1KR"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fni-7Z-Nhg">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2UN-Ap-M5X" secondAttribute="trailing" id="3ci-1c-1Tp"/>
+                            <constraint firstItem="Fni-7Z-Nhg" firstAttribute="leading" secondItem="Vt6-7o-FAt" secondAttribute="leading" id="Vvn-gc-OCb"/>
+                            <constraint firstAttribute="trailing" secondItem="Fni-7Z-Nhg" secondAttribute="trailing" id="cfs-sN-1Qk"/>
+                            <constraint firstItem="8fd-0C-zsU" firstAttribute="top" secondItem="Fni-7Z-Nhg" secondAttribute="bottom" id="miZ-4n-sRc"/>
+                            <constraint firstItem="Fni-7Z-Nhg" firstAttribute="top" secondItem="2UN-Ap-M5X" secondAttribute="bottom" id="mmq-55-KW7"/>
                             <constraint firstItem="2UN-Ap-M5X" firstAttribute="top" secondItem="Vt6-7o-FAt" secondAttribute="top" id="pbe-Pn-iJW"/>
                             <constraint firstItem="2UN-Ap-M5X" firstAttribute="leading" secondItem="Vt6-7o-FAt" secondAttribute="leading" id="vUx-G6-Y0E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cDu-ke-Ygk" customClass="HomepgeNavBar"/>
                     <connections>
+                        <outlet property="tableView" destination="Fni-7Z-Nhg" id="RcO-SR-Fsg"/>
                         <segue destination="HtT-XV-v4f" kind="push" identifier="scanSegue" id="L5V-yg-jny"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295.19999999999999" y="541.97901049475263"/>
+            <point key="canvasLocation" x="255" y="528"/>
         </scene>
         <!--ScanerVC-->
         <scene sceneID="2t5-Fw-iAu">
