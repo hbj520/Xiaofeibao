@@ -14,6 +14,7 @@
 		AB608C2E1D9CBBDD00194FC2 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C2A1D9CBBDD00194FC2 /* GTMBase64.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
+		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
 		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
@@ -75,6 +76,8 @@
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
 		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
+		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABCB95401D9B8D72008927C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABCB95421D9B8E56008927C7 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 		AB608C201D9CB7A900194FC2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AB8D45391DADC89400694E6C /* Tools.h */,
+				AB8D453A1DADC89400694E6C /* Tools.m */,
 				AB608C251D9CBBDD00194FC2 /* CompressUtils.h */,
 				AB608C261D9CBBDD00194FC2 /* CompressUtils.m */,
 				AB608C271D9CBBDD00194FC2 /* EncryptUtils.h */,
@@ -649,6 +654,7 @@
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
+				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,

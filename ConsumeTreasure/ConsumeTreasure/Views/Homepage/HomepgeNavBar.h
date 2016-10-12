@@ -10,4 +10,5 @@
 
 @interface HomepgeNavBar : UINavigationItem
 @property (nonatomic,strong) NSString *cityName;
+@property (nonatomic,strong) UIButton *locationBtn;
 @end
