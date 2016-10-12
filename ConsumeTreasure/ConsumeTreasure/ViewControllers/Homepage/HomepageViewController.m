@@ -10,6 +10,8 @@
 #import "HomePageFirstTableViewCell.h"
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *locationView;
+@property (weak, nonatomic) IBOutlet UILabel *locationCityName;
 
 @end
 
@@ -18,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self addNavBar];
+    [self addNavBar];
     
     
     [self creatUI];
@@ -78,6 +80,14 @@
 }
 
 #pragma mark -PrivateMethod 
+- (void)addNavBar{
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(TapAct:)];
+    [self.locationView addGestureRecognizer:tapGes];
+    
+}
+- (void)TapAct:(UIGestureRecognizer *)ges{
+    
+}
 /*
 #pragma mark - Navigation
 
