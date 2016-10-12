@@ -7,7 +7,6 @@
 //
 
 #import "HomepageViewController.h"
-
 @interface HomepageViewController ()
 
 @end
@@ -17,9 +16,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self addNavTitle];
+    //[self addNavBar];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -28,12 +30,6 @@
      [self performSegueWithIdentifier:@"scanSegue" sender:nil];
 }
 #pragma mark -PrivateMethod 
-- (void)addNavTitle{
-    NSString *navTitle = @"消费宝";
-    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:16.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
-     self.navigationItem.title = navTitle;
-}
 /*
 #pragma mark - Navigation
 

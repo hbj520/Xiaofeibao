@@ -267,18 +267,5 @@
     //        [defaults synchronize];
     //    }
 }
-//自定义button
-+ (UIButton *)createBtnWithTitle:(NSString *)title
-                           Image:(NSString *)image
-                           frame:(CGRect)frame{
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((1/6)*frame.size.width, frame.origin.y, (3/8)*frame.size.width, frame.size.height)];
-    imageView.image = [UIImage imageNamed:image];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((13/24)*frame.size.width, frame.origin.y, (11/24)*frame.size.width, frame.size.height)];
-    titleLabel.text = title;
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn addSubview:imageView];
-    [btn addSubview:titleLabel];
-    btn.frame = frame;
-    return btn;
-}
+
 @end

@@ -58,9 +58,5 @@
 
 //选择控制器
 + (void)chooseRootController;
-//自定义button
-+ (UIButton *)createBtnWithTitle:(NSString *)title
-                           Image:(NSString *)image
-                           frame:(CGRect)frame;
 
 @end

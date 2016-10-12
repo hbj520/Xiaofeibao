@@ -38,7 +38,6 @@
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
 		D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A61DAD0B6E005B9849 /* ScanerVC.m */; };
 		D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */; };
-		D1F275B31DAD0C20005B9849 /* HomepgeNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */; };
 		D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */; };
 /* End PBXBuildFile section */
 
@@ -119,8 +118,6 @@
 		D1F275A61DAD0B6E005B9849 /* ScanerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanerVC.m; sourceTree = "<group>"; };
 		D1F275A91DAD0B93005B9849 /* UIAlertView+flash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+flash.h"; sourceTree = "<group>"; };
 		D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+flash.m"; sourceTree = "<group>"; };
-		D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepgeNavBar.m; sourceTree = "<group>"; };
-		D1F275B01DAD0C20005B9849 /* HomepgeNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepgeNavBar.h; sourceTree = "<group>"; };
 		D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumeHomepageHeaderView.m; sourceTree = "<group>"; };
 		D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumeHomepageHeaderView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,8 +302,6 @@
 		ABCB953A1D9B8A05008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				D1F275B01DAD0C20005B9849 /* HomepgeNavBar.h */,
-				D1F275AF1DAD0C20005B9849 /* HomepgeNavBar.m */,
 				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */,
 				D1F2759E1DAD0A5A005B9849 /* ScanerView */,
@@ -662,7 +657,6 @@
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.m in Sources */,
 				AB608C2D1D9CBBDD00194FC2 /* EncryptUtils.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
-				D1F275B31DAD0C20005B9849 /* HomepgeNavBar.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */,
