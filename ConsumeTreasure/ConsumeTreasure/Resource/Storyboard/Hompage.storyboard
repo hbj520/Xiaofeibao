@@ -90,6 +90,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="cDu-ke-Ygk" customClass="HomepgeNavBar"/>
                     <connections>
+                        <outlet property="locationCityName" destination="Caq-xu-sZE" id="D1Y-oU-eUi"/>
+                        <outlet property="locationView" destination="9PJ-n5-V5v" id="BRp-Ow-HOb"/>
                         <outlet property="tableView" destination="Fni-7Z-Nhg" id="RcO-SR-Fsg"/>
                         <segue destination="HtT-XV-v4f" kind="push" identifier="scanSegue" id="L5V-yg-jny"/>
                     </connections>
