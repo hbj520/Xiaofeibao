@@ -35,6 +35,9 @@
 		ABF4E29F1D9B5E58006AD23C /* ConsumeTreasureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
+		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
+		D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */; };
+		D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F25A1DAE6B3400272E57 /* FoldLineView.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -114,6 +117,11 @@
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
+		D170F2541DAE6AAE00272E57 /* chartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartTableViewCell.h; sourceTree = "<group>"; };
+		D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chartTableViewCell.m; sourceTree = "<group>"; };
+		D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chartTableViewCell.xib; sourceTree = "<group>"; };
+		D170F2591DAE6B3400272E57 /* FoldLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldLineView.h; sourceTree = "<group>"; };
+		D170F25A1DAE6B3400272E57 /* FoldLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldLineView.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -313,6 +321,11 @@
 				D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */,
 				D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */,
 				D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */,
+				D170F2541DAE6AAE00272E57 /* chartTableViewCell.h */,
+				D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */,
+				D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */,
+				D170F2591DAE6B3400272E57 /* FoldLineView.h */,
+				D170F25A1DAE6B3400272E57 /* FoldLineView.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -572,6 +585,7 @@
 			files = (
 				ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */,
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
+				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
@@ -655,10 +669,12 @@
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
+				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
+				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,

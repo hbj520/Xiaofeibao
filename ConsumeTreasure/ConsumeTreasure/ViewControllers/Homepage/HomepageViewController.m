@@ -17,6 +17,11 @@
 
 @implementation HomepageViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,7 +34,6 @@
 - (void)creatUI{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 170;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomePageFirstTableViewCell" bundle:nil] forCellReuseIdentifier:@"FirstHomeCell"];
 }
 
@@ -56,6 +60,13 @@
             firstCell = [[[NSBundle mainBundle] loadNibNamed:@"HomePageFirstTableViewCell" owner:self options:nil] lastObject];
         }
         firstCell.selectionStyle = 0;
+        
+        firstCell.scanBlock =^{
+          
+            [self performSegueWithIdentifier:@"scanSegue" sender:nil];
+        };
+        
+        
         return firstCell;
 
     }else{
@@ -67,13 +78,49 @@
         return firstCell;
 
     }
-    
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        
+        return 170;
+    }if (indexPath.section == 1 ) {
+        return 40;
+    }else{
+        return 260;
+    }
 }
+
+/*
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        UIView *head1 = [[UIView alloc]init];
+        head1.backgroundColor = RGBACOLOR(234, 235, 236, 1);
+        return head1;
+    }else{
+        
+        return head0;
+    }
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        if (self.backBtn.hidden) {
+            return   ScreenHeight;
+        }
+        return 215;
+    }else{
+        return 15;
+    }
+}
+*/
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+}
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
