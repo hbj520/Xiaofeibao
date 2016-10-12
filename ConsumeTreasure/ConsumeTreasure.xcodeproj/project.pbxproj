@@ -304,6 +304,7 @@
 			children = (
 				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */,
+				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F2759E1DAD0A5A005B9849 /* ScanerView */,
 			);
 			path = Homepage;
@@ -525,7 +526,7 @@
 				TargetAttributes = {
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = MGR47JT33V;
+						DevelopmentTeam = WFNRTA53Q5;
 					};
 					ABF4E28E1D9B5E58006AD23C = {
 						CreatedOnToolsVersion = 7.3;
@@ -807,9 +808,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = MGR47JT33V;
+				DEVELOPMENT_TEAM = WFNRTA53Q5;
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.ConsumeTreasure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -822,9 +823,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = MGR47JT33V;
+				DEVELOPMENT_TEAM = WFNRTA53Q5;
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.ConsumeTreasure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
