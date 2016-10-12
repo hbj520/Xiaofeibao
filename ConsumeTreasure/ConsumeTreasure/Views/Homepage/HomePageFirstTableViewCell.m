@@ -8,15 +8,21 @@
 
 #import "HomePageFirstTableViewCell.h"
 
+@interface HomePageFirstTableViewCell ()
+
+@end
+
+
 @implementation HomePageFirstTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
+    [self addTapGesture];
 }
 
 - (void)addTapGesture{
+    UITapGestureRecognizer *tapScan = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScan:)];
     
 }
 
