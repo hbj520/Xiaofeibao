@@ -38,6 +38,14 @@
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
 		D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */; };
 		D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F25A1DAE6B3400272E57 /* FoldLineView.m */; };
+		D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F25D1DAF1ABE00272E57 /* BeforeChartTableViewCell.m */; };
+		D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F25E1DAF1ABE00272E57 /* BeforeChartTableViewCell.xib */; };
+		D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2621DAF292A00272E57 /* ImageTableViewCell.m */; };
+		D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2631DAF292A00272E57 /* ImageTableViewCell.xib */; };
+		D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2671DAF2CB600272E57 /* HomeListHeadView.m */; };
+		D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2691DAF2CD800272E57 /* HomeListHeadView.xib */; };
+		D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */; };
+		D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -122,6 +130,18 @@
 		D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chartTableViewCell.xib; sourceTree = "<group>"; };
 		D170F2591DAE6B3400272E57 /* FoldLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldLineView.h; sourceTree = "<group>"; };
 		D170F25A1DAE6B3400272E57 /* FoldLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldLineView.m; sourceTree = "<group>"; };
+		D170F25C1DAF1ABE00272E57 /* BeforeChartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeforeChartTableViewCell.h; sourceTree = "<group>"; };
+		D170F25D1DAF1ABE00272E57 /* BeforeChartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeforeChartTableViewCell.m; sourceTree = "<group>"; };
+		D170F25E1DAF1ABE00272E57 /* BeforeChartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeforeChartTableViewCell.xib; sourceTree = "<group>"; };
+		D170F2611DAF292A00272E57 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		D170F2621DAF292A00272E57 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
+		D170F2631DAF292A00272E57 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		D170F2661DAF2CB600272E57 /* HomeListHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListHeadView.h; sourceTree = "<group>"; };
+		D170F2671DAF2CB600272E57 /* HomeListHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListHeadView.m; sourceTree = "<group>"; };
+		D170F2691DAF2CD800272E57 /* HomeListHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeListHeadView.xib; sourceTree = "<group>"; };
+		D170F26B1DAF2F6F00272E57 /* HotStoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotStoreTableViewCell.h; sourceTree = "<group>"; };
+		D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotStoreTableViewCell.m; sourceTree = "<group>"; };
+		D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotStoreTableViewCell.xib; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -326,6 +346,18 @@
 				D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */,
 				D170F2591DAE6B3400272E57 /* FoldLineView.h */,
 				D170F25A1DAE6B3400272E57 /* FoldLineView.m */,
+				D170F25C1DAF1ABE00272E57 /* BeforeChartTableViewCell.h */,
+				D170F25D1DAF1ABE00272E57 /* BeforeChartTableViewCell.m */,
+				D170F25E1DAF1ABE00272E57 /* BeforeChartTableViewCell.xib */,
+				D170F2611DAF292A00272E57 /* ImageTableViewCell.h */,
+				D170F2621DAF292A00272E57 /* ImageTableViewCell.m */,
+				D170F2631DAF292A00272E57 /* ImageTableViewCell.xib */,
+				D170F2661DAF2CB600272E57 /* HomeListHeadView.h */,
+				D170F2671DAF2CB600272E57 /* HomeListHeadView.m */,
+				D170F2691DAF2CD800272E57 /* HomeListHeadView.xib */,
+				D170F26B1DAF2F6F00272E57 /* HotStoreTableViewCell.h */,
+				D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */,
+				D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -587,10 +619,14 @@
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
+				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
+				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
+				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 			);
@@ -670,6 +706,7 @@
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
 				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
+				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
@@ -681,8 +718,11 @@
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.m in Sources */,
+				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
+				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				AB608C2D1D9CBBDD00194FC2 /* EncryptUtils.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
+				D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */,

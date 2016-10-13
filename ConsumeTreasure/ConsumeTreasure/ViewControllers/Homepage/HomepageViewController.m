@@ -6,8 +6,18 @@
 //  Copyright © 2016 youyou. All rights reserved.
 //
 
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
 #import "HomepageViewController.h"
+
 #import "HomePageFirstTableViewCell.h"
+#import "chartTableViewCell.h"
+#import "BeforeChartTableViewCell.h"
+#import "ImageTableViewCell.h"
+#import "HotStoreTableViewCell.h"
+#import "HomeListHeadView.h"
+
+
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *locationView;
@@ -32,9 +42,14 @@
 }
 
 - (void)creatUI{
+    self.tabBarController.tabBar.hidden = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomePageFirstTableViewCell" bundle:nil] forCellReuseIdentifier:@"FirstHomeCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"chartTableViewCell" bundle:nil] forCellReuseIdentifier:@"chartCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BeforeChartTableViewCell" bundle:nil] forCellReuseIdentifier:@"beforeChartCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"chartImageCellId"];
+     [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -46,7 +61,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1){
-        return 2;
+        return 3;
     }else{
         return 10;
     }
@@ -69,50 +84,99 @@
         
         return firstCell;
 
-    }else{
-        HomePageFirstTableViewCell *firstCell = [tableView dequeueReusableCellWithIdentifier:@"FirstHomeCell"];
-        if (firstCell == nil) {
-            firstCell = [[[NSBundle mainBundle] loadNibNamed:@"HomePageFirstTableViewCell" owner:self options:nil] lastObject];
+    }else if (indexPath.section == 1){//第二个section
+        
+        if (indexPath.row == 1) {//折线图
+            chartTableViewCell *chartCell = [tableView dequeueReusableCellWithIdentifier:@"chartCellId"];
+            if (chartCell == nil) {
+                chartCell = [[[NSBundle mainBundle] loadNibNamed:@"chartTableViewCell" owner:self options:nil] lastObject];
+            }
+            chartCell.selectionStyle = 0;
+            return chartCell;
+        }else if (indexPath.row == 0){
+            BeforeChartTableViewCell *bforeChartCell = [tableView dequeueReusableCellWithIdentifier:@"beforeChartCellId"];
+            if (bforeChartCell == nil) {
+                bforeChartCell = [[[NSBundle mainBundle] loadNibNamed:@"BeforeChartTableViewCell" owner:self options:nil] lastObject];
+            }
+            bforeChartCell.selectionStyle = 0;
+            return bforeChartCell;
         }
-        firstCell.selectionStyle = 0;
-        return firstCell;
-
+        else{
+            ImageTableViewCell *imageChartCell = [tableView dequeueReusableCellWithIdentifier:@"chartImageCellId"];
+            if (imageChartCell == nil) {
+                imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
+            }
+            imageChartCell.selectionStyle = 0;
+            return imageChartCell;
+        }
+    }else{
+        HotStoreTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:@"hotStoreCellId"];
+        if (hotCell == nil) {
+            hotCell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
+        }
+        hotCell.selectionStyle = 0;
+        return hotCell;
     }
+   
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         
         return 170;
-    }if (indexPath.section == 1 ) {
-        return 40;
-    }else{
-        return 260;
+    }else if (indexPath.section == 1) {
+        if (indexPath.row == 1) {
+            return 230;
+        }else if (indexPath.row == 0){
+            return 40;
+        }else{
+            return 80;
+        }
+    }
+    else{
+        return 125;
     }
 }
 
-/*
+
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section == 1) {
         UIView *head1 = [[UIView alloc]init];
         head1.backgroundColor = RGBACOLOR(234, 235, 236, 1);
         return head1;
-    }else{
+    }else if (section == 2){
+        HomeListHeadView *HotHeadView = [[[NSBundle mainBundle]loadNibNamed:@"HomeListHeadView" owner:self options:nil]lastObject];
+      
+        HotHeadView.backgroundView = [[UIImageView alloc]init];
+        HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
+
         
+        return HotHeadView;
+    }
+    else{
+        /*
+        UIView *head0 = [[UIView alloc]init];
+        head0.backgroundColor = RGBACOLOR(240, 74, 52, 1);
         return head0;
+         */
+        return nil;
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
-        if (self.backBtn.hidden) {
-            return   ScreenHeight;
-        }
-        return 215;
+      
+        return 0;
+    }else if (section == 1 ){
+        return 22;
     }else{
-        return 15;
+        return 41;
     }
 }
-*/
+
+
+
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 1;
 }
