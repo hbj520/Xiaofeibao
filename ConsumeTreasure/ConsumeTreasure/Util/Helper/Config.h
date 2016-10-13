@@ -57,7 +57,6 @@
 - (NSString *)getisteacher;         //获取是否是讲师
 - (NSString *)getToken;        //获取用户登录令牌
 - (NSString *)getPassword;     //获取用户密码
-- (NSString *)getIcon;          //获取图片
 - (NSString *)getMoney;        //获取财富
 - (NSString *)getUcoin;        //获取优币值
 - (NSString *)getIntegral;     //获取积分值

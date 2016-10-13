@@ -23,9 +23,6 @@
 {
     int _oldY;
 }
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *locationView;
-@property (weak, nonatomic) IBOutlet UILabel *locationCityName;
 
 @end
 
@@ -50,7 +47,7 @@
     
     [self creatUI];
 }
-
+#pragma mark-PrivateMethod
 - (void)creatUI{
     
     self.tableView.delegate = self;
@@ -62,20 +59,22 @@
      [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
 }
 
-
+#pragma mark - UIScrollviewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if ([scrollView isEqual: self.tableView]) {
-        if (self.tableView.contentOffset.y > _oldY) {
-            // 上滑
-            //NSLog(@"偏移量%f",self.tableView.contentOffset.y);
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"hideWay" object:self userInfo:nil];
+    NSLog(@"scrollview offsety %f",scrollView.contentOffset.y);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    HomePageFirstTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    float alphafix = scrollView.contentOffset.y;
+    if (scrollView.contentOffset.y >0 && scrollView.contentOffset.y > _oldY) {
+        for (UIView *subView in cell.scanView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
         }
-        else{
-            // 下滑
-            //NSLog(@"偏移量%f",self.tableView.contentOffset.y);
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"showWay" object:self userInfo:nil];
+    }else if (scrollView.contentOffset.y < _oldY){
+        for (UIView *subView in cell.scanView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
         }
     }
+    
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

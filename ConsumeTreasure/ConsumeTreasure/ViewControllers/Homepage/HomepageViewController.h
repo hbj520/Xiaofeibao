@@ -9,5 +9,8 @@
 #import "BaseViewController.h"
 
 @interface HomepageViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *locationView;
+@property (weak, nonatomic) IBOutlet UILabel *locationCityName;
 
 @end
