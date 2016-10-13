@@ -521,6 +521,9 @@
                                 <state key="normal" title="账号注册">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="2pw-xq-20a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kE-Gk-5WI">
                                 <constraints>
@@ -531,6 +534,9 @@
                                 <state key="normal" title="账号登陆">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="oze-4q-L4Q"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sj" translatesAutoresizingMaskIntoConstraints="NO" id="Rn3-e6-sT4">
                                 <constraints>
@@ -570,6 +576,13 @@
                             <constraint firstItem="oEh-Vl-IGa" firstAttribute="top" secondItem="0Jk-vZ-ifA" secondAttribute="bottom" constant="109" id="vLF-4s-Bdt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginArrow" destination="Rn3-e6-sT4" id="S2J-VI-jrp"/>
+                        <outlet property="loginBtn" destination="8kE-Gk-5WI" id="8FQ-km-S4o"/>
+                        <outlet property="loginView" destination="c2d-no-AJN" id="h3i-f4-ybV"/>
+                        <outlet property="registerArrow" destination="6u7-WV-5he" id="ULg-zq-o9L"/>
+                        <outlet property="registerView" destination="qRZ-bD-Lkm" id="hXd-CP-2FB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wkj-7r-Ny6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

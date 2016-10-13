@@ -9,6 +9,13 @@
 #import "LoginAndRegisterViewController.h"
 
 @interface LoginAndRegisterViewController ()
+@property (weak, nonatomic) IBOutlet UIView *registerView;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
+@property (weak, nonatomic) IBOutlet UIImageView *registerArrow;
+@property (weak, nonatomic) IBOutlet UIImageView *loginArrow;
+- (IBAction)registerBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+- (IBAction)loginBtn:(id)sender;
 
 @end
 
@@ -34,4 +41,10 @@
 }
 */
 
+- (IBAction)registerBtn:(id)sender {
+    
+}
+- (IBAction)loginBtn:(id)sender {
+    
+}
 @end
