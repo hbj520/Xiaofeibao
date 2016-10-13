@@ -78,6 +78,7 @@
 		6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
+		AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
 		AB608C211D9CB7AF00194FC2 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		AB608C221D9CB7AF00194FC2 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		AB608C251D9CBBDD00194FC2 /* CompressUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompressUtils.h; sourceTree = "<group>"; };
@@ -463,6 +464,7 @@
 		ABF4E2791D9B5E58006AD23C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */,
 				ABF4E27A1D9B5E58006AD23C /* main.m */,
 			);
 			name = "Supporting Files";
