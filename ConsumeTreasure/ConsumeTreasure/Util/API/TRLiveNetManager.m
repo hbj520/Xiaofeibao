@@ -10,7 +10,7 @@
 #import "NSObject+AFNetworking.h"
 @implementation TRLiveNetManager
 +(id)testNetLoadWithCompletionHandler:(void (^)(id, NSError *))completionHandler{
-    return [self GET:@"http://192.168.1.242:8080/xfb/hello" parameters:nil progress:^(NSProgress *downloadProgress) {
+    return [self GET:@"http://localhost:8080/xfb/welcome/hotShopMember" parameters:nil progress:^(NSProgress *downloadProgress) {
         
         
     } completionHandler:^(id responseObj, NSError *error) {

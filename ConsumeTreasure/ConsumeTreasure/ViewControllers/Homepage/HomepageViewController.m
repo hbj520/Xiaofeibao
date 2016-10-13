@@ -17,8 +17,12 @@
 #import "HotStoreTableViewCell.h"
 #import "HomeListHeadView.h"
 
+#import "TRLiveNetManager.h"
 
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    int _oldY;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *locationView;
 @property (weak, nonatomic) IBOutlet UILabel *locationCityName;
@@ -30,11 +34,17 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [TRLiveNetManager testNetLoadWithCompletionHandler:^(id model, NSError *error) {
+        
+    }];
+    
     [self addNavBar];
     
     
@@ -42,7 +52,7 @@
 }
 
 - (void)creatUI{
-    self.tabBarController.tabBar.hidden = NO;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomePageFirstTableViewCell" bundle:nil] forCellReuseIdentifier:@"FirstHomeCell"];
@@ -50,6 +60,28 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BeforeChartTableViewCell" bundle:nil] forCellReuseIdentifier:@"beforeChartCellId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"chartImageCellId"];
      [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if ([scrollView isEqual: self.tableView]) {
+        if (self.tableView.contentOffset.y > _oldY) {
+            // 上滑
+            //NSLog(@"偏移量%f",self.tableView.contentOffset.y);
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"hideWay" object:self userInfo:nil];
+        }
+        else{
+            // 下滑
+            //NSLog(@"偏移量%f",self.tableView.contentOffset.y);
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"showWay" object:self userInfo:nil];
+        }
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    // 获取开始拖拽时tableview偏移量
+    _oldY = self.tableView.contentOffset.y;
+
 }
 
 #pragma mark - UITableViewDelegate
@@ -76,6 +108,7 @@
         }
         firstCell.selectionStyle = 0;
         
+        //扫一扫
         firstCell.scanBlock =^{
           
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
@@ -173,15 +206,19 @@
     }
 }
 
-
-
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 1;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            NSLog(@"了解详情");
+        }
+    }else if (indexPath.section == 2){
+        NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
+    }
+}
 
 
 
