@@ -69,8 +69,27 @@
         for (UIView *subView in cell.scanView.subviews) {
             subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
         }
+        for (UIView *subView in cell.accountView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+        }
+        for (UIView *subView in cell.recordView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+        }
+        for (UIView *subView in cell.incomeView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+        }
+
     }else if (scrollView.contentOffset.y < _oldY){
         for (UIView *subView in cell.scanView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
+        }
+        for (UIView *subView in cell.accountView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
+        }
+        for (UIView *subView in cell.recordView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
+        }
+        for (UIView *subView in cell.incomeView.subviews) {
             subView.alpha = (104.5 -alphafix)*3/2/104.5;
         }
     }
@@ -216,6 +235,20 @@
         }
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
+        
+        
+        NSDictionary * param=@{
+                               @"cityName":@"合肥市",
+                               @"latitude":@"31.746009",
+                               @"longitude":@"117.287612"
+                               };
+        [RequstEngine requestHttp:@"hotShop" paramDic:param blockObject:^(NSDictionary *dic) {
+            
+            NSLog(@"第一次请求%@",dic);
+            
+        }];
+        
+        
     }
 }
 
