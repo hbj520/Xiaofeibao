@@ -5,29 +5,7 @@
 //  Created by Jeans Huang on 10/19/15.
 //  Copyright © 2015 gzhu. All rights reserved.
 //
-#define SHOWALERTVIEW(msg)   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];[alertView show];
 
-#define BGMAINCOLOR [UIColor colorWithRed:(233)/255.0f green:(233)/255.0f blue:(231)/255.0f alpha:(1)]
-#define MAINCHARACTERCOLOR [UIColor colorWithRed:(63)/255.0f green:(62)/255.0f blue:(62)/255.0f alpha:(1)]
-
-
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
-
-//相对高度
-#define kLeft(VIEW)                 VIEW.frame.origin.x
-#define kUp(VIEW)                   VIEW.frame.origin.y
-#define kRight(VIEW)                (kLeft(VIEW) + VIEW.frame.size.width)
-#define kWidth(VIEW)                VIEW.frame.size.width
-#define kHeight(VIEW)               VIEW.frame.size.height
-#define kDown(VIEW)                 (VIEW.frame.origin.y + VIEW.frame.size.height)
-
-#define WIDTH [[UIScreen mainScreen] bounds].size.width
-#define HEIGHT [[UIScreen mainScreen] bounds].size.height
-#define H(X) ((HEIGHT) * ((X) / 568.0))    // 适配屏幕高度（以568为基准iphone5s）
-#define W(X) ((WIDTH) * ((X) / 320.0))     // 适配屏幕宽度（以320为基准iphone5s）
-
-#define KRatioW (([UIScreen mainScreen].bounds.size.width)/320.0)
-#define KRatioH (([UIScreen mainScreen].bounds.size.height)/568.0)
 
 
 #import "UIAlertView+flash.h"
@@ -62,6 +40,7 @@
 @end
 
 @implementation ScanerVC
+
 
 
 
@@ -565,6 +544,7 @@
 #pragma mark - viewVillAppear
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.tabBarController.tabBar.hidden = YES;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     [_mainScrollView endEditing:YES];

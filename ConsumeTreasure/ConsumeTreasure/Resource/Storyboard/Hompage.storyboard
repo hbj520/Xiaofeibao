@@ -9,13 +9,15 @@
         <!--Navigation Controller-->
         <scene sceneID="eSy-Wj-mnt">
             <objects>
-                <navigationController navigationBarHidden="YES" id="KQt-7w-eQk" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ZnS-ar-iBt">
+                <navigationController id="KQt-7w-eQk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZnS-ar-iBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zIZ-kc-Qpl">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="0Q2-6J-unF" kind="relationship" relationship="rootViewController" id="Pjh-Ka-LNA"/>
                     </connections>
@@ -27,7 +29,7 @@
         <!--Homepage View Controller-->
         <scene sceneID="SC0-OK-BNh">
             <objects>
-                <viewController id="0Q2-6J-unF" customClass="HomepageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homePageSB" id="0Q2-6J-unF" customClass="HomepageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLq-fO-tkh"/>
                         <viewControllerLayoutGuide type="bottom" id="8fd-0C-zsU"/>
@@ -112,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGB-NU-7MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="527"/>
+            <point key="canvasLocation" x="1028" y="528"/>
         </scene>
     </scenes>
     <resources>

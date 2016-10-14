@@ -53,21 +53,22 @@
 //    }];
 //}
 //
-//+ (id)search:(NSString *)words page:(NSInteger)page completionHandler:(void (^)(id, NSError *))completionHandler{
-//    NSMutableDictionary *params = [NSMutableDictionary new];
-//    [params setObject:@"site.search" forKey:@"m"];
-//    [params setObject:@"2" forKey:@"os"];
-//    [params setObject:@"0" forKey:@"p[categoryId]"];
-//    [params setObject:words forKey:@"p[key]"];
-//    [params setObject:@(page) forKey:@"p[page]"];
-//    [params setObject:@"10" forKey:@"p[size]"];
-//    [params setObject:@"1.3.2" forKey:@"v"];
-//    
-//    return [self POST:kSearchPath parameters:params progress:nil completionHandler:^(id responseObj, NSError *error) {
-//        completionHandler([TRSearchModel parse:responseObj], error);
-//    }];
-//}
-//
+/*
++ (id)search:(NSString *)words page:(NSInteger)page completionHandler:(void (^)(id, NSError *))completionHandler{
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params setObject:@"site.search" forKey:@"m"];
+    [params setObject:@"2" forKey:@"os"];
+    [params setObject:@"0" forKey:@"p[categoryId]"];
+    [params setObject:words forKey:@"p[key]"];
+    [params setObject:@(page) forKey:@"p[page]"];
+    [params setObject:@"10" forKey:@"p[size]"];
+    [params setObject:@"1.3.2" forKey:@"v"];
+    
+    return [self POST:kSearchPath parameters:params progress:nil completionHandler:^(id responseObj, NSError *error) {
+        completionHandler([TRSearchModel parse:responseObj], error);
+    }];
+}
+*/
 //+ (id)getADListCompletionHandler:(void (^)(id, NSError *))completionHandler{
 //    return [self GET:kADPath parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
 //        completionHandler([TRADListModel parse:responseObj], error);
