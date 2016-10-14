@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */; };
+		AB0F64451DB0844D00A5EB1E /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64441DB0844D00A5EB1E /* UIViewController+HUD.m */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
 		AB608C231D9CB7AF00194FC2 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C221D9CB7AF00194FC2 /* Config.m */; };
 		AB608C2C1D9CBBDD00194FC2 /* CompressUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C261D9CBBDD00194FC2 /* CompressUtils.m */; };
@@ -76,6 +77,9 @@
 		0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
 		6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0F64431DB0844D00A5EB1E /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		AB0F64441DB0844D00A5EB1E /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
 		AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		AB608C1B1D9CB66D00194FC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AB0F64461DB0846B00A5EB1E /* Marco.h */,
 				D1F275A81DAD0B86005B9849 /* Category */,
 				AB608C201D9CB7A900194FC2 /* Helper */,
 				AB608C1C1D9CB67700194FC2 /* API */,
@@ -509,6 +514,8 @@
 		D1F275A81DAD0B86005B9849 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				AB0F64431DB0844D00A5EB1E /* UIViewController+HUD.h */,
+				AB0F64441DB0844D00A5EB1E /* UIViewController+HUD.m */,
 				D1F275A91DAD0B93005B9849 /* UIAlertView+flash.h */,
 				D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */,
 			);

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EC99CF24F9DE2DE34D5B32B0C35FB77232C82996",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EC99CF24F9DE2DE34D5B32B0C35FB77232C82996" : 9223372036854775807,
+    "64A76C6CD76DB353BA15CA3EB93B9EEEB7405EF8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F2A53A77-B729-4064-AEAE-80AB732D47B5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EC99CF24F9DE2DE34D5B32B0C35FB77232C82996" : "Xiaofeibao\/",
+    "64A76C6CD76DB353BA15CA3EB93B9EEEB7405EF8" : "FuyiFinance\/FUYI\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ConsumeTreasure",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ConsumeTreasure\/ConsumeTreasure.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hbj520\/FUYI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "64A76C6CD76DB353BA15CA3EB93B9EEEB7405EF8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hbj520\/Xiaofeibao.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EC99CF24F9DE2DE34D5B32B0C35FB77232C82996"
+    }
+  ]
+}
