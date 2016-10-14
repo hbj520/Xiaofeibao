@@ -21,7 +21,6 @@
 		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
 		ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95471D9B8E94008927C7 /* Union.storyboard */; };
 		ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95491D9B8EA2008927C7 /* Mine.storyboard */; };
-		ABCB954D1D9BEE8A008927C7 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB954C1D9BEE8A008927C7 /* MineTableViewController.m */; };
 		ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB954F1D9BEED5008927C7 /* UnionViewController.m */; };
 		ABCB95531D9BF719008927C7 /* HotShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95521D9BF719008927C7 /* HotShopModel.m */; };
 		ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */ = {isa = PBXBuildFile; fileRef = ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */; };
@@ -47,6 +46,7 @@
 		D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2691DAF2CD800272E57 /* HomeListHeadView.xib */; };
 		D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */; };
 		D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */; };
+		D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2B01DAFB6A500272E57 /* MineViewController.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -100,8 +100,6 @@
 		ABCB95451D9B8E88008927C7 /* Hompage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hompage.storyboard; sourceTree = "<group>"; };
 		ABCB95471D9B8E94008927C7 /* Union.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Union.storyboard; sourceTree = "<group>"; };
 		ABCB95491D9B8EA2008927C7 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
-		ABCB954B1D9BEE8A008927C7 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
-		ABCB954C1D9BEE8A008927C7 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		ABCB954E1D9BEED5008927C7 /* UnionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionViewController.h; sourceTree = "<group>"; };
 		ABCB954F1D9BEED5008927C7 /* UnionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionViewController.m; sourceTree = "<group>"; };
 		ABCB95511D9BF719008927C7 /* HotShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotShopModel.h; sourceTree = "<group>"; };
@@ -145,6 +143,8 @@
 		D170F26B1DAF2F6F00272E57 /* HotStoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotStoreTableViewCell.h; sourceTree = "<group>"; };
 		D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotStoreTableViewCell.m; sourceTree = "<group>"; };
 		D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotStoreTableViewCell.xib; sourceTree = "<group>"; };
+		D170F2AF1DAFB6A500272E57 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		D170F2B01DAFB6A500272E57 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -320,10 +320,10 @@
 		ABCB95381D9B89FC008927C7 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				ABCB954B1D9BEE8A008927C7 /* MineTableViewController.h */,
-				ABCB954C1D9BEE8A008927C7 /* MineTableViewController.m */,
 				AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */,
 				AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */,
+				D170F2AF1DAFB6A500272E57 /* MineViewController.h */,
+				D170F2B01DAFB6A500272E57 /* MineViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -706,7 +706,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABCB954D1D9BEE8A008927C7 /* MineTableViewController.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
@@ -715,6 +714,7 @@
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
+				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,

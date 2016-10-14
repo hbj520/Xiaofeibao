@@ -23,16 +23,7 @@
     [super awakeFromNib];
     // Initialization code
     [self addTapGesture];
- /*
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(selector:)
-                                                 name:@"hideWay"
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(show:)
-                                                 name:@"showWay"
-                                               object:nil];
-  */
+
 
 }
 

@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="-83" y="535"/>
         </scene>
-        <!--Mine Table View Controller-->
+        <!--Mine View Controller-->
         <scene sceneID="c69-8u-NsS">
             <objects>
-                <viewController id="Nli-3I-wWG" customClass="MineTableViewController" sceneMemberID="viewController">
+                <viewController id="Nli-3I-wWG" customClass="MineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dRb-xf-HcC"/>
                         <viewControllerLayoutGuide type="bottom" id="vg3-ch-w6r"/>
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TA-Ib-yno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="602" y="543"/>
+            <point key="canvasLocation" x="697" y="543"/>
         </scene>
     </scenes>
 </document>

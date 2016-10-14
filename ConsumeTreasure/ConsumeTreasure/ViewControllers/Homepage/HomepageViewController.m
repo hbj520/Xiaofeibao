@@ -69,8 +69,27 @@
         for (UIView *subView in cell.scanView.subviews) {
             subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
         }
+        for (UIView *subView in cell.accountView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+        }
+        for (UIView *subView in cell.recordView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+        }
+        for (UIView *subView in cell.incomeView.subviews) {
+            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+        }
+
     }else if (scrollView.contentOffset.y < _oldY){
         for (UIView *subView in cell.scanView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
+        }
+        for (UIView *subView in cell.accountView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
+        }
+        for (UIView *subView in cell.recordView.subviews) {
+            subView.alpha = (104.5 -alphafix)*3/2/104.5;
+        }
+        for (UIView *subView in cell.incomeView.subviews) {
             subView.alpha = (104.5 -alphafix)*3/2/104.5;
         }
     }
