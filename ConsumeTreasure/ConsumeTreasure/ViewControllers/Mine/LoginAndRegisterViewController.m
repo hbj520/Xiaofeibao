@@ -7,8 +7,13 @@
 //
 
 #import "LoginAndRegisterViewController.h"
+#import "HexColor.h"
 
 @interface LoginAndRegisterViewController ()
+{
+    NSTimer *timer;
+    NSInteger time;
+}
 @property (weak, nonatomic) IBOutlet UIView *registerView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIImageView *registerArrow;
@@ -43,12 +48,36 @@
 }
 */
 #pragma mark - PrivateMethod
+- (void)timeAct:(id)sender{
+     UIButton *postCodeBtn = [self.registerView viewWithTag:1];
+    if (time == 0) {
+        [timer invalidate];
+        postCodeBtn.enabled = YES;
+        [postCodeBtn setBackgroundColor:[UIColor colorWithHexString:@"FF5000"]];
+        [postCodeBtn setTitle:@"发送验证码" forState:UIControlStateNormal];
+    }else{
+        time--;
+        [postCodeBtn setTitle:[NSString stringWithFormat:@"%ld",time] forState:UIControlStateNormal];
+        [postCodeBtn setBackgroundColor:[UIColor lightGrayColor]];
+    }
+}
+- (void)setTimeSchedu{
+    UIButton *postCodeBtn = [self.registerView viewWithTag:1];
+    postCodeBtn.enabled = NO;
+    [postCodeBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [postCodeBtn setTitle:@"60" forState:UIControlStateNormal];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(timeAct:) userInfo:nil repeats:YES];
+    time = 60;
+    [timer fire];
+}
 - (void)addPostRegisterCode{
     [Tools hideKeyBoard];
     UITextField *phoneTextField = [self.registerView viewWithTag:0];
     if (phoneTextField.text.length < 11) {
-        
+        [self showHint:@"请输入正确的手机号"];
+        return;
     }
+    [self setTimeSchedu];
     
 }
 //注册按钮
