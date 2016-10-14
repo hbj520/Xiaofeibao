@@ -883,6 +883,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = MGR47JT33V;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "/Users/chenzhihui/Desktop/Work/Xiaofeibao/ConsumeTreasure/ConsumeTreasure/Xiaofei-Prefix.pch";
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -899,6 +900,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = MGR47JT33V;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "/Users/chenzhihui/Desktop/Work/Xiaofeibao/ConsumeTreasure/ConsumeTreasure/Xiaofei-Prefix.pch";
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

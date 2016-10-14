@@ -56,7 +56,7 @@
 }
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+    [Tools hideKeyBoard];
     
 }
 @end
