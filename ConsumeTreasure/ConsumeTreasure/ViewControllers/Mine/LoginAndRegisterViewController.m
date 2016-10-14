@@ -25,6 +25,8 @@
 - (IBAction)accountLoginBtn:(id)sender;
 //注册按钮
 - (IBAction)accountRegisterBtn:(id)sender;
+//忘记密码
+- (IBAction)forgetPassword:(id)sender;
 
 @end
 
@@ -33,9 +35,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.view.backgroundColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top"] forBarMetrics:UIBarMetricsDefault];
     //添加注册发送验证码按钮动作
     [self addPostRegisterCode];
     [self addAgreeBtn];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,6 +135,10 @@
 
 - (IBAction)accountRegisterBtn:(id)sender {
     
+}
+
+- (IBAction)forgetPassword:(id)sender {
+    [self performSegueWithIdentifier:@"forgetPasswordSegue" sender:nil];
 }
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

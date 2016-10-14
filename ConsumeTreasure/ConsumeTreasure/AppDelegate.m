@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LoginAndRegisterViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -45,6 +45,7 @@
 }
 - (void)changeToMain{
     self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.window.rootViewController = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+    LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
 }
 @end
