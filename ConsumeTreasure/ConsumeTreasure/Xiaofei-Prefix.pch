@@ -1,0 +1,53 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+//#ifndef __OPTIMIZE__
+//#define NSLog(...) NSLog(__VA_ARGS__)
+//#else
+//#define NSLog(...){}
+//#endif
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+    #import "Tools.h"
+//    #import "MyAPI.h"
+    #import <MBProgressHUD/MBProgressHUD.h>
+   // #import "MyEnum.h"
+    #import <TSMessages/TSMessage.h>
+    #import <MBProgressHUD/MBProgressHUD.h>
+//    #import "UIViewController+HUD.h"
+//    #import "Marco.h"
+//    #import "LoginHelper.h"
+   //  #import "UtilsMacro.h"
+   // #import "UIImage+Compress.h"
+   // #import "DBManager.h"
+   #import "Config.h"
+    #define MR_SHORTHAND
+#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
+   // #import "CoreData+MagicalRecord.h"
+
+  //  #import "UIViewController+DismissKeyboard.h"
+  //  #import "NSString+Valid.h"
+
+#endif
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...){}
+#endif
+
+
+//#define BaseUrl @"http://172.16.8.42:8086/" //接口地址
+//#define BaseUrl @"http://telphone.bdsaas.com/" //接口地址

@@ -45,6 +45,6 @@
 }
 - (void)changeToMain{
     self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.window.rootViewController = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+    self.window.rootViewController = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
 }
 @end

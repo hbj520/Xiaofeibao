@@ -40,16 +40,23 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+//注册按钮
 - (IBAction)registerBtn:(id)sender {
-    
+    self.registerArrow.hidden = NO;
+    self.loginArrow.hidden = YES;
+    [self.view bringSubviewToFront:self.registerView];
 }
+//登陆按钮
 - (IBAction)loginBtn:(id)sender {
+    self.registerArrow.hidden = YES;
     
+    self.loginArrow.hidden = NO;
+    [self.view bringSubviewToFront:self.loginView];
+
 }
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
+    [Tools hideKeyBoard];
     
 }
 @end
