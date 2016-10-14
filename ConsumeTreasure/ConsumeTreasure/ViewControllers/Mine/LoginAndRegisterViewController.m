@@ -21,6 +21,10 @@
 - (IBAction)registerBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 - (IBAction)loginBtn:(id)sender;
+//登录按钮
+- (IBAction)accountLoginBtn:(id)sender;
+//注册按钮
+- (IBAction)accountRegisterBtn:(id)sender;
 
 @end
 
@@ -31,6 +35,7 @@
     // Do any additional setup after loading the view.
     //添加注册发送验证码按钮动作
     [self addPostRegisterCode];
+    [self addAgreeBtn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +53,22 @@
 }
 */
 #pragma mark - PrivateMethod
+- (void)addAgreeBtn{
+  UIButton *circleSelectBtn =  [self.registerView viewWithTag:16];
+    [circleSelectBtn addTarget:self action:@selector(circleBtnAct:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+//同意协议btn
+- (void)circleBtnAct:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [sender setImage:[UIImage imageNamed:@"chose_on"] forState:UIControlStateNormal];
+    }else{
+        [sender setImage:[UIImage imageNamed:@"chose"] forState:UIControlStateNormal];
+ 
+    }
+    
+}
 - (void)timeAct:(id)sender{
      UIButton *postCodeBtn = [self.registerView viewWithTag:11];
     if (time == 0) {
@@ -98,6 +119,14 @@
     self.loginArrow.hidden = NO;
     [self.view bringSubviewToFront:self.loginView];
     [Tools hideKeyBoard];
+}
+
+- (IBAction)accountLoginBtn:(id)sender {
+    
+}
+
+- (IBAction)accountRegisterBtn:(id)sender {
+    
 }
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
