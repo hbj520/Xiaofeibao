@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //添加注册发送验证码
+    //添加注册发送验证码按钮动作
     [self addPostRegisterCode];
 }
 
@@ -90,14 +90,14 @@
     self.registerArrow.hidden = NO;
     self.loginArrow.hidden = YES;
     [self.view bringSubviewToFront:self.registerView];
+    [Tools hideKeyBoard];
 }
 //登陆按钮
 - (IBAction)loginBtn:(id)sender {
     self.registerArrow.hidden = YES;
-    
     self.loginArrow.hidden = NO;
     [self.view bringSubviewToFront:self.loginView];
-
+    [Tools hideKeyBoard];
 }
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
