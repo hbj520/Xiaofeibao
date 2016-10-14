@@ -49,7 +49,7 @@
 */
 #pragma mark - PrivateMethod
 - (void)timeAct:(id)sender{
-     UIButton *postCodeBtn = [self.registerView viewWithTag:1];
+     UIButton *postCodeBtn = [self.registerView viewWithTag:11];
     if (time == 0) {
         [timer invalidate];
         postCodeBtn.enabled = YES;
@@ -62,7 +62,7 @@
     }
 }
 - (void)setTimeSchedu{
-    UIButton *postCodeBtn = [self.registerView viewWithTag:1];
+    UIButton *postCodeBtn = [self.registerView viewWithTag:11];
     postCodeBtn.enabled = NO;
     [postCodeBtn setBackgroundColor:[UIColor lightGrayColor]];
     [postCodeBtn setTitle:@"60" forState:UIControlStateNormal];
@@ -71,8 +71,13 @@
     [timer fire];
 }
 - (void)addPostRegisterCode{
+    UIButton *postCodeBtn = [self.registerView viewWithTag:11];
+    [postCodeBtn addTarget:self action:@selector(postAct:) forControlEvents:UIControlEventTouchUpInside];
+   
+}
+- (void)postAct:(id)sender{
     [Tools hideKeyBoard];
-    UITextField *phoneTextField = [self.registerView viewWithTag:0];
+    UITextField *phoneTextField = [self.registerView viewWithTag:10];
     if (phoneTextField.text.length < 11) {
         [self showHint:@"请输入正确的手机号"];
         return;
