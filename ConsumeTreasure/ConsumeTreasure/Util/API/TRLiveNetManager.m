@@ -10,6 +10,10 @@
 #import "NSObject+AFNetworking.h"
 @implementation TRLiveNetManager
 +(id)testNetLoadWithCompletionHandler:(void (^)(id, NSError *))completionHandler{
+    
+    
+    
+    
     return [self GET:@"http://localhost:8080/xfb/welcome/hotShopMember" parameters:nil progress:^(NSProgress *downloadProgress) {
         
         
@@ -18,6 +22,12 @@
         
     }];
 }
+
+
+
+
+
+
 //+ (id)getRoomListWithPage:(NSInteger)page completionHandler:(void (^)(id, NSError *))completionHandler{
 //    NSString *pageStr = [NSString stringWithFormat:@"_%ld", page];
 //    if (page == 0) {
