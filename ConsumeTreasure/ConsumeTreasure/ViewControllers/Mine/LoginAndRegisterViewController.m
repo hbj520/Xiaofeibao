@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //添加注册发送验证码
+    [self addPostRegisterCode];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +42,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - PrivateMethod
+- (void)addPostRegisterCode{
+    [Tools hideKeyBoard];
+    UITextField *phoneTextField = [self.registerView viewWithTag:0];
+    if (phoneTextField.text.length < 11) {
+        
+    }
+    
+}
 //注册按钮
 - (IBAction)registerBtn:(id)sender {
     self.registerArrow.hidden = NO;
