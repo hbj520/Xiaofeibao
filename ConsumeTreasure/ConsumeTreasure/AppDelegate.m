@@ -44,7 +44,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 - (void)changeToMain{
-    self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-    self.window.rootViewController = [self.mStorybord instantiateViewControllerWithIdentifier:@"homePageSB"];
+    self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.window.rootViewController = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
 }
 @end

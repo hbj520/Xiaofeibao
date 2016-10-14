@@ -31,7 +31,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
-    self.tabBarController.tabBar.hidden = NO;
+   self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -61,7 +61,7 @@
 
 #pragma mark - UIScrollviewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"scrollview offsety %f",scrollView.contentOffset.y);
+    //NSLog(@"scrollview offsety %f",scrollView.contentOffset.y);
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     HomePageFirstTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     float alphafix = scrollView.contentOffset.y;
