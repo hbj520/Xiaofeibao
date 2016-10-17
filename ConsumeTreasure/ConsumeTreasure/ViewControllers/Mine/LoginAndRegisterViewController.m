@@ -8,6 +8,7 @@
 #import "UIAlertView+flash.h"
 #import "LoginAndRegisterViewController.h"
 #import "HexColor.h"
+#import "NoticeHelper.h"
 
 @interface LoginAndRegisterViewController ()
 {
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *loginArrow;
 - (IBAction)registerBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+//登录约束top
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 - (IBAction)loginBtn:(id)sender;
 //登录按钮
 - (IBAction)accountLoginBtn:(id)sender;
@@ -40,6 +43,11 @@
     //添加注册发送验证码按钮动作
     [self addPostRegisterCode];
     [self addAgreeBtn];
+    if ([NoticeHelper ISIphoneType] == ISIphone5) {
+        self.topLayoutConstraint.constant = 31;
+    }else{
+        self.topLayoutConstraint.constant = 81;
+    }
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
