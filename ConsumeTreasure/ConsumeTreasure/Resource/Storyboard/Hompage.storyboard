@@ -96,6 +96,7 @@
                         <outlet property="locationView" destination="9PJ-n5-V5v" id="BRp-Ow-HOb"/>
                         <outlet property="tableView" destination="Fni-7Z-Nhg" id="RcO-SR-Fsg"/>
                         <segue destination="HtT-XV-v4f" kind="push" identifier="scanSegue" id="L5V-yg-jny"/>
+                        <segue destination="GYm-mM-jXy" kind="push" id="ZYc-o9-m8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,7 +119,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGB-NU-7MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="528"/>
+            <point key="canvasLocation" x="1033" y="-26"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uYt-Ax-aI6">
+            <objects>
+                <viewController id="GYm-mM-jXy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ldg-h9-EX1"/>
+                        <viewControllerLayoutGuide type="bottom" id="sGa-WN-s5s"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ktf-Nm-UDC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rlc-Tw-0sO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F7P-Q0-DPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="891"/>
         </scene>
     </scenes>
     <resources>
