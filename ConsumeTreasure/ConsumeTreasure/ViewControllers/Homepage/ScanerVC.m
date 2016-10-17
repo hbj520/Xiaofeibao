@@ -54,7 +54,8 @@
    //  self.view.backgroundColor=RGBACOLOR(204, 204, 204, 1);
     [self loadUI];
     
-    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.view.backgroundColor=[UIColor whiteColor];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShowOnDelay) name:UIKeyboardWillShowNotification object:nil ];

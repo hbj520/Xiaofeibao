@@ -93,6 +93,7 @@
                 NSString *city = placemark.locality;
                 
                 NSLog(@"当前城市名称------%@",city);
+                self.locationCityName.text = city;
 
                 [_locService stopUserLocationService];
             
@@ -317,8 +318,6 @@
             NSLog(@"第一次请求%@",dic);
             
         }];
-        
-        
     }
 }
 

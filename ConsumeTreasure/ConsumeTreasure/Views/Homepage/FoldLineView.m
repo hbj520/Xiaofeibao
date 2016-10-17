@@ -146,15 +146,14 @@
     
     if (self.shapeLayer.strokeEnd < 1.0) {
         CGFloat add = 1.0 / (self.numbers.count + 3);
-        NSLog(@"add-->>%f",add);
+      //  NSLog(@"add-->>%f",add);
         self.shapeLayer.strokeEnd += add;
-        NSLog(@"%f",self.shapeLayer.strokeEnd);
+       // NSLog(@"%f",self.shapeLayer.strokeEnd);
     }else{
         //取消定时器
         [self.timer invalidate];
         self.timer = nil;
     }
-    
 }
 
 
