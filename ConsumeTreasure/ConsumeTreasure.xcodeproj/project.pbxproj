@@ -52,6 +52,7 @@
 		D10EE3EE1DB0B668001C1992 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10EE3ED1DB0B668001C1992 /* MobileCoreServices.framework */; };
 		D10EE3F01DB0B66F001C1992 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10EE3EF1DB0B66F001C1992 /* SystemConfiguration.framework */; };
 		D10EE3F21DB0B677001C1992 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10EE3F11DB0B677001C1992 /* CFNetwork.framework */; };
+		D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE45A1DB1CF3F001C1992 /* UIViewController+HUD.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -95,8 +96,6 @@
 		0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
 		6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB0F64431DB0844D00A5EB1E /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
-		AB0F64441DB0844D00A5EB1E /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -182,6 +181,8 @@
 		D10EE3ED1DB0B668001C1992 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D10EE3EF1DB0B66F001C1992 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D10EE3F11DB0B677001C1992 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D10EE4591DB1CF3F001C1992 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		D10EE45A1DB1CF3F001C1992 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -665,10 +666,10 @@
 		D1F275A81DAD0B86005B9849 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				AB0F64431DB0844D00A5EB1E /* UIViewController+HUD.h */,
-				AB0F64441DB0844D00A5EB1E /* UIViewController+HUD.m */,
 				D1F275A91DAD0B93005B9849 /* UIAlertView+flash.h */,
 				D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */,
+				D10EE4591DB1CF3F001C1992 /* UIViewController+HUD.h */,
+				D10EE45A1DB1CF3F001C1992 /* UIViewController+HUD.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -883,6 +884,7 @@
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
+				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,

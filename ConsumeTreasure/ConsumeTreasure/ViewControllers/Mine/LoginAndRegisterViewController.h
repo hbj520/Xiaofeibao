@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HomepageViewController.h"
 @interface LoginAndRegisterViewController : UIViewController
-
+@property (strong,nonatomic) UIStoryboard *mStorybord;
 @end

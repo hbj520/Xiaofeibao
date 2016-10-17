@@ -5,7 +5,7 @@
 //  Created by youyou on 10/13/16.
 //  Copyright © 2016 youyou. All rights reserved.
 //
-
+#import "UIAlertView+flash.h"
 #import "LoginAndRegisterViewController.h"
 #import "HexColor.h"
 
@@ -108,11 +108,15 @@
     [Tools hideKeyBoard];
     UITextField *phoneTextField = [self.registerView viewWithTag:10];
     if (phoneTextField.text.length < 11) {
+        NSLog(@"错");
+        
+          //  [UIAlertView alertWithTitle:@"温馨提示" message:@"登录名不能为空" buttonTitle:nil];
+        
         [self showHint:@"请输入正确的手机号"];
-        return;
-    }
+       // return;
+    }else{
     [self setTimeSchedu];
-    
+    }
 }
 //注册按钮
 - (IBAction)registerBtn:(id)sender {
@@ -130,8 +134,15 @@
 }
 
 - (IBAction)accountLoginBtn:(id)sender {
-    
+    [self changeTohom];
 }
+
+- (void)changeTohom{
+    self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+    [self.navigationController pushViewController:homVC animated:YES];
+}
+
 
 - (IBAction)accountRegisterBtn:(id)sender {
     
