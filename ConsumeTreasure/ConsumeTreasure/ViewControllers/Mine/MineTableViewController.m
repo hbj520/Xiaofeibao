@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    navBarHairlineImageView.hidden = YES;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,11 +33,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
+}
+- (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
+    
+        if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0) {
+                return(UIImageView*)view;
+            }
+        for(UIView*subview in view.subviews) {
+                UIImageView*imageView = [self findHairlineImageViewUnder:subview];
+                if(imageView) {
+                        return imageView;
+                }
+    }
+       return nil;
 }
 
 /*
