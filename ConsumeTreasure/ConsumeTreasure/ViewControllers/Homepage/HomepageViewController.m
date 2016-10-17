@@ -8,6 +8,12 @@
 
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
+//百度
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+
 #import "HomepageViewController.h"
 
 #import "HomePageFirstTableViewCell.h"
@@ -19,8 +25,13 @@
 
 #import "TRLiveNetManager.h"
 
-@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
+    
+    BMKMapView* mapView;
+    BMKGeoCodeSearch* _geocodesearch;//反编码
+    BMKLocationService* _locService;//定位
+    
     int _oldY;
 }
 
@@ -28,11 +39,7 @@
 
 @implementation HomepageViewController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-   self.tabBarController.tabBar.hidden = NO;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,11 +50,80 @@
     }];
     
     [self addNavBar];
-    
-    
+    [self startMap];
     [self creatUI];
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+    
+    [mapView viewWillAppear];
+    mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    
+    //  _locService.delegate = self;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [mapView viewWillDisappear];
+    mapView.delegate = nil; // 不用时，置nil
+    
+    //  _locService.delegate = nil;
+}
+
+#pragma mark-mapMethod
+
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+    
+    BMKCoordinateRegion region;
+    
+    region.center.latitude  = userLocation.location.coordinate.latitude;
+    region.center.longitude = userLocation.location.coordinate.longitude;
+    region.span.latitudeDelta = 0;
+    region.span.longitudeDelta = 0;
+    NSLog(@"当前的坐标是:%f,%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation: userLocation.location completionHandler:^(NSArray *array, NSError *error) {
+        if (array.count > 0) {
+            CLPlacemark *placemark = [array objectAtIndex:0];
+            if (placemark != nil) {
+                NSString *city = placemark.locality;
+                
+                NSLog(@"当前城市名称------%@",city);
+                BMKOfflineMap * _offlineMap = [[BMKOfflineMap alloc] init];
+                _offlineMap.delegate = self;//可以不要
+                NSArray* records = [_offlineMap searchCity:city];
+                BMKOLSearchRecord* oneRecord = [records objectAtIndex:0];
+                //城市编码如:北京为131
+                NSInteger cityId = oneRecord.cityID;
+                
+                NSLog(@"当前城市编号-------->%zd",cityId);
+                //找到了当前位置城市后就关闭服务
+                [_locService stopUserLocationService];
+                
+            }
+        }
+    }];
+}
+
+
+
 #pragma mark-PrivateMethod
+
+- (void)startMap{
+    _locService = [[BMKLocationService alloc]init];//定位功能的初始化
+    _locService.delegate = self;//设置代理位self
+    //启动LocationService
+    [_locService startUserLocationService];//启动定位服务
+    
+    _geocodesearch = [[BMKGeoCodeSearch alloc] init];
+    //编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
+    _geocodesearch.delegate = self;//设置代理为self
+}
+
 - (void)creatUI{
     
     self.tableView.delegate = self;
