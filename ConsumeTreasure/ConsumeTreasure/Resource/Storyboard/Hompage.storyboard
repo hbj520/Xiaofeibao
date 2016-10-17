@@ -9,7 +9,7 @@
         <!--Navigation Controller-->
         <scene sceneID="eSy-Wj-mnt">
             <objects>
-                <navigationController navigationBarHidden="YES" id="KQt-7w-eQk" sceneMemberID="viewController">
+                <navigationController id="KQt-7w-eQk" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZnS-ar-iBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -41,11 +41,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UN-Ap-M5X">
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PJ-n5-V5v">
-                                        <frame key="frameInset" minX="8" minY="10" width="60" height="45"/>
+                                        <frame key="frameInset" minX="8" minY="10" width="117" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="合肥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Caq-xu-sZE">
-                                                <frame key="frameInset" minX="26" minY="19" width="34" height="21"/>
+                                                <frame key="frameInset" minX="26" minY="19" width="91" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,9 +100,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="528"/>
+            <point key="canvasLocation" x="253.59999999999999" y="527.58620689655174"/>
         </scene>
-        <!--ScanerVC-->
+        <!--扫一扫-->
         <scene sceneID="2t5-Fw-iAu">
             <objects>
                 <viewController id="HtT-XV-v4f" customClass="ScanerVC" sceneMemberID="viewController">
@@ -110,7 +110,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     </navigationBar>
-                    <navigationItem key="navigationItem" id="dwi-vA-cyd"/>
+                    <navigationItem key="navigationItem" title="扫一扫" id="nsz-9u-G7n">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="PhF-h6-uKn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGB-NU-7MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,5 +123,6 @@
     </scenes>
     <resources>
         <image name="location" width="35" height="46"/>
+        <image name="whiteback" width="10" height="17"/>
     </resources>
 </document>
