@@ -50,12 +50,41 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Nli-3I-wWG" kind="relationship" relationship="rootViewController" id="zDh-Mu-tAj"/>
+                        <segue destination="ljk-sg-vjd" kind="relationship" relationship="rootViewController" id="gP1-QD-V1O"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNk-eq-xZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-83" y="535"/>
+        </scene>
+        <!--Mine Table View Controller-->
+        <scene sceneID="c3B-JS-nas">
+            <objects>
+                <tableViewController id="ljk-sg-vjd" customClass="MineTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ihc-S6-d5D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z95-ne-gGU">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z95-ne-gGU" id="sdI-7S-4X8">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ljk-sg-vjd" id="mpP-43-Xpt"/>
+                            <outlet property="delegate" destination="ljk-sg-vjd" id="L2r-MD-uE6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="aMF-eu-cHB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VvE-S0-GFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="539"/>
         </scene>
         <!--Mine View Controller-->
         <scene sceneID="c69-8u-NsS">
@@ -74,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TA-Ib-yno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="543"/>
+            <point key="canvasLocation" x="1385" y="540"/>
         </scene>
     </scenes>
 </document>

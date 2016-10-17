@@ -13,6 +13,7 @@
 		AB608C231D9CB7AF00194FC2 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C221D9CB7AF00194FC2 /* Config.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
+		AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
@@ -125,6 +126,8 @@
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
 		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
+		AB6FBA551DB4A00100C682F8 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
+		AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -451,6 +454,8 @@
 				D170F2B01DAFB6A500272E57 /* MineViewController.m */,
 				AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */,
 				AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */,
+				AB6FBA551DB4A00100C682F8 /* MineTableViewController.h */,
+				AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -973,6 +978,7 @@
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
+				AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */,
 				AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
