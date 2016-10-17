@@ -598,6 +598,7 @@
                         <outlet property="loginView" destination="c2d-no-AJN" id="h3i-f4-ybV"/>
                         <outlet property="registerArrow" destination="6u7-WV-5he" id="ULg-zq-o9L"/>
                         <outlet property="registerView" destination="qRZ-bD-Lkm" id="hXd-CP-2FB"/>
+                        <outlet property="topLayoutConstraint" destination="PKQ-ih-34W" id="gPj-ST-cd6"/>
                         <segue destination="aoB-3T-lMX" kind="push" identifier="forgetPasswordSegue" id="g7S-Np-qUQ"/>
                     </connections>
                 </viewController>

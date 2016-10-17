@@ -14,6 +14,8 @@
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
 		AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */; };
+		AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */; };
+		AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
@@ -69,7 +71,6 @@
 		D12164AF1DB47521006B06FC /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164AE1DB47521006B06FC /* libsqlite3.0.tbd */; };
 		D12164B11DB47528006B06FC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164B01DB47528006B06FC /* CoreTelephony.framework */; };
 		D12164B31DB47539006B06FC /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164B21DB47539006B06FC /* libstdc++.6.0.9.tbd */; };
-		D12164B81DB476EB006B06FC /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D12164B71DB476EB006B06FC /* mapapi.bundle */; };
 		D12164BA1DB48046006B06FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164B91DB48046006B06FC /* MapKit.framework */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
@@ -128,6 +129,9 @@
 		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
 		AB6FBA551DB4A00100C682F8 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
 		AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
+		AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		AB6FBA601DB4B05100C682F8 /* NoticeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeHelper.h; sourceTree = "<group>"; };
+		AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeHelper.m; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -218,7 +222,6 @@
 		D12164AE1DB47521006B06FC /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D12164B01DB47528006B06FC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D12164B21DB47539006B06FC /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		D12164B71DB476EB006B06FC /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = ../../BaiduMap_IOSSDK_v3/BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		D12164B91DB48046006B06FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 		AB608C201D9CB7A900194FC2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AB6FBA601DB4B05100C682F8 /* NoticeHelper.h */,
+				AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */,
 				AB8D45391DADC89400694E6C /* Tools.h */,
 				AB8D453A1DADC89400694E6C /* Tools.m */,
 				AB608C211D9CB7AF00194FC2 /* Config.h */,
@@ -552,7 +557,7 @@
 		ABF4E26D1D9B5E57006AD23C = {
 			isa = PBXGroup;
 			children = (
-				D12164B71DB476EB006B06FC /* mapapi.bundle */,
+				AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */,
 				ABF4E2781D9B5E58006AD23C /* ConsumeTreasure */,
 				ABF4E2921D9B5E58006AD23C /* ConsumeTreasureTests */,
 				ABF4E29D1D9B5E58006AD23C /* ConsumeTreasureUITests */,
@@ -879,7 +884,7 @@
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
-				D12164B81DB476EB006B06FC /* mapapi.bundle in Resources */,
+				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 			);
@@ -993,6 +998,7 @@
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
 				D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */,
+				AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */,
 				D10EE3DD1DB0B28F001C1992 /* ASIInputStream.m in Sources */,
 				D10EE3DC1DB0B28F001C1992 /* ASIHTTPRequest.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
