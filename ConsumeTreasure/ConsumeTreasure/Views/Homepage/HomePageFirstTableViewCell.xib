@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="170"/>
+                <frame key="frameInset" width="375" height="169"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAt-Lf-8gn">
@@ -244,8 +244,10 @@
             <connections>
                 <outlet property="accountView" destination="3qG-6p-UWW" id="RNS-GU-SpH"/>
                 <outlet property="incomeView" destination="lf1-IU-Ljr" id="02b-v4-RTm"/>
+                <outlet property="partnerBtn" destination="00V-Wa-MW5" id="MLP-GA-Lho"/>
                 <outlet property="recordView" destination="dNq-sh-1RC" id="Wmc-sw-mlB"/>
                 <outlet property="scanView" destination="h0h-KW-liw" id="61f-tu-pJc"/>
+                <outlet property="storeBtn" destination="6lf-3F-hl5" id="EHW-X4-XQp"/>
             </connections>
             <point key="canvasLocation" x="-48.5" y="-164"/>
         </tableViewCell>

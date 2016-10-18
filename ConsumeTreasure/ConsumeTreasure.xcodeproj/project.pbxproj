@@ -72,6 +72,14 @@
 		D12164B11DB47528006B06FC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164B01DB47528006B06FC /* CoreTelephony.framework */; };
 		D12164B31DB47539006B06FC /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164B21DB47539006B06FC /* libstdc++.6.0.9.tbd */; };
 		D12164BA1DB48046006B06FC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164B91DB48046006B06FC /* MapKit.framework */; };
+		D12165181DB4F2B4006B06FC /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165101DB4F2B4006B06FC /* UIView+Frame.m */; };
+		D12165191DB4F2B4006B06FC /* YZDisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165121DB4F2B4006B06FC /* YZDisplayTitleLabel.m */; };
+		D121651A1DB4F2B4006B06FC /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165141DB4F2B4006B06FC /* YZDisplayViewController.m */; };
+		D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165171DB4F2B4006B06FC /* YZFlowLayout.m */; };
+		D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165231DB4FF1A006B06FC /* PartnerTableViewCell.m */; };
+		D12165261DB4FF1A006B06FC /* PartnerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165241DB4FF1A006B06FC /* PartnerTableViewCell.xib */; };
+		D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165851DB5B4D2006B06FC /* ChildViewController.m */; };
+		D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165871DB5B4D2006B06FC /* YZJRViewController.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -223,6 +231,22 @@
 		D12164B01DB47528006B06FC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D12164B21DB47539006B06FC /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D12164B91DB48046006B06FC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D121650F1DB4F2B4006B06FC /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		D12165101DB4F2B4006B06FC /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		D12165111DB4F2B4006B06FC /* YZDisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayTitleLabel.h; sourceTree = "<group>"; };
+		D12165121DB4F2B4006B06FC /* YZDisplayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayTitleLabel.m; sourceTree = "<group>"; };
+		D12165131DB4F2B4006B06FC /* YZDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewController.h; sourceTree = "<group>"; };
+		D12165141DB4F2B4006B06FC /* YZDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayViewController.m; sourceTree = "<group>"; };
+		D12165151DB4F2B4006B06FC /* YZDisplayViewControllerConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewControllerConst.h; sourceTree = "<group>"; };
+		D12165161DB4F2B4006B06FC /* YZFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFlowLayout.h; sourceTree = "<group>"; };
+		D12165171DB4F2B4006B06FC /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
+		D12165221DB4FF1A006B06FC /* PartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerTableViewCell.h; sourceTree = "<group>"; };
+		D12165231DB4FF1A006B06FC /* PartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerTableViewCell.m; sourceTree = "<group>"; };
+		D12165241DB4FF1A006B06FC /* PartnerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartnerTableViewCell.xib; sourceTree = "<group>"; };
+		D12165841DB5B4D2006B06FC /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
+		D12165851DB5B4D2006B06FC /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
+		D12165861DB5B4D2006B06FC /* YZJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZJRViewController.h; sourceTree = "<group>"; };
+		D12165871DB5B4D2006B06FC /* YZJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZJRViewController.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -446,6 +470,10 @@
 				ABCB95431D9B8E56008927C7 /* HomepageViewController.m */,
 				D1F275A51DAD0B6E005B9849 /* ScanerVC.h */,
 				D1F275A61DAD0B6E005B9849 /* ScanerVC.m */,
+				D12165841DB5B4D2006B06FC /* ChildViewController.h */,
+				D12165851DB5B4D2006B06FC /* ChildViewController.m */,
+				D12165861DB5B4D2006B06FC /* YZJRViewController.h */,
+				D12165871DB5B4D2006B06FC /* YZJRViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -500,6 +528,9 @@
 				D170F26B1DAF2F6F00272E57 /* HotStoreTableViewCell.h */,
 				D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */,
 				D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */,
+				D12165221DB4FF1A006B06FC /* PartnerTableViewCell.h */,
+				D12165231DB4FF1A006B06FC /* PartnerTableViewCell.m */,
+				D12165241DB4FF1A006B06FC /* PartnerTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -629,6 +660,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D121650E1DB4F2B4006B06FC /* YZDisplayViewController */,
 				D12164951DB47419006B06FC /* FrameWork */,
 				D10EE3AF1DB0B28F001C1992 /* ASIHTTPRequest */,
 			);
@@ -728,6 +760,22 @@
 				D12164971DB4744D006B06FC /* BaiduMapAPI_Cloud.framework */,
 			);
 			name = FrameWork;
+			sourceTree = "<group>";
+		};
+		D121650E1DB4F2B4006B06FC /* YZDisplayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D121650F1DB4F2B4006B06FC /* UIView+Frame.h */,
+				D12165101DB4F2B4006B06FC /* UIView+Frame.m */,
+				D12165111DB4F2B4006B06FC /* YZDisplayTitleLabel.h */,
+				D12165121DB4F2B4006B06FC /* YZDisplayTitleLabel.m */,
+				D12165131DB4F2B4006B06FC /* YZDisplayViewController.h */,
+				D12165141DB4F2B4006B06FC /* YZDisplayViewController.m */,
+				D12165151DB4F2B4006B06FC /* YZDisplayViewControllerConst.h */,
+				D12165161DB4F2B4006B06FC /* YZFlowLayout.h */,
+				D12165171DB4F2B4006B06FC /* YZFlowLayout.m */,
+			);
+			path = YZDisplayViewController;
 			sourceTree = "<group>";
 		};
 		D1F2759E1DAD0A5A005B9849 /* ScanerView */ = {
@@ -887,6 +935,7 @@
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
+				D12165261DB4FF1A006B06FC /* PartnerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -963,10 +1012,12 @@
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
+				D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */,
 				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
+				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
@@ -977,13 +1028,17 @@
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
+				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
+				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
+				D12165181DB4F2B4006B06FC /* UIView+Frame.m in Sources */,
 				AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */,
+				D12165191DB4F2B4006B06FC /* YZDisplayTitleLabel.m in Sources */,
 				AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
@@ -1001,6 +1056,7 @@
 				AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */,
 				D10EE3DD1DB0B28F001C1992 /* ASIInputStream.m in Sources */,
 				D10EE3DC1DB0B28F001C1992 /* ASIHTTPRequest.m in Sources */,
+				D121651A1DB4F2B4006B06FC /* YZDisplayViewController.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 				ABCB95531D9BF719008927C7 /* HotShopModel.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,

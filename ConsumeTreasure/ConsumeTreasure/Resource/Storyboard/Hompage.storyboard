@@ -96,7 +96,7 @@
                         <outlet property="locationView" destination="9PJ-n5-V5v" id="BRp-Ow-HOb"/>
                         <outlet property="tableView" destination="Fni-7Z-Nhg" id="RcO-SR-Fsg"/>
                         <segue destination="HtT-XV-v4f" kind="push" identifier="scanSegue" id="L5V-yg-jny"/>
-                        <segue destination="GYm-mM-jXy" kind="push" id="ZYc-o9-m8B"/>
+                        <segue destination="GYm-mM-jXy" kind="push" identifier="partnerSegue" id="ZYc-o9-m8B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1033" y="-26"/>
         </scene>
-        <!--View Controller-->
+        <!--合伙人超市-->
         <scene sceneID="uYt-Ax-aI6">
             <objects>
-                <viewController id="GYm-mM-jXy" sceneMemberID="viewController">
+                <viewController id="GYm-mM-jXy" customClass="YZJRViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ldg-h9-EX1"/>
                         <viewControllerLayoutGuide type="bottom" id="sGa-WN-s5s"/>
@@ -134,7 +134,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Rlc-Tw-0sO"/>
+                    <navigationItem key="navigationItem" title="合伙人超市" id="Ffr-mK-Wol">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="ej5-cC-SP7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7P-Q0-DPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

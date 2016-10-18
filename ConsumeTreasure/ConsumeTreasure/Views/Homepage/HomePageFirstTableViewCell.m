@@ -75,10 +75,16 @@
 
 - (IBAction)paetnerClick:(id)sender {
     NSLog(@"合伙人超市");
+    if (self.partnerBlock) {
+        self.partnerBlock();
+    }
 }
 
 - (IBAction)storeDoor:(id)sender {
     NSLog(@"商户入口");
+    if (self.storeBlock) {
+        self.storeBlock();
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

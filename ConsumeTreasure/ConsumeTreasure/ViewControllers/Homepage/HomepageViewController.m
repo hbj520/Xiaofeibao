@@ -197,9 +197,15 @@
         }
         firstCell.selectionStyle = 0;
         
-        //扫一扫
-        firstCell.scanBlock =^{
-          
+        firstCell.partnerBlock = ^{//合伙人超市
+            [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
+        };
+        firstCell.storeBlock = ^{//商户入口
+            
+        };
+        
+        
+        firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };
         
