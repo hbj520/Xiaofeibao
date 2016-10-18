@@ -203,8 +203,6 @@
         firstCell.storeBlock = ^{//商户入口
              [self performSegueWithIdentifier:@"unionSegue" sender:nil];
         };
-        
-        
         firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };
