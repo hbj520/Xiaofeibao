@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,11 +98,102 @@
                         <outlet property="tableView" destination="Fni-7Z-Nhg" id="RcO-SR-Fsg"/>
                         <segue destination="HtT-XV-v4f" kind="push" identifier="scanSegue" id="L5V-yg-jny"/>
                         <segue destination="GYm-mM-jXy" kind="push" identifier="partnerSegue" id="ZYc-o9-m8B"/>
+                        <segue destination="Nt6-3N-WsH" kind="push" identifier="unionSegue" id="Aaa-Pr-j5B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253.59999999999999" y="527.58620689655174"/>
+        </scene>
+        <!--成为联盟商户-->
+        <scene sceneID="bOK-7q-PyV">
+            <objects>
+                <viewController id="Nt6-3N-WsH" customClass="TobeUnionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QF0-Ak-0kZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="DWK-eW-ofG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d5v-bN-fQW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qs-V8-gVG">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家必读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgM-XZ-C38">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="gUA-y6-A2L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1x-Fr-9GY">
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.92156862750000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="KSX-I5-9HG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mEE-N4-poR">
+                                        <frame key="frameInset" minX="8" minY="57" width="355" height="277"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">这样就用代码实现了label的创建，其中initWithFrame设置了label的位置还有大小，其中CGRectMake可以通过另外声明CGRect rect =CGRectMake(50,50,200,400)再将变量rect放在方法initWithFrame后实现CGRectMake的四个数值分别代表rect的位置坐标x值，坐标y值，宽度width，高度height。第二句[self.view addSubview:label]就是在当前的视图self.view中通过调用addSubview方法加入子视图，就像贴纸一样贴上去，会因为添加的顺序不同而发生后一个添加的子视图遮盖前一个子视图的现象，这个在后面讲为label添加背景图时还会提到。
+或者用下面的代码来改变label的大小了label的位置还有大小，其中CGRectMake可以通过另外声明CGRect rect =CGRectMake(50,50,200,400)再将变量rect放在方法initWithFrame后实现CGRectMake的四个数值分别代表rect的位置坐标x值，坐标y值，宽度width，高度height。第二句[self.view addSubview:label]就是在当前的视图self.view中通过调用addSubview方法加入子视图，就像贴纸一样贴上去，会因为添加的顺序不同而发生后一个添加的子视图遮盖前一个子视图的现象，这个在后面讲为label添加背景图时还会提到。
+或者用下面的代码来改变label的大小了label的位置还有大小，其中CGRectMake可以通过另外声明CGRect rect =CGRectMake(50,50,200,400)再将变量rect放在方法initWithFrame后实现CGRectMake的四个数值分别代表rect的位置坐标x值，坐标y值，宽度width，高度height。第二句[self.view addSubview:label]就是在当前的视图self.view中通过调用addSubview方法加入子视图，就像贴纸一样贴上去，会因为添加的顺序不同而发生后一个添加的子视图遮盖前一个子视图的现象，这个在后面讲为label添加背景图时还会提到。
+或者用下面的代码来改变label的大小</mutableString>
+                                        <color key="textColor" red="0.47450980392156861" green="0.49019607843137253" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="g1x-Fr-9GY" secondAttribute="trailing" constant="12" id="9dN-5V-3nq"/>
+                                    <constraint firstItem="g1x-Fr-9GY" firstAttribute="top" secondItem="LgM-XZ-C38" secondAttribute="bottom" constant="13" id="FiW-29-uob"/>
+                                    <constraint firstItem="LgM-XZ-C38" firstAttribute="leading" secondItem="0qs-V8-gVG" secondAttribute="leading" constant="20" id="GU7-Tt-Csi"/>
+                                    <constraint firstItem="LgM-XZ-C38" firstAttribute="top" secondItem="0qs-V8-gVG" secondAttribute="top" constant="20" id="xrT-kR-JUg"/>
+                                    <constraint firstItem="g1x-Fr-9GY" firstAttribute="leading" secondItem="0qs-V8-gVG" secondAttribute="leading" constant="15" id="yIn-3g-Pwp"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-Pt-HBe">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="dnW-6d-D3V"/>
+                                </constraints>
+                                <state key="normal" image="shouye_sq"/>
+                                <connections>
+                                    <action selector="goApply:" destination="Nt6-3N-WsH" eventType="touchUpInside" id="eMY-4S-IjS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0qs-V8-gVG" firstAttribute="leading" secondItem="d5v-bN-fQW" secondAttribute="leading" id="1Qo-fE-maH"/>
+                            <constraint firstItem="0qs-V8-gVG" firstAttribute="height" secondItem="d5v-bN-fQW" secondAttribute="height" multiplier="0.5" id="IWs-Ho-YEK"/>
+                            <constraint firstItem="3lc-Pt-HBe" firstAttribute="width" secondItem="d5v-bN-fQW" secondAttribute="width" multiplier="0.75" id="JI9-LA-Vsc"/>
+                            <constraint firstItem="0qs-V8-gVG" firstAttribute="top" secondItem="QF0-Ak-0kZ" secondAttribute="bottom" id="bMn-Ly-ysL"/>
+                            <constraint firstItem="3lc-Pt-HBe" firstAttribute="centerX" secondItem="d5v-bN-fQW" secondAttribute="centerX" id="csV-PG-L6V"/>
+                            <constraint firstItem="3lc-Pt-HBe" firstAttribute="top" secondItem="0qs-V8-gVG" secondAttribute="bottom" constant="34" id="mn3-CL-QEb"/>
+                            <constraint firstAttribute="trailing" secondItem="0qs-V8-gVG" secondAttribute="trailing" id="tbr-8K-N5R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="成为联盟商户" id="jh8-eb-b9C">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="X2B-z7-Bei">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="Nt6-3N-WsH" id="b4d-C3-DSW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="whiteView" destination="0qs-V8-gVG" id="d1D-t2-Mw6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3L-hQ-GCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.5999999999999" y="-934.18290854572717"/>
         </scene>
         <!--扫一扫-->
         <scene sceneID="2t5-Fw-iAu">
@@ -119,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGB-NU-7MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="-26"/>
+            <point key="canvasLocation" x="1223" y="-1594"/>
         </scene>
         <!--合伙人超市-->
         <scene sceneID="uYt-Ax-aI6">
@@ -150,6 +242,7 @@
     </scenes>
     <resources>
         <image name="location" width="35" height="46"/>
+        <image name="shouye_sq" width="532" height="91"/>
         <image name="whiteback" width="10" height="17"/>
     </resources>
 </document>

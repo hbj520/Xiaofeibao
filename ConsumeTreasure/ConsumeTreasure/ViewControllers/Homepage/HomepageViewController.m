@@ -138,16 +138,16 @@
     float alphafix = scrollView.contentOffset.y;
     if (scrollView.contentOffset.y >0 && scrollView.contentOffset.y > _oldY) {
         for (UIView *subView in cell.scanView.subviews) {
-            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+            subView.alpha = ((60 -alphafix))/60;
         }
         for (UIView *subView in cell.accountView.subviews) {
-            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+            subView.alpha = ((60 -alphafix))/60;
         }
         for (UIView *subView in cell.recordView.subviews) {
-            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+            subView.alpha = ((60 -alphafix))/60;
         }
         for (UIView *subView in cell.incomeView.subviews) {
-            subView.alpha = ((104.5 -alphafix)*2/5)/104.5;
+            subView.alpha = ((60 -alphafix))/60;
         }
 
     }else if (scrollView.contentOffset.y < _oldY){
@@ -201,7 +201,7 @@
             [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
         };
         firstCell.storeBlock = ^{//商户入口
-            
+             [self performSegueWithIdentifier:@"unionSegue" sender:nil];
         };
         
         

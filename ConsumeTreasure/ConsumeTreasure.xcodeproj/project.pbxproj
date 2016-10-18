@@ -80,6 +80,7 @@
 		D12165261DB4FF1A006B06FC /* PartnerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165241DB4FF1A006B06FC /* PartnerTableViewCell.xib */; };
 		D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165851DB5B4D2006B06FC /* ChildViewController.m */; };
 		D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165871DB5B4D2006B06FC /* YZJRViewController.m */; };
+		D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165941DB607D3006B06FC /* TobeUnionViewController.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -247,6 +248,8 @@
 		D12165851DB5B4D2006B06FC /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
 		D12165861DB5B4D2006B06FC /* YZJRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZJRViewController.h; sourceTree = "<group>"; };
 		D12165871DB5B4D2006B06FC /* YZJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZJRViewController.m; sourceTree = "<group>"; };
+		D12165931DB607D3006B06FC /* TobeUnionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TobeUnionViewController.h; sourceTree = "<group>"; };
+		D12165941DB607D3006B06FC /* TobeUnionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TobeUnionViewController.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				D12165851DB5B4D2006B06FC /* ChildViewController.m */,
 				D12165861DB5B4D2006B06FC /* YZJRViewController.h */,
 				D12165871DB5B4D2006B06FC /* YZJRViewController.m */,
+				D12165931DB607D3006B06FC /* TobeUnionViewController.h */,
+				D12165941DB607D3006B06FC /* TobeUnionViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1033,6 +1038,7 @@
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
+				D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
