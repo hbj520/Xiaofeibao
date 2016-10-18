@@ -10,4 +10,6 @@
 
 @interface YZJRViewController : YZDisplayViewController
 
+@property (nonatomic,retain) NSMutableArray *titleArr;
+
 @end

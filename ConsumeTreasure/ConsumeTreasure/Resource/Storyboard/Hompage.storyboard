@@ -137,6 +137,9 @@
                     <navigationItem key="navigationItem" title="合伙人超市" id="Ffr-mK-Wol">
                         <barButtonItem key="leftBarButtonItem" image="whiteback" id="ej5-cC-SP7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="GYm-mM-jXy" id="3kM-52-kl0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>

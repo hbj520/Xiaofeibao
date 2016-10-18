@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChildViewController : UITableViewController
+@interface ChildViewController : UIViewController
 
 @end
