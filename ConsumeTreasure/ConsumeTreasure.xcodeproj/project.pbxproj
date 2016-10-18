@@ -16,6 +16,7 @@
 		AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */; };
 		AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */; };
 		AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */; };
+		AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
@@ -140,6 +141,8 @@
 		AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
 		AB6FBA601DB4B05100C682F8 /* NoticeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeHelper.h; sourceTree = "<group>"; };
 		AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeHelper.m; sourceTree = "<group>"; };
+		AB6FBA631DB5B82500C682F8 /* TongbaoMoneyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TongbaoMoneyView.h; sourceTree = "<group>"; };
+		AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TongbaoMoneyView.m; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -538,6 +541,8 @@
 		ABCB953B1D9B8A05008927C7 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				AB6FBA631DB5B82500C682F8 /* TongbaoMoneyView.h */,
+				AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1024,6 +1029,7 @@
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
+				AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
