@@ -18,6 +18,11 @@
     [super viewDidLoad];
    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     navBarHairlineImageView.hidden = YES;
+    NSString *navTitle = @"我";
+    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+    self.navigationItem.title = navTitle;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,10 +38,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+       return  1;
+    }else if (section == 1){
+        return 3;
+    }else if (section == 2){
+        return 4;
+    }
     return 1;
 }
 - (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
@@ -52,7 +64,6 @@
     }
        return nil;
 }
-
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
