@@ -107,7 +107,8 @@
         _selColor = [UIColor colorWithRed:_endR green:_endG blue:_endB alpha:1];
     }
     
-    if (_selColor == nil) _selColor = [UIColor redColor];
+    //选中标题颜色
+    if (_selColor == nil) _selColor = [UIColor orangeColor];
     
     return _selColor;
 }
@@ -374,16 +375,14 @@
 {
     [super viewWillAppear:animated];
     
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
+    
+    
         // 注册cell
         [self.contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
         self.contentScrollView.backgroundColor = self.view.backgroundColor;
         // 初始化
         [self setUp];
-        
-        
+
         // 没有子控制器，不需要设置标题
         if (self.childViewControllers.count == 0) return;
         
@@ -391,11 +390,7 @@
         [self setUpTitleWidth];
         
         [self setUpAllTitle];
-        
-    });
-    
-    
-    
+
 }
 
 
