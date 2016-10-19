@@ -209,7 +209,9 @@
         firstCell.incomeBlock = ^{//收益权
             
         };
-        
+        firstCell.accountBlock =^{
+            [self performSegueWithIdentifier:@"myAccountSegue" sender:nil];
+        };
         firstCell.recordBlock = ^{//浏览记录
             [self performSegueWithIdentifier:@"historySegue" sender:nil];
         };

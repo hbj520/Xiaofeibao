@@ -90,6 +90,9 @@
 		D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165EB1DB70EAE006B06FC /* IncomeContentTableViewCell.xib */; };
 		D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165EF1DB71CCE006B06FC /* SYQMoneyTableViewCell.m */; };
 		D12165F21DB71CCE006B06FC /* SYQMoneyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165F01DB71CCE006B06FC /* SYQMoneyTableViewCell.xib */; };
+		D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165F41DB79D28006B06FC /* MyAccountViewController.m */; };
+		D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165F71DB79F37006B06FC /* MyAccountTableViewCell.m */; };
+		D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165F81DB79F37006B06FC /* MyAccountTableViewCell.xib */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -274,6 +277,11 @@
 		D12165EE1DB71CCE006B06FC /* SYQMoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYQMoneyTableViewCell.h; sourceTree = "<group>"; };
 		D12165EF1DB71CCE006B06FC /* SYQMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYQMoneyTableViewCell.m; sourceTree = "<group>"; };
 		D12165F01DB71CCE006B06FC /* SYQMoneyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYQMoneyTableViewCell.xib; sourceTree = "<group>"; };
+		D12165F31DB79D28006B06FC /* MyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
+		D12165F41DB79D28006B06FC /* MyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountViewController.m; sourceTree = "<group>"; };
+		D12165F61DB79F37006B06FC /* MyAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountTableViewCell.h; sourceTree = "<group>"; };
+		D12165F71DB79F37006B06FC /* MyAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountTableViewCell.m; sourceTree = "<group>"; };
+		D12165F81DB79F37006B06FC /* MyAccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAccountTableViewCell.xib; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -507,6 +515,8 @@
 				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
 				D12165A71DB65998006B06FC /* IncomeViewController.h */,
 				D12165A81DB65998006B06FC /* IncomeViewController.m */,
+				D12165F31DB79D28006B06FC /* MyAccountViewController.h */,
+				D12165F41DB79D28006B06FC /* MyAccountViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -573,6 +583,9 @@
 				D12165EE1DB71CCE006B06FC /* SYQMoneyTableViewCell.h */,
 				D12165EF1DB71CCE006B06FC /* SYQMoneyTableViewCell.m */,
 				D12165F01DB71CCE006B06FC /* SYQMoneyTableViewCell.xib */,
+				D12165F61DB79F37006B06FC /* MyAccountTableViewCell.h */,
+				D12165F71DB79F37006B06FC /* MyAccountTableViewCell.m */,
+				D12165F81DB79F37006B06FC /* MyAccountTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -978,6 +991,7 @@
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
@@ -1069,6 +1083,7 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
+				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
@@ -1077,6 +1092,7 @@
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
+				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,

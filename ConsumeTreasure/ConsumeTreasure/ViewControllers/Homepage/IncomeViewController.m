@@ -70,6 +70,7 @@
     }
 }
 
+//重置价格
 - (void)resetCount{
     SYQMoneyTableViewCell *countCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
     countCell.numLabel.text = [NSString stringWithFormat:@"%ld",(long)a];
@@ -137,13 +138,11 @@
         if (contentCell == nil) {
             contentCell = [[[NSBundle mainBundle] loadNibNamed:@"IncomeContentTableViewCell" owner:self options:nil] lastObject];
         }
+
         contentCell.selectionStyle = 0;
         return contentCell;
     }
 }
-
-
-
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *head1 = [[UIView alloc]init];

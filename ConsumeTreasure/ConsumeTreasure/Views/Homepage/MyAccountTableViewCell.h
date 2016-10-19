@@ -1,5 +1,5 @@
 //
-//  IncomeContentTableViewCell.h
+//  MyAccountTableViewCell.h
 //  ConsumeTreasure
 //
 //  Created by youyoumacmini3 on 16/10/19.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IncomeContentTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *contentLab;
+@interface MyAccountTableViewCell : UITableViewCell
 
 @end

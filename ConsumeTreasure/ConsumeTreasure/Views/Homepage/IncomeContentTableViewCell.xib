@@ -32,7 +32,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdfsd是梵蒂冈官方的说法鬼地方个但是广东佛山给答复给答复广东佛山广东佛山广东佛山广东佛山鬼地方个大概单方事故豆腐干豆腐给答复给第三方给第三方广东佛山给第三方广东佛山给第三方给第三方g" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-KH-RhC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdfsd是梵蒂冈官方的说法鬼地方个但是广东佛山给答复给答复广东佛山广东佛山广东佛山广东佛山鬼地方个大概单方事故g" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-KH-RhC">
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.47450980390000003" green="0.49019607840000001" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -50,6 +50,9 @@
                     <constraint firstItem="UZk-qT-2Yx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gjl-ON-mdY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLab" destination="sNv-KH-RhC" id="Ybn-dA-LTF"/>
+            </connections>
             <point key="canvasLocation" x="31.5" y="70"/>
         </tableViewCell>
     </objects>

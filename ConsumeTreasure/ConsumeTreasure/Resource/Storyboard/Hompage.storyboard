@@ -101,6 +101,7 @@
                         <segue destination="Nt6-3N-WsH" kind="push" identifier="unionSegue" id="Aaa-Pr-j5B"/>
                         <segue destination="9xC-fh-fAo" kind="push" identifier="historySegue" id="5ph-lN-PLh"/>
                         <segue destination="5qC-Y0-JYL" kind="push" identifier="incomeSegue" id="5TI-mS-HXa"/>
+                        <segue destination="UIO-fY-buI" kind="push" identifier="myAccountSegue" id="b1P-dR-HyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,6 +187,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3w-SB-2Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2249" y="-278"/>
+        </scene>
+        <!--我的账户-->
+        <scene sceneID="bA7-no-zqn">
+            <objects>
+                <viewController id="UIO-fY-buI" customClass="MyAccountViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g41-Py-8IG"/>
+                        <viewControllerLayoutGuide type="bottom" id="YFc-jf-PO6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0GP-fj-yQP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="reB-9m-qDp">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="reB-9m-qDp" secondAttribute="trailing" id="SyM-WW-feS"/>
+                            <constraint firstItem="YFc-jf-PO6" firstAttribute="top" secondItem="reB-9m-qDp" secondAttribute="bottom" id="fbp-Xf-CQy"/>
+                            <constraint firstItem="reB-9m-qDp" firstAttribute="leading" secondItem="0GP-fj-yQP" secondAttribute="leading" id="j1d-sb-yFY"/>
+                            <constraint firstItem="reB-9m-qDp" firstAttribute="top" secondItem="g41-Py-8IG" secondAttribute="bottom" id="y6Z-dx-udj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的账户" id="mjQ-6r-jNw">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="nd1-xN-McL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="5qC-Y0-JYL" id="JMY-jy-F26"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="reB-9m-qDp" id="z0I-oo-CrY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHb-eg-rFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2248.8000000000002" y="420.53973013493254"/>
         </scene>
         <!--成为联盟商户-->
         <scene sceneID="bOK-7q-PyV">
