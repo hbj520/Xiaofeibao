@@ -66,7 +66,7 @@
 {
 
     
-    _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64-H(90))];
+    _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 164, WIDTH, HEIGHT-64-H(90))];
     _mainScrollView.contentSize=CGSizeMake(WIDTH*2, HEIGHT-64-H(50));
 //    _mainScrollView.backgroundColor=[UIColor redColor];
     _mainScrollView.showsHorizontalScrollIndicator=NO;

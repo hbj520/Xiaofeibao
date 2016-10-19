@@ -1,5 +1,5 @@
 //
-//  StoreHistoryViewController.h
+//  LookRecordHeadView.h
 //  ConsumeTreasure
 //
 //  Created by youyoumacmini3 on 16/10/18.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoreHistoryViewController : UIViewController
+@interface LookRecordHeadView : UITableViewHeaderFooterView
 
 @end

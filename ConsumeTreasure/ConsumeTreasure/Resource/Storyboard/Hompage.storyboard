@@ -100,16 +100,17 @@
                         <segue destination="GYm-mM-jXy" kind="push" identifier="partnerSegue" id="ZYc-o9-m8B"/>
                         <segue destination="Nt6-3N-WsH" kind="push" identifier="unionSegue" id="Aaa-Pr-j5B"/>
                         <segue destination="9xC-fh-fAo" kind="push" identifier="historySegue" id="5ph-lN-PLh"/>
+                        <segue destination="5qC-Y0-JYL" kind="push" identifier="incomeSegue" id="5TI-mS-HXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253.59999999999999" y="527.58620689655174"/>
         </scene>
-        <!--Store History View Controller-->
+        <!--浏览记录-->
         <scene sceneID="Uo2-4w-X8D">
             <objects>
-                <viewController id="9xC-fh-fAo" customClass="StoreHistoryViewController" sceneMemberID="viewController">
+                <viewController id="9xC-fh-fAo" customClass="LookRecordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eR3-LS-dHl"/>
                         <viewControllerLayoutGuide type="bottom" id="bNp-wy-ehX"/>
@@ -130,14 +131,61 @@
                             <constraint firstItem="Vip-rn-7zt" firstAttribute="top" secondItem="eR3-LS-dHl" secondAttribute="bottom" id="ume-dq-OzW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fJZ-6w-cl0"/>
+                    <navigationItem key="navigationItem" title="浏览记录" id="fFZ-a9-Ohu">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="sO6-L6-ayR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="9xC-fh-fAo" id="zit-KT-vry"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="Vip-rn-7zt" id="hut-15-vLA"/>
+                        <outlet property="tableView" destination="Vip-rn-7zt" id="ekC-I6-JhY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uch-cW-QMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2157.5999999999999" y="-965.6671664167917"/>
+        </scene>
+        <!--收益权-->
+        <scene sceneID="xts-Pp-5ma">
+            <objects>
+                <viewController id="5qC-Y0-JYL" customClass="IncomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qeC-OX-eXb"/>
+                        <viewControllerLayoutGuide type="bottom" id="mgq-Te-KqE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yus-MZ-shs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FOJ-7z-KAf">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mgq-Te-KqE" firstAttribute="top" secondItem="FOJ-7z-KAf" secondAttribute="bottom" id="81b-jq-9FS"/>
+                            <constraint firstAttribute="trailing" secondItem="FOJ-7z-KAf" secondAttribute="trailing" id="JHy-cL-DeL"/>
+                            <constraint firstItem="FOJ-7z-KAf" firstAttribute="top" secondItem="qeC-OX-eXb" secondAttribute="bottom" id="Kjl-48-D0h"/>
+                            <constraint firstItem="FOJ-7z-KAf" firstAttribute="leading" secondItem="yus-MZ-shs" secondAttribute="leading" id="xNS-Fy-Btu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="收益权" id="rec-QW-VqZ">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="nHk-fW-y16">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="5qC-Y0-JYL" id="rRl-xn-UNW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="FOJ-7z-KAf" id="xEo-ES-nL6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3w-SB-2Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2249" y="-278"/>
         </scene>
         <!--成为联盟商户-->
         <scene sceneID="bOK-7q-PyV">
