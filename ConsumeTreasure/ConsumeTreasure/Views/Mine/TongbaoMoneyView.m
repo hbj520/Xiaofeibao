@@ -29,7 +29,7 @@
     self.moneyLabel.frame = CGRectMake(0, 0, moneySize.width + 20, 15);
     self.moneyLabel.text = newMoney;
     self.enableSeeButton.frame = CGRectMake(moneySize.width + 25, 0, 20, 15);
-    self.frame = CGRectMake(12, 22, moneySize.width + 90, 15);
+    self.frame = CGRectMake(22, 22, moneySize.width + 90, 15);
     [self addSubview:self.moneyLabel];
     [self addSubview:self.enableSeeButton];
     
