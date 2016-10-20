@@ -11,7 +11,7 @@
         <scene sceneID="eSy-Wj-mnt">
             <objects>
                 <navigationController id="KQt-7w-eQk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ZnS-ar-iBt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ZnS-ar-iBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,6 +223,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="reB-9m-qDp" id="z0I-oo-CrY"/>
                     </connections>
@@ -353,10 +354,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="680.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-8W-gvW">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="oGN-uB-3vK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Rxr-8W-gvW" firstAttribute="top" secondItem="HuE-ja-09i" secondAttribute="bottom" constant="21" id="3Zt-PP-E9p"/>
                                     <constraint firstItem="HuE-ja-09i" firstAttribute="top" secondItem="YK1-GU-wiM" secondAttribute="top" constant="37" id="6Gq-dV-dGy"/>
+                                    <constraint firstItem="Rxr-8W-gvW" firstAttribute="centerX" secondItem="YK1-GU-wiM" secondAttribute="centerX" id="NO2-wO-EY5"/>
                                     <constraint firstAttribute="height" constant="162" id="NzQ-0W-R0Z"/>
                                     <constraint firstItem="HuE-ja-09i" firstAttribute="centerX" secondItem="YK1-GU-wiM" secondAttribute="centerX" id="UL5-Qe-bbv"/>
                                     <constraint firstItem="MBM-LA-RwH" firstAttribute="leading" secondItem="YK1-GU-wiM" secondAttribute="leading" constant="11" id="eKE-ac-bdd"/>
