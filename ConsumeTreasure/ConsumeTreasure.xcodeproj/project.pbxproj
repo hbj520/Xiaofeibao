@@ -10,6 +10,8 @@
 		5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
+		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
+		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
 		AB608C231D9CB7AF00194FC2 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C221D9CB7AF00194FC2 /* Config.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
@@ -131,6 +133,9 @@
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
 		AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
+		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
+		AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LianmenRightCollectionViewCell.m; sourceTree = "<group>"; };
+		AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LianmenRightCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB608C211D9CB7AF00194FC2 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		AB608C221D9CB7AF00194FC2 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		AB608C2F1D9D0B1200194FC2 /* NSObject+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNetworking.h"; sourceTree = "<group>"; };
@@ -555,6 +560,9 @@
 		ABCB953C1D9B8A05008927C7 /* Union */ = {
 			isa = PBXGroup;
 			children = (
+				AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */,
+				AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */,
+				AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -933,6 +941,7 @@
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
+				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
@@ -1057,6 +1066,7 @@
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
+				AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
 				D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
