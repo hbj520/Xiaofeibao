@@ -11,9 +11,11 @@
         <scene sceneID="eSy-Wj-mnt">
             <objects>
                 <navigationController id="KQt-7w-eQk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZnS-ar-iBt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ZnS-ar-iBt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zIZ-kc-Qpl">
                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -92,6 +94,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cDu-ke-Ygk" customClass="HomepgeNavBar"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="locationCityName" destination="Caq-xu-sZE" id="D1Y-oU-eUi"/>
                         <outlet property="locationView" destination="9PJ-n5-V5v" id="BRp-Ow-HOb"/>
@@ -102,6 +105,7 @@
                         <segue destination="9xC-fh-fAo" kind="push" identifier="historySegue" id="5ph-lN-PLh"/>
                         <segue destination="5qC-Y0-JYL" kind="push" identifier="incomeSegue" id="5TI-mS-HXa"/>
                         <segue destination="UIO-fY-buI" kind="push" identifier="myAccountSegue" id="b1P-dR-HyU"/>
+                        <segue destination="vfO-H1-toc" kind="push" id="lTs-Nf-DQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -200,7 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="reB-9m-qDp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="reB-9m-qDp">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -216,7 +220,7 @@
                         <barButtonItem key="leftBarButtonItem" image="whiteback" id="nd1-xN-McL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="5qC-Y0-JYL" id="JMY-jy-F26"/>
+                                <action selector="back:" destination="UIO-fY-buI" id="aG0-sx-lrf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -318,7 +322,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3L-hQ-GCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="1547"/>
+            <point key="canvasLocation" x="1478" y="1415"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="u82-kx-ffL">
+            <objects>
+                <viewController id="vfO-H1-toc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zwZ-VN-rzY"/>
+                        <viewControllerLayoutGuide type="bottom" id="IBR-bl-jdt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0PA-Nc-7yV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YK1-GU-wiM">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBM-LA-RwH">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="AkN-ra-Kvq"/>
+                                            <constraint firstAttribute="height" constant="17" id="boX-5r-qUj"/>
+                                        </constraints>
+                                        <state key="normal" image="whiteback"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是商户" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuE-ja-09i">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="VHj-Uu-pOI"/>
+                                            <constraint firstAttribute="width" constant="100" id="Yu9-jw-3U5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="HuE-ja-09i" firstAttribute="top" secondItem="YK1-GU-wiM" secondAttribute="top" constant="37" id="6Gq-dV-dGy"/>
+                                    <constraint firstAttribute="height" constant="162" id="NzQ-0W-R0Z"/>
+                                    <constraint firstItem="HuE-ja-09i" firstAttribute="centerX" secondItem="YK1-GU-wiM" secondAttribute="centerX" id="UL5-Qe-bbv"/>
+                                    <constraint firstItem="MBM-LA-RwH" firstAttribute="leading" secondItem="YK1-GU-wiM" secondAttribute="leading" constant="11" id="eKE-ac-bdd"/>
+                                    <constraint firstItem="MBM-LA-RwH" firstAttribute="top" secondItem="YK1-GU-wiM" secondAttribute="top" constant="37" id="yuE-yD-Hlo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YK1-GU-wiM" firstAttribute="top" secondItem="0PA-Nc-7yV" secondAttribute="top" id="CuD-3l-ydo"/>
+                            <constraint firstAttribute="trailing" secondItem="YK1-GU-wiM" secondAttribute="trailing" id="cML-3Y-KEf"/>
+                            <constraint firstItem="YK1-GU-wiM" firstAttribute="leading" secondItem="0PA-Nc-7yV" secondAttribute="leading" id="w9d-jg-rEh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xxb-F2-WaC"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzG-wP-Arj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2194" y="1415"/>
         </scene>
         <!--扫一扫-->
         <scene sceneID="2t5-Fw-iAu">
@@ -337,6 +396,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGB-NU-7MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2158" y="-1707"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TCX-z2-mY4">
+            <objects>
+                <viewController id="a1K-Rk-NIG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ThB-cN-tkv"/>
+                        <viewControllerLayoutGuide type="bottom" id="DoR-WD-mf6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d17-fi-wdL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEm-TP-lqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2920" y="-1696"/>
         </scene>
         <!--合伙人超市-->
         <scene sceneID="uYt-Ax-aI6">

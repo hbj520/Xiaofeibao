@@ -8,7 +8,15 @@
 
 #import "MyAccountViewController.h"
 
+#import "MyAccountTableViewCell.h"
+#import "LevelTableViewCell.h"
+#import "ExplainTableViewCell.h"
+#import "SpreadTableViewCell.h"
+
 @interface MyAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSArray *levelArr;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -19,7 +27,7 @@
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     self.navigationController.navigationBarHidden = NO;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
+   // self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
     
 }
@@ -30,16 +38,36 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
+    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    navBarHairlineImageView.hidden = YES;
+   //self.navigationController.navigationBar.translucent = YES;
+}
+
+
+- (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
+    
+        if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0) {
+                return(UIImageView*)view;
+            }
+        for(UIView*subview in view.subviews) {
+                UIImageView*imageView = [self findHairlineImageViewUnder:subview];
+                if(imageView) {
+                        return imageView;
+                }
+    }
+       return nil;
 }
 
 - (void)creatUI{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.estimatedRowHeight = 60;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.backgroundColor = RGBACOLOR(231, 232, 233, 1);
-    [self.tableView registerNib:[UINib nibWithNibName:@"IncomeContentTableViewCell" bundle:nil] forCellReuseIdentifier:@"contentCellId"];
+    self.tableView.sectionHeaderHeight = 0;
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"MyAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"accountCelleId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LevelTableViewCell" bundle:nil] forCellReuseIdentifier:@"levelCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ExplainTableViewCell" bundle:nil] forCellReuseIdentifier:@"explainCellId"];
+      [self.tableView registerNib:[UINib nibWithNibName:@"SpreadTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuiguangCelleId"];
+    levelArr = @[@"一级",@"二级",@"三级",@"四至十级",@"我的上级"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -49,15 +77,83 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 3;
-    }else if (section == 1){
         return 1;
+    }else if (section == 1){
+        return 6;
     }else{
-        return 2;
+        return 1;
     }
 }
 
 
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        MyAccountTableViewCell *accountCell = [tableView dequeueReusableCellWithIdentifier:@"accountCelleId"];
+        if (accountCell == nil) {
+            accountCell = [[[NSBundle mainBundle] loadNibNamed:@"MyAccountTableViewCell" owner:self options:nil] lastObject];
+        }
+        accountCell.selectionStyle = 0;
+        return accountCell;
+    }else if (indexPath.section == 2){
+        ExplainTableViewCell *explainCell = [tableView dequeueReusableCellWithIdentifier:@"explainCellId"];
+        if (explainCell == nil) {
+            explainCell = [[[NSBundle mainBundle] loadNibNamed:@"ExplainTableViewCell" owner:self options:nil] lastObject];
+        }
+        explainCell.selectionStyle = 0;
+        return explainCell;
+        
+        
+    }else{
+        
+        if (indexPath.row == 0) {
+            SpreadTableViewCell *spreadCell = [tableView dequeueReusableCellWithIdentifier:@"tuiguangCelleId"];
+            if (spreadCell == nil) {
+                spreadCell = [[[NSBundle mainBundle] loadNibNamed:@"SpreadTableViewCell" owner:self options:nil] lastObject];
+            }
+            spreadCell.selectionStyle = 0;
+            return spreadCell;
+        }else{
+            LevelTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"levelCellId"];
+            if (levelCell == nil) {
+                levelCell = [[[NSBundle mainBundle] loadNibNamed:@"LevelTableViewCell" owner:self options:nil] lastObject];
+            }
+            
+            NSString *str = [levelArr objectAtIndex:indexPath.row-1];
+            levelCell.levelLab.text = str;
+            
+            
+            levelCell.selectionStyle = 0;
+            return levelCell;
+        }
+        
+       
+        
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 162;
+    }else if (indexPath.section == 2){
+        return 68;
+    }else{
+        return 45;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0;
+    }else if (section == 1){
+        return 10;
+    }else{
+        return 100;
+    }
+}
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
