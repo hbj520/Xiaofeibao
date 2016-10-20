@@ -10,6 +10,7 @@
 
 #import "ChildViewController.h"
 
+#import <Masonry.h>
 @implementation YZJRViewController
 
 
@@ -19,7 +20,7 @@
     self.navigationController.navigationBarHidden = NO;
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
+    //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
 }
 
@@ -47,6 +48,17 @@
      self.isShowTitleGradient = YES;
      // 标题填充模式
      self.titleColorGradientStyle = YZTitleColorGradientStyleFill;
+    [self addLayout];
+    
+}
+#pragma mark -PrivateMethod
+- (void)addLayout{
+   [self.contentScrollView.superview mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.top.equalTo(@0);
+       make.left.equalTo(@0);
+       make.width.equalTo(@(ScreenWidth));
+       make.height.equalTo(@(ScreenHeight-64));
+   }];
     
 }
 - (IBAction)back:(id)sender {

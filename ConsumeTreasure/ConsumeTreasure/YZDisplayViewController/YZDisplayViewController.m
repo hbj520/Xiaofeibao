@@ -28,7 +28,6 @@
 @property (nonatomic, weak) UIScrollView *titleScrollView;
 
 /** 内容滚动视图 */
-@property (nonatomic, weak) UICollectionView *contentScrollView;
 
 @property (nonatomic, strong) NSMutableArray *titleLabels;
 

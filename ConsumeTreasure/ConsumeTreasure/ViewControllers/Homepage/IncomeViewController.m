@@ -29,7 +29,7 @@
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     self.navigationController.navigationBarHidden = NO;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
+    //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
     
 }
