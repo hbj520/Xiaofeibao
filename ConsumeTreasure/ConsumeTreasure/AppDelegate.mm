@@ -28,15 +28,6 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-
-    
-    
-    
-    
-    
-    
-    
-    
      [self changeToMain];
     return YES;
    
