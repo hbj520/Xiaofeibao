@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BeforeChartTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *conlabel;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
 
 @end

@@ -21,7 +21,7 @@
                             <constraint firstAttribute="height" constant="15" id="ZQC-2p-nIa"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow(1)" translatesAutoresizingMaskIntoConstraints="NO" id="wV8-dg-deK">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wV8-dg-deK">
                         <constraints>
                             <constraint firstAttribute="width" constant="7" id="QoB-U1-ATF"/>
                             <constraint firstAttribute="height" constant="12" id="w9E-b8-oVX"/>
@@ -46,11 +46,15 @@
                     <constraint firstItem="dWv-5a-TBC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pR1-qa-bmT"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="arrowImage" destination="wV8-dg-deK" id="27R-Dv-Jk8"/>
+                <outlet property="conlabel" destination="dWv-5a-TBC" id="qPa-ep-NsR"/>
+            </connections>
             <point key="canvasLocation" x="10" y="-149"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow(1)" width="14" height="25"/>
+        <image name="arrow" width="14" height="25"/>
         <image name="syq_720" width="192" height="30"/>
     </resources>
 </document>

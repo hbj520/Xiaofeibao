@@ -199,10 +199,19 @@
             [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
         };
         firstCell.storeBlock = ^{//商户入口
-             [self performSegueWithIdentifier:@"unionSegue" sender:nil];
+            [self performSegueWithIdentifier:@"unionSegue" sender:nil];
         };
         firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
+        };
+        firstCell.incomeBlock = ^{//收益权
+            
+        };
+        firstCell.accountBlock =^{
+            [self performSegueWithIdentifier:@"myAccountSegue" sender:nil];
+        };
+        firstCell.recordBlock = ^{//浏览记录
+            [self performSegueWithIdentifier:@"historySegue" sender:nil];
         };
         
         
@@ -304,7 +313,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            NSLog(@"了解详情");
+            
+             [self performSegueWithIdentifier:@"incomeSegue" sender:nil];
         }
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);

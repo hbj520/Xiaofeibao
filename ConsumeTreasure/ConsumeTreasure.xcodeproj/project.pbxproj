@@ -84,6 +84,23 @@
 		D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165851DB5B4D2006B06FC /* ChildViewController.m */; };
 		D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165871DB5B4D2006B06FC /* YZJRViewController.m */; };
 		D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165941DB607D3006B06FC /* TobeUnionViewController.m */; };
+		D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165A01DB64E93006B06FC /* LookRecordHeadView.m */; };
+		D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165A21DB64EA9006B06FC /* LookRecordHeadView.xib */; };
+		D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165A51DB6518F006B06FC /* LookRecordViewController.m */; };
+		D12165A91DB65998006B06FC /* IncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165A81DB65998006B06FC /* IncomeViewController.m */; };
+		D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165EA1DB70EAE006B06FC /* IncomeContentTableViewCell.m */; };
+		D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165EB1DB70EAE006B06FC /* IncomeContentTableViewCell.xib */; };
+		D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165EF1DB71CCE006B06FC /* SYQMoneyTableViewCell.m */; };
+		D12165F21DB71CCE006B06FC /* SYQMoneyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165F01DB71CCE006B06FC /* SYQMoneyTableViewCell.xib */; };
+		D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165F41DB79D28006B06FC /* MyAccountViewController.m */; };
+		D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165F71DB79F37006B06FC /* MyAccountTableViewCell.m */; };
+		D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165F81DB79F37006B06FC /* MyAccountTableViewCell.xib */; };
+		D12165FE1DB85AF4006B06FC /* ExplainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12165FC1DB85AF4006B06FC /* ExplainTableViewCell.m */; };
+		D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12165FD1DB85AF4006B06FC /* ExplainTableViewCell.xib */; };
+		D12166031DB85B1C006B06FC /* SpreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166011DB85B1C006B06FC /* SpreadTableViewCell.m */; };
+		D12166041DB85B1C006B06FC /* SpreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166021DB85B1C006B06FC /* SpreadTableViewCell.xib */; };
+		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
+		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -258,6 +275,33 @@
 		D12165871DB5B4D2006B06FC /* YZJRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZJRViewController.m; sourceTree = "<group>"; };
 		D12165931DB607D3006B06FC /* TobeUnionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TobeUnionViewController.h; sourceTree = "<group>"; };
 		D12165941DB607D3006B06FC /* TobeUnionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TobeUnionViewController.m; sourceTree = "<group>"; };
+		D121659F1DB64E93006B06FC /* LookRecordHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookRecordHeadView.h; sourceTree = "<group>"; };
+		D12165A01DB64E93006B06FC /* LookRecordHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookRecordHeadView.m; sourceTree = "<group>"; };
+		D12165A21DB64EA9006B06FC /* LookRecordHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LookRecordHeadView.xib; sourceTree = "<group>"; };
+		D12165A41DB6518F006B06FC /* LookRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookRecordViewController.h; sourceTree = "<group>"; };
+		D12165A51DB6518F006B06FC /* LookRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookRecordViewController.m; sourceTree = "<group>"; };
+		D12165A71DB65998006B06FC /* IncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeViewController.h; sourceTree = "<group>"; };
+		D12165A81DB65998006B06FC /* IncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeViewController.m; sourceTree = "<group>"; };
+		D12165E91DB70EAE006B06FC /* IncomeContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeContentTableViewCell.h; sourceTree = "<group>"; };
+		D12165EA1DB70EAE006B06FC /* IncomeContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeContentTableViewCell.m; sourceTree = "<group>"; };
+		D12165EB1DB70EAE006B06FC /* IncomeContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeContentTableViewCell.xib; sourceTree = "<group>"; };
+		D12165EE1DB71CCE006B06FC /* SYQMoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYQMoneyTableViewCell.h; sourceTree = "<group>"; };
+		D12165EF1DB71CCE006B06FC /* SYQMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYQMoneyTableViewCell.m; sourceTree = "<group>"; };
+		D12165F01DB71CCE006B06FC /* SYQMoneyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYQMoneyTableViewCell.xib; sourceTree = "<group>"; };
+		D12165F31DB79D28006B06FC /* MyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
+		D12165F41DB79D28006B06FC /* MyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountViewController.m; sourceTree = "<group>"; };
+		D12165F61DB79F37006B06FC /* MyAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountTableViewCell.h; sourceTree = "<group>"; };
+		D12165F71DB79F37006B06FC /* MyAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountTableViewCell.m; sourceTree = "<group>"; };
+		D12165F81DB79F37006B06FC /* MyAccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAccountTableViewCell.xib; sourceTree = "<group>"; };
+		D12165FB1DB85AF4006B06FC /* ExplainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplainTableViewCell.h; sourceTree = "<group>"; };
+		D12165FC1DB85AF4006B06FC /* ExplainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplainTableViewCell.m; sourceTree = "<group>"; };
+		D12165FD1DB85AF4006B06FC /* ExplainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExplainTableViewCell.xib; sourceTree = "<group>"; };
+		D12166001DB85B1B006B06FC /* SpreadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpreadTableViewCell.h; sourceTree = "<group>"; };
+		D12166011DB85B1C006B06FC /* SpreadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpreadTableViewCell.m; sourceTree = "<group>"; };
+		D12166021DB85B1C006B06FC /* SpreadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpreadTableViewCell.xib; sourceTree = "<group>"; };
+		D12166051DB85B28006B06FC /* LevelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelTableViewCell.h; sourceTree = "<group>"; };
+		D12166061DB85B28006B06FC /* LevelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelTableViewCell.m; sourceTree = "<group>"; };
+		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -487,6 +531,12 @@
 				D12165871DB5B4D2006B06FC /* YZJRViewController.m */,
 				D12165931DB607D3006B06FC /* TobeUnionViewController.h */,
 				D12165941DB607D3006B06FC /* TobeUnionViewController.m */,
+				D12165A41DB6518F006B06FC /* LookRecordViewController.h */,
+				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
+				D12165A71DB65998006B06FC /* IncomeViewController.h */,
+				D12165A81DB65998006B06FC /* IncomeViewController.m */,
+				D12165F31DB79D28006B06FC /* MyAccountViewController.h */,
+				D12165F41DB79D28006B06FC /* MyAccountViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -544,6 +594,27 @@
 				D12165221DB4FF1A006B06FC /* PartnerTableViewCell.h */,
 				D12165231DB4FF1A006B06FC /* PartnerTableViewCell.m */,
 				D12165241DB4FF1A006B06FC /* PartnerTableViewCell.xib */,
+				D121659F1DB64E93006B06FC /* LookRecordHeadView.h */,
+				D12165A01DB64E93006B06FC /* LookRecordHeadView.m */,
+				D12165A21DB64EA9006B06FC /* LookRecordHeadView.xib */,
+				D12165E91DB70EAE006B06FC /* IncomeContentTableViewCell.h */,
+				D12165EA1DB70EAE006B06FC /* IncomeContentTableViewCell.m */,
+				D12165EB1DB70EAE006B06FC /* IncomeContentTableViewCell.xib */,
+				D12165EE1DB71CCE006B06FC /* SYQMoneyTableViewCell.h */,
+				D12165EF1DB71CCE006B06FC /* SYQMoneyTableViewCell.m */,
+				D12165F01DB71CCE006B06FC /* SYQMoneyTableViewCell.xib */,
+				D12165F61DB79F37006B06FC /* MyAccountTableViewCell.h */,
+				D12165F71DB79F37006B06FC /* MyAccountTableViewCell.m */,
+				D12165F81DB79F37006B06FC /* MyAccountTableViewCell.xib */,
+				D12166001DB85B1B006B06FC /* SpreadTableViewCell.h */,
+				D12166011DB85B1C006B06FC /* SpreadTableViewCell.m */,
+				D12166021DB85B1C006B06FC /* SpreadTableViewCell.xib */,
+				D12166051DB85B28006B06FC /* LevelTableViewCell.h */,
+				D12166061DB85B28006B06FC /* LevelTableViewCell.m */,
+				D12166071DB85B28006B06FC /* LevelTableViewCell.xib */,
+				D12165FB1DB85AF4006B06FC /* ExplainTableViewCell.h */,
+				D12165FC1DB85AF4006B06FC /* ExplainTableViewCell.m */,
+				D12165FD1DB85AF4006B06FC /* ExplainTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -939,17 +1010,24 @@
 			files = (
 				ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */,
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
+				D12165F21DB71CCE006B06FC /* SYQMoneyTableViewCell.xib in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
+				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
+				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
+				D12166041DB85B1C006B06FC /* SpreadTableViewCell.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
+				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
+				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
@@ -1029,6 +1107,8 @@
 			files = (
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
+				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
+				D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */,
 				D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
 				D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */,
@@ -1039,6 +1119,7 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
+				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
@@ -1047,20 +1128,26 @@
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
+				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
+				D12165A91DB65998006B06FC /* IncomeViewController.m in Sources */,
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
+				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
+				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
 				D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
+				D12166031DB85B1C006B06FC /* SpreadTableViewCell.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
 				D12165181DB4F2B4006B06FC /* UIView+Frame.m in Sources */,
 				AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */,
 				D12165191DB4F2B4006B06FC /* YZDisplayTitleLabel.m in Sources */,
 				AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */,
+				D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
@@ -1082,6 +1169,7 @@
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 				ABCB95531D9BF719008927C7 /* HotShopModel.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,
+				D12165FE1DB85AF4006B06FC /* ExplainTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

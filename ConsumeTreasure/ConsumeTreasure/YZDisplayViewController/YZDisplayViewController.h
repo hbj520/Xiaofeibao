@@ -29,6 +29,7 @@ typedef enum : NSUInteger {
 @interface YZDisplayViewController : UIViewController
 
 
+@property (nonatomic, weak) UICollectionView *contentScrollView;
 
 
 /**************************************内容************************************/
