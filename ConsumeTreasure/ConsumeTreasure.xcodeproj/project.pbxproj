@@ -19,6 +19,12 @@
 		AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */; };
 		AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */; };
 		AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */; };
+		AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B3701DB8B2BC00A7F96A /* UnionListViewController.m */; };
+		AB79B37A1DB8BB0400A7F96A /* CLMainSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B3731DB8BB0400A7F96A /* CLMainSelectedView.m */; };
+		AB79B37B1DB8BB0400A7F96A /* CLMainSelectedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB79B3741DB8BB0400A7F96A /* CLMainSelectedView.xib */; };
+		AB79B37C1DB8BB0400A7F96A /* CLMenuSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B3761DB8BB0400A7F96A /* CLMenuSubView.m */; };
+		AB79B37D1DB8BB0400A7F96A /* CLMenuSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB79B3771DB8BB0400A7F96A /* CLMenuSubView.xib */; };
+		AB79B37E1DB8BB0400A7F96A /* CLSortView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB79B3781DB8BB0400A7F96A /* CLSortView.bundle */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
@@ -166,6 +172,15 @@
 		AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeHelper.m; sourceTree = "<group>"; };
 		AB6FBA631DB5B82500C682F8 /* TongbaoMoneyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TongbaoMoneyView.h; sourceTree = "<group>"; };
 		AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TongbaoMoneyView.m; sourceTree = "<group>"; };
+		AB79B36F1DB8B2BC00A7F96A /* UnionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionListViewController.h; sourceTree = "<group>"; };
+		AB79B3701DB8B2BC00A7F96A /* UnionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionListViewController.m; sourceTree = "<group>"; };
+		AB79B3721DB8BB0400A7F96A /* CLMainSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMainSelectedView.h; sourceTree = "<group>"; };
+		AB79B3731DB8BB0400A7F96A /* CLMainSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMainSelectedView.m; sourceTree = "<group>"; };
+		AB79B3741DB8BB0400A7F96A /* CLMainSelectedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMainSelectedView.xib; sourceTree = "<group>"; };
+		AB79B3751DB8BB0400A7F96A /* CLMenuSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLMenuSubVIew.h; sourceTree = "<group>"; };
+		AB79B3761DB8BB0400A7F96A /* CLMenuSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLMenuSubView.m; sourceTree = "<group>"; };
+		AB79B3771DB8BB0400A7F96A /* CLMenuSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLMenuSubView.xib; sourceTree = "<group>"; };
+		AB79B3781DB8BB0400A7F96A /* CLSortView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLSortView.bundle; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -452,6 +467,21 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		AB79B3791DB8BB0400A7F96A /* CLSortView */ = {
+			isa = PBXGroup;
+			children = (
+				AB79B3721DB8BB0400A7F96A /* CLMainSelectedView.h */,
+				AB79B3731DB8BB0400A7F96A /* CLMainSelectedView.m */,
+				AB79B3741DB8BB0400A7F96A /* CLMainSelectedView.xib */,
+				AB79B3751DB8BB0400A7F96A /* CLMenuSubVIew.h */,
+				AB79B3761DB8BB0400A7F96A /* CLMenuSubView.m */,
+				AB79B3771DB8BB0400A7F96A /* CLMenuSubView.xib */,
+				AB79B3781DB8BB0400A7F96A /* CLSortView.bundle */,
+			);
+			name = CLSortView;
+			path = "/Users/chenzhihui/Downloads/CLSortView-master/CLSortSelectView/CLSortSelectView/../../CLSortView";
+			sourceTree = "<absolute>";
+		};
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +591,8 @@
 			children = (
 				ABCB954E1D9BEED5008927C7 /* UnionViewController.h */,
 				ABCB954F1D9BEED5008927C7 /* UnionViewController.m */,
+				AB79B36F1DB8B2BC00A7F96A /* UnionListViewController.h */,
+				AB79B3701DB8B2BC00A7F96A /* UnionListViewController.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -749,6 +781,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AB79B3791DB8BB0400A7F96A /* CLSortView */,
 				D121650E1DB4F2B4006B06FC /* YZDisplayViewController */,
 				D12164951DB47419006B06FC /* FrameWork */,
 				D10EE3AF1DB0B28F001C1992 /* ASIHTTPRequest */,
@@ -1015,10 +1048,12 @@
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
+				AB79B37E1DB8BB0400A7F96A /* CLSortView.bundle in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
+				AB79B37D1DB8BB0400A7F96A /* CLMenuSubView.xib in Resources */,
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D12166041DB85B1C006B06FC /* SpreadTableViewCell.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
@@ -1027,6 +1062,7 @@
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				AB79B37B1DB8BB0400A7F96A /* CLMainSelectedView.xib in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
@@ -1119,6 +1155,7 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
+				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
@@ -1127,9 +1164,11 @@
 				AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
+				AB79B37A1DB8BB0400A7F96A /* CLMainSelectedView.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
+				AB79B37C1DB8BB0400A7F96A /* CLMenuSubView.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D12165A91DB65998006B06FC /* IncomeViewController.m in Sources */,

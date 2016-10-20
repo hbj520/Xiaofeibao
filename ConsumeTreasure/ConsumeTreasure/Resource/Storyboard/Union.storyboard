@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,7 +11,7 @@
         <scene sceneID="uxD-9Z-8Nx">
             <objects>
                 <navigationController id="K2y-cz-6VO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="2KR-U4-Lsp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2KR-U4-Lsp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,17 +74,17 @@
                     <connections>
                         <outlet property="leftTableView" destination="2yn-bl-99x" id="XI5-Mc-jXu"/>
                         <outlet property="rightCollectionView" destination="2y5-Lg-dTz" id="WnN-m7-QAR"/>
-                        <segue destination="cFw-ed-hsH" kind="push" id="iUb-b4-fNR"/>
+                        <segue destination="cFw-ed-hsH" kind="push" identifier="UnionListSegue" id="iUb-b4-fNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfq-ar-oeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="820" y="580.65967016491754"/>
         </scene>
-        <!--View Controller-->
+        <!--Union List View Controller-->
         <scene sceneID="eyR-x1-nzQ">
             <objects>
-                <viewController id="cFw-ed-hsH" sceneMemberID="viewController">
+                <viewController id="cFw-ed-hsH" customClass="UnionListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MQc-2r-mKm"/>
                         <viewControllerLayoutGuide type="bottom" id="OzF-ee-Cce"/>
@@ -93,11 +94,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7u9-Nb-uko"/>
+                    <navigationItem key="navigationItem" id="7u9-Nb-uko">
+                        <leftBarButtonItems>
+                            <barButtonItem image="backWhite" id="H0K-mA-VZe">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                            <barButtonItem title="美食" id="obk-Je-BgO">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CB8-j8-NCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1534" y="581"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backWhite" width="11" height="19"/>
+    </resources>
 </document>

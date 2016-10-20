@@ -89,7 +89,7 @@ UICollectionViewDataSource>
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    [self performSegueWithIdentifier:@"UnionListSegue" sender:nil];
 }
 /*
 #pragma mark - Navigation
