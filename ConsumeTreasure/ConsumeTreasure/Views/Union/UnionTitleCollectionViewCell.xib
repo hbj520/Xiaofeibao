@@ -29,6 +29,10 @@
                 </subviews>
             </view>
             <size key="customSize" width="198" height="50"/>
+            <connections>
+                <outlet property="downArrowImageView" destination="JTQ-qB-IJ2" id="Mhb-uH-U5D"/>
+                <outlet property="titleLabel" destination="bux-Wg-MgM" id="hFJ-P8-ZdE"/>
+            </connections>
             <point key="canvasLocation" x="99.5" y="52"/>
         </collectionViewCell>
     </objects>

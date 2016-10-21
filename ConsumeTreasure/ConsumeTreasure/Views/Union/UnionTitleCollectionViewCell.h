@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface UnionTitleCollectionViewCell : UICollectionViewCell
-@property (nonatomic,assign) BOOL isSelected;
+@property (nonatomic,assign) BOOL CellIsSelected;
+- (void)configTitleText:(NSString *)titleText;
 @end
