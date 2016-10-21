@@ -6,7 +6,7 @@
 //  Copyright © 2015 gzhu. All rights reserved.
 //
 
-
+#import <Masonry.h>
 
 #import "UIAlertView+flash.h"
 #import "ScanerVC.h"
@@ -29,6 +29,7 @@
 
 //! 扫码区域动画视图
 @property (copy, nonatomic) ScanerView *scanerView;
+@property (copy, nonatomic) UIView *coverView;
 
 //AVFoundation
 //! AV协调器
@@ -43,8 +44,14 @@
 
 
 
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 #pragma mark---viewDidLoad
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"扫一扫";
@@ -57,8 +64,35 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.view.backgroundColor=[UIColor whiteColor];
-    
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShowOnDelay) name:UIKeyboardWillShowNotification object:nil ];
+    
+    //
+}
+
+#pragma mark -PrivateMethod
+- (void)addLayout{
+[_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+     make.top.equalTo(@0);
+     make.left.equalTo(@0);
+     make.width.equalTo(@(WIDTH));
+     make.height.equalTo(@(HEIGHT-64-H(90)));
+ }];
+ 
+ [_coverView mas_makeConstraints:^(MASConstraintMaker *make) {
+     make.top.equalTo(@(HEIGHT-H(150)));
+     make.left.equalTo(@0);
+     make.width.equalTo(@(WIDTH));
+     make.height.equalTo(@(HEIGHT-64-H(90)));
+     
+ }];
+    
+    [_scanerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@(100));
+        make.left.equalTo(@(20*KRatioW));
+        make.width.equalTo(@(280*KRatioW));
+        make.height.equalTo(@(280*KRatioH));
+        
+    }];
 }
 
 #pragma mark---加载UI
@@ -66,7 +100,7 @@
 {
 
     
-    _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 164, WIDTH, HEIGHT-64-H(90))];
+    _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 100, WIDTH, HEIGHT-64-H(90))];
     _mainScrollView.contentSize=CGSizeMake(WIDTH*2, HEIGHT-64-H(50));
 //    _mainScrollView.backgroundColor=[UIColor redColor];
     _mainScrollView.showsHorizontalScrollIndicator=NO;
@@ -84,9 +118,13 @@
     self.scanerView.scanAreaEdgeLength = [[UIScreen mainScreen] bounds].size.width - 2 * 50;
     [_mainScrollView addSubview:_scanerView];
     
-    UIView*coverView=[[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-H(90), WIDTH, H(90))];
-    coverView.backgroundColor=RGBACOLOR(51, 51, 51, 1);
-    [self.view addSubview:coverView];
+    _coverView=[[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-H(86), WIDTH, H(90))];
+    _coverView.backgroundColor=RGBACOLOR(51, 51, 51, 1);
+    [self.view addSubview:_coverView];
+    
+
+    
+    
     
     _scanBtn=[UIButton buttonWithType:UIButtonTypeCustom];
 //    _scanBtn.backgroundColor=[UIColor cyanColor];
@@ -94,15 +132,15 @@
     _scanBtn.enabled=NO;
     [_scanBtn setImage:[UIImage imageNamed:@"ewm_clk"] forState:0];
     [_scanBtn addTarget:self action:@selector(scanOrder) forControlEvents:UIControlEventTouchUpInside];
-    [coverView addSubview:_scanBtn];
+    [_coverView addSubview:_scanBtn];
     
     
     _keyinBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [_keyinBtn setImage:[UIImage imageNamed:@"fkm_nor"] forState:0];
     _keyinBtn.frame=CGRectMake(W(220), H(15), W(40), H(60));
     [_keyinBtn addTarget:self action:@selector(putOrder) forControlEvents:UIControlEventTouchUpInside];
-    [coverView addSubview:_keyinBtn];
-    
+    [_coverView addSubview:_keyinBtn];
+   // [self addLayout];
 }
 
 #pragma mark---viewDidAppear
@@ -110,6 +148,7 @@
     [super viewDidAppear:animated];
 
     [self.previewLayer removeFromSuperlayer];
+    
 //    [_session removeConnection:<#(AVCaptureConnection *)#>]
 //    if (!self.session){
     
@@ -126,7 +165,7 @@
         
         //调整摄像头取景区域
        self.previewLayer.frame = CGRectMake(0, 64, WIDTH, HEIGHT-64);
-        
+   // self.previewLayer.backgroundColor = [UIColor redColor].CGColor;
         //调整扫描区域
         AVCaptureMetadataOutput *output = self.session.outputs.firstObject;
         //根据实际偏差调整y轴
@@ -164,6 +203,7 @@
     } else {
         //出错处理
         NSLog(@"%@", error);
+        
         NSString *msg = [NSString stringWithFormat:@"请在手机【设置】-【隐私】-【相机】选项中，允许【%@】访问您的相机",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]];
 
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"提醒"
@@ -172,6 +212,7 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles: nil];
         [av show];
+        
         return;
     }
     
@@ -427,6 +468,7 @@
     self.previewLayer.frame = CGRectMake(0, 64, WIDTH, HEIGHT-64);
     //    [self.session startRunning];
     [self viewDidAppear:YES];
+    //[self addLayout];
 }
 
 
@@ -549,6 +591,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     [_mainScrollView endEditing:YES];
+    //self.navigationController.navigationBar.translucent = NO;
+
     //初始化扫码
 //    [self setupAVFoundation];
 }

@@ -103,6 +103,10 @@
 		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
+		D12166131DB8C9A4006B06FC /* CLMainSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660E1DB8C9A4006B06FC /* CLMainSelectedView.m */; };
+		D12166141DB8C9A4006B06FC /* CLMainSelectedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D121660F1DB8C9A4006B06FC /* CLMainSelectedView.xib */; };
+		D12166151DB8C9A4006B06FC /* CLMenuSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166111DB8C9A4006B06FC /* CLMenuSubView.m */; };
+		D12166161DB8C9A4006B06FC /* CLMenuSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166121DB8C9A4006B06FC /* CLMenuSubView.xib */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -308,6 +312,12 @@
 		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
 		D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImUnionStoreViewController.h; sourceTree = "<group>"; };
 		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
+		D121660D1DB8C9A4006B06FC /* CLMainSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLMainSelectedView.h; path = "/Users/youyoumacmini3/Desktop/未命名文件夹 5/CLMainSelectedView.h"; sourceTree = "<absolute>"; };
+		D121660E1DB8C9A4006B06FC /* CLMainSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLMainSelectedView.m; path = "/Users/youyoumacmini3/Desktop/未命名文件夹 5/CLMainSelectedView.m"; sourceTree = "<absolute>"; };
+		D121660F1DB8C9A4006B06FC /* CLMainSelectedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLMainSelectedView.xib; path = "/Users/youyoumacmini3/Desktop/未命名文件夹 5/CLMainSelectedView.xib"; sourceTree = "<absolute>"; };
+		D12166101DB8C9A4006B06FC /* CLMenuSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLMenuSubVIew.h; path = "/Users/youyoumacmini3/Desktop/未命名文件夹 5/CLMenuSubVIew.h"; sourceTree = "<absolute>"; };
+		D12166111DB8C9A4006B06FC /* CLMenuSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLMenuSubView.m; path = "/Users/youyoumacmini3/Desktop/未命名文件夹 5/CLMenuSubView.m"; sourceTree = "<absolute>"; };
+		D12166121DB8C9A4006B06FC /* CLMenuSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CLMenuSubView.xib; path = "/Users/youyoumacmini3/Desktop/未命名文件夹 5/CLMenuSubView.xib"; sourceTree = "<absolute>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -457,6 +467,20 @@
 			);
 			path = Helper;
 			sourceTree = "<group>";
+		};
+		AB79B3791DB8BB0400A7F96A /* CLSortView */ = {
+			isa = PBXGroup;
+			children = (
+				D121660D1DB8C9A4006B06FC /* CLMainSelectedView.h */,
+				D121660E1DB8C9A4006B06FC /* CLMainSelectedView.m */,
+				D121660F1DB8C9A4006B06FC /* CLMainSelectedView.xib */,
+				D12166101DB8C9A4006B06FC /* CLMenuSubVIew.h */,
+				D12166111DB8C9A4006B06FC /* CLMenuSubView.m */,
+				D12166121DB8C9A4006B06FC /* CLMenuSubView.xib */,
+			);
+			name = CLSortView;
+			path = "/Users/chenzhihui/Downloads/CLSortView-master/CLSortSelectView/CLSortSelectView/../../CLSortView";
+			sourceTree = "<absolute>";
 		};
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
@@ -976,7 +1000,7 @@
 				TargetAttributes = {
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = MGR47JT33V;
+						DevelopmentTeam = E7Z7DF2E4X;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -1029,6 +1053,7 @@
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
+				D12166161DB8C9A4006B06FC /* CLMenuSubView.xib in Resources */,
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D12166041DB85B1C006B06FC /* SpreadTableViewCell.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
@@ -1037,6 +1062,7 @@
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				D12166141DB8C9A4006B06FC /* CLMainSelectedView.xib in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
@@ -1140,12 +1166,14 @@
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
+				D12166151DB8C9A4006B06FC /* CLMenuSubView.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
 				D12165A91DB65998006B06FC /* IncomeViewController.m in Sources */,
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
+				D12166131DB8C9A4006B06FC /* CLMainSelectedView.m in Sources */,
 				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
 				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
@@ -1326,7 +1354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = MGR47JT33V;
+				DEVELOPMENT_TEAM = E7Z7DF2E4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1347,7 +1375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = MGR47JT33V;
+				DEVELOPMENT_TEAM = E7Z7DF2E4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
