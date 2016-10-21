@@ -199,7 +199,9 @@
             [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
         };
         firstCell.storeBlock = ^{//商户入口
-            [self performSegueWithIdentifier:@"unionSegue" sender:nil];
+            
+            [self performSegueWithIdentifier:@"beStoreSegue" sender:nil];
+           // [self performSegueWithIdentifier:@"unionSegue" sender:nil];
         };
         firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];

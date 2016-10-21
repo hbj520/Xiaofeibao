@@ -102,6 +102,7 @@
 		D12166041DB85B1C006B06FC /* SpreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166021DB85B1C006B06FC /* SpreadTableViewCell.xib */; };
 		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
+		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
@@ -305,6 +306,8 @@
 		D12166051DB85B28006B06FC /* LevelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelTableViewCell.h; sourceTree = "<group>"; };
 		D12166061DB85B28006B06FC /* LevelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelTableViewCell.m; sourceTree = "<group>"; };
 		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
+		D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImUnionStoreViewController.h; sourceTree = "<group>"; };
+		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -534,6 +537,8 @@
 				D12165871DB5B4D2006B06FC /* YZJRViewController.m */,
 				D12165931DB607D3006B06FC /* TobeUnionViewController.h */,
 				D12165941DB607D3006B06FC /* TobeUnionViewController.m */,
+				D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */,
+				D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */,
 				D12165A41DB6518F006B06FC /* LookRecordViewController.h */,
 				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
 				D12165A71DB65998006B06FC /* IncomeViewController.h */,
@@ -1138,6 +1143,7 @@
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
+				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
 				D12165A91DB65998006B06FC /* IncomeViewController.m in Sources */,
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
 				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
