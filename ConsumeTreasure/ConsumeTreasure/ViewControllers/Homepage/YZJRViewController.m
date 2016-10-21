@@ -48,7 +48,7 @@
      self.isShowTitleGradient = YES;
      // 标题填充模式
      self.titleColorGradientStyle = YZTitleColorGradientStyleFill;
-    [self addLayout];
+    //[self addLayout];
     
 }
 #pragma mark -PrivateMethod
