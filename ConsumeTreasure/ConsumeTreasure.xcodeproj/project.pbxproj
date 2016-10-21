@@ -783,7 +783,6 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				AB79B3791DB8BB0400A7F96A /* CLSortView */,
 				D121650E1DB4F2B4006B06FC /* YZDisplayViewController */,
 				D12164951DB47419006B06FC /* FrameWork */,
 				D10EE3AF1DB0B28F001C1992 /* ASIHTTPRequest */,
