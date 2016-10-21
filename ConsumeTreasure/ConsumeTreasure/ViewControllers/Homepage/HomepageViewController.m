@@ -55,11 +55,15 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+   // self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = NO;
     
     [mapView viewWillAppear];
     mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    
+
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
     
     //  _locService.delegate = self;
 }
