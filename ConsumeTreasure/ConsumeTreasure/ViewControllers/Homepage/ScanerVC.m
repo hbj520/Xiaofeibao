@@ -51,6 +51,7 @@
 
 
 #pragma mark---viewDidLoad
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"扫一扫";
@@ -63,7 +64,6 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.view.backgroundColor=[UIColor whiteColor];
-    
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShowOnDelay) name:UIKeyboardWillShowNotification object:nil ];
     
     //
@@ -71,13 +71,13 @@
 
 #pragma mark -PrivateMethod
 - (void)addLayout{
- [_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+[_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
      make.top.equalTo(@0);
      make.left.equalTo(@0);
      make.width.equalTo(@(WIDTH));
      make.height.equalTo(@(HEIGHT-64-H(90)));
  }];
-    
+ 
  [_coverView mas_makeConstraints:^(MASConstraintMaker *make) {
      make.top.equalTo(@(HEIGHT-H(150)));
      make.left.equalTo(@0);
@@ -85,6 +85,7 @@
      make.height.equalTo(@(HEIGHT-64-H(90)));
      
  }];
+    
     [_scanerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@(100));
         make.left.equalTo(@(20*KRatioW));
@@ -99,7 +100,7 @@
 {
 
     
-    _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-H(90))];
+    _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 100, WIDTH, HEIGHT-64-H(90))];
     _mainScrollView.contentSize=CGSizeMake(WIDTH*2, HEIGHT-64-H(50));
 //    _mainScrollView.backgroundColor=[UIColor redColor];
     _mainScrollView.showsHorizontalScrollIndicator=NO;
@@ -139,7 +140,7 @@
     _keyinBtn.frame=CGRectMake(W(220), H(15), W(40), H(60));
     [_keyinBtn addTarget:self action:@selector(putOrder) forControlEvents:UIControlEventTouchUpInside];
     [_coverView addSubview:_keyinBtn];
-    [self addLayout];
+   // [self addLayout];
 }
 
 #pragma mark---viewDidAppear
@@ -147,6 +148,7 @@
     [super viewDidAppear:animated];
 
     [self.previewLayer removeFromSuperlayer];
+    
 //    [_session removeConnection:<#(AVCaptureConnection *)#>]
 //    if (!self.session){
     
@@ -163,7 +165,7 @@
         
         //调整摄像头取景区域
        self.previewLayer.frame = CGRectMake(0, 64, WIDTH, HEIGHT-64);
-        
+   // self.previewLayer.backgroundColor = [UIColor redColor].CGColor;
         //调整扫描区域
         AVCaptureMetadataOutput *output = self.session.outputs.firstObject;
         //根据实际偏差调整y轴
@@ -201,7 +203,7 @@
     } else {
         //出错处理
         NSLog(@"%@", error);
-        /*
+        
         NSString *msg = [NSString stringWithFormat:@"请在手机【设置】-【隐私】-【相机】选项中，允许【%@】访问您的相机",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]];
 
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"提醒"
@@ -210,7 +212,7 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles: nil];
         [av show];
-         */
+        
         return;
     }
     
@@ -589,6 +591,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     [_mainScrollView endEditing:YES];
+    //self.navigationController.navigationBar.translucent = NO;
+
     //初始化扫码
 //    [self setupAVFoundation];
 }

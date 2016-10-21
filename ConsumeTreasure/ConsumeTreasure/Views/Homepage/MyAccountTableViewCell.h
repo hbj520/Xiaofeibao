@@ -14,6 +14,8 @@ typedef void (^TapViewBlock)();
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 @property (weak, nonatomic) IBOutlet UIButton *applyMoneyBtn;
 @property (weak, nonatomic) IBOutlet UILabel *explainLab;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
 
 @property (weak, nonatomic) IBOutlet UIView *spreadView;
 @property (weak, nonatomic) IBOutlet UIView *partnerCommissionView;
@@ -25,5 +27,5 @@ typedef void (^TapViewBlock)();
 @property (nonatomic, copy) TapViewBlock payBackBlock;
 @property (nonatomic, copy) TapViewBlock BenefitBlock;
 @property (nonatomic ,copy) TapViewBlock applyBtnBlock;
-
+@property (nonatomic ,copy) TapViewBlock backBtnBlock;
 @end

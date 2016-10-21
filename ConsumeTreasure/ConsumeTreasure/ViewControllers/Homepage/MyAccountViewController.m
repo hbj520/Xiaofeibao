@@ -7,7 +7,7 @@
 //
 
 #import "MyAccountViewController.h"
-
+#import "HexColor.h"
 #import "MyAccountTableViewCell.h"
 #import "LevelTableViewCell.h"
 #import "ExplainTableViewCell.h"
@@ -25,17 +25,18 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
-    self.navigationController.navigationBarHidden = NO;
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-   // self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
+    self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
     
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //self.navigationController.navigationBar.translucent = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
     UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
@@ -52,7 +53,7 @@
         for(UIView*subview in view.subviews) {
                 UIImageView*imageView = [self findHairlineImageViewUnder:subview];
                 if(imageView) {
-                        return imageView;
+                       return imageView;
                 }
     }
        return nil;
@@ -92,6 +93,9 @@
         if (accountCell == nil) {
             accountCell = [[[NSBundle mainBundle] loadNibNamed:@"MyAccountTableViewCell" owner:self options:nil] lastObject];
         }
+        accountCell.backBtnBlock =^{
+            [self.navigationController popViewControllerAnimated:YES];
+        };
         accountCell.selectionStyle = 0;
         return accountCell;
     }else if (indexPath.section == 2){
@@ -133,7 +137,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 162;
+        return 226;
     }else if (indexPath.section == 2){
         return 68;
     }else{
@@ -149,10 +153,6 @@
     }else{
         return 100;
     }
-}
-
-- (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
