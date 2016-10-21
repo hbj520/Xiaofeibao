@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TobeUnionViewController : UIViewController
+#import "BaseViewController.h"
+@interface TobeUnionViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIView *whiteView;
 
 

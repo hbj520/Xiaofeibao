@@ -25,7 +25,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self backTolastPage];
 }
 
 - (IBAction)getMoney:(id)sender {

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
+- (void)backTolastPage;
 
 @end

@@ -39,12 +39,12 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
-    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    navBarHairlineImageView.hidden = YES;
+  //  UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+   // navBarHairlineImageView.hidden = YES;
    //self.navigationController.navigationBar.translucent = YES;
 }
 
-
+/*
 - (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
     
         if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0) {
@@ -59,6 +59,8 @@
        return nil;
 }
 
+ */
+ 
 - (void)creatUI{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -94,7 +96,10 @@
             accountCell = [[[NSBundle mainBundle] loadNibNamed:@"MyAccountTableViewCell" owner:self options:nil] lastObject];
         }
         accountCell.backBtnBlock =^{
-            [self.navigationController popViewControllerAnimated:YES];
+
+            
+            [self backTolastPage];
+            
         };
         accountCell.selectionStyle = 0;
         return accountCell;
