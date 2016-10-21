@@ -9,9 +9,16 @@
 #import "UnionListViewController.h"
 
 @interface UnionListViewController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDataSource>
 - (IBAction)backBtn:(id)sender;
 - (IBAction)backTitleBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backTitleBtn;
+@property (weak, nonatomic) IBOutlet UICollectionView *titleCollectionView;
+@property (weak, nonatomic) IBOutlet UITableView *contentTabelView;
 
 @end
 
@@ -20,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self addCollectionViewAndTableView];
    
 }
 
@@ -37,10 +45,41 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - PrivateMethod
+- (void)addCollectionViewAndTableView{
+    self.contentTabelView.delegate = self;
+    self.contentTabelView.dataSource = self;
+    
+    self.titleCollectionView.delegate = self;
+    self.titleCollectionView.dataSource = self;
+    
+    
+}
+#pragma mark - UICollectionViewDelegate
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+#pragma UITableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
 - (IBAction)backBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)backTitleBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

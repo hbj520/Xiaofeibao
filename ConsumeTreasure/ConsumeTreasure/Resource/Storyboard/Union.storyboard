@@ -194,6 +194,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backTitleBtn" destination="obk-Je-BgO" id="7fg-ka-Hvy"/>
+                        <outlet property="contentTabelView" destination="6B7-aL-1I9" id="zY4-2K-xQQ"/>
+                        <outlet property="titleCollectionView" destination="F3x-tw-mDY" id="vnm-UQ-2NK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CB8-j8-NCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
