@@ -84,7 +84,7 @@
         <!--Union List View Controller-->
         <scene sceneID="eyR-x1-nzQ">
             <objects>
-                <viewController id="cFw-ed-hsH" customClass="UnionListViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="cFw-ed-hsH" customClass="UnionListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MQc-2r-mKm"/>
                         <viewControllerLayoutGuide type="bottom" id="OzF-ee-Cce"/>
