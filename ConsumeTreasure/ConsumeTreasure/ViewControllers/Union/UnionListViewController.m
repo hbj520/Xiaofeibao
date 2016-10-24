@@ -25,10 +25,13 @@ UICollectionViewDataSource>
 @end
 
 @implementation UnionListViewController
-
+{
+    NSMutableArray *dataSource;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+      dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
     [self addCollectionViewAndTableView];
    
 }
@@ -89,9 +92,18 @@ UICollectionViewDataSource>
     UnionTitleCollectionViewCell *cell = (UnionTitleCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     BOOL isSelected = cell.CellIsSelected;
     cell.CellIsSelected = !isSelected;
+    if (indexPath.row == 1) {
+        [dataSource removeAllObjects];
+        dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
+        [self.titleTableView reloadData];
+    }
+    if (indexPath.row == 2) {
+        [dataSource removeAllObjects];
+        dataSource = [NSMutableArray arrayWithArray:@[@"aa",@"bb",@"cc",@"dd",@"ee",@"ff",@"gg",@"hh",@"kk"]];
+        [self.titleTableView reloadData];
+    }
     if (cell.CellIsSelected ) {
         [self.view addSubview:self.titleTableView];
-     
     }else{
         [self.titleTableView removeFromSuperview];
     }
@@ -99,22 +111,19 @@ UICollectionViewDataSource>
 }
 #pragma UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell;
     if (tableView == self.contentTabelView) {
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewContentReuseId" forIndexPath:indexPath];
-//        if (cell == nil) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
-        //}
-        //cell.textLabel.text = @"111";
+
     }else if (tableView == self.titleTableView){
         cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewtitleReuseId" forIndexPath:indexPath];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewtitleReuseId"];
         }
-        cell.textLabel.text = @"分类内容";
+        cell.textLabel.text = dataSource[indexPath.row];
     }
  
     return cell;
