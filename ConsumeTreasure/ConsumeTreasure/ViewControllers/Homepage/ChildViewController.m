@@ -101,14 +101,14 @@
     NSLog(@"哪个区%@  ====  第几行 ",self.title);
     
     //partnerCell.textLabel.text = [NSString stringWithFormat:@"%@ : %ld",self.title,indexPath.row];
+    partnerCell.layer.shouldRasterize = YES;
+    partnerCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
     partnerCell.phoneBlock =^{
-      
         NSLog(@"打电话");
     };
     return partnerCell;
-
-
+    
 }
 
 
