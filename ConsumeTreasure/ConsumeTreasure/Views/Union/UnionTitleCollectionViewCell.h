@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 @interface UnionTitleCollectionViewCell : UICollectionViewCell
 @property (nonatomic,assign) BOOL CellIsSelected;
+@property (nonatomic,strong) NSIndexPath *indexPath;
 - (void)configTitleText:(NSString *)titleText;
 @end

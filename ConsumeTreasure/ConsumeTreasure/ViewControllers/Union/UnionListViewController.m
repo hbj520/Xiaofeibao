@@ -8,6 +8,7 @@
 
 #import "UnionListViewController.h"
 #import "UnionTitleCollectionViewCell.h"
+#import "HotStoreTableViewCell.h"
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -51,7 +52,8 @@ UICollectionViewDataSource>
     //tableview
     self.contentTabelView.delegate = self;
     self.contentTabelView.dataSource = self;
-    [self.contentTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewContentReuseId"];
+//    [self.contentTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewContentReuseId"];
+    [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
     
     self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, ScreenWidth, ScreenHeight-300) style:UITableViewStylePlain];
     self.titleTableView.delegate = self;
@@ -79,6 +81,7 @@ UICollectionViewDataSource>
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *reuseId = @"collectionReuseId";
     UnionTitleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseId forIndexPath:indexPath];
+    cell.indexPath = indexPath;
     cell.CellIsSelected = NO;
     return cell;
 }
@@ -88,6 +91,7 @@ UICollectionViewDataSource>
     cell.CellIsSelected = !isSelected;
     if (cell.CellIsSelected ) {
         [self.view addSubview:self.titleTableView];
+     
     }else{
         [self.titleTableView removeFromSuperview];
     }
@@ -100,11 +104,11 @@ UICollectionViewDataSource>
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell;
     if (tableView == self.contentTabelView) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewContentReuseId" forIndexPath:indexPath];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewContentReuseId"];
-        }
-        cell.textLabel.text = @"111";
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewContentReuseId" forIndexPath:indexPath];
+//        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
+        //}
+        //cell.textLabel.text = @"111";
     }else if (tableView == self.titleTableView){
         cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewtitleReuseId" forIndexPath:indexPath];
         if (cell == nil) {
@@ -114,6 +118,12 @@ UICollectionViewDataSource>
     }
  
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.contentTabelView) {
+        return 125;
+    }
+    return 30;
 }
 
 - (IBAction)backBtn:(id)sender {
