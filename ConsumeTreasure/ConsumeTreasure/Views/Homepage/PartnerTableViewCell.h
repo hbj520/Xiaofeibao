@@ -23,5 +23,6 @@ typedef void (^TapPhoneBlock) ();
 @property (weak, nonatomic) IBOutlet UIButton *phoneBtn;
 
 @property (nonatomic,copy) TapPhoneBlock phoneBlock;
+- (void)configWithModel:(id)model;
 
 @end

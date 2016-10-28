@@ -24,6 +24,7 @@
     UITapGestureRecognizer *tapPay = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(payClick:)];
     [self.payBackView addGestureRecognizer:tapPay];
     UITapGestureRecognizer *tapBenefit = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(benefitClick:)];
+    [self.otherBenefitView addGestureRecognizer:tapBenefit];
 }
 
 - (void)spreadClick:(id)Ges{

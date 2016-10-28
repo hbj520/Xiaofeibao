@@ -181,7 +181,7 @@
                 <outlet property="foodImage" destination="Bdv-GM-7TI" id="k4d-0C-RzF"/>
                 <outlet property="locationLab" destination="ElJ-Wk-RtR" id="WkM-W3-d2x"/>
                 <outlet property="phoneBtn" destination="9VK-6u-OdQ" id="oia-4e-Dgv"/>
-                <outlet property="starView" destination="GHK-AR-kKz" id="S8X-ua-s3z"/>
+                <outlet property="starView" destination="GHK-AR-kKz" id="J0S-Za-8Fn"/>
                 <outlet property="storeDetailLab" destination="SQN-V4-gVy" id="AWp-Zb-LLT"/>
                 <outlet property="storeNameLab" destination="i40-Lc-VKf" id="b0f-tK-6Ho"/>
             </connections>

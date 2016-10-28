@@ -75,6 +75,7 @@
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     [mapView viewWillDisappear];
     mapView.delegate = nil; // 不用时，置nil
     

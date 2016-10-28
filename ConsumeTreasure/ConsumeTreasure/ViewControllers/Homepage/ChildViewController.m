@@ -41,32 +41,27 @@
 
 - (void)table{
     _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth , ScreenHeight-64-45) style:0];
-    
-   
-    
- 
-    
     _tableView.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     _tableView.delegate=self;
     _tableView.dataSource=self;
-    self.edgesForExtendedLayout=UIRectEdgeNone;
+    //self.edgesForExtendedLayout=UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets=NO;
     _tableView.separatorStyle=0;
     _tableView.rowHeight = 275;
     //_tableView.sectionFooterHeight=7;
     _tableView.sectionHeaderHeight = 10;
     
-    UIImageView *ima = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pizza"]];
-    ima.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-45-64);
-    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-    colorView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:ima];
-    [ima mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(0));
-        make.left.equalTo(@(0));
-        make.right.equalTo(@(0));
-        make.height.equalTo(@(ScreenHeight));
-    }];
+//    UIImageView *ima = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pizza"]];
+//    ima.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-45-64);
+//    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+//    colorView.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:ima];
+//    [ima mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(@(0));
+//        make.left.equalTo(@(0));
+//        make.right.equalTo(@(0));
+//        make.height.equalTo(@(ScreenHeight));
+//    }];
     [self.view addSubview:_tableView];
     //[self.view sendSubviewToBack:ima];
     
@@ -112,17 +107,24 @@
     PartnerTableViewCell *partnerCell = [tableView dequeueReusableCellWithIdentifier:@"partnerCellId"];
     if (partnerCell == nil) {
         partnerCell = [[[NSBundle mainBundle] loadNibNamed:@"PartnerTableViewCell" owner:self options:nil] lastObject];
+
         
        // NSLog(@"几次");
     }
-    partnerCell.selectionStyle = 0;
+    
+        [partnerCell configWithModel:[NSNumber numberWithFloat:5.]];
+
+        partnerCell.selectionStyle = 0;
     
     NSLog(@"哪个区%@  ====  第几行 ",self.title);
     
     //partnerCell.textLabel.text = [NSString stringWithFormat:@"%@ : %ld",self.title,indexPath.row];
-    partnerCell.layer.shouldRasterize = YES;
-    partnerCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
-     [partnerCell.starView configWithStarLevel:5];
+//    partnerCell.layer.shouldRasterize = YES;
+//    partnerCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    
+    
+    
+    
     partnerCell.phoneBlock =^{
         NSLog(@"打电话");
     };

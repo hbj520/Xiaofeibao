@@ -20,6 +20,7 @@
 }
 
 
+
 - (IBAction)phoneClick:(id)sender {
     if (self.phoneBlock) {
         self.phoneBlock();
@@ -33,5 +34,8 @@
 
     // Configure the view for the selected state
 }
-
+- (void)configWithModel:(id)model{
+    NSNumber *level = model;
+    [self.starView configWithStarLevel:level.floatValue];
+}
 @end

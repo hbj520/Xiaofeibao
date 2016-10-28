@@ -19,27 +19,27 @@
     return self;
 }
 - (void)configWithStarLevel:(float)levels{
-    self.backgroundColor = [UIColor clearColor];
-    CGRect frame = self.frame;
-    CGFloat with = frame.size.width/5;
-    //创建底部空星星
+        self.backgroundColor = [UIColor clearColor];
+        CGRect frame = self.frame;
+        CGFloat with = frame.size.width/5;
+        //创建底部空星星
         UIImageView *emptyStar = [[UIImageView alloc] initWithFrame:self.bounds];
         emptyStar.image = [UIImage imageNamed:@"starbggroud"];
         [self addSubview:emptyStar];
-    //截取浮点取整
-    int cout = (int)levels;
-    for (int i = 0; i < cout ; i++)
-    {
-        UIImageView *wholeStar = [[UIImageView alloc] initWithFrame:CGRectMake(with*i, 0, with, frame.size.height)];
-        wholeStar.image = [UIImage imageNamed:@"star_light"];
-        [self addSubview:wholeStar];
-    }
-    if (cout - levels < 0)
-    {
-        UIImageView *halfStar = [[UIImageView alloc] initWithFrame:CGRectMake(with*cout, 0, with, frame.size.height)];
-        halfStar.image = [UIImage imageNamed:@"star_light"];
-        [self addSubview:halfStar];
-    }
+        //截取浮点取整
+        int cout = (int)levels;
+        for (int i = 0; i < cout ; i++)
+        {
+            UIImageView *wholeStar = [[UIImageView alloc] initWithFrame:CGRectMake(with*i, 0, with, frame.size.height)];
+            wholeStar.image = [UIImage imageNamed:@"star_light"];
+            [self addSubview:wholeStar];
+        }
+        if (cout - levels < 0)
+        {
+            UIImageView *halfStar = [[UIImageView alloc] initWithFrame:CGRectMake(with*cout, 0, with, frame.size.height)];
+            halfStar.image = [UIImage imageNamed:@"star_light"];
+            [self addSubview:halfStar];
+        }
 
 }
 /*

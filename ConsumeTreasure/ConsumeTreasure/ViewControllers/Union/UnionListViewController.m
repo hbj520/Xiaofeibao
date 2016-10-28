@@ -117,6 +117,7 @@ UICollectionViewDataSource>
     UITableViewCell *cell;
     if (tableView == self.contentTabelView) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
+        return cell;
 
     }else if (tableView == self.titleTableView){
         cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewtitleReuseId" forIndexPath:indexPath];
