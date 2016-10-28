@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
+    [WXApi registerApp:@"wxbbcf236b07638282"];
     
     
     // 要使用百度地图，请先启动BaiduMapManager
@@ -54,6 +54,11 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
 - (void)changeToMain{
     self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
