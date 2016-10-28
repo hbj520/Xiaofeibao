@@ -36,6 +36,7 @@
     
     
     [self table];
+    [_tableView reloadData];
     
 }
 
