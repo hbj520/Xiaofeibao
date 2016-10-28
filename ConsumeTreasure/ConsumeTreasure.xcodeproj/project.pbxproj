@@ -107,6 +107,7 @@
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
+		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
 		D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */; };
 		D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F25A1DAE6B3400272E57 /* FoldLineView.m */; };
@@ -316,6 +317,8 @@
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
+		D170CA021DC1DB87001BCEE4 /* starView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = starView.h; sourceTree = "<group>"; };
+		D170CA031DC1DB87001BCEE4 /* starView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = starView.m; sourceTree = "<group>"; };
 		D170F2541DAE6AAE00272E57 /* chartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartTableViewCell.h; sourceTree = "<group>"; };
 		D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chartTableViewCell.m; sourceTree = "<group>"; };
 		D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chartTableViewCell.xib; sourceTree = "<group>"; };
@@ -767,6 +770,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D170CA011DC1DB75001BCEE4 /* Other */,
 				D121650E1DB4F2B4006B06FC /* YZDisplayViewController */,
 				D12164951DB47419006B06FC /* FrameWork */,
 				D10EE3AF1DB0B28F001C1992 /* ASIHTTPRequest */,
@@ -885,6 +889,15 @@
 			path = YZDisplayViewController;
 			sourceTree = "<group>";
 		};
+		D170CA011DC1DB75001BCEE4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D170CA021DC1DB87001BCEE4 /* starView.h */,
+				D170CA031DC1DB87001BCEE4 /* starView.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		D1F2759E1DAD0A5A005B9849 /* ScanerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -984,7 +997,7 @@
 				TargetAttributes = {
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = MGR47JT33V;
+						DevelopmentTeam = E7Z7DF2E4X;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -1146,6 +1159,7 @@
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
 				AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
+				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
@@ -1336,7 +1350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = MGR47JT33V;
+				DEVELOPMENT_TEAM = E7Z7DF2E4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1357,7 +1371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = MGR47JT33V;
+				DEVELOPMENT_TEAM = E7Z7DF2E4X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -31,6 +31,10 @@
     BMKLocationService* _locService;//定位
     
     int _oldY;
+    
+    NSString *longitudeStr;
+    NSString *latitudeStr;
+    NSString *localStr;
 }
 
 @end
@@ -50,9 +54,8 @@
     [self addNavBar];
     [self startMap];
     [self creatUI];
+    [self loadHotStoreData];
 }
-
-
 
 
 -(void)viewWillAppear:(BOOL)animated
@@ -89,7 +92,9 @@
     region.span.latitudeDelta = 0;
     region.span.longitudeDelta = 0;
     NSLog(@"当前的坐标是:%f,%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
-
+    longitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
+    latitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
+    
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation: userLocation.location completionHandler:^(NSArray *array, NSError *error) {
         if (array.count > 0) {
@@ -99,19 +104,32 @@
                 
                 NSLog(@"当前城市名称------%@",city);
                 self.locationCityName.text = city;
-
+                localStr = city;
                 [_locService stopUserLocationService];
             
             }
         }
     }];
-     
- 
 }
 
 
 
 #pragma mark-PrivateMethod
+- (void)loadHotStoreData{
+  
+    NSDictionary * param=@{
+                           @"cityName":@"合肥市",
+                           @"latitude":@"31.74593",
+                           @"longitude":@"117.287537"
+                           };
+    [RequstEngine requestHttp:@"hotShop" paramDic:param blockObject:^(NSDictionary *dic) {
+        
+        NSLog(@"第一次请求%@",dic);
+        
+    }];
+    
+    
+}
 
 - (void)startMap{
     _locService = [[BMKLocationService alloc]init];//定位功能的初始化
@@ -329,17 +347,8 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
-        
-        NSDictionary * param=@{
-                               @"cityName":@"合肥市",
-                               @"latitude":@"31.746009",
-                               @"longitude":@"117.287612"
-                               };
-        [RequstEngine requestHttp:@"hotShop" paramDic:param blockObject:^(NSDictionary *dic) {
-            
-            NSLog(@"第一次请求%@",dic);
-            
-        }];
+    
+     
     }
 }
 

@@ -11,7 +11,8 @@
 #import "YZDisplayViewControllerConst.h"
 
 #import "PartnerTableViewCell.h"
-
+#import "starView.h"
+#import <Masonry.h>
 
 @interface ChildViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,retain)UITableView * tableView;
@@ -39,15 +40,35 @@
 }
 
 - (void)table{
-    _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 7,375 , 655) style:1];
+    _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0,ScreenWidth , ScreenHeight-64-45) style:0];
+    
+   
+    
+ 
+    
+    _tableView.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     _tableView.delegate=self;
     _tableView.dataSource=self;
+    self.edgesForExtendedLayout=UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets=NO;
     _tableView.separatorStyle=0;
-    _tableView.rowHeight = 100;
-    _tableView.sectionFooterHeight=0;
-    _tableView.sectionHeaderHeight=0;
+    _tableView.rowHeight = 275;
+    //_tableView.sectionFooterHeight=7;
+    _tableView.sectionHeaderHeight = 10;
+    
+    UIImageView *ima = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pizza"]];
+    ima.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-45-64);
+    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    colorView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:ima];
+    [ima mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@(0));
+        make.left.equalTo(@(0));
+        make.right.equalTo(@(0));
+        make.height.equalTo(@(ScreenHeight));
+    }];
     [self.view addSubview:_tableView];
+    //[self.view sendSubviewToBack:ima];
     
 }
 
@@ -65,17 +86,13 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 1;
-}
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return 1;
 }
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 5;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
@@ -95,6 +112,8 @@
     PartnerTableViewCell *partnerCell = [tableView dequeueReusableCellWithIdentifier:@"partnerCellId"];
     if (partnerCell == nil) {
         partnerCell = [[[NSBundle mainBundle] loadNibNamed:@"PartnerTableViewCell" owner:self options:nil] lastObject];
+        
+       // NSLog(@"几次");
     }
     partnerCell.selectionStyle = 0;
     
@@ -103,14 +122,21 @@
     //partnerCell.textLabel.text = [NSString stringWithFormat:@"%@ : %ld",self.title,indexPath.row];
     partnerCell.layer.shouldRasterize = YES;
     partnerCell.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    
+     [partnerCell.starView configWithStarLevel:5];
     partnerCell.phoneBlock =^{
         NSLog(@"打电话");
     };
+    
+
     return partnerCell;
     
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *grayView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 10)];
+   // grayView.backgroundColor = RGBACOLOR(234, 235, 236, 1);
+    return grayView;
+}
 
 
 @end

@@ -9,8 +9,7 @@
 #import "PartnerTableViewCell.h"
 
 @implementation PartnerTableViewCell
-- (IBAction)phoneBtn:(id)sender {
-}
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

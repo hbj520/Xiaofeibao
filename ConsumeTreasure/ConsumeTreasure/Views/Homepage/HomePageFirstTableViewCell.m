@@ -10,7 +10,7 @@
 
 @interface HomePageFirstTableViewCell ()
 {
-    UIView *view2;
+    UIView *view2;  
 }
 
 

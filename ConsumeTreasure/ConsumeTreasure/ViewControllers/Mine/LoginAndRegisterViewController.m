@@ -15,6 +15,7 @@
     NSTimer *timer;
     NSInteger time;
 }
+
 @property (weak, nonatomic) IBOutlet UIView *registerView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIImageView *registerArrow;

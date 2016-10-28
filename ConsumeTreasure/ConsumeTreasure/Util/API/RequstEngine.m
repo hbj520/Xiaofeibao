@@ -76,7 +76,7 @@
 {
     NSDictionary *dic;
     dic = @{
-            
+            @"param":param
             };
    // DMLog(@"%@",dic);
     NSLog(@"请求包参数字典%@",dic);

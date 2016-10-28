@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "starView.h"
 typedef void (^TapPhoneBlock) ();
 
 @interface PartnerTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *StoreName;
-@property (weak, nonatomic) IBOutlet UIImageView *storeImage;
-@property (weak, nonatomic) IBOutlet UILabel *positionLab;
-@property (weak, nonatomic) IBOutlet UILabel *detailLab;
+
+@property (weak, nonatomic) IBOutlet UIImageView *foodImage;
+@property (weak, nonatomic) IBOutlet UILabel *storeNameLab;
+@property (weak, nonatomic) IBOutlet UILabel *storeDetailLab;
+@property (weak, nonatomic) IBOutlet starView *starView;
+@property (weak, nonatomic) IBOutlet UILabel *evaluatePointLab;
+@property (weak, nonatomic) IBOutlet UILabel *locationLab;
 
 @property (weak, nonatomic) IBOutlet UIButton *phoneBtn;
 
