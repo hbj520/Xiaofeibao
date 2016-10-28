@@ -15,6 +15,7 @@
 UITableViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *rightCollectionView;
 
@@ -25,6 +26,7 @@ UICollectionViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  
     [self configNavBar];
     [self configTableViewAndCollectionView];
 }
