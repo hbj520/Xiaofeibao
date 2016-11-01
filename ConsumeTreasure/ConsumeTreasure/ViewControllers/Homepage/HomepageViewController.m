@@ -7,6 +7,7 @@
 //
 
 //百度
+#import "AppDelegate.h"
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
@@ -348,8 +349,6 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
-    
-     
     }
 }
 
