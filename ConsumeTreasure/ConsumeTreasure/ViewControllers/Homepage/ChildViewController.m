@@ -36,6 +36,7 @@
     
     
     [self table];
+    [_tableView reloadData];
     
 }
 
@@ -50,6 +51,7 @@
     _tableView.rowHeight = 275;
     //_tableView.sectionFooterHeight=7;
     _tableView.sectionHeaderHeight = 10;
+    //[_tableView registerNib:[UINib nibWithNibName:@"PartnerTableViewCell" bundle:nil] forCellReuseIdentifier:@"partnerCellId"];
     
 //    UIImageView *ima = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pizza"]];
 //    ima.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-45-64);
@@ -107,12 +109,11 @@
     PartnerTableViewCell *partnerCell = [tableView dequeueReusableCellWithIdentifier:@"partnerCellId"];
     if (partnerCell == nil) {
         partnerCell = [[[NSBundle mainBundle] loadNibNamed:@"PartnerTableViewCell" owner:self options:nil] lastObject];
-
-        
-       // NSLog(@"几次");
+    }else{
+        [partnerCell configWithModel:[NSNumber numberWithFloat:5.]];
+  
     }
     
-        [partnerCell configWithModel:[NSNumber numberWithFloat:5.]];
 
         partnerCell.selectionStyle = 0;
     
