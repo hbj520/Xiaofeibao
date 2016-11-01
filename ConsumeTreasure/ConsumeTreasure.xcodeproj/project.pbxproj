@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */; };
+		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
@@ -150,6 +151,8 @@
 		0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
 		6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
+		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -452,6 +455,8 @@
 				D10EE3E61DB0B2A4001C1992 /* RequstEngine.h */,
 				D10EE3E71DB0B2A4001C1992 /* RequstEngine.m */,
 				AB608C2F1D9D0B1200194FC2 /* NSObject+AFNetworking.h */,
+				AB01504D1DC8883900AC1AB9 /* MyAPI.h */,
+				AB01504E1DC8883900AC1AB9 /* MyAPI.m */,
 				AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */,
 				AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */,
 				AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */,
@@ -1207,6 +1212,7 @@
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
+				AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */,
 				AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
 				D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */,
@@ -1466,7 +1472,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.doumee.xiaofeibao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1575,7 +1581,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.doumee.xiaofeibao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

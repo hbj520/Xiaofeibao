@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [WXApi registerApp:@"wxbbcf236b07638282"];
+    [WXApi registerApp:@"wxb4ba3c02aa476ea1"];
     
     
     // 要使用百度地图，请先启动BaiduMapManager
@@ -66,6 +66,7 @@
     self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+    
 }
 #pragma mark -WeixinDelegate
 - (void)onReq:(BaseReq *)req{
