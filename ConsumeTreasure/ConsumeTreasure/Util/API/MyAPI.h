@@ -14,4 +14,12 @@ typedef void (^ArrayBlock) (BOOL success, NSString *msg, NSArray *arrays);
 typedef void (^ErrorBlock) (NSError *enginerError);
 @interface MyAPI : NSObject
 + (MyAPI *)sharedAPI;
+
+
+
+
+
+
+- (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 @end

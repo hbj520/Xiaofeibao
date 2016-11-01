@@ -29,4 +29,18 @@
     });
     return sharedAPIInstance;
 }
+
+- (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    [self.manager POST:@"hotShop" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+            NSArray *arr = responseObject[@"data"][@"IncomerightRateList"];
+            result(YES,responseObject[@"msg"],arr);
+        }else{
+            result(NO,@"下载失败",nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 @end

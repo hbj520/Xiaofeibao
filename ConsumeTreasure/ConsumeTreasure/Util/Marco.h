@@ -30,14 +30,14 @@
 #define KUserPassword [[Config Instance] getPassword]
 #define KGesturePsassword [[Config Instance] getGesturePassword]
 
-#define BaseUrl @"http://60.173.235.34:9090/fuyi/app/"
+#define BaseUrl @"http://192.168.1.221:8080/xfb/welcome/"
 
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 #define IS_IOS7             ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedAscending)
 
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+//#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 #define KNOTIFICATION_LOGINCHANGE @"loginStateChange"
 

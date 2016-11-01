@@ -349,6 +349,24 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
+        
+        NSDictionary *para = @{
+                               @"cityName":@"合肥市",
+                               @"latitude":@"31.74593",
+                               @"longitude":@"117.287537"
+                               };
+        
+        
+        [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                NSArray *arrr = arrays[0];
+                NSLog(@"%@",arrr);
+            }
+            
+        } errorResult:^(NSError *enginerError) {
+            [self showHint:@"下载出错"];
+        }];
+        
     }
 }
 
