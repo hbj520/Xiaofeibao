@@ -16,8 +16,13 @@
     self = [super init];
     if (self) {
         self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
-        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
-        self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        //申明返回的结果是json类型
+            self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        //    //申明请求的数据是json类型
+            self.manager.requestSerializer=[AFJSONRequestSerializer serializer];
+        //    //如果报接受类型不一致请替换一致text/html或别的
+            self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+
     }
     return self;
 }
@@ -31,16 +36,13 @@
 }
 
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
-    [self.manager POST:@"hotShop" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
-            NSArray *arr = responseObject[@"data"][@"IncomerightRateList"];
-            result(YES,responseObject[@"msg"],arr);
-        }else{
-            result(NO,@"下载失败",nil);
-        }
+    [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        errorResult(error);
+        
+        
     }];
+    
 }
 @end

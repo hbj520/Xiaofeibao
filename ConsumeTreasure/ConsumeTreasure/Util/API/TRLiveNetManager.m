@@ -11,9 +11,6 @@
 @implementation TRLiveNetManager
 +(id)testNetLoadWithCompletionHandler:(void (^)(id, NSError *))completionHandler{
     
-    
-    
-    
     return [self GET:@"http://localhost:8080/xfb/welcome/hotShopMember" parameters:nil progress:^(NSProgress *downloadProgress) {
         
         

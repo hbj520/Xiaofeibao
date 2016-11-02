@@ -351,10 +351,17 @@
         
         
         NSDictionary *para = @{
-                               @"cityName":@"合肥市",
-                               @"latitude":@"31.74593",
-                               @"longitude":@"117.287537"
-                               };
+                               @"tokenid": @"1",
+                               @"platform":@"1", //0:Android ,  1:IOS
+                               @"param": @{
+                                       @"tradetype": @"APP",
+                                       @"title": @"支付订单",
+                                       @"ordertype": @"0",
+                                       @"tomemid": @"4839a0d3-e758-44bf-aa51-cd7f0987b2fd" ,
+                                       @"price": @"30",
+                                       @"price_tbb": @"20",
+                                       }
+                              };
         
         
         [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
