@@ -107,6 +107,10 @@
                 NSLog(@"当前城市名称------%@",city);
                 self.locationCityName.text = city;
                 localStr = city;
+                
+                
+                [self loadHotStoreData];
+                
                 [_locService stopUserLocationService];
             
             }
@@ -117,21 +121,31 @@
 
 
 #pragma mark-PrivateMethod
+
 - (void)loadHotStoreData{
   
-    NSDictionary * param=@{
-                           @"cityName":@"合肥市",
-                           @"latitude":@"31.74593",
-                           @"longitude":@"117.287537"
+    NSDictionary *para = @{
+                           @"pageNum":@"1",
+                           @"pageOffest":@"10",
+                           @"cityName":localStr,
+                           @"latitude":latitudeStr,
+                           @"longitude":longitudeStr
                            };
-    [RequstEngine requestHttp:@"hotShop" paramDic:param blockObject:^(NSDictionary *dic) {
+    
+    [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            NSArray *arrr = arrays[0];
+            NSLog(@"%@",arrr);
+        }else{
+            
+        }
         
-        NSLog(@"第一次请求%@",dic);
-        
+    } errorResult:^(NSError *enginerError) {
+        [self showHint:@"下载出错"];
     }];
-    
-    
+   
 }
+
 
 - (void)startMap{
     _locService = [[BMKLocationService alloc]init];//定位功能的初始化
@@ -350,29 +364,7 @@
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
         
-        NSDictionary *para = @{
-                               @"tokenid": @"20ace013934a448887c7af6000dfa112",
-                               @"platform":@"1", //0:Android ,  1:IOS
-                               @"param": @{
-                                       @"tradetype": @"APP",
-                                       @"title": @"支付订单",
-                                       @"ordertype": @"0",
-                                       @"tomemid": @"4839a0d3-e758-44bf-aa51-cd7f0987b2fd" ,
-                                       @"price": @"30",
-                                       @"price_tbb": @"20",
-                                       }
-                              };
-        
-        
-        [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
-            if (success) {
-                NSArray *arrr = arrays[0];
-                NSLog(@"%@",arrr);
-            }
-            
-        } errorResult:^(NSError *enginerError) {
-            [self showHint:@"下载出错"];
-        }];
+       
         
     }
 }

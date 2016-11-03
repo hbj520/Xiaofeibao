@@ -36,22 +36,25 @@
     return sharedAPIInstance;
 }
 
+#pragma mark - 首页热门商户
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
-    [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        PayReq *request = [[PayReq alloc] init];
-        NSString *stamp = responseObject[@"data"][@"timestamp"];
-        request.openID= responseObject[@"data"][@"appid"];
-        request.partnerId =responseObject[@"data"][@"partnerid"];
-        request.prepayId= responseObject[@"data"][@"prepayid"];
-        request.package = responseObject[@"data"][@"packageStr"];
-        request.nonceStr= responseObject[@"data"][@"noncestr"];
-        request.sign=responseObject[@"data"][@"sign"];
-        request.timeStamp=stamp.intValue;
-        [WXApi sendReq:request];
+    
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"welcome/hotShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+            NSArray *arr = responseObject[@"data"][@"memberPojoList"];
+            result(YES,@"",arr);
+        }else{
+            result(NO,@"",nil);
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        
+        errorResult(error);
     }];
     
 }
