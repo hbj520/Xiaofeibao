@@ -351,7 +351,7 @@
         
         
         NSDictionary *para = @{
-                               @"tokenid": @"1",
+                               @"tokenid": @"20ace013934a448887c7af6000dfa112",
                                @"platform":@"1", //0:Android ,  1:IOS
                                @"param": @{
                                        @"tradetype": @"APP",

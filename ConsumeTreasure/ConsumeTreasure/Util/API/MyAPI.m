@@ -8,6 +8,7 @@
 
 #import "MyAPI.h"
 #import <AFNetworking.h>
+#import "WXApi.h"
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @end
@@ -37,7 +38,16 @@
 
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
     [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        PayReq *request = [[PayReq alloc] init];
+        NSString *stamp = responseObject[@"data"][@"timestamp"];
+        request.openID= responseObject[@"data"][@"appid"];
+        request.partnerId =responseObject[@"data"][@"partnerid"];
+        request.prepayId= responseObject[@"data"][@"prepayid"];
+        request.package = responseObject[@"data"][@"packageStr"];
+        request.nonceStr= responseObject[@"data"][@"noncestr"];
+        request.sign=responseObject[@"data"][@"sign"];
+        request.timeStamp=stamp.intValue;
+        [WXApi sendReq:request];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

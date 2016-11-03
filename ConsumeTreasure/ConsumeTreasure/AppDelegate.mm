@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [WXApi registerApp:@"wxb4ba3c02aa476ea1"];
+    [WXApi registerApp:@"wxbbcf236b07638282"];
     
     
     // 要使用百度地图，请先启动BaiduMapManager

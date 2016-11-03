@@ -1472,7 +1472,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doumee.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1581,7 +1581,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.xin.SDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doumee.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
