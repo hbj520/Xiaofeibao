@@ -45,11 +45,13 @@
                               @"param":para
                               };
     [self.manager POST:@"welcome/hotShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"00000"]) {
             NSArray *arr = responseObject[@"data"][@"memberPojoList"];
-            result(YES,@"",arr);
+            result(YES,info,arr);
         }else{
-            result(NO,@"",nil);
+            result(NO,info,nil);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
