@@ -55,7 +55,7 @@
     [self addNavBar];
     [self startMap];
     [self creatUI];
-    [self loadHotStoreData];
+   
 }
 
 
@@ -109,7 +109,7 @@
                 localStr = city;
                 
                 
-                [self loadHotStoreData];
+             //   [self loadHotStoreData];
                 
                 [_locService stopUserLocationService];
             

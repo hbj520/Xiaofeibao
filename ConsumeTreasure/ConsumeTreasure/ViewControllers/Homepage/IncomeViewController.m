@@ -40,9 +40,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
-    
-    
-}
+   }
 
 - (void)creatUI{
     self.tableView.delegate = self;

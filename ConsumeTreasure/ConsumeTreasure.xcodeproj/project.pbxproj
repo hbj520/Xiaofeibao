@@ -30,7 +30,6 @@
 		ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95471D9B8E94008927C7 /* Union.storyboard */; };
 		ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95491D9B8EA2008927C7 /* Mine.storyboard */; };
 		ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB954F1D9BEED5008927C7 /* UnionViewController.m */; };
-		ABCB95531D9BF719008927C7 /* HotShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95521D9BF719008927C7 /* HotShopModel.m */; };
 		ABD363D41DC330BE00D462AF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD363D01DC330BE00D462AF /* libWeChatSDK.a */; };
 		ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */ = {isa = PBXBuildFile; fileRef = ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */; };
 		ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C2901DA89A1D00BBF5B7 /* HomeTabbarViewController.m */; };
@@ -107,6 +106,7 @@
 		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
+		D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39391DCB114F009122FE /* HomeStoreModel.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -191,8 +191,6 @@
 		ABCB95491D9B8EA2008927C7 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		ABCB954E1D9BEED5008927C7 /* UnionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionViewController.h; sourceTree = "<group>"; };
 		ABCB954F1D9BEED5008927C7 /* UnionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionViewController.m; sourceTree = "<group>"; };
-		ABCB95511D9BF719008927C7 /* HotShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotShopModel.h; sourceTree = "<group>"; };
-		ABCB95521D9BF719008927C7 /* HotShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotShopModel.m; sourceTree = "<group>"; };
 		ABD363D01DC330BE00D462AF /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		ABD363D11DC330BE00D462AF /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		ABD363D21DC330BE00D462AF /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
@@ -322,6 +320,8 @@
 		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
 		D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImUnionStoreViewController.h; sourceTree = "<group>"; };
 		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
+		D15B39381DCB114F009122FE /* HomeStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeStoreModel.h; sourceTree = "<group>"; };
+		D15B39391DCB114F009122FE /* HomeStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeStoreModel.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -521,10 +521,10 @@
 		ABCB95341D9B89E8008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				ABCB95511D9BF719008927C7 /* HotShopModel.h */,
-				ABCB95521D9BF719008927C7 /* HotShopModel.m */,
 				D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */,
 				D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */,
+				D15B39381DCB114F009122FE /* HomeStoreModel.h */,
+				D15B39391DCB114F009122FE /* HomeStoreModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -961,7 +961,6 @@
 				ABF4E2721D9B5E57006AD23C /* Sources */,
 				ABF4E2731D9B5E57006AD23C /* Frameworks */,
 				ABF4E2741D9B5E57006AD23C /* Resources */,
-				8C50DE39BA26EAA891721651 /* Embed Pods Frameworks */,
 				CDAD98FAABD7E98207D9DEBC /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1123,21 +1122,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8C50DE39BA26EAA891721651 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDAD98FAABD7E98207D9DEBC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1160,6 +1144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
@@ -1227,7 +1212,6 @@
 				D10EE3DC1DB0B28F001C1992 /* ASIHTTPRequest.m in Sources */,
 				D121651A1DB4F2B4006B06FC /* YZDisplayViewController.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
-				ABCB95531D9BF719008927C7 /* HotShopModel.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,
 				D12165FE1DB85AF4006B06FC /* ExplainTableViewCell.m in Sources */,
 			);
