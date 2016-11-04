@@ -109,10 +109,8 @@
     PartnerTableViewCell *partnerCell = [tableView dequeueReusableCellWithIdentifier:@"partnerCellId"];
     if (partnerCell == nil) {
         partnerCell = [[[NSBundle mainBundle] loadNibNamed:@"PartnerTableViewCell" owner:self options:nil] lastObject];
-    }else{
-        [partnerCell configWithModel:[NSNumber numberWithFloat:5.]];
-  
     }
+        [partnerCell configWithModel:[NSNumber numberWithFloat:5.]];
     
 
         partnerCell.selectionStyle = 0;

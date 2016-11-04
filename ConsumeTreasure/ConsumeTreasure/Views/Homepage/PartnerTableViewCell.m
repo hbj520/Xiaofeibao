@@ -14,8 +14,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-  
+    // [self.starView configWithStarLevel:5];
     
 }
 
