@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,22 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="69"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theimage" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-rN-lQU"/>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="3bd-rN-lQU" secondAttribute="bottom" id="ZmO-Az-6WV"/>
-                    <constraint firstItem="3bd-rN-lQU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rZi-Q9-x1o"/>
-                    <constraint firstAttribute="trailing" secondItem="3bd-rN-lQU" secondAttribute="trailing" id="w4G-K1-t9b"/>
-                    <constraint firstItem="3bd-rN-lQU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yYi-mJ-jJ8"/>
-                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="theimage" width="555" height="86"/>
-    </resources>
 </document>

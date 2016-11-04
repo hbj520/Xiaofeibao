@@ -107,6 +107,8 @@
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
 		D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39391DCB114F009122FE /* HomeStoreModel.m */; };
+		D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */; };
+		D15B39401DCC72B1009122FE /* AddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393F1DCC72B1009122FE /* AddModel.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -322,6 +324,10 @@
 		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
 		D15B39381DCB114F009122FE /* HomeStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeStoreModel.h; sourceTree = "<group>"; };
 		D15B39391DCB114F009122FE /* HomeStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeStoreModel.m; sourceTree = "<group>"; };
+		D15B393B1DCC6E00009122FE /* StoreDeatilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDeatilViewController.h; sourceTree = "<group>"; };
+		D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreDeatilViewController.m; sourceTree = "<group>"; };
+		D15B393E1DCC72B1009122FE /* AddModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddModel.h; sourceTree = "<group>"; };
+		D15B393F1DCC72B1009122FE /* AddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddModel.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -525,6 +531,8 @@
 				D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */,
 				D15B39381DCB114F009122FE /* HomeStoreModel.h */,
 				D15B39391DCB114F009122FE /* HomeStoreModel.m */,
+				D15B393E1DCC72B1009122FE /* AddModel.h */,
+				D15B393F1DCC72B1009122FE /* AddModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -564,6 +572,8 @@
 				D12165A81DB65998006B06FC /* IncomeViewController.m */,
 				D12165F31DB79D28006B06FC /* MyAccountViewController.h */,
 				D12165F41DB79D28006B06FC /* MyAccountViewController.m */,
+				D15B393B1DCC6E00009122FE /* StoreDeatilViewController.h */,
+				D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1159,6 +1169,7 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
+				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
@@ -1170,6 +1181,7 @@
 				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
+				D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */,
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,

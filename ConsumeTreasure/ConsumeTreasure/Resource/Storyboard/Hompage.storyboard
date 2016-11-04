@@ -706,10 +706,10 @@
             </objects>
             <point key="canvasLocation" x="422" y="1415"/>
         </scene>
-        <!--View Controller-->
+        <!--Store Deatil View Controller-->
         <scene sceneID="YcB-0Y-eWg">
             <objects>
-                <viewController id="gXB-1e-VsV" sceneMemberID="viewController">
+                <viewController id="gXB-1e-VsV" customClass="StoreDeatilViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfX-rd-Rfa"/>
                         <viewControllerLayoutGuide type="bottom" id="wS7-if-vSR"/>
@@ -717,13 +717,25 @@
                     <view key="view" contentMode="scaleToFill" id="Pdo-Qr-IY4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="grJ-vI-M8x">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wS7-if-vSR" firstAttribute="top" secondItem="grJ-vI-M8x" secondAttribute="bottom" id="71b-o1-1E0"/>
+                            <constraint firstAttribute="trailing" secondItem="grJ-vI-M8x" secondAttribute="trailing" id="Cj0-ca-MFt"/>
+                            <constraint firstItem="grJ-vI-M8x" firstAttribute="leading" secondItem="Pdo-Qr-IY4" secondAttribute="leading" id="ToB-De-esA"/>
+                            <constraint firstItem="grJ-vI-M8x" firstAttribute="top" secondItem="wfX-rd-Rfa" secondAttribute="bottom" id="dwg-Fb-jCH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GKx-x5-tUW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvc-DF-JRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="1415"/>
+            <point key="canvasLocation" x="1468" y="1415"/>
         </scene>
         <!--扫一扫-->
         <scene sceneID="2t5-Fw-iAu">

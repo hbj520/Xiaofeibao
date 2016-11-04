@@ -38,7 +38,7 @@
 
 #pragma mark - 首页热门商户
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
-    
+  
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
                               @"platform":@"1",
@@ -58,6 +58,88 @@
         
         errorResult(error);
     }];
+     
+     
+   
+    /*
+    [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        PayReq *request = [[PayReq alloc] init];
+        NSString *stamp = responseObject[@"data"][@"timestamp"];
+        request.openID= responseObject[@"data"][@"appid"];
+        request.partnerId =responseObject[@"data"][@"partnerid"];
+        request.prepayId= responseObject[@"data"][@"prepayid"];
+        request.package = responseObject[@"data"][@"packageStr"];
+        request.nonceStr= responseObject[@"data"][@"noncestr"];
+        request.sign=responseObject[@"data"][@"sign"];
+        request.timeStamp=stamp.intValue;
+        [WXApi sendReq:request];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+    }];
     
+    */
 }
+
+#pragma mark --收益权走势图
+- (void)getHomeIncomeChartDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara =  @{
+                               @"tokenid":@"",
+                               @"platform":@"1",
+                               @"param":para
+                               };
+    [self.manager POST:@"welcome/incomerightRate" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+            NSArray *arr = responseObject[@"data"][@"IncomerightRateList"];
+            result(YES,info,arr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+        
+    }];
+}
+
+#pragma mark -- 首页广告位
+- (void)getHomeAddDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"welcome/adIndex" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+            NSArray *arr = responseObject[@"data"][@"adList"];
+            result(YES,info,arr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+#pragma mark --收益权详情
+
+#pragma mark --合伙人超市地区
+
+#pragma mark --合伙人超市
+
+#pragma mark --我的账户
+
+#pragma mark --浏览记录
+
+#pragma mark --收益权
+
+#pragma mark --我是商户
+
+
+
+
 @end

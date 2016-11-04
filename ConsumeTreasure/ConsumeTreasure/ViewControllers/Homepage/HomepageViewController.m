@@ -55,6 +55,7 @@
     [self addNavBar];
     [self startMap];
     [self creatUI];
+    //[self loadIncomeAndAddsData];
    
 }
 
@@ -109,7 +110,7 @@
                 localStr = city;
                 
                 
-             //   [self loadHotStoreData];
+             //   [self loadHotStoreData];根据定位加载商家
                 
                 [_locService stopUserLocationService];
             
@@ -121,6 +122,36 @@
 
 
 #pragma mark-PrivateMethod
+
+
+- (void)loadIncomeAndAddsData{
+    NSDictionary *para = @{
+                           
+                           };
+    //走势图
+    [[MyAPI sharedAPI] getHomeIncomeChartDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            NSArray *chartArr = arrays[0];
+            NSLog(@"=======收益权==%@",chartArr);
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    //广告位
+    [[MyAPI sharedAPI] getHomeAddDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            NSArray *addArr = arrays[0];
+            NSLog(@"=======收益权==%@",addArr);
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+}
+
 
 - (void)loadHotStoreData{
   
@@ -363,9 +394,34 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
+         [self loadIncomeAndAddsData];
         
+        /*
+        NSDictionary *para = @{
+                               @"tokenid": @"20ace013934a448887c7af6000dfa112",
+                               @"platform":@"1", //0:Android ,  1:IOS
+                               @"param": @{
+                                       @"tradetype": @"APP",
+                                       @"title": @"支付订单",
+                                       @"ordertype": @"0",
+                                       @"tomemid": @"4839a0d3-e758-44bf-aa51-cd7f0987b2fd" ,
+                                       @"price": @"0.01",
+                                       @"price_tbb": @"20",
+                                       }
+                               };
+        
+        
+        [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                NSArray *arrr = arrays[0];
+                NSLog(@"%@",arrr);
+            }
+            
+        } errorResult:^(NSError *enginerError) {
+            [self showHint:@"下载出错"];
+        }];
        
-        
+        */
     }
 }
 
