@@ -7,7 +7,7 @@
 //
 
 #import "starView.h"
-
+#import <Masonry.h>
 @implementation starView
 -(id)initWithFrame:(CGRect)frame withStarLevel:(float)levels
 {
@@ -18,9 +18,18 @@
     }
     return self;
 }
+- (void)awakeFromNib{
+    [super awakeFromNib];
+}
 - (void)configWithStarLevel:(float)levels{
+    for (id view in self.subviews) {
+        [view removeFromSuperview];
+    }
         self.backgroundColor = [UIColor clearColor];
         CGRect frame = self.frame;
+        frame.size.width = 68;
+        frame.size.height = 16;
+        self.frame = frame;
         CGFloat with = frame.size.width/5;
         //创建底部空星星
         UIImageView *emptyStar = [[UIImageView alloc] initWithFrame:self.bounds];
