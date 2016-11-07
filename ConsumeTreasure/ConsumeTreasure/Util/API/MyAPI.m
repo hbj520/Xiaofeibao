@@ -9,6 +9,10 @@
 #import "MyAPI.h"
 #import <AFNetworking.h>
 #import "WXApi.h"
+
+#import "AddModel.h"
+#import "ChartModel.h"
+
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @end
@@ -92,12 +96,13 @@
     [self.manager POST:@"welcome/incomerightRate" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"00000"]) {
-            NSArray *arr = responseObject[@"data"][@"IncomerightRateList"];
-            result(YES,info,arr);
+            NSMutableArray *charArr = [NSMutableArray array];
+            dataModel *model = [[dataModel alloc]initWithDictionary:responseObject[@"data"] error:nil];
+            [charArr addObject:model];
+            result(YES,info,charArr);
         }else{
             result(NO,info,nil);
         }
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         errorResult(error);
         
@@ -114,8 +119,13 @@
     [self.manager POST:@"welcome/adIndex" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"00000"]) {
-            NSArray *arr = responseObject[@"data"][@"adList"];
-            result(YES,info,arr);
+            //  NSArray *arr = responseObject[@"data"][@"adList"];
+            NSMutableArray *addArray = [NSMutableArray array];
+            
+            ShowModel*addmodel = [[ShowModel alloc]initWithDictionary:responseObject[@"data"] error:nil];
+            [addArray addObject:addmodel];
+            
+            result(YES,info,addArray);
         }else{
             result(NO,info,nil);
         }

@@ -56,7 +56,7 @@
     [self startMap];
     [self creatUI];
     //[self loadIncomeAndAddsData];
-   
+
 }
 
 

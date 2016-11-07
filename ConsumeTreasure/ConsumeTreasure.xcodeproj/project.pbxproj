@@ -109,6 +109,7 @@
 		D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39391DCB114F009122FE /* HomeStoreModel.m */; };
 		D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */; };
 		D15B39401DCC72B1009122FE /* AddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393F1DCC72B1009122FE /* AddModel.m */; };
+		D15B39461DD01488009122FE /* ChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39451DD01488009122FE /* ChartModel.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -328,6 +329,8 @@
 		D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreDeatilViewController.m; sourceTree = "<group>"; };
 		D15B393E1DCC72B1009122FE /* AddModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddModel.h; sourceTree = "<group>"; };
 		D15B393F1DCC72B1009122FE /* AddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddModel.m; sourceTree = "<group>"; };
+		D15B39441DD01488009122FE /* ChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartModel.h; sourceTree = "<group>"; };
+		D15B39451DD01488009122FE /* ChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartModel.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -533,6 +536,8 @@
 				D15B39391DCB114F009122FE /* HomeStoreModel.m */,
 				D15B393E1DCC72B1009122FE /* AddModel.h */,
 				D15B393F1DCC72B1009122FE /* AddModel.m */,
+				D15B39441DD01488009122FE /* ChartModel.h */,
+				D15B39451DD01488009122FE /* ChartModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1218,6 +1223,7 @@
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
+				D15B39461DD01488009122FE /* ChartModel.m in Sources */,
 				D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */,
 				AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */,
 				D10EE3DD1DB0B28F001C1992 /* ASIInputStream.m in Sources */,

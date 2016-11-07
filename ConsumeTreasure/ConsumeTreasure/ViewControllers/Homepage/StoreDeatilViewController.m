@@ -9,6 +9,7 @@
 #import "StoreDeatilViewController.h"
 
 @interface StoreDeatilViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
