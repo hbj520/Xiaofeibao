@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */; };
+		AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0076471DD066D4000E5181 /* UnionCategoryModel.m */; };
+		AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0076491DD06F73000E5181 /* TestUnion.json */; };
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
@@ -154,6 +156,9 @@
 		0A554459D0DC6663EB9DDEBF /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
 		4072F88F1F8BF7D0F87C1919 /* Pods-ConsumeTreasure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.debug.xcconfig"; sourceTree = "<group>"; };
 		6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0076461DD066D4000E5181 /* UnionCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionCategoryModel.h; sourceTree = "<group>"; };
+		AB0076471DD066D4000E5181 /* UnionCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionCategoryModel.m; sourceTree = "<group>"; };
+		AB0076491DD06F73000E5181 /* TestUnion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestUnion.json; sourceTree = "<group>"; };
 		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
 		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
@@ -447,6 +452,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AB0076451DD066C0000E5181 /* Union */ = {
+			isa = PBXGroup;
+			children = (
+				AB0076461DD066D4000E5181 /* UnionCategoryModel.h */,
+				AB0076471DD066D4000E5181 /* UnionCategoryModel.m */,
+			);
+			path = Union;
+			sourceTree = "<group>";
+		};
 		AB608C1B1D9CB66D00194FC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,9 +503,9 @@
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB0076451DD066C0000E5181 /* Union */,
 				ABCB95341D9B89E8008927C7 /* Homepage */,
 				ABCB95351D9B89E8008927C7 /* Mine */,
-				ABCB95361D9B89E8008927C7 /* Union */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,13 +561,6 @@
 			children = (
 			);
 			path = Mine;
-			sourceTree = "<group>";
-		};
-		ABCB95361D9B89E8008927C7 /* Union */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Union;
 			sourceTree = "<group>";
 		};
 		ABCB95371D9B89FC008927C7 /* Homepage */ = {
@@ -719,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */,
+				AB0076491DD06F73000E5181 /* TestUnion.json */,
 			);
 			name = Json;
 			sourceTree = "<group>";
@@ -977,6 +985,7 @@
 				ABF4E2731D9B5E57006AD23C /* Frameworks */,
 				ABF4E2741D9B5E57006AD23C /* Resources */,
 				CDAD98FAABD7E98207D9DEBC /* Copy Pods Resources */,
+				33DFF2C51D762E9517072D0C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1097,6 +1106,7 @@
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
+				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
@@ -1137,6 +1147,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		33DFF2C51D762E9517072D0C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CDAD98FAABD7E98207D9DEBC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1172,6 +1197,7 @@
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
+				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,

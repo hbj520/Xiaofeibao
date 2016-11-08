@@ -8,6 +8,8 @@
 
 #import "UnionViewController.h"
 #import "LianmenRightCollectionViewCell.h"
+#import "UnionCategoryModel.h"
+#import "UnionCategoryModel.h"
 #define CollectionViewReuseId @"collectionReuseId"
 #define TableViewReuseId @"unionReuseId"
 @interface UnionViewController ()
@@ -15,6 +17,10 @@
 UITableViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDataSource>
+{
+    NSMutableArray *areaArray;//城市子区域数组
+    NSMutableArray *itemArray;//筛选item数组
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *rightCollectionView;
@@ -26,7 +32,7 @@ UICollectionViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
+    [self loadData];
     [self configNavBar];
     [self configTableViewAndCollectionView];
 }
@@ -36,6 +42,16 @@ UICollectionViewDataSource>
     // Dispose of any resources that can be recreated.
 }
 #pragma mark -PrivateMethod
+- (void)loadData{
+    areaArray = [NSMutableArray arrayWithArray:@[@"包河区",@"滨湖新区",@"政务区",@"蜀山区",@"经开区",@"庐阳区",@"高新区"]];
+    NSError *error2 = nil;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"TestUnion" ofType:@"json"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSArray *array = dict[@"Categorylist"];
+    itemArray = [UnionCategoryModel arrayOfModelsFromDictionaries:array error:&error2];
+}
 - (void)configNavBar{
     NSString *navTitle = @"商家联盟";
     // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
@@ -83,10 +99,12 @@ UICollectionViewDataSource>
 }
 #pragma mark - UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    return itemArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     LianmenRightCollectionViewCell *cell = [self.rightCollectionView dequeueReusableCellWithReuseIdentifier:CollectionViewReuseId forIndexPath:indexPath];
+    UnionCategoryModel *model = [itemArray objectAtIndex:indexPath.row];
+    [cell configWithData:model];
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
