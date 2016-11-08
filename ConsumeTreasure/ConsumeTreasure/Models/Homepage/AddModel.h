@@ -9,19 +9,14 @@
 #import "JSONModel.h"
 
 @protocol AddModel
-
 @end
-
-
-
-
-
 
 @interface AddModel : JSONModel
 
 @property (nonatomic,strong) NSString *adimg;
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,strong) NSString *title;
+
 @end
 
 
@@ -30,13 +25,5 @@
 
 @property (nonatomic,strong) NSArray<AddModel>* adList;
 @end
-/*
-@interface Model : JSONModel
-@property (nonatomic, strong) ShowModel *data;
 
-@property (nonatomic,strong) NSString *code;
-@property (nonatomic,strong) NSString *msg;
 
-@end
-
-*/

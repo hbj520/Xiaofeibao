@@ -36,6 +36,10 @@
     NSString *longitudeStr;
     NSString *latitudeStr;
     NSString *localStr;
+    
+    NSMutableArray *addArr;//广告
+    NSMutableArray *charArr;//走势图
+    
 }
 
 @end
@@ -48,14 +52,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [TRLiveNetManager testNetLoadWithCompletionHandler:^(id model, NSError *error) {
-        
-    }];
+    addArr = [[NSMutableArray alloc]init];
+    charArr = [[NSMutableArray alloc]init];
     
     [self addNavBar];
     [self startMap];
     [self creatUI];
-    //[self loadIncomeAndAddsData];
+    [self loadIncomeAndAddsData];
 
 }
 
@@ -131,8 +134,8 @@
     //走势图
     [[MyAPI sharedAPI] getHomeIncomeChartDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            NSArray *chartArr = arrays[0];
-            NSLog(@"=======收益权==%@",chartArr);
+            charArr = arrays[0];
+            NSLog(@"=======收益权==%@",charArr);
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -142,8 +145,10 @@
     //广告位
     [[MyAPI sharedAPI] getHomeAddDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            NSArray *addArr = arrays[0];
+            [addArr addObjectsFromArray:arrays];
+
             NSLog(@"=======收益权==%@",addArr);
+            [self.tableView reloadData];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -315,6 +320,7 @@
                 imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
             }
             imageChartCell.selectionStyle = 0;
+           imageChartCell.addArray = addArr;
             return imageChartCell;
         }
     }else{
@@ -394,7 +400,7 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
-         [self loadIncomeAndAddsData];
+        
         
         /*
         NSDictionary *para = @{

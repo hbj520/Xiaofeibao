@@ -9,10 +9,7 @@
 #import "JSONModel.h"
 
 @protocol ChartModel
-
 @end
-
-
 
 @interface ChartModel : JSONModel
 
@@ -20,10 +17,7 @@
 @property (nonatomic,strong) NSString *createtime;
 @property (nonatomic,strong) NSString *isdelete;
 @property (nonatomic,strong) NSString *rate;
-
-
 @end
-
 
 @interface dataModel : JSONModel
 @property (nonatomic,strong) NSArray<ChartModel>*IncomerightRateList;
