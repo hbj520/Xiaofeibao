@@ -15,7 +15,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 @interface MyAPI : NSObject
 + (MyAPI *)sharedAPI;
 
-
+#pragma mark - 登录和注册
+- (void)loginWithParameters:(NSDictionary *)para
+                     result:(StateBlock)result
+                errorResult:(ErrorBlock)errorResult;
 
 
 

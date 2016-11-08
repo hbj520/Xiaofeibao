@@ -136,13 +136,25 @@
 }
 //登陆按钮
 - (IBAction)loginBtn:(id)sender {
+   
     self.registerArrow.hidden = YES;
     self.loginArrow.hidden = NO;
     [self.view bringSubviewToFront:self.loginView];
+ 
     [Tools hideKeyBoard];
 }
 
 - (IBAction)accountLoginBtn:(id)sender {
+    [[MyAPI sharedAPI] loginWithParameters:@{
+                                             @"loginName": @"13800000000",
+                                             @"pwd": @"12154545"
+                                             } result:^(BOOL sucess, NSString *msg) {
+                                                 
+                                                 
+                                                 
+                                             } errorResult:^(NSError *enginerError) {
+                                                 
+                                             }];
     [self changeTohom];
 }
 
