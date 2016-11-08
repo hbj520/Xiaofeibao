@@ -95,7 +95,7 @@
                                };
     [self.manager POST:@"welcome/incomerightRate" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSMutableArray *charArr = [NSMutableArray array];
             dataModel *model = [[dataModel alloc]initWithDictionary:responseObject[@"data"] error:nil];
@@ -120,7 +120,7 @@
                               };
     [self.manager POST:@"welcome/adIndex" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *addArray = [NSMutableArray array];
             NSError *err = nil;

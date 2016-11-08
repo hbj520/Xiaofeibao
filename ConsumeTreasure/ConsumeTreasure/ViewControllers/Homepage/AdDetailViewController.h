@@ -7,7 +7,9 @@
 //
 
 #import "BaseViewController.h"
-
+#import "AddModel.h"
 @interface AdDetailViewController : BaseViewController
+
+@property (nonatomic,strong)AddModel *admodel;
 
 @end

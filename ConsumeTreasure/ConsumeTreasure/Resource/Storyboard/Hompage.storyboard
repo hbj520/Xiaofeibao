@@ -112,7 +112,7 @@
                         <segue destination="UIO-fY-buI" kind="push" identifier="myAccountSegue" id="b1P-dR-HyU"/>
                         <segue destination="vfO-H1-toc" kind="push" identifier="beStoreSegue" id="lTs-Nf-DQs"/>
                         <segue destination="gXB-1e-VsV" kind="push" id="8y3-EJ-Rdo"/>
-                        <segue destination="dJC-jp-sow" kind="push" id="qmY-0I-Ohm"/>
+                        <segue destination="dJC-jp-sow" kind="push" identifier="adDetailSegue" id="qmY-0I-Ohm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -754,7 +754,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AaF-eu-njf"/>
+                    <navigationItem key="navigationItem" id="Sdq-kk-pBu">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="y9m-gr-IA3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="dJC-jp-sow" id="IKe-8z-Zf2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flc-PP-RX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

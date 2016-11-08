@@ -320,7 +320,13 @@
                 imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
             }
             imageChartCell.selectionStyle = 0;
-           imageChartCell.addArray = addArr;
+            imageChartCell.addArray = addArr;
+            imageChartCell.indexBlock = ^(NSInteger index){
+              
+                [self performSegueWithIdentifier:@"adDetailSegue" sender:nil];
+            };
+            
+            
             return imageChartCell;
         }
     }else{
