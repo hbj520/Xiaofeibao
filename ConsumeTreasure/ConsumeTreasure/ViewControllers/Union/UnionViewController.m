@@ -71,7 +71,7 @@ UICollectionViewDataSource>
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 25, 10, 25);
     flowLayout.minimumLineSpacing = 0;
     flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.itemSize = CGSizeMake(85, 85);
+    flowLayout.itemSize = CGSizeMake((ScreenWidth*2/3-20)/3, 85);
     [self.rightCollectionView setCollectionViewLayout:flowLayout];
     [self.rightCollectionView registerNib:[UINib nibWithNibName:@"LianmenRightCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:CollectionViewReuseId];
     self.rightCollectionView.delegate = self;
