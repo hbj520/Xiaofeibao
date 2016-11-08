@@ -137,8 +137,9 @@
     //走势图
     [[MyAPI sharedAPI] getHomeIncomeChartDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            charArr = arrays[0];
+            [charArr addObjectsFromArray:arrays];
             NSLog(@"=======收益权==%@",charArr);
+            [self.tableView reloadData];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -307,6 +308,8 @@
             if (chartCell == nil) {
                 chartCell = [[[NSBundle mainBundle] loadNibNamed:@"chartTableViewCell" owner:self options:nil] lastObject];
             }
+            chartCell.rateArr = charArr;
+            chartCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, chartCell.bounds.size.width);
             chartCell.selectionStyle = 0;
             return chartCell;
         }else if (indexPath.row == 0){

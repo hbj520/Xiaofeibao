@@ -30,9 +30,10 @@
 }
 
 -(void)setTimeArr:(NSMutableArray *)timeArr{
-    _timeArr = timeArr;
+    //_timeArr = timeArr;
     [self setUI];
 }
+ 
 -(void)setUI{
     
     //每个日期之间的间距 -- 54
@@ -59,7 +60,7 @@
     };
     //NSLog(@"%f",[self.kmArr[0] doubleValue] /maxKM);
     //最大里程设置为高度90% 求出最大值
-    maxKM = maxKM / 0.9;
+    maxKM = maxKM / 0.6;
     //求出坐标点在线上的比例
     self.pointArr = [NSMutableArray array];
     for (int i = 0; i< self.numbers.count; i++ ) {
@@ -130,8 +131,8 @@
         //添加标签
         UILabel *textLabel = [[UILabel alloc]init];
         textLabel.font = [UIFont systemFontOfSize:9];
-        textLabel.textColor = [UIColor lightGrayColor];
-        textLabel.text = [NSString stringWithFormat:@"%@/%@",self.kmArr[i],self.timeArr[i]];
+        textLabel.textColor = [UIColor blackColor];
+        textLabel.text = [NSString stringWithFormat:@"%@",self.kmArr[i]];
         [textLabel sizeToFit];
         [self addSubview:textLabel];
         //这里我使用了masonry做约束

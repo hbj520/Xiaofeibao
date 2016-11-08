@@ -114,8 +114,7 @@
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSMutableArray *charArr = [NSMutableArray array];
-            dataModel *model = [[dataModel alloc]initWithDictionary:responseObject[@"data"] error:nil];
-            [charArr addObject:model];
+            charArr = [ChartModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"IncomerightRateList"] error:nil];
             
             result(YES,info,charArr);
         }else{

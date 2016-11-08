@@ -268,4 +268,15 @@
     //    }
 }
 
++(NSString *)dealWithtimeStr:(NSString*)str{
+    
+    double Rtime = [str doubleValue];
+    NSDate *reTime = [NSDate dateWithTimeIntervalSince1970:Rtime];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd hh:mm"];
+    NSString *repTime = [formatter stringFromDate:reTime];
+
+    return repTime;
+}
+
 @end

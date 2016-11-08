@@ -58,5 +58,5 @@
 
 //选择控制器
 + (void)chooseRootController;
-
++(NSString *)dealWithtimeStr:(NSString*)str;
 @end
