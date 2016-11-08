@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ImageTableViewCell : UITableViewCell
-
+@property (nonatomic,retain) NSArray *addArray;
 @end

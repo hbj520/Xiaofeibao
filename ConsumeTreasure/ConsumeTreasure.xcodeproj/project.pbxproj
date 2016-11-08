@@ -110,6 +110,7 @@
 		D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */; };
 		D15B39401DCC72B1009122FE /* AddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393F1DCC72B1009122FE /* AddModel.m */; };
 		D15B39461DD01488009122FE /* ChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39451DD01488009122FE /* ChartModel.m */; };
+		D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39481DD0B2C0009122FE /* AdDetailViewController.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -331,6 +332,8 @@
 		D15B393F1DCC72B1009122FE /* AddModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddModel.m; sourceTree = "<group>"; };
 		D15B39441DD01488009122FE /* ChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartModel.h; sourceTree = "<group>"; };
 		D15B39451DD01488009122FE /* ChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartModel.m; sourceTree = "<group>"; };
+		D15B39471DD0B2C0009122FE /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
+		D15B39481DD0B2C0009122FE /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDetailViewController.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -561,6 +564,8 @@
 			children = (
 				ABCB95421D9B8E56008927C7 /* HomepageViewController.h */,
 				ABCB95431D9B8E56008927C7 /* HomepageViewController.m */,
+				D15B39471DD0B2C0009122FE /* AdDetailViewController.h */,
+				D15B39481DD0B2C0009122FE /* AdDetailViewController.m */,
 				D1F275A51DAD0B6E005B9849 /* ScanerVC.h */,
 				D1F275A61DAD0B6E005B9849 /* ScanerVC.m */,
 				D12165841DB5B4D2006B06FC /* ChildViewController.h */,
@@ -1043,10 +1048,12 @@
 					};
 					ABF4E28E1D9B5E58006AD23C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = MGR47JT33V;
 						TestTargetID = ABF4E2751D9B5E57006AD23C;
 					};
 					ABF4E2991D9B5E58006AD23C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = MGR47JT33V;
 						TestTargetID = ABF4E2751D9B5E57006AD23C;
 					};
 				};
@@ -1169,6 +1176,7 @@
 				D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */,
 				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
+				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
@@ -1384,7 +1392,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ConsumeTreasure/Xiaofei-Prefix.pch";
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1474,7 +1482,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.doumee.xiaofeibao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wq.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1493,7 +1501,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ConsumeTreasure/Xiaofei-Prefix.pch";
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1583,7 +1591,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.doumee.xiaofeibao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wq.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1592,6 +1600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MGR47JT33V;
 				INFOPLIST_FILE = ConsumeTreasureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.ConsumeTreasureTests;
@@ -1604,6 +1613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MGR47JT33V;
 				INFOPLIST_FILE = ConsumeTreasureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.ConsumeTreasureTests;
@@ -1615,6 +1625,7 @@
 		ABF4E2AA1D9B5E58006AD23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = MGR47JT33V;
 				INFOPLIST_FILE = ConsumeTreasureUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.ConsumeTreasureUITests;
@@ -1626,6 +1637,7 @@
 		ABF4E2AB1D9B5E58006AD23C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = MGR47JT33V;
 				INFOPLIST_FILE = ConsumeTreasureUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.ConsumeTreasureUITests;
