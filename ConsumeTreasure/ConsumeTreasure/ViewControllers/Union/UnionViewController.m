@@ -81,7 +81,7 @@ UICollectionViewDataSource>
 }
 #pragma mark - UITableVewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return areaArray.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 47.5;
@@ -93,7 +93,7 @@ UICollectionViewDataSource>
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusedId];
     }
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lianmenImageCell"]];
-    cell.textLabel.text = @"滨湖新区";
+    cell.textLabel.text = areaArray[indexPath.row];
     cell.textLabel.textColor = [UIColor darkGrayColor];
     return cell;
 }
