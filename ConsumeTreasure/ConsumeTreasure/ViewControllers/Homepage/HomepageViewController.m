@@ -14,6 +14,7 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 
 #import "HomepageViewController.h"
+#import "AdDetailViewController.h"
 
 #import "HomePageFirstTableViewCell.h"
 #import "chartTableViewCell.h"
@@ -23,6 +24,8 @@
 #import "HomeListHeadView.h"
 
 #import "TRLiveNetManager.h"
+
+#import "AddModel.h"
 
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
@@ -322,8 +325,9 @@
             imageChartCell.selectionStyle = 0;
             imageChartCell.addArray = addArr;
             imageChartCell.indexBlock = ^(NSInteger index){
-              
-                [self performSegueWithIdentifier:@"adDetailSegue" sender:nil];
+                
+                AddModel *model = addArr[index];
+                [self performSegueWithIdentifier:@"adDetailSegue" sender:model];
             };
             
             
@@ -457,10 +461,18 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
+ 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"adDetailSegue"]) {
+        AddModel *model = (AddModel*)sender;
+        AdDetailViewController *adVC = segue.destinationViewController;
+        adVC.admodel = model;
+    }
+   
 }
-*/
+
 
 @end
