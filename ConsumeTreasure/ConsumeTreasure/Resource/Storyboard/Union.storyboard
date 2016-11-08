@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K2y-cz-6VO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K2y-cz-6VO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,9 +37,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-bl-99x">
-                                <frame key="frameInset" width="122" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-bl-99x">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXB-5v-dqA">
@@ -46,9 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-Lg-dTz">
-                                <frame key="frameInset" minX="130" width="245" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-Lg-dTz">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nQ2-Aj-UON">
                                     <size key="itemSize" width="50" height="50"/>
@@ -69,6 +66,16 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2yn-bl-99x" firstAttribute="width" secondItem="p3R-Mg-hd6" secondAttribute="width" multiplier="1:3" id="A5U-zR-Q9F"/>
+                            <constraint firstItem="2yn-bl-99x" firstAttribute="leading" secondItem="p3R-Mg-hd6" secondAttribute="leading" id="KVr-Td-Am4"/>
+                            <constraint firstItem="2y5-Lg-dTz" firstAttribute="top" secondItem="Pmn-YC-rzA" secondAttribute="bottom" id="LQ4-vu-LUi"/>
+                            <constraint firstItem="2yn-bl-99x" firstAttribute="top" secondItem="Pmn-YC-rzA" secondAttribute="bottom" id="Zab-92-S2i"/>
+                            <constraint firstItem="FyF-8B-PWb" firstAttribute="top" secondItem="2y5-Lg-dTz" secondAttribute="bottom" id="coP-Om-Y4e"/>
+                            <constraint firstItem="FyF-8B-PWb" firstAttribute="top" secondItem="2yn-bl-99x" secondAttribute="bottom" id="dWs-PN-cMw"/>
+                            <constraint firstItem="2y5-Lg-dTz" firstAttribute="leading" secondItem="2yn-bl-99x" secondAttribute="trailing" id="eJa-Jw-2c6"/>
+                            <constraint firstAttribute="trailing" secondItem="2y5-Lg-dTz" secondAttribute="trailing" id="lIf-Od-zm2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="联盟商户" id="d2j-hM-CWF"/>
                     <connections>
@@ -93,10 +100,11 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3x-tw-mDY">
-                                <frame key="frameInset" width="375" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F3x-tw-mDY">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="f7v-I4-GF9"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Hsx-gT-pYm">
                                     <size key="itemSize" width="125" height="45"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -168,13 +176,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6B7-aL-1I9">
-                                <frame key="frameInset" minY="45" width="375" height="558"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6B7-aL-1I9">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="F3x-tw-mDY" secondAttribute="trailing" id="ALN-2u-NA3"/>
+                            <constraint firstItem="F3x-tw-mDY" firstAttribute="leading" secondItem="cBk-Fb-SYj" secondAttribute="leading" id="dAg-KM-vDd"/>
+                            <constraint firstItem="6B7-aL-1I9" firstAttribute="top" secondItem="F3x-tw-mDY" secondAttribute="bottom" id="gGa-JG-Iuh"/>
+                            <constraint firstItem="F3x-tw-mDY" firstAttribute="top" secondItem="MQc-2r-mKm" secondAttribute="bottom" id="iQe-J5-LA9"/>
+                            <constraint firstAttribute="trailing" secondItem="6B7-aL-1I9" secondAttribute="trailing" id="oLN-Ih-tkC"/>
+                            <constraint firstItem="6B7-aL-1I9" firstAttribute="leading" secondItem="cBk-Fb-SYj" secondAttribute="leading" id="oMa-EW-w5h"/>
+                            <constraint firstItem="OzF-ee-Cce" firstAttribute="top" secondItem="6B7-aL-1I9" secondAttribute="bottom" id="udv-sz-V9X"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7u9-Nb-uko">
                         <leftBarButtonItems>
