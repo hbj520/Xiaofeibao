@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class UnionCategoryModel;
 @interface LianmenRightCollectionViewCell : UICollectionViewCell
-
+- (void)configWithData:(UnionCategoryModel *)model;
 @end
