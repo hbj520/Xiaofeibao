@@ -58,7 +58,7 @@ UICollectionViewDataSource>
 //    [self.contentTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewContentReuseId"];
     [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
     
-    self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, ScreenWidth, ScreenHeight-300) style:UITableViewStylePlain];
+    self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, ScreenWidth, ScreenHeight-300) style:UITableViewStylePlain];
     self.titleTableView.delegate = self;
     self.titleTableView.dataSource = self;
     [self.titleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewtitleReuseId"];

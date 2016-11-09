@@ -32,8 +32,7 @@
                token:(NSString *)token
             username:(NSString *)username
                Money:(NSString *)money
-               Ucoin:(NSString *)ucoin
-            Integral:(NSString *)integral;
+               QRcode:(NSString *)QRcode;
 
 //保存优币值
 - (void)saveUcoin:(NSString *)ucoin;
@@ -54,7 +53,7 @@
 - (NSString *)getUserId;       //获取用户id
 - (NSString *)getUserName;     //获取用户名
 - (NSString *)getUserPhoneNum; //获取用户手机号码
-- (NSString *)getisteacher;         //获取是否是讲师
+- (NSString *)getisteacher;    //获取是否是讲师
 - (NSString *)getToken;        //获取用户登录令牌
 - (NSString *)getPassword;     //获取用户密码
 - (NSString *)getMoney;        //获取财富

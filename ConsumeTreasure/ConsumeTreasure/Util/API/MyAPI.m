@@ -49,11 +49,16 @@
                               @"param":para
                               };
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            //[Config Instance]；
+            
+        }else{
+            
+        }
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+         errorResult(error);
     }];
 }
 #pragma mark - 首页热门商户

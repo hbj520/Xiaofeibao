@@ -15,6 +15,8 @@
     NSTimer *timer;
     NSInteger time;
 }
+@property (weak, nonatomic) IBOutlet UITextField *loginPhoneNumTextField;
+@property (weak, nonatomic) IBOutlet UITextField *loginPhonePassWordTextfild;
 
 @property (weak, nonatomic) IBOutlet UIView *registerView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
@@ -146,8 +148,8 @@
 
 - (IBAction)accountLoginBtn:(id)sender {
     [[MyAPI sharedAPI] loginWithParameters:@{
-                                             @"loginName": @"13800000000",
-                                             @"pwd": @"12154545"
+                                             @"loginName": self.loginPhoneNumTextField.text,
+                                             @"pwd": self.loginPhonePassWordTextfild.text
                                              } result:^(BOOL sucess, NSString *msg) {
                                                  
                                                  
