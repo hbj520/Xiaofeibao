@@ -19,7 +19,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)loginWithParameters:(NSDictionary *)para
                      result:(StateBlock)result
                 errorResult:(ErrorBlock)errorResult;
-
+#pragma mark - 注册发送验证码
+- (void)postVerifyCodeWithParameters:(NSDictionary *)para
+                              result:(StateBlock)result
+                         errorResult:(ErrorBlock)errorResult;
 
 
 #pragma mark - 首页热门商户
