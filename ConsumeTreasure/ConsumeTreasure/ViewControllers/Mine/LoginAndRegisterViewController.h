@@ -10,4 +10,5 @@
 #import "HomepageViewController.h"
 @interface LoginAndRegisterViewController : UIViewController
 @property (strong,nonatomic) UIStoryboard *mStorybord;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @end
