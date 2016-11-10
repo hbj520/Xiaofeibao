@@ -33,6 +33,7 @@ UICollectionViewDataSource>
     // Do any additional setup after loading the view.
       dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
     [self addCollectionViewAndTableView];
+    //[self postNotification];
    
 }
 
@@ -51,11 +52,14 @@ UICollectionViewDataSource>
 }
 */
 #pragma mark - PrivateMethod
+- (void)postNotificationWithIndexpath:(NSIndexPath *)indexPath{
+    NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
+    [notification postNotificationName:@"arrowNotification" object:nil userInfo:@{@"indexpath":indexPath}];
+}
 - (void)addCollectionViewAndTableView{
     //tableview
     self.contentTabelView.delegate = self;
     self.contentTabelView.dataSource = self;
-//    [self.contentTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewContentReuseId"];
     [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
     
     self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, ScreenWidth, ScreenHeight-300) style:UITableViewStylePlain];
@@ -104,6 +108,7 @@ UICollectionViewDataSource>
     }
     if (cell.CellIsSelected ) {
         [self.view addSubview:self.titleTableView];
+        [self postNotificationWithIndexpath:indexPath];
     }else{
         [self.titleTableView removeFromSuperview];
     }

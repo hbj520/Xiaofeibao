@@ -19,6 +19,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [self registerNotification];
 }
 - (void)setCellIsSelected:(BOOL)CellIsSelected{
     _CellIsSelected = CellIsSelected;
@@ -28,5 +29,19 @@
         self.downArrowImageView.transform = CGAffineTransformMakeRotation(M_PI);
     }
 }
-
+- (void)registerNotification{
+    NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
+    [notification addObserver:self selector:@selector(arrowAct:) name:@"arrowNotification" object:nil];
+}
+- (void)arrowAct:(NSNotification *)notification{
+    NSIndexPath *indexPath = notification.userInfo[@"indexpath"];
+    if (self.indexPath != indexPath) {
+        self.CellIsSelected = NO;
+    }
+    
+}
+- (void)dealloc{
+   NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
+    [notification removeObserver:self name:@"arrowNotification" object:nil];
+}
 @end

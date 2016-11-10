@@ -50,8 +50,13 @@
                               };
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
-            //[Config Instance]；
-            
+            NSDictionary *userDic = responseObject[@"data"];
+            NSString * goldNum = (NSString *)userDic[@"balance"];//用户余额
+            NSString *loginName = userDic[@"loginName"];//用户登录名
+            NSString *token = userDic[@"token"];
+            NSString *imgurl = userDic[@"imgUrl"];
+            NSString *qrcode = userDic[@"qrcord"];
+            [[Config Instance] saveImgUrl:imgurl token:token loginName:loginName balance:goldNum qrCode:qrcode];
         }else{
             
         }

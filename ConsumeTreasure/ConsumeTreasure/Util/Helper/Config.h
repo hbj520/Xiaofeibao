@@ -28,11 +28,11 @@
               icon:(NSString*)icon;
 
 
-- (void)saveImgthumb:(NSString *)imgthumb
+- (void)saveImgUrl:(NSString *)imgUrl
                token:(NSString *)token
-            username:(NSString *)username
-               Money:(NSString *)money
-               QRcode:(NSString *)QRcode;
+            loginName:(NSString *)loginName
+           balance:(NSString *)balance
+            qrCode:(NSString *)qrCode;
 
 //保存优币值
 - (void)saveUcoin:(NSString *)ucoin;
