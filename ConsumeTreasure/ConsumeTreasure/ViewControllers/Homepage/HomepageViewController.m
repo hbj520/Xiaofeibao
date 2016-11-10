@@ -111,7 +111,11 @@
                 NSLog(@"当前城市名称------%@",city);
                 self.locationCityName.text = city;
                 localStr = city;
-                
+                BMKOfflineMap * _offlineMap = [[BMKOfflineMap alloc] init];
+                NSArray* records = [_offlineMap searchCity:city];
+                BMKOLSearchRecord* oneRecord = [records objectAtIndex:0];
+                //城市编码如:北京为131
+                NSInteger cityId = oneRecord.cityID;
                 
              //   [self loadHotStoreData];根据定位加载商家
                 
