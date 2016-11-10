@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^indexBlock)(NSInteger index);
 
 @interface ImageTableViewCell : UITableViewCell
-@property (nonatomic,retain) NSArray *addArray;
+@property (nonatomic,retain) NSMutableArray *addArray;
+
+@property (nonatomic,copy) indexBlock indexBlock;
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSString *adimg;
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *islink;
 
 @end
 

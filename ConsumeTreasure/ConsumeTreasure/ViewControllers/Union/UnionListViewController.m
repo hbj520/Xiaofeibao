@@ -130,9 +130,10 @@ UICollectionViewDataSource>
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewtitleReuseId"];
         }
         cell.textLabel.text = dataSource[indexPath.row];
+        return cell;
     }
  
-    return cell;
+    return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.contentTabelView) {

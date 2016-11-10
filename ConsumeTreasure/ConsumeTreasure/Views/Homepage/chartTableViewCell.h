@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface chartTableViewCell : UITableViewCell
-
+@property (nonatomic,retain) NSArray *rateArr;
 @end

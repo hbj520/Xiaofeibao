@@ -6,6 +6,8 @@
 //  Copyright © 2016 youyou. All rights reserved.
 //
 
+#import <MJRefresh/MJRefresh.h>
+
 //百度
 #import "AppDelegate.h"
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
@@ -14,6 +16,7 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 
 #import "HomepageViewController.h"
+#import "AdDetailViewController.h"
 
 #import "HomePageFirstTableViewCell.h"
 #import "chartTableViewCell.h"
@@ -23,6 +26,8 @@
 #import "HomeListHeadView.h"
 
 #import "TRLiveNetManager.h"
+
+#import "AddModel.h"
 
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
@@ -55,6 +60,7 @@
     addArr = [[NSMutableArray alloc]init];
     charArr = [[NSMutableArray alloc]init];
     
+    [self addRefresh];
     [self addNavBar];
     [self startMap];
     [self creatUI];
@@ -66,6 +72,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
    // self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = NO;
     
@@ -131,6 +138,21 @@
 #pragma mark-PrivateMethod
 
 
+- (void)addRefresh{
+    __weak typeof(self) weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (charArr.count > 0 || addArr.count > 0) {
+            [charArr removeAllObjects];
+            [addArr removeAllObjects];
+        }
+        [weakSelf loadIncomeAndAddsData];
+    }];
+}
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
+
 - (void)loadIncomeAndAddsData{
     NSDictionary *para = @{
                            
@@ -138,12 +160,18 @@
     //走势图
     [[MyAPI sharedAPI] getHomeIncomeChartDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            charArr = arrays[0];
+            
+            NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"createtime" ascending:YES];
+            NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sorter count:1];
+            [charArr addObjectsFromArray:[arrays sortedArrayUsingDescriptors:sortDescriptors]] ;
+            NSLog(@"%@", charArr);
+            
             NSLog(@"=======收益权==%@",charArr);
+            [self.tableView reloadData];
         }
-        
+         [self endRefresh];
     } errorResult:^(NSError *enginerError) {
-        
+         [self endRefresh];
     }];
     
     //广告位
@@ -154,9 +182,9 @@
             NSLog(@"=======收益权==%@",addArr);
             [self.tableView reloadData];
         }
-        
+         [self endRefresh];
     } errorResult:^(NSError *enginerError) {
-        
+         [self endRefresh];
     }];
     
 }
@@ -308,6 +336,8 @@
             if (chartCell == nil) {
                 chartCell = [[[NSBundle mainBundle] loadNibNamed:@"chartTableViewCell" owner:self options:nil] lastObject];
             }
+            chartCell.rateArr = charArr;
+            chartCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, chartCell.bounds.size.width);
             chartCell.selectionStyle = 0;
             return chartCell;
         }else if (indexPath.row == 0){
@@ -324,7 +354,14 @@
                 imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
             }
             imageChartCell.selectionStyle = 0;
-           imageChartCell.addArray = addArr;
+            imageChartCell.addArray = addArr;
+            imageChartCell.indexBlock = ^(NSInteger index){
+                
+                AddModel *model = addArr[index];
+                [self performSegueWithIdentifier:@"adDetailSegue" sender:model];
+            };
+            
+            
             return imageChartCell;
         }
     }else{
@@ -405,6 +442,7 @@
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
         
+        [self performSegueWithIdentifier:@"detailSegue" sender:nil];
         
         /*
         NSDictionary *para = @{
@@ -455,10 +493,18 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
+ 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"adDetailSegue"]) {
+        AddModel *model = (AddModel*)sender;
+        AdDetailViewController *adVC = segue.destinationViewController;
+        adVC.admodel = model;
+    }
+   
 }
-*/
+
 
 @end

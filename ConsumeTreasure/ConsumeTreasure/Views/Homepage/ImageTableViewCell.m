@@ -15,32 +15,24 @@
     NSMutableArray *_imageArr;
 }
 
-
 @end
 
 @implementation ImageTableViewCell
-
-
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     _imageArr = [NSMutableArray array];
-    // [self urlPhoto];
-    
 }
 
-- (void)setAddArray:(NSArray *)addArray{
+- (void)setAddArray:(NSMutableArray *)addArray{
     
-    if (!_addArray) {
-         _addArray = addArray;
-    }
-    for (AddModel *admodel in _addArray) {
+    [_imageArr removeAllObjects];
+    for (AddModel *admodel in addArray) {
         [_imageArr addObject:admodel.adimg];
     }
     [self addImageWithArray:_imageArr];
 }
-
 
 - (void)addImageWithArray:(NSMutableArray*)arr
 {
@@ -61,15 +53,18 @@
         make.bottom.equalTo(@0);
     }];
 }
+
 //点击图片方法
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    
     NSLog(@"%ld",(long)index);
-
+    if (self.indexBlock) {
+        self.indexBlock(index);
+    }
     
 }
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

@@ -268,4 +268,31 @@
     //    }
 }
 
++(NSString *)dealWithtimeStr:(NSString*)str{
+    
+    double Rtime = [str doubleValue];
+    NSDate *reTime = [NSDate dateWithTimeIntervalSince1970:Rtime];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"MM-dd"];
+    NSString *repTime = [formatter stringFromDate:reTime];
+
+    return repTime;
+}
+
++ (NSString *)timeWithTimeIntervalString:(NSString *)timeString
+{
+    // 格式化时间
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"MM-dd"];
+    
+    // 毫秒值转化为秒
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timeString doubleValue]/ 1000.0];
+    NSString* dateString = [formatter stringFromDate:date];
+    return dateString;
+}
+
+
 @end
