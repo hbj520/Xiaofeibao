@@ -55,6 +55,7 @@
     LPNavigationBarView *navBar = [[[NSBundle mainBundle]loadNibNamed:@"LPNavigationBarView" owner:self options:nil]lastObject];
     [self.view addSubview:navBar];
     _navBar = navBar;
+    _navBar.title = @"预约商户";
     _navBar.backgroundAlpha = 0;
 }
 
@@ -65,20 +66,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreContentTableViewCell" bundle:nil] forCellReuseIdentifier:@"contentId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreSpecialTableViewCell" bundle:nil] forCellReuseIdentifier:@"sprcialId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"EstimateTableViewCell" bundle:nil] forCellReuseIdentifier:@"esmateId"];
-    [self.view insertSubview:self.tableView belowSubview:_navBar];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGFloat offsetY = scrollView.contentOffset.y;
-    CGFloat headerViewHeight = 100;
-    if (offsetY <= 0) {
-        _navBar.backgroundAlpha = 0;
-    }else if (offsetY >= headerViewHeight) {
-        _navBar.backgroundAlpha = 1.0;
-    }else {
-        _navBar.backgroundAlpha = offsetY/headerViewHeight;
-    }
+   // [self.view insertSubview:self.tableView belowSubview:_navBar];
 }
 
 #pragma mark -- UITableViewDelegate 
@@ -184,10 +172,16 @@ if (indexPath.section == 0) {//折线图
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     // return [UIView new];
    
+    if (section == 3) {
+        BottomFootView *footView = [[[NSBundle mainBundle]loadNibNamed:@"BottomFootView" owner:self options:nil]lastObject];
+        return footView;
+    }else{
+    
+    
     UIView * foot = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 15)];
     foot.backgroundColor = RGBACOLOR(240, 241, 242, 1);
     return foot;
-    
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -205,6 +199,20 @@ if (indexPath.section == 0) {//折线图
         return 44;
     }
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offsetY = scrollView.contentOffset.y;
+    CGFloat headerViewHeight = 100;
+    if (offsetY <= 0) {
+        _navBar.backgroundAlpha = 0;
+    }else if (offsetY >= headerViewHeight) {
+        _navBar.backgroundAlpha = 1.0;
+    }else {
+        _navBar.backgroundAlpha = offsetY/headerViewHeight;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

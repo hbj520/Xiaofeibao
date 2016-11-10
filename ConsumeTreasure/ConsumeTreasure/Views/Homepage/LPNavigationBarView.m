@@ -33,6 +33,7 @@
 {
     _title = title;
     _titleLabel.text = title;
+    
 }
 
 - (void)setBackgroundAlpha:(CGFloat)backgroundAlpha
@@ -40,6 +41,7 @@
     _backgroundAlpha = backgroundAlpha;
     if (_backgroundView) {
         _backgroundView.alpha = backgroundAlpha;
+        _titleLabel.alpha =backgroundAlpha;
     }
 }
 
