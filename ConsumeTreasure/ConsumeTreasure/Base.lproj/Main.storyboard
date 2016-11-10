@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -47,7 +47,7 @@
                         <viewControllerLayoutGuide type="bottom" id="btd-4m-PoN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pL2-um-TNS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRZ-bD-Lkm" userLabel="registerView">
@@ -595,8 +595,14 @@
                     <connections>
                         <outlet property="loginArrow" destination="Rn3-e6-sT4" id="S2J-VI-jrp"/>
                         <outlet property="loginBtn" destination="8kE-Gk-5WI" id="8FQ-km-S4o"/>
+                        <outlet property="loginPhoneNumTextField" destination="5gV-j8-Zsl" id="kWr-gw-FdQ"/>
+                        <outlet property="loginPhonePassWordTextfild" destination="Cjo-OK-c3O" id="nS4-nU-rt5"/>
                         <outlet property="loginView" destination="c2d-no-AJN" id="h3i-f4-ybV"/>
                         <outlet property="registerArrow" destination="6u7-WV-5he" id="ULg-zq-o9L"/>
+                        <outlet property="registerInviteCodeTextfileld" destination="eZo-Fm-ihp" id="Eyq-fF-nOl"/>
+                        <outlet property="registerPasswordTextfield" destination="4te-Ee-yQv" id="qLa-av-1SO"/>
+                        <outlet property="registerPhoneTextField" destination="YPg-4q-yWN" id="uNo-Kx-WiM"/>
+                        <outlet property="registerVerifyCodeTextfield" destination="lKL-kY-r52" id="O5F-ec-rnr"/>
                         <outlet property="registerView" destination="qRZ-bD-Lkm" id="hXd-CP-2FB"/>
                         <outlet property="topLayoutConstraint" destination="PKQ-ih-34W" id="gPj-ST-cd6"/>
                         <segue destination="aoB-3T-lMX" kind="push" identifier="forgetPasswordSegue" id="g7S-Np-qUQ"/>
@@ -631,7 +637,7 @@
                         <viewControllerLayoutGuide type="bottom" id="yc1-do-SSK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Ew-1r-eEA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTT-pj-ej4">

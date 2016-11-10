@@ -49,8 +49,33 @@
                               @"param":para
                               };
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSDictionary *userDic = responseObject[@"data"];
+            NSString * goldNum = (NSString *)userDic[@"balance"];//用户余额
+            NSString *loginName = userDic[@"loginName"];//用户登录名
+            NSString *token = userDic[@"token"];
+            NSString *imgurl = userDic[@"imgUrl"];
+            NSString *qrcode = userDic[@"qrcord"];
+            [[Config Instance] saveImgUrl:imgurl token:token loginName:loginName balance:goldNum qrCode:qrcode];
+        }else{
+            
+        }
         
         
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         errorResult(error);
+    }];
+}
+#pragma mark - 注册发送验证码
+- (void)postVerifyCodeWithParameters:(NSDictionary *)para
+                              result:(StateBlock)result
+                         errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"sms/sendRegisterMessage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

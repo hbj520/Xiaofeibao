@@ -62,7 +62,30 @@ static Config * instance = nil;
     
     [settings synchronize];
 }
-
+- (void)saveImgUrl:(NSString *)imgUrl
+             token:(NSString *)token
+         loginName:(NSString *)loginName
+           balance:(NSString *)balance
+            qrCode:(NSString *)qrCode{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults]
+    ;
+    [settings removeObjectForKey:@"imgUrl"];
+    [settings setObject:imgUrl forKey:@"imgUrl"];
+    
+    [settings removeObjectForKey:@"token"];
+    [settings setObject:token forKey:@"token"];
+    
+    [settings removeObjectForKey:@"loginName"];
+    [settings setObject:loginName forKey:@"loginName"];
+    
+    [settings removeObjectForKey:@"balance"];
+    [settings setObject:balance forKey:@"balance"];
+    
+    [settings removeObjectForKey:@"qrCode"];
+    [settings setObject:qrCode forKey:@"qrCode"];
+    
+    [settings synchronize];
+}
 - (void)saveUsername:(NSString *)username
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];

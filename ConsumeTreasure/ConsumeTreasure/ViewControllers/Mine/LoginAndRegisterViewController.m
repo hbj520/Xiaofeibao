@@ -15,6 +15,12 @@
     NSTimer *timer;
     NSInteger time;
 }
+@property (weak, nonatomic) IBOutlet UITextField *loginPhoneNumTextField;
+@property (weak, nonatomic) IBOutlet UITextField *loginPhonePassWordTextfild;
+@property (weak, nonatomic) IBOutlet UITextField *registerPhoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *registerVerifyCodeTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *registerPasswordTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *registerInviteCodeTextfileld;
 
 @property (weak, nonatomic) IBOutlet UIView *registerView;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
@@ -124,6 +130,15 @@
         [self showHint:@"请输入正确的手机号"];
        // return;
     }else{
+        [[MyAPI sharedAPI] postVerifyCodeWithParameters:@{@"phone": self.registerPhoneTextField.text,
+                                                          @"type": @"0"
+                                                          } result:^(BOOL sucess, NSString *msg) {
+            
+                                                              
+        } errorResult:^(NSError *enginerError) {
+            
+            
+        }];
     [self setTimeSchedu];
     }
 }
@@ -146,8 +161,8 @@
 
 - (IBAction)accountLoginBtn:(id)sender {
     [[MyAPI sharedAPI] loginWithParameters:@{
-                                             @"loginName": @"13800000000",
-                                             @"pwd": @"12154545"
+                                             @"loginName": self.loginPhoneNumTextField.text,
+                                             @"pwd": self.loginPhonePassWordTextfild.text
                                              } result:^(BOOL sucess, NSString *msg) {
                                                  
                                                  
