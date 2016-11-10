@@ -6,6 +6,8 @@
 //  Copyright © 2016 youyou. All rights reserved.
 //
 
+#import <MJRefresh/MJRefresh.h>
+
 //百度
 #import "AppDelegate.h"
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
@@ -58,6 +60,7 @@
     addArr = [[NSMutableArray alloc]init];
     charArr = [[NSMutableArray alloc]init];
     
+    [self addRefresh];
     [self addNavBar];
     [self startMap];
     [self creatUI];
@@ -69,6 +72,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
    // self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = NO;
     
@@ -130,6 +134,21 @@
 #pragma mark-PrivateMethod
 
 
+- (void)addRefresh{
+    __weak typeof(self) weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (charArr.count > 0 || addArr.count > 0) {
+            [charArr removeAllObjects];
+            [addArr removeAllObjects];
+        }
+        [weakSelf loadIncomeAndAddsData];
+    }];
+}
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
+
 - (void)loadIncomeAndAddsData{
     NSDictionary *para = @{
                            
@@ -137,13 +156,18 @@
     //走势图
     [[MyAPI sharedAPI] getHomeIncomeChartDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            [charArr addObjectsFromArray:arrays];
+            
+            NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"createtime" ascending:YES];
+            NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:&sorter count:1];
+            [charArr addObjectsFromArray:[arrays sortedArrayUsingDescriptors:sortDescriptors]] ;
+            NSLog(@"%@", charArr);
+            
             NSLog(@"=======收益权==%@",charArr);
             [self.tableView reloadData];
         }
-        
+         [self endRefresh];
     } errorResult:^(NSError *enginerError) {
-        
+         [self endRefresh];
     }];
     
     //广告位
@@ -154,9 +178,9 @@
             NSLog(@"=======收益权==%@",addArr);
             [self.tableView reloadData];
         }
-        
+         [self endRefresh];
     } errorResult:^(NSError *enginerError) {
-        
+         [self endRefresh];
     }];
     
 }
@@ -414,6 +438,7 @@
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
         
+        [self performSegueWithIdentifier:@"detailSegue" sender:nil];
         
         /*
         NSDictionary *para = @{

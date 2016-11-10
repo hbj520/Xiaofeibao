@@ -42,9 +42,9 @@
     //循环添加日期标签
     for (int i = 0; i< self.numbers.count; i++ ) {
   
-        UILabel *numberLabel = [[UILabel alloc]initWithFrame:CGRectMake(20 + i * space, 180, 20, 20)];
+        UILabel *numberLabel = [[UILabel alloc]initWithFrame:CGRectMake(18 + i * space, 180, 35, 20)];
         numberLabel.text = self.numbers[i];
-        numberLabel.font = [UIFont systemFontOfSize:16];
+        numberLabel.font = [UIFont systemFontOfSize:10];
         numberLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:numberLabel];
     }

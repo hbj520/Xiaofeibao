@@ -21,39 +21,46 @@
 
 @implementation chartTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+    
+    rateArray = [NSMutableArray array];
+    dayArray = [NSMutableArray array];
+    
+}
+
 - (void)setRateArr:(NSArray *)rateArr{
+    
+    [rateArray removeAllObjects];
+    [dayArray removeAllObjects];
+    
     for (ChartModel *model in rateArr) {
         [rateArray addObject:model.rate];
-        [dayArray addObject:[Tools dealWithtimeStr:model.createtime] ];
-        
+        [dayArray addObject:[Tools timeWithTimeIntervalString:model.createtime]];
+             }
+    if (rateArray.count > 0) {
+        [self creatChartWithRateArr:rateArray DayArr:dayArray];
+
     }
 }
 
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-
-    rateArray = [NSMutableArray array];
-    dayArray = [NSMutableArray array];
+- (void)creatChartWithRateArr:(NSMutableArray *)rateArr DayArr:(NSMutableArray*)dayArr{
+    
+    
     
     self.foldLineView = [[FoldLineView alloc]initWithFrame:CGRectMake(15, 10, [UIScreen mainScreen].bounds.size.width - 30, 220)];
     
-    //周的数据源
-    NSMutableArray *numbers =[NSMutableArray arrayWithObjects:@"28", @"29" , @"30" , @"1" , @"2" , @"3", @"4" ,nil];
-    //添加里程数据
-    NSMutableArray *kmArr = [NSMutableArray arrayWithObjects:@"26.96",@"20.52",@"26.42",@"39.41",@"27.78",@"32.91",@"25.75", nil];
-    //添加时间数组
-    NSMutableArray *timeArr = [NSMutableArray arrayWithObjects:@"1.35",@"0.41",@"0.30",@"0.53",@"2.16",@"3.33",@"2.09",nil];
+     NSMutableArray *timeArr = [NSMutableArray arrayWithObjects:@"1.35",@"0.41",@"0.30",@"0.53",@"2.16",@"3.33",@"2.09",nil];
     
-    self.foldLineView.numbers = numbers;
-    self.foldLineView.kmArr = kmArr;
+    self.foldLineView.numbers = dayArr;
+    self.foldLineView.kmArr = rateArr;
     self.foldLineView.timeArr = timeArr;
     
     [self.contentView addSubview:self.foldLineView];
-
-    
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

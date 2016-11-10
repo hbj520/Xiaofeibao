@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ListHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pj_1080" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-cA-PAh">
+                    <rect key="frame" x="14" y="14.5" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="AX1-1s-3hk"/>
+                        <constraint firstAttribute="height" constant="16" id="vTw-fD-7KS"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-kn-Ihh">
+                    <rect key="frame" x="35" y="15" width="33" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Mtw-SU-Hig"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5分" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnV-SD-ChQ">
+                    <rect key="frame" x="330" y="16" width="35" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="Zrz-cs-I5C"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-l7-vd8" customClass="starView">
+                    <rect key="frame" x="244" y="16" width="78" height="14"/>
+                    <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="Epe-Mo-cdz"/>
+                        <constraint firstAttribute="height" constant="14" id="T7a-41-mRL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fmw-cA-PAh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="3QJ-QL-MvS"/>
+                <constraint firstItem="fmw-cA-PAh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MKb-wI-QzN"/>
+                <constraint firstItem="UnV-SD-ChQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S3Q-NO-0pH"/>
+                <constraint firstItem="WHa-l7-vd8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZLw-f6-qLa"/>
+                <constraint firstItem="UnV-SD-ChQ" firstAttribute="leading" secondItem="WHa-l7-vd8" secondAttribute="trailing" constant="8" id="Zxk-NR-qOW"/>
+                <constraint firstItem="V8A-kn-Ihh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dsZ-gE-bbS"/>
+                <constraint firstItem="V8A-kn-Ihh" firstAttribute="leading" secondItem="fmw-cA-PAh" secondAttribute="trailing" constant="5" id="fug-Df-sG1"/>
+                <constraint firstAttribute="trailing" secondItem="UnV-SD-ChQ" secondAttribute="trailing" constant="10" id="lfk-lT-MjF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="36.5" y="-219.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pj_1080" width="47" height="47"/>
+    </resources>
+</document>
