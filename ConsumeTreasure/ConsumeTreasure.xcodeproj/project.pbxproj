@@ -127,6 +127,8 @@
 		D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B39661DD414A7009122FE /* EstimateTableViewCell.xib */; };
 		D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B396A1DD417C3009122FE /* BottomFootView.m */; };
 		D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B396C1DD417D6009122FE /* BottomFootView.xib */; };
+		D15B39711DD46AFB009122FE /* LPNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B396F1DD46AFB009122FE /* LPNavigationBarView.m */; };
+		D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -374,6 +376,9 @@
 		D15B39691DD417C3009122FE /* BottomFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomFootView.h; sourceTree = "<group>"; };
 		D15B396A1DD417C3009122FE /* BottomFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomFootView.m; sourceTree = "<group>"; };
 		D15B396C1DD417D6009122FE /* BottomFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomFootView.xib; sourceTree = "<group>"; };
+		D15B396E1DD46AFB009122FE /* LPNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNavigationBarView.h; sourceTree = "<group>"; };
+		D15B396F1DD46AFB009122FE /* LPNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNavigationBarView.m; sourceTree = "<group>"; };
+		D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPNavigationBarView.xib; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -727,6 +732,9 @@
 				D15B39691DD417C3009122FE /* BottomFootView.h */,
 				D15B396A1DD417C3009122FE /* BottomFootView.m */,
 				D15B396C1DD417D6009122FE /* BottomFootView.xib */,
+				D15B396E1DD46AFB009122FE /* LPNavigationBarView.h */,
+				D15B396F1DD46AFB009122FE /* LPNavigationBarView.m */,
+				D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1164,6 +1172,7 @@
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
+				D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */,
 				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
@@ -1247,6 +1256,7 @@
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
 				D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */,
 				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
+				D15B39711DD46AFB009122FE /* LPNavigationBarView.m in Sources */,
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
