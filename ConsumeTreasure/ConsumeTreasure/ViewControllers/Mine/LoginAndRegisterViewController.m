@@ -10,7 +10,8 @@
 #import "HexColor.h"
 #import "NoticeHelper.h"
 
-@interface LoginAndRegisterViewController ()
+
+@interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
 {
     NSTimer *timer;
     NSInteger time;
@@ -27,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *registerArrow;
 @property (weak, nonatomic) IBOutlet UIImageView *loginArrow;
 - (IBAction)registerBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+
 //登录约束top
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 - (IBAction)loginBtn:(id)sender;
@@ -160,22 +161,29 @@
 }
 
 - (IBAction)accountLoginBtn:(id)sender {
+    [self showHudInView:self.view hint:@"登录..."];
     [[MyAPI sharedAPI] loginWithParameters:@{
                                              @"loginName": self.loginPhoneNumTextField.text,
                                              @"pwd": self.loginPhonePassWordTextfild.text
                                              } result:^(BOOL sucess, NSString *msg) {
                                                  
-                                                 
+                                                 if (sucess) {
+                                                     [self changeTohom];
+
+                                                 }else{
+                                                     [self showHint:@"您输入的账号或密码有误"];
+                                                 }
                                                  
                                              } errorResult:^(NSError *enginerError) {
-                                                 
+                                                 [self showHint:@"登陆出错"];
                                              }];
-    [self changeTohom];
+    [self hideHud];
 }
 
 - (void)changeTohom{
     self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+    [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
     [self.navigationController pushViewController:homVC animated:YES];
 }
 
