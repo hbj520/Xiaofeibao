@@ -16,6 +16,7 @@
 #import "StoreSpecialTableViewCell.h"
 #import "EstimateTableViewCell.h"
 #import "BottomFootView.h"
+#import "PromptTableViewCell.h"
 
 @interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -29,7 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    self.tabBarController.tabBar.hidden = YES;
+  //  self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -66,7 +67,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreContentTableViewCell" bundle:nil] forCellReuseIdentifier:@"contentId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreSpecialTableViewCell" bundle:nil] forCellReuseIdentifier:@"sprcialId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"EstimateTableViewCell" bundle:nil] forCellReuseIdentifier:@"esmateId"];
-   // [self.view insertSubview:self.tableView belowSubview:_navBar];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PromptTableViewCell" bundle:nil] forCellReuseIdentifier:@"PromptId"];
+
 }
 
 #pragma mark -- UITableViewDelegate 
@@ -119,12 +121,12 @@ if (indexPath.section == 0) {//折线图
      estimateCell.selectionStyle = 0;
      return estimateCell;
  }else{
-     EstimateTableViewCell *estimateCell = [tableView dequeueReusableCellWithIdentifier:@"esmateId"];
-     if (estimateCell == nil) {
-         estimateCell = [[[NSBundle mainBundle] loadNibNamed:@"EstimateTableViewCell" owner:self options:nil] lastObject];
+     PromptTableViewCell *promptCell = [tableView dequeueReusableCellWithIdentifier:@"PromptId"];
+     if (promptCell == nil) {
+         promptCell = [[[NSBundle mainBundle] loadNibNamed:@"PromptTableViewCell" owner:self options:nil] lastObject];
      }
-     estimateCell.selectionStyle = 0;
-     return estimateCell;
+     promptCell.selectionStyle = 0;
+     return promptCell;
  }
 
 }
@@ -143,11 +145,11 @@ if (indexPath.section == 0) {//折线图
     
     if (indexPath.section == 0 ||indexPath.section == 1 ||indexPath.section == 3) {
         return UITableViewAutomaticDimension;
+    }else if (indexPath.section == 4){
+        return 100;
     }else{
         return 83;
     }
-    
-    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -164,8 +166,13 @@ if (indexPath.section == 0) {//折线图
         listHead.backgroundView.backgroundColor = [UIColor whiteColor];
         
         return listHead;
+    }else{
+        UIView * head = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 15)];
+        head.backgroundColor = RGBACOLOR(240, 241, 242, 1);
+        return head;
     }
-    return [UIView new];
+    
+   // return [UIView new];
     
 }
 
@@ -187,7 +194,12 @@ if (indexPath.section == 0) {//折线图
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0 || section ==1) {
         return 0.01;
-    }else {
+    }else if (section == 4){
+        
+        return 15;
+    }
+    
+    else {
         return 44;
     }
 }
@@ -207,6 +219,7 @@ if (indexPath.section == 0) {//折线图
     if (offsetY <= 0) {
         _navBar.backgroundAlpha = 0;
     }else if (offsetY >= headerViewHeight) {
+     
         _navBar.backgroundAlpha = 1.0;
     }else {
         _navBar.backgroundAlpha = offsetY/headerViewHeight;

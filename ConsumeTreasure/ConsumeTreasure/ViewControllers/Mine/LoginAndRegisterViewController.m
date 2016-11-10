@@ -161,6 +161,7 @@
 }
 
 - (IBAction)accountLoginBtn:(id)sender {
+    [self changeTohom];
     [self showHudInView:self.view hint:@"登录..."];
     [[MyAPI sharedAPI] loginWithParameters:@{
                                              @"loginName": self.loginPhoneNumTextField.text,

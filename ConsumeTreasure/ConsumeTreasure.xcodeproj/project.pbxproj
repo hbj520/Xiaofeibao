@@ -129,6 +129,8 @@
 		D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B396C1DD417D6009122FE /* BottomFootView.xib */; };
 		D15B39711DD46AFB009122FE /* LPNavigationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B396F1DD46AFB009122FE /* LPNavigationBarView.m */; };
 		D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */; };
+		D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39741DD493C8009122FE /* PromptTableViewCell.m */; };
+		D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B39751DD493C8009122FE /* PromptTableViewCell.xib */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -379,6 +381,9 @@
 		D15B396E1DD46AFB009122FE /* LPNavigationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNavigationBarView.h; sourceTree = "<group>"; };
 		D15B396F1DD46AFB009122FE /* LPNavigationBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNavigationBarView.m; sourceTree = "<group>"; };
 		D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPNavigationBarView.xib; sourceTree = "<group>"; };
+		D15B39731DD493C8009122FE /* PromptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptTableViewCell.h; sourceTree = "<group>"; };
+		D15B39741DD493C8009122FE /* PromptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptTableViewCell.m; sourceTree = "<group>"; };
+		D15B39751DD493C8009122FE /* PromptTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptTableViewCell.xib; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -735,6 +740,9 @@
 				D15B396E1DD46AFB009122FE /* LPNavigationBarView.h */,
 				D15B396F1DD46AFB009122FE /* LPNavigationBarView.m */,
 				D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */,
+				D15B39731DD493C8009122FE /* PromptTableViewCell.h */,
+				D15B39741DD493C8009122FE /* PromptTableViewCell.m */,
+				D15B39751DD493C8009122FE /* PromptTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1160,6 +1168,7 @@
 				D12165F21DB71CCE006B06FC /* SYQMoneyTableViewCell.xib in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
+				D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */,
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
@@ -1320,6 +1329,7 @@
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
+				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
 				D15B39461DD01488009122FE /* ChartModel.m in Sources */,
 				D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */,

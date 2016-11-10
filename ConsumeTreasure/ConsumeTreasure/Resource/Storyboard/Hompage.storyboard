@@ -783,7 +783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvc-DF-JRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117.5999999999999" y="1414.5427286356824"/>
+            <point key="canvasLocation" x="1111" y="1415"/>
         </scene>
         <!--Ad Detail View Controller-->
         <scene sceneID="1Iy-kB-6Oc">
@@ -872,6 +872,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="gXB-1e-VsV" kind="push" identifier="juestSegue" id="Xmh-c2-kw2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7P-Q0-DPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -907,4 +910,7 @@
         <image name="whiteback" width="10" height="17"/>
         <image name="xffl" width="49" height="46"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xmh-c2-kw2"/>
+    </inferredMetricsTieBreakers>
 </document>

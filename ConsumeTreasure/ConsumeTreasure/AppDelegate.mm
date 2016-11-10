@@ -63,15 +63,15 @@
 }
 #pragma mark - PrivateMethod
 - (void)changeToMain{
-    
+    /*
     self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
     HomepageViewController *homeVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"homePageSB"];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homeVC];
-    /*
+    */
     self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
-    */
+    
 }
 #pragma mark -WeixinDelegate
 - (void)onReq:(BaseReq *)req{
