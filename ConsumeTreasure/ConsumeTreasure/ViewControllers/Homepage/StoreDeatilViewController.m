@@ -61,6 +61,9 @@
 }
 - (void)viewDidLayoutSubviews{
     DetailHeadView * headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
+    
+     headView.contentMode = UIViewContentModeScaleAspectFill;
+    
     headView.frame = CGRectMake(0, 0, ScreenWidth, 170);
     self.tableView.tableHeaderView = headView;
 }
@@ -79,6 +82,7 @@
 }
 
 - (void)addTableView{
+
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreDetailTableViewCell" bundle:nil] forCellReuseIdentifier:@"storeDetailId"];

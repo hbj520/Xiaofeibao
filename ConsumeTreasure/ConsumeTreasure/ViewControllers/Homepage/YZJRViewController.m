@@ -41,7 +41,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     
         
-        self.titleArr = [[NSMutableArray alloc]initWithObjects:@"瑶海区",@"政务区",@"庐阳区",@"滨湖新区", nil];
+      // self.titleArr = [[NSMutableArray alloc]initWithObjects:@"瑶海区",@"政务区",@"庐阳区",@"滨湖新区", nil];
         
         // 移除之前所有子控制器
         [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];

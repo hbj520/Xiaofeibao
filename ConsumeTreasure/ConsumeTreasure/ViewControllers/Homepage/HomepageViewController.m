@@ -278,6 +278,12 @@
 
 }
 
+- (void)pushToNextWithIdentiField:(NSString*)identi{
+    self.hidesBottomBarWhenPushed = YES;
+    [self performSegueWithIdentifier:identi sender:nil];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
@@ -302,14 +308,13 @@
         }
         firstCell.selectionStyle = 0;
         
-        firstCell.partnerBlock = ^{//合伙人超市
-            [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
+        firstCell.partnerBlock = ^{//合伙人超市partnerSegue
+           // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
+            [self pushToNextWithIdentiField:@"partnerSegue"];
         };
         firstCell.storeBlock = ^{//商户入口
-            
-            [self performSegueWithIdentifier:@"beStoreSegue" sender:nil];
-           // [self performSegueWithIdentifier:@"unionSegue" sender:nil];
-        };
+            [self pushToNextWithIdentiField:@"beStoreSegue"];
+                  };
         firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };
@@ -317,13 +322,15 @@
             
         };
         firstCell.accountBlock =^{
-            //self.hidesBottomBarWhenPushed = YES;
-            [self performSegueWithIdentifier:@"myAccountSegue" sender:nil];
-            //self.hidesBottomBarWhenPushed = NO;
+            [self pushToNextWithIdentiField:@"myAccountSegue"];
+           
         };
         firstCell.recordBlock = ^{//浏览记录
             
+            
+              self.hidesBottomBarWhenPushed = YES;
             [self performSegueWithIdentifier:@"historySegue" sender:nil];
+              self.hidesBottomBarWhenPushed = NO;
         };
         
         
