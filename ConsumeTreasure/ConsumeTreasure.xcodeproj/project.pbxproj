@@ -11,6 +11,7 @@
 		AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0076471DD066D4000E5181 /* UnionCategoryModel.m */; };
 		AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0076491DD06F73000E5181 /* TestUnion.json */; };
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
+		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
@@ -180,6 +181,8 @@
 		AB0076491DD06F73000E5181 /* TestUnion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestUnion.json; sourceTree = "<group>"; };
 		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
 		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
+		AB05ABAE1DD599A300208DB9 /* AreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaModel.h; sourceTree = "<group>"; };
+		AB05ABAF1DD599A300208DB9 /* AreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaModel.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -505,6 +508,8 @@
 			children = (
 				AB0076461DD066D4000E5181 /* UnionCategoryModel.h */,
 				AB0076471DD066D4000E5181 /* UnionCategoryModel.m */,
+				AB05ABAE1DD599A300208DB9 /* AreaModel.h */,
+				AB05ABAF1DD599A300208DB9 /* AreaModel.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -1306,6 +1311,7 @@
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
 				D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
+				AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */,
 				AB608C231D9CB7AF00194FC2 /* Config.m in Sources */,
 				D12166031DB85B1C006B06FC /* SpreadTableViewCell.m in Sources */,
 				D15B39671DD414A7009122FE /* EstimateTableViewCell.m in Sources */,

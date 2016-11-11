@@ -12,6 +12,7 @@
 
 #import "AddModel.h"
 #import "ChartModel.h"
+#import "AreaModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -165,7 +166,8 @@
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *addArray = [NSMutableArray array];
             NSError *err = nil;
-            addArray = [AddModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"adList"] error:&err];
+            NSArray *data = responseObject[@"data"][@"adList"];
+            addArray = [AddModel arrayOfModelsFromDictionaries:data error:&err];
             //[addArray addObject:addmodel];
             
             result(YES,info,addArray);
@@ -193,6 +195,40 @@
 #pragma mark --我是商户
 
 
-
+#pragma mark -联盟商户主页面获取城市大区
+- (void)unionShopAreaWithParameters:(NSDictionary *)para
+                         result:(ArrayBlock)result
+                    errorResult:(ErrorBlock)errorResult{
+    AFHTTPSessionManager * testmanager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.1.67:8080/xfb/"]] ;
+    //申明返回的结果是json类型
+    testmanager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //    //申明请求的数据是json类型
+    testmanager.requestSerializer=[AFJSONRequestSerializer serializer];
+    //    //如果报接受类型不一致请替换一致text/html或别的
+    testmanager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [testmanager POST:@"welcome/getDistrictlist" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSArray *data = responseObject[@"data"][@"districtList"];
+            NSMutableArray *modelArray = [NSMutableArray array];
+            NSError *err = nil;
+            for (NSDictionary *dic in data) {
+                AreaModel *model = [[AreaModel alloc] initWithDictionary:dic error:&err];
+                
+            }
+           
+            
+        }else{
+            
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 
 @end

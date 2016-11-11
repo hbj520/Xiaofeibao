@@ -26,9 +26,19 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 
 
 #pragma mark - 首页热门商户
-- (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+- (void)getHomeChartDataWithParameters:(NSDictionary*)para
+                               resulet:(ArrayBlock)result
+                           errorResult:(ErrorBlock)errorResult;
 #pragma mark --收益权走势图
-- (void)getHomeIncomeChartDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+- (void)getHomeIncomeChartDataWithParameters:(NSDictionary*)para
+                                      result:(ArrayBlock)result
+                                 errorResult:(ErrorBlock)errorResult;
 #pragma mark -- 首页广告位
-- (void)getHomeAddDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+- (void)getHomeAddDataWithParameters:(NSDictionary*)para
+                              result:(ArrayBlock)result
+                         errorResult:(ErrorBlock)errorResult;
+#pragma mark -联盟商户主页面各个区
+- (void)unionShopAreaWithParameters:(NSDictionary *)para
+                         result:(ArrayBlock)result
+                    errorResult:(ErrorBlock)errorResult;
 @end
