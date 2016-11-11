@@ -43,6 +43,15 @@ UICollectionViewDataSource>
 }
 #pragma mark -PrivateMethod
 - (void)loadData{
+    [[MyAPI sharedAPI] unionShopAreaWithParameters:@{
+                                                     @"citycode": @"127"
+                                                    }result:^(BOOL success, NSString *msg, NSArray *arrays) {
+                                                        
+                                                        
+                                                    } errorResult:^(NSError *enginerError) {
+                                                    
+                                                        
+                                                    }];
     areaArray = [NSMutableArray arrayWithArray:@[@"包河区",@"滨湖新区",@"政务区",@"蜀山区",@"经开区",@"庐阳区",@"高新区"]];
     NSError *error2 = nil;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TestUnion" ofType:@"json"];
