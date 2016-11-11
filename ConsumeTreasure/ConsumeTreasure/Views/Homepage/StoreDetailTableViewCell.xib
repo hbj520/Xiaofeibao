@@ -119,6 +119,11 @@
                     <constraint firstItem="jwV-nX-eDW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="39" id="x3Z-wA-nRM"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="adresssLab" destination="U1I-tp-fWj" id="2GE-30-cAj"/>
+                <outlet property="distanceLab" destination="OOG-6H-d8u" id="nwD-VP-wmf"/>
+                <outlet property="storeNameLab" destination="wg8-My-Rjt" id="TmR-5D-x4P"/>
+            </connections>
             <point key="canvasLocation" x="23.5" y="25.5"/>
         </tableViewCell>
     </objects>

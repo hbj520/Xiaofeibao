@@ -27,6 +27,9 @@
                 <constraint firstItem="RQX-mU-puB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qlh-oQ-gKx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerImage" destination="RQX-mU-puB" id="zwx-E0-D2y"/>
+            </connections>
             <point key="canvasLocation" x="17" y="-244"/>
         </view>
     </objects>

@@ -18,8 +18,11 @@
 #import "BottomFootView.h"
 #import "PromptTableViewCell.h"
 
+#import <Masonry.h>
+
 @interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 
 @property (nonatomic, weak) LPNavigationBarView *navBar;
 
@@ -36,6 +39,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.bottomBarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.height.equalTo(@44);
+        
+        
+    }];
     
     [self addTableView];
      [self addNavBarView];//导航栏
@@ -162,8 +174,8 @@ if (indexPath.section == 0) {//折线图
             listHead.listTitle.text = @"评价";
             listHead.listHeadImage.image = [UIImage imageNamed:@"pj_1080"];
         }
-        listHead.backgroundView = [[UIImageView alloc]init];
-        listHead.backgroundView.backgroundColor = [UIColor whiteColor];
+      //  listHead.backgroundView = [[UIImageView alloc]init];
+        listHead.contentView.backgroundColor = [UIColor whiteColor];
         
         return listHead;
     }else{

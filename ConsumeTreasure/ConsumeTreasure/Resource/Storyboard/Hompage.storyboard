@@ -34,7 +34,7 @@
         <!--Homepage View Controller-->
         <scene sceneID="SC0-OK-BNh">
             <objects>
-                <viewController storyboardIdentifier="homePageSB" id="0Q2-6J-unF" customClass="HomepageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homePageSB" hidesBottomBarWhenPushed="YES" id="0Q2-6J-unF" customClass="HomepageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLq-fO-tkh"/>
                         <viewControllerLayoutGuide type="bottom" id="8fd-0C-zsU"/>
@@ -710,7 +710,7 @@
         <!--Store Deatil View Controller-->
         <scene sceneID="YcB-0Y-eWg">
             <objects>
-                <viewController id="gXB-1e-VsV" customClass="StoreDeatilViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail" id="gXB-1e-VsV" customClass="StoreDeatilViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wfX-rd-Rfa"/>
                         <viewControllerLayoutGuide type="bottom" id="wS7-if-vSR"/>
@@ -778,6 +778,7 @@
                     <navigationItem key="navigationItem" id="GKx-x5-tUW"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bottomBarView" destination="W6v-cR-54Q" id="oRn-ml-mEq"/>
                         <outlet property="tableView" destination="grJ-vI-M8x" id="fi6-J7-fUd"/>
                     </connections>
                 </viewController>
@@ -911,6 +912,6 @@
         <image name="xffl" width="49" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xmh-c2-kw2"/>
+        <segue reference="8y3-EJ-Rdo"/>
     </inferredMetricsTieBreakers>
 </document>

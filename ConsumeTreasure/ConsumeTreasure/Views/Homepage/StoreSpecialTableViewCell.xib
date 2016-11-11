@@ -64,6 +64,11 @@
                     <constraint firstItem="guN-X1-Pen" firstAttribute="leading" secondItem="Trr-83-sGG" secondAttribute="trailing" constant="10" id="zkU-vD-ze9"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="specialImage" destination="Trr-83-sGG" id="Fnm-9r-Z4Z"/>
+                <outlet property="specialName" destination="dut-P8-kCm" id="gNE-fT-9FJ"/>
+                <outlet property="specialPrice" destination="3Qg-YQ-tos" id="vqO-rT-YWP"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="75.5"/>
         </tableViewCell>
     </objects>

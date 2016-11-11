@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ChildViewController : UIViewController
-
+@property (strong,nonatomic) UIStoryboard *mStorybord;
 @end

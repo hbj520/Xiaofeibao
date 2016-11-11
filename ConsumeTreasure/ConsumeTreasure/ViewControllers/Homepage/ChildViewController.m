@@ -5,7 +5,7 @@
 //  Created by yz on 15/12/5.
 //  Copyright © 2015年 yz. All rights reserved.
 //
-
+#import "StoreDeatilViewController.h"
 #import "ChildViewController.h"
 
 #import "YZDisplayViewControllerConst.h"
@@ -20,6 +20,10 @@
 
 @implementation ChildViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 
 - (void)viewDidLoad
 {
@@ -139,8 +143,15 @@
     return grayView;
 }
 
+- (void)changeTohom{
+    self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+    StoreDeatilViewController *deVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"detail"];
+  //  [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
+    [self.navigationController pushViewController:deVC animated:YES];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [self changeTohom];
 }
 
 

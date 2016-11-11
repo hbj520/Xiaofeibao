@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface StoreSpecialTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *specialImage;
+@property (weak, nonatomic) IBOutlet UILabel *specialName;
+@property (weak, nonatomic) IBOutlet UILabel *specialPrice;
 
 @end

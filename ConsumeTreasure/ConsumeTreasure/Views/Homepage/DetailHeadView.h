@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailHeadView : UIView
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 
 @end

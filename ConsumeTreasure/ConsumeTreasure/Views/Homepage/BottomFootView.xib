@@ -31,6 +31,9 @@
                 <constraint firstItem="MOQ-xo-WWU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ULT-em-bn9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="moreOrNoneLab" destination="MOQ-xo-WWU" id="O9Z-qx-dif"/>
+            </connections>
             <point key="canvasLocation" x="22" y="-179"/>
         </view>
     </objects>

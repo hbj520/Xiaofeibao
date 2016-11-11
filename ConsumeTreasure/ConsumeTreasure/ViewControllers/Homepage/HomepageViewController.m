@@ -73,7 +73,6 @@
 {
     [super viewWillAppear:animated];
     
-   // self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = NO;
     
     [mapView viewWillAppear];
@@ -127,13 +126,10 @@
              //   [self loadHotStoreData];根据定位加载商家
                 
                 [_locService stopUserLocationService];
-            
             }
         }
     }];
 }
-
-
 
 #pragma mark-PrivateMethod
 
@@ -319,7 +315,9 @@
             
         };
         firstCell.accountBlock =^{
+            //self.hidesBottomBarWhenPushed = YES;
             [self performSegueWithIdentifier:@"myAccountSegue" sender:nil];
+            //self.hidesBottomBarWhenPushed = NO;
         };
         firstCell.recordBlock = ^{//浏览记录
             
@@ -441,7 +439,7 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
         
-        self.hidesBottomBarWhenPushed = YES;
+       self.hidesBottomBarWhenPushed = YES;
         [self performSegueWithIdentifier:@"detailSegue" sender:nil];
         self.hidesBottomBarWhenPushed = NO;
         /*
@@ -498,6 +496,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    //[segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+
+    
     if ([segue.identifier isEqualToString:@"adDetailSegue"]) {
         AddModel *model = (AddModel*)sender;
         AdDetailViewController *adVC = segue.destinationViewController;

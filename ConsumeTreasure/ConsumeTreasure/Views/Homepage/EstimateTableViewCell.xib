@@ -74,6 +74,13 @@
                     <constraint firstAttribute="trailing" secondItem="xO4-FD-jIi" secondAttribute="trailing" constant="8" id="x0H-Fa-m52"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="estimateContent" destination="xO4-FD-jIi" id="uwl-73-cPL"/>
+                <outlet property="estimateImage" destination="4Z9-PC-Moj" id="ttC-kL-jKg"/>
+                <outlet property="estimateName" destination="YOh-qx-ngh" id="aiV-mc-BDz"/>
+                <outlet property="estimateStar" destination="oEN-l0-lud" id="gxb-uD-z93"/>
+                <outlet property="estimateTime" destination="cyA-e9-u5X" id="rG7-Ht-RYa"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="75.5"/>
         </tableViewCell>
     </objects>
