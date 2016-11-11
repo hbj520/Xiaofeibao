@@ -86,6 +86,8 @@
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
+    //self.navigationController.navigationBarHidden = NO;
+    // [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
     [mapView viewWillDisappear];
     mapView.delegate = nil; // 不用时，置nil

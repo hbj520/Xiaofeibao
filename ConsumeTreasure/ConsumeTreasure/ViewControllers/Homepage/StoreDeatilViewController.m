@@ -30,16 +30,22 @@
 
 @implementation StoreDeatilViewController
 
+- (void)viewWillDisappear:(BOOL)animated{
+    //[self.navigationController setNavigationBarHidden: NO animated: animated];
+
+    [super viewWillDisappear:animated];
+    }
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
   //  self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.tabBarController.tabBar.hidden = YES;
     [self.bottomBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(@0);
         make.left.equalTo(@0);
