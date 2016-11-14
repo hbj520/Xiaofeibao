@@ -40,9 +40,7 @@
     {
         return NO;
     }
-    
     return YES;
-    
     
    // return self.childViewControllers.count>1;
 }

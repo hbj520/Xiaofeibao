@@ -705,7 +705,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzG-wP-Arj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="1415"/>
+            <point key="canvasLocation" x="383" y="1415"/>
         </scene>
         <!--Store Deatil View Controller-->
         <scene sceneID="YcB-0Y-eWg">
@@ -785,6 +785,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvc-DF-JRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1111" y="1415"/>
+        </scene>
+        <!--Child View Controller-->
+        <scene sceneID="yYz-LO-wmr">
+            <objects>
+                <viewController id="dl1-nN-jfy" customClass="ChildViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eNv-zS-Y24"/>
+                        <viewControllerLayoutGuide type="bottom" id="6c7-6L-kAP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7M3-0V-RKh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="gXB-1e-VsV" kind="push" identifier="juestSegue" id="NYr-uc-yrf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWR-Ca-xPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="2159"/>
         </scene>
         <!--Ad Detail View Controller-->
         <scene sceneID="1Iy-kB-6Oc">
@@ -873,9 +894,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="gXB-1e-VsV" kind="push" identifier="juestSegue" id="Xmh-c2-kw2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7P-Q0-DPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -912,6 +930,6 @@
         <image name="xffl" width="49" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8y3-EJ-Rdo"/>
+        <segue reference="NYr-uc-yrf"/>
     </inferredMetricsTieBreakers>
 </document>

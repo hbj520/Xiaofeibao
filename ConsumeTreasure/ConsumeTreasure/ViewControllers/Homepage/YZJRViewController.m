@@ -27,12 +27,13 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
-    self.automaticallyAdjustsScrollViewInsets=NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
      [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     

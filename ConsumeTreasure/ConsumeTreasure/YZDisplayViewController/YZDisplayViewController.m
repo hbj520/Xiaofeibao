@@ -862,6 +862,9 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     NSLog(@"发出通知");
+    
+   // self.navigationController.navigationBar.hidden = NO;
+    
     // 发出通知
     [[NSNotificationCenter defaultCenter] postNotificationName:YZDisplayViewClickOrScrollDidFinsh  object:nil];
     

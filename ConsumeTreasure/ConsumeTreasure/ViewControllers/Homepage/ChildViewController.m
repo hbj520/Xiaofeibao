@@ -157,6 +157,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self changeTohom];
+      //  [self performSegueWithIdentifier:@"juestSegue" sender:nil];
+   // juestSegue
 }
 
 
