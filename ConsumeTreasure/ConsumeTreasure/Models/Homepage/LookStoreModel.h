@@ -10,4 +10,18 @@
 
 @interface LookStoreModel : JSONModel
 
+@property (nonatomic,strong) NSString *addr;
+@property (nonatomic,strong) NSString *imgurl;
+@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *objid;
+
+//-(void)setValue:(id)value forUndefinedKey:(NSString *)key;
+
 @end
+
+/*
+@interface mListModel : JSONModel
+@property (nonatomic,strong) NSArray<LookStoreModel *>* mLIst;
+
+@end
+*/

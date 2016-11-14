@@ -14,7 +14,7 @@
 #import "ChartModel.h"
 #import "AreaModel.h"
 #import "LookTimeMode.h"
-
+#import "LookStoreModel.h"
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @end
@@ -201,12 +201,25 @@
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *LookTimeArray = [NSMutableArray array];
+            NSMutableArray *lookStoreArr = [NSMutableArray array];
+            NSMutableArray *modelArray = [NSMutableArray array];
             NSError *err = nil;
             NSArray *data = responseObject[@"data"][@"mapList"];
             LookTimeArray = [LookTimeMode arrayOfModelsFromDictionaries:data error:&err];
-      
             
-            result(YES,info,LookTimeArray);
+            for (LookTimeMode *mode  in LookTimeArray) {
+                for (NSDictionary *modelDic in mode.mlist) {
+                    NSError* err = nil;
+                    LookStoreModel* model = [[LookStoreModel alloc] initWithDictionary:modelDic error:&err];
+                    [modelArray addObject:model];
+                    
+                    
+                }
+              [lookStoreArr addObject:modelArray];
+            }
+            
+           
+            result(YES,info,@[LookTimeArray,lookStoreArr]);
         }else{
             result(NO,info,nil);
         }
