@@ -10,6 +10,7 @@
 #import "LianmenRightCollectionViewCell.h"
 #import "UnionCategoryModel.h"
 #import "UnionCategoryModel.h"
+#import "AreaModel.h"
 #define CollectionViewReuseId @"collectionReuseId"
 #define TableViewReuseId @"unionReuseId"
 @interface UnionViewController ()
@@ -46,13 +47,18 @@ UICollectionViewDataSource>
     [[MyAPI sharedAPI] unionShopAreaWithParameters:@{
                                                      @"citycode": @"127"
                                                     }result:^(BOOL success, NSString *msg, NSArray *arrays) {
-                                                        
+                                                        if (success) {
+                                                            areaArray = [NSMutableArray arrayWithArray:arrays];
+                                                            [self.leftTableView reloadData];
+                                                        }else{
+                                                           // areaArray = [NSMutableArray arrayWithArray:@[@"包河区",@"滨湖新区",@"政务区",@"蜀山区",@"经开区",@"庐阳区",@"高新区"]];
+  
+                                                        }
                                                         
                                                     } errorResult:^(NSError *enginerError) {
                                                     
                                                         
                                                     }];
-    areaArray = [NSMutableArray arrayWithArray:@[@"包河区",@"滨湖新区",@"政务区",@"蜀山区",@"经开区",@"庐阳区",@"高新区"]];
     NSError *error2 = nil;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TestUnion" ofType:@"json"];
     NSData *data = [[NSData alloc] initWithContentsOfFile:path];
@@ -102,7 +108,8 @@ UICollectionViewDataSource>
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reusedId];
     }
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lianmenImageCell"]];
-    cell.textLabel.text = areaArray[indexPath.row];
+    AreaModel *model =areaArray[indexPath.row];
+    cell.textLabel.text = model.name;
     cell.textLabel.textColor = [UIColor darkGrayColor];
     return cell;
 }

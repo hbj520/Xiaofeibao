@@ -18,7 +18,7 @@
 {
     
     [super viewWillAppear:animated];
-        self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = NO;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
