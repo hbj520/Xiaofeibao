@@ -13,6 +13,7 @@
 #import "AddModel.h"
 #import "ChartModel.h"
 #import "AreaModel.h"
+#import "LookTimeMode.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -189,6 +190,34 @@
 #pragma mark --我的账户
 
 #pragma mark --浏览记录
+- (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary * dicPara = @{
+                            @"tokenid":@"f2c70e32b68b4a618215b9834ca3f28c",
+                            @"platform":@"1",
+                            @"param":para
+                            };
+    [self.manager POST:@"userinfo/getBrowseList" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            //  NSArray *arr = responseObject[@"data"][@"adList"];
+            NSMutableArray *LookTimeArray = [NSMutableArray array];
+            NSError *err = nil;
+            NSArray *data = responseObject[@"data"][@"mapList"];
+            LookTimeArray = [LookTimeMode arrayOfModelsFromDictionaries:data error:&err];
+      
+            
+            result(YES,info,LookTimeArray);
+        }else{
+            result(NO,info,nil);
+        }
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+    
+}
+
+
 
 #pragma mark --收益权
 

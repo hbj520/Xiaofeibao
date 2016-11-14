@@ -37,6 +37,22 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)getHomeAddDataWithParameters:(NSDictionary*)para
                               result:(ArrayBlock)result
                          errorResult:(ErrorBlock)errorResult;
+
+#pragma mark --收益权详情
+
+#pragma mark --合伙人超市地区
+
+#pragma mark --合伙人超市
+
+#pragma mark --我的账户
+
+#pragma mark --浏览记录
+- (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+#pragma mark --收益权
+
+#pragma mark --我是商户
+
 #pragma mark -联盟商户主页面各个区
 - (void)unionShopAreaWithParameters:(NSDictionary *)para
                          result:(ArrayBlock)result

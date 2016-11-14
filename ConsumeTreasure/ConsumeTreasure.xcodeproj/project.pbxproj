@@ -132,6 +132,8 @@
 		D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B39701DD46AFB009122FE /* LPNavigationBarView.xib */; };
 		D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39741DD493C8009122FE /* PromptTableViewCell.m */; };
 		D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B39751DD493C8009122FE /* PromptTableViewCell.xib */; };
+		D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39801DD99D02009122FE /* LookTimeMode.m */; };
+		D15B39841DD99D1F009122FE /* LookStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39831DD99D1F009122FE /* LookStoreModel.m */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -387,6 +389,10 @@
 		D15B39731DD493C8009122FE /* PromptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptTableViewCell.h; sourceTree = "<group>"; };
 		D15B39741DD493C8009122FE /* PromptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptTableViewCell.m; sourceTree = "<group>"; };
 		D15B39751DD493C8009122FE /* PromptTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptTableViewCell.xib; sourceTree = "<group>"; };
+		D15B397F1DD99D02009122FE /* LookTimeMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookTimeMode.h; sourceTree = "<group>"; };
+		D15B39801DD99D02009122FE /* LookTimeMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookTimeMode.m; sourceTree = "<group>"; };
+		D15B39821DD99D1F009122FE /* LookStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookStoreModel.h; sourceTree = "<group>"; };
+		D15B39831DD99D1F009122FE /* LookStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookStoreModel.m; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -605,6 +611,10 @@
 				D15B393F1DCC72B1009122FE /* AddModel.m */,
 				D15B39441DD01488009122FE /* ChartModel.h */,
 				D15B39451DD01488009122FE /* ChartModel.m */,
+				D15B397F1DD99D02009122FE /* LookTimeMode.h */,
+				D15B39801DD99D02009122FE /* LookTimeMode.m */,
+				D15B39821DD99D1F009122FE /* LookStoreModel.h */,
+				D15B39831DD99D1F009122FE /* LookStoreModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1330,9 +1340,11 @@
 				AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
 				D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */,
+				D15B39841DD99D1F009122FE /* LookStoreModel.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
+				D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
 				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,

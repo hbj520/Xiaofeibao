@@ -10,6 +10,9 @@
 #import "HotStoreTableViewCell.h"
 #import "LookRecordHeadView.h"
 
+#import <MJRefresh/MJRefresh.h>
+
+
 @interface LookRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -33,6 +36,36 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
+    [self addRefresh];
+}
+
+- (void)addRefresh{
+    __weak typeof(self) weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+       
+        [weakSelf loadData];
+    }];
+}
+
+- (void)loadData{
+    NSDictionary *para = @{
+                           @"pageNum":@"1",
+                           @"pageOffest":@"10"
+                         };
+    [[MyAPI sharedAPI] getLookRecordDataWithParaMeters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            NSLog(@"=====%@====",arrays);
+        }
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    
+}
+
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
 }
 
 - (void)creatUI{
@@ -42,6 +75,9 @@
     self.tableView.sectionHeaderHeight = 40;
     self.tableView.sectionFooterHeight = 12;
     [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
+    
+    
+    
 }
 
 #pragma mark - UITableViewDelegate

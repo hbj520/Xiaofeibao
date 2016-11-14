@@ -374,7 +374,7 @@
 {
     [super viewWillAppear:animated];
     
-    
+    self.navigationController.navigationBar.hidden = NO;
     
         // 注册cell
         [self.contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
