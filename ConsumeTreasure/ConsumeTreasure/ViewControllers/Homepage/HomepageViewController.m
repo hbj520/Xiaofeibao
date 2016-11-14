@@ -29,7 +29,14 @@
 
 #import "AddModel.h"
 
-@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
+@interface HomepageViewController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+BMKMapViewDelegate,
+BMKLocationServiceDelegate,
+BMKGeoCodeSearchDelegate,
+BMKOfflineMapDelegate>
 {
     
     BMKMapView* mapView;
@@ -72,9 +79,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    self.tabBarController.tabBar.hidden = NO;
-    
+    if (self.tabBarController.tabBar.hidden) {
+        [self.tabBarController.tabBar setHidden:NO];
+      
+    }
     [mapView viewWillAppear];
     mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     

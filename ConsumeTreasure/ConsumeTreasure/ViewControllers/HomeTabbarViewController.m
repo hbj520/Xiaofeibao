@@ -61,8 +61,6 @@
         IMP imp = [self methodForSelector:selector];
         UIStoryboard * (*func)(id,SEL) = (void *)imp;
         UIStoryboard *sb = func(self,selector);
-//        NSString *nibName = (NSString *)dic[@"storybordId"];
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:nibName bundle:nil];
         UIViewController *vc = [sb instantiateInitialViewController];
         vc.tabBarItem = tabbarItem;
         [menusVCs addObject:vc];
@@ -71,7 +69,6 @@
     self.viewControllers = menusVCs;
 
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
