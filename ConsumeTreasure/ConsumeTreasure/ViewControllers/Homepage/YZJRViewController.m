@@ -18,16 +18,12 @@
 {
     
     [super viewWillAppear:animated];
-    
-     [self.titleArr removeAllObjects];
-    self.titleArr = [[NSMutableArray alloc]initWithObjects:@"瑶海区",@"政务区",@"庐阳区",@"滨湖新区", nil];
-
-    self.navigationController.navigationBarHidden = NO;
-    
+        self.navigationController.navigationBarHidden = NO;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self refreshDisplay];
 }
 
 - (void)viewDidLoad
@@ -38,6 +34,8 @@
     
     
     [self.titleArr removeAllObjects];
+    self.titleArr = [[NSMutableArray alloc]initWithObjects:@"瑶海区",@"政务区",@"庐阳区",@"滨湖新区", nil];
+
     // 模仿网络延迟，0.2秒后，才知道有多少标题
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     

@@ -13,7 +13,7 @@
 #import "PartnerTableViewCell.h"
 #import "starView.h"
 #import <Masonry.h>
-
+#import "YZJRViewController.h"
 @interface ChildViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,retain)UITableView * tableView;
 @end
@@ -23,6 +23,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
