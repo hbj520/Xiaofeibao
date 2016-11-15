@@ -37,18 +37,41 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cir-1" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-Dt-XDo">
+                        <rect key="frame" x="129" y="75" width="117" height="117"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="117" id="ODy-d8-JBG"/>
+                            <constraint firstAttribute="width" constant="117" id="VFJ-tI-49j"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="600" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6G-cd-93k">
+                        <rect key="frame" x="152" y="108" width="71" height="51"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="51" id="Hf9-0n-Qbv"/>
+                            <constraint firstAttribute="width" constant="71" id="VSH-43-PbD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="i6G-cd-93k" firstAttribute="centerY" secondItem="bvT-Dt-XDo" secondAttribute="centerY" id="D0N-aB-18Z"/>
                     <constraint firstItem="m0p-iZ-esE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="E9m-hm-Sdw"/>
                     <constraint firstItem="VAs-sp-ED9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ghg-tt-hNs"/>
                     <constraint firstItem="m0p-iZ-esE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="INe-1V-xc4"/>
                     <constraint firstItem="VAs-sp-ED9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Qyl-6K-UaQ"/>
+                    <constraint firstItem="i6G-cd-93k" firstAttribute="centerX" secondItem="bvT-Dt-XDo" secondAttribute="centerX" id="XtT-dt-XG4"/>
+                    <constraint firstItem="bvT-Dt-XDo" firstAttribute="top" secondItem="m0p-iZ-esE" secondAttribute="bottom" constant="20" id="eSV-Aw-VIe"/>
+                    <constraint firstItem="bvT-Dt-XDo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="i2W-DD-Qwf"/>
                 </constraints>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="cir-1" width="324" height="326"/>
         <image name="whiteback" width="10" height="17"/>
     </resources>
 </document>
