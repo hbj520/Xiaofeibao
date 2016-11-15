@@ -17,7 +17,38 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAs-sp-ED9">
+                        <rect key="frame" x="12" y="30" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="MTa-JD-vL1"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="UhJ-sy-uMi"/>
+                            <constraint firstAttribute="width" constant="40" id="aHZ-Bm-LfC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="qeF-VP-chB"/>
+                        </constraints>
+                        <state key="normal" image="whiteback"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收益权份额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0p-iZ-esE">
+                        <rect key="frame" x="144" y="37" width="87" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="O5a-cI-KoK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="m0p-iZ-esE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="E9m-hm-Sdw"/>
+                    <constraint firstItem="VAs-sp-ED9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ghg-tt-hNs"/>
+                    <constraint firstItem="m0p-iZ-esE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="INe-1V-xc4"/>
+                    <constraint firstItem="VAs-sp-ED9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Qyl-6K-UaQ"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="whiteback" width="10" height="17"/>
+    </resources>
 </document>
