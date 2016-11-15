@@ -30,7 +30,7 @@
 #define KUserPassword [[Config Instance] getPassword]
 #define KGesturePsassword [[Config Instance] getGesturePassword]
 
-#define BaseUrl @"http://192.168.1.67:8080/xfb/"
+#define BaseUrl @"http://192.168.1.221:8888/xfb/"
 
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )

@@ -10,9 +10,7 @@
 #import "HexColor.h"
 #import "MyAccountTableViewCell.h"
 #import "LevelTableViewCell.h"
-#import "ExplainTableViewCell.h"
-#import "SpreadTableViewCell.h"
-
+#import "DetailCountHeadView.h"
 @interface MyAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSArray *levelArr;
@@ -39,52 +37,30 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
-  //  UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-   // navBarHairlineImageView.hidden = YES;
-   //self.navigationController.navigationBar.translucent = YES;
-}
+  }
 
-/*
-- (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
-    
-        if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0) {
-                return(UIImageView*)view;
-            }
-        for(UIView*subview in view.subviews) {
-                UIImageView*imageView = [self findHairlineImageViewUnder:subview];
-                if(imageView) {
-                       return imageView;
-                }
-    }
-       return nil;
-}
 
- */
  
 - (void)creatUI{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.sectionHeaderHeight = 0;
+  
     
     [self.tableView registerNib:[UINib nibWithNibName:@"MyAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"accountCelleId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LevelTableViewCell" bundle:nil] forCellReuseIdentifier:@"levelCellId"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ExplainTableViewCell" bundle:nil] forCellReuseIdentifier:@"explainCellId"];
-      [self.tableView registerNib:[UINib nibWithNibName:@"SpreadTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuiguangCelleId"];
-    levelArr = @[@"一级",@"二级",@"三级",@"四至十级",@"我的上级"];
-}
+    [self.tableView registerNib:[UINib nibWithNibName:@"SpreadTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuiguangCelleId"];
+   }
 
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return 1;
-    }else if (section == 1){
-        return 6;
     }else{
-        return 1;
+        return 25;
     }
 }
 
@@ -103,60 +79,55 @@
         };
         accountCell.selectionStyle = 0;
         return accountCell;
-    }else if (indexPath.section == 2){
-        ExplainTableViewCell *explainCell = [tableView dequeueReusableCellWithIdentifier:@"explainCellId"];
-        if (explainCell == nil) {
-            explainCell = [[[NSBundle mainBundle] loadNibNamed:@"ExplainTableViewCell" owner:self options:nil] lastObject];
-        }
-        explainCell.selectionStyle = 0;
-        return explainCell;
-        
-        
     }else{
-        
-        if (indexPath.row == 0) {
-            SpreadTableViewCell *spreadCell = [tableView dequeueReusableCellWithIdentifier:@"tuiguangCelleId"];
-            if (spreadCell == nil) {
-                spreadCell = [[[NSBundle mainBundle] loadNibNamed:@"SpreadTableViewCell" owner:self options:nil] lastObject];
-            }
-            spreadCell.selectionStyle = 0;
-            return spreadCell;
-        }else{
+    
             LevelTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"levelCellId"];
             if (levelCell == nil) {
                 levelCell = [[[NSBundle mainBundle] loadNibNamed:@"LevelTableViewCell" owner:self options:nil] lastObject];
+          
             }
-            
-            NSString *str = [levelArr objectAtIndex:indexPath.row-1];
-            levelCell.levelLab.text = str;
-            
-            
             levelCell.selectionStyle = 0;
             return levelCell;
         }
         
-       
-        
     }
+    
+
+
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        DetailCountHeadView *headView = [[[NSBundle mainBundle] loadNibNamed:@"DetailCountHeadView" owner:self options:nil]lastObject];
+        return headView;
+    }else{
+        return [UIView new];
+    }
+    
+    
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return 226;
-    }else if (indexPath.section == 2){
-        return 68;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0.01;
     }else{
         return 45;
     }
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 226;
+    }else{
+        return 55;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     if (section == 0) {
-        return 0;
-    }else if (section == 1){
         return 10;
     }else{
-        return 100;
+        return 0.01;
     }
 }
 

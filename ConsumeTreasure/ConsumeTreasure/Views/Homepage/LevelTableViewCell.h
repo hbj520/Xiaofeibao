@@ -10,8 +10,6 @@
 
 @interface LevelTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *levelLab;
 
-@property (weak, nonatomic) IBOutlet UILabel *peopleCountLab;
 
 @end

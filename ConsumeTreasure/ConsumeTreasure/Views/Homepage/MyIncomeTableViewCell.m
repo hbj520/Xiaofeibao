@@ -1,14 +1,14 @@
 //
-//  SpreadTableViewCell.m
+//  MyIncomeTableViewCell.m
 //  ConsumeTreasure
 //
-//  Created by youyoumacmini3 on 16/10/20.
+//  Created by youyoumacmini3 on 16/11/15.
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
-#import "SpreadTableViewCell.h"
+#import "MyIncomeTableViewCell.h"
 
-@implementation SpreadTableViewCell
+@implementation MyIncomeTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

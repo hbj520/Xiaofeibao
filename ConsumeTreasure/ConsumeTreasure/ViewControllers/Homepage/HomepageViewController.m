@@ -145,6 +145,7 @@
         }
         [weakSelf loadIncomeAndAddsData];
     }];
+    
 }
 -(void)endRefresh{
     [self.tableView.mj_header endRefreshing];
