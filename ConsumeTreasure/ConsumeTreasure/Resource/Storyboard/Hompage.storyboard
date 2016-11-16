@@ -113,6 +113,7 @@
                         <segue destination="vfO-H1-toc" kind="push" identifier="beStoreSegue" id="lTs-Nf-DQs"/>
                         <segue destination="gXB-1e-VsV" kind="push" identifier="detailSegue" id="8y3-EJ-Rdo"/>
                         <segue destination="dJC-jp-sow" kind="push" identifier="adDetailSegue" id="qmY-0I-Ohm"/>
+                        <segue destination="mYR-lU-77f" kind="push" identifier="myincomeSegue" id="hLN-aI-ws0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,12 +195,47 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="FOJ-7z-KAf" id="xEo-ES-nL6"/>
+                        <outlet property="tableView" destination="FOJ-7z-KAf" id="7H7-is-Pnj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3w-SB-2Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2158" y="-229"/>
+        </scene>
+        <!--My Income View Controller-->
+        <scene sceneID="4VM-ve-ksm">
+            <objects>
+                <viewController id="mYR-lU-77f" customClass="MyIncomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SSI-U3-kqb"/>
+                        <viewControllerLayoutGuide type="bottom" id="GtC-sM-Kn8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jlo-Z0-LLc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JQ0-7F-aOy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GtC-sM-Kn8" firstAttribute="top" secondItem="JQ0-7F-aOy" secondAttribute="bottom" id="5y0-fn-U5a"/>
+                            <constraint firstAttribute="trailing" secondItem="JQ0-7F-aOy" secondAttribute="trailing" id="Hzu-iJ-95Y"/>
+                            <constraint firstItem="JQ0-7F-aOy" firstAttribute="top" secondItem="jlo-Z0-LLc" secondAttribute="top" id="US9-Dj-3w8"/>
+                            <constraint firstItem="JQ0-7F-aOy" firstAttribute="leading" secondItem="jlo-Z0-LLc" secondAttribute="leading" id="agj-NF-vC7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fqf-Cx-nh3"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="JQ0-7F-aOy" id="TW9-hg-uFB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqg-Dk-6Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="539"/>
         </scene>
         <!--我的账户-->
         <scene sceneID="bA7-no-zqn">
@@ -261,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHb-eg-rFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="528"/>
+            <point key="canvasLocation" x="2402" y="1358"/>
         </scene>
         <!--成为联盟商户-->
         <scene sceneID="bOK-7q-PyV">
@@ -957,6 +993,6 @@
         <image name="xffl" width="49" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYr-uc-yrf"/>
+        <segue reference="8y3-EJ-Rdo"/>
     </inferredMetricsTieBreakers>
 </document>

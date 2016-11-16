@@ -72,7 +72,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+   
     self.tabBarController.tabBar.hidden = NO;
     
     [mapView viewWillAppear];
@@ -320,7 +320,7 @@
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };
         firstCell.incomeBlock = ^{//收益权
-            
+            [self pushToNextWithIdentiField:@"myincomeSegue"];
         };
         firstCell.accountBlock =^{
             [self pushToNextWithIdentiField:@"myAccountSegue"];
@@ -328,10 +328,8 @@
         };
         firstCell.recordBlock = ^{//浏览记录
             
-            
-              self.hidesBottomBarWhenPushed = YES;
-            [self performSegueWithIdentifier:@"historySegue" sender:nil];
-              self.hidesBottomBarWhenPushed = NO;
+             [self pushToNextWithIdentiField:@"historySegue"];
+          
         };
         
         

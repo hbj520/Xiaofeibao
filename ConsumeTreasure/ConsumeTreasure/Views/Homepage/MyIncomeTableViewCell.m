@@ -14,6 +14,12 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)back:(id)sender {
+    if (self.backBtnBlock) {
+        self.backBtnBlock();
+    }
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

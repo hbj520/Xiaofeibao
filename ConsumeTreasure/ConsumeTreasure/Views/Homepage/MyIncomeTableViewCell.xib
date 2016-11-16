@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyIncomeTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myIncomId" id="KGk-i7-Jjw" customClass="MyIncomeTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -27,6 +27,9 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="qeF-VP-chB"/>
                         </constraints>
                         <state key="normal" image="whiteback"/>
+                        <connections>
+                            <action selector="back:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SFE-Ra-LEM"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收益权份额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0p-iZ-esE">
                         <rect key="frame" x="144" y="37" width="87" height="18"/>
@@ -54,23 +57,39 @@
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGZ-LD-dCZ">
+                        <rect key="frame" x="145.5" y="207" width="83" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="83" id="ARe-YT-Jlg"/>
+                            <constraint firstAttribute="height" constant="27" id="hNi-fg-njD"/>
+                        </constraints>
+                        <state key="normal" title="购买收益权" backgroundImage="border">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
+                    <constraint firstItem="wGZ-LD-dCZ" firstAttribute="top" secondItem="bvT-Dt-XDo" secondAttribute="bottom" constant="15" id="6Aq-U9-VMd"/>
                     <constraint firstItem="i6G-cd-93k" firstAttribute="centerY" secondItem="bvT-Dt-XDo" secondAttribute="centerY" id="D0N-aB-18Z"/>
                     <constraint firstItem="m0p-iZ-esE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="E9m-hm-Sdw"/>
                     <constraint firstItem="VAs-sp-ED9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ghg-tt-hNs"/>
                     <constraint firstItem="m0p-iZ-esE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="INe-1V-xc4"/>
                     <constraint firstItem="VAs-sp-ED9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Qyl-6K-UaQ"/>
                     <constraint firstItem="i6G-cd-93k" firstAttribute="centerX" secondItem="bvT-Dt-XDo" secondAttribute="centerX" id="XtT-dt-XG4"/>
+                    <constraint firstItem="wGZ-LD-dCZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bgY-DE-aaL"/>
                     <constraint firstItem="bvT-Dt-XDo" firstAttribute="top" secondItem="m0p-iZ-esE" secondAttribute="bottom" constant="20" id="eSV-Aw-VIe"/>
                     <constraint firstItem="bvT-Dt-XDo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="i2W-DD-Qwf"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="backBtn" destination="VAs-sp-ED9" id="HQe-ma-Z28"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="border" width="317" height="69"/>
         <image name="cir-1" width="324" height="326"/>
         <image name="whiteback" width="10" height="17"/>
     </resources>

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^TapViewBlock)();
 @interface MyIncomeTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+
+
+@property (nonatomic ,copy) TapViewBlock backBtnBlock;
 @end
