@@ -9,7 +9,6 @@
 #import "UnionViewController.h"
 #import "LianmenRightCollectionViewCell.h"
 #import "UnionCategoryModel.h"
-#import "UnionCategoryModel.h"
 #import "AreaModel.h"
 #define CollectionViewReuseId @"collectionReuseId"
 #define TableViewReuseId @"unionReuseId"
@@ -59,13 +58,26 @@ UICollectionViewDataSource>
                                                     
                                                         
                                                     }];
-    NSError *error2 = nil;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"TestUnion" ofType:@"json"];
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSArray *array = dict[@"Categorylist"];
-    itemArray = [UnionCategoryModel arrayOfModelsFromDictionaries:array error:&error2];
+    [[MyAPI sharedAPI] unionCategoryListWithParameters:@{} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            itemArray = [NSMutableArray arrayWithArray:arrays];
+            [self.rightCollectionView reloadData];
+        }else{
+            
+        }
+    } errorResult:^(NSError *enginerError) {
+        
+        
+        
+    }];
+    
+//    NSError *error2 = nil;
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"TestUnion" ofType:@"json"];
+//    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+//    NSError *error;
+//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+//    NSArray *array = dict[@"Categorylist"];
+//    itemArray = [UnionCategoryModel arrayOfModelsFromDictionaries:array error:&error2];
 }
 - (void)configNavBar{
     NSString *navTitle = @"商家联盟";

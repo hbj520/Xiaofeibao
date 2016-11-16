@@ -13,6 +13,7 @@
 #import "AddModel.h"
 #import "ChartModel.h"
 #import "AreaModel.h"
+#import "UnionCategoryModel.h"
 #import "LookTimeMode.h"
 #import "LookStoreModel.h"
 @interface MyAPI()
@@ -276,5 +277,32 @@
 
     }];
 }
-
+#pragma mark -获取联盟商户分类
+- (void)unionCategoryListWithParameters:(NSDictionary *)para
+                             result:(ArrayBlock)result
+                        errorResult:(ErrorBlock)errorResult{
+    [self.manager POST:@"shop/getCategory" parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]){
+            NSArray *data = responseObject[@"data"][@"categoryList"];
+            NSMutableArray *modelArray = [NSMutableArray array];
+            NSError *err = nil;
+            for (NSDictionary *dic in data) {
+                UnionCategoryModel *model = [[UnionCategoryModel alloc] initWithDictionary:dic error:&err];
+                [modelArray addObject:model];
+                
+            }
+            
+            result(YES,@"success",modelArray);
+        }else{
+            
+            result(NO,@"fail",nil);
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        errorResult(error);
+        
+    }];
+}
 @end

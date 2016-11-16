@@ -8,6 +8,7 @@
 
 #import "LianmenRightCollectionViewCell.h"
 #import "UnionCategoryModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface LianmenRightCollectionViewCell()
 @property (weak, nonatomic) IBOutlet UIImageView *lianmenItemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *lianmenItemTitle;
@@ -20,7 +21,7 @@
     // Initialization code
 }
 - (void)configWithData:(UnionCategoryModel *)model{
-    self.lianmenItemImageView.image = [UIImage imageNamed:model.iconurl];
+    [self.lianmenItemImageView sd_setImageWithURL:[NSURL URLWithString:model.iconurl] placeholderImage:[UIImage imageNamed:@"weibo"]];
     self.lianmenItemTitle.text = model.name;
 }
 @end

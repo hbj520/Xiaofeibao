@@ -57,4 +57,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)unionShopAreaWithParameters:(NSDictionary *)para
                          result:(ArrayBlock)result
                     errorResult:(ErrorBlock)errorResult;
+#pragma mark -获取联盟商户分类
+- (void)unionCategoryListWithParameters:(NSDictionary *)para
+                             result:(ArrayBlock)result
+                        errorResult:(ErrorBlock)errorResult;
 @end
