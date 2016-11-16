@@ -260,16 +260,20 @@
             NSError *err = nil;
             for (NSDictionary *dic in data) {
                 AreaModel *model = [[AreaModel alloc] initWithDictionary:dic error:&err];
-                
+                [modelArray addObject:model];
+
             }
            
-            
+            result(YES,@"success",modelArray);
+
         }else{
-            
+            result(NO,@"fail",nil);
+
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        errorResult(error);
+
     }];
 }
 
