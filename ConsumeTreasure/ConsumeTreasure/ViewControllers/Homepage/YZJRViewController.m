@@ -28,7 +28,7 @@
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    //[self refreshDisplay];
+    [self refreshDisplay];
 }
 
 - (void)viewDidLoad
@@ -51,7 +51,7 @@
         // 添加所有新的子控制器
         [self setUpAllViewController];
         // 注意：必须先确定子控制器
-        [self refreshDisplay];
+        //[self refreshDisplay];
         
     });
      // 标题渐变
