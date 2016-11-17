@@ -62,7 +62,7 @@ UICollectionViewDataSource>
     self.contentTabelView.dataSource = self;
     [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
     
-    self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, ScreenWidth, ScreenHeight-300) style:UITableViewStylePlain];
+    self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 100) style:UITableViewStylePlain];
     self.titleTableView.delegate = self;
     self.titleTableView.dataSource = self;
     [self.titleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewtitleReuseId"];
@@ -88,22 +88,37 @@ UICollectionViewDataSource>
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *reuseId = @"collectionReuseId";
     UnionTitleCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseId forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        [cell configTitleText:@"距离"];
+    }else if (indexPath.row == 1){
+        [cell configTitleText:@"折扣"];
+    }else if (indexPath.row == 2){
+        [cell configTitleText:@"评价"];
+    }
     cell.indexPath = indexPath;
     cell.CellIsSelected = NO;
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    CGRect frame = self.titleTableView.frame;
+    frame.origin.x = ScreenWidth/3*(indexPath.row);
+    self.titleTableView.frame = frame;
     UnionTitleCollectionViewCell *cell = (UnionTitleCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     BOOL isSelected = cell.CellIsSelected;
     cell.CellIsSelected = !isSelected;
+    if (indexPath.row == 0) {
+        [dataSource removeAllObjects];
+        dataSource = [NSMutableArray arrayWithArray:@[@"由近到远",@"由远到近"]];
+        [self.titleTableView reloadData];
+    }
     if (indexPath.row == 1) {
         [dataSource removeAllObjects];
-        dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
+        dataSource = [NSMutableArray arrayWithArray:@[@"由高到低",@"由低到高"]];
         [self.titleTableView reloadData];
     }
     if (indexPath.row == 2) {
         [dataSource removeAllObjects];
-        dataSource = [NSMutableArray arrayWithArray:@[@"aa",@"bb",@"cc",@"dd",@"ee",@"ff",@"gg",@"hh",@"kk"]];
+        dataSource = [NSMutableArray arrayWithArray:@[@"由高到低",@"由低到高"]];
         [self.titleTableView reloadData];
     }
     if (cell.CellIsSelected ) {
@@ -139,7 +154,7 @@ UICollectionViewDataSource>
     if (tableView == self.contentTabelView) {
         return 125;
     }
-    return 30;
+    return 50;
 }
 
 - (IBAction)backBtn:(id)sender {
