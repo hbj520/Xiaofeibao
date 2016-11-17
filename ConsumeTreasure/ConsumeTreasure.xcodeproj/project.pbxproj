@@ -1812,7 +1812,7 @@
 					"\"${PODS_ROOT}/Headers/Public/TSMessages\"",
 					"\"${PODS_ROOT}/Headers/Public/TTTAttributedLabel\"",
 					"\"${PODS_ROOT}/Headers/Public/UMengSocialCOM\"",
-					/Users/youyoumacmini3/Desktop/AliPay,
+					"$(SRCROOT)/ConsumeTreasure/AliPay",
 				);
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -1945,7 +1945,7 @@
 					"\"${PODS_ROOT}/Headers/Public/TSMessages\"",
 					"\"${PODS_ROOT}/Headers/Public/TTTAttributedLabel\"",
 					"\"${PODS_ROOT}/Headers/Public/UMengSocialCOM\"",
-					/Users/youyoumacmini3/Desktop/AliPay,
+					"$(SRCROOT)/ConsumeTreasure/AliPay",
 				);
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
