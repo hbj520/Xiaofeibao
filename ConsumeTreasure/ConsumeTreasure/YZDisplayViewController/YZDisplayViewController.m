@@ -866,7 +866,7 @@
    // self.navigationController.navigationBar.hidden = NO;
     
     // 发出通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:YZDisplayViewClickOrScrollDidFinsh  object:nil];
+    
     
     CGFloat offsetX = scrollView.contentOffset.x;
     
@@ -893,11 +893,12 @@
     
     // 选中标题
     [self selectLabel:self.titleLabels[i]];
+
     
     // 添加控制器的view
     [self setUpVc:i];
     
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:YZDisplayViewClickOrScrollDidFinsh  object:self.titleLabels[i]];
     
     
     

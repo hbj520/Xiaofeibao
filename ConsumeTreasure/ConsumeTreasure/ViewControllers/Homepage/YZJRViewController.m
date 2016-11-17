@@ -18,6 +18,10 @@
 {
     
     [super viewWillAppear:animated];
+   
+    if (self.childViewControllers.count > 0) {
+         [self setUpVc:2];
+    }
     
     self.navigationController.navigationBarHidden = NO;
     
@@ -39,14 +43,14 @@
     // 模仿网络延迟，0.2秒后，才知道有多少标题
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     
-        
-        //self.titleArr = [[NSMutableArray alloc]initWithObjects:@"瑶海区",@"政务区",@"庐阳区",@"滨湖新区", nil];
+
         
         // 移除之前所有子控制器
         [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
         // 把对应标题保存控制器中，并且成为子控制器，才能刷新
         // 添加所有新的子控制器
         [self setUpAllViewController];
+       
         // 注意：必须先确定子控制器
         [self refreshDisplay];
         
@@ -59,6 +63,23 @@
     
 }
 #pragma mark -PrivateMethod
+
+- (void)setUpVc:(NSInteger)i
+{
+    
+    NSLog(@"😄%@😄😝",self.childViewControllers);
+    UIViewController *vc = self.childViewControllers[i];
+    NSString *str = self.titleArr[i];
+    //vc.view.frame = self.contentView.bounds;
+ 
+    // 获取对应的cell
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+    
+    UICollectionViewCell *cell = [super.contentScrollView cellForItemAtIndexPath:indexPath];
+    
+    [cell.contentView addSubview:vc.view];
+}
+
 - (void)addLayout{
    [self.contentScrollView.superview mas_makeConstraints:^(MASConstraintMaker *make) {
        make.top.equalTo(@0);

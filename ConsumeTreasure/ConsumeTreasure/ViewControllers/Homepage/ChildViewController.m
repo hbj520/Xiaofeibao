@@ -23,6 +23,9 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -42,7 +45,7 @@
     
     // 设置额外滚动区域,如果全屏
     // 监听滚动完成或者点击标题
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:YZDisplayViewClickOrScrollDidFinsh object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData:) name:YZDisplayViewClickOrScrollDidFinsh object:nil];
     
     
     [self table];
@@ -63,17 +66,7 @@
     _tableView.sectionHeaderHeight = 10;
     //[_tableView registerNib:[UINib nibWithNibName:@"PartnerTableViewCell" bundle:nil] forCellReuseIdentifier:@"partnerCellId"];
     
-//    UIImageView *ima = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pizza"]];
-//    ima.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-45-64);
-//    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
-//    colorView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:ima];
-//    [ima mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(@(0));
-//        make.left.equalTo(@(0));
-//        make.right.equalTo(@(0));
-//        make.height.equalTo(@(ScreenHeight));
-//    }];
+
     [self.view addSubview:_tableView];
     //[self.view sendSubviewToBack:ima];
     
@@ -81,10 +74,10 @@
 
 
 // 加载数据
-- (void)loadData
+- (void)loadData:(NSNotification*)noti
 {
     
-    //NSLog(@"展示那个界面======%@=====请求数据",self.title);
+    NSLog(@"展示那个界面======%@=====请求数据",noti.object);
     
 }
 
@@ -125,7 +118,7 @@
 
         partnerCell.selectionStyle = 0;
     
-    NSLog(@"哪个区%@  ====  第几行 ",self.title);
+  //  NSLog(@"哪个区%@  ====  第几行 ",self.title);
     
     //partnerCell.textLabel.text = [NSString stringWithFormat:@"%@ : %ld",self.title,indexPath.row];
 //    partnerCell.layer.shouldRasterize = YES;
