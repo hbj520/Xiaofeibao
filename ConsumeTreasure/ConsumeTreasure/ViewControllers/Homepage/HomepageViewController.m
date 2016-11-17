@@ -72,8 +72,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-   
-    self.tabBarController.tabBar.hidden = NO;
     
     [mapView viewWillAppear];
     mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
@@ -94,7 +92,11 @@
    // self.tabBarController.tabBar.hidden = YES;
     //  _locService.delegate = nil;
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
 
+}
 #pragma mark-mapMethod
 
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{

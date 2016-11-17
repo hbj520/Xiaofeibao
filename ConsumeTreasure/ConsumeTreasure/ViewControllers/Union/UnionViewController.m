@@ -121,6 +121,7 @@ UICollectionViewDataSource>
     }
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lianmenImageCell"]];
     AreaModel *model =areaArray[indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:15.];
     cell.textLabel.text = model.name;
     cell.textLabel.textColor = [UIColor darkGrayColor];
     return cell;
