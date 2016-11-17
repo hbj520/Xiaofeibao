@@ -48,7 +48,7 @@
         // 添加所有新的子控制器
         [self setUpAllViewController];
         // 注意：必须先确定子控制器
-        //[self refreshDisplay];
+        [self refreshDisplay];
         
     });
      // 标题渐变
