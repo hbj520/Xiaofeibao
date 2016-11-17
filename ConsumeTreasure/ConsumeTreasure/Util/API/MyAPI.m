@@ -242,19 +242,19 @@
 - (void)unionShopAreaWithParameters:(NSDictionary *)para
                          result:(ArrayBlock)result
                     errorResult:(ErrorBlock)errorResult{
-    AFHTTPSessionManager * testmanager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.1.67:8080/xfb/"]] ;
-    //申明返回的结果是json类型
-    testmanager.responseSerializer = [AFJSONResponseSerializer serializer];
-    //    //申明请求的数据是json类型
-    testmanager.requestSerializer=[AFJSONRequestSerializer serializer];
-    //    //如果报接受类型不一致请替换一致text/html或别的
-    testmanager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+//    AFHTTPSessionManager * testmanager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.1.67:8080/xfb/"]] ;
+//    //申明返回的结果是json类型
+//    testmanager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    //    //申明请求的数据是json类型
+//    testmanager.requestSerializer=[AFJSONRequestSerializer serializer];
+//    //    //如果报接受类型不一致请替换一致text/html或别的
+//    testmanager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
                               @"platform":@"1",
                               @"param":para
                               };
-    [testmanager POST:@"welcome/getDistrictlist" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager POST:@"welcome/getDistrictlist" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSArray *data = responseObject[@"data"][@"districtList"];
             NSMutableArray *modelArray = [NSMutableArray array];
