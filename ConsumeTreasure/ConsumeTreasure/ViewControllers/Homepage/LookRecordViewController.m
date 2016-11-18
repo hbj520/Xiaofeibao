@@ -10,6 +10,8 @@
 #import "HotStoreTableViewCell.h"
 #import "LookRecordHeadView.h"
 
+#import "LookTimeMode.h"
+
 #import <MJRefresh/MJRefresh.h>
 
 
@@ -17,6 +19,10 @@
 {
     NSMutableArray *_storeArray;
     NSMutableArray *_timeLookArray;
+    
+    NSString *_pageNum;
+    NSInteger _page;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -38,8 +44,11 @@
     
     _storeArray = [NSMutableArray array];
     _timeLookArray = [NSMutableArray array];
+    _pageNum = @"10";
+    _page = 1;
     // Do any additional setup after loading the view.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    //self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
     [self addRefresh];
@@ -53,30 +62,39 @@
 - (void)addRefresh{
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (_timeLookArray.count >0 &&_storeArray.count >0) {
-            [_timeLookArray removeAllObjects];
-            [_storeArray removeAllObjects];
-        }
-        [weakSelf loadData];
-    }];
-    
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
        
-        
+        _page = 1;
+        [weakSelf loadDataWithPageNum:_pageNum page:_page];
     }];
+    /*
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        _page ++;
+        [weakSelf loadDataWithPageNum:_pageNum page:_page];
+        
+    }];*/
 }
 
-- (void)loadData{
+- (void)loadDataWithPageNum:(NSString*)pageNum page:(NSInteger)page{
+    NSString *nowPage = [NSString stringWithFormat:@"%ld",(long)page];
     NSDictionary *para = @{
-                           @"pageNum":@"1",
-                           @"pageOffest":@"10"
+                           @"pageNum":nowPage,
+                           @"pageOffest":pageNum
                          };
     [[MyAPI sharedAPI] getLookRecordDataWithParaMeters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             NSLog(@"=====%@====",arrays);
+            if (page == 1) {
+                [_storeArray removeAllObjects];
+                [_timeLookArray removeAllObjects];
+            }
+            [_timeLookArray addObjectsFromArray:arrays[0]];
+            [_storeArray addObjectsFromArray:arrays[1]];
+            [self.tableView reloadData];
+            
         }
+        [self endRefresh];
     } errorResult:^(NSError *enginerError) {
-        
+        [self endRefresh];
     }];
     
     
@@ -115,17 +133,21 @@
         hotCell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
     }
     hotCell.selectionStyle = 0;
+    hotCell.distance.hidden = YES;
     return hotCell;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
- 
-        LookRecordHeadView *HotHeadView = [[[NSBundle mainBundle]loadNibNamed:@"LookRecordHeadView" owner:self options:nil]lastObject];
-
-    HotHeadView.backgroundView = [[UIImageView alloc]init];
-    HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
     
-        return HotHeadView;
+    LookRecordHeadView *HotHeadView = [[[NSBundle mainBundle]loadNibNamed:@"LookRecordHeadView" owner:self options:nil]lastObject];
+    
+    //HotHeadView.backgroundView = [[UIImageView alloc]init];
+    //HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
+    LookTimeMode *model = [_timeLookArray objectAtIndex:section];
+    HotHeadView.lookTimeLab.text = model.time;
+    
+    HotHeadView.contentView.backgroundColor = [UIColor whiteColor];
+    return HotHeadView;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{

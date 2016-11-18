@@ -193,10 +193,10 @@
 #pragma mark --浏览记录
 - (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
     NSDictionary * dicPara = @{
-                            @"tokenid":@"f2c70e32b68b4a618215b9834ca3f28c",
-                            @"platform":@"1",
-                            @"param":para
-                            };
+                               @"tokenid":@"f2c70e32b68b4a618215b9834ca3f28c",
+                               @"platform":@"1",
+                               @"param":para
+                               };
     [self.manager POST:@"userinfo/getBrowseList" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
@@ -216,13 +216,13 @@
                     LookStoreModel* model = [[LookStoreModel alloc] initWithDictionary:modelDic error:&err];
                     [modelArray addObject:model];
                 }
-              [lookStoreArr addObject:modelArray];
+                [lookStoreArr addObject:modelArray];
             }
             result(YES,info,@[LookTimeArray,lookStoreArr]);
         }else{
             result(NO,info,nil);
         }
-
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         errorResult(error);
     }];

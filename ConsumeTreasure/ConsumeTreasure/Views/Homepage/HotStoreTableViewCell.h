@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HotStoreTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *storeImage;
+@property (weak, nonatomic) IBOutlet UILabel *storeName;
+@property (weak, nonatomic) IBOutlet UILabel *storeAddress;
+@property (weak, nonatomic) IBOutlet UILabel *storeLikeNum;
+@property (weak, nonatomic) IBOutlet UILabel *distance;
 
 @end
