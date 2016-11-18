@@ -155,6 +155,13 @@
 		D15B3B071DDC0EF0009122FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B3B061DDC0EF0009122FE /* Foundation.framework */; };
 		D15B3B091DDC0F0D009122FE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B3B081DDC0F0D009122FE /* CoreMotion.framework */; };
 		D15B3B0C1DDC129E009122FE /* XFBConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B0B1DDC129E009122FE /* XFBConfig.m */; };
+		D15B3B121DDEE5BB009122FE /* IncomeTableHead.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B111DDEE5BB009122FE /* IncomeTableHead.m */; };
+		D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B3B131DDEE5CA009122FE /* IncomeTableHead.xib */; };
+		D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B161DDEEBF1009122FE /* MyIncoSectionView.m */; };
+		D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B3B181DDEEBFE009122FE /* MyIncoSectionView.xib */; };
+		D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B1B1DDEEE78009122FE /* NewIncomeViewController.m */; };
+		D15B3B201DDEF0D6009122FE /* DetailIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B1E1DDEF0D6009122FE /* DetailIncomeTableViewCell.m */; };
+		D15B3B211DDEF0D6009122FE /* DetailIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B3B1F1DDEF0D6009122FE /* DetailIncomeTableViewCell.xib */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
@@ -522,6 +529,17 @@
 		D15B3B081DDC0F0D009122FE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D15B3B0A1DDC129E009122FE /* XFBConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFBConfig.h; sourceTree = "<group>"; };
 		D15B3B0B1DDC129E009122FE /* XFBConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFBConfig.m; sourceTree = "<group>"; };
+		D15B3B101DDEE5BB009122FE /* IncomeTableHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IncomeTableHead.h; sourceTree = "<group>"; };
+		D15B3B111DDEE5BB009122FE /* IncomeTableHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IncomeTableHead.m; sourceTree = "<group>"; };
+		D15B3B131DDEE5CA009122FE /* IncomeTableHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomeTableHead.xib; sourceTree = "<group>"; };
+		D15B3B151DDEEBF1009122FE /* MyIncoSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIncoSectionView.h; sourceTree = "<group>"; };
+		D15B3B161DDEEBF1009122FE /* MyIncoSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIncoSectionView.m; sourceTree = "<group>"; };
+		D15B3B181DDEEBFE009122FE /* MyIncoSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyIncoSectionView.xib; sourceTree = "<group>"; };
+		D15B3B1A1DDEEE78009122FE /* NewIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewIncomeViewController.h; sourceTree = "<group>"; };
+		D15B3B1B1DDEEE78009122FE /* NewIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewIncomeViewController.m; sourceTree = "<group>"; };
+		D15B3B1D1DDEF0D6009122FE /* DetailIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailIncomeTableViewCell.h; sourceTree = "<group>"; };
+		D15B3B1E1DDEF0D6009122FE /* DetailIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailIncomeTableViewCell.m; sourceTree = "<group>"; };
+		D15B3B1F1DDEF0D6009122FE /* DetailIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailIncomeTableViewCell.xib; sourceTree = "<group>"; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -795,6 +813,8 @@
 				D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */,
 				D15B3A471DDB0807009122FE /* MyIncomeViewController.h */,
 				D15B3A481DDB0807009122FE /* MyIncomeViewController.m */,
+				D15B3B1A1DDEEE78009122FE /* NewIncomeViewController.h */,
+				D15B3B1B1DDEEE78009122FE /* NewIncomeViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -905,6 +925,15 @@
 				D15B3A4A1DDB08D8009122FE /* MyIncomeTableViewCell.h */,
 				D15B3A4B1DDB08D8009122FE /* MyIncomeTableViewCell.m */,
 				D15B3A4C1DDB08D8009122FE /* MyIncomeTableViewCell.xib */,
+				D15B3B101DDEE5BB009122FE /* IncomeTableHead.h */,
+				D15B3B111DDEE5BB009122FE /* IncomeTableHead.m */,
+				D15B3B131DDEE5CA009122FE /* IncomeTableHead.xib */,
+				D15B3B151DDEEBF1009122FE /* MyIncoSectionView.h */,
+				D15B3B161DDEEBF1009122FE /* MyIncoSectionView.m */,
+				D15B3B181DDEEBFE009122FE /* MyIncoSectionView.xib */,
+				D15B3B1D1DDEF0D6009122FE /* DetailIncomeTableViewCell.h */,
+				D15B3B1E1DDEF0D6009122FE /* DetailIncomeTableViewCell.m */,
+				D15B3B1F1DDEF0D6009122FE /* DetailIncomeTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1454,18 +1483,21 @@
 				D15B3AF31DDC0E5E009122FE /* AlipaySDK.bundle in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */,
+				D15B3B211DDEF0D6009122FE /* DetailIncomeTableViewCell.xib in Resources */,
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
 				AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */,
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
+				D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				D15B3A461DDAFB48009122FE /* DetailCountHeadView.xib in Resources */,
+				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
 				D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */,
 				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
@@ -1559,6 +1591,7 @@
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
+				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
@@ -1566,6 +1599,7 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D15B394C1DD32981009122FE /* DetailHeadView.m in Sources */,
+				D15B3B121DDEE5BB009122FE /* IncomeTableHead.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
@@ -1617,12 +1651,14 @@
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
 				AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */,
 				AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */,
+				D15B3B201DDEF0D6009122FE /* DetailIncomeTableViewCell.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
 				D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */,
 				D15B39841DD99D1F009122FE /* LookStoreModel.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */,
+				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
 				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
 				D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */,

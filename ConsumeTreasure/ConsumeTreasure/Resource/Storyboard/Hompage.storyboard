@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="2158" y="-229"/>
         </scene>
-        <!--My Income View Controller-->
+        <!--New Income View Controller-->
         <scene sceneID="4VM-ve-ksm">
             <objects>
-                <viewController id="mYR-lU-77f" customClass="MyIncomeViewController" sceneMemberID="viewController">
+                <viewController id="mYR-lU-77f" customClass="NewIncomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SSI-U3-kqb"/>
                         <viewControllerLayoutGuide type="bottom" id="GtC-sM-Kn8"/>
@@ -214,9 +214,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JQ0-7F-aOy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JQ0-7F-aOy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -230,7 +230,7 @@
                     <navigationItem key="navigationItem" id="Fqf-Cx-nh3"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="JQ0-7F-aOy" id="TW9-hg-uFB"/>
+                        <outlet property="tableView" destination="JQ0-7F-aOy" id="9ey-Mn-r5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqg-Dk-6Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +515,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计成交" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9r-F8-zkp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9r-F8-zkp">
                                         <rect key="frame" x="213.5" y="15" width="53.5" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="Fth-2w-f1J"/>

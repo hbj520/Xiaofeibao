@@ -14,7 +14,7 @@
 @property (nonatomic,strong) NSString *imgurl;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *objid;
-
+@property (nonatomic,strong) NSString *collectsnum;
 //-(void)setValue:(id)value forUndefinedKey:(NSString *)key;
 
 @end

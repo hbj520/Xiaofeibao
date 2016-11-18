@@ -376,7 +376,6 @@
     
     self.navigationController.navigationBar.hidden = NO;
     
-    
 
 }
 

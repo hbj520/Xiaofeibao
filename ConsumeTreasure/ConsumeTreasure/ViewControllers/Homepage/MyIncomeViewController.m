@@ -15,8 +15,8 @@
 
 @interface MyIncomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) UITableView *tableView;
 @end
 
 @implementation MyIncomeViewController

@@ -11,9 +11,10 @@
 #import "LookRecordHeadView.h"
 
 #import "LookTimeMode.h"
-
+#import "LookStoreModel.h"
 #import <MJRefresh/MJRefresh.h>
 
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface LookRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -36,7 +37,7 @@
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = YES;
-  
+   // [self loadDataWithPageNum:_pageNum page:_page];
 }
 
 - (void)viewDidLoad {
@@ -50,7 +51,9 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self loadDataWithPageNum:_pageNum page:_page];
     [self creatUI];
+   
     [self addRefresh];
 }
 
@@ -114,17 +117,11 @@
 
 #pragma mark - UITableViewDelegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return _timeLookArray.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 3;
-    }else if (section == 1){
-        return 1;
-    }else{
-        return 2;
-    }
+    return [_storeArray[section] count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -133,6 +130,12 @@
         hotCell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
     }
     hotCell.selectionStyle = 0;
+    
+    LookStoreModel *model = _storeArray[indexPath.section][indexPath.row];
+    [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.imgurl] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    hotCell.storeName.text = model.name;
+    hotCell.storeAddress.text = model.addr;
+    hotCell.storeLikeNum.text = model.collectsnum;
     hotCell.distance.hidden = YES;
     return hotCell;
 }
@@ -143,8 +146,8 @@
     
     //HotHeadView.backgroundView = [[UIImageView alloc]init];
     //HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
-    LookTimeMode *model = [_timeLookArray objectAtIndex:section];
-    HotHeadView.lookTimeLab.text = model.time;
+   LookTimeMode *model = [_timeLookArray objectAtIndex:section];
+   HotHeadView.lookTimeLab.text = model.time;
     
     HotHeadView.contentView.backgroundColor = [UIColor whiteColor];
     return HotHeadView;
