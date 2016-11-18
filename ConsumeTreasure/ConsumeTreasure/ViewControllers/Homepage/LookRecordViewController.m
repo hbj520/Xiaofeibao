@@ -14,6 +14,10 @@
 
 
 @interface LookRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray *_storeArray;
+    NSMutableArray *_timeLookArray;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -32,6 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _storeArray = [NSMutableArray array];
+    _timeLookArray = [NSMutableArray array];
     // Do any additional setup after loading the view.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -39,11 +45,24 @@
     [self addRefresh];
 }
 
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
+
 - (void)addRefresh{
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-       
+        if (_timeLookArray.count >0 &&_storeArray.count >0) {
+            [_timeLookArray removeAllObjects];
+            [_storeArray removeAllObjects];
+        }
         [weakSelf loadData];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+       
+        
     }];
 }
 
@@ -61,11 +80,6 @@
     }];
     
     
-}
-
--(void)endRefresh{
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
 }
 
 - (void)creatUI{
