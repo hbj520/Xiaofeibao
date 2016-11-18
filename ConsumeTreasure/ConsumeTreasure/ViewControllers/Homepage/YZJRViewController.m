@@ -77,7 +77,7 @@
     
     UICollectionViewCell *cell = [super.contentScrollView cellForItemAtIndexPath:indexPath];
     
-    [cell.contentView addSubview:vc.view];
+    [cell.contentView bringSubviewToFront:vc.view];
 }
 
 - (void)addLayout{
@@ -98,9 +98,9 @@
 - (void)setUpAllViewController
 {
     
-    
     for (NSString *titleStr in self.titleArr) {
         ChildViewController *childVC = [[ChildViewController alloc]init];
+     
         childVC.title = titleStr;
         [self addChildViewController:childVC];
     }
