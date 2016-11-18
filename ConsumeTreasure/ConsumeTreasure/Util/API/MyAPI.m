@@ -301,4 +301,15 @@
         
     }];
 }
+#pragma mark - 联盟商户详情列表
+- (void)unionListDetailWithParameters:(NSDictionary *)para
+                               result:(ArrayBlock)result
+                          errorResult:(ErrorBlock)errorResult{
+    [self.manager POST:@"shop/shopList" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 @end

@@ -31,6 +31,7 @@ UICollectionViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   // [self loadData];
       dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
     [self addCollectionViewAndTableView];
     //[self postNotification];
