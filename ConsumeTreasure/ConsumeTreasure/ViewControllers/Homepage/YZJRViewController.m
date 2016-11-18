@@ -18,18 +18,12 @@
 {
     
     [super viewWillAppear:animated];
-   
-    if (self.childViewControllers.count > 0) {
-         [self setUpVc:2];
-    }
-    
     self.navigationController.navigationBarHidden = NO;
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self refreshDisplay];
 }
 
 - (void)viewDidLoad
@@ -64,22 +58,6 @@
 }
 #pragma mark -PrivateMethod
 
-- (void)setUpVc:(NSInteger)i
-{
-    
-    NSLog(@"😄%@😄😝",self.childViewControllers);
-    UIViewController *vc = self.childViewControllers[i];
-    NSString *str = self.titleArr[i];
-    //vc.view.frame = self.contentView.bounds;
- 
-    // 获取对应的cell
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-    
-    UICollectionViewCell *cell = [super.contentScrollView cellForItemAtIndexPath:indexPath];
-    
-    [cell.contentView bringSubviewToFront:vc.view];
-}
-
 - (void)addLayout{
    [self.contentScrollView.superview mas_makeConstraints:^(MASConstraintMaker *make) {
        make.top.equalTo(@0);
@@ -97,13 +75,17 @@
 // 添加所有子控制器
 - (void)setUpAllViewController
 {
-    
-    for (NSString *titleStr in self.titleArr) {
+    for (NSInteger i = 0; i < self.titleArr.count; i++) {
         ChildViewController *childVC = [[ChildViewController alloc]init];
-     
-        childVC.title = titleStr;
+        childVC.title = self.titleArr[i];
         [self addChildViewController:childVC];
     }
+//    for (NSString *titleStr in self.titleArr) {
+//        ChildViewController *childVC = [[ChildViewController alloc]init];
+//     
+//        childVC.title = titleStr;
+//        [self addChildViewController:childVC];
+//    }
     
     /*
     // 段子
