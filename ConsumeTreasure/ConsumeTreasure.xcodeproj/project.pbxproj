@@ -35,6 +35,7 @@
 		ABD363D41DC330BE00D462AF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD363D01DC330BE00D462AF /* libWeChatSDK.a */; };
 		ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */ = {isa = PBXBuildFile; fileRef = ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */; };
 		ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C2901DA89A1D00BBF5B7 /* HomeTabbarViewController.m */; };
+		ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEBA2571DDEFC8500601187 /* UnionContenModel.m */; };
 		ABF4E27B1D9B5E58006AD23C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E27A1D9B5E58006AD23C /* main.m */; };
 		ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E27D1D9B5E58006AD23C /* AppDelegate.mm */; };
 		ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E2801D9B5E58006AD23C /* ViewController.m */; };
@@ -256,6 +257,8 @@
 		ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeTabar.json; sourceTree = "<group>"; };
 		ABD8C2901DA89A1D00BBF5B7 /* HomeTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabbarViewController.m; sourceTree = "<group>"; };
 		ABD8C2911DA89A1D00BBF5B7 /* HomeTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabbarViewController.h; sourceTree = "<group>"; };
+		ABEBA2561DDEFC8500601187 /* UnionContenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionContenModel.h; sourceTree = "<group>"; };
+		ABEBA2571DDEFC8500601187 /* UnionContenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionContenModel.m; sourceTree = "<group>"; };
 		ABF4E2761D9B5E57006AD23C /* ConsumeTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsumeTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4E27A1D9B5E58006AD23C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABF4E27C1D9B5E58006AD23C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -676,6 +679,8 @@
 				AB0076471DD066D4000E5181 /* UnionCategoryModel.m */,
 				AB05ABAE1DD599A300208DB9 /* AreaModel.h */,
 				AB05ABAF1DD599A300208DB9 /* AreaModel.m */,
+				ABEBA2561DDEFC8500601187 /* UnionContenModel.h */,
+				ABEBA2571DDEFC8500601187 /* UnionContenModel.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -1603,6 +1608,7 @@
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
+				ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,

@@ -61,4 +61,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)unionCategoryListWithParameters:(NSDictionary *)para
                              result:(ArrayBlock)result
                         errorResult:(ErrorBlock)errorResult;
+#pragma mark - 联盟商户详情列表
+- (void)unionListDetailWithParameters:(NSDictionary *)para
+                               result:(ArrayBlock)result
+                          errorResult:(ErrorBlock)errorResult;
 @end
