@@ -376,23 +376,26 @@
     
     self.navigationController.navigationBar.hidden = NO;
     
-        // 注册cell
-        [self.contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
-        self.contentScrollView.backgroundColor = self.view.backgroundColor;
-        // 初始化
-        [self setUp];
-
-        // 没有子控制器，不需要设置标题
-        if (self.childViewControllers.count == 0) return;
-        
-        
-        [self setUpTitleWidth];
-        
-        [self setUpAllTitle];
+    
 
 }
 
-
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    // 注册cell
+    [self.contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:ID];
+    self.contentScrollView.backgroundColor = self.view.backgroundColor;
+    // 初始化
+    [self setUp];
+    
+    // 没有子控制器，不需要设置标题
+    if (self.childViewControllers.count == 0) return;
+    
+    
+    [self setUpTitleWidth];
+    
+    [self setUpAllTitle];
+}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -994,7 +997,15 @@
     [self setUpAllTitle];
     
 }
-
+- (void)refreshDisplayWithSelectIndex:(NSInteger)index{
+    // 清空之前所有标题
+    [self.titleLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.titleLabels removeAllObjects];
+    // 重新设置标题
+    [self setUpTitleWidth];
+    
+    [self setUpAllTitle];
+}
 
 
 @end
