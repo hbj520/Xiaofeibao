@@ -107,6 +107,10 @@
 		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
+		D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */; };
+		D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */; };
+		D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */; };
+		D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFB41DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib */; };
 		D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39391DCB114F009122FE /* HomeStoreModel.m */; };
 		D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */; };
 		D15B39401DCC72B1009122FE /* AddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393F1DCC72B1009122FE /* AddModel.m */; };
@@ -378,6 +382,12 @@
 		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
 		D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImUnionStoreViewController.h; sourceTree = "<group>"; };
 		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
+		D150DFAD1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRecommendTableViewCell.h; sourceTree = "<group>"; };
+		D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRecommendTableViewCell.m; sourceTree = "<group>"; };
+		D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeRecommendTableViewCell.xib; sourceTree = "<group>"; };
+		D150DFB21DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRecStoreTableViewCell.h; sourceTree = "<group>"; };
+		D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRecStoreTableViewCell.m; sourceTree = "<group>"; };
+		D150DFB41DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeRecStoreTableViewCell.xib; sourceTree = "<group>"; };
 		D15B39381DCB114F009122FE /* HomeStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeStoreModel.h; sourceTree = "<group>"; };
 		D15B39391DCB114F009122FE /* HomeStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeStoreModel.m; sourceTree = "<group>"; };
 		D15B393B1DCC6E00009122FE /* StoreDeatilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDeatilViewController.h; sourceTree = "<group>"; };
@@ -867,6 +877,12 @@
 				D170F25C1DAF1ABE00272E57 /* BeforeChartTableViewCell.h */,
 				D170F25D1DAF1ABE00272E57 /* BeforeChartTableViewCell.m */,
 				D170F25E1DAF1ABE00272E57 /* BeforeChartTableViewCell.xib */,
+				D150DFAD1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.h */,
+				D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */,
+				D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */,
+				D150DFB21DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.h */,
+				D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */,
+				D150DFB41DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib */,
 				D170F2611DAF292A00272E57 /* ImageTableViewCell.h */,
 				D170F2621DAF292A00272E57 /* ImageTableViewCell.m */,
 				D170F2631DAF292A00272E57 /* ImageTableViewCell.xib */,
@@ -1495,6 +1511,7 @@
 				AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */,
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
+				D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */,
 				D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
@@ -1505,6 +1522,7 @@
 				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
 				D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */,
 				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
+				D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */,
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
@@ -1583,6 +1601,7 @@
 				D15B3AFC1DDC0E5E009122FE /* NSDataEx.m in Sources */,
 				D15B3AF91DDC0E5E009122FE /* DataSigner.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
+				D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
 				D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */,
@@ -1598,6 +1617,7 @@
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
+				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
@@ -1857,7 +1877,7 @@
 					"$(SRCROOT)/ConsumeTreasure/AliPay",
 				);
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1990,7 +2010,7 @@
 					"$(SRCROOT)/ConsumeTreasure/AliPay",
 				);
 				INFOPLIST_FILE = ConsumeTreasure/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

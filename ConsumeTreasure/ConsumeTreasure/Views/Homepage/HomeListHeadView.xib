@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,12 +16,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rmsh" translatesAutoresizingMaskIntoConstraints="NO" id="paP-PA-I9O" customClass="rmsh">
+                    <rect key="frame" x="8" y="12" width="18" height="16"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="18" id="Du7-4U-aA9"/>
                         <constraint firstAttribute="height" constant="16" id="fzq-6M-aQX"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门商户" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d05-3O-ok0">
+                    <rect key="frame" x="30" y="11.5" width="63" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="63" id="2IN-vt-Lcp"/>
                         <constraint firstAttribute="height" constant="17" id="9qW-Yr-yJJ"/>
@@ -28,6 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bs-kd-VQb">
+                    <rect key="frame" x="326" y="12.5" width="25" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="RTr-zu-azh"/>
                         <constraint firstAttribute="height" constant="15" id="tIh-yP-sl0"/>
@@ -36,7 +42,8 @@
                     <color key="textColor" red="0.57647058819999997" green="0.59215686270000001" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow(1)" translatesAutoresizingMaskIntoConstraints="NO" id="bWY-pk-5XK">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="bWY-pk-5XK">
+                    <rect key="frame" x="360" y="14" width="7" height="12"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="7" id="GIB-Td-gHG"/>
                         <constraint firstAttribute="height" constant="12" id="aZH-iC-FY5"/>
@@ -55,11 +62,11 @@
                 <constraint firstItem="4bs-kd-VQb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yzD-YQ-sQy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-23.5" y="-20"/>
+            <point key="canvasLocation" x="152" y="-67"/>
         </view>
     </objects>
     <resources>
-        <image name="arrow(1)" width="14" height="25"/>
+        <image name="arrow" width="14" height="25"/>
         <image name="rmsh" width="36" height="32"/>
     </resources>
 </document>
