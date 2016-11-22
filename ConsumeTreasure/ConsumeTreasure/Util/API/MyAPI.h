@@ -37,6 +37,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)getHomeAddDataWithParameters:(NSDictionary*)para
                               result:(ArrayBlock)result
                          errorResult:(ErrorBlock)errorResult;
+#pragma mark - 获取城市citycode
+- (void)getCityCodeWithParameters:(NSDictionary*)para
+                           result:(ArrayBlock)result
+                       erorResult:(ErrorBlock)errorResult;
 
 #pragma mark --收益权详情
 
@@ -65,4 +69,5 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)unionListDetailWithParameters:(NSDictionary *)para
                                result:(ArrayBlock)result
                           errorResult:(ErrorBlock)errorResult;
+
 @end
