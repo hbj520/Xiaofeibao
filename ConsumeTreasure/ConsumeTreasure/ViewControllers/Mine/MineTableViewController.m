@@ -82,8 +82,11 @@
        return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [self testWeixinPay];
+    if (indexPath.row == 1) {
+        
+        [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
+    }
+    //[self testWeixinPay];
 }
 - (void)testWeixinPay{
     //============================================================
