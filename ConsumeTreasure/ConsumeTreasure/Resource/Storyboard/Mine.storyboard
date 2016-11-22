@@ -339,7 +339,7 @@
         <!--Evaluate List View Controller-->
         <scene sceneID="HSM-6e-bEc">
             <objects>
-                <viewController id="GL4-Ec-gVQ" customClass="EvaluateListViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="GL4-Ec-gVQ" customClass="EvaluateListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PLz-hv-Yvn"/>
                         <viewControllerLayoutGuide type="bottom" id="hrn-j3-kbY"/>
@@ -347,13 +347,28 @@
                     <view key="view" contentMode="scaleToFill" id="ym1-1y-48a">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-mU-9cv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EJl-mU-9cv" firstAttribute="leading" secondItem="ym1-1y-48a" secondAttribute="leading" id="1vx-us-OvU"/>
+                            <constraint firstAttribute="trailing" secondItem="EJl-mU-9cv" secondAttribute="trailing" id="ACZ-cJ-47P"/>
+                            <constraint firstItem="hrn-j3-kbY" firstAttribute="top" secondItem="EJl-mU-9cv" secondAttribute="bottom" id="JZl-0k-S1b"/>
+                            <constraint firstItem="EJl-mU-9cv" firstAttribute="top" secondItem="PLz-hv-Yvn" secondAttribute="bottom" id="XUP-bW-AH7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tn4-Zv-AnN"/>
+                    <connections>
+                        <outlet property="tableView" destination="EJl-mU-9cv" id="WMD-pN-XdD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ew-YT-DvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="86"/>
+            <point key="canvasLocation" x="1412" y="85.907046476761622"/>
         </scene>
         <!--Mine View Controller-->
         <scene sceneID="c69-8u-NsS">

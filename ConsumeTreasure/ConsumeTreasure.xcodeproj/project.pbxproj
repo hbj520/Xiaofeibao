@@ -14,6 +14,8 @@
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
+		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
+		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
@@ -224,6 +226,9 @@
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB32FCBF1DE41A9000032D38 /* EvaluateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListViewController.h; sourceTree = "<group>"; };
 		AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListViewController.m; sourceTree = "<group>"; };
+		AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
+		AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateTableViewCell.m; sourceTree = "<group>"; };
+		AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
 		AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
@@ -969,6 +974,9 @@
 			children = (
 				AB6FBA631DB5B82500C682F8 /* TongbaoMoneyView.h */,
 				AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */,
+				AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */,
+				AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */,
+				AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1522,6 +1530,7 @@
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
+				AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				D15B3A461DDAFB48009122FE /* DetailCountHeadView.xib in Resources */,
 				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
@@ -1692,6 +1701,7 @@
 				D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */,
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
 				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
+				AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */,
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
 				D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
