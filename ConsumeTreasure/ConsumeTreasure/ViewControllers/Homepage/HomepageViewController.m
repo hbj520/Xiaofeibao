@@ -25,6 +25,9 @@
 #import "HotStoreTableViewCell.h"
 #import "HomeListHeadView.h"
 
+#import "ChangeRecStoreTableViewCell.h"
+#import "ChangeRecommendTableViewCell.h"
+
 #import "TRLiveNetManager.h"
 
 #import "AddModel.h"
@@ -239,10 +242,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"HomePageFirstTableViewCell" bundle:nil] forCellReuseIdentifier:@"FirstHomeCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"chartTableViewCell" bundle:nil] forCellReuseIdentifier:@"chartCellId"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"BeforeChartTableViewCell" bundle:nil] forCellReuseIdentifier:@"beforeChartCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ChangeRecStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"changeStoreId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ChangeRecommendTableViewCell" bundle:nil] forCellReuseIdentifier:@"recomandId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"chartImageCellId"];
-     [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
 }
 
 #pragma mark - UIScrollviewDelegate
@@ -347,18 +350,18 @@
     }else if (indexPath.section == 1){//第二个section
         
         if (indexPath.row == 1) {//折线图
-            chartTableViewCell *chartCell = [tableView dequeueReusableCellWithIdentifier:@"chartCellId"];
+            ChangeRecStoreTableViewCell *chartCell = [tableView dequeueReusableCellWithIdentifier:@"changeStoreId"];
             if (chartCell == nil) {
-                chartCell = [[[NSBundle mainBundle] loadNibNamed:@"chartTableViewCell" owner:self options:nil] lastObject];
+                chartCell = [[[NSBundle mainBundle] loadNibNamed:@"ChangeRecStoreTableViewCell" owner:self options:nil] lastObject];
             }
-            chartCell.rateArr = charArr;
+           // chartCell.rateArr = charArr;
             chartCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, chartCell.bounds.size.width);
             chartCell.selectionStyle = 0;
             return chartCell;
         }else if (indexPath.row == 0){
-            BeforeChartTableViewCell *bforeChartCell = [tableView dequeueReusableCellWithIdentifier:@"beforeChartCellId"];
+            ChangeRecommendTableViewCell *bforeChartCell = [tableView dequeueReusableCellWithIdentifier:@"recomandId"];
             if (bforeChartCell == nil) {
-                bforeChartCell = [[[NSBundle mainBundle] loadNibNamed:@"BeforeChartTableViewCell" owner:self options:nil] lastObject];
+                bforeChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ChangeRecommendTableViewCell" owner:self options:nil] lastObject];
             }
             bforeChartCell.selectionStyle = 0;
             return bforeChartCell;
@@ -396,7 +399,7 @@
         return 170;
     }else if (indexPath.section == 1) {
         if (indexPath.row == 1) {
-            return 230;
+            return 200;
         }else if (indexPath.row == 0){
             return 40;
         }else{
