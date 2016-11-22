@@ -35,7 +35,7 @@
     BMKMapView* mapView;
     BMKGeoCodeSearch* _geocodesearch;//反编码
     BMKLocationService* _locService;//定位
-    
+    BMKOfflineMap * _offlineMap;
     int _oldY;
     
     NSString *longitudeStr;
@@ -121,12 +121,17 @@
                 NSLog(@"当前城市名称------%@",city);
                 self.locationCityName.text = city;
                 localStr = city;
-                BMKOfflineMap * _offlineMap = [[BMKOfflineMap alloc] init];
                 NSArray* records = [_offlineMap searchCity:city];
                 BMKOLSearchRecord* oneRecord = [records objectAtIndex:0];
                 //城市编码如:北京为131
-                NSInteger cityId = oneRecord.cityID;
+                int cityId = oneRecord.cityID;
                 
+                if ([_offlineMap remove:cityId]) {
+                 
+                    
+                }else{
+                    
+                };
              //   [self loadHotStoreData];根据定位加载商家
                 
                 [_locService stopUserLocationService];
@@ -225,6 +230,8 @@
     _geocodesearch = [[BMKGeoCodeSearch alloc] init];
     //编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
     _geocodesearch.delegate = self;//设置代理为self
+    _offlineMap = [[BMKOfflineMap alloc] init];
+
 }
 
 - (void)creatUI{

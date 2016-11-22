@@ -181,7 +181,25 @@
         errorResult(error);
     }];
 }
-
+#pragma mark - 获取城市citycode
+- (void)getCityCodeWithParameters:(NSDictionary*)para
+                           result:(ArrayBlock)result
+                       erorResult:(ErrorBlock)errorResult{
+        AFHTTPSessionManager * testmanager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.map.baidu.com/"]] ;
+        //申明返回的结果是json类型
+        testmanager.responseSerializer = [AFJSONResponseSerializer serializer];
+        //    //申明请求的数据是json类型
+        testmanager.requestSerializer=[AFJSONRequestSerializer serializer];
+        //    //如果报接受类型不一致请替换一致text/html或别的
+        testmanager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+    [testmanager POST:@"geocoder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+     
+        
+    }];
+}
 #pragma mark --收益权详情
 
 #pragma mark --合伙人超市地区
