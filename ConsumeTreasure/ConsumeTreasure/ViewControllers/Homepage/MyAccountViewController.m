@@ -102,8 +102,6 @@
     }else{
         return [UIView new];
     }
-    
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -130,6 +128,12 @@
         return 0.01;
     }
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    [self performSegueWithIdentifier:@"incomeDetailSegue" sender:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
