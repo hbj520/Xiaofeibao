@@ -53,7 +53,7 @@
                     <constraint firstItem="ioH-Sr-qzQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="Y97-wd-BTc"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="24.5" y="52"/>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
         </tableViewCell>
     </objects>
     <resources>

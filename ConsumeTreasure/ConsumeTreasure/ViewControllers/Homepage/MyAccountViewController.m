@@ -129,12 +129,12 @@
     }
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    [self performSegueWithIdentifier:@"incomeDetailSegue" sender:nil];
-}
-
-
+            
+            [self performSegueWithIdentifier:@"incomeDetailSegue" sender:nil];
+        }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

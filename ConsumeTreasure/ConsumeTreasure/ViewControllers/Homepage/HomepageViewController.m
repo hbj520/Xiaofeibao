@@ -399,7 +399,7 @@
         return 170;
     }else if (indexPath.section == 1) {
         if (indexPath.row == 1) {
-            return 200;
+            return 190;
         }else if (indexPath.row == 0){
             return 40;
         }else{
