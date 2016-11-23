@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#define EvaluateReuseId @"evaluateReusedId"
 @interface EvaluateListViewController : BaseViewController
 
 @end
