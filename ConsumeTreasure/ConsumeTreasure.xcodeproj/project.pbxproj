@@ -116,6 +116,8 @@
 		D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */; };
 		D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */; };
 		D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFB41DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib */; };
+		D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFB81DE4166F0045FB2B /* AccountDetailViewController.m */; };
+		D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFBE1DE433180045FB2B /* TuiJianModel.m */; };
 		D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39391DCB114F009122FE /* HomeStoreModel.m */; };
 		D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */; };
 		D15B39401DCC72B1009122FE /* AddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393F1DCC72B1009122FE /* AddModel.m */; };
@@ -401,6 +403,10 @@
 		D150DFB21DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRecStoreTableViewCell.h; sourceTree = "<group>"; };
 		D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRecStoreTableViewCell.m; sourceTree = "<group>"; };
 		D150DFB41DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeRecStoreTableViewCell.xib; sourceTree = "<group>"; };
+		D150DFB71DE4166F0045FB2B /* AccountDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailViewController.h; sourceTree = "<group>"; };
+		D150DFB81DE4166F0045FB2B /* AccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailViewController.m; sourceTree = "<group>"; };
+		D150DFBD1DE433180045FB2B /* TuiJianModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuiJianModel.h; sourceTree = "<group>"; };
+		D150DFBE1DE433180045FB2B /* TuiJianModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuiJianModel.m; sourceTree = "<group>"; };
 		D15B39381DCB114F009122FE /* HomeStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeStoreModel.h; sourceTree = "<group>"; };
 		D15B39391DCB114F009122FE /* HomeStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeStoreModel.m; sourceTree = "<group>"; };
 		D15B393B1DCC6E00009122FE /* StoreDeatilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDeatilViewController.h; sourceTree = "<group>"; };
@@ -803,6 +809,8 @@
 				D15B39801DD99D02009122FE /* LookTimeMode.m */,
 				D15B39821DD99D1F009122FE /* LookStoreModel.h */,
 				D15B39831DD99D1F009122FE /* LookStoreModel.m */,
+				D150DFBD1DE433180045FB2B /* TuiJianModel.h */,
+				D150DFBE1DE433180045FB2B /* TuiJianModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -837,6 +845,8 @@
 				D12165A81DB65998006B06FC /* IncomeViewController.m */,
 				D12165F31DB79D28006B06FC /* MyAccountViewController.h */,
 				D12165F41DB79D28006B06FC /* MyAccountViewController.m */,
+				D150DFB71DE4166F0045FB2B /* AccountDetailViewController.h */,
+				D150DFB81DE4166F0045FB2B /* AccountDetailViewController.m */,
 				D15B393B1DCC6E00009122FE /* StoreDeatilViewController.h */,
 				D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */,
 				D15B3A471DDB0807009122FE /* MyIncomeViewController.h */,
@@ -1687,6 +1697,7 @@
 				AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */,
 				D15B39671DD414A7009122FE /* EstimateTableViewCell.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
+				D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */,
 				D12165181DB4F2B4006B06FC /* UIView+Frame.m in Sources */,
 				AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */,
 				D12165191DB4F2B4006B06FC /* YZDisplayTitleLabel.m in Sources */,
@@ -1726,6 +1737,7 @@
 				D10EE3DC1DB0B28F001C1992 /* ASIHTTPRequest.m in Sources */,
 				D121651A1DB4F2B4006B06FC /* YZDisplayViewController.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
+				D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,
 				D12165FE1DB85AF4006B06FC /* ExplainTableViewCell.m in Sources */,
 			);

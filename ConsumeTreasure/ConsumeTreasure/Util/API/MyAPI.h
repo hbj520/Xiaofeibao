@@ -53,6 +53,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark --浏览记录
 - (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
+#pragma mark --推荐商家
+- (void)getTuiJianStoreWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorReult;
+
 #pragma mark --收益权
 
 #pragma mark --我是商户

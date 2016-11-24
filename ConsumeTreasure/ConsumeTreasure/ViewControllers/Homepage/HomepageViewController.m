@@ -399,7 +399,7 @@
         return 170;
     }else if (indexPath.section == 1) {
         if (indexPath.row == 1) {
-            return 200;
+            return 190;
         }else if (indexPath.row == 0){
             return 40;
         }else{
@@ -458,10 +458,8 @@
         }
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
-        
-       self.hidesBottomBarWhenPushed = YES;
-        [self performSegueWithIdentifier:@"detailSegue" sender:nil];
-        self.hidesBottomBarWhenPushed = NO;
+      
+        [self pushToNextWithIdentiField:@"detailSegue"];
         /*
         NSDictionary *para = @{
                                @"tokenid": @"20ace013934a448887c7af6000dfa112",
