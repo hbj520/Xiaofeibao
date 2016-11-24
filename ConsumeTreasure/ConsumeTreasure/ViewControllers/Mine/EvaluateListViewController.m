@@ -16,13 +16,20 @@ UITableViewDataSource>
 @end
 
 @implementation EvaluateListViewController
+- (IBAction)backBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configTableView];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationItem.hidesBackButton = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -42,6 +49,13 @@ UITableViewDataSource>
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EvaluateReuseId forIndexPath:indexPath];
+    cell.clickEvaluateBlock = ^(){
+        
+    };
+    cell.clickOneMoreBlock = ^(){
+      
+        
+    };
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -11,6 +11,8 @@
 		AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0076471DD066D4000E5181 /* UnionCategoryModel.m */; };
 		AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0076491DD06F73000E5181 /* TestUnion.json */; };
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
+		AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */; };
+		AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */; };
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
@@ -219,6 +221,9 @@
 		AB0076491DD06F73000E5181 /* TestUnion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestUnion.json; sourceTree = "<group>"; };
 		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
 		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
+		AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEvaluateTableViewCell.h; sourceTree = "<group>"; };
+		AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEvaluateTableViewCell.m; sourceTree = "<group>"; };
+		AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreEvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB05ABAE1DD599A300208DB9 /* AreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaModel.h; sourceTree = "<group>"; };
 		AB05ABAF1DD599A300208DB9 /* AreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaModel.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
@@ -977,6 +982,9 @@
 				AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */,
 				AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */,
 				AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */,
+				AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */,
+				AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */,
+				AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1546,6 +1554,7 @@
 				D15B395E1DD40AD7009122FE /* ListHeadView.xib in Resources */,
 				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
+				AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
@@ -1625,6 +1634,7 @@
 				D15B3B0C1DDC129E009122FE /* XFBConfig.m in Sources */,
 				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
 				D15B3AFB1DDC0E5E009122FE /* MD5DataSigner.m in Sources */,
+				AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */,
 				D15B39711DD46AFB009122FE /* LPNavigationBarView.m in Sources */,
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,

@@ -21,5 +21,15 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)oneMoreBtn:(id)sender {
+    if (self.clickOneMoreBlock) {
+        self.clickOneMoreBlock();
+    }
+}
+- (IBAction)preEvaluaBtn:(id)sender {
+    if (self.clickEvaluateBlock) {
+        self.clickEvaluateBlock();
+    }
+}
 
 @end
