@@ -30,6 +30,7 @@
 
 #import "TRLiveNetManager.h"
 
+#import "TuiJianModel.h"
 #import "AddModel.h"
 
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
@@ -47,7 +48,7 @@
     
     NSMutableArray *addArr;//广告
     NSMutableArray *charArr;//走势图
-    
+    NSMutableArray *TuiJianArr;
 }
 
 @end
@@ -62,12 +63,13 @@
     
     addArr = [[NSMutableArray alloc]init];
     charArr = [[NSMutableArray alloc]init];
+    TuiJianArr = [[NSMutableArray alloc]init];
     
+    [self loadIncomeAndAddsData];
     [self addRefresh];
     [self addNavBar];
     [self startMap];
     [self creatUI];
-    [self loadIncomeAndAddsData];
 
 }
 
@@ -149,9 +151,10 @@
 - (void)addRefresh{
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (charArr.count > 0 || addArr.count > 0) {
-            [charArr removeAllObjects];
+        if (TuiJianArr.count > 0 || addArr.count > 0) {
+            [TuiJianArr removeAllObjects];
             [addArr removeAllObjects];
+            
         }
         [weakSelf loadIncomeAndAddsData];
     }];
@@ -166,6 +169,19 @@
     NSDictionary *para = @{
                            
                            };
+    
+    [[MyAPI sharedAPI] getTuiJianStoreWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [TuiJianArr addObjectsFromArray:arrays];
+            [self.tableView reloadData];
+        }
+        
+        [self endRefresh];
+    } errorResult:^(NSError *enginerError) {
+         [self endRefresh];
+    }];
+    
+    /*
     //走势图
     [[MyAPI sharedAPI] getHomeIncomeChartDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
@@ -182,7 +198,7 @@
     } errorResult:^(NSError *enginerError) {
          [self endRefresh];
     }];
-    
+    */
     //广告位
     [[MyAPI sharedAPI] getHomeAddDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
@@ -349,13 +365,21 @@
 
     }else if (indexPath.section == 1){//第二个section
         
-        if (indexPath.row == 1) {//折线图
+        if (indexPath.row == 1) {
             ChangeRecStoreTableViewCell *chartCell = [tableView dequeueReusableCellWithIdentifier:@"changeStoreId"];
             if (chartCell == nil) {
                 chartCell = [[[NSBundle mainBundle] loadNibNamed:@"ChangeRecStoreTableViewCell" owner:self options:nil] lastObject];
             }
            // chartCell.rateArr = charArr;
             chartCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, chartCell.bounds.size.width);
+         
+           chartCell.storeArray = TuiJianArr;
+           
+            chartCell.oneBlock = ^{
+                 [self pushToNextWithIdentiField:@"detailSegue"];
+            };
+            
+            
             chartCell.selectionStyle = 0;
             return chartCell;
         }else if (indexPath.row == 0){
@@ -363,6 +387,7 @@
             if (bforeChartCell == nil) {
                 bforeChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ChangeRecommendTableViewCell" owner:self options:nil] lastObject];
             }
+    
             bforeChartCell.selectionStyle = 0;
             return bforeChartCell;
         }
