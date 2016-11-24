@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^clickBtnBlock)();
 @interface EvaluateTableViewCell : UITableViewCell
-
+@property (copy,nonatomic) clickBtnBlock clickOneMoreBlock;
+@property (copy,nonatomic) clickBtnBlock clickEvaluateBlock;
 @end

@@ -1,68 +1,57 @@
 //
-//  EvaluateListViewController.m
+//  EvaluateViewController.m
 //  ConsumeTreasure
 //
-//  Created by youyou on 11/22/16.
+//  Created by youyou on 11/24/16.
 //  Copyright © 2016 youyou. All rights reserved.
 //
 
-#import "EvaluateListViewController.h"
-#import "EvaluateTableViewCell.h"
-@interface EvaluateListViewController ()
+#import "EvaluateViewController.h"
+#import "PreEvaluateTableViewCell.h"
+#import "starView.h"
+
+@interface EvaluateViewController ()
 <UITableViewDelegate,
 UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (assign, nonatomic) float cellHeight;
 @end
 
-@implementation EvaluateListViewController
-- (IBAction)backBtn:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
+@implementation EvaluateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configTableView];
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationItem.hidesBackButton = YES;
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark -PrivateMethod
+#pragma mark - PrivateMethod
 - (void)configTableView{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"EvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:EvaluateReuseId];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PreEvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:PreEvaluteReuseId];
+    _cellHeight = 120;
+    
 }
 #pragma mark -UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
-}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EvaluateReuseId forIndexPath:indexPath];
-    cell.clickEvaluateBlock = ^(){
-        [self performSegueWithIdentifier:@"evaluaSegue" sender:nil];
-    };
-    cell.clickOneMoreBlock = ^(){
-      
-        
+    PreEvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PreEvaluteReuseId forIndexPath:indexPath];
+    [cell.evaluateStarView configWithStarLevel:0];
+    cell.clickStarBlock = ^(){
+        //_cellHeight = 175;
+        self.tableView.rowHeight = 175;
     };
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 180;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 15;
+    return _cellHeight;
 }
 /*
 #pragma mark - Navigation
