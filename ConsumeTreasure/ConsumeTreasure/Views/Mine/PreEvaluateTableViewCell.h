@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "starView.h"
+typedef void (^ClickStarsBlock)();
+#define PreEvaluteReuseId @"preEvaluateReuseId"
 @interface PreEvaluateTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet starView *evaluateStarView;
+@property (copy, nonatomic) ClickStarsBlock clickStarBlock;
+@property (strong, nonatomic) UITextView *desTextView;
 
 @end
