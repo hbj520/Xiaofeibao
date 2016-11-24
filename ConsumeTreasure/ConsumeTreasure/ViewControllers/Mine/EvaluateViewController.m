@@ -33,6 +33,7 @@ UITableViewDataSource>
 - (void)configTableView{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"PreEvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:PreEvaluteReuseId];
     _cellHeight = 120;
     
@@ -43,11 +44,14 @@ UITableViewDataSource>
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     PreEvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PreEvaluteReuseId forIndexPath:indexPath];
-    [cell.evaluateStarView configWithStarLevel:0];
-    cell.clickStarBlock = ^(){
-        //_cellHeight = 175;
-        self.tableView.rowHeight = 175;
+   // [cell.evaluateStarView configWithStarLevel:0];
+    cell.clickStarBlock = ^(int starLevels){
+        _cellHeight = 200;
+        [cell.evaluateStarView configWithStarLevel:starLevels];
+        [self.tableView reloadData];
+        
     };
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

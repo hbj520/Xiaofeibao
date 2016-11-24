@@ -35,6 +35,7 @@
 // 作用：拦截手势触发
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
+    [Tools hideKeyBoard];
     // 当当前控制器是根控制器时，不可以侧滑返回，所以不能使其触发手势
     if(self.navigationController.childViewControllers.count == 1)
     {
