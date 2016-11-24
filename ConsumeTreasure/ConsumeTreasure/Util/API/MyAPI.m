@@ -16,6 +16,9 @@
 #import "UnionCategoryModel.h"
 #import "LookTimeMode.h"
 #import "LookStoreModel.h"
+#import "TuiJianModel.h"
+
+
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @end
@@ -255,9 +258,13 @@
     [self.manager POST:@"welcome/getRecommended" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
-            NSArray *arr = responseObject[@"data"][@"memberPojoList"];
-            result(YES,info,arr);
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSArray *arr = responseObject[@"data"][@"memList"];
+            
+            NSMutableArray *storeArr = [NSMutableArray array];
+            storeArr = [TuiJianModel arrayOfModelsFromDictionaries:arr error:nil];
+            
+            result(YES,info,storeArr);
         }else{
             result(NO,info,nil);
         }

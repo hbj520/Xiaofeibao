@@ -16,8 +16,7 @@
 
 @property (nonatomic,strong) NSString *shopName;
 @property (nonatomic,strong) NSString *doorImg;
-@property (nonatomic,strong) NSString *title;
-@property (nonatomic,strong) NSString *islink;
+@property (nonatomic,strong) NSString *shopId;
 
 
 
