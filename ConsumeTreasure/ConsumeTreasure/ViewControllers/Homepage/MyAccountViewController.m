@@ -5,15 +5,23 @@
 //  Created by youyoumacmini3 on 16/10/19.
 //  Copyright © 2016年 youyou. All rights reserved.
 //
+#import <MJRefresh/MJRefresh.h>
+#import <Masonry.h>
 
 #import "MyAccountViewController.h"
 #import "HexColor.h"
 #import "MyAccountTableViewCell.h"
 #import "LevelTableViewCell.h"
 #import "DetailCountHeadView.h"
+
+
 @interface MyAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    NSArray *levelArr;
+    NSMutableArray *levelArr;
+    NSString *accountNum;
+    
+    NSInteger _page;
+    NSString *pageNum;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -34,13 +42,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _page = 1;
+    pageNum = @"10";
     
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.bottom.equalTo(@0);
+        
+    }];
+    
+    levelArr = [NSMutableArray array];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
+    [self addRefresh];
   }
 
+- (void)addRefresh{
+    self.tableView.tableHeaderView = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [self loadAccountDataWithPage:_page pageNum:pageNum];
+    }];
+    
+    self.tableView.tableFooterView = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        _page ++;
+        [self loadAccountDataWithPage:_page pageNum:pageNum];
+    }];
+}
 
- 
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
+
+- (void)loadAccountDataWithPage:(NSInteger)page pageNum:(NSString*)pageNum{
+    NSString *pageNow = [NSString stringWithFormat:@"%ld",(long)page];
+    NSDictionary *dic = @{
+                          @"pageNum":pageNow,
+                          @"pageOffset":pageNum
+                          };
+    [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            accountNum = arrays[1];
+            [levelArr addObjectsFromArray:arrays[0]];
+        }
+        [self endRefresh];
+    } errorResult:^(NSError *enginerError) {
+        [self endRefresh];
+    }];
+}
+
 - (void)creatUI{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -128,11 +180,26 @@
     }
 }
 
-
+/*
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat viewHeight = scrollView.frame.size.height + scrollView.contentInset.top;
+    for (LevelTableViewCell *cell in [self.tableView visibleCells]) {
+        CGFloat y = cell.center.y - scrollView.contentOffset.y;
+        CGFloat p = y - viewHeight / 2;
+        CGFloat scale = cos(p / viewHeight * 1.5) * 0.9;
+        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            cell.contentView.transform = CGAffineTransformMakeScale(scale, scale);
+        } completion:NULL];
+    }
+}
+*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        self.hidesBottomBarWhenPushed = YES;
+        [self performSegueWithIdentifier:@"incomeDetailSegue" sender:nil];
+     }
     
-    [self performSegueWithIdentifier:@"incomeDetailSegue" sender:nil];
 }
 
 //- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch

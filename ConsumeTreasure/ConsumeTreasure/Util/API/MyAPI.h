@@ -49,7 +49,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark --合伙人超市
 
 #pragma mark --我的账户
-
+- (void)getMyAccountDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 #pragma mark --浏览记录
 - (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 

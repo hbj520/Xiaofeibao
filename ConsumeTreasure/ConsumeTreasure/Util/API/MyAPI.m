@@ -17,7 +17,7 @@
 #import "LookTimeMode.h"
 #import "LookStoreModel.h"
 #import "TuiJianModel.h"
-
+#import "AccountModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -210,6 +210,33 @@
 #pragma mark --合伙人超市
 
 #pragma mark --我的账户
+- (void)getMyAccountDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"myAccount/mineAccount" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *accountArr = [NSMutableArray array];
+            NSError *err = nil;
+            NSArray *data = responseObject[@"data"][@"list"];
+            accountArr = [AccountModel arrayOfModelsFromDictionaries:data error:&err];
+            
+            
+            AccountArrayModel *model = [[AccountArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
+            result(YES,info,@[accountArr,model]);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+    
+}
+
 
 #pragma mark --浏览记录
 - (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{

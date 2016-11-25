@@ -60,7 +60,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     addArr = [[NSMutableArray alloc]init];
     charArr = [[NSMutableArray alloc]init];
     TuiJianArr = [[NSMutableArray alloc]init];
@@ -375,6 +374,8 @@
          
            chartCell.storeArray = TuiJianArr;
            
+        
+            
             chartCell.oneBlock = ^{
                  [self pushToNextWithIdentiField:@"detailSegue"];
             };
@@ -479,7 +480,7 @@
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             
-             [self performSegueWithIdentifier:@"incomeSegue" sender:nil];
+             //[self performSegueWithIdentifier:@"incomeSegue" sender:nil];
         }
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
