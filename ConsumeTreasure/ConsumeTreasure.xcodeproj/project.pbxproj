@@ -10,6 +10,8 @@
 		5DF3DA620F7D8B688AA5C7C2 /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6208A498A0F897E35B845098 /* libPods-ConsumeTreasure.a */; };
 		AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0076471DD066D4000E5181 /* UnionCategoryModel.m */; };
 		AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0076491DD06F73000E5181 /* TestUnion.json */; };
+		AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0149A41DE7D69D0068067B /* ZanTableViewCell.m */; };
+		AB0149A71DE7D69D0068067B /* ZanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */; };
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
 		AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */; };
 		AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */; };
@@ -222,6 +224,9 @@
 		AB0076461DD066D4000E5181 /* UnionCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionCategoryModel.h; sourceTree = "<group>"; };
 		AB0076471DD066D4000E5181 /* UnionCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionCategoryModel.m; sourceTree = "<group>"; };
 		AB0076491DD06F73000E5181 /* TestUnion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestUnion.json; sourceTree = "<group>"; };
+		AB0149A31DE7D69D0068067B /* ZanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZanTableViewCell.h; sourceTree = "<group>"; };
+		AB0149A41DE7D69D0068067B /* ZanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZanTableViewCell.m; sourceTree = "<group>"; };
+		AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZanTableViewCell.xib; sourceTree = "<group>"; };
 		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
 		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
 		AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEvaluateTableViewCell.h; sourceTree = "<group>"; };
@@ -1000,6 +1005,9 @@
 				AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */,
 				AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */,
 				AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */,
+				AB0149A31DE7D69D0068067B /* ZanTableViewCell.h */,
+				AB0149A41DE7D69D0068067B /* ZanTableViewCell.m */,
+				AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1558,6 +1566,7 @@
 				D15B3A461DDAFB48009122FE /* DetailCountHeadView.xib in Resources */,
 				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
 				D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */,
+				AB0149A71DE7D69D0068067B /* ZanTableViewCell.xib in Resources */,
 				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
 				D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */,
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
@@ -1660,6 +1669,7 @@
 				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
+				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,

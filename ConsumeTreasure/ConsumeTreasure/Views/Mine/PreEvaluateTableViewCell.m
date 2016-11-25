@@ -23,9 +23,11 @@
     // Configure the view for the selected state
 }
 - (void)createUI{
-    self.desTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 103, ScreenWidth, 50)];
+    self.desTextView = [[UITextView alloc] initWithFrame:CGRectMake(50, 103, ScreenWidth-100, 50)];
     [self.evaluateStarView configWithStarLevel:0];
-    self.desTextView.text = @"请输入您对商家的评价";
+    self.desTextView.text = @"请您对商家有什么建议和意见吗^-^";
+    self.desTextView.textColor = [UIColor lightGrayColor];
+    
     
 }
 - (void)addTapGes{

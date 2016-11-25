@@ -159,10 +159,12 @@ UICollectionViewDataSource>
 }
 
 - (IBAction)backBtn:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    self.tabBarController.selectedIndex = 0;
+  //  [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)backTitleBtn:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    self.tabBarController.selectedIndex = 0;
+  //  [self.navigationController popViewControllerAnimated:YES];
 }
 @end

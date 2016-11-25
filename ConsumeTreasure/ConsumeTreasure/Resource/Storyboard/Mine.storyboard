@@ -371,7 +371,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="EJl-mU-9cv" id="WMD-pN-XdD"/>
-                        <segue destination="kUi-rg-Ptp" kind="show" identifier="evaluaSegue" id="dXD-KS-isP"/>
+                        <segue destination="kUi-rg-Ptp" kind="push" identifier="evaluaSegue" id="FEW-2i-OUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ew-YT-DvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -394,6 +394,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxU-g3-rPw">
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZXG-NE-gDW"/>
+                                </constraints>
+                                <state key="normal" title="提交评价">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -401,8 +411,19 @@
                             <constraint firstItem="NyE-aA-irs" firstAttribute="leading" secondItem="ir5-pY-OPv" secondAttribute="leading" id="Fow-RJ-VWj"/>
                             <constraint firstItem="NyE-aA-irs" firstAttribute="top" secondItem="yah-lI-KQv" secondAttribute="bottom" id="GN7-hl-KQe"/>
                             <constraint firstItem="G4j-B0-ekJ" firstAttribute="top" secondItem="NyE-aA-irs" secondAttribute="bottom" id="XCj-6k-0UJ"/>
+                            <constraint firstItem="vxU-g3-rPw" firstAttribute="leading" secondItem="ir5-pY-OPv" secondAttribute="leading" id="klG-21-zvE"/>
+                            <constraint firstItem="G4j-B0-ekJ" firstAttribute="top" secondItem="vxU-g3-rPw" secondAttribute="bottom" id="n6f-eG-51s"/>
+                            <constraint firstAttribute="trailing" secondItem="vxU-g3-rPw" secondAttribute="trailing" id="nKO-ey-9Ie"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7bh-f3-U9S">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="Xnh-U1-hTc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="kUi-rg-Ptp" id="Vad-M3-gcs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NyE-aA-irs" id="yDr-hQ-ZvE"/>
                     </connections>

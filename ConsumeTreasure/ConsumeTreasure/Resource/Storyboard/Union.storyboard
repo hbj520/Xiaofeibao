@@ -21,12 +21,12 @@
                         <color key="barTintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rmq-6m-Drv" kind="relationship" relationship="rootViewController" id="oGi-4Q-D6m"/>
+                        <segue destination="cFw-ed-hsH" kind="relationship" relationship="rootViewController" id="Glf-3o-Jt0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiq-mV-ZgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="566"/>
+            <point key="canvasLocation" x="524" y="543"/>
         </scene>
         <!--联盟商户-->
         <scene sceneID="Uv5-wt-dmN">
@@ -37,22 +37,22 @@
                         <viewControllerLayoutGuide type="bottom" id="FyF-8B-PWb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p3R-Mg-hd6">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-bl-99x">
-                                <rect key="frame" x="0.0" y="0.0" width="125" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="125" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXB-5v-dqA">
-                                <rect key="frame" x="125" y="0.0" width="2" height="603"/>
+                                <rect key="frame" x="125" y="0.0" width="2" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="cbg-Lr-QzF"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-Lg-dTz">
-                                <rect key="frame" x="127" y="0.0" width="248" height="603"/>
+                                <rect key="frame" x="127" y="20" width="248" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nQ2-Aj-UON">
                                     <size key="itemSize" width="50" height="50"/>
@@ -93,12 +93,11 @@
                     <connections>
                         <outlet property="leftTableView" destination="2yn-bl-99x" id="XI5-Mc-jXu"/>
                         <outlet property="rightCollectionView" destination="2y5-Lg-dTz" id="WnN-m7-QAR"/>
-                        <segue destination="cFw-ed-hsH" kind="push" identifier="UnionListSegue" id="iUb-b4-fNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfq-ar-oeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="580.65967016491754"/>
+            <point key="canvasLocation" x="766" y="940"/>
         </scene>
         <!--Union List View Controller-->
         <scene sceneID="eyR-x1-nzQ">
