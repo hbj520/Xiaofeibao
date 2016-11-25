@@ -60,12 +60,12 @@
   }
 
 - (void)addRefresh{
-    self.tableView.tableHeaderView = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         [self loadAccountDataWithPage:_page pageNum:pageNum];
     }];
     
-    self.tableView.tableFooterView = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         _page ++;
         [self loadAccountDataWithPage:_page pageNum:pageNum];
     }];
