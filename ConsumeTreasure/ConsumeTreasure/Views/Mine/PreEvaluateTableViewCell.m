@@ -23,7 +23,12 @@
     // Configure the view for the selected state
 }
 - (void)createUI{
-    self.desTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 103, ScreenWidth, 50)];
+    self.desTextView = [[UITextView alloc] initWithFrame:CGRectMake(50, 103, ScreenWidth-100, 50)];
+    [self.evaluateStarView configWithStarLevel:0];
+    self.desTextView.text = @"请您对商家有什么建议和意见吗^-^";
+    self.desTextView.textColor = [UIColor lightGrayColor];
+    
+    
 }
 - (void)addTapGes{
    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(updatestar:)];
@@ -32,9 +37,8 @@
 - (void)updatestar:(UITapGestureRecognizer *)sender
 {
     [self addSubview:self.desTextView];
-    if (self.clickStarBlock) {
-        self.clickStarBlock();
-    }
+  
+
     CGPoint point = [sender locationInView:self.evaluateStarView];
     CGFloat pointX = point.x;
     int starnumber;
@@ -43,6 +47,11 @@
         starnumber = 0;
     }else{
         starnumber = scale * 5+1;
+    }
+    if (self.frame.size.height != 200) {
+        if (self.clickStarBlock) {
+            self.clickStarBlock(starnumber);
+        }
     }
     [self.evaluateStarView configWithStarLevel:starnumber];
 }
