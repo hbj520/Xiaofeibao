@@ -33,6 +33,7 @@
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
+    //self.navigationItem.titleView.hidden = YES;
     
 }
 - (void)viewWillDisappear:(BOOL)animated{

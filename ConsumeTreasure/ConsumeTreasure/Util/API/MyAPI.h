@@ -72,5 +72,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)unionListDetailWithParameters:(NSDictionary *)para
                                result:(ArrayBlock)result
                           errorResult:(ErrorBlock)errorResult;
-
+#pragma mark - 上传图片
+- (void)postFilesWithFormData:(NSArray *)photosArr
+                           result:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult;
 @end

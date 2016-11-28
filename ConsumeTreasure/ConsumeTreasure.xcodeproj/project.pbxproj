@@ -52,6 +52,11 @@
 		ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF4E2871D9B5E58006AD23C /* LaunchScreen.storyboard */; };
 		ABF4E2941D9B5E58006AD23C /* ConsumeTreasureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E2931D9B5E58006AD23C /* ConsumeTreasureTests.m */; };
 		ABF4E29F1D9B5E58006AD23C /* ConsumeTreasureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */; };
+		ABFEA4981DEC118C0002672F /* BasePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA4971DEC118C0002672F /* BasePhotoViewController.m */; };
+		ABFEA49D1DEC11E10002672F /* ZYQAssetPicker.Bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABFEA49A1DEC11E10002672F /* ZYQAssetPicker.Bundle */; };
+		ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA49C1DEC11E10002672F /* ZYQAssetPickerController.m */; };
+		ABFEA4A21DEC12540002672F /* FormData.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA4A11DEC12540002672F /* FormData.m */; };
+		ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA4A41DEC137E0002672F /* BecomeShopUnionViewController.m */; };
 		D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B21DB0B28F001C1992 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B51DB0B28F001C1992 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B71DB0B28F001C1992 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -303,6 +308,15 @@
 		ABF4E29A1D9B5E58006AD23C /* ConsumeTreasureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConsumeTreasureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF4E29E1D9B5E58006AD23C /* ConsumeTreasureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsumeTreasureUITests.m; sourceTree = "<group>"; };
 		ABF4E2A01D9B5E58006AD23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABFEA4961DEC118C0002672F /* BasePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePhotoViewController.h; sourceTree = "<group>"; };
+		ABFEA4971DEC118C0002672F /* BasePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePhotoViewController.m; sourceTree = "<group>"; };
+		ABFEA49A1DEC11E10002672F /* ZYQAssetPicker.Bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYQAssetPicker.Bundle; sourceTree = "<group>"; };
+		ABFEA49B1DEC11E10002672F /* ZYQAssetPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYQAssetPickerController.h; sourceTree = "<group>"; };
+		ABFEA49C1DEC11E10002672F /* ZYQAssetPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYQAssetPickerController.m; sourceTree = "<group>"; };
+		ABFEA4A01DEC12540002672F /* FormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormData.h; sourceTree = "<group>"; };
+		ABFEA4A11DEC12540002672F /* FormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormData.m; sourceTree = "<group>"; };
+		ABFEA4A31DEC137E0002672F /* BecomeShopUnionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BecomeShopUnionViewController.h; sourceTree = "<group>"; };
+		ABFEA4A41DEC137E0002672F /* BecomeShopUnionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BecomeShopUnionViewController.m; sourceTree = "<group>"; };
 		D10EE3B11DB0B28F001C1992 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		D10EE3B21DB0B28F001C1992 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		D10EE3B31DB0B28F001C1992 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -767,9 +781,9 @@
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ABFEA49F1DEC12460002672F /* Mine */,
 				AB0076451DD066C0000E5181 /* Union */,
 				ABCB95341D9B89E8008927C7 /* Homepage */,
-				ABCB95351D9B89E8008927C7 /* Mine */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -828,13 +842,6 @@
 			path = Homepage;
 			sourceTree = "<group>";
 		};
-		ABCB95351D9B89E8008927C7 /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
 		ABCB95371D9B89FC008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
@@ -873,6 +880,8 @@
 		ABCB95381D9B89FC008927C7 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				ABFEA4961DEC118C0002672F /* BasePhotoViewController.h */,
+				ABFEA4971DEC118C0002672F /* BasePhotoViewController.m */,
 				AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */,
 				AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */,
 				D170F2AF1DAFB6A500272E57 /* MineViewController.h */,
@@ -885,6 +894,8 @@
 				AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */,
 				AB4826171DE689EE0001EA8B /* EvaluateViewController.h */,
 				AB4826181DE689EE0001EA8B /* EvaluateViewController.m */,
+				ABFEA4A31DEC137E0002672F /* BecomeShopUnionViewController.h */,
+				ABFEA4A41DEC137E0002672F /* BecomeShopUnionViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1150,9 +1161,29 @@
 			path = ConsumeTreasureUITests;
 			sourceTree = "<group>";
 		};
+		ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				ABFEA49A1DEC11E10002672F /* ZYQAssetPicker.Bundle */,
+				ABFEA49B1DEC11E10002672F /* ZYQAssetPickerController.h */,
+				ABFEA49C1DEC11E10002672F /* ZYQAssetPickerController.m */,
+			);
+			path = ZYQAssetPickerController;
+			sourceTree = "<group>";
+		};
+		ABFEA49F1DEC12460002672F /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				ABFEA4A01DEC12540002672F /* FormData.h */,
+				ABFEA4A11DEC12540002672F /* FormData.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */,
 				D15B3A8E1DDC0E5E009122FE /* AliPay */,
 				ABD363D51DC330CE00D462AF /* weixin */,
 				D170CA011DC1DB75001BCEE4 /* Other */,
@@ -1579,6 +1610,7 @@
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				ABFEA49D1DEC11E10002672F /* ZYQAssetPicker.Bundle in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D15B395E1DD40AD7009122FE /* ListHeadView.xib in Resources */,
 				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
@@ -1682,6 +1714,7 @@
 				D15B3B121DDEE5BB009122FE /* IncomeTableHead.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
+				ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
 				ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
@@ -1700,6 +1733,7 @@
 				D15B3AF71DDC0E5E009122FE /* Order.m in Sources */,
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
+				ABFEA4A21DEC12540002672F /* FormData.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
@@ -1751,6 +1785,7 @@
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
 				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
+				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,
 				D15B39461DD01488009122FE /* ChartModel.m in Sources */,
 				D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */,
@@ -1761,6 +1796,7 @@
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 				D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,
+				ABFEA4981DEC118C0002672F /* BasePhotoViewController.m in Sources */,
 				D12165FE1DB85AF4006B06FC /* ExplainTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

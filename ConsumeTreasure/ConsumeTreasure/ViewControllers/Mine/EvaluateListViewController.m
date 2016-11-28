@@ -29,6 +29,15 @@ UITableViewDataSource>
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationItem.hidesBackButton = YES;
+    for (UIView *sbView in self.navigationController.navigationBar.subviews) {
+        if (sbView.subviews.count > 0) {
+            if ([sbView.subviews[0] isKindOfClass:[UILabel class]]) {
+                [sbView removeFromSuperview];
+            }
+        }
+
+        
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -49,6 +58,7 @@ UITableViewDataSource>
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EvaluateReuseId forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.clickEvaluateBlock = ^(){
         [self performSegueWithIdentifier:@"evaluaSegue" sender:nil];
     };
