@@ -84,6 +84,10 @@
     if (indexPath.row == 1) {
         
         [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
+    }else if (indexPath.row == 0){
+        
+        [self performSegueWithIdentifier:@"becomeShopUnionSegue" sender:nil];
+
     }
     //[self testWeixinPay];
 }
