@@ -67,7 +67,6 @@ UICollectionViewDataSource>
     self.titleTableView.delegate = self;
     self.titleTableView.dataSource = self;
     [self.titleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewtitleReuseId"];
-    
     //collectionview
     self.titleCollectionView.delegate = self;
     self.titleCollectionView.dataSource = self;
@@ -98,6 +97,7 @@ UICollectionViewDataSource>
     }
     cell.indexPath = indexPath;
     cell.CellIsSelected = NO;
+  //   cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
