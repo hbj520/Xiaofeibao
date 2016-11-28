@@ -18,17 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="向张小三推荐消费报，获得一个通宝币" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9m5-nl-MjU">
-                        <rect key="frame" x="18" y="13" width="225.5" height="13"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="13" id="Zwi-4G-3Jw"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.10.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekz-8U-zZe">
-                        <rect key="frame" x="18" y="31" width="60" height="10"/>
+                        <rect key="frame" x="18" y="22.5" width="60" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="lyo-a2-MF3"/>
                         </constraints>
@@ -45,17 +36,32 @@
                         <color key="textColor" red="0.0" green="0.5490196078431373" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shou" translatesAutoresizingMaskIntoConstraints="NO" id="YNA-Rs-fit">
+                        <rect key="frame" x="171" y="11" width="33" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="S1e-ad-ADP"/>
+                            <constraint firstAttribute="width" constant="33" id="Z5o-9T-6qm"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="B25-hT-pYE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7f1-GU-Gxn"/>
-                    <constraint firstItem="9m5-nl-MjU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="BeB-Q0-DeE"/>
-                    <constraint firstItem="ekz-8U-zZe" firstAttribute="top" secondItem="9m5-nl-MjU" secondAttribute="bottom" constant="5" id="HIc-cc-B7j"/>
+                    <constraint firstItem="YNA-Rs-fit" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QBN-cG-9em"/>
+                    <constraint firstItem="YNA-Rs-fit" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="UnK-4T-1oz"/>
                     <constraint firstAttribute="trailing" secondItem="B25-hT-pYE" secondAttribute="trailing" constant="19" id="Yu8-4c-DnY"/>
-                    <constraint firstItem="9m5-nl-MjU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="ZET-bw-ALA"/>
                     <constraint firstItem="ekz-8U-zZe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="bQi-XO-vHP"/>
+                    <constraint firstItem="ekz-8U-zZe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jDl-eo-q7N"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="changeImage" destination="YNA-Rs-fit" id="86W-g2-Iby"/>
+                <outlet property="changeNum" destination="B25-hT-pYE" id="5aP-n6-zK3"/>
+                <outlet property="timeLab" destination="ekz-8U-zZe" id="yLZ-Ae-Fud"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="shou" width="101" height="101"/>
+    </resources>
 </document>

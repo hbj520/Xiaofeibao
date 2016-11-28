@@ -226,7 +226,7 @@
             
             
             AccountArrayModel *model = [[AccountArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
-            result(YES,info,@[accountArr,model]);
+            result(YES,info,@[accountArr,model.balance,model.pages]);
         }else{
             result(NO,info,nil);
         }

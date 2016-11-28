@@ -15,6 +15,33 @@
     // Initialization code
 }
 
+- (void)setArr:(NSMutableArray *)arr{
+    
+}
+
+- (void)setAccountModel:(AccountModel *)accountModel{
+    if (accountModel) {
+        
+        self.timeLab.text = [Tools dealWithtimeStr:accountModel.createdate];
+        
+        if ([accountModel.type isEqualToString:@"0"]) {
+            self.changeImage.image = [UIImage imageNamed:@"zhi"];
+            self.changeNum.text = [NSString stringWithFormat:@"- %@",accountModel.goldnum];
+        }else{
+            self.changeImage.image = [UIImage imageNamed:@"shou"];
+            self.changeNum.text = [NSString stringWithFormat:@"+ %@",accountModel.goldnum];
+        }
+        
+        
+    }
+    
+    
+}
+
+
+
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

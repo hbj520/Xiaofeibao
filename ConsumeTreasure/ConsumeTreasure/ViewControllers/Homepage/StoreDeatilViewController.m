@@ -56,7 +56,7 @@
     }];
     
     [self addTableView];
-     [self addNavBarView];//导航栏
+    [self addNavBarView];//导航栏
     [self addRefresh];
 }
 
