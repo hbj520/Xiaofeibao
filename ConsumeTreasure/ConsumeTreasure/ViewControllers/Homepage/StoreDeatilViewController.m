@@ -19,7 +19,7 @@
 #import "PromptTableViewCell.h"
 
 #import <Masonry.h>
-
+#import <MJRefresh/MJRefresh.h>
 @interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
@@ -56,9 +56,18 @@
     }];
     
     [self addTableView];
-     [self addNavBarView];//导航栏
-    
+    [self addNavBarView];//导航栏
+    [self addRefresh];
 }
+
+- (void)addRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+           }];
+    
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            }];
+}
+
 - (void)viewDidLayoutSubviews{
     DetailHeadView * headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
     

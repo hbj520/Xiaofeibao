@@ -14,11 +14,14 @@
 #import "LevelTableViewCell.h"
 #import "DetailCountHeadView.h"
 
+#import "AccountModel.h"
 
 @interface MyAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *levelArr;
     NSString *accountNum;
+    
+    NSString *pagess;
     
     NSInteger _page;
     NSString *pageNum;
@@ -58,11 +61,14 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self creatUI];
     [self addRefresh];
+    [self loadAccountDataWithPage:_page pageNum:pageNum];
   }
 
 - (void)addRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
+        if (levelArr.count > 0) {
+            [levelArr removeAllObjects];
+        }
         [self loadAccountDataWithPage:_page pageNum:pageNum];
     }];
     
@@ -81,13 +87,26 @@
     NSString *pageNow = [NSString stringWithFormat:@"%ld",(long)page];
     NSDictionary *dic = @{
                           @"pageNum":pageNow,
-                          @"pageOffset":pageNum
+                          @"pageOffset":@"1"
                           };
     [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             accountNum = arrays[1];
-            [levelArr addObjectsFromArray:arrays[0]];
+            pagess = arrays[2];
+            
+            
+            if ([pagess integerValue] >= page) {
+               
+                [levelArr addObjectsFromArray:arrays[0]];
+            }else{
+                 NSLog(@"停止啦😝");
+            }
+            
+            [self.tableView reloadData];
         }
+        
+        
+        
         [self endRefresh];
     } errorResult:^(NSError *enginerError) {
         [self endRefresh];
@@ -97,7 +116,7 @@
 - (void)creatUI{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.allowsSelection = YES;
+    //self.tableView.allowsSelection = YES;
     [self.tableView registerNib:[UINib nibWithNibName:@"MyAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"accountCelleId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"LevelTableViewCell" bundle:nil] forCellReuseIdentifier:@"levelCellId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SpreadTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuiguangCelleId"];
@@ -112,7 +131,7 @@
     if (section == 0) {
         return 1;
     }else{
-        return 25;
+        return levelArr.count;
     }
 }
 
@@ -124,11 +143,10 @@
             accountCell = [[[NSBundle mainBundle] loadNibNamed:@"MyAccountTableViewCell" owner:self options:nil] lastObject];
         }
         accountCell.backBtnBlock =^{
-
-            
             [self backTolastPage];
-            
         };
+        accountCell.moneyLab.text = accountNum;
+        accountCell.explainLab.text = [NSString stringWithFormat:@"可提现金额%@元",accountNum];
         accountCell.selectionStyle = 0;
         return accountCell;
     }else{
@@ -136,8 +154,16 @@
             LevelTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"levelCellId"];
             if (levelCell == nil) {
                 levelCell = [[[NSBundle mainBundle] loadNibNamed:@"LevelTableViewCell" owner:self options:nil] lastObject];
-          
             }
+        
+        if (levelArr.count > 0) {
+             levelCell.accountModel = [levelArr objectAtIndex:indexPath.row];
+        }
+       
+       // levelCell.arr = levelArr;
+        
+        
+        
             levelCell.selectionStyle = 0;
             return levelCell;
         }

@@ -23,11 +23,13 @@
     [super awakeFromNib];
 }
 
+/*
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];
     self.backBtn.hidden = self.viewController.navigationController.viewControllers.count <= 1;
 }
+*/
 
 - (void)setTitle:(NSString *)title
 {
