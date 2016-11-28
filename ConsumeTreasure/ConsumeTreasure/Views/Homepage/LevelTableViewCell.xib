@@ -18,15 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.10.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekz-8U-zZe">
-                        <rect key="frame" x="18" y="22.5" width="60" height="10"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="10" id="lyo-a2-MF3"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B25-hT-pYE">
                         <rect key="frame" x="325" y="20" width="31" height="15"/>
                         <constraints>
@@ -37,20 +28,29 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shou" translatesAutoresizingMaskIntoConstraints="NO" id="YNA-Rs-fit">
-                        <rect key="frame" x="171" y="11" width="33" height="33"/>
+                        <rect key="frame" x="26" y="5" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="33" id="S1e-ad-ADP"/>
-                            <constraint firstAttribute="width" constant="33" id="Z5o-9T-6qm"/>
+                            <constraint firstAttribute="height" constant="30" id="S1e-ad-ADP"/>
+                            <constraint firstAttribute="width" constant="30" id="Z5o-9T-6qm"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.10.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekz-8U-zZe">
+                        <rect key="frame" x="11" y="39" width="60" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="lyo-a2-MF3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.41960784309999999" green="0.42352941179999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="B25-hT-pYE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7f1-GU-Gxn"/>
-                    <constraint firstItem="YNA-Rs-fit" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QBN-cG-9em"/>
-                    <constraint firstItem="YNA-Rs-fit" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="UnK-4T-1oz"/>
+                    <constraint firstItem="YNA-Rs-fit" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Jhq-B9-9b3"/>
+                    <constraint firstItem="ekz-8U-zZe" firstAttribute="top" secondItem="YNA-Rs-fit" secondAttribute="bottom" constant="4" id="Lrb-IJ-s0N"/>
+                    <constraint firstItem="YNA-Rs-fit" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="Nbs-XU-Wyr"/>
                     <constraint firstAttribute="trailing" secondItem="B25-hT-pYE" secondAttribute="trailing" constant="19" id="Yu8-4c-DnY"/>
-                    <constraint firstItem="ekz-8U-zZe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="bQi-XO-vHP"/>
-                    <constraint firstItem="ekz-8U-zZe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jDl-eo-q7N"/>
+                    <constraint firstItem="ekz-8U-zZe" firstAttribute="centerX" secondItem="YNA-Rs-fit" secondAttribute="centerX" id="aA1-g3-aSO"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

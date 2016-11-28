@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "AccountModel.h"
 
 @interface AccountDetailViewController : BaseViewController
+
+@property (nonatomic,strong) AccountModel *model;
 
 @end

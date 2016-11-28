@@ -19,9 +19,21 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)setModel:(AccountModel *)model{
+    
+    NSLog(@"😝%@😉",model);
+    
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)back:(id)sender {
+    [self backTolastPage];
 }
 
 /*

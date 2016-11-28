@@ -8,6 +8,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import <Masonry.h>
 
+#import "AccountDetailViewController.h"
 #import "MyAccountViewController.h"
 #import "HexColor.h"
 #import "MyAccountTableViewCell.h"
@@ -69,6 +70,7 @@
         if (levelArr.count > 0) {
             [levelArr removeAllObjects];
         }
+        _page = 1;
         [self loadAccountDataWithPage:_page pageNum:pageNum];
     }];
     
@@ -94,12 +96,11 @@
             accountNum = arrays[1];
             pagess = arrays[2];
             
-            
             if ([pagess integerValue] >= page) {
                
                 [levelArr addObjectsFromArray:arrays[0]];
             }else{
-                 NSLog(@"停止啦😝");
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
             }
             
             [self.tableView reloadData];
@@ -159,19 +160,11 @@
         if (levelArr.count > 0) {
              levelCell.accountModel = [levelArr objectAtIndex:indexPath.row];
         }
-       
-       // levelCell.arr = levelArr;
-        
-        
-        
             levelCell.selectionStyle = 0;
             return levelCell;
         }
         
     }
-    
-
-
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section == 1) {
@@ -224,7 +217,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         self.hidesBottomBarWhenPushed = YES;
-        [self performSegueWithIdentifier:@"incomeDetailSegue" sender:nil];
+        AccountModel *model = [levelArr objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"incomeDetailSegue" sender:model];
      }
     
 }
@@ -249,10 +243,16 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+   
+    if ([segue.identifier isEqualToString:@"incomeDetailSegue"]) {
+        AccountModel *model = (AccountModel*)sender;
+        AccountDetailViewController *accDetailVC = segue.destinationViewController;
+        accDetailVC.model = model;
+    }
 }
-*/
+
 
 @end
