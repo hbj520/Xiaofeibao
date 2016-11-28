@@ -18,6 +18,7 @@
 #import "LookStoreModel.h"
 #import "TuiJianModel.h"
 #import "AccountModel.h"
+#import "StoreMasterModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -89,7 +90,9 @@
     }];
 }
 #pragma mark - 首页热门商户
-- (void)getHomeChartDataWithParameters:(NSDictionary*)para resulet:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getHomeChartDataWithParameters:(NSDictionary*)para
+                               resulet:(ArrayBlock)result
+                           errorResult:(ErrorBlock)errorResult{
   
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
@@ -135,7 +138,9 @@
 }
 
 #pragma mark --收益权走势图
-- (void)getHomeIncomeChartDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getHomeIncomeChartDataWithParameters:(NSDictionary*)para
+                                      result:(ArrayBlock)result
+                                 errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara =  @{
                                @"tokenid":@"",
                                @"platform":@"1",
@@ -159,7 +164,9 @@
 }
 
 #pragma mark -- 首页广告位
-- (void)getHomeAddDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getHomeAddDataWithParameters:(NSDictionary*)para
+                              result:(ArrayBlock)result
+                         errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
                               @"platform":@"1",
@@ -210,7 +217,9 @@
 #pragma mark --合伙人超市
 
 #pragma mark --我的账户
-- (void)getMyAccountDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getMyAccountDataWithParameters:(NSDictionary*)para
+                                result:(ArrayBlock)result
+                           errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
                               @"platform":@"1",
@@ -239,7 +248,9 @@
 
 
 #pragma mark --浏览记录
-- (void)getLookRecordDataWithParaMeters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getLookRecordDataWithParaMeters:(NSDictionary*)para
+                                 result:(ArrayBlock)result
+                            errorResult:(ErrorBlock)errorResult{
     NSDictionary * dicPara = @{
                                @"tokenid":@"f2c70e32b68b4a618215b9834ca3f28c",
                                @"platform":@"1",
@@ -276,7 +287,9 @@
 }
 
 #pragma mark --推荐商家
-- (void)getTuiJianStoreWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorReult{
+- (void)getTuiJianStoreWithParameters:(NSDictionary*)para
+                               result:(ArrayBlock)result
+                          errorResult:(ErrorBlock)errorReult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
                               @"platform":@"1",
@@ -307,6 +320,33 @@
 #pragma mark --收益权
 
 #pragma mark --我是商户
+- (void)getStoreMasterDataWithParameters:(NSDictionary*)para
+                                  result:(ModelBlock)result
+                             errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                            @"tokenid":@"422fc8ca35e545e09c50adc245caf739",
+                              @"platform":@"0",
+                              @"param":para
+                              };
+    
+    [self.manager POST:@"userinfo/myShopAccount" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+            NSError *error = nil;
+            StoreMasterModel *model = [[StoreMasterModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
+            
+            result(YES,info,model);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+
 
 
 #pragma mark -联盟商户主页面获取城市大区

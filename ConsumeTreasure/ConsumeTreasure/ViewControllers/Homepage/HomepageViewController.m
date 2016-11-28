@@ -341,8 +341,12 @@
             [self pushToNextWithIdentiField:@"partnerSegue"];
         };
         firstCell.storeBlock = ^{//商户入口
-            [self pushToNextWithIdentiField:@"beStoreSegue"];
+          //[self pushToNextWithIdentiField:@"beStoreSegue"];
+            
+            [self pushToNextWithIdentiField:@"unionSegue"];
                   };
+        
+        
         firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };

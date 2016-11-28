@@ -511,6 +511,7 @@
                                 <state key="normal" image="shouye_sq"/>
                                 <connections>
                                     <action selector="goApply:" destination="Nt6-3N-WsH" eventType="touchUpInside" id="eMY-4S-IjS"/>
+                                    <segue destination="MRs-ew-4Z8" kind="push" id="Odz-xK-rL1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -540,6 +541,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3L-hQ-GCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-334" y="1415"/>
+        </scene>
+        <!--申请-->
+        <scene sceneID="GHP-0h-5gy">
+            <objects>
+                <viewController id="MRs-ew-4Z8" customClass="ApplyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Htk-nj-pwI"/>
+                        <viewControllerLayoutGuide type="bottom" id="o2c-Fl-xkf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vzv-Xa-f30">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC2-Zi-jdK">
+                                <rect key="frame" x="0.0" y="621" width="375" height="46"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.3411764705882353" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="wDh-3R-ytp"/>
+                                </constraints>
+                                <state key="normal" title="确认提交">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3uK-1g-zdS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3uK-1g-zdS" firstAttribute="top" secondItem="Htk-nj-pwI" secondAttribute="bottom" id="9Aj-rl-xHU"/>
+                            <constraint firstItem="3uK-1g-zdS" firstAttribute="leading" secondItem="vzv-Xa-f30" secondAttribute="leading" id="Dig-U8-Nx4"/>
+                            <constraint firstAttribute="trailing" secondItem="3uK-1g-zdS" secondAttribute="trailing" id="Ntf-6T-yAD"/>
+                            <constraint firstItem="TC2-Zi-jdK" firstAttribute="leading" secondItem="vzv-Xa-f30" secondAttribute="leading" id="Upu-us-IWA"/>
+                            <constraint firstAttribute="trailing" secondItem="TC2-Zi-jdK" secondAttribute="trailing" id="dJy-jq-vm2"/>
+                            <constraint firstItem="TC2-Zi-jdK" firstAttribute="top" secondItem="3uK-1g-zdS" secondAttribute="bottom" id="tRC-TX-uNb"/>
+                            <constraint firstItem="o2c-Fl-xkf" firstAttribute="top" secondItem="TC2-Zi-jdK" secondAttribute="bottom" id="uIz-Ny-zp9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="申请" id="pMe-Ji-Q43">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="twW-Hb-zsR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="Nt6-3N-WsH" id="IFX-gI-ufu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKt-AK-7Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335.19999999999999" y="2117.9910044977514"/>
         </scene>
         <!--Im Union Store View Controller-->
         <scene sceneID="u82-kx-ffL">
@@ -636,7 +688,7 @@
                                 <rect key="frame" x="0.0" y="168" width="375" height="43"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1256.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8h-YD-azI">
-                                        <rect key="frame" x="182.5" y="13" width="66" height="18"/>
+                                        <rect key="frame" x="191.5" y="13" width="66" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="tjl-aa-yiy"/>
                                         </constraints>
@@ -644,8 +696,8 @@
                                         <color key="textColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计成交" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxG-hG-yld">
-                                        <rect key="frame" x="124" y="15" width="53.5" height="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计成交  ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxG-hG-yld">
+                                        <rect key="frame" x="114" y="15" width="73.5" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="vrQ-lJ-qZk"/>
                                         </constraints>
@@ -656,7 +708,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="a8h-YD-azI" firstAttribute="leading" secondItem="nxG-hG-yld" secondAttribute="trailing" constant="5" id="3SR-ld-tlD"/>
+                                    <constraint firstItem="a8h-YD-azI" firstAttribute="leading" secondItem="nxG-hG-yld" secondAttribute="trailing" constant="4" id="3SR-ld-tlD"/>
                                     <constraint firstItem="nxG-hG-yld" firstAttribute="centerY" secondItem="Lkp-Ux-TI8" secondAttribute="centerY" id="6GA-H6-Yty"/>
                                     <constraint firstItem="nxG-hG-yld" firstAttribute="centerX" secondItem="Lkp-Ux-TI8" secondAttribute="centerX" constant="-36.75" id="APa-k9-QDn"/>
                                     <constraint firstAttribute="height" constant="43" id="NDd-s3-t9x"/>
@@ -876,6 +928,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xxb-F2-WaC"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="dealNum" destination="a8h-YD-azI" id="sak-SD-may"/>
+                        <outlet property="unionBalance" destination="Rxr-8W-gvW" id="f1g-er-Oa2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzG-wP-Arj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

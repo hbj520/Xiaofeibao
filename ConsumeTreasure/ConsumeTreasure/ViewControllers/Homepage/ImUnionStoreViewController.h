@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface ImUnionStoreViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UILabel *unionBalance;
+@property (weak, nonatomic) IBOutlet UILabel *dealNum;
 
 @end
