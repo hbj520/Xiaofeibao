@@ -855,6 +855,7 @@
 			children = (
 				ABCB95421D9B8E56008927C7 /* HomepageViewController.h */,
 				ABCB95431D9B8E56008927C7 /* HomepageViewController.m */,
+				D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */,
 				D15B39471DD0B2C0009122FE /* AdDetailViewController.h */,
 				D15B39481DD0B2C0009122FE /* AdDetailViewController.m */,
 				D1F275A51DAD0B6E005B9849 /* ScanerVC.h */,
@@ -868,7 +869,6 @@
 				D12054841DEC348300EB2707 /* ApplyViewController.h */,
 				D12054851DEC348300EB2707 /* ApplyViewController.m */,
 				D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */,
-				D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */,
 				D12165A41DB6518F006B06FC /* LookRecordViewController.h */,
 				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
 				D12165A71DB65998006B06FC /* IncomeViewController.h */,
