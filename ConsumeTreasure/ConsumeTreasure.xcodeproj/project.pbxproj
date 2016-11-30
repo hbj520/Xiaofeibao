@@ -81,6 +81,15 @@
 		D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE45A1DB1CF3F001C1992 /* UIViewController+HUD.m */; };
 		D12054831DEC26A500EB2707 /* StoreMasterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054821DEC26A500EB2707 /* StoreMasterModel.m */; };
 		D12054861DEC348300EB2707 /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054851DEC348300EB2707 /* ApplyViewController.m */; };
+		D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054881DED1C0200EB2707 /* ApplyContentTableViewCell.m */; };
+		D120548B1DED1C0200EB2707 /* ApplyContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12054891DED1C0200EB2707 /* ApplyContentTableViewCell.xib */; };
+		D120548F1DED20A100EB2707 /* IdentiPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D120548D1DED20A100EB2707 /* IdentiPhotoTableViewCell.m */; };
+		D12054901DED20A100EB2707 /* IdentiPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D120548E1DED20A100EB2707 /* IdentiPhotoTableViewCell.xib */; };
+		D12054941DED221800EB2707 /* BusinessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054921DED221800EB2707 /* BusinessTableViewCell.m */; };
+		D12054951DED221800EB2707 /* BusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12054931DED221800EB2707 /* BusinessTableViewCell.xib */; };
+		D12054991DED269000EB2707 /* OtherLicenseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054971DED269000EB2707 /* OtherLicenseTableViewCell.m */; };
+		D120549A1DED269000EB2707 /* OtherLicenseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12054981DED269000EB2707 /* OtherLicenseTableViewCell.xib */; };
+		D120549D1DED57FC00EB2707 /* ValuePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D120549C1DED57FC00EB2707 /* ValuePickerView.m */; };
 		D12164981DB4744D006B06FC /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164961DB4744D006B06FC /* BaiduMapAPI_Base.framework */; };
 		D12164991DB4744D006B06FC /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12164971DB4744D006B06FC /* BaiduMapAPI_Cloud.framework */; };
 		D121649E1DB4745A006B06FC /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D121649A1DB4745A006B06FC /* BaiduMapAPI_Location.framework */; };
@@ -366,6 +375,20 @@
 		D12054821DEC26A500EB2707 /* StoreMasterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreMasterModel.m; sourceTree = "<group>"; };
 		D12054841DEC348300EB2707 /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
 		D12054851DEC348300EB2707 /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
+		D12054871DED1C0200EB2707 /* ApplyContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyContentTableViewCell.h; sourceTree = "<group>"; };
+		D12054881DED1C0200EB2707 /* ApplyContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyContentTableViewCell.m; sourceTree = "<group>"; };
+		D12054891DED1C0200EB2707 /* ApplyContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplyContentTableViewCell.xib; sourceTree = "<group>"; };
+		D120548C1DED20A100EB2707 /* IdentiPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentiPhotoTableViewCell.h; sourceTree = "<group>"; };
+		D120548D1DED20A100EB2707 /* IdentiPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentiPhotoTableViewCell.m; sourceTree = "<group>"; };
+		D120548E1DED20A100EB2707 /* IdentiPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IdentiPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		D12054911DED221800EB2707 /* BusinessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTableViewCell.h; sourceTree = "<group>"; };
+		D12054921DED221800EB2707 /* BusinessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTableViewCell.m; sourceTree = "<group>"; };
+		D12054931DED221800EB2707 /* BusinessTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusinessTableViewCell.xib; sourceTree = "<group>"; };
+		D12054961DED269000EB2707 /* OtherLicenseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherLicenseTableViewCell.h; sourceTree = "<group>"; };
+		D12054971DED269000EB2707 /* OtherLicenseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherLicenseTableViewCell.m; sourceTree = "<group>"; };
+		D12054981DED269000EB2707 /* OtherLicenseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherLicenseTableViewCell.xib; sourceTree = "<group>"; };
+		D120549B1DED57FC00EB2707 /* ValuePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuePickerView.h; sourceTree = "<group>"; };
+		D120549C1DED57FC00EB2707 /* ValuePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuePickerView.m; sourceTree = "<group>"; };
 		D12164961DB4744D006B06FC /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		D12164971DB4744D006B06FC /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		D121649A1DB4745A006B06FC /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
@@ -1016,6 +1039,20 @@
 				D15B3B1D1DDEF0D6009122FE /* DetailIncomeTableViewCell.h */,
 				D15B3B1E1DDEF0D6009122FE /* DetailIncomeTableViewCell.m */,
 				D15B3B1F1DDEF0D6009122FE /* DetailIncomeTableViewCell.xib */,
+				D12054871DED1C0200EB2707 /* ApplyContentTableViewCell.h */,
+				D12054881DED1C0200EB2707 /* ApplyContentTableViewCell.m */,
+				D12054891DED1C0200EB2707 /* ApplyContentTableViewCell.xib */,
+				D120548C1DED20A100EB2707 /* IdentiPhotoTableViewCell.h */,
+				D120548D1DED20A100EB2707 /* IdentiPhotoTableViewCell.m */,
+				D120548E1DED20A100EB2707 /* IdentiPhotoTableViewCell.xib */,
+				D12054911DED221800EB2707 /* BusinessTableViewCell.h */,
+				D12054921DED221800EB2707 /* BusinessTableViewCell.m */,
+				D12054931DED221800EB2707 /* BusinessTableViewCell.xib */,
+				D12054961DED269000EB2707 /* OtherLicenseTableViewCell.h */,
+				D12054971DED269000EB2707 /* OtherLicenseTableViewCell.m */,
+				D12054981DED269000EB2707 /* OtherLicenseTableViewCell.xib */,
+				D120549B1DED57FC00EB2707 /* ValuePickerView.h */,
+				D120549C1DED57FC00EB2707 /* ValuePickerView.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1604,6 +1641,7 @@
 				D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */,
 				D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
+				D12054951DED221800EB2707 /* BusinessTableViewCell.xib in Resources */,
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
@@ -1616,11 +1654,14 @@
 				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
 				D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */,
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
+				D120549A1DED269000EB2707 /* OtherLicenseTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
+				D12054901DED20A100EB2707 /* IdentiPhotoTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
 				ABFEA49D1DEC11E10002672F /* ZYQAssetPicker.Bundle in Resources */,
+				D120548B1DED1C0200EB2707 /* ApplyContentTableViewCell.xib in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D15B395E1DD40AD7009122FE /* ListHeadView.xib in Resources */,
 				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
@@ -1709,11 +1750,13 @@
 				AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */,
 				D15B39711DD46AFB009122FE /* LPNavigationBarView.m in Sources */,
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
+				D120549D1DED57FC00EB2707 /* ValuePickerView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,
+				D120548F1DED20A100EB2707 /* IdentiPhotoTableViewCell.m in Sources */,
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
 				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
@@ -1773,6 +1816,7 @@
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
 				D15B3AFA1DDC0E5E009122FE /* DataVerifier.m in Sources */,
+				D12054941DED221800EB2707 /* BusinessTableViewCell.m in Sources */,
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
 				D15B3A441DDAFB30009122FE /* DetailCountHeadView.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
@@ -1789,6 +1833,7 @@
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */,
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
+				D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */,
 				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
 				AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */,
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
@@ -1796,6 +1841,7 @@
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
 				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,
+				D12054991DED269000EB2707 /* OtherLicenseTableViewCell.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,

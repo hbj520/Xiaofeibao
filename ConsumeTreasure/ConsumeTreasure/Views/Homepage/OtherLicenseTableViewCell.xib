@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="otherCellId" id="KGk-i7-Jjw" customClass="OtherLicenseTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传您的其他执照或许可证书的照片（选填）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd6-0R-HOy">
+                        <rect key="frame" x="32" y="14" width="278.5" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="HGR-ur-XoZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zb-hP-jpR">
+                        <rect key="frame" x="32" y="38" width="311" height="131.5"/>
+                        <state key="normal" image="yyzz_1080"/>
+                        <connections>
+                            <action selector="otherClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0cc-5J-R7l"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4Zb-hP-jpR" firstAttribute="top" secondItem="Zd6-0R-HOy" secondAttribute="bottom" constant="10" id="KIP-M7-ugT"/>
+                    <constraint firstItem="Zd6-0R-HOy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="M3W-79-OgY"/>
+                    <constraint firstAttribute="trailing" secondItem="4Zb-hP-jpR" secondAttribute="trailing" constant="32" id="MKa-r5-zNG"/>
+                    <constraint firstItem="4Zb-hP-jpR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="h5d-m5-yWv"/>
+                    <constraint firstAttribute="bottom" secondItem="4Zb-hP-jpR" secondAttribute="bottom" constant="15" id="w2h-Ld-OlP"/>
+                    <constraint firstItem="Zd6-0R-HOy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="yi0-Nj-TBz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="otherBtn" destination="4Zb-hP-jpR" id="wad-PF-j3I"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="yyzz_1080" width="902" height="450"/>
+    </resources>
+</document>

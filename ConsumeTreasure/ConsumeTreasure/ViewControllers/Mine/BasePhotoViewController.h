@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+@interface BasePhotoViewController :BaseViewController
 
-@interface BasePhotoViewController : UIViewController
+@property (nonatomic, copy) void (^imageBlock)(UIImage * img);
 
 - (void)uploadImageWithImages:(NSMutableArray *)images;
+
+//单个相片选择
+- (void)openPhoto;
 
 //相机选取
 - (void)openCamera;

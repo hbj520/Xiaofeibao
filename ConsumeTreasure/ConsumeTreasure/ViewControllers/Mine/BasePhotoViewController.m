@@ -16,6 +16,8 @@
     NSMutableArray *_imagesArray;
     
     NSMutableArray *_imageUrls;
+    
+     UIImagePickerController *_picker;
 }
 
 @end
@@ -27,11 +29,19 @@
     _imagesArray = [NSMutableArray array];
     
     _imageUrls = [NSMutableArray array];
+    
+    _picker = [[UIImagePickerController alloc] init];
+    _picker.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+- (void)openPhoto{
+    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:_picker animated:YES completion:nil];
 }
 
 //相机选取
@@ -42,10 +52,8 @@
         return;
     }
     
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion:nil];
+    _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_picker animated:YES completion:nil];
 }
 
 //相册选取
@@ -84,11 +92,20 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    if (self.imageBlock) {
+        self.imageBlock(image);
+    }
+    
     NSData * data = UIImageJPEGRepresentation(image, 0.2);
+    
+    
+    /*
     UIImage *img = [UIImage imageWithData:data];
     [_imagesArray addObject:img];
     
     [self selectPhotos:_imagesArray];
+     */
 }
 
 #pragma mark - ZYQAssetPickerController Delegate

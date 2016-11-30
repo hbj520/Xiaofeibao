@@ -6,8 +6,8 @@
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BasePhotoViewController.h"
 
-@interface ApplyViewController : BaseViewController
+@interface ApplyViewController : BasePhotoViewController
 
 @end
