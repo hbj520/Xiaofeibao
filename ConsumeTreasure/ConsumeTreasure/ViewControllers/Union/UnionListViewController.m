@@ -97,7 +97,6 @@ UICollectionViewDataSource>
     }
     cell.indexPath = indexPath;
     cell.CellIsSelected = NO;
-  //   cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -138,6 +137,8 @@ UICollectionViewDataSource>
     UITableViewCell *cell;
     if (tableView == self.contentTabelView) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
+          cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         return cell;
 
     }else if (tableView == self.titleTableView){
@@ -146,6 +147,8 @@ UICollectionViewDataSource>
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewtitleReuseId"];
         }
         cell.textLabel.text = dataSource[indexPath.row];
+           cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         return cell;
     }
  
