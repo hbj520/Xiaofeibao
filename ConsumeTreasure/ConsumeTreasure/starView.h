@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface starView : UIView
+@property (assign,nonatomic) BOOL isClick;
 -(id)initWithFrame:(CGRect)frame withStarLevel:(float)levels;
 - (void)configWithStarLevel:(float)levels;
 @end

@@ -27,8 +27,11 @@
     }
         self.backgroundColor = [UIColor clearColor];
         CGRect frame = self.frame;
-//        frame.size.width = 68;
-//        frame.size.height = 16;
+    if (self.isClick) {
+                frame.size.width = 68;
+               frame.size.height = 16;
+    }
+
         self.frame = frame;
         CGFloat with = frame.size.width/5;
         //创建底部空星星

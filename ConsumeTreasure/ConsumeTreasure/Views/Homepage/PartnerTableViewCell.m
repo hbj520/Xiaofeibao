@@ -35,6 +35,7 @@
 }
 - (void)configWithModel:(id)model{
     NSNumber *level = model;
+    self.starView.isClick = YES;
     [self.starView configWithStarLevel:level.floatValue];
 }
 @end
