@@ -30,7 +30,7 @@
 }
 
 - (void)setAdmodel:(AddModel *)admodel{
-        _admodel = admodel;
+    _admodel = admodel;
     self.title = _admodel.title;
     UIWebView *webView = [[UIWebView alloc]init];
     [self.view addSubview:webView];
@@ -38,7 +38,7 @@
         make.top.equalTo(@0);
         make.left.equalTo(@0);
         make.right.equalTo(@0);
-        make.bottom.equalTo(@0); 
+        make.bottom.equalTo(@0);
     }];
     
     

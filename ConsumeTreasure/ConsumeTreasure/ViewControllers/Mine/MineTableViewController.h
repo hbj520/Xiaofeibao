@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MineTableViewController : UITableViewController
-
+@property (strong,nonatomic) UIStoryboard *mStorybord;
 @end

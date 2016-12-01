@@ -11,6 +11,10 @@
 #import "WXApiObject.h"
 #import "WXApi.h"
 #import "WechatAuthSDK.h"
+
+
+#import "ApplyViewController.h"
+
 @interface MineTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
@@ -18,6 +22,12 @@
 @end
 
 @implementation MineTableViewController
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:NO];
+    self.tabBarController.tabBar.hidden = NO;
+   
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +40,8 @@
     self.navigationItem.title = navTitle;
    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:10.65];
     [self.moneyView addSubview: tongbaoMoneyView];
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -86,7 +98,11 @@
         [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
     }else if (indexPath.row == 0){
         
-        [self performSegueWithIdentifier:@"becomeShopUnionSegue" sender:nil];
+        self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+        ApplyViewController *applyVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"applySTId"];
+        //  [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
+        [self.navigationController pushViewController:applyVC animated:YES];
+
 
     }
     //[self testWeixinPay];

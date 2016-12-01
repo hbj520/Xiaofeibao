@@ -19,6 +19,8 @@
 #import "TuiJianModel.h"
 #import "AccountModel.h"
 #import "StoreMasterModel.h"
+#import "BeUnionModel.h"
+
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -210,11 +212,8 @@
         
     }];
 }
-#pragma mark --收益权详情
 
-#pragma mark --合伙人超市地区
 
-#pragma mark --合伙人超市
 
 #pragma mark --我的账户
 - (void)getMyAccountDataWithParameters:(NSDictionary*)para
@@ -318,6 +317,30 @@
 
 
 #pragma mark --收益权
+
+#pragma mark -- 申请商户入口
+- (void)getShangHuRequestDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"platform":@"0",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/applyNow" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            arrayUnionModel *model = [[arrayUnionModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
+            NSMutableArray *typeArray = [NSMutableArray array];
+            typeArray = [BeUnionModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"list"] error:&error];
+            result(YES,info,@[model,typeArray]);
+            
+        }else{
+            result(NO,info,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 
 #pragma mark --我是商户
 - (void)getStoreMasterDataWithParameters:(NSDictionary*)para

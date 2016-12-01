@@ -7,11 +7,15 @@
 //
 
 #import "TobeUnionViewController.h"
-
+#import "BeUnionModel.h"
 @interface TobeUnionViewController ()
 {
     NSString *infoStr;
+    NSArray *listArr;
+    
+    BeUnionModel *UnionModel;
 }
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 
 @implementation TobeUnionViewController
@@ -31,11 +35,27 @@
     // Do any additional setup after loading the view.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-    [self setUIContent];
+    [self loadData];
+    
     
 }
 
-- (void)setUIContent{
+- (void)loadData{
+    
+    NSDictionary *dic = @{
+                          
+                          };
+    [[MyAPI sharedAPI] getShangHuRequestDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            UnionModel = arrays[0];
+            listArr = arrays[1];
+        }
+ 
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    
     
     
     /*

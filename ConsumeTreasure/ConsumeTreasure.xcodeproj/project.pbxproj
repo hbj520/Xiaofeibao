@@ -209,6 +209,7 @@
 		D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */; };
 		D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2B01DAFB6A500272E57 /* MineViewController.m */; };
 		D19B6E1B1DE7DA65002A5667 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19B6E1A1DE7DA65002A5667 /* AccountModel.m */; };
+		D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A06AF51DEEB12700855564 /* BeUnionModel.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -650,6 +651,8 @@
 		D170F2B01DAFB6A500272E57 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		D19B6E191DE7DA65002A5667 /* AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
 		D19B6E1A1DE7DA65002A5667 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
+		D1A06AF41DEEB12700855564 /* BeUnionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeUnionModel.h; sourceTree = "<group>"; };
+		D1A06AF51DEEB12700855564 /* BeUnionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeUnionModel.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -869,6 +872,8 @@
 				D19B6E1A1DE7DA65002A5667 /* AccountModel.m */,
 				D12054811DEC26A500EB2707 /* StoreMasterModel.h */,
 				D12054821DEC26A500EB2707 /* StoreMasterModel.m */,
+				D1A06AF41DEEB12700855564 /* BeUnionModel.h */,
+				D1A06AF51DEEB12700855564 /* BeUnionModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1771,6 +1776,7 @@
 				ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
 				ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */,
+				D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,

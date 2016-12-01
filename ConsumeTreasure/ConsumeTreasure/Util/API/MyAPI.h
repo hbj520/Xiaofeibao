@@ -58,6 +58,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 
 #pragma mark --收益权
 
+#pragma mark -- 申请商户入口
+- (void)getShangHuRequestDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 #pragma mark --我是商户
 - (void)getStoreMasterDataWithParameters:(NSDictionary*)para result:(ModelBlock)result errorResult:(ErrorBlock)errorResult;
 
