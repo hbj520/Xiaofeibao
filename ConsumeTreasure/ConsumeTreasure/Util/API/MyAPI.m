@@ -86,9 +86,11 @@
                               @"param":para
                               };
     [self.manager POST:@"sms/sendRegisterMessage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSLog(@"验证码发送成功");
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        NSLog(@"验证码发送出错");
     }];
 }
 #pragma mark - 首页热门商户

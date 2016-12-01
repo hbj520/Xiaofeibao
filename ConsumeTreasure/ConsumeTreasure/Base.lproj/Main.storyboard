@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,32 +54,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRZ-bD-Lkm" userLabel="registerView">
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFV-Hg-HLX">
+                                        <rect key="frame" x="13" y="50" width="349" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="mB5-Ak-1xW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAs-eL-K14">
+                                        <rect key="frame" x="13" y="140" width="349" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="62A-wf-1vO"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRv-Z4-hqz">
+                                        <rect key="frame" x="13" y="95" width="349" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="YKn-VV-oK6"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64D-nh-jAQ">
+                                        <rect key="frame" x="13" y="185" width="349" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="ceU-ry-FSp"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWl-ZF-Jp7">
+                                        <rect key="frame" x="65" y="15" width="1" height="25"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="2eS-8b-ZG9"/>
@@ -84,6 +93,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-Yl-xoc">
+                                        <rect key="frame" x="16" y="16" width="41" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="afC-7j-FcP"/>
                                             <constraint firstAttribute="height" constant="21" id="yCJ-gf-IuK"/>
@@ -93,6 +103,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPg-4q-yWN">
+                                        <rect key="frame" x="74" y="13" width="196" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hXy-M2-1Tk"/>
                                         </constraints>
@@ -101,6 +112,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKL-kY-r52">
+                                        <rect key="frame" x="74" y="57" width="264" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="QrY-zU-59n"/>
                                         </constraints>
@@ -109,6 +121,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请设置您的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4te-Ee-yQv">
+                                        <rect key="frame" x="74" y="102" width="264" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="27U-9F-WgE"/>
                                         </constraints>
@@ -117,6 +130,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请设置您的邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZo-Fm-ihp">
+                                        <rect key="frame" x="74" y="149" width="264" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="HQO-er-9Pw"/>
                                         </constraints>
@@ -125,6 +139,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaY-aw-ANk">
+                                        <rect key="frame" x="278" y="13" width="74" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bmb-4l-wG1"/>
                                             <constraint firstAttribute="width" constant="74" id="l2v-Y3-ije"/>
@@ -135,6 +150,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sm6-V5-b3r">
+                                        <rect key="frame" x="50" y="221" width="275" height="45"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Z0H-hl-PXK"/>
@@ -154,6 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgR-GW-Wv5">
+                                        <rect key="frame" x="72.5" y="271" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="uQZ-ct-Ibe"/>
                                             <constraint firstAttribute="width" constant="22" id="vmg-Hh-mNp"/>
@@ -161,27 +178,28 @@
                                         <state key="normal" image="chose"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="验证码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpV-VR-Tr1">
-                                        <frame key="frameInset" minX="16" minY="59" width="42" height="21"/>
+                                        <rect key="frame" x="16" y="59" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="密   码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipP-04-ScZ">
-                                        <frame key="frameInset" minX="16" minY="107" width="42" height="21"/>
+                                        <rect key="frame" x="16" y="107" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="邀请码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci4-eb-U5d">
-                                        <frame key="frameInset" minX="16" minY="152" width="42" height="21"/>
+                                        <rect key="frame" x="16" y="152" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86k-6e-k9k">
+                                        <rect key="frame" x="100.5" y="275" width="174" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="174" id="MX6-4X-ZWP"/>
                                             <constraint firstAttribute="height" constant="14" id="fLH-eB-vR0"/>
@@ -191,7 +209,8 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-7L-mVJ">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-7L-mVJ">
+                                        <rect key="frame" x="150.5" y="319" width="74" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="iN0-bq-R51"/>
                                             <constraint firstAttribute="height" constant="21" id="r34-Mf-VxX"/>
@@ -200,42 +219,48 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9h-9D-Gs9">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9h-9D-Gs9">
+                                        <rect key="frame" x="50" y="329" width="90" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="9dd-a2-nkn"/>
                                             <constraint firstAttribute="width" constant="90" id="VSx-Vt-7WS"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNL-hg-sy0">
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNL-hg-sy0">
+                                        <rect key="frame" x="235" y="329" width="90" height="1"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="7U2-I1-se8"/>
                                             <constraint firstAttribute="height" constant="1" id="lHv-SH-Xho"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOG-Xy-6Qd">
+                                    <button hidden="YES" opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOG-Xy-6Qd">
+                                        <rect key="frame" x="95" y="358" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Rp5-6m-lOQ"/>
                                             <constraint firstAttribute="height" constant="36" id="rBM-UN-E45"/>
                                         </constraints>
                                         <state key="normal" image="weixin"/>
                                     </button>
-                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-ul-Fr7">
+                                    <button hidden="YES" opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-ul-Fr7">
+                                        <rect key="frame" x="169.5" y="358" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Xly-Wj-boz"/>
                                             <constraint firstAttribute="height" constant="36" id="gbs-kk-xrs"/>
                                         </constraints>
                                         <state key="normal" image="weibo"/>
                                     </button>
-                                    <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll9-YA-3Bp">
+                                    <button hidden="YES" opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ll9-YA-3Bp">
+                                        <rect key="frame" x="244" y="358" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="UIP-cu-oeC"/>
                                             <constraint firstAttribute="width" constant="36" id="vwq-ri-09o"/>
                                         </constraints>
                                         <state key="normal" image="qq"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX0-np-C5m">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX0-np-C5m">
+                                        <rect key="frame" x="85" y="401" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="LA3-03-Zpn"/>
                                             <constraint firstAttribute="width" constant="56" id="jfu-GT-ECl"/>
@@ -244,7 +269,8 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFD-2u-WaW">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFD-2u-WaW">
+                                        <rect key="frame" x="159.5" y="401" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="37V-YQ-5ne"/>
                                             <constraint firstAttribute="width" constant="56" id="edv-Sl-rb0"/>
@@ -253,7 +279,8 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-Ov-otS">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-Ov-otS">
+                                        <rect key="frame" x="234" y="401" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="UnR-gv-JSA"/>
                                             <constraint firstAttribute="height" constant="21" id="yEr-7v-rn6"/>
@@ -322,20 +349,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-no-AJN" userLabel="loginView">
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUF-Ra-zjp">
+                                        <rect key="frame" x="13" y="50" width="349" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="yV6-SE-g58"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Hc-P8-7d2">
+                                        <rect key="frame" x="13" y="100" width="349" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="JhA-ha-i5E"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97K-e2-tlL">
+                                        <rect key="frame" x="13" y="21" width="66" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="66" id="Ar3-xW-lwZ"/>
                                             <constraint firstAttribute="height" constant="21" id="Jeh-0v-C66"/>
@@ -345,6 +376,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密       码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu1-HG-8BJ">
+                                        <rect key="frame" x="13" y="65" width="66" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="iDc-n9-G8y"/>
                                             <constraint firstAttribute="width" constant="66" id="rO7-1j-Xbi"/>
@@ -354,6 +386,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入注册时您的手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5gV-j8-Zsl">
+                                        <rect key="frame" x="87" y="16" width="275" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="E4b-7l-r3x"/>
                                         </constraints>
@@ -362,14 +395,16 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjo-OK-c3O">
+                                        <rect key="frame" x="87" y="60" width="275" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="V5v-gb-QCB"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZT-wG-hvR">
+                                        <rect key="frame" x="299" y="109" width="63" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Dw5-vF-dlQ"/>
                                             <constraint firstAttribute="width" constant="63" id="QkA-D8-Wsy"/>
@@ -383,6 +418,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUR-8Z-H5Q">
+                                        <rect key="frame" x="47.5" y="220" width="280" height="45"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="2bK-h1-WyY"/>
@@ -401,21 +437,24 @@
                                             <action selector="accountLoginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="MZ4-Mc-N6i"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxN-3J-nmi">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxN-3J-nmi">
+                                        <rect key="frame" x="22.5" y="320" width="120" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="YfR-T2-oJK"/>
                                             <constraint firstAttribute="height" constant="1" id="dcp-hi-3Ey"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-y1-fFX">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-y1-fFX">
+                                        <rect key="frame" x="232.5" y="320" width="120" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Ncv-ME-cgy"/>
                                             <constraint firstAttribute="width" constant="120" id="P8E-K9-16L"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MG-lz-dMW">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MG-lz-dMW">
+                                        <rect key="frame" x="155" y="310" width="65" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="mkS-qt-5Mt"/>
                                             <constraint firstAttribute="height" constant="21" id="wrC-gu-LNN"/>
@@ -424,28 +463,32 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-Us-xLP">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-Us-xLP">
+                                        <rect key="frame" x="95" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Waw-JA-MMC"/>
                                             <constraint firstAttribute="height" constant="36" id="zUw-2U-zdG"/>
                                         </constraints>
                                         <state key="normal" image="weixin"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-BY-bSM">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-BY-bSM">
+                                        <rect key="frame" x="169.5" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="lbj-f3-YKU"/>
                                             <constraint firstAttribute="width" constant="36" id="pbC-Q4-rOr"/>
                                         </constraints>
                                         <state key="normal" image="weibo"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-gi-fwc">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-gi-fwc">
+                                        <rect key="frame" x="244" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0VX-8p-dhG"/>
                                             <constraint firstAttribute="width" constant="36" id="Skc-E8-eAz"/>
                                         </constraints>
                                         <state key="normal" image="qq"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
+                                        <rect key="frame" x="85" y="391" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="1i3-MU-U1t"/>
                                             <constraint firstAttribute="height" constant="21" id="dzc-mi-maJ"/>
@@ -454,7 +497,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博登陆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHb-SC-U5z">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博登陆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHb-SC-U5z">
+                                        <rect key="frame" x="159.5" y="391" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8n2-Vg-e0h"/>
                                             <constraint firstAttribute="width" constant="56" id="s62-S7-u5N"/>
@@ -463,7 +507,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pv-Sg-xza">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pv-Sg-xza">
+                                        <rect key="frame" x="234" y="391" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="3m1-WD-EwJ"/>
                                             <constraint firstAttribute="height" constant="21" id="SCz-9R-wjs"/>
@@ -516,17 +561,20 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dl_header_bg" translatesAutoresizingMaskIntoConstraints="NO" id="2xV-3o-1lY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="nxG-b5-kHs"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cE2-K4-wjd">
+                                <rect key="frame" x="154" y="35" width="67" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="7XT-cH-5Pz"/>
                                     <constraint firstAttribute="width" constant="67" id="U3c-8Z-yqE"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-Vl-IGa">
+                                <rect key="frame" x="42.5" y="129" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Ahd-f1-HiP"/>
                                     <constraint firstAttribute="height" constant="30" id="mhR-lr-ISl"/>
@@ -540,6 +588,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kE-Gk-5WI">
+                                <rect key="frame" x="252.5" y="129" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Z4U-Ll-ltK"/>
                                     <constraint firstAttribute="height" constant="30" id="kmE-ky-rYp"/>
@@ -553,12 +602,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sj" translatesAutoresizingMaskIntoConstraints="NO" id="Rn3-e6-sT4">
+                                <rect key="frame" x="285" y="163" width="15" height="7"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="c7c-D2-0Ka"/>
                                     <constraint firstAttribute="height" constant="7" id="eiZ-Y2-t2E"/>
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sj" translatesAutoresizingMaskIntoConstraints="NO" id="6u7-WV-5he">
+                                <rect key="frame" x="75" y="163" width="15" height="7"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="9Ow-AX-7Ht"/>
                                     <constraint firstAttribute="height" constant="7" id="NnS-64-5ud"/>
@@ -641,24 +692,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTT-pj-ej4">
+                                <rect key="frame" x="13" y="55" width="349" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="aB9-P1-f2l"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8n-LG-mcF">
+                                <rect key="frame" x="13" y="145" width="349" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3k6-xL-En5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVT-2g-ieY">
+                                <rect key="frame" x="13" y="100" width="349" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Re6-pE-uFL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nv4-8R-A0n">
+                                <rect key="frame" x="68" y="18" width="1" height="23"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="77E-2q-f7d"/>
@@ -666,6 +721,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ye-TW-LuI">
+                                <rect key="frame" x="21" y="20" width="35" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NK0-Fq-iH9"/>
                                     <constraint firstAttribute="width" constant="35" id="SLD-AH-bHs"/>
@@ -675,6 +731,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ck0-P6-5o5">
+                                <rect key="frame" x="86" y="14" width="199" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="89H-Aa-s7g"/>
                                 </constraints>
@@ -683,6 +740,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvO-ze-DDm">
+                                <rect key="frame" x="290" y="14" width="69" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="eS6-fd-XYv"/>
                                     <constraint firstAttribute="height" constant="30" id="uji-18-bAW"/>
@@ -696,6 +754,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入短信验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-sH-cmE">
+                                <rect key="frame" x="86" y="62" width="241" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wIC-55-yNm"/>
                                 </constraints>
@@ -704,6 +763,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请设置您的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gG-E7-E0r">
+                                <rect key="frame" x="86" y="107" width="241" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="h2j-rg-JHn"/>
                                 </constraints>
@@ -712,6 +772,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3r-1a-aoh">
+                                <rect key="frame" x="17" y="67" width="52" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MbY-Md-Mbn"/>
                                     <constraint firstAttribute="width" constant="52" id="UwU-dK-mho"/>
@@ -721,6 +782,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密   码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reN-OD-4K4">
+                                <rect key="frame" x="17" y="112" width="52" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Ckd-wB-AmX"/>
                                     <constraint firstAttribute="width" constant="52" id="VRd-8t-UZR"/>
@@ -730,6 +792,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ly-5x-sLm">
+                                <rect key="frame" x="50" y="262" width="275" height="48"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="Nqr-cj-mFZ"/>
