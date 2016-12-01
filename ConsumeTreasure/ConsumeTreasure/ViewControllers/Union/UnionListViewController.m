@@ -36,9 +36,17 @@ UICollectionViewDataSource>
     // Do any additional setup after loading the view.
    // [self loadData];
       dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
+    [self addNavBar];
     [self addCollectionViewAndTableView];
     //[self postNotification];
    
+}
+- (void)addNavBar{
+    NSString *navTitle = @"联盟";
+    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+    self.navigationItem.title = navTitle;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -70,10 +78,10 @@ UICollectionViewDataSource>
     [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
     
     
-    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"残剑",@"长空",@"飞雪"]];
+    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"自定义"]];
     
     NSArray * regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
-    NSArray *classTypeArray=@[@"学龄前",@"小学",@"初中",@"高中",@"成人"];
+    NSArray *classTypeArray=@[@"水果",@"火锅",@"生鲜",@"小吃",@"糕点"];
     NSArray *sortRuleArray=@[@"距离",@"价格",@"评分",@"最新",@"最热"];
     
     self.menu.menuDataArray = [NSMutableArray arrayWithObjects:regionArray, classTypeArray , sortRuleArray, nil];

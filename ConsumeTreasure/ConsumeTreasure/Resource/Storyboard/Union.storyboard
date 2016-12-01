@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +14,7 @@
         <scene sceneID="uxD-9Z-8Nx">
             <objects>
                 <navigationController id="K2y-cz-6VO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2KR-U4-Lsp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="2KR-U4-Lsp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,12 +96,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfq-ar-oeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="940"/>
+            <point key="canvasLocation" x="1035" y="1199"/>
         </scene>
         <!--Union List View Controller-->
         <scene sceneID="eyR-x1-nzQ">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="cFw-ed-hsH" customClass="UnionListViewController" sceneMemberID="viewController">
+                <viewController id="cFw-ed-hsH" customClass="UnionListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MQc-2r-mKm"/>
                         <viewControllerLayoutGuide type="bottom" id="OzF-ee-Cce"/>
@@ -124,24 +123,8 @@
                             <constraint firstAttribute="trailing" secondItem="6B7-aL-1I9" secondAttribute="trailing" id="UiH-Aq-NYu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7u9-Nb-uko">
-                        <leftBarButtonItems>
-                            <barButtonItem image="backWhite" id="H0K-mA-VZe">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="backBtn:" destination="cFw-ed-hsH" id="xyg-B1-MjJ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="美食" id="obk-Je-BgO">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="backTitleBtn:" destination="cFw-ed-hsH" id="qO6-HP-35X"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="7u9-Nb-uko"/>
                     <connections>
-                        <outlet property="backTitleBtn" destination="obk-Je-BgO" id="7fg-ka-Hvy"/>
                         <outlet property="contentTabelView" destination="6B7-aL-1I9" id="zY4-2K-xQQ"/>
                     </connections>
                 </viewController>
@@ -150,7 +133,4 @@
             <point key="canvasLocation" x="1533.5999999999999" y="580.65967016491754"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="backWhite" width="11" height="19"/>
-    </resources>
 </document>
