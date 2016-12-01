@@ -60,7 +60,7 @@
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
-            NSString * goldNum = (NSString *)userDic[@"balance"];//用户余额
+            NSString * goldNum = (NSString *)userDic[@"all_money"];//用户余额
             NSString *loginName = userDic[@"loginName"];//用户登录名
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];
@@ -91,6 +91,27 @@
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"验证码发送出错");
+    }];
+}
+- (void)registerUserWithParameters:(NSDictionary *)para
+                            result:(StateBlock)result
+                       errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/rigister" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+            return result(YES,@"注册成功");
+        }else{
+            return result(NO,info);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        return errorResult(error);
+        
     }];
 }
 #pragma mark - 首页热门商户

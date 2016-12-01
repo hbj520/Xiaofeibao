@@ -34,6 +34,8 @@
 		AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B38D1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m */; };
 		AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
+		ABB6100A1DEFF88B00064A89 /* JPullDown.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABB610061DEFF88B00064A89 /* JPullDown.bundle */; };
+		ABB6100B1DEFF88B00064A89 /* JPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB610081DEFF88B00064A89 /* JPullDownMenu.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
 		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
@@ -286,6 +288,9 @@
 		AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		ABB610061DEFF88B00064A89 /* JPullDown.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPullDown.bundle; sourceTree = "<group>"; };
+		ABB610071DEFF88B00064A89 /* JPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPullDownMenu.h; sourceTree = "<group>"; };
+		ABB610081DEFF88B00064A89 /* JPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPullDownMenu.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABCB95401D9B8D72008927C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABCB95421D9B8E56008927C7 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
@@ -810,6 +815,17 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		ABB610091DEFF88B00064A89 /* JPullDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				ABB610061DEFF88B00064A89 /* JPullDown.bundle */,
+				ABB610071DEFF88B00064A89 /* JPullDownMenu.h */,
+				ABB610081DEFF88B00064A89 /* JPullDownMenu.m */,
+			);
+			name = JPullDownMenu;
+			path = ../../../../../Downloads/JPullDownMenu/JPullDownMenuDemo/JPullDownMenu;
+			sourceTree = "<group>";
+		};
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1251,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				ABB610091DEFF88B00064A89 /* JPullDownMenu */,
 				ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */,
 				D15B3A8E1DDC0E5E009122FE /* AliPay */,
 				ABD363D51DC330CE00D462AF /* weixin */,
@@ -1668,6 +1685,7 @@
 				ABFEA49D1DEC11E10002672F /* ZYQAssetPicker.Bundle in Resources */,
 				D120548B1DED1C0200EB2707 /* ApplyContentTableViewCell.xib in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
+				ABB6100A1DEFF88B00064A89 /* JPullDown.bundle in Resources */,
 				D15B395E1DD40AD7009122FE /* ListHeadView.xib in Resources */,
 				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
@@ -1779,6 +1797,7 @@
 				D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
+				ABB6100B1DEFF88B00064A89 /* JPullDownMenu.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,

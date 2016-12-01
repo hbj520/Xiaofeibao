@@ -10,6 +10,7 @@
 #import "UnionTitleCollectionViewCell.h"
 #import "HotStoreTableViewCell.h"
 #import "AdDetailViewController.h"
+#import "JPullDownMenu.h"
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -22,6 +23,7 @@ UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *titleCollectionView;
 @property (weak, nonatomic) IBOutlet UITableView *contentTabelView;
 @property (nonatomic, strong) UITableView *titleTableView;
+@property (nonatomic, strong) JPullDownMenu *menu;
 
 @end
 
@@ -38,7 +40,10 @@ UICollectionViewDataSource>
     //[self postNotification];
    
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,21 +69,36 @@ UICollectionViewDataSource>
     self.contentTabelView.dataSource = self;
     [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
     
-    self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 100) style:UITableViewStylePlain];
-    self.titleTableView.delegate = self;
-    self.titleTableView.dataSource = self;
-    [self.titleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewtitleReuseId"];
+    
+    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"残剑",@"长空",@"飞雪"]];
+    
+    NSArray * regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
+    NSArray *classTypeArray=@[@"学龄前",@"小学",@"初中",@"高中",@"成人"];
+    NSArray *sortRuleArray=@[@"距离",@"价格",@"评分",@"最新",@"最热"];
+    
+    self.menu.menuDataArray = [NSMutableArray arrayWithObjects:regionArray, classTypeArray , sortRuleArray, nil];
+    
+    [self.view addSubview:self.menu];
+    
+    __weak typeof(self) _self = self;
+    [self.menu setHandleSelectDataBlock:^(NSString *selectTitle, NSUInteger selectIndex, NSUInteger selectButtonTag) {
+        
+    }];
+//    self.titleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, ScreenWidth/3, 100) style:UITableViewStylePlain];
+//    self.titleTableView.delegate = self;
+//    self.titleTableView.dataSource = self;
+//    [self.titleTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"tableViewtitleReuseId"];
     //collectionview
-    self.titleCollectionView.delegate = self;
-    self.titleCollectionView.dataSource = self;
-    [self.titleCollectionView registerNib:[UINib nibWithNibName:@"UnionTitleCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"collectionReuseId"];
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.minimumLineSpacing = 0;
-    flowLayout.minimumInteritemSpacing = 0;
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    flowLayout.itemSize = CGSizeMake(ScreenWidth/3, 50);
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.titleCollectionView setCollectionViewLayout:flowLayout];
+//    self.titleCollectionView.delegate = self;
+//    self.titleCollectionView.dataSource = self;
+//    [self.titleCollectionView registerNib:[UINib nibWithNibName:@"UnionTitleCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"collectionReuseId"];
+//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+//    flowLayout.minimumLineSpacing = 0;
+//    flowLayout.minimumInteritemSpacing = 0;
+//    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+//    flowLayout.itemSize = CGSizeMake(ScreenWidth/3, 50);
+//    flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//    [self.titleCollectionView setCollectionViewLayout:flowLayout];
     
 }
 #pragma mark - UICollectionViewDelegate
@@ -142,15 +162,6 @@ UICollectionViewDataSource>
 
         return cell;
 
-    }else if (tableView == self.titleTableView){
-        cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewtitleReuseId" forIndexPath:indexPath];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewtitleReuseId"];
-        }
-        cell.textLabel.text = dataSource[indexPath.row];
-           cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-        return cell;
     }
  
     return nil;
