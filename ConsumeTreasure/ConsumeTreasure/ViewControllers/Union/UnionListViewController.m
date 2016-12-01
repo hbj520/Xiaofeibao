@@ -9,6 +9,7 @@
 #import "UnionListViewController.h"
 #import "UnionTitleCollectionViewCell.h"
 #import "HotStoreTableViewCell.h"
+#import "AdDetailViewController.h"
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -160,7 +161,16 @@ UICollectionViewDataSource>
     }
     return 50;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == self.titleTableView) {
+        
+        
+    }else if (tableView == self.contentTabelView){
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+        AdDetailViewController *adVC = [storybord instantiateViewControllerWithIdentifier:@"detail"];
+        [self.navigationController pushViewController:adVC animated:YES];
+    }
+}
 - (IBAction)backBtn:(id)sender {
     self.tabBarController.selectedIndex = 0;
   //  [self.navigationController popViewControllerAnimated:YES];

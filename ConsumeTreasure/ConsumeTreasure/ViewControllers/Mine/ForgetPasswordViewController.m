@@ -79,7 +79,7 @@
 }
 - (void)setTimeSchedu{
     self.postBtn.enabled = NO;
-    [self.postBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [self.postBtn setBackgroundColor:[UIColor whiteColor]];
     [self.postBtn setTitle:@"60" forState:UIControlStateNormal];
     timer = [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(timeAct:) userInfo:nil repeats:YES];
     time = 60;
@@ -89,12 +89,12 @@
     if (time == 0) {
         [timer invalidate];
         self.postBtn.enabled = YES;
-        [self.postBtn setBackgroundColor:[UIColor colorWithHexString:@"FF5000"]];
+        [self.postBtn setBackgroundColor:[UIColor whiteColor]];
         [self.postBtn setTitle:@"发送验证码" forState:UIControlStateNormal];
     }else{
         time--;
         [self.postBtn setTitle:[NSString stringWithFormat:@"%ld",time] forState:UIControlStateNormal];
-        [self.postBtn setBackgroundColor:[UIColor lightGrayColor]];
+        [self.postBtn setBackgroundColor:[UIColor whiteColor]];
     }
 }
 @end
