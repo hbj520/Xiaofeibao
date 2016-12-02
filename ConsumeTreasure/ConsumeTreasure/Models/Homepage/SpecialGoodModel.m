@@ -12,7 +12,7 @@
 
 @end
 
-@implementation arrayModel
+@implementation arraySpeModel
 
 
 

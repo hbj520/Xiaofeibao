@@ -13,6 +13,6 @@
 @end
 
 
-@implementation arrayModel
+@implementation arrayCommModel
 
 @end
