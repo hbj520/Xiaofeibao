@@ -33,6 +33,8 @@
 #import "TuiJianModel.h"
 #import "AddModel.h"
 
+#import "JFCityViewController.h"
+
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
     
@@ -69,6 +71,7 @@
     [self addNavBar];
     [self startMap];
     [self creatUI];
+    [self addLocationGes];
 
 }
 
@@ -102,6 +105,29 @@
 
 }
 #pragma mark-mapMethod
+
+- (void)addLocationGes{
+    UITapGestureRecognizer *locaGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chooseLoca)];
+    [self.locationView addGestureRecognizer:locaGes];
+}
+
+- (void)chooseLoca{
+    NSLog(@"选择位置");
+    
+    [self pushToNextWithIdentiField:@"chooseLocationSegue"];
+    /*
+    JFCityViewController *cityViewController = [[JFCityViewController alloc] init];
+    cityViewController.title = @"城市";
+    __weak typeof(self) weakSelf = self;
+    [cityViewController choseCityBlock:^(NSString *cityName) {
+        weakSelf.locationCityName.text = cityName;
+    }];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:cityViewController];
+    navigationController.navigationBar.barTintColor=RGBACOLOR(253,87,54,1);//背景色
+    [self presentViewController:navigationController animated:YES completion:nil];
+*/
+}
 
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
     

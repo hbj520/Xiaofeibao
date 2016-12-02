@@ -16,7 +16,7 @@
 
 @property (nonatomic,strong) NSString *iconurl;
 @property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong) NSString *turnover;
+//@property (nonatomic,strong) NSString *categoryId;
 @end
 
 

@@ -35,7 +35,7 @@
     // Do any additional setup after loading the view.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-   // [self loadData];
+    [self loadData];
     
     
 }
