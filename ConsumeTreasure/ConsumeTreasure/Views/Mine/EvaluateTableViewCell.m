@@ -7,7 +7,18 @@
 //
 
 #import "EvaluateTableViewCell.h"
+#import "EvaluateListModel.h"
+@interface EvaluateTableViewCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *shopIconImageview;
+@property (weak, nonatomic) IBOutlet UILabel *shopNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *orderStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *preEvaluateBtn;
+@property (weak, nonatomic) IBOutlet UIButton *oneMoreBtn;
 
+@end
 @implementation EvaluateTableViewCell
 
 - (void)awakeFromNib {
@@ -31,5 +42,7 @@
         self.clickEvaluateBlock();
     }
 }
-
+- (void)configWithData:(EvaluateListModel *)data{
+    
+}
 @end
