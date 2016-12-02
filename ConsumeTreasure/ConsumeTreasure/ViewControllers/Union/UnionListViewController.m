@@ -34,8 +34,8 @@ UICollectionViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   // [self loadData];
-      dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66"]];
+    [self loadData];
+      dataSource = [NSMutableArray arrayWithArray:@[@"11",@"22",@"33",@"44",@"55",@"66",@"11",@"22",@"33",@"44",@"55",@"66"]];
     [self addNavBar];
     [self addCollectionViewAndTableView];
     //[self postNotification];
@@ -51,6 +51,7 @@ UICollectionViewDataSource>
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -67,6 +68,9 @@ UICollectionViewDataSource>
 }
 */
 #pragma mark - PrivateMethod
+- (void)loadData{
+  
+}
 - (void)postNotificationWithIndexpath:(NSIndexPath *)indexPath{
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
     [notification postNotificationName:@"arrowNotification" object:nil userInfo:@{@"indexpath":indexPath}];

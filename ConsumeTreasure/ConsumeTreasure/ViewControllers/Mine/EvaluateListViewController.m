@@ -24,6 +24,7 @@ UITableViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadData];
     [self configTableView];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -44,6 +45,14 @@ UITableViewDataSource>
     // Dispose of any resources that can be recreated.
 }
 #pragma mark -PrivateMethod
+- (void)loadData{
+    [[MyAPI sharedAPI] NoEvalueteListWithPara:@{@"pageNum":@"1",
+                                                @"pageOffset":@"1"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+                                                    
+                                                } errorResult:^(NSError *enginerError) {
+                                                    
+                                                }];
+}
 - (void)configTableView{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
