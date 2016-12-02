@@ -25,10 +25,10 @@
 #define RectWidth(f)                        f.size.width
 #define RectHeight(f)                       f.size.height
 
-#define KToken [[Config Instance] getToken]
-#define KUserId [[Config Instance] getUserid]
-#define KUserPassword [[Config Instance] getPassword]
-#define KGesturePsassword [[Config Instance] getGesturePassword]
+#define KToken [[XFBConfig Instance] getToken]
+#define KUserId [[XFBConfig Instance] getUserid]
+#define KUserPassword [[XFBConfig Instance] getPassword]
+#define KGesturePsassword [[XFBConfig Instance] getGesturePassword]
 
 #define BaseUrl @"http://192.168.1.221:8888/xfb/"
 

@@ -84,4 +84,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)postFilesWithFormData:(NSArray *)photosArr
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult;
+
+#pragma mark - 待评价列表
+- (void)NoEvalueteListWithPara:(NSDictionary *)para
+                        result:(ArrayBlock)result
+                   errorResult:(ErrorBlock)errorResult;
 @end

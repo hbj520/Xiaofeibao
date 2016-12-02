@@ -20,6 +20,8 @@
 #import "AccountModel.h"
 #import "StoreMasterModel.h"
 #import "BeUnionModel.h"
+#import "EvaluateListModel.h"
+
 
 
 @interface MyAPI()
@@ -520,5 +522,36 @@
         NSLog(@"xxx上传失败xxx %@", error);
         
     }];
+}
+#pragma mark - 待评价列表
+- (void)NoEvalueteListWithPara:(NSDictionary *)para
+                        result:(ArrayBlock)result
+                   errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"pay/queryOrderList" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *massage = responseObject[@"success"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]){
+            NSMutableArray *modelArray = [NSMutableArray array];
+            NSError *error = nil;
+            NSDictionary *dataDic = responseObject[@"data"];
+            for (NSDictionary *dic in dataDic[@"orderList"]) {
+                NSLog(@"dic %@",dic);
+                EvaluateListModel *model = [[EvaluateListModel alloc] initWithDictionary:dic error:&error];
+                [modelArray addObject:model];
+            }
+            result(YES,massage,modelArray);
+        }else{
+            result(NO,massage,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        errorResult(error);
+    }];
+    
 }
 @end
