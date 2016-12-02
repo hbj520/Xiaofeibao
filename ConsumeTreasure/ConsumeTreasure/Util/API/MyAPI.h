@@ -24,6 +24,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                               result:(StateBlock)result
                          errorResult:(ErrorBlock)errorResult;
 
+- (void)registerUserWithParameters:(NSDictionary *)para
+                            result:(StateBlock)result
+                       errorResult:(ErrorBlock)errorResult;
+
 
 #pragma mark - 首页热门商户
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para

@@ -165,7 +165,7 @@
     [self showHudInView:self.view hint:@"登录..."];
     [[MyAPI sharedAPI] loginWithParameters:@{
                                              @"loginName": self.loginPhoneNumTextField.text,
-                                             @"pwd": self.loginPhonePassWordTextfild.text
+                                             @"password": self.loginPhonePassWordTextfild.text
                                              } result:^(BOOL sucess, NSString *msg) {
                                                  
                                                  if (sucess) {
@@ -190,7 +190,17 @@
 
 
 - (IBAction)accountRegisterBtn:(id)sender {
-    
+    [[MyAPI sharedAPI] registerUserWithParameters:@{
+        @"loginName":self.registerPhoneTextField.text,
+        @"password":self.registerPasswordTextfield.text,
+        @"validatecode":self.registerVerifyCodeTextfield.text,
+        @"invitecode":self.registerInviteCodeTextfileld.text
+    } result:^(BOOL sucess, NSString *msg) {
+       
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 
 - (IBAction)forgetPassword:(id)sender {
