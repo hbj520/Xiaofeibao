@@ -8,6 +8,7 @@
 
 #import "EvaluateTableViewCell.h"
 #import "EvaluateListModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface EvaluateTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *shopIconImageview;
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLabel;
@@ -43,6 +44,9 @@
     }
 }
 - (void)configWithData:(EvaluateListModel *)data{
-    
+    self.timeLabel.text = data.create_date;
+    [self.shopIconImageview sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:@"logo"]];
+    self.shopNameLabel.text = data.shopName;
+    self.priceLabel.text = data.total_money;
 }
 @end
