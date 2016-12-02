@@ -21,7 +21,7 @@
 @end
 
 
-@interface arrayModel : JSONModel
+@interface arraySpeModel : JSONModel
 
 @property (nonatomic,strong) NSArray<SpecialGoodModel>*products;
 

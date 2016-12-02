@@ -21,7 +21,7 @@
 @end
 
 
-@interface arrayModel : JSONModel
+@interface arrayCommModel : JSONModel
 
 @property (nonatomic,strong) NSArray <CommentModel>*commentlist;
 
