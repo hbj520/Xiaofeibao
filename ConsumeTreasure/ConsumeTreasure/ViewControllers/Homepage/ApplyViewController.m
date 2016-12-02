@@ -15,7 +15,12 @@
 
 #import "ValuePickerView.h"
 
+#import "BeUnionModel.h"
+
 @interface ApplyViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
+{
+    NSMutableArray *_nameArr;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) ValuePickerView *pickerView;
@@ -27,19 +32,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     self.tabBarController.tabBar.hidden = YES;
     [self configTableView];
 }
 
+- (void)setListArr:(NSArray *)listArr{
+    NSLog(@"😝%@😋",listArr);
+    _nameArr = [NSMutableArray array];
+    for (BeUnionModel *model in listArr) {
+        [_nameArr addObject:model.name];
+    }
+    [self.tableView reloadData];
+}
 
 - (void)upPikerView{
    
     self.pickerView = [[ValuePickerView alloc]init];
-    self.pickerView.dataSource = @[@"超市", @"赌场", @"游戏城", @"商场", @"天空之城", @"黄金城", @"🐘岛",@"鱼人岛",@"德克萨斯"];
+    self.pickerView.dataSource = _nameArr;
     self.pickerView.pickerTitle = @"百分比";
    __weak typeof(self) weakSelf = self;
-    self.pickerView.defaultStr = @"50%/5";
+    //self.pickerView.defaultStr = @"50%/5";
     self.pickerView.valueDidSelect = ^(NSString *value){
         _stateArr = [value componentsSeparatedByString:@"/"];
         ApplyContentTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];

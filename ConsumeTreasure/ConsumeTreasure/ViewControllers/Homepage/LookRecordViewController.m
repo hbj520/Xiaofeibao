@@ -132,10 +132,10 @@
     hotCell.selectionStyle = 0;
     
     LookStoreModel *model = _storeArray[indexPath.section][indexPath.row];
-    [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.imgurl] placeholderImage:[UIImage imageNamed:@"foodImage"]];
-    hotCell.storeName.text = model.name;
-    hotCell.storeAddress.text = model.addr;
-    hotCell.storeLikeNum.text = model.collectsnum;
+    [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.doorImage] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    hotCell.storeName.text = model.shopName;
+    hotCell.storeAddress.text = model.addr2;
+  //  hotCell.storeLikeNum.text = model.collectsnum;
     hotCell.distance.hidden = YES;
     return hotCell;
 }
@@ -162,6 +162,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"=====%ld_______%ld",indexPath.section,indexPath.row);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -171,6 +173,7 @@
 - (IBAction)back:(id)sender {
    [self backTolastPage];
 }
+
 
 /*
 #pragma mark - Navigation

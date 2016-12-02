@@ -8,12 +8,13 @@
 
 #import "TobeUnionViewController.h"
 #import "BeUnionModel.h"
+
+#import "ApplyViewController.h"
 @interface TobeUnionViewController ()
 {
     NSString *infoStr;
     NSArray *listArr;
-    
-    BeUnionModel *UnionModel;
+ 
 }
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
@@ -47,8 +48,7 @@
                           };
     [[MyAPI sharedAPI] getShangHuRequestDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            UnionModel = arrays[0];
-            listArr = arrays[1];
+            listArr = arrays;
         }
  
     } errorResult:^(NSError *enginerError) {
@@ -68,7 +68,7 @@
 }
 - (IBAction)goApply:(id)sender {
     
-    
+    [self performSegueWithIdentifier:@"ApplySegue" sender:listArr];
 }
 
 
@@ -84,10 +84,16 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ApplySegue"]) {
+        NSArray *array = (NSArray*)sender;
+        ApplyViewController *ApplyVC = segue.destinationViewController;
+        ApplyVC.listArr = array;
+    }
+    
 }
-*/
+
 
 @end

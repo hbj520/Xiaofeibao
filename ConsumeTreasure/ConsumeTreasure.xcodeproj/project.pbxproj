@@ -34,8 +34,6 @@
 		AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B38D1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m */; };
 		AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
-		ABB6100A1DEFF88B00064A89 /* JPullDown.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABB610061DEFF88B00064A89 /* JPullDown.bundle */; };
-		ABB6100B1DEFF88B00064A89 /* JPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB610081DEFF88B00064A89 /* JPullDownMenu.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
 		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
@@ -212,6 +210,11 @@
 		D16BF2C01DF01B78001A82BF /* ProvinceHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16BF2BF1DF01B78001A82BF /* ProvinceHeadView.xib */; };
 		D16BF2C41DF01C10001A82BF /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D16BF2C21DF01C10001A82BF /* LocationTableViewCell.m */; };
 		D16BF2C51DF01C10001A82BF /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16BF2C31DF01C10001A82BF /* LocationTableViewCell.xib */; };
+		D16BF2CA1DF106DC001A82BF /* JPullDown.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D16BF2C71DF106DC001A82BF /* JPullDown.bundle */; };
+		D16BF2CB1DF106DC001A82BF /* JPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D16BF2C91DF106DC001A82BF /* JPullDownMenu.m */; };
+		D16BF2CE1DF14E72001A82BF /* StoreDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D16BF2CD1DF14E72001A82BF /* StoreDetailModel.m */; };
+		D16BF2D11DF14F47001A82BF /* SpecialGoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D16BF2D01DF14F47001A82BF /* SpecialGoodModel.m */; };
+		D16BF2D41DF15004001A82BF /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D16BF2D31DF15004001A82BF /* CommentModel.m */; };
 		D170CA041DC1DB87001BCEE4 /* starView.m in Sources */ = {isa = PBXBuildFile; fileRef = D170CA031DC1DB87001BCEE4 /* starView.m */; };
 		D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2551DAE6AAE00272E57 /* chartTableViewCell.m */; };
 		D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F2561DAE6AAE00272E57 /* chartTableViewCell.xib */; };
@@ -303,9 +306,6 @@
 		AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
-		ABB610061DEFF88B00064A89 /* JPullDown.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPullDown.bundle; sourceTree = "<group>"; };
-		ABB610071DEFF88B00064A89 /* JPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPullDownMenu.h; sourceTree = "<group>"; };
-		ABB610081DEFF88B00064A89 /* JPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPullDownMenu.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABCB95401D9B8D72008927C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABCB95421D9B8E56008927C7 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
@@ -675,6 +675,15 @@
 		D16BF2C11DF01C10001A82BF /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
 		D16BF2C21DF01C10001A82BF /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
 		D16BF2C31DF01C10001A82BF /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		D16BF2C71DF106DC001A82BF /* JPullDown.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPullDown.bundle; sourceTree = "<group>"; };
+		D16BF2C81DF106DC001A82BF /* JPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPullDownMenu.h; sourceTree = "<group>"; };
+		D16BF2C91DF106DC001A82BF /* JPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPullDownMenu.m; sourceTree = "<group>"; };
+		D16BF2CC1DF14E72001A82BF /* StoreDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDetailModel.h; sourceTree = "<group>"; };
+		D16BF2CD1DF14E72001A82BF /* StoreDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreDetailModel.m; sourceTree = "<group>"; };
+		D16BF2CF1DF14F47001A82BF /* SpecialGoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialGoodModel.h; sourceTree = "<group>"; };
+		D16BF2D01DF14F47001A82BF /* SpecialGoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialGoodModel.m; sourceTree = "<group>"; };
+		D16BF2D21DF15004001A82BF /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		D16BF2D31DF15004001A82BF /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		D170CA021DC1DB87001BCEE4 /* starView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = starView.h; sourceTree = "<group>"; };
 		D170CA031DC1DB87001BCEE4 /* starView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = starView.m; sourceTree = "<group>"; };
 		D170F2541DAE6AAE00272E57 /* chartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartTableViewCell.h; sourceTree = "<group>"; };
@@ -857,17 +866,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		ABB610091DEFF88B00064A89 /* JPullDownMenu */ = {
-			isa = PBXGroup;
-			children = (
-				ABB610061DEFF88B00064A89 /* JPullDown.bundle */,
-				ABB610071DEFF88B00064A89 /* JPullDownMenu.h */,
-				ABB610081DEFF88B00064A89 /* JPullDownMenu.m */,
-			);
-			name = JPullDownMenu;
-			path = ../../../../../Downloads/JPullDownMenu/JPullDownMenuDemo/JPullDownMenu;
-			sourceTree = "<group>";
-		};
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,6 +930,12 @@
 				D12054821DEC26A500EB2707 /* StoreMasterModel.m */,
 				D1A06AF41DEEB12700855564 /* BeUnionModel.h */,
 				D1A06AF51DEEB12700855564 /* BeUnionModel.m */,
+				D16BF2CC1DF14E72001A82BF /* StoreDetailModel.h */,
+				D16BF2CD1DF14E72001A82BF /* StoreDetailModel.m */,
+				D16BF2CF1DF14F47001A82BF /* SpecialGoodModel.h */,
+				D16BF2D01DF14F47001A82BF /* SpecialGoodModel.m */,
+				D16BF2D21DF15004001A82BF /* CommentModel.h */,
+				D16BF2D31DF15004001A82BF /* CommentModel.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1302,7 +1306,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				ABB610091DEFF88B00064A89 /* JPullDownMenu */,
+				D16BF2C61DF106DC001A82BF /* JPullDownMenu */,
 				ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */,
 				D15B3A8E1DDC0E5E009122FE /* AliPay */,
 				ABD363D51DC330CE00D462AF /* weixin */,
@@ -1596,6 +1600,16 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		D16BF2C61DF106DC001A82BF /* JPullDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D16BF2C71DF106DC001A82BF /* JPullDown.bundle */,
+				D16BF2C81DF106DC001A82BF /* JPullDownMenu.h */,
+				D16BF2C91DF106DC001A82BF /* JPullDownMenu.m */,
+			);
+			path = JPullDownMenu;
+			sourceTree = "<group>";
+		};
 		D170CA011DC1DB75001BCEE4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -1770,6 +1784,7 @@
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
 				D16BF2C01DF01B78001A82BF /* ProvinceHeadView.xib in Resources */,
 				AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */,
+				D16BF2CA1DF106DC001A82BF /* JPullDown.bundle in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				D15B3A461DDAFB48009122FE /* DetailCountHeadView.xib in Resources */,
 				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
@@ -1788,7 +1803,6 @@
 				D16BF2C51DF01C10001A82BF /* LocationTableViewCell.xib in Resources */,
 				D120548B1DED1C0200EB2707 /* ApplyContentTableViewCell.xib in Resources */,
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
-				ABB6100A1DEFF88B00064A89 /* JPullDown.bundle in Resources */,
 				D15B395E1DD40AD7009122FE /* ListHeadView.xib in Resources */,
 				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
@@ -1906,8 +1920,8 @@
 				D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
-				ABB6100B1DEFF88B00064A89 /* JPullDownMenu.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
+				D16BF2CB1DF106DC001A82BF /* JPullDownMenu.m in Sources */,
 				D16BF2B51DEFF15B001A82BF /* JFSearchView.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				D16BF2B11DEFF15B001A82BF /* JFCityCollectionViewCell.m in Sources */,
@@ -1935,6 +1949,7 @@
 				AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */,
 				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
 				AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */,
+				D16BF2CE1DF14E72001A82BF /* StoreDetailModel.m in Sources */,
 				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
@@ -1969,6 +1984,7 @@
 				D15B39841DD99D1F009122FE /* LookStoreModel.m in Sources */,
 				D12054861DEC348300EB2707 /* ApplyViewController.m in Sources */,
 				D16BF2B61DEFF15B001A82BF /* JFLocation.m in Sources */,
+				D16BF2D41DF15004001A82BF /* CommentModel.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D16BF2BB1DF017B3001A82BF /* LocationViewController.m in Sources */,
@@ -1986,6 +2002,7 @@
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,
+				D16BF2D11DF14F47001A82BF /* SpecialGoodModel.m in Sources */,
 				D15B39461DD01488009122FE /* ChartModel.m in Sources */,
 				D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */,
 				AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */,

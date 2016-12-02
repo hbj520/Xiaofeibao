@@ -16,12 +16,11 @@
 
 @property (nonatomic,strong) NSString *iconurl;
 @property (nonatomic,strong) NSString *name;
-//@property (nonatomic,strong) NSString *categoryId;
+@property (nonatomic,strong) NSString *categoryId;
 @end
 
 
 @interface arrayUnionModel : JSONModel
 
-@property (nonatomic,strong) NSString *clause;
 @property (nonatomic,strong) NSArray<BeUnionModel>* list;
 @end

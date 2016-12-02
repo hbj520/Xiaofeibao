@@ -10,5 +10,6 @@
 
 @interface LocationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *cityName;
+@property (weak, nonatomic) IBOutlet UIImageView *rightImage;
 
 @end

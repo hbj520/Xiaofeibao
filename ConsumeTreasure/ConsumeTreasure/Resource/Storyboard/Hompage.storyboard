@@ -153,8 +153,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全部地区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGw-Mh-fR8">
-                                        <rect key="frame" x="47" y="10" width="57.5" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前城市 : 合肥市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGw-Mh-fR8">
+                                        <rect key="frame" x="47" y="10" width="112" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="yJn-Vm-A4g"/>
                                         </constraints>
@@ -176,7 +176,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2aJ-IQ-ooD">
-                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -191,6 +191,14 @@
                             <constraint firstItem="2aJ-IQ-ooD" firstAttribute="leading" secondItem="WcW-4h-OmO" secondAttribute="leading" id="vhw-yE-dc3"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem image="whiteback" id="XhF-86-M2B">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="Ool-Vj-ovs" id="tb0-ei-Bdt"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="地区选择" id="56c-sR-Q7N">
                         <barButtonItem key="leftBarButtonItem" image="whiteback" id="jmG-kw-j6s">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,6 +207,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2aJ-IQ-ooD" id="eZs-kX-2n1"/>
                     </connections>
@@ -643,7 +652,6 @@
                                 <state key="normal" image="shouye_sq"/>
                                 <connections>
                                     <action selector="goApply:" destination="Nt6-3N-WsH" eventType="touchUpInside" id="eMY-4S-IjS"/>
-                                    <segue destination="MRs-ew-4Z8" kind="push" id="Odz-xK-rL1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -669,6 +677,7 @@
                     <connections>
                         <outlet property="textView" destination="mEE-N4-poR" id="Fwz-iE-aHH"/>
                         <outlet property="whiteView" destination="0qs-V8-gVG" id="d1D-t2-Mw6"/>
+                        <segue destination="MRs-ew-4Z8" kind="push" identifier="ApplySegue" id="fNz-0v-kUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3L-hQ-GCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -727,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKt-AK-7Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335.19999999999999" y="2117.9910044977514"/>
+            <point key="canvasLocation" x="-335" y="2147"/>
         </scene>
         <!--Im Union Store View Controller-->
         <scene sceneID="u82-kx-ffL">

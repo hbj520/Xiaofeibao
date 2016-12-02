@@ -21,6 +21,9 @@
 #import "StoreMasterModel.h"
 #import "BeUnionModel.h"
 
+#import "CommentModel.h"
+#import "StoreDetailModel.h"
+#import "SpecialGoodModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -342,7 +345,9 @@
 #pragma mark --收益权
 
 #pragma mark -- 申请商户入口
-- (void)getShangHuRequestDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getShangHuRequestDataWithParameters:(NSDictionary*)para
+                                     result:(ArrayBlock)result
+                                errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
                               @"platform":@"0",
@@ -352,10 +357,9 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
-            arrayUnionModel *model = [[arrayUnionModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
             NSMutableArray *typeArray = [NSMutableArray array];
             typeArray = [BeUnionModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"list"] error:&error];
-            result(YES,info,@[model,typeArray]);
+            result(YES,info,typeArray);
             
         }else{
             result(NO,info,nil);
@@ -363,6 +367,83 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         errorResult(error);
     }];
+}
+
+#pragma mark --详情（商家）
+- (void)getDetailStoreWithParameters:(NSDictionary*)para
+                              result:(ModelBlock)result
+                         errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":@"",
+                              @"platform":@"",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/getOneShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            StoreDetailModel *detailModel = [[StoreDetailModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
+            result(YES,info,detailModel);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+#pragma mark -- 详情（特色商品）
+- (void)getSpecialGoodDataWithParameters:(NSDictionary*)para
+                                  result:(ArrayBlock)result
+                             errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":@"",
+                              @"platform":@"",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/getProducts" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            NSMutableArray *specialArray = [NSMutableArray array];
+            specialArray = [SpecialGoodModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"products"] error:&error];
+            result(YES,info,specialArray);
+            
+        }else{
+            result(NO,info,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+#pragma mark -- 详情（评论）
+- (void)getCommentsWithParameters:(NSDictionary*)para
+                           result:(ArrayBlock)result
+                      errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":@"",
+                              @"platform":@"",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/getShopComment" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            NSMutableArray *commentArray = [NSMutableArray array];
+            commentArray = [CommentModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"commentlist"] error:&error];
+            result(YES,info,commentArray);
+            
+        }else{
+            result(NO,info,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+
+    
+    
 }
 
 #pragma mark --我是商户

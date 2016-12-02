@@ -10,4 +10,6 @@
 
 @interface ApplyViewController : BasePhotoViewController
 
+@property (nonatomic,strong) NSArray *listArr;
+
 @end

@@ -11,7 +11,7 @@
 #import "LocationTableViewCell.h"
 #import "ProvinceHeadView.h"
 
-
+#import <Masonry.h>
 
 @interface LocationViewController ()<UITableViewDelegate,UITableViewDataSource>{
    
@@ -30,13 +30,18 @@
 
 @implementation LocationViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setNavi];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tabBarController.tabBar.hidden = YES;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self configTableView];
-    
+    [self setNavi];
     _sectionTitleArray = [[NSArray alloc] initWithObjects:@"家人",@"朋友",@"同学", nil];
     
     NSArray* array0 = @[@"爸爸",@"妈妈",@"哥哥",@"姐姐",@"妹妹",@"弟弟"];
@@ -46,11 +51,25 @@
     _dataArray = [[NSArray alloc] initWithObjects:array0,array1,array2, nil];
 }
 
+- (void)setNavi{
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+}
+
 - (void)configTableView{
+    
+//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(@0);
+//        make.left.equalTo(@0);
+//        make.right.equalTo(@0);
+//       // make.height.equalTo(@(self.tableView.rowHeight*[_dataArray[section] count]));
+//        
+//    }];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
     self.tableView.rowHeight = 40;
     self.tableView.sectionHeaderHeight = 48;
+    self.tableView.tableFooterView =  [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:@"LocationTableViewCell" bundle:nil]forCellReuseIdentifier:@"locationCellId"];
     
 }
@@ -67,14 +86,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.rightImage.hidden = NO;
+   
 }
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.rightImage.hidden = YES;
+}
+
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"locationCellId" forIndexPath:indexPath];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LocationTableViewCell" owner:self options:nil]lastObject];
-        
+    
         
     }
     return cell;
@@ -111,6 +138,9 @@
 - (IBAction)back:(id)sender {
     [self backTolastPage];
 }
+
+
+
 
 /*
 #pragma mark - Navigation

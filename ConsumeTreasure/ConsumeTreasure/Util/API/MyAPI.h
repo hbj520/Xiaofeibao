@@ -65,6 +65,19 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark -- 申请商户入口
 - (void)getShangHuRequestDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
+#pragma mark --详情（商家）
+- (void)getDetailStoreWithParameters:(NSDictionary*)para
+                              result:(ModelBlock)result
+                         errorResult:(ErrorBlock)errorResult;
+#pragma mark -- 详情（特色商品）
+- (void)getSpecialGoodDataWithParameters:(NSDictionary*)para
+                                  result:(ArrayBlock)result
+                             errorResult:(ErrorBlock)errorResult;
+#pragma mark -- 详情（评论）
+- (void)getCommentsWithParameters:(NSDictionary*)para
+                           result:(ArrayBlock)result
+                      errorResult:(ErrorBlock)errorResult;
+
 #pragma mark --我是商户
 - (void)getStoreMasterDataWithParameters:(NSDictionary*)para result:(ModelBlock)result errorResult:(ErrorBlock)errorResult;
 
