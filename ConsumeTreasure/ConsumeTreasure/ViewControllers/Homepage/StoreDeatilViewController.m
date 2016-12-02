@@ -64,8 +64,24 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
            }];
     
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            }];
+  
+}
+
+- (void)loadData{
+    NSDictionary *para = @{
+                           @"memid":@""
+                           };
+    [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            
+            
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    
 }
 
 - (void)viewDidLayoutSubviews{
