@@ -32,6 +32,7 @@
 
 #import "TuiJianModel.h"
 #import "AddModel.h"
+#import "HomeStoreModel.h"
 
 #import "JFCityViewController.h"
 
@@ -47,10 +48,12 @@
     NSString *longitudeStr;
     NSString *latitudeStr;
     NSString *localStr;
+    NSString *cityCode;
     
     NSMutableArray *addArr;//广告
     NSMutableArray *charArr;//走势图
     NSMutableArray *TuiJianArr;
+    NSMutableArray *HotStoreArr;//热门商家
 }
 
 @end
@@ -65,13 +68,14 @@
     addArr = [[NSMutableArray alloc]init];
     charArr = [[NSMutableArray alloc]init];
     TuiJianArr = [[NSMutableArray alloc]init];
-    
+    HotStoreArr = [[NSMutableArray alloc]init];
     [self loadIncomeAndAddsData];
     [self addRefresh];
     [self addNavBar];
     [self startMap];
     [self creatUI];
     [self addLocationGes];
+    [self loadHotStoreData];
 
 }
 
@@ -83,7 +87,7 @@
     [mapView viewWillAppear];
     mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     
-
+ [self loadHotStoreData];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
     
@@ -114,7 +118,7 @@
 - (void)chooseLoca{
     NSLog(@"选择位置");
     
-    [self pushToNextWithIdentiField:@"chooseLocationSegue"];
+    [self pushToNextWithIdentiField:@"chooseLocationSegue" sender:nil];
     /*
     JFCityViewController *cityViewController = [[JFCityViewController alloc] init];
     cityViewController.title = @"城市";
@@ -155,6 +159,7 @@
                 BMKOLSearchRecord* oneRecord = [records objectAtIndex:0];
                 //城市编码如:北京为131
                 int cityId = oneRecord.cityID;
+                cityCode = [NSString stringWithFormat:@"%d",oneRecord.cityID];
                 
                 if ([_offlineMap remove:cityId]) {
                  
@@ -162,7 +167,7 @@
                 }else{
                     
                 };
-             //   [self loadHotStoreData];根据定位加载商家
+                [self loadHotStoreData];//根据定位加载商家
                 
                 [_locService stopUserLocationService];
             }
@@ -243,19 +248,16 @@
 - (void)loadHotStoreData{
   
     NSDictionary *para = @{
-                           @"pageNum":@"1",
-                           @"pageOffest":@"10",
-                           @"cityName":localStr,
-                           @"latitude":latitudeStr,
-                           @"longitude":longitudeStr
+                          
+                           @"cityCode":@"127",//cityCode
+                           @"latitude":@"31.74593",//latitudeStr
+                           @"longitude":@"117.287537"//longitudeStr
                            };
     
     [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            NSArray *arrr = arrays[0];
-            NSLog(@"%@",arrr);
-        }else{
-            
+            [HotStoreArr addObjectsFromArray:arrays];
+            [self.tableView reloadData];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -332,9 +334,9 @@
 
 }
 
-- (void)pushToNextWithIdentiField:(NSString*)identi{
+- (void)pushToNextWithIdentiField:(NSString*)identi sender:(id)sender{
     self.hidesBottomBarWhenPushed = YES;
-    [self performSegueWithIdentifier:identi sender:nil];
+    [self performSegueWithIdentifier:identi sender:sender];
     self.hidesBottomBarWhenPushed = NO;
 }
 
@@ -364,12 +366,12 @@
         
         firstCell.partnerBlock = ^{//合伙人超市partnerSegue
            // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
-            [self pushToNextWithIdentiField:@"partnerSegue"];
+            [self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
         };
         firstCell.storeBlock = ^{//商户入口
           //[self pushToNextWithIdentiField:@"beStoreSegue"];
             
-            [self pushToNextWithIdentiField:@"unionSegue"];
+            [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
                   };
         
         
@@ -377,15 +379,15 @@
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };
         firstCell.incomeBlock = ^{//收益权
-            [self pushToNextWithIdentiField:@"myincomeSegue"];
+            [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
         };
         firstCell.accountBlock =^{
-            [self pushToNextWithIdentiField:@"myAccountSegue"];
+            [self pushToNextWithIdentiField:@"myAccountSegue" sender:nil];
            
         };
         firstCell.recordBlock = ^{//浏览记录
             
-             [self pushToNextWithIdentiField:@"historySegue"];
+             [self pushToNextWithIdentiField:@"historySegue" sender:nil];
           
         };
         
@@ -406,8 +408,8 @@
            
         
             
-            chartCell.oneBlock = ^{
-                 [self pushToNextWithIdentiField:@"detailSegue"];
+            chartCell.oneBlock = ^{//****************************
+                 [self pushToNextWithIdentiField:@"detailSegue" sender:nil];
             };
             
             
@@ -443,6 +445,11 @@
         if (hotCell == nil) {
             hotCell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
         }
+        if (HotStoreArr.count > 0) {
+            HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
+            hotCell.storeModel = model;
+        }
+        
         hotCell.selectionStyle = 0;
         return hotCell;
     }
@@ -515,33 +522,9 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
       
-        [self pushToNextWithIdentiField:@"detailSegue"];
-        /*
-        NSDictionary *para = @{
-                               @"tokenid": @"20ace013934a448887c7af6000dfa112",
-                               @"platform":@"1", //0:Android ,  1:IOS
-                               @"param": @{
-                                       @"tradetype": @"APP",
-                                       @"title": @"支付订单",
-                                       @"ordertype": @"0",
-                                       @"tomemid": @"4839a0d3-e758-44bf-aa51-cd7f0987b2fd" ,
-                                       @"price": @"0.01",
-                                       @"price_tbb": @"20",
-                                       }
-                               };
+        [self pushToNextWithIdentiField:@"detailSegue" sender:nil];
+    
         
-        
-        [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
-            if (success) {
-                NSArray *arrr = arrays[0];
-                NSLog(@"%@",arrr);
-            }
-            
-        } errorResult:^(NSError *enginerError) {
-            [self showHint:@"下载出错"];
-        }];
-       
-        */
     }
 }
 

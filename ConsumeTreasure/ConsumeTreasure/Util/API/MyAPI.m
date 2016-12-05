@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import "WXApi.h"
 
+#import "HomeStoreModel.h"
 #import "AddModel.h"
 #import "ChartModel.h"
 #import "AreaModel.h"
@@ -132,9 +133,13 @@
     [self.manager POST:@"welcome/hotShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
-            NSArray *arr = responseObject[@"data"][@"memberPojoList"];
-            result(YES,info,arr);
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *hotArr = [NSMutableArray array];
+            NSError *error = nil;
+            hotArr = [HomeStoreModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memberPojoList"] error:&error];
+            
+            
+            result(YES,info,hotArr);
         }else{
             result(NO,info,nil);
         }

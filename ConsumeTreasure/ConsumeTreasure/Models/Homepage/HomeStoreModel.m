@@ -11,3 +11,8 @@
 @implementation HomeStoreModel
 
 @end
+
+@implementation HomeArraymodel
+
+
+@end
