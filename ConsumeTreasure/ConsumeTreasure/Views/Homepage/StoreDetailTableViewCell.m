@@ -15,6 +15,13 @@
     // Initialization code
 }
 
+- (void)setDeModel:(StoreDetailModel *)deModel{
+    if (deModel) {
+        self.storeNameLab.text = deModel.shopName;
+        self.adresssLab.text = 
+    }
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

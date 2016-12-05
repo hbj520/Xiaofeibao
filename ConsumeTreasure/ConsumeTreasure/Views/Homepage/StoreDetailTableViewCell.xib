@@ -86,13 +86,18 @@
                                     <constraint firstAttribute="width" constant="24" id="fGv-wt-EfX"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkb-k0-Umg">
+                                <rect key="frame" x="305" y="0.0" width="70" height="84"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GuE-p0-2cu" firstAttribute="top" secondItem="h0g-D8-bzR" secondAttribute="top" constant="15" id="2Dp-jN-D9V"/>
+                            <constraint firstAttribute="trailing" secondItem="Nkb-k0-Umg" secondAttribute="trailing" id="6sI-k4-HLE"/>
                             <constraint firstItem="lfR-UB-1x1" firstAttribute="leading" secondItem="GuE-p0-2cu" secondAttribute="trailing" constant="20" id="6zO-di-kFU"/>
                             <constraint firstItem="ErM-cy-sqU" firstAttribute="centerY" secondItem="h0g-D8-bzR" secondAttribute="centerY" id="CCt-EB-6CV"/>
                             <constraint firstAttribute="trailing" secondItem="GuE-p0-2cu" secondAttribute="trailing" constant="70" id="DEJ-Nu-Du8"/>
+                            <constraint firstItem="Nkb-k0-Umg" firstAttribute="top" secondItem="h0g-D8-bzR" secondAttribute="top" id="FD9-oG-Zg6"/>
                             <constraint firstItem="U1I-tp-fWj" firstAttribute="leading" secondItem="ErM-cy-sqU" secondAttribute="trailing" constant="8" id="LtL-nj-GkP"/>
                             <constraint firstItem="GuE-p0-2cu" firstAttribute="leading" secondItem="U1I-tp-fWj" secondAttribute="trailing" constant="8" id="N4l-AT-HPj"/>
                             <constraint firstItem="U1I-tp-fWj" firstAttribute="top" secondItem="h0g-D8-bzR" secondAttribute="top" constant="8" id="TDf-Qy-Sfk"/>
@@ -100,6 +105,8 @@
                             <constraint firstItem="U1I-tp-fWj" firstAttribute="centerY" secondItem="ErM-cy-sqU" secondAttribute="centerY" id="mSO-Zl-qXe"/>
                             <constraint firstItem="lfR-UB-1x1" firstAttribute="centerY" secondItem="h0g-D8-bzR" secondAttribute="centerY" id="s7J-p4-BtI"/>
                             <constraint firstAttribute="bottom" secondItem="GuE-p0-2cu" secondAttribute="bottom" constant="15" id="vvb-NV-ePX"/>
+                            <constraint firstAttribute="bottom" secondItem="Nkb-k0-Umg" secondAttribute="bottom" id="zsC-Yw-yvu"/>
+                            <constraint firstItem="Nkb-k0-Umg" firstAttribute="leading" secondItem="GuE-p0-2cu" secondAttribute="trailing" id="zto-si-zmF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -122,6 +129,7 @@
             <connections>
                 <outlet property="adresssLab" destination="U1I-tp-fWj" id="2GE-30-cAj"/>
                 <outlet property="distanceLab" destination="OOG-6H-d8u" id="nwD-VP-wmf"/>
+                <outlet property="phoneBtn" destination="Nkb-k0-Umg" id="Yxp-gg-aX7"/>
                 <outlet property="storeNameLab" destination="wg8-My-Rjt" id="TmR-5D-x4P"/>
             </connections>
             <point key="canvasLocation" x="23.5" y="25.5"/>

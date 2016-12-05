@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
-
+#import "HomeStoreModel.h"
 @interface StoreDeatilViewController : BaseViewController
+
+
+@property (nonatomic,strong) HomeStoreModel *StoreModel;
 
 @end

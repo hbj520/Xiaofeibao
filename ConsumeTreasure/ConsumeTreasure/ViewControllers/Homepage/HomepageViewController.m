@@ -17,6 +17,7 @@
 
 #import "HomepageViewController.h"
 #import "AdDetailViewController.h"
+#import "StoreDeatilViewController.h"
 
 #import "HomePageFirstTableViewCell.h"
 #import "chartTableViewCell.h"
@@ -380,25 +381,7 @@
         };
         firstCell.incomeBlock = ^{//收益权
             [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
-            
-            NSDictionary *para = @{
-                                   
-                                   };
-            
-            [[MyAPI sharedAPI] gettaWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-                if (success) {
-                    
-                    
-                    
-                }
-                
-                
-            } errorResult:^(NSError *enginerError) {
-                
-            }];
-            
-            
-            
+        
         };
         firstCell.accountBlock =^{
             [self pushToNextWithIdentiField:@"myAccountSegue" sender:nil];
@@ -541,7 +524,9 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
       
-        [self pushToNextWithIdentiField:@"detailSegue" sender:nil];
+        HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
+        
+        [self pushToNextWithIdentiField:@"detailSegue" sender:model];
     
         
     }
@@ -580,8 +565,11 @@
         AddModel *model = (AddModel*)sender;
         AdDetailViewController *adVC = segue.destinationViewController;
         adVC.admodel = model;
+    }else if ([segue.identifier isEqualToString:@"detailSegue"]){
+        HomeStoreModel *model = (HomeStoreModel*)sender;
+        StoreDeatilViewController *storeDetailVC = segue.destinationViewController;
+        storeDetailVC.StoreModel = model;
     }
-   
 }
 
 

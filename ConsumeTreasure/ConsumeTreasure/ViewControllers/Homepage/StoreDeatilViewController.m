@@ -8,6 +8,8 @@
 
 #import "StoreDeatilViewController.h"
 
+#import "StoreDetailModel.h"
+
 #import "LPNavigationBarView.h"
 #import "DetailHeadView.h"
 #import "StoreDetailTableViewCell.h"
@@ -20,7 +22,11 @@
 
 #import <Masonry.h>
 #import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    StoreDetailModel *_deModel;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 
@@ -60,6 +66,11 @@
     [self addRefresh];
 }
 
+- (void)setStoreModel:(HomeStoreModel *)StoreModel{
+    NSLog(@"😝%@😋",StoreModel);
+    [self loadDataWithMemId:StoreModel.memid];
+}
+
 - (void)addRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
            }];
@@ -67,14 +78,15 @@
   
 }
 
-- (void)loadData{
+- (void)loadDataWithMemId:(NSString *)memid{
     NSDictionary *para = @{
-                           @"memid":@""
+                           @"memid":memid
                            };
     [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
         if (success) {
             
-            
+            _deModel = object;
+            [self.tableView reloadData];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -86,7 +98,7 @@
 
 - (void)viewDidLayoutSubviews{
     DetailHeadView * headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
-    
+    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:_deModel.doorImg] placeholderImage:[UIImage imageNamed:@"storeHead"]];
      headView.contentMode = UIViewContentModeScaleAspectFill;
     
     headView.frame = CGRectMake(0, 0, ScreenWidth, 170);
@@ -134,15 +146,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-if (indexPath.section == 0) {//折线图
+    if (indexPath.section == 0) {//折线图
         StoreDetailTableViewCell *storeDetailCell = [tableView dequeueReusableCellWithIdentifier:@"storeDetailId"];
         if (storeDetailCell == nil) {
             storeDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreDetailTableViewCell" owner:self options:nil] lastObject];
         }
-       
+        storeDetailCell.deModel = _deModel;
         storeDetailCell.selectionStyle = 0;
         return storeDetailCell;
- }
+    }
 
  else if (indexPath.section == 1){
      StoreContentTableViewCell *contentCell = [tableView dequeueReusableCellWithIdentifier:@"contentId"];

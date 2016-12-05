@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "StoreDetailModel.h"
 @interface StoreDetailTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *storeNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 @property (weak, nonatomic) IBOutlet UILabel *adresssLab;
+
+@property (weak, nonatomic) IBOutlet UIButton *phoneBtn;
+
+
+@property (nonatomic,strong) StoreDetailModel *deModel;
 
 @end

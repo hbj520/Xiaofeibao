@@ -103,7 +103,5 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                         result:(ArrayBlock)result
                    errorResult:(ErrorBlock)errorResult;
 
-- (void)gettaWithParameters:(NSDictionary*)para
-                     result:(ArrayBlock)result
-                errorResult:(ErrorBlock)errorResult;
+
 @end

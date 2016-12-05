@@ -12,8 +12,10 @@
 
 @property (nonatomic,strong) NSString *addr2;
 @property (nonatomic,strong) NSString *doorImg;
-@property (nonatomic,strong) NSString *endBusinessTime;
-@property (nonatomic,strong) NSString *introduction;
+//@property (nonatomic,strong) NSString *endBusinessTime;
+@property (nonatomic,strong) NSString<Optional> *introduction;
 @property (nonatomic,strong) NSString *shopName;
-@property (nonatomic,strong) NSString *startBusinessTime;
+@property (nonatomic,strong) NSString *branchPhone;
+
+//@property (nonatomic,strong) NSString *startBusinessTime;
 @end
