@@ -155,6 +155,16 @@
                     <constraint firstAttribute="trailing" secondItem="DFa-Xu-Wap" secondAttribute="trailing" constant="16" id="zVj-nY-vmf"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="goodsLabel" destination="Fec-kn-fSZ" id="mvg-dJ-4sk"/>
+                <outlet property="oneMoreBtn" destination="tiG-fk-ej8" id="nAO-qt-Lik"/>
+                <outlet property="orderStatusLabel" destination="X7W-nq-zTV" id="4MJ-C5-wA3"/>
+                <outlet property="preEvaluateBtn" destination="Vvz-db-WDH" id="vly-0V-zlq"/>
+                <outlet property="priceLabel" destination="DFa-Xu-Wap" id="wPo-6A-PjD"/>
+                <outlet property="shopIconImageview" destination="8fS-0U-c0p" id="OhG-cP-6yr"/>
+                <outlet property="shopNameLabel" destination="Xdb-n4-r8i" id="5az-ti-YZv"/>
+                <outlet property="timeLabel" destination="eh8-nh-A43" id="IOz-O1-p1q"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>

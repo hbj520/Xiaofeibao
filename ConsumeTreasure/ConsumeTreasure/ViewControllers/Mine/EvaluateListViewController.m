@@ -12,6 +12,7 @@
 <UITableViewDelegate,
 UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *dataSource;
 
 @end
 
@@ -47,8 +48,11 @@ UITableViewDataSource>
 #pragma mark -PrivateMethod
 - (void)loadData{
     [[MyAPI sharedAPI] NoEvalueteListWithPara:@{@"pageNum":@"1",
-                                                @"pageOffset":@"1"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
-                                                    
+                                                @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+                                                    if (success) {
+                                                        self.dataSource = arrays;
+                                                        [self.tableView reloadData];
+                                                    }
                                                 } errorResult:^(NSError *enginerError) {
                                                     
                                                 }];
@@ -63,7 +67,7 @@ UITableViewDataSource>
     return 1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
+    return self.dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EvaluateReuseId forIndexPath:indexPath];
