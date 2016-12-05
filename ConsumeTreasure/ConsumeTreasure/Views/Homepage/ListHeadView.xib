@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="67BDD13D-4392-4A40-A6F1-0DDF5437182F" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-cA-PAh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3C104569-24B0-4254-B776-FF80695FF022" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-cA-PAh">
                     <rect key="frame" x="14" y="14.5" width="16" height="16"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="16" id="AX1-1s-3hk"/>
@@ -31,8 +31,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5分" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnV-SD-ChQ">
-                    <rect key="frame" x="330" y="16" width="35" height="13"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无特色商品" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnV-SD-ChQ">
+                    <rect key="frame" x="279" y="16" width="86" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="Zrz-cs-I5C"/>
                     </constraints>
@@ -40,22 +40,12 @@
                     <color key="textColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-l7-vd8" customClass="starView">
-                    <rect key="frame" x="244" y="16" width="78" height="14"/>
-                    <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="78" id="Epe-Mo-cdz"/>
-                        <constraint firstAttribute="height" constant="14" id="T7a-41-mRL"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fmw-cA-PAh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="3QJ-QL-MvS"/>
                 <constraint firstItem="fmw-cA-PAh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="MKb-wI-QzN"/>
                 <constraint firstItem="UnV-SD-ChQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S3Q-NO-0pH"/>
-                <constraint firstItem="WHa-l7-vd8" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZLw-f6-qLa"/>
-                <constraint firstItem="UnV-SD-ChQ" firstAttribute="leading" secondItem="WHa-l7-vd8" secondAttribute="trailing" constant="8" id="Zxk-NR-qOW"/>
                 <constraint firstItem="V8A-kn-Ihh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dsZ-gE-bbS"/>
                 <constraint firstItem="V8A-kn-Ihh" firstAttribute="leading" secondItem="fmw-cA-PAh" secondAttribute="trailing" constant="5" id="fug-Df-sG1"/>
                 <constraint firstAttribute="trailing" secondItem="UnV-SD-ChQ" secondAttribute="trailing" constant="10" id="lfk-lT-MjF"/>
@@ -64,12 +54,13 @@
             <connections>
                 <outlet property="listHeadImage" destination="fmw-cA-PAh" id="c2V-vV-LA8"/>
                 <outlet property="listTitle" destination="V8A-kn-Ihh" id="xea-yd-2W8"/>
+                <outlet property="zanwuLab" destination="UnV-SD-ChQ" id="9v6-Hh-BjE"/>
             </connections>
             <point key="canvasLocation" x="133" y="-220"/>
         </view>
     </objects>
     <resources>
-        <image name="67BDD13D-4392-4A40-A6F1-0DDF5437182F" width="47" height="47">
+        <image name="3C104569-24B0-4254-B776-FF80695FF022" width="47" height="47">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

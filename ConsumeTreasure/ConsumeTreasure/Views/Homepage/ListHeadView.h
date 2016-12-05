@@ -12,8 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *listHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *listTitle;
-@property (weak, nonatomic) IBOutlet starView *starView;
-@property (weak, nonatomic) IBOutlet UILabel *pointLab;
+
+@property (weak, nonatomic) IBOutlet UILabel *zanwuLab;
 
 
 @end

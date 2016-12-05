@@ -28,8 +28,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智商云间虚席与SAP会所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-My-Rjt">
-                        <rect key="frame" x="15" y="13" width="167" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-My-Rjt">
+                        <rect key="frame" x="15" y="13" width="0.0" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="xez-mZ-ZCn"/>
                         </constraints>
@@ -38,14 +38,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dw" translatesAutoresizingMaskIntoConstraints="NO" id="fyd-7K-Lfd">
-                        <rect key="frame" x="202" y="10" width="15" height="22"/>
+                        <rect key="frame" x="35" y="10" width="15" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="E9a-Mn-V9F"/>
                             <constraint firstAttribute="height" constant="22" id="cMJ-YL-ZD7"/>
                         </constraints>
                     </imageView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOG-6H-d8u">
-                        <rect key="frame" x="227" y="14" width="40.5" height="13"/>
+                        <rect key="frame" x="60" y="14" width="41" height="13"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="Ttg-eM-R81"/>
                         </constraints>
@@ -63,9 +63,9 @@
                                     <constraint firstAttribute="width" constant="15" id="gbr-4t-rHG"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滨湖区福州路与广西路交口福会员2栋402（大别山生态园正对面，议案公寓4楼）" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-tp-fWj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1I-tp-fWj">
                                 <rect key="frame" x="38" y="8" width="258" height="68"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -88,6 +88,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkb-k0-Umg">
                                 <rect key="frame" x="305" y="0.0" width="70" height="84"/>
+                                <connections>
+                                    <action selector="phoneClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Pih-fG-Epg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,6 +100,7 @@
                             <constraint firstItem="lfR-UB-1x1" firstAttribute="leading" secondItem="GuE-p0-2cu" secondAttribute="trailing" constant="20" id="6zO-di-kFU"/>
                             <constraint firstItem="ErM-cy-sqU" firstAttribute="centerY" secondItem="h0g-D8-bzR" secondAttribute="centerY" id="CCt-EB-6CV"/>
                             <constraint firstAttribute="trailing" secondItem="GuE-p0-2cu" secondAttribute="trailing" constant="70" id="DEJ-Nu-Du8"/>
+                            <constraint firstAttribute="trailing" secondItem="lfR-UB-1x1" secondAttribute="trailing" constant="26" id="EUe-Rp-ZmY"/>
                             <constraint firstItem="Nkb-k0-Umg" firstAttribute="top" secondItem="h0g-D8-bzR" secondAttribute="top" id="FD9-oG-Zg6"/>
                             <constraint firstItem="U1I-tp-fWj" firstAttribute="leading" secondItem="ErM-cy-sqU" secondAttribute="trailing" constant="8" id="LtL-nj-GkP"/>
                             <constraint firstItem="GuE-p0-2cu" firstAttribute="leading" secondItem="U1I-tp-fWj" secondAttribute="trailing" constant="8" id="N4l-AT-HPj"/>
@@ -109,12 +113,22 @@
                             <constraint firstItem="Nkb-k0-Umg" firstAttribute="leading" secondItem="GuE-p0-2cu" secondAttribute="trailing" id="zto-si-zmF"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LW8-kb-GVe">
+                        <rect key="frame" x="319" y="5" width="30" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="YO5-Sb-Lzh"/>
+                        </constraints>
+                        <state key="normal" image="x_720"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LW8-kb-GVe" secondAttribute="trailing" constant="26" id="0Zk-WW-fNQ"/>
                     <constraint firstAttribute="bottom" secondItem="h0g-D8-bzR" secondAttribute="bottom" id="2nO-SJ-3o2"/>
+                    <constraint firstItem="LW8-kb-GVe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="6yf-BZ-P6b"/>
                     <constraint firstAttribute="trailing" secondItem="jwV-nX-eDW" secondAttribute="trailing" constant="10" id="8E0-vf-Llx"/>
                     <constraint firstItem="OOG-6H-d8u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="FHd-HP-3ot"/>
                     <constraint firstItem="fyd-7K-Lfd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ic5-fK-hKC"/>
+                    <constraint firstItem="jwV-nX-eDW" firstAttribute="top" secondItem="LW8-kb-GVe" secondAttribute="bottom" constant="5" id="Qwy-3K-iRO"/>
                     <constraint firstAttribute="trailing" secondItem="h0g-D8-bzR" secondAttribute="trailing" id="Uxr-al-QE3"/>
                     <constraint firstItem="h0g-D8-bzR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VSl-ro-g8H"/>
                     <constraint firstItem="jwV-nX-eDW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Vxl-nH-KSf"/>
@@ -139,5 +153,6 @@
         <image name="dw" width="19" height="29"/>
         <image name="dw_s" width="24" height="31"/>
         <image name="tel" width="36" height="46"/>
+        <image name="x_720" width="20" height="18"/>
     </resources>
 </document>

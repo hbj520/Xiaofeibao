@@ -26,6 +26,9 @@
 @interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     StoreDetailModel *_deModel;
+    
+    NSMutableArray *_spacialGoodArr;
+    NSMutableArray *_commetsArr;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
@@ -57,10 +60,9 @@
         make.left.equalTo(@0);
         make.right.equalTo(@0);
         make.height.equalTo(@44);
-        
-        
     }];
-    
+    _commetsArr = [NSMutableArray array];
+    _spacialGoodArr = [NSMutableArray array];
     [self addTableView];
     [self addNavBarView];//导航栏
     [self addRefresh];
@@ -82,13 +84,33 @@
     NSDictionary *para = @{
                            @"memid":memid
                            };
+    //商家详情
     [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
         if (success) {
-            
             _deModel = object;
             [self.tableView reloadData];
         }
         
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    //特色商品
+    [[MyAPI sharedAPI] getSpecialGoodDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [_spacialGoodArr addObjectsFromArray:arrays];
+            [self.tableView reloadData];
+        }
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    //评价
+    [[MyAPI sharedAPI] getCommentsWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [_commetsArr addObjectsFromArray:arrays];
+            [self.tableView reloadData];
+        }
     } errorResult:^(NSError *enginerError) {
         
     }];
@@ -138,15 +160,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0 || section == 1) {
         return 1;
-    }else if (section == 2 || section == 3){
+    }else if (section == 2){
+        return _spacialGoodArr.count;
+    }else if (section == 3){
         return 2;
-    }else{
+    }
+    else{
         return 1;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {//折线图
+    if (indexPath.section == 0) {
         StoreDetailTableViewCell *storeDetailCell = [tableView dequeueReusableCellWithIdentifier:@"storeDetailId"];
         if (storeDetailCell == nil) {
             storeDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreDetailTableViewCell" owner:self options:nil] lastObject];
@@ -161,7 +186,11 @@
      if (contentCell == nil) {
          contentCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreContentTableViewCell" owner:self options:nil] lastObject];
      }
-     
+     if (_deModel.introduction.length > 0) {
+         contentCell.storeContent.text = _deModel.introduction;
+     }else{
+         contentCell.storeContent.text = @"暂无商户介绍";
+     }
      contentCell.selectionStyle = 0;
      return contentCell;
 
@@ -170,6 +199,7 @@
      if (specialCell == nil) {
          specialCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreSpecialTableViewCell" owner:self options:nil] lastObject];
      }
+     specialCell.speArr = _spacialGoodArr;
      specialCell.selectionStyle = 0;
      return specialCell;
  }else if (indexPath.section == 3){
@@ -177,6 +207,7 @@
      if (estimateCell == nil) {
          estimateCell = [[[NSBundle mainBundle] loadNibNamed:@"EstimateTableViewCell" owner:self options:nil] lastObject];
      }
+     estimateCell.estiArr = _commetsArr;
      estimateCell.selectionStyle = 0;
      return estimateCell;
  }else{
@@ -221,6 +252,9 @@
         if (section == 2) {
             listHead.listTitle.text = @"特色";
             listHead.listHeadImage.image = [UIImage imageNamed:@"ts"];
+            if (_spacialGoodArr.count == 0) {
+                listHead.zanwuLab.hidden = NO;
+            }
         }else if(section == 3){
             listHead.listTitle.text = @"评价";
             listHead.listHeadImage.image = [UIImage imageNamed:@"pj_1080"];
@@ -244,6 +278,10 @@
    
     if (section == 3) {
         BottomFootView *footView = [[[NSBundle mainBundle]loadNibNamed:@"BottomFootView" owner:self options:nil]lastObject];
+        if (_commetsArr.count == 0) {
+            footView.moreOrNoneLab.text = @"暂无评论";
+        }
+        
         return footView;
     }else{
     

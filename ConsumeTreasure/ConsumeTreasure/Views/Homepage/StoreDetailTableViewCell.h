@@ -18,4 +18,6 @@
 
 @property (nonatomic,strong) StoreDetailModel *deModel;
 
+@property (nonatomic,strong) NSString *phNum;
+
 @end

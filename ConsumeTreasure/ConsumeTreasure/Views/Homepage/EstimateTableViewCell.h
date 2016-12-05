@@ -15,4 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *estimateTime;
 @property (weak, nonatomic) IBOutlet UILabel *estimateContent;
 
+
+@property (nonatomic,strong) NSArray *estiArr;
+
 @end

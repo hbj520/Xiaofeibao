@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *specialName;
 @property (weak, nonatomic) IBOutlet UILabel *specialPrice;
 
+
+@property (nonatomic,strong) NSArray *speArr;
+
 @end
