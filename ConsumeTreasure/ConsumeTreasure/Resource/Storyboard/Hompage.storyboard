@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -219,7 +219,7 @@
         <!--浏览记录-->
         <scene sceneID="Uo2-4w-X8D">
             <objects>
-                <viewController id="9xC-fh-fAo" customClass="LookRecordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="watchRecordStorybordId" id="9xC-fh-fAo" customClass="LookRecordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eR3-LS-dHl"/>
                         <viewControllerLayoutGuide type="bottom" id="bNp-wy-ehX"/>
@@ -1351,6 +1351,6 @@
         <image name="wssj" width="71" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYr-uc-yrf"/>
+        <segue reference="8y3-EJ-Rdo"/>
     </inferredMetricsTieBreakers>
 </document>

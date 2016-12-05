@@ -60,6 +60,7 @@ UITableViewDataSource>
 - (void)configTableView{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"EvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:EvaluateReuseId];
 }
 #pragma mark -UITableViewDelegate
@@ -72,6 +73,8 @@ UITableViewDataSource>
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EvaluateReuseId forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    EvaluateListModel *model = [self.dataSource objectAtIndex:indexPath.section];
+    [cell configWithData:model];
     cell.clickEvaluateBlock = ^(){
         [self performSegueWithIdentifier:@"evaluaSegue" sender:nil];
     };
