@@ -11,6 +11,7 @@
 #import "WXApiObject.h"
 #import "WXApi.h"
 #import "WechatAuthSDK.h"
+#import "LookRecordViewController.h"
 
 
 #import "ApplyViewController.h"
@@ -93,10 +94,16 @@
        return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 1) {
-        
-        [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
-    }else if (indexPath.row == 0){
+    if (indexPath.section == 1 ) {
+        if (indexPath.row == 1) {
+            [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
+
+        }else if (indexPath.row == 3){
+            self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+            LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
+            [self.navigationController pushViewController:lookVC animated:YES];
+        }
+    }else if (indexPath.section == 2 && indexPath.row == 0){
         
         self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
         ApplyViewController *applyVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"applySTId"];

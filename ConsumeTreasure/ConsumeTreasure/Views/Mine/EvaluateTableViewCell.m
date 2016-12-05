@@ -48,5 +48,6 @@
     [self.shopIconImageview sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:@"logo"]];
     self.shopNameLabel.text = data.shopName;
     self.priceLabel.text = data.total_money;
+    
 }
 @end
