@@ -640,4 +640,35 @@
     }];
     
 }
+
+
+
+- (void)gettaWithParameters:(NSDictionary*)para
+                                  result:(ArrayBlock)result
+                             errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":@"",
+                              @"platform":@"",
+                              @"param":para
+                              };
+    
+    [self.manager POST:@"shop/getCategory" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+//            NSError *error = nil;
+//            StoreMasterModel *model = [[StoreMasterModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
+            
+            NSLog(@"%@",responseObject[@"data"][@"categorys"]);
+            
+          result(YES,info,responseObject[@"data"][@"categorys"]);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
 @end

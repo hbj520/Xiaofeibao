@@ -41,6 +41,10 @@
 - (void)setListArr:(NSArray *)listArr{
     NSLog(@"😝%@😋",listArr);
     _nameArr = [NSMutableArray array];
+    if (listArr.count == 0) {
+        NSArray *arr = @[@"暂无数据",@"暂无数据",@"暂无数据",@"暂无数据",@"暂无数据"];
+        [_nameArr addObjectsFromArray:arr];
+    }
     for (BeUnionModel *model in listArr) {
         [_nameArr addObject:model.name];
     }
@@ -50,6 +54,7 @@
 - (void)upPikerView{
    
     self.pickerView = [[ValuePickerView alloc]init];
+    
     self.pickerView.dataSource = _nameArr;
     self.pickerView.pickerTitle = @"百分比";
    __weak typeof(self) weakSelf = self;

@@ -380,6 +380,25 @@
         };
         firstCell.incomeBlock = ^{//收益权
             [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
+            
+            NSDictionary *para = @{
+                                   
+                                   };
+            
+            [[MyAPI sharedAPI] gettaWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+                if (success) {
+                    
+                    
+                    
+                }
+                
+                
+            } errorResult:^(NSError *enginerError) {
+                
+            }];
+            
+            
+            
         };
         firstCell.accountBlock =^{
             [self pushToNextWithIdentiField:@"myAccountSegue" sender:nil];
