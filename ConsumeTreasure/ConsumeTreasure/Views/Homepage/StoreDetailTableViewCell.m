@@ -18,7 +18,7 @@
 - (void)setDeModel:(StoreDetailModel *)deModel{
     if (deModel) {
         self.storeNameLab.text = deModel.shopName;
-        self.adresssLab.text = 
+       // self.adresssLab.text =
     }
 }
 
