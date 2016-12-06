@@ -212,6 +212,12 @@ static XFBConfig * instance = nil;
     [settings setObject:phoneNum forKey:@"phonenum"];
     [settings synchronize];
 }
+- (void)saveCityCode:(NSString *)cityCode{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"cityCode"];
+    [settings setObject:cityCode forKey:@"cityCode"];
+    [settings synchronize];
+}
 - (NSString *)getisteacher
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
@@ -257,6 +263,10 @@ static XFBConfig * instance = nil;
 - (NSString *)getIsWifi{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"iswifi"];
+}
+- (NSString *)getCityCode{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"cityCode"];
 }
 - (NSString *)getIcon
 {

@@ -163,7 +163,7 @@
                 //城市编码如:北京为131
                 int cityId = oneRecord.cityID;
                 cityCode = [NSString stringWithFormat:@"%d",oneRecord.cityID];
-                
+                [[XFBConfig Instance] saveCityCode:cityCode];
                 if ([_offlineMap remove:cityId]) {
                  
                     

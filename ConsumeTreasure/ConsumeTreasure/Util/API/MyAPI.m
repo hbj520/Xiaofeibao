@@ -385,7 +385,7 @@
                               result:(ModelBlock)result
                          errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"",
                               @"param":para
                               };
@@ -499,7 +499,7 @@
 //    //    //如果报接受类型不一致请替换一致text/html或别的
 //    testmanager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
     NSDictionary *dicPara = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
