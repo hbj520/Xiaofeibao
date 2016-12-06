@@ -31,7 +31,7 @@
     self.enableSeeButton.frame = CGRectMake(moneySize.width + 25, 0, 20, 15);
     [self.enableSeeButton addTarget:self action:@selector(attentionShopAct:) forControlEvents:UIControlEventTouchUpInside];
     self.frame = CGRectMake(22, 22, moneySize.width + 90, 15);
-    self.money = [NSString stringWithFormat:@"%f",money];
+    self.money = [NSString stringWithFormat:@"%0.2f",money];
     [self addSubview:self.moneyLabel];
     [self addSubview:self.enableSeeButton];
     
