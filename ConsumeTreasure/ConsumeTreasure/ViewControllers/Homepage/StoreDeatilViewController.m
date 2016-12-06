@@ -29,6 +29,8 @@
     
     NSMutableArray *_spacialGoodArr;
     NSMutableArray *_commetsArr;
+    
+    NSString *_keepMemId;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
@@ -65,61 +67,74 @@
     _spacialGoodArr = [NSMutableArray array];
     [self addTableView];
     [self addNavBarView];//导航栏
-    [self addRefresh];
+   // [self addRefresh];
 }
 
 - (void)setStoreModel:(HomeStoreModel *)StoreModel{
     NSLog(@"😝%@😋",StoreModel);
+    _keepMemId = StoreModel.memid;
     [self loadDataWithMemId:StoreModel.memid];
 }
 
 - (void)addRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [_spacialGoodArr removeAllObjects];
+        [_commetsArr removeAllObjects];
+        [self loadDataWithMemId:_keepMemId];
+        
            }];
     
   
 }
 
+
 - (void)loadDataWithMemId:(NSString *)memid{
     NSDictionary *para = @{
                            @"memid":memid
                            };
-    //商家详情
-    [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
-        if (success) {
-            _deModel = object;
-            [self.tableView reloadData];
-        }
-        
-    } errorResult:^(NSError *enginerError) {
-        
-    }];
-    
-    //特色商品
-    [[MyAPI sharedAPI] getSpecialGoodDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        if (success) {
-            [_spacialGoodArr addObjectsFromArray:arrays];
-            [self.tableView reloadData];
-        }
-    } errorResult:^(NSError *enginerError) {
-        
-    }];
-    
     
     NSDictionary *commentDic = @{
                                  @"memid":memid,
                                  @"pageNum":@"1",
                                  @"pageOffest":@"2"
                                  };
-    //评价
-    [[MyAPI sharedAPI] getCommentsWithParameters:commentDic result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        if (success) {
-            [_commetsArr addObjectsFromArray:arrays];
-            [self.tableView reloadData];
-        }
-    } errorResult:^(NSError *enginerError) {
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //商家详情
+        [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
+            if (success) {
+                _deModel = object;
+                [self.tableView reloadData];
+            }
+            
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
         
-    }];
+        //特色商品
+        [[MyAPI sharedAPI] getSpecialGoodDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                [_spacialGoodArr addObjectsFromArray:arrays];
+                [self.tableView reloadData];
+            }
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+        
+ 
+        //评价
+        [[MyAPI sharedAPI] getCommentsWithParameters:commentDic result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                [_commetsArr addObjectsFromArray:arrays];
+                [self.tableView reloadData];
+            }
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+        
+    });
+    
     
     
 }
@@ -182,6 +197,8 @@
         if (storeDetailCell == nil) {
             storeDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreDetailTableViewCell" owner:self options:nil] lastObject];
         }
+        
+
         storeDetailCell.deModel = _deModel;
         storeDetailCell.selectionStyle = 0;
         return storeDetailCell;
@@ -231,6 +248,9 @@
  }
 
 }
+
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {

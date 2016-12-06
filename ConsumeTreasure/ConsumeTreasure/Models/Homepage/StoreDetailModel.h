@@ -16,6 +16,6 @@
 @property (nonatomic,strong) NSString<Optional> *introduction;
 @property (nonatomic,strong) NSString *shopName;
 @property (nonatomic,strong) NSString *branchPhone;
-
+@property (nonatomic,strong) NSString *collect;
 //@property (nonatomic,strong) NSString *startBusinessTime;
 @end
