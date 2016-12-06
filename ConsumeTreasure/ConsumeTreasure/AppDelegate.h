@@ -18,5 +18,7 @@
 
 @property (strong,nonatomic) UIStoryboard *mStorybord;
 @property (strong,nonatomic) UINavigationController *navVC;
+@property (strong,nonatomic) NSString *latitude;//精度
+@property (strong,nonatomic) NSString *longitude;//维度
 @end
 

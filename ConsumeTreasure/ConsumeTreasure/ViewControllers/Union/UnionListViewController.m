@@ -86,10 +86,38 @@ UICollectionViewDataSource>
     }];
     //分类
     [[MyAPI sharedAPI] unionCategoryListWithParameters:@{} result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        
+        if (success) {
+            classTypeArray = [NSMutableArray arrayWithArray:arrays];
+        }else{
+            classTypeArray = [NSMutableArray arrayWithObject:@"不限"];
+        }
     } errorResult:^(NSError *enginerError) {
-        
+        [self showHint:@"分类出错"];
     }];
+    //商家列表
+    //[self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate longitude:<#(NSString *)#> pageNum:<#(NSString *)#> pageOffset:<#(NSString *)#>]
+}
+//查询商家列表
+- (void)searchShopListWithSorting:(NSString *)sorting
+                   shopDistrictId:(NSString *)shopDistrictId
+                       categoryId:(NSString *)categoryId
+                         latitude:(NSString *)latitude
+                        longitude:(NSString *)longitude
+                          pageNum:(NSString *)pageNum
+                       pageOffset:(NSString *)pageOffset{
+    [[MyAPI sharedAPI] unionShopSearchWithParameters:@{
+                                                      @"sorting":sorting,
+                                                      @"shopDistrictId":shopDistrictId,
+                                                      @"categoryId":categoryId,
+                                                      @"latitude":latitude,
+                                                      @"longitude":longitude,
+                                                      @"pageNum":pageNum,
+                                                      @"pageOffest":pageOffset
+                                                      } result:^(BOOL success, NSString *msg, NSArray *arrays) {
+                                                          
+                                                      } errorResult:^(NSError *enginerError) {
+                                                          
+                                                      }];
 }
 - (void)postNotificationWithIndexpath:(NSIndexPath *)indexPath{
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
@@ -106,7 +134,7 @@ UICollectionViewDataSource>
     
      regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
     classTypeArray=@[@"水果",@"火锅",@"生鲜",@"小吃",@"糕点"];
-    sortRuleArray=@[@"距离",@"价格",@"评分",@"最新",@"最热"];
+    sortRuleArray=@[@"距离",@"评分",@"最新",@"最热"];
     
     self.menu.menuDataArray = [NSMutableArray arrayWithObjects:regionArray, classTypeArray , sortRuleArray, nil];
     
