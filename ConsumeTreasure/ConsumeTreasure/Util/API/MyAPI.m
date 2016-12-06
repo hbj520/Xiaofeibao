@@ -28,6 +28,7 @@
 #import "StoreDetailModel.h"
 #import "SpecialGoodModel.h"
 #import "CollectShopListModel.h"
+#import "UnionContenModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -554,6 +555,35 @@
         
     }];
 }
+#pragma mark -根据条件查询商家列表
+- (void)unionShopSearchWithParameters:(NSDictionary *)para
+                               result:(ArrayBlock)result
+                          errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/shopList" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *modelArray = [NSMutableArray array];
+            NSError *error = nil;
+            NSDictionary *dataDic = responseObject[@"data"];
+            for (NSDictionary *dic in dataDic[@"shoplist"]) {
+                UnionContenModel *model = [[UnionContenModel alloc] initWithDictionary:dic error:&error];
+                [modelArray addObject:model];
+
+            }
+            result(YES,info,modelArray);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 #pragma mark - 联盟商户详情列表
 - (void)unionListDetailWithParameters:(NSDictionary *)para
                                result:(ArrayBlock)result
@@ -629,7 +659,7 @@
             NSError *error = nil;
             NSDictionary *dataDic = responseObject[@"data"];
             for (NSDictionary *dic in dataDic[@"orderList"]) {
-                NSLog(@"dic %@",dic);
+                //NSLog(@"dic %@",dic);
                 EvaluateListModel *model = [[EvaluateListModel alloc] initWithDictionary:dic error:&error];
                 [modelArray addObject:model];
             }

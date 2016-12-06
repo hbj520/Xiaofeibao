@@ -9,7 +9,7 @@
 #import <JSONModel/JSONModel.h>
 
 @interface UnionCategoryModel : JSONModel
-@property (nonatomic,copy) NSString *iconurl;
-@property (nonatomic,copy) NSString *id;
+@property (nonatomic,copy) NSString<Optional> *iconurl;
+@property (nonatomic,copy) NSString *memid;
 @property (nonatomic,copy) NSString *name;
 @end
