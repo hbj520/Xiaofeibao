@@ -27,6 +27,7 @@
 #import "CommentModel.h"
 #import "StoreDetailModel.h"
 #import "SpecialGoodModel.h"
+#import "CollectShopListModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -92,8 +93,11 @@
                               @"param":para
                               };
     [self.manager POST:@"sms/sendRegisterMessage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *message = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
-            NSLog(@"验证码发送成功");
+            result(YES,message);
+        }else{
+            result(NO,message);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"验证码发送出错");
@@ -640,6 +644,36 @@
     }];
     
 }
-
+#pragma mark -店铺关注
+- (void)attentionShopWithParameters:(NSDictionary *)para
+                             result:(ArrayBlock )result
+                        errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":KToken,
+                              @"platform":@"",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/queryAttShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *modelArray = [NSMutableArray array];
+            NSError *error = nil;
+            NSDictionary *dataDic = responseObject[@"data"];
+            for (NSDictionary *dic in dataDic[@"collectionlst"]) {
+                NSLog(@"dic %@",dic);
+                CollectShopListModel *model = [[CollectShopListModel alloc] initWithDictionary:dic error:&error];
+                [modelArray addObject:model];
+            }
+            result(YES,info,modelArray);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+    }];
+    
+}
 
 @end

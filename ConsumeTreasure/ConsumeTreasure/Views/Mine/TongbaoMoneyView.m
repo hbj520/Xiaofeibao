@@ -29,10 +29,21 @@
     self.moneyLabel.frame = CGRectMake(0, 0, moneySize.width + 20, 15);
     self.moneyLabel.text = newMoney;
     self.enableSeeButton.frame = CGRectMake(moneySize.width + 25, 0, 20, 15);
+    [self.enableSeeButton addTarget:self action:@selector(attentionShopAct:) forControlEvents:UIControlEventTouchUpInside];
     self.frame = CGRectMake(22, 22, moneySize.width + 90, 15);
+    self.money = [NSString stringWithFormat:@"%0.2f",money];
     [self addSubview:self.moneyLabel];
     [self addSubview:self.enableSeeButton];
     
+}
+- (void)attentionShopAct:(UIButton *)btn{
+    btn.selected = !btn.selected;
+    if (btn.selected) {
+        self.moneyLabel.text = @"*****";
+        
+    }else{
+        self.moneyLabel.text = self.money;
+    }
 }
 - (NSString *)newMoneyString:(NSString *)money{
     NSMutableString * newMoneyString = [NSMutableString stringWithString:money];

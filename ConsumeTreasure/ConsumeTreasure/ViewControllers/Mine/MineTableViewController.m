@@ -40,6 +40,7 @@
     self.navigationController.navigationBar.titleTextAttributes = attributeDict;
     self.navigationItem.title = navTitle;
    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:10.65];
+    //tongbaoMoneyView.money = @"10.65";
     [self.moneyView addSubview: tongbaoMoneyView];
     
     
@@ -98,7 +99,15 @@
         if (indexPath.row == 1) {
             [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
 
-        }else if (indexPath.row == 3){
+        }else if (indexPath.row == 2){
+            [[MyAPI sharedAPI] attentionShopWithParameters:@{ @"pageNum":@"1",
+                                                              @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+                
+            } errorResult:^(NSError *enginerError) {
+                
+            }];
+        }
+        else if (indexPath.row == 3){
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
             [self.navigationController pushViewController:lookVC animated:YES];
