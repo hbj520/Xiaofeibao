@@ -385,7 +385,7 @@
                               result:(ModelBlock)result
                          errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"",
                               @"param":para
                               };
