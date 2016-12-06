@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -580,6 +580,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="4yJ-N8-ZO7"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="accountChangeLab" destination="aJw-d6-CUs" id="OM5-kd-o6K"/>
+                        <outlet property="accountDescripTextView" destination="wlg-1n-brv" id="cNf-tX-7Ec"/>
+                        <outlet property="actionTimeLab" destination="3bn-Xu-CCJ" id="FT7-7v-YMe"/>
+                        <outlet property="shopNameLab" destination="jOc-uZ-7zE" id="khg-YS-PHz"/>
+                        <outlet property="shopNameLab2" destination="DVe-fp-oNt" id="zBk-q9-y28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeV-IN-fYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

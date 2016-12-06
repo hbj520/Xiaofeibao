@@ -13,4 +13,13 @@
 
 @property (nonatomic,strong) AccountModel *model;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *shopNameLab;
+@property (weak, nonatomic) IBOutlet UILabel *accountChangeLab;
+@property (weak, nonatomic) IBOutlet UILabel *shopNameLab2;
+@property (weak, nonatomic) IBOutlet UILabel *actionTimeLab;
+@property (weak, nonatomic) IBOutlet UITextView *accountDescripTextView;
+
+
+
 @end

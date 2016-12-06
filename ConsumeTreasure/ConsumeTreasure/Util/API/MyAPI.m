@@ -272,7 +272,7 @@
             
             
             AccountArrayModel *model = [[AccountArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
-            result(YES,info,@[accountArr,model.balance,model.pages]);
+            result(YES,info,@[accountArr,model.balance]);
         }else{
             result(NO,info,nil);
         }
@@ -399,6 +399,28 @@
         }else{
             result(NO,info,nil);
         }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+#pragma mark -- 收藏/取消收藏
+- (void)collectStoreOrNotWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":KToken,
+                              @"platform":@"0",
+                              @"param":para
+                              };
+    [self.manager POST:@"myAccount/myCollection" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         errorResult(error);

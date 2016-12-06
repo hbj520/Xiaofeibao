@@ -69,6 +69,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)getDetailStoreWithParameters:(NSDictionary*)para
                               result:(ModelBlock)result
                          errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -- 收藏/取消收藏
+- (void)collectStoreOrNotWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
 #pragma mark -- 详情（特色商品）
 - (void)getSpecialGoodDataWithParameters:(NSDictionary*)para
                                   result:(ArrayBlock)result

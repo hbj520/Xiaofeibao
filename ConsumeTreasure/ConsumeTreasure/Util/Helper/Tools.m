@@ -279,6 +279,18 @@
     return repTime;
 }
 
+
++(NSString *)dealtimeStr:(NSString*)str{
+    
+    double Rtime = [str doubleValue];
+    NSDate *reTime = [NSDate dateWithTimeIntervalSince1970:Rtime];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yy-MM-dd hh:ss"];
+    NSString *repTime = [formatter stringFromDate:reTime];
+    
+    return repTime;
+}
+
 + (NSString *)timeWithTimeIntervalString:(NSString *)timeString
 {
     // 格式化时间

@@ -189,16 +189,34 @@
 }
 
 - (void)collectTheStoreOrNotWithType:(NSString *)type{
+    NSDictionary *para = @{
+                           @"objectId":_keepMemId,
+                           @"type":type
+                           };
+    [[MyAPI sharedAPI] collectStoreOrNotWithParameters:para result:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            if ([type isEqualToString:@"1"]) {
+                [self showHint:@"收藏成功"];
+            }else{
+                [self showHint:@"取消收藏成功"];
+            }
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
     
 }
 
 //收藏与否
 - (void)collectOrNotWith:(BOOL)selec{
     if (KToken) {
-        if (selec == NO) {
+        if (selec == YES) {
             //去收藏
+            [self collectTheStoreOrNotWithType:@"1"];
         }else{
             //取消收藏
+            [self collectTheStoreOrNotWithType:@"0"];
         }
     }else{
         //未登录

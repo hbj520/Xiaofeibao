@@ -49,7 +49,7 @@
     // Do any additional setup after loading the view.
     _page = 1;
     pageNum = @"10";
-    
+  
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.left.equalTo(@0);
@@ -89,19 +89,13 @@
     NSString *pageNow = [NSString stringWithFormat:@"%ld",(long)page];
     NSDictionary *dic = @{
                           @"pageNum":pageNow,
-                          @"pageOffset":@"1"
+                          @"pageOffset":@"10"
                           };
     [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             accountNum = arrays[1];
-            pagess = arrays[2];
-            
-            if ([pagess integerValue] >= page) {
-               
-                [levelArr addObjectsFromArray:arrays[0]];
-            }else{
-                [self.tableView.mj_footer endRefreshingWithNoMoreData];
-            }
+            [levelArr addObjectsFromArray:arrays[0]];
+         
             
             [self.tableView reloadData];
         }
@@ -186,7 +180,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 226;
+        return 164;
     }else{
         return 55;
     }
@@ -223,17 +217,7 @@
     
 }
 
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-//{
-//    // 输出点击的view的类名
-//    NSLog(@"%@", NSStringFromClass([touch.view class]));
-//    
-//    // 若为UITableViewCellContentView（即点击了tableViewCell），则不截获Touch事件
-//    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
-//        return NO;
-//    }
-//    return  YES;
-//}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

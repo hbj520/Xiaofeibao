@@ -27,6 +27,6 @@
 
 @interface AccountArrayModel : JSONModel
 @property (nonatomic,strong) NSString *balance;
-@property (nonatomic,strong) NSString *pages;
+
 @property (nonatomic,strong) NSArray<AccountModel>* list;
 @end

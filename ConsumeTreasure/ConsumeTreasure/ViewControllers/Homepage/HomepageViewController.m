@@ -187,7 +187,6 @@
         if (TuiJianArr.count > 0 || addArr.count > 0) {
             [TuiJianArr removeAllObjects];
             [addArr removeAllObjects];
-            
         }
         [weakSelf loadIncomeAndAddsData];
     }];
@@ -259,6 +258,7 @@
     
     [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
+            [HotStoreArr removeAllObjects];
             [HotStoreArr addObjectsFromArray:arrays];
             [self.tableView reloadData];
         }
@@ -354,7 +354,7 @@
     }else if (section == 1){
         return 3;
     }else{
-        return 10;
+        return HotStoreArr.count;
     }
 }
 
