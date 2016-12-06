@@ -134,9 +134,6 @@
         }];
         
     });
-    
-    
-    
 }
 
 - (void)viewDidLayoutSubviews{
@@ -198,7 +195,9 @@
             storeDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreDetailTableViewCell" owner:self options:nil] lastObject];
         }
         
-
+        storeDetailCell.colleBlock =^(BOOL select){
+            
+        };
         storeDetailCell.deModel = _deModel;
         storeDetailCell.selectionStyle = 0;
         return storeDetailCell;

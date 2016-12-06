@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "StoreDetailModel.h"
+
+typedef void (^collectBlock)(BOOL selected);
+
 @interface StoreDetailTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *storeNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
@@ -22,5 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *collectBtn;
 
+@property (nonatomic,copy) collectBlock colleBlock;
 
 @end

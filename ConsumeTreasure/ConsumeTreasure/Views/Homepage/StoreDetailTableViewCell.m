@@ -28,7 +28,9 @@
 
 - (IBAction)collectClick:(UIButton*)button {
     button.selected = !button.selected;
-    
+    if (self.colleBlock) {
+        self.colleBlock(button.selected);
+    }
 }
 
 
