@@ -9,7 +9,7 @@
 #import <JSONModel/JSONModel.h>
 
 @interface AreaModel : JSONModel
-@property (nonatomic,copy) NSString *cityid;
-@property (nonatomic,copy) NSString *id;
+@property (nonatomic,copy) NSString<Optional> *cityid;
+@property (nonatomic,copy) NSString *memid;
 @property (nonatomic,copy) NSString *name;
 @end

@@ -69,7 +69,12 @@ UICollectionViewDataSource>
 */
 #pragma mark - PrivateMethod
 - (void)loadData{
-  
+  //市下辖区县
+    [[MyAPI sharedAPI] unionShopAreaWithParameters:@{@"cityCode":@""} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 - (void)postNotificationWithIndexpath:(NSIndexPath *)indexPath{
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];

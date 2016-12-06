@@ -50,6 +50,7 @@
 - (void)saveOrderNum:(NSString *)ordernum;//保存订单号
 - (void)saveIsWifi:(NSString *)iswifi;
 - (void)savePhoneNum:(NSString *)phoneNum;
+- (void)saveCityCode:(NSString *)cityCode;//保存城市citycode
 - (NSString *)getTeminate;//
 - (NSString *)getUserId;       //获取用户id
 - (NSString *)getUserName;     //获取用户名
@@ -64,6 +65,7 @@
 - (NSString *)getGesturePassword;//获取手势密码
 - (NSString *)getOrderNum; //获取订单号
 - (NSString *)getIsWifi;//是否可在wifi下观看视频
+- (NSString *)getCityCode;
 - (void)logout;               //退出登录
 - (void)deleteTeminate;
 
