@@ -17,6 +17,11 @@ UITableViewDelegate,
 UITableViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDataSource>
+{
+    NSMutableArray * regionArray;
+    NSMutableArray *classTypeArray;
+    NSMutableArray *sortRuleArray;
+}
 - (IBAction)backBtn:(id)sender;
 - (IBAction)backTitleBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backTitleBtn;
@@ -70,7 +75,17 @@ UICollectionViewDataSource>
 #pragma mark - PrivateMethod
 - (void)loadData{
   //市下辖区县
-    [[MyAPI sharedAPI] unionShopAreaWithParameters:@{@"cityCode":@""} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    [[MyAPI sharedAPI] unionShopAreaWithParameters:@{@"cityCode":@"127"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            regionArray = [NSMutableArray arrayWithArray:arrays];
+        }else{
+            regionArray = [NSMutableArray arrayWithObject:@"不限"];
+        }
+    } errorResult:^(NSError *enginerError) {
+        [self showHint:@"城市县区出错"];
+    }];
+    //分类
+    [[MyAPI sharedAPI] unionCategoryListWithParameters:@{} result:^(BOOL success, NSString *msg, NSArray *arrays) {
         
     } errorResult:^(NSError *enginerError) {
         
@@ -89,9 +104,9 @@ UICollectionViewDataSource>
     
     self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"自定义"]];
     
-    NSArray * regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
-    NSArray *classTypeArray=@[@"水果",@"火锅",@"生鲜",@"小吃",@"糕点"];
-    NSArray *sortRuleArray=@[@"距离",@"价格",@"评分",@"最新",@"最热"];
+     regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
+    classTypeArray=@[@"水果",@"火锅",@"生鲜",@"小吃",@"糕点"];
+    sortRuleArray=@[@"距离",@"价格",@"评分",@"最新",@"最热"];
     
     self.menu.menuDataArray = [NSMutableArray arrayWithObjects:regionArray, classTypeArray , sortRuleArray, nil];
     
