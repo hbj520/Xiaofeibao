@@ -114,21 +114,23 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LW8-kb-GVe">
-                        <rect key="frame" x="319" y="5" width="30" height="29"/>
+                        <rect key="frame" x="324" y="10" width="20" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="YO5-Sb-Lzh"/>
+                            <constraint firstAttribute="width" constant="20" id="YO5-Sb-Lzh"/>
+                            <constraint firstAttribute="height" constant="22" id="epc-Gc-4mC"/>
                         </constraints>
-                        <state key="normal" image="x_720"/>
+                        <connections>
+                            <action selector="collectClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4xx-ZJ-5KQ"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="LW8-kb-GVe" secondAttribute="trailing" constant="26" id="0Zk-WW-fNQ"/>
+                    <constraint firstAttribute="trailing" secondItem="LW8-kb-GVe" secondAttribute="trailing" constant="31" id="0Zk-WW-fNQ"/>
                     <constraint firstAttribute="bottom" secondItem="h0g-D8-bzR" secondAttribute="bottom" id="2nO-SJ-3o2"/>
-                    <constraint firstItem="LW8-kb-GVe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="6yf-BZ-P6b"/>
+                    <constraint firstItem="LW8-kb-GVe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4UX-r3-02i"/>
                     <constraint firstAttribute="trailing" secondItem="jwV-nX-eDW" secondAttribute="trailing" constant="10" id="8E0-vf-Llx"/>
                     <constraint firstItem="OOG-6H-d8u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="FHd-HP-3ot"/>
                     <constraint firstItem="fyd-7K-Lfd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ic5-fK-hKC"/>
-                    <constraint firstItem="jwV-nX-eDW" firstAttribute="top" secondItem="LW8-kb-GVe" secondAttribute="bottom" constant="5" id="Qwy-3K-iRO"/>
                     <constraint firstAttribute="trailing" secondItem="h0g-D8-bzR" secondAttribute="trailing" id="Uxr-al-QE3"/>
                     <constraint firstItem="h0g-D8-bzR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VSl-ro-g8H"/>
                     <constraint firstItem="jwV-nX-eDW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Vxl-nH-KSf"/>
@@ -142,6 +144,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="adresssLab" destination="U1I-tp-fWj" id="2GE-30-cAj"/>
+                <outlet property="collectBtn" destination="LW8-kb-GVe" id="jnT-Nj-68V"/>
                 <outlet property="distanceLab" destination="OOG-6H-d8u" id="nwD-VP-wmf"/>
                 <outlet property="phoneBtn" destination="Nkb-k0-Umg" id="Yxp-gg-aX7"/>
                 <outlet property="storeNameLab" destination="wg8-My-Rjt" id="TmR-5D-x4P"/>
@@ -153,6 +156,5 @@
         <image name="dw" width="19" height="29"/>
         <image name="dw_s" width="24" height="31"/>
         <image name="tel" width="36" height="46"/>
-        <image name="x_720" width="20" height="18"/>
     </resources>
 </document>

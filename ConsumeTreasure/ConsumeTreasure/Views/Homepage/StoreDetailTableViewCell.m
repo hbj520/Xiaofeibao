@@ -13,6 +13,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_720"] forState:UIControlStateNormal];
+    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_on_720"] forState:UIControlStateSelected];
 }
 
 - (void)setDeModel:(StoreDetailModel *)deModel{
@@ -22,6 +25,14 @@
         self.phNum = deModel.branchPhone;
     }
 }
+
+- (IBAction)collectClick:(UIButton*)button {
+    button.selected = !button.selected;
+    
+}
+
+
+
 
 - (IBAction)phoneClick:(id)sender {
     

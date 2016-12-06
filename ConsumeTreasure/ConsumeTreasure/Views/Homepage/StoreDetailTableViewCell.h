@@ -20,4 +20,7 @@
 
 @property (nonatomic,strong) NSString *phNum;
 
+@property (weak, nonatomic) IBOutlet UIButton *collectBtn;
+
+
 @end
