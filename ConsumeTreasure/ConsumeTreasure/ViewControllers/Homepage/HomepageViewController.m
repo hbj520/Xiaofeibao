@@ -174,6 +174,7 @@
                 
                 [_locService stopUserLocationService];
             }
+            //AppDelegate.
         }
     }];
 }
