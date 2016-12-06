@@ -68,7 +68,7 @@
 }
 - (IBAction)goApply:(id)sender {
     
-    [self performSegueWithIdentifier:@"ApplySegue" sender:listArr];
+       [self performSegueWithIdentifier:@"ApplySegue" sender:listArr];
 }
 
 

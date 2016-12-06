@@ -195,7 +195,7 @@
 
 
 - (IBAction)accountRegisterBtn:(id)sender {
-    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length < 11 && self.self.registerPasswordTextfield.text.length < 6 ) {
+    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.self.registerPasswordTextfield.text.length >= 6 ) {
         [[MyAPI sharedAPI] registerUserWithParameters:@{
                                                         @"loginName":self.registerPhoneTextField.text,
                                                         @"password":self.registerPasswordTextfield.text,
@@ -208,8 +208,9 @@
                                                                 [self.view bringSubviewToFront:self.loginView];
                                                                 
                                                                 [Tools hideKeyBoard];
+                                                                [self showHint:msg];
                                                             }else{
-                                                                
+                                                                [self showHint:msg];
                                                             }
                                                             
                                                         } errorResult:^(NSError *enginerError) {
