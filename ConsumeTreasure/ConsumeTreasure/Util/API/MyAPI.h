@@ -102,6 +102,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)NoEvalueteListWithPara:(NSDictionary *)para
                         result:(ArrayBlock)result
                    errorResult:(ErrorBlock)errorResult;
-
+#pragma mark -店铺关注
+- (void)attentionShopWithParameters:(NSDictionary *)para
+                             result:(ArrayBlock )result
+                        errorResult:(ErrorBlock)errorResult;
 
 @end

@@ -27,6 +27,7 @@
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
+		AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB678B341DF650D200902C52 /* CollectShopListModel.m */; };
 		AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */; };
 		AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */; };
 		AB6FBA621DB4B05100C682F8 /* NoticeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */; };
@@ -295,6 +296,8 @@
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
 		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
+		AB678B331DF650D200902C52 /* CollectShopListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectShopListModel.h; sourceTree = "<group>"; };
+		AB678B341DF650D200902C52 /* CollectShopListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectShopListModel.m; sourceTree = "<group>"; };
 		AB6FBA551DB4A00100C682F8 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
 		AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewController.m; sourceTree = "<group>"; };
 		AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
@@ -1304,6 +1307,8 @@
 				ABFEA4A11DEC12540002672F /* FormData.m */,
 				AB10A8251DF122BD0042586A /* EvaluateListModel.h */,
 				AB10A8261DF122BD0042586A /* EvaluateListModel.m */,
+				AB678B331DF650D200902C52 /* CollectShopListModel.h */,
+				AB678B341DF650D200902C52 /* CollectShopListModel.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1902,6 +1907,7 @@
 				D120549D1DED57FC00EB2707 /* ValuePickerView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
+				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
 				D16BF2B31DEFF15B001A82BF /* JFCityTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
