@@ -188,6 +188,23 @@
     }
 }
 
+- (void)collectTheStoreOrNotWithType:(NSString *)type{
+    
+}
+
+//收藏与否
+- (void)collectOrNotWith:(BOOL)selec{
+    if (KToken) {
+        if (selec == NO) {
+            //去收藏
+        }else{
+            //取消收藏
+        }
+    }else{
+        //未登录
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         StoreDetailTableViewCell *storeDetailCell = [tableView dequeueReusableCellWithIdentifier:@"storeDetailId"];
@@ -195,8 +212,9 @@
             storeDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreDetailTableViewCell" owner:self options:nil] lastObject];
         }
         
+        //收藏按钮
         storeDetailCell.colleBlock =^(BOOL select){
-            
+            [self collectOrNotWith:select];
         };
         storeDetailCell.deModel = _deModel;
         storeDetailCell.selectionStyle = 0;
