@@ -17,5 +17,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong,nonatomic) UIStoryboard *mStorybord;
+@property (strong,nonatomic) UINavigationController *navVC;
 @end
 

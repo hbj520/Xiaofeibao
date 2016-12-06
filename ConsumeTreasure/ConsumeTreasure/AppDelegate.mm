@@ -68,9 +68,18 @@
     HomepageViewController *homeVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"homePageSB"];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homeVC];
     */
-    self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+ 
+    if (KToken) {
+        self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homVC];
+        homVC.navigationController.navigationBarHidden = YES;
+
+    }else{
+        self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+            self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+    }
     
 }
 #pragma mark -WeixinDelegate

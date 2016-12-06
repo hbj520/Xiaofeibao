@@ -15,6 +15,7 @@
 {
     NSTimer *timer;
     NSInteger time;
+    UIButton *circleSelectBtn;
 }
 @property (weak, nonatomic) IBOutlet UITextField *loginPhoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *loginPhonePassWordTextfild;
@@ -78,7 +79,7 @@
 */
 #pragma mark - PrivateMethod
 - (void)addAgreeBtn{
-  UIButton *circleSelectBtn =  [self.registerView viewWithTag:16];
+  circleSelectBtn =  [self.registerView viewWithTag:16];
     [circleSelectBtn addTarget:self action:@selector(circleBtnAct:) forControlEvents:UIControlEventTouchUpInside];
     
 }
@@ -161,7 +162,7 @@
 }
 
 - (IBAction)accountLoginBtn:(id)sender {
-    [self changeTohom];
+    //[self changeTohom];
     [self showHudInView:self.view hint:@"登录..."];
     [[MyAPI sharedAPI] loginWithParameters:@{
                                              @"loginName": self.loginPhoneNumTextField.text,
@@ -190,17 +191,26 @@
 
 
 - (IBAction)accountRegisterBtn:(id)sender {
-    [[MyAPI sharedAPI] registerUserWithParameters:@{
-        @"loginName":self.registerPhoneTextField.text,
-        @"password":self.registerPasswordTextfield.text,
-        @"validatecode":self.registerVerifyCodeTextfield.text,
-        @"invitecode":self.registerInviteCodeTextfileld.text
-    } result:^(BOOL sucess, NSString *msg) {
-       
-        
-    } errorResult:^(NSError *enginerError) {
-        
-    }];
+    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length < 11 && self.self.registerPasswordTextfield.text.length < 6 ) {
+        [[MyAPI sharedAPI] registerUserWithParameters:@{
+                                                        @"loginName":self.registerPhoneTextField.text,
+                                                        @"password":self.registerPasswordTextfield.text,
+                                                        @"validatecode":self.registerVerifyCodeTextfield.text,
+                                                        @"invitecode":self.registerInviteCodeTextfileld.text
+                                                        } result:^(BOOL sucess, NSString *msg) {
+                                                            if (sucess) {
+                                                                
+                                                            }else{
+                                                                
+                                                            }
+                                                            
+                                                        } errorResult:^(NSError *enginerError) {
+                                                            
+                                                        }];
+
+    }else{
+        [self showHint:@"请填写正确的账号，验证码，密码"];
+    }
 }
 
 - (IBAction)forgetPassword:(id)sender {

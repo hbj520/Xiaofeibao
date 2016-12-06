@@ -93,8 +93,11 @@
                               @"param":para
                               };
     [self.manager POST:@"sms/sendRegisterMessage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *message = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
-            NSLog(@"验证码发送成功");
+            result(YES,message);
+        }else{
+            result(NO,message);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"验证码发送出错");
