@@ -135,11 +135,15 @@
         [[MyAPI sharedAPI] postVerifyCodeWithParameters:@{@"phone": self.registerPhoneTextField.text,
                                                           @"type": @"0"
                                                           } result:^(BOOL sucess, NSString *msg) {
-            
+                                                              if (sucess) {
+                                                                  [self showHint:msg];
+                                                              }else{
+                                                                  [self showHint:msg];
+                                                              }
                                                               
         } errorResult:^(NSError *enginerError) {
             
-            
+            [self showHint:@"验证码注册出错"];
         }];
     [self setTimeSchedu];
     }
@@ -199,7 +203,11 @@
                                                         @"invitecode":self.registerInviteCodeTextfileld.text
                                                         } result:^(BOOL sucess, NSString *msg) {
                                                             if (sucess) {
+                                                                self.registerArrow.hidden = YES;
+                                                                self.loginArrow.hidden = NO;
+                                                                [self.view bringSubviewToFront:self.loginView];
                                                                 
+                                                                [Tools hideKeyBoard];
                                                             }else{
                                                                 
                                                             }
