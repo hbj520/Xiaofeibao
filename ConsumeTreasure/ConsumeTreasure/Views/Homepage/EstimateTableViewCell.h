@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "starView.h"
+
+#import "CommentModel.h"
+
 @interface EstimateTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *estimateImage;
 @property (weak, nonatomic) IBOutlet UILabel *estimateName;
@@ -16,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *estimateContent;
 
 
-@property (nonatomic,strong) NSArray *estiArr;
+@property (nonatomic,strong) CommentModel *commModel;
 
 @end

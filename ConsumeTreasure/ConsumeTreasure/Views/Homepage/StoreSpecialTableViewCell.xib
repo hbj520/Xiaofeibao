@@ -26,25 +26,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="担任男子SPA经典套餐，免预约" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dut-P8-kCm">
-                        <rect key="frame" x="94" y="12" width="226" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="Nn4-tq-hva"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <rect key="frame" x="94" y="12" width="231" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guN-X1-Pen">
-                        <rect key="frame" x="94" y="56" width="11" height="13"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="13" id="jBh-Mb-AbV"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.1803921568627451" green="0.69019607843137254" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1338" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qg-YQ-tos">
-                        <rect key="frame" x="108" y="54" width="42" height="16"/>
+                        <rect key="frame" x="97" y="57" width="42" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="cSH-mc-JoP"/>
                         </constraints>
@@ -54,14 +42,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3Qg-YQ-tos" firstAttribute="bottom" secondItem="guN-X1-Pen" secondAttribute="bottom" constant="1" id="9vq-qL-zPA"/>
                     <constraint firstItem="dut-P8-kCm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Ctq-JO-sBc"/>
-                    <constraint firstItem="3Qg-YQ-tos" firstAttribute="leading" secondItem="guN-X1-Pen" secondAttribute="trailing" constant="3" id="ELi-J2-CAL"/>
                     <constraint firstItem="dut-P8-kCm" firstAttribute="leading" secondItem="Trr-83-sGG" secondAttribute="trailing" constant="10" id="O4I-lh-PTK"/>
                     <constraint firstItem="Trr-83-sGG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PN9-t5-Z49"/>
-                    <constraint firstAttribute="bottom" secondItem="guN-X1-Pen" secondAttribute="bottom" constant="13" id="Y1T-gM-R0y"/>
                     <constraint firstItem="Trr-83-sGG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="g4H-zp-k5s"/>
-                    <constraint firstItem="guN-X1-Pen" firstAttribute="leading" secondItem="Trr-83-sGG" secondAttribute="trailing" constant="10" id="zkU-vD-ze9"/>
+                    <constraint firstAttribute="bottom" secondItem="3Qg-YQ-tos" secondAttribute="bottom" constant="9" id="owq-Hg-omz"/>
+                    <constraint firstAttribute="trailing" secondItem="dut-P8-kCm" secondAttribute="trailing" constant="50" id="qUf-25-XaQ"/>
+                    <constraint firstItem="3Qg-YQ-tos" firstAttribute="leading" secondItem="Trr-83-sGG" secondAttribute="trailing" constant="13" id="weB-hv-7Ua"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

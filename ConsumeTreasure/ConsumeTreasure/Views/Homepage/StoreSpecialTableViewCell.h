@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SpecialGoodModel.h"
 
 @interface StoreSpecialTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *specialImage;
@@ -14,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *specialPrice;
 
 
-@property (nonatomic,strong) NSArray *speArr;
+@property (nonatomic,strong) SpecialGoodModel *speModel;
 
 @end

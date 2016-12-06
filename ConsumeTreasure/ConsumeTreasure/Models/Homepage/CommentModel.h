@@ -17,6 +17,8 @@
 @property (nonatomic,strong) NSString *content;
 @property (nonatomic,strong) NSString *createdate;
 @property (nonatomic,strong) NSString *membername;
+@property (nonatomic,strong) NSString *totalScore;
+@property (nonatomic,strong) NSString <Optional>*imgUrl;
 
 @end
 

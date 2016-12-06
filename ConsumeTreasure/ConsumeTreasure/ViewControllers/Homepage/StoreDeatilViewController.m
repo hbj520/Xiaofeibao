@@ -105,8 +105,14 @@
         
     }];
     
+    
+    NSDictionary *commentDic = @{
+                                 @"memid":memid,
+                                 @"pageNum":@"1",
+                                 @"pageOffest":@"2"
+                                 };
     //评价
-    [[MyAPI sharedAPI] getCommentsWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    [[MyAPI sharedAPI] getCommentsWithParameters:commentDic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             [_commetsArr addObjectsFromArray:arrays];
             [self.tableView reloadData];
@@ -163,7 +169,7 @@
     }else if (section == 2){
         return _spacialGoodArr.count;
     }else if (section == 3){
-        return 2;
+        return _commetsArr.count;
     }
     else{
         return 1;
@@ -199,7 +205,10 @@
      if (specialCell == nil) {
          specialCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreSpecialTableViewCell" owner:self options:nil] lastObject];
      }
-     specialCell.speArr = _spacialGoodArr;
+     
+     if (_spacialGoodArr.count > 0) {
+         specialCell.speModel = _spacialGoodArr[indexPath.row];
+     }
      specialCell.selectionStyle = 0;
      return specialCell;
  }else if (indexPath.section == 3){
@@ -207,7 +216,9 @@
      if (estimateCell == nil) {
          estimateCell = [[[NSBundle mainBundle] loadNibNamed:@"EstimateTableViewCell" owner:self options:nil] lastObject];
      }
-     estimateCell.estiArr = _commetsArr;
+     if (_commetsArr.count > 0) {
+          estimateCell.commModel = _commetsArr[indexPath.row];
+     }
      estimateCell.selectionStyle = 0;
      return estimateCell;
  }else{
@@ -258,6 +269,11 @@
         }else if(section == 3){
             listHead.listTitle.text = @"评价";
             listHead.listHeadImage.image = [UIImage imageNamed:@"pj_1080"];
+            
+            if (_commetsArr.count == 0) {
+                listHead.zanwuLab.hidden = NO;
+                listHead.zanwuLab.text = @"暂无评价";
+            }
         }
       //  listHead.backgroundView = [[UIImageView alloc]init];
         listHead.contentView.backgroundColor = [UIColor whiteColor];
@@ -277,12 +293,15 @@
     // return [UIView new];
    
     if (section == 3) {
-        BottomFootView *footView = [[[NSBundle mainBundle]loadNibNamed:@"BottomFootView" owner:self options:nil]lastObject];
-        if (_commetsArr.count == 0) {
-            footView.moreOrNoneLab.text = @"暂无评论";
+     
+        if (_commetsArr.count > 0) {
+               BottomFootView *footView = [[[NSBundle mainBundle]loadNibNamed:@"BottomFootView" owner:self options:nil]lastObject];
+            return footView;
+        }else{
+            return nil;
         }
         
-        return footView;
+        
     }else{
     
     
@@ -309,7 +328,13 @@
     if (section == 0 || section == 1 ||section == 2 ) {
         return 15;
     }else{
-        return 44;
+        
+        if (_commetsArr.count > 0) {
+            return 44;
+        }else{
+            return 0;
+        }
+        
     }
 }
 

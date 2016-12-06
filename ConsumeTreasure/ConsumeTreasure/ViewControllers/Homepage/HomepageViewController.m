@@ -55,6 +55,8 @@
     NSMutableArray *charArr;//走势图
     NSMutableArray *TuiJianArr;
     NSMutableArray *HotStoreArr;//热门商家
+    
+    HomeStoreModel *Smodel;
 }
 
 @end
@@ -524,9 +526,12 @@
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
       
-        HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
+        if (HotStoreArr.count > 0) {
+            Smodel = [HotStoreArr objectAtIndex:indexPath.row];
+        }
         
-        [self pushToNextWithIdentiField:@"detailSegue" sender:model];
+        
+        [self pushToNextWithIdentiField:@"detailSegue" sender:Smodel];
     
         
     }
