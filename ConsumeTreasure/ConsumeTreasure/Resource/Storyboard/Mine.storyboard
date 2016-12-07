@@ -480,7 +480,14 @@
                             <outlet property="delegate" destination="JHO-44-kLY" id="y3o-LK-mZS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="账户信息" id="ZNq-TG-cGX"/>
+                    <navigationItem key="navigationItem" title="账户信息" id="ZNq-TG-cGX">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="b9s-Oz-6v0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="JHO-44-kLY" id="X90-HI-c9Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86A-Zc-eKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -584,7 +591,14 @@
                             <outlet property="delegate" destination="IB6-nr-uyV" id="cpQ-Qq-Oht"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="设置" id="pKy-uW-P6e"/>
+                    <navigationItem key="navigationItem" title="设置" id="pKy-uW-P6e">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="AXx-Xi-Sl2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="IB6-nr-uyV" id="8rz-kW-n4N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XD-Mx-97l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
