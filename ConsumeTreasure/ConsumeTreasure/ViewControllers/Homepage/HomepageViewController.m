@@ -147,7 +147,10 @@
     NSLog(@"当前的坐标是:%f,%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     longitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
     latitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
-    
+   // ApplicationDelegate
+    ApplicationDelegate.latitude = latitudeStr;
+    ApplicationDelegate.longitude = longitudeStr;
+ 
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation: userLocation.location completionHandler:^(NSArray *array, NSError *error) {
         if (array.count > 0) {
@@ -174,7 +177,6 @@
                 
                 [_locService stopUserLocationService];
             }
-            //AppDelegate.
         }
     }];
 }

@@ -11,6 +11,7 @@
 #import "HotStoreTableViewCell.h"
 #import "AdDetailViewController.h"
 #import "JPullDownMenu.h"
+#import "AppDelegate.h"
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -95,7 +96,7 @@ UICollectionViewDataSource>
         [self showHint:@"分类出错"];
     }];
     //商家列表
-    //[self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate longitude:<#(NSString *)#> pageNum:<#(NSString *)#> pageOffset:<#(NSString *)#>]
+    [self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"0" pageOffset:@"10"];
 }
 //查询商家列表
 - (void)searchShopListWithSorting:(NSString *)sorting
