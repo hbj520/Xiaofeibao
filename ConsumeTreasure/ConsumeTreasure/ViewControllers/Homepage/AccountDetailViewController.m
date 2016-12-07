@@ -9,7 +9,9 @@
 #import "AccountDetailViewController.h"
 
 @interface AccountDetailViewController ()
-
+{
+    AccountModel *_aModel;
+}
 @end
 
 @implementation AccountDetailViewController
@@ -17,19 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.shopNameLab.text = self.shopNameLab2.text = _aModel.shopName;
+    if ([_aModel.type isEqualToString:@"0"]) {
+        self.accountChangeLab.text = [NSString stringWithFormat:@"- %@",_aModel.goldnum];
+    }else{
+        self.accountChangeLab.text = [NSString stringWithFormat:@"+ %@",_aModel.goldnum];
+    }
+    self.actionTimeLab.text = [Tools dealtimeStr:_aModel.createdate];
+    self.accountDescripTextView.text = _aModel.account_description;
 }
 
 - (void)setModel:(AccountModel *)model{
     
     NSLog(@"😝%@😉",model);
-    self.shopNameLab.text = self.shopNameLab2.text = model.shopName;
-    if ([model.type isEqualToString:@"0"]) {
-        self.accountChangeLab.text = [NSString stringWithFormat:@"- %@",model.goldnum];
-    }else{
-        self.accountChangeLab.text = [NSString stringWithFormat:@"+ %@",model.goldnum];
-    }
-    self.actionTimeLab.text = [Tools dealtimeStr:model.createdate];
-    self.accountDescripTextView.text = model.account_description;
+    _aModel = model;
 }
 
 

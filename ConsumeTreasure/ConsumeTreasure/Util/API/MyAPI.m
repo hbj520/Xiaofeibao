@@ -258,7 +258,7 @@
                                 result:(ArrayBlock)result
                            errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
@@ -289,7 +289,7 @@
                                  result:(ArrayBlock)result
                             errorResult:(ErrorBlock)errorResult{
     NSDictionary * dicPara = @{
-                               @"tokenid":@"f2c70e32b68b4a618215b9834ca3f28c",
+                               @"tokenid":KToken,
                                @"platform":@"1",
                                @"param":para
                                };
@@ -328,7 +328,7 @@
                                result:(ArrayBlock)result
                           errorResult:(ErrorBlock)errorReult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
@@ -361,7 +361,7 @@
                                      result:(ArrayBlock)result
                                 errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"tokenid":KToken,
                               @"platform":@"0",
                               @"param":para
                               };
@@ -432,7 +432,7 @@
                                   result:(ArrayBlock)result
                              errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"",
                               @"param":para
                               };
@@ -457,7 +457,7 @@
                            result:(ArrayBlock)result
                       errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"",
                               @"param":para
                               };
@@ -485,7 +485,7 @@
                                   result:(ModelBlock)result
                              errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
-                            @"tokenid":@"422fc8ca35e545e09c50adc245caf739",
+                            @"tokenid":KToken,
                               @"platform":@"0",
                               @"param":para
                               };

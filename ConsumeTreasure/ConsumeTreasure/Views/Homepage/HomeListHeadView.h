@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeListHeadView : UITableViewHeaderFooterView
+@property (weak, nonatomic) IBOutlet UIImageView *titleImg;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+
+@property (weak, nonatomic) IBOutlet UILabel *moreLab;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImg;
 
 @end

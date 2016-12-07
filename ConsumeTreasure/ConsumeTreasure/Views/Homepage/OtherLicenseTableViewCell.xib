@@ -29,7 +29,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zb-hP-jpR">
                         <rect key="frame" x="32" y="38" width="311" height="131.5"/>
-                        <state key="normal" image="yyzz_1080"/>
+                        <state key="normal" image="upload_yyzz_1080"/>
                         <connections>
                             <action selector="otherClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0cc-5J-R7l"/>
                         </connections>
@@ -51,6 +51,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="yyzz_1080" width="902" height="450"/>
+        <image name="upload_yyzz_1080" width="903" height="362"/>
     </resources>
 </document>

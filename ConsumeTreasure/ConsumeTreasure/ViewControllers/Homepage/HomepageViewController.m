@@ -213,7 +213,7 @@
         
         [self endRefresh];
     } errorResult:^(NSError *enginerError) {
-         [self endRefresh];
+        [self endRefresh];
     }];
     
     /*
@@ -355,7 +355,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1){
-        return 3;
+        return 4;
     }else{
         return HotStoreArr.count;
     }
@@ -375,9 +375,9 @@
             [self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
         };
         firstCell.storeBlock = ^{//商户入口
-          //[self pushToNextWithIdentiField:@"beStoreSegue"];
+          [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
             
-            [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
+          // [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
                   };
         
         
@@ -403,35 +403,7 @@
 
     }else if (indexPath.section == 1){//第二个section
         
-        if (indexPath.row == 1) {
-            ChangeRecStoreTableViewCell *chartCell = [tableView dequeueReusableCellWithIdentifier:@"changeStoreId"];
-            if (chartCell == nil) {
-                chartCell = [[[NSBundle mainBundle] loadNibNamed:@"ChangeRecStoreTableViewCell" owner:self options:nil] lastObject];
-            }
-           // chartCell.rateArr = charArr;
-            chartCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, chartCell.bounds.size.width);
-         
-           chartCell.storeArray = TuiJianArr;
-           
-        
-            
-            chartCell.oneBlock = ^{//****************************
-                 [self pushToNextWithIdentiField:@"detailSegue" sender:nil];
-            };
-            
-            
-            chartCell.selectionStyle = 0;
-            return chartCell;
-        }else if (indexPath.row == 0){
-            ChangeRecommendTableViewCell *bforeChartCell = [tableView dequeueReusableCellWithIdentifier:@"recomandId"];
-            if (bforeChartCell == nil) {
-                bforeChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ChangeRecommendTableViewCell" owner:self options:nil] lastObject];
-            }
-    
-            bforeChartCell.selectionStyle = 0;
-            return bforeChartCell;
-        }
-        else{
+        if (indexPath.row == 3) {
             ImageTableViewCell *imageChartCell = [tableView dequeueReusableCellWithIdentifier:@"chartImageCellId"];
             if (imageChartCell == nil) {
                 imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
@@ -446,6 +418,23 @@
             
             
             return imageChartCell;
+        
+        }else{
+         
+            HotStoreTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:@"hotStoreCellId"];
+            if (hotCell == nil) {
+                hotCell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
+            }
+            if (HotStoreArr.count > 0) {
+                HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
+                hotCell.storeModel = model;
+            }
+            
+            hotCell.selectionStyle = 0;
+            return hotCell;
+
+            
+            
         }
     }else{
         HotStoreTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:@"hotStoreCellId"];
@@ -468,13 +457,7 @@
         
         return 170;
     }else if (indexPath.section == 1) {
-        if (indexPath.row == 1) {
-            return 190;
-        }else if (indexPath.row == 0){
-            return 40;
-        }else{
-            return 80;
-        }
+       return 125;
     }
     else{
         return 125;
@@ -483,10 +466,20 @@
 
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    
+    
     if (section == 1) {
-        UIView *head1 = [[UIView alloc]init];
-        head1.backgroundColor = RGBACOLOR(234, 235, 236, 1);
-        return head1;
+        HomeListHeadView *HotHeadView = [[[NSBundle mainBundle]loadNibNamed:@"HomeListHeadView" owner:self options:nil]lastObject];
+        HotHeadView.titleImg.image = [UIImage imageNamed:@"crown_1080"];
+        HotHeadView.titleLab.textColor = [UIColor orangeColor];
+        HotHeadView.titleLab.text = @"推荐商家";
+        HotHeadView.moreLab.hidden = YES;
+        HotHeadView.backgroundView = [[UIImageView alloc]init];
+        HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
+        
+        return HotHeadView;
+        
     }else if (section == 2){
         HomeListHeadView *HotHeadView = [[[NSBundle mainBundle]loadNibNamed:@"HomeListHeadView" owner:self options:nil]lastObject];
       
@@ -504,20 +497,38 @@
          */
         return nil;
     }
+
 }
+
+    
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
       
         return 0;
     }else if (section == 1 ){
-        return 22;
+        return 41;
     }else{
         return 41;
     }
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        UIView *head1 = [[UIView alloc]init];
+        head1.backgroundColor = RGBACOLOR(234, 235, 236, 1);
+        return head1;
+    }else{
+        return nil;
+    }
+ 
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 1;
+    if (section == 0) {
+        return 10;
+    }else{
+        return 0.01;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
