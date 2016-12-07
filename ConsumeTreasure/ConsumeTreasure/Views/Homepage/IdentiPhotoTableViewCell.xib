@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identiPhotoId" id="KGk-i7-Jjw" customClass="IdentiPhotoTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传您的身份证照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcz-f6-m2C">
@@ -43,22 +43,43 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="CSg-Bk-VHd"/>
                             <constraint firstAttribute="width" constant="70" id="HGe-GL-fxm"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="xd4-A7-PX9"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="zhV-JW-xin"/>
                         </constraints>
                         <state key="normal" title="Button" image="upload_sfz"/>
                         <connections>
                             <action selector="twoClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mlA-TN-Hu1"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证正面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3U-uA-TeD">
+                        <rect key="frame" x="32" y="114" width="61.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Oii-lx-jU3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证反面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzk-1C-QeG">
+                        <rect key="frame" x="116" y="114" width="61.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="PMa-zB-Js7"/>
+                            <constraint firstAttribute="height" constant="15" id="n5I-Ne-eCb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="fzk-1C-QeG" firstAttribute="top" secondItem="lsc-9B-4q8" secondAttribute="bottom" constant="5" id="AKN-h6-cYu"/>
+                    <constraint firstItem="fzk-1C-QeG" firstAttribute="leading" secondItem="lsc-9B-4q8" secondAttribute="leading" id="E4g-mF-2Z8"/>
                     <constraint firstItem="lsc-9B-4q8" firstAttribute="leading" secondItem="gx2-vy-nUY" secondAttribute="trailing" constant="14" id="Sh5-7o-6jF"/>
                     <constraint firstItem="rcz-f6-m2C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="Y67-kQ-3Gf"/>
                     <constraint firstItem="lsc-9B-4q8" firstAttribute="bottom" secondItem="gx2-vy-nUY" secondAttribute="bottom" id="ZQe-vh-JqB"/>
+                    <constraint firstItem="i3U-uA-TeD" firstAttribute="top" secondItem="gx2-vy-nUY" secondAttribute="bottom" constant="5" id="cLE-6c-p1W"/>
                     <constraint firstItem="rcz-f6-m2C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="dp8-L3-3eR"/>
                     <constraint firstItem="gx2-vy-nUY" firstAttribute="top" secondItem="rcz-f6-m2C" secondAttribute="bottom" constant="11" id="jqH-jP-bHE"/>
                     <constraint firstItem="gx2-vy-nUY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="keg-9E-bYx"/>
+                    <constraint firstItem="i3U-uA-TeD" firstAttribute="leading" secondItem="gx2-vy-nUY" secondAttribute="leading" id="s0b-NP-RgQ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

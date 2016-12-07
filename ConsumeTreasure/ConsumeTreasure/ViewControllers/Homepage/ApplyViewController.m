@@ -144,7 +144,7 @@
     if (indexPath.section == 0) {
         return 178;
     }else if (indexPath.section == 1){
-        return 124;
+        return 138;
     }else{
         return 185;
     }
