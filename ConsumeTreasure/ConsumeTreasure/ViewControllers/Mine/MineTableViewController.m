@@ -115,12 +115,17 @@
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
             [self.navigationController pushViewController:lookVC animated:YES];
         }
-    }else if (indexPath.section == 2 && indexPath.row == 0){
-        
-        self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-        ApplyViewController *applyVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"applySTId"];
-        //  [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
-        [self.navigationController pushViewController:applyVC animated:YES];
+    }else if (indexPath.section == 2 ){
+        if (indexPath.row == 0) {
+            self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+            ApplyViewController *applyVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"applySTId"];
+            //  [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
+            [self.navigationController pushViewController:applyVC animated:YES];
+        }else if (indexPath.row == 3){
+             [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
+            
+        }
+      
 
 
     }

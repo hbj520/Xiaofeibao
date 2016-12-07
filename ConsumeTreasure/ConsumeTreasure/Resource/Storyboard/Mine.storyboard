@@ -102,7 +102,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ewm" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-NS-zjM">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ewm" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-NS-zjM">
                                                     <rect key="frame" x="311" y="22" width="27" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="PGf-Qb-BdI"/>
@@ -301,7 +301,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新手入门" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8m-kj-UIW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8m-kj-UIW">
                                                     <rect key="frame" x="22" y="14" width="90" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -325,9 +325,6 @@
                             <connections>
                                 <action selector="settingBtn:" destination="ljk-sg-vjd" id="rhS-wu-gZH"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="message" id="5FG-JV-baj">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -483,7 +480,14 @@
                             <outlet property="delegate" destination="JHO-44-kLY" id="y3o-LK-mZS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="账户信息" id="ZNq-TG-cGX"/>
+                    <navigationItem key="navigationItem" title="账户信息" id="ZNq-TG-cGX">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="b9s-Oz-6v0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="JHO-44-kLY" id="X90-HI-c9Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86A-Zc-eKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -587,7 +591,14 @@
                             <outlet property="delegate" destination="IB6-nr-uyV" id="cpQ-Qq-Oht"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="设置" id="pKy-uW-P6e"/>
+                    <navigationItem key="navigationItem" title="设置" id="pKy-uW-P6e">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="AXx-Xi-Sl2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="IB6-nr-uyV" id="8rz-kW-n4N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XD-Mx-97l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -716,7 +727,6 @@
         <image name="ewm" width="52" height="52"/>
         <image name="jt" width="20" height="35"/>
         <image name="lljl" width="42" height="43"/>
-        <image name="message" width="31" height="26"/>
         <image name="setUp" width="20" height="18"/>
         <image name="tx" width="124" height="125"/>
     </resources>

@@ -79,7 +79,7 @@
     }else{
         self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
-            self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
     }
     
 }

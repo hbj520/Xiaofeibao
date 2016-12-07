@@ -8,8 +8,10 @@
 
 #import "SettingTableViewController.h"
 #import "LoginAndRegisterViewController.h"
+#import "AppDelegate.h"
 
 @interface SettingTableViewController ()
+- (IBAction)backBtn:(id)sender;
 
 @end
 
@@ -24,7 +26,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationItem.hidesBackButton = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -61,7 +66,14 @@
        UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
         loginAndRegisterVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+       // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
         [self presentModalViewController:loginAndRegisterVC animated:YES];
+        
+        [ApplicationDelegate.window.rootViewController removeFromParentViewController];
+        for (UIView *vc in ApplicationDelegate.window.subviews) {
+            [vc removeFromSuperview];
+        }
+         ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
     }
 }
 /*
@@ -118,4 +130,8 @@
 }
 */
 
+- (IBAction)backBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
 @end
