@@ -19,6 +19,7 @@
 @interface MineTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
+- (IBAction)settingBtn:(id)sender;
 
 @end
 
@@ -42,7 +43,7 @@
    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:10.65];
     //tongbaoMoneyView.money = @"10.65";
     [self.moneyView addSubview: tongbaoMoneyView];
-    
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -95,6 +96,9 @@
        return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:@"userInfoSegueId" sender:nil];
+    }
     if (indexPath.section == 1 ) {
         if (indexPath.row == 1) {
             [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
@@ -106,8 +110,7 @@
             } errorResult:^(NSError *enginerError) {
                 
             }];
-        }
-        else if (indexPath.row == 3){
+        }else if (indexPath.row == 3){
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
             [self.navigationController pushViewController:lookVC animated:YES];
@@ -224,4 +227,7 @@
 }
 */
 
+- (IBAction)settingBtn:(id)sender {
+    [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
+}
 @end
