@@ -37,7 +37,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     [self loadData];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     
 }
 

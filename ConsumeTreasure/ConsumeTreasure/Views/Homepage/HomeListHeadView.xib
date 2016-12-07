@@ -62,6 +62,12 @@
                 <constraint firstItem="4bs-kd-VQb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yzD-YQ-sQy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowImg" destination="bWY-pk-5XK" id="HQE-oC-1r7"/>
+                <outlet property="moreLab" destination="4bs-kd-VQb" id="UQy-np-GIF"/>
+                <outlet property="titleImg" destination="paP-PA-I9O" id="KSf-h5-Q1B"/>
+                <outlet property="titleLab" destination="d05-3O-ok0" id="9TS-Pe-wKq"/>
+            </connections>
             <point key="canvasLocation" x="152" y="-67"/>
         </view>
     </objects>
