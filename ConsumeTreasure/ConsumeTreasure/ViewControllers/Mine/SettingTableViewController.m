@@ -62,6 +62,7 @@
         LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
         loginAndRegisterVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         [self presentModalViewController:loginAndRegisterVC animated:YES];
+        
     }
 }
 /*
