@@ -881,14 +881,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dpgl" translatesAutoresizingMaskIntoConstraints="NO" id="AGu-89-eN6">
-                                        <rect key="frame" x="35" y="17" width="55" height="50"/>
+                                        <rect key="frame" x="37.5" y="17" width="50" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Fkz-bK-DC6"/>
-                                            <constraint firstAttribute="width" constant="55" id="jOq-af-miq"/>
+                                            <constraint firstAttribute="height" constant="45" id="Fkz-bK-DC6"/>
+                                            <constraint firstAttribute="width" constant="50" id="jOq-af-miq"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="店铺管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL3-p7-Paa">
-                                        <rect key="frame" x="35" y="75" width="54" height="16"/>
+                                        <rect key="frame" x="35" y="70" width="54" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="fDL-7x-Urv"/>
                                         </constraints>
@@ -923,7 +923,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGG-s7-01J">
-                                        <rect key="frame" x="36" y="75" width="54" height="16"/>
+                                        <rect key="frame" x="36" y="70" width="54" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="aHH-j7-ESq"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="le9-GG-w7P"/>
@@ -933,12 +933,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ddgl" translatesAutoresizingMaskIntoConstraints="NO" id="vJw-NA-FMZ">
-                                        <rect key="frame" x="35" y="17" width="55" height="50"/>
+                                        <rect key="frame" x="40" y="17" width="45" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="2Vx-pa-Mps"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="4RR-iW-8Xb"/>
-                                            <constraint firstAttribute="height" constant="50" id="V76-y1-d9R"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="rq1-Oc-t3v"/>
+                                            <constraint firstAttribute="width" constant="45" id="2Vx-pa-Mps"/>
+                                            <constraint firstAttribute="height" constant="45" id="V76-y1-d9R"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -967,10 +965,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="syt" translatesAutoresizingMaskIntoConstraints="NO" id="de8-AI-kQb">
-                                        <rect key="frame" x="35" y="17" width="55" height="50"/>
+                                        <rect key="frame" x="37.5" y="17" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WCy-Zv-tbR"/>
-                                            <constraint firstAttribute="width" constant="55" id="gjD-Yr-bZ1"/>
+                                            <constraint firstAttribute="width" constant="50" id="gjD-Yr-bZ1"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -1008,7 +1006,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的会员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwM-yY-qMZ">
-                                        <rect key="frame" x="36" y="75" width="54" height="16"/>
+                                        <rect key="frame" x="36" y="70" width="54" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="XEr-4q-6Ki"/>
                                             <constraint firstAttribute="height" constant="16" id="wsE-El-kYi"/>
@@ -1017,11 +1015,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wssj" translatesAutoresizingMaskIntoConstraints="NO" id="3vg-RE-NIy">
-                                        <rect key="frame" x="35" y="17" width="55" height="50"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wdhy" translatesAutoresizingMaskIntoConstraints="NO" id="3vg-RE-NIy">
+                                        <rect key="frame" x="37.5" y="17" width="50" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="KNh-c4-eeY"/>
-                                            <constraint firstAttribute="width" constant="55" id="kMX-OY-Sry"/>
+                                            <constraint firstAttribute="height" constant="45" id="KNh-c4-eeY"/>
+                                            <constraint firstAttribute="width" constant="50" id="kMX-OY-Sry"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -1378,16 +1376,16 @@
     <resources>
         <image name="applyMoney" width="138" height="33"/>
         <image name="backWhite" width="11" height="19"/>
-        <image name="ddgl" width="71" height="65"/>
-        <image name="dpgl" width="71" height="65"/>
+        <image name="ddgl" width="30" height="31"/>
+        <image name="dpgl" width="35" height="31"/>
         <image name="dq_720" width="29" height="29"/>
         <image name="ljyy_720" width="216" height="84"/>
         <image name="lo" width="146" height="146"/>
         <image name="location" width="35" height="46"/>
         <image name="shouye_sq" width="532" height="91"/>
-        <image name="syt" width="71" height="65"/>
+        <image name="syt" width="32" height="32"/>
+        <image name="wdhy" width="35" height="31"/>
         <image name="whiteback" width="10" height="17"/>
-        <image name="wssj" width="71" height="65"/>
         <image name="万商联盟" width="548" height="745"/>
     </resources>
     <inferredMetricsTieBreakers>
