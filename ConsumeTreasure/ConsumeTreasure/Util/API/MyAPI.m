@@ -528,7 +528,7 @@
                               };
     [self.manager POST:@"welcome/getDistrictlist" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
-            NSArray *data = responseObject[@"data"][@"districtList"];
+            NSArray *data = responseObject[@"data"][@"districts"];
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *err = nil;
             for (NSDictionary *dic in data) {
@@ -555,7 +555,7 @@
                         errorResult:(ErrorBlock)errorResult{
     [self.manager POST:@"shop/getCategory" parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"1"]){
-            NSArray *data = responseObject[@"data"][@"categoryList"];
+            NSArray *data = responseObject[@"data"][@"categorys"];
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *err = nil;
             for (NSDictionary *dic in data) {
