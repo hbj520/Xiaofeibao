@@ -277,7 +277,7 @@ static XFBConfig * instance = nil;
 - (NSString *)getMoney
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"money"];
+    return [settings stringForKey:@"balance"];
 }
 
 - (NSString *)getUcoin

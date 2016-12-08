@@ -40,7 +40,7 @@
     NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = attributeDict;
     self.navigationItem.title = navTitle;
-   TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:10.65];
+   TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     //tongbaoMoneyView.money = @"10.65";
     [self.moneyView addSubview: tongbaoMoneyView];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
