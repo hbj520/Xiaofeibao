@@ -7,6 +7,7 @@
 //
 
 #import "UserInfoTableViewController.h"
+#import "ModfyNickNameViewController.h"
 
 @interface UserInfoTableViewController ()
 - (IBAction)backBtn:(id)sender;
@@ -23,6 +24,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //添加通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -36,15 +40,76 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+//#warning Incomplete implementation, return the number of sections
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+//#warning Incomplete implementation, return the number of rows
+    if (section == 0) {
+        return 2;
+    }else if (section == 1){
+        return 4;
+    }else if (section == 2){
+        return 2;
+    }
     return 0;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 15.;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            UILabel *userNameLabel = [cell viewWithTag:10];
+            [self performSegueWithIdentifier:@"fixNameSegueId" sender:@[@"用户名",userNameLabel.text]];
+        }
+    }else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            UILabel *phoneLabel = [cell viewWithTag:10];
+            [self performSegueWithIdentifier:@"fixNameSegueId" sender:@[@"手机号",phoneLabel.text]];
+        }
+    }else if (indexPath.section == 2){
+        if (indexPath.row == 0) {
+            [self performSegueWithIdentifier:@"resetPasswordSegueId" sender:@"登录密码"];
+        }else if (indexPath.row == 1){
+            [self performSegueWithIdentifier:@"resetPasswordSegueId" sender:@"支付密码"];
+        }
+    }
+}
+#pragma mark - SegueDelegate
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"fixNameSegueId"]) {//修改用户名
+        NSArray *senderArray = (NSArray *)sender;
+        ModfyNickNameViewController *modifyVC = (ModfyNickNameViewController *)segue.destinationViewController;
+        modifyVC.title = senderArray[0];
+        modifyVC.textfieldContent = senderArray[1];
+    }
+    
+}
+#pragma mark -PrivateMethod
+- (void)recieveNotice:(NSNotification *)sender{
+    NSDictionary *noti = sender.userInfo;
+    NSArray *keys = [noti allKeys];
+    NSString *key = keys[0];
+    NSString *content = noti[key];
+   
+    if ([key isEqualToString:@"nickname"]) {
+        NSIndexPath *indexPath =[NSIndexPath indexPathForRow:1 inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        UILabel *nicknameLabel = [cell viewWithTag:10];
+        nicknameLabel.text = content;
+    }else if ([key isEqualToString:@"phoneNum"]){
+        NSIndexPath *indexPath =[NSIndexPath indexPathForRow:0 inSection:1];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        UILabel *phoneLabel = [cell viewWithTag:10];
+        phoneLabel.text = content;
+        
+    }
+    
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
@@ -101,5 +166,8 @@
 
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"returnnick" object:nil];
 }
 @end

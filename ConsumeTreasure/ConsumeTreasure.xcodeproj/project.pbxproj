@@ -16,6 +16,8 @@
 		AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */; };
 		AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */; };
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
+		AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */; };
+		AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
@@ -276,6 +278,10 @@
 		AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreEvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB05ABAE1DD599A300208DB9 /* AreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaModel.h; sourceTree = "<group>"; };
 		AB05ABAF1DD599A300208DB9 /* AreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaModel.m; sourceTree = "<group>"; };
+		AB06A97E1DF8FF74006F67C2 /* ModfyNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModfyNickNameViewController.h; sourceTree = "<group>"; };
+		AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModfyNickNameViewController.m; sourceTree = "<group>"; };
+		AB06A9811DF92C63006F67C2 /* ModifyPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPwdViewController.h; sourceTree = "<group>"; };
+		AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPwdViewController.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -1015,6 +1021,10 @@
 				ABF5BEE91DF7E97A00D19DFB /* SettingTableViewController.m */,
 				ABF5BEEB1DF7EFF100D19DFB /* UserInfoTableViewController.h */,
 				ABF5BEEC1DF7EFF100D19DFB /* UserInfoTableViewController.m */,
+				AB06A97E1DF8FF74006F67C2 /* ModfyNickNameViewController.h */,
+				AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */,
+				AB06A9811DF92C63006F67C2 /* ModifyPwdViewController.h */,
+				AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1899,6 +1909,7 @@
 				D15B3AF91DDC0E5E009122FE /* DataSigner.m in Sources */,
 				D16BF2C41DF01C10001A82BF /* LocationTableViewCell.m in Sources */,
 				AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */,
+				AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
@@ -1918,6 +1929,7 @@
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
 				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
+				AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
 				D16BF2B31DEFF15B001A82BF /* JFCityTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
