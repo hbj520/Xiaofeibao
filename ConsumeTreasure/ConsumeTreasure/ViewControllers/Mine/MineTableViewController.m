@@ -43,7 +43,7 @@
    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     //tongbaoMoneyView.money = @"10.65";
     [self.moneyView addSubview: tongbaoMoneyView];
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    //self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
