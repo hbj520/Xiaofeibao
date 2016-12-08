@@ -24,6 +24,7 @@
 #import "BeforeChartTableViewCell.h"
 #import "ImageTableViewCell.h"
 #import "HotStoreTableViewCell.h"
+#import "TuiJianTableViewCell.h"
 #import "HomeListHeadView.h"
 
 #import "ChangeRecStoreTableViewCell.h"
@@ -80,7 +81,7 @@
     [self creatUI];
     [self addLocationGes];
     [self loadHotStoreData];
-
+     localStr = @"模拟定位";//后   需删除
 }
 
 
@@ -125,9 +126,9 @@
 }
 
 - (void)chooseLoca{
-    NSLog(@"选择位置");
+   
     
-    [self pushToNextWithIdentiField:@"chooseLocationSegue" sender:@"啦啦😋"];
+    [self pushToNextWithIdentiField:@"chooseLocationSegue" sender:localStr];
     /*
     JFCityViewController *cityViewController = [[JFCityViewController alloc] init];
     cityViewController.title = @"城市";
@@ -252,19 +253,15 @@
     } errorResult:^(NSError *enginerError) {
          [self endRefresh];
     }];
-    
 }
-
 
 - (void)loadHotStoreData{
   
     NSDictionary *para = @{
-                          
                            @"cityCode":@"127",//cityCode
                            @"latitude":@"31.74593",//latitudeStr
                            @"longitude":@"117.287537"//longitudeStr
                            };
-    
     [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             [HotStoreArr removeAllObjects];
@@ -277,7 +274,6 @@
     }];
    
 }
-
 
 - (void)startMap{
     _locService = [[BMKLocationService alloc]init];//定位功能的初始化
@@ -301,6 +297,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ChangeRecommendTableViewCell" bundle:nil] forCellReuseIdentifier:@"recomandId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"chartImageCellId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotStoreCellId"];
+     [self.tableView registerNib:[UINib nibWithNibName:@"TuiJianTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuijianCelleId"];
+    
 }
 
 #pragma mark - UIScrollviewDelegate
@@ -427,17 +425,17 @@
         
         }else{
          
-            HotStoreTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:@"hotStoreCellId"];
-            if (hotCell == nil) {
-                hotCell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
+            TuiJianTableViewCell *tuijianCell = [tableView dequeueReusableCellWithIdentifier:@"tuijianCelleId"];
+            if (tuijianCell == nil) {
+                tuijianCell = [[[NSBundle mainBundle] loadNibNamed:@"TuiJianTableViewCell" owner:self options:nil] lastObject];
             }
-            if (HotStoreArr.count > 0) {
-                HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
-                hotCell.storeModel = model;
-            }
+//            if (HotStoreArr.count > 0) {
+//                HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
+//                tuijianCell.storeModel = model;
+//            }
             
-            hotCell.selectionStyle = 0;
-            return hotCell;
+            tuijianCell.selectionStyle = 0;
+            return tuijianCell;
 
             
             
@@ -526,7 +524,6 @@
     }else{
         return nil;
     }
- 
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -600,10 +597,12 @@
         
         NSString *locaCity = (NSString*)sender;
         LocationViewController *locaVC = segue.destinationViewController;
-        [locaVC.caityNowBtn setTitle:locaCity forState:0];
-        locaVC.cityNowLab.text =  @"呵呵哒";
+        
+        locaVC.locaStr = locaCity;
         
         locaVC.locaBlock =^(NSString *str){
+            
+            localStr = str;
             self.locationCityName.text = str;
             
         };

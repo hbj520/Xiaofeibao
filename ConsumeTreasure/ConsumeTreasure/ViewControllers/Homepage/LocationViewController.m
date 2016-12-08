@@ -38,6 +38,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.cityNowLab.text = self.locaStr;
+    [self.caityNowBtn setTitle:self.locaStr forState:0];
+    
     self.tabBarController.tabBar.hidden = YES;
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self configTableView];
@@ -54,6 +58,17 @@
 - (void)setNavi{
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 }
+
+
+- (IBAction)locateClick:(id)sender {
+    
+    NSLog(@"😝%@",self.caityNowBtn.titleLabel.text);
+    if (self.locaBlock) {
+        self.locaBlock(self.caityNowBtn.titleLabel.text);
+    }
+    [self backTolastPage];
+}
+
 
 - (void)configTableView{
     
