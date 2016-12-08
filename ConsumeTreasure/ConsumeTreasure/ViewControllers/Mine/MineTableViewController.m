@@ -40,7 +40,7 @@
     NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = attributeDict;
     self.navigationItem.title = navTitle;
-   TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:10.65];
+   TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     //tongbaoMoneyView.money = @"10.65";
     [self.moneyView addSubview: tongbaoMoneyView];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
@@ -104,12 +104,8 @@
             [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
 
         }else if (indexPath.row == 2){
-            [[MyAPI sharedAPI] attentionShopWithParameters:@{ @"pageNum":@"1",
-                                                              @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
-                
-            } errorResult:^(NSError *enginerError) {
-                
-            }];
+            [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
+
         }else if (indexPath.row == 3){
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
