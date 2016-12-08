@@ -14,6 +14,7 @@ UITableViewDataSource>
 {
     NSMutableArray *dataSource;
 }
+- (IBAction)backBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -25,7 +26,10 @@ UITableViewDataSource>
     [self loadData];
     // Do any additional setup after loading the view.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationItem.hidesBackButton = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -42,6 +46,7 @@ UITableViewDataSource>
                                                       @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
                                                           if (success) {
                                                               dataSource = [NSMutableArray arrayWithArray:arrays];
+                                                              [self.tableView reloadData];
                                                           }
                                                       } errorResult:^(NSError *enginerError) {
                                                           
@@ -68,4 +73,7 @@ UITableViewDataSource>
 }
 */
 
+- (IBAction)backBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

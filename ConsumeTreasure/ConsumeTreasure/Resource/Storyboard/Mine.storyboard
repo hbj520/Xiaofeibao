@@ -859,7 +859,14 @@
                             <constraint firstAttribute="trailing" secondItem="EBZ-W4-4Yw" secondAttribute="trailing" id="gUM-aL-Yv4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YR1-Se-RkO"/>
+                    <navigationItem key="navigationItem" id="YR1-Se-RkO">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="Elm-TB-VV1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="hwq-nh-pG6" id="IDO-Ah-Tux"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="EBZ-W4-4Yw" id="qll-zW-gqM"/>
                     </connections>
