@@ -338,6 +338,7 @@
                         <segue destination="ba2-Ch-Pwq" kind="push" identifier="becomeShopUnionSegue" id="04q-KI-PEa"/>
                         <segue destination="JHO-44-kLY" kind="push" identifier="userInfoSegueId" id="BUL-pn-ERJ"/>
                         <segue destination="IB6-nr-uyV" kind="push" identifier="settingSegueId" id="PTj-M3-PhF"/>
+                        <segue destination="hwq-nh-pG6" kind="push" identifier="attentionShopSegueId" id="FXZ-bt-0JK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvE-S0-GFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxS-BI-48U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="688"/>
+            <point key="canvasLocation" x="-2" y="290"/>
         </scene>
         <!--账户信息-->
         <scene sceneID="XcT-g6-WBs">
@@ -832,6 +833,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TA-Ib-yno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5031" y="3151"/>
+        </scene>
+        <!--Attention Shop View Controller-->
+        <scene sceneID="SoB-vu-vXP">
+            <objects>
+                <viewController id="hwq-nh-pG6" customClass="AttentionShopViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sfU-gB-iq4"/>
+                        <viewControllerLayoutGuide type="bottom" id="uiR-Hs-EoZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dX6-PA-uzP">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EBZ-W4-4Yw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uiR-Hs-EoZ" firstAttribute="top" secondItem="EBZ-W4-4Yw" secondAttribute="bottom" id="33x-Je-WQY"/>
+                            <constraint firstItem="EBZ-W4-4Yw" firstAttribute="top" secondItem="sfU-gB-iq4" secondAttribute="bottom" id="7IL-jS-btb"/>
+                            <constraint firstItem="EBZ-W4-4Yw" firstAttribute="leading" secondItem="dX6-PA-uzP" secondAttribute="leading" id="Bgg-bT-5KX"/>
+                            <constraint firstAttribute="trailing" secondItem="EBZ-W4-4Yw" secondAttribute="trailing" id="gUM-aL-Yv4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YR1-Se-RkO"/>
+                    <connections>
+                        <outlet property="tableView" destination="EBZ-W4-4Yw" id="qll-zW-gqM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hiP-sE-itE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="951.27436281859082"/>
         </scene>
         <!--Modfy Nick Name View Controller-->
         <scene sceneID="HVQ-mA-blW">

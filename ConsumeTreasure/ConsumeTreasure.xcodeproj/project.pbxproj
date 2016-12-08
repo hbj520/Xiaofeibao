@@ -18,6 +18,9 @@
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
 		AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */; };
 		AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */; };
+		AB06A9891DF940D4006F67C2 /* AttentionShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A9881DF940D4006F67C2 /* AttentionShopViewController.m */; };
+		AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A98B1DF949B1006F67C2 /* AttentionShopTableViewCell.m */; };
+		AB06A98E1DF949B1006F67C2 /* AttentionShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
@@ -282,6 +285,11 @@
 		AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModfyNickNameViewController.m; sourceTree = "<group>"; };
 		AB06A9811DF92C63006F67C2 /* ModifyPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyPwdViewController.h; sourceTree = "<group>"; };
 		AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyPwdViewController.m; sourceTree = "<group>"; };
+		AB06A9871DF940D4006F67C2 /* AttentionShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionShopViewController.h; sourceTree = "<group>"; };
+		AB06A9881DF940D4006F67C2 /* AttentionShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionShopViewController.m; sourceTree = "<group>"; };
+		AB06A98A1DF949B1006F67C2 /* AttentionShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionShopTableViewCell.h; sourceTree = "<group>"; };
+		AB06A98B1DF949B1006F67C2 /* AttentionShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionShopTableViewCell.m; sourceTree = "<group>"; };
+		AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttentionShopTableViewCell.xib; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -1025,6 +1033,8 @@
 				AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */,
 				AB06A9811DF92C63006F67C2 /* ModifyPwdViewController.h */,
 				AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */,
+				AB06A9871DF940D4006F67C2 /* AttentionShopViewController.h */,
+				AB06A9881DF940D4006F67C2 /* AttentionShopViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1173,6 +1183,9 @@
 				AB0149A31DE7D69D0068067B /* ZanTableViewCell.h */,
 				AB0149A41DE7D69D0068067B /* ZanTableViewCell.m */,
 				AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */,
+				AB06A98A1DF949B1006F67C2 /* AttentionShopTableViewCell.h */,
+				AB06A98B1DF949B1006F67C2 /* AttentionShopTableViewCell.m */,
+				AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1817,6 +1830,7 @@
 				D16BF2CA1DF106DC001A82BF /* JPullDown.bundle in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				D15B3A461DDAFB48009122FE /* DetailCountHeadView.xib in Resources */,
+				AB06A98E1DF949B1006F67C2 /* AttentionShopTableViewCell.xib in Resources */,
 				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
 				D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */,
 				AB0149A71DE7D69D0068067B /* ZanTableViewCell.xib in Resources */,
@@ -1938,6 +1952,7 @@
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
 				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
+				AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
@@ -1958,6 +1973,7 @@
 				D16BF2B51DEFF15B001A82BF /* JFSearchView.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
 				D16BF2B11DEFF15B001A82BF /* JFCityCollectionViewCell.m in Sources */,
+				AB06A9891DF940D4006F67C2 /* AttentionShopViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
 				D15B39581DD40948009122FE /* StoreContentTableViewCell.m in Sources */,
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,

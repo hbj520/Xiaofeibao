@@ -104,12 +104,8 @@
             [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
 
         }else if (indexPath.row == 2){
-            [[MyAPI sharedAPI] attentionShopWithParameters:@{ @"pageNum":@"1",
-                                                              @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
-                
-            } errorResult:^(NSError *enginerError) {
-                
-            }];
+            [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
+
         }else if (indexPath.row == 3){
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
