@@ -81,7 +81,7 @@
     [self creatUI];
     [self addLocationGes];
     [self loadHotStoreData];
-     localStr = @"模拟定位";//后   需删除
+    // localStr = @"模拟定位";//后   需删除
 }
 
 
