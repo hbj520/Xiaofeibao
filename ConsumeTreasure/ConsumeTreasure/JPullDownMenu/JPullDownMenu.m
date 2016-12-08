@@ -17,7 +17,6 @@
 #define RGBHexAlpha(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
 
 #define KDefaultColor RGBHexAlpha(0xf04a34, 1)
-//RGBHexAlpha(0x189cfb, 1)
 
 #define KmaskBackGroundViewColor  [UIColor colorWithRed:40/255 green:40/255 blue:40/255 alpha:.2]
 #define kCellBgColor [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:.7]
@@ -83,23 +82,27 @@
     CGFloat width = Kscreen_width /self.titleArray.count;
     
     for (int index=0; index<self.titleArray.count; index++) {
-        
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(Kscreen_width/3 *(index +1)-1, 10, 1, KTitleButtonHeight/2)];
+        lineView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         UIButton *titleButton=[UIButton buttonWithType:UIButtonTypeCustom];
         
         titleButton.frame= CGRectMake((width+0.5) * index, 0, width-0.5, KTitleButtonHeight);
-        titleButton.backgroundColor =KDefaultColor;
+        titleButton.backgroundColor = [UIColor whiteColor];
+        titleButton.titleLabel.textColor = [UIColor lightGrayColor];
         [titleButton setTitle:self.titleArray[index] forState:UIControlStateNormal];
-        [titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [titleButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         titleButton.tag =KTitleButtonTag + index ;
         [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         titleButton.titleLabel.font = [UIFont systemFontOfSize:15];
-        [titleButton setTitleColor:[[UIColor blackColor]colorWithAlphaComponent:0.3] forState:UIControlStateSelected];
-        [titleButton setImage:[UIImage imageNamed:@"JPullDown.bundle/jiantou_up"] forState:UIControlStateNormal];
+        titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [titleButton setTitleColor:[[UIColor lightGrayColor]colorWithAlphaComponent:0.3] forState:UIControlStateSelected];
+        [titleButton setImage:[UIImage imageNamed:@"down_sj"] forState:UIControlStateNormal];
 
-        titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        titleButton.imageEdgeInsets = UIEdgeInsetsMake(4, 100, 0, 0);
         
         [self addSubview:titleButton];
         [self.buttonArray addObject:titleButton];
+        [self addSubview:lineView];
         
     }
     
