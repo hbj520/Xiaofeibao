@@ -81,7 +81,7 @@
     [self creatUI];
     [self addLocationGes];
     [self loadHotStoreData];
-    // localStr = @"模拟定位";//后   需删除
+     localStr = @"模拟定位";//后   需删除
 }
 
 
@@ -478,7 +478,6 @@
         HotHeadView.titleImg.image = [UIImage imageNamed:@"crown_1080"];
         HotHeadView.titleLab.textColor = [UIColor orangeColor];
         HotHeadView.titleLab.text = @"推荐商家";
-        HotHeadView.moreLab.hidden = YES;
         HotHeadView.backgroundView = [[UIImageView alloc]init];
         HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
         
