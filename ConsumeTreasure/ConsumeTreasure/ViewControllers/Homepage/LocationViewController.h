@@ -12,4 +12,10 @@ typedef void (^LocationBlock)(NSString *locaStr);
 
 @property (nonatomic,copy) LocationBlock locaBlock;
 
+@property (weak, nonatomic) IBOutlet UILabel *cityNowLab;
+@property (weak, nonatomic) IBOutlet UIButton *caityNowBtn;
+
+
+
+
 @end

@@ -36,6 +36,7 @@
 #import "HomeStoreModel.h"
 
 #import "JFCityViewController.h"
+#import "LocationViewController.h"
 
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
@@ -102,6 +103,9 @@
 {
     //self.navigationController.navigationBarHidden = NO;
     // [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+
+    
     [super viewWillDisappear:animated];
     [mapView viewWillDisappear];
     mapView.delegate = nil; // 不用时，置nil
@@ -123,7 +127,7 @@
 - (void)chooseLoca{
     NSLog(@"选择位置");
     
-    [self pushToNextWithIdentiField:@"chooseLocationSegue" sender:nil];
+    [self pushToNextWithIdentiField:@"chooseLocationSegue" sender:@"啦啦😋"];
     /*
     JFCityViewController *cityViewController = [[JFCityViewController alloc] init];
     cityViewController.title = @"城市";
@@ -587,9 +591,22 @@
         AdDetailViewController *adVC = segue.destinationViewController;
         adVC.admodel = model;
     }else if ([segue.identifier isEqualToString:@"detailSegue"]){
+       
         HomeStoreModel *model = (HomeStoreModel*)sender;
         StoreDeatilViewController *storeDetailVC = segue.destinationViewController;
         storeDetailVC.StoreModel = model;
+    
+    }else if ([segue.identifier isEqualToString:@"chooseLocationSegue"]){
+        
+        NSString *locaCity = (NSString*)sender;
+        LocationViewController *locaVC = segue.destinationViewController;
+        [locaVC.caityNowBtn setTitle:locaCity forState:0];
+        locaVC.cityNowLab.text =  @"呵呵哒";
+        
+        locaVC.locaBlock =^(NSString *str){
+            self.locationCityName.text = str;
+            
+        };
     }
 }
 
