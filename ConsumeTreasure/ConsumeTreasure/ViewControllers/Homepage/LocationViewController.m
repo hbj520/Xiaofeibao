@@ -46,7 +46,7 @@
     
     NSArray* array0 = @[@"爸爸",@"妈妈",@"哥哥",@"姐姐",@"妹妹",@"弟弟"];
     NSArray* array1 = @[@"张三",@"李四",@"王五"];
-    NSArray* array2 = @[@"江鑫",@"杨兴业",@"高震",@"曹冬冬"];
+    NSArray* array2 = @[@"艾克",@"光辉",@"aa",@"bb"];
     
     _dataArray = [[NSArray alloc] initWithObjects:array0,array1,array2, nil];
 }
@@ -88,22 +88,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     cell.rightImage.hidden = NO;
+    if (self.locaBlock) {
+        self.locaBlock(cell.cityName.text);
+    }
+    [self backTolastPage];
    
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    cell.rightImage.hidden = YES;
-}
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+//    LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//    cell.rightImage.hidden = YES;
+//}
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"locationCellId" forIndexPath:indexPath];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LocationTableViewCell" owner:self options:nil]lastObject];
-    
-        
     }
+    cell.cityName.text = _dataArray[indexPath.section][indexPath.row];
+    
     return cell;
 }
 
@@ -126,7 +130,7 @@
         [tableView reloadSections:[NSIndexSet indexSetWithIndex:section]
                  withRowAnimation:UITableViewRowAnimationFade];
     };
-    view.contentView.backgroundColor = [UIColor whiteColor];
+    view.contentView.backgroundColor = RGBACOLOR(230, 234, 235, 1);
     return view;
 }
 
