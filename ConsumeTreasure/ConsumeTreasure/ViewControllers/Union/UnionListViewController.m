@@ -9,6 +9,8 @@
 #import "UnionListViewController.h"
 #import "UnionTitleCollectionViewCell.h"
 #import "HotStoreTableViewCell.h"
+#import "TuiJianTableViewCell.h"
+#import "TuiJianModel.h"
 #import "AdDetailViewController.h"
 #import "JPullDownMenu.h"
 #import "AppDelegate.h"
@@ -76,7 +78,13 @@ UICollectionViewDataSource>
 */
 #pragma mark - PrivateMethod
 - (void)addMJRefresh{
-    
+    __weak typeof(self) weakSelf = self;
+    self.contentTabelView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (dataSource.count > 0 ) {
+            [dataSource removeAllObjects];
+        }
+        [weakSelf loadData];
+    }];
 }
 - (void)addNavBar{
     NSString *navTitle = @"联盟";
@@ -157,9 +165,10 @@ UICollectionViewDataSource>
                                                               [self addTopMenu];
                                                               [self.contentTabelView reloadData];
                                                           }
-                                                          
+                                                          [self.contentTabelView.mj_header endRefreshing];
                                                       } errorResult:^(NSError *enginerError) {
-                                                         
+                                                          [self.contentTabelView.mj_header endRefreshing];
+ 
                                                           
                                                       }];
 }
@@ -171,7 +180,7 @@ UICollectionViewDataSource>
     //tableview
     self.contentTabelView.delegate = self;
     self.contentTabelView.dataSource = self;
-    [self.contentTabelView registerNib:[UINib nibWithNibName:@"HotStoreTableViewCell" bundle:nil] forCellReuseIdentifier:@"tableViewContentReuseId"];
+    [self.contentTabelView registerNib:[UINib nibWithNibName:@"TuiJianTableViewCell" bundle:nil] forCellReuseIdentifier:tableViewContentReuseId];
     
     
    
@@ -246,16 +255,18 @@ UICollectionViewDataSource>
     return dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell;
-    if (tableView == self.contentTabelView) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"HotStoreTableViewCell" owner:self options:nil] lastObject];
-          cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    TuiJianTableViewCell *cell;
+    if (cell == nil) {
+          cell = [[[NSBundle mainBundle] loadNibNamed:@"TuiJianTableViewCell" owner:self options:nil] lastObject];
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:tableViewContentReuseId forIndexPath:indexPath];
+    }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        UnionContenModel *model = [dataSource objectAtIndex:indexPath.row];
+        [cell configWithData:model];
         return cell;
 
-    }
  
-    return nil;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.contentTabelView) {

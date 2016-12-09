@@ -30,6 +30,7 @@
 @interface arratModel : JSONModel
 
 @property (nonatomic,strong) NSArray<TuiJianModel>* memList;
+@property (nonatomic,strong) NSArray<TuiJianModel>* shoplist;
 
 
 @end
