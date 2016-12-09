@@ -17,6 +17,7 @@
 #import "ApplyViewController.h"
 
 @interface MineTableViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *usernamelabel;
 
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
 - (IBAction)settingBtn:(id)sender;
@@ -36,6 +37,7 @@
    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     navBarHairlineImageView.hidden = YES;
     NSString *navTitle = @"我";
+    self.usernamelabel.text = [[XFBConfig Instance] getUserName];
     // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
     NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = attributeDict;

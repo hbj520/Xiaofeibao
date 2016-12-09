@@ -236,7 +236,7 @@ static XFBConfig * instance = nil;
 - (NSString*)getUserName
 {
     NSUserDefaults * settings =[NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"username"];
+    return [settings stringForKey:@"loginName"];
 }
 
 - (NSString*)getPassword
