@@ -9,6 +9,7 @@
 //
 #import "UIAlertView+flash.h"
 #import "LoginAndRegisterViewController.h"
+#import "ForgetPasswordViewController.h"
 #import "HexColor.h"
 #import "NoticeHelper.h"
 
@@ -226,6 +227,8 @@
 
 - (IBAction)forgetPassword:(id)sender {
     //self.navigationController.navigationBarHidden = NO;
+//    ForgetPasswordViewController *forgetVC = [[ForgetPasswordViewController alloc] init];
+//    [self.navigationController pushViewController:forgetVC animated:YES];
     [self performSegueWithIdentifier:@"forgetPasswordSegue" sender:nil];
 }
 #pragma mark - UIViewDelegete

@@ -599,7 +599,7 @@
             for (NSDictionary *dic in dataDic[@"shoplist"]) {
                 UnionContenModel *model = [[UnionContenModel alloc] initWithDictionary:dic error:&error];
                 [modelArray addObject:model];
-
+                
             }
             result(YES,info,modelArray);
         }else{

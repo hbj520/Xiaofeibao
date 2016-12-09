@@ -26,7 +26,14 @@
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
     self.addressLab.text = tuiModel.addr2;
 }
-
+- (void)configWithData:(UnionContenModel *)data{
+    [self.storeImg sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    self.storeNameLa.text = data.shopName;
+    [self.starV configWithStarLevel:data.avgScore.floatValue];
+    self.pointLab.text = data.avgScore;
+    self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",data.distance.floatValue];
+    self.addressLab.text = data.addr2;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

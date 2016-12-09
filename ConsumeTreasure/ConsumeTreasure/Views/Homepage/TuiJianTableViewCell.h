@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UnionContenModel.h"
+#define tableViewContentReuseId @"tableviewReuseId"
 #import "starView.h"
 
 #import "TuiJianModel.h"
@@ -21,5 +23,6 @@
 
 
 @property (nonatomic,strong) TuiJianModel *tuiModel;
+- (void)configWithData:(UnionContenModel *)data;
 
 @end

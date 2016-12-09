@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIButton *postBtn;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+- (IBAction)mBackBtn:(id)sender;
 
 @end
 
@@ -35,7 +36,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = YES;
     self.navigationController.navigationItem.hidesBackButton = YES;
 }
 - (void)didReceiveMemoryWarning {
@@ -96,5 +97,8 @@
         [self.postBtn setTitle:[NSString stringWithFormat:@"%ld",time] forState:UIControlStateNormal];
         [self.postBtn setBackgroundColor:[UIColor whiteColor]];
     }
+}
+- (IBAction)mBackBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
