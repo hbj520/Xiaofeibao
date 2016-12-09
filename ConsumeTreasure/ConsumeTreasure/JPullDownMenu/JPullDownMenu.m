@@ -94,12 +94,12 @@
         titleButton.tag =KTitleButtonTag + index ;
         [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         titleButton.titleLabel.font = [UIFont systemFontOfSize:15];
-        titleButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleButton.titleLabel.textAlignment = NSTextAlignmentLeft;
         [titleButton setTitleColor:[[UIColor lightGrayColor]colorWithAlphaComponent:0.3] forState:UIControlStateSelected];
         [titleButton setImage:[UIImage imageNamed:@"down_sj"] forState:UIControlStateNormal];
 
-        titleButton.imageEdgeInsets = UIEdgeInsetsMake(4, 100, 0, 0);
-        
+        titleButton.imageEdgeInsets = UIEdgeInsetsMake(4, 80, 0, 0);
+        titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
         [self addSubview:titleButton];
         [self.buttonArray addObject:titleButton];
         [self addSubview:lineView];

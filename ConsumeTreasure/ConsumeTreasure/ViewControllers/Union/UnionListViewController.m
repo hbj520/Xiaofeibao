@@ -264,7 +264,7 @@ UICollectionViewDataSource>
     return 50;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 15.;
+    return 10.;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.titleTableView) {
@@ -274,6 +274,18 @@ UICollectionViewDataSource>
         UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
         AdDetailViewController *adVC = [storybord instantiateViewControllerWithIdentifier:@"detail"];
         [self.navigationController pushViewController:adVC animated:YES];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.contentTabelView)
+    {
+        CGFloat sectionHeaderHeight = 10.; //sectionHeaderHeight
+        if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
+            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+        } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
+            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+        }
     }
 }
 - (IBAction)backBtn:(id)sender {
