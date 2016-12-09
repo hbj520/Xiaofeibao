@@ -99,7 +99,7 @@
         [titleButton setImage:[UIImage imageNamed:@"down_sj"] forState:UIControlStateNormal];
 
         titleButton.imageEdgeInsets = UIEdgeInsetsMake(4, 80, 0, 0);
-        titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
         [self addSubview:titleButton];
         [self.buttonArray addObject:titleButton];
         [self addSubview:lineView];
