@@ -23,7 +23,7 @@
 
 #define KTableViewCellHeight 40
 
-#define KDisplayMaxCellOfNumber  5
+#define KDisplayMaxCellOfNumber  8
 
 #define KTitleButtonTag 1000
 

@@ -15,6 +15,7 @@
 #import "UnionContenModel.h"
 #import "UnionCategoryModel.h"
 #import "AreaModel.h"
+#import <MJRefresh/MJRefresh.h>
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -49,16 +50,11 @@ UICollectionViewDataSource>
     
     [self addNavBar];
     [self addCollectionViewAndTableView];
+    [self addMJRefresh];
     //[self postNotification];
    
 }
-- (void)addNavBar{
-    NSString *navTitle = @"联盟";
-    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
-    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
-    self.navigationItem.title = navTitle;
-}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
@@ -79,6 +75,16 @@ UICollectionViewDataSource>
 }
 */
 #pragma mark - PrivateMethod
+- (void)addMJRefresh{
+    
+}
+- (void)addNavBar{
+    NSString *navTitle = @"联盟";
+    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+    self.navigationItem.title = navTitle;
+}
 - (void)addTopMenu{
     self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"自定义"]];
     
