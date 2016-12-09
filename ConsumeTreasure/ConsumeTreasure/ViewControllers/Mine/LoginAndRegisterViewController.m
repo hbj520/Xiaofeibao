@@ -64,7 +64,6 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -168,7 +167,7 @@
 }
 
 - (IBAction)accountLoginBtn:(id)sender {
-    //[self changeTohom];
+    [Tools hideKeyBoard];
     [self showHudInView:self.view hint:@"登录..."];
     [[MyAPI sharedAPI] loginWithParameters:@{
                                              @"loginName": self.loginPhoneNumTextField.text,
@@ -197,6 +196,7 @@
 
 
 - (IBAction)accountRegisterBtn:(id)sender {
+    [Tools hideKeyBoard];
     if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.self.registerPasswordTextfield.text.length >= 6 ) {
         [[MyAPI sharedAPI] registerUserWithParameters:@{
                                                         @"loginName":self.registerPhoneTextField.text,
@@ -216,7 +216,7 @@
                                                             }
                                                             
                                                         } errorResult:^(NSError *enginerError) {
-                                                            
+                                                            [self showHint:@"注册出错"];
                                                         }];
 
     }else{
@@ -225,6 +225,7 @@
 }
 
 - (IBAction)forgetPassword:(id)sender {
+    //self.navigationController.navigationBarHidden = NO;
     [self performSegueWithIdentifier:@"forgetPasswordSegue" sender:nil];
 }
 #pragma mark - UIViewDelegete

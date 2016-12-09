@@ -69,8 +69,10 @@
        // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
         [self presentModalViewController:loginAndRegisterVC animated:YES];
         
-        [ApplicationDelegate.window.rootViewController removeFromParentViewController];
-        for (UIView *vc in ApplicationDelegate.window.subviews) {
+       // [ApplicationDelegate.window.rootViewController removeFromParentViewController];
+        for (UIView *vc in self.view.subviews) {
+            
+            
             [vc removeFromSuperview];
         }
          ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
@@ -129,7 +131,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (void)dealloc{
+    [self removeFromParentViewController];
+}
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 
