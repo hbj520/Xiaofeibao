@@ -59,6 +59,7 @@
     NSMutableArray *HotStoreArr;//热门商家
     
     HomeStoreModel *Smodel;
+    TuiJianModel *Tmodel;
 }
 
 @end
@@ -80,7 +81,7 @@
     [self startMap];
     [self creatUI];
     [self addLocationGes];
-    [self loadHotStoreData];
+    //[self loadHotStoreData];
      localStr = @"模拟定位";//后   需删除
 }
 
@@ -89,12 +90,10 @@
 {
     [super viewWillAppear:animated];
     
-    
-    
     [mapView viewWillAppear];
     mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     
-    [self loadHotStoreData];
+    [self loadHotStoreAndTuiJianStoreData];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
     
@@ -172,7 +171,10 @@
                 BMKOLSearchRecord* oneRecord = [records objectAtIndex:0];
                 //城市编码如:北京为131
                 int cityId = oneRecord.cityID;
+                
                 cityCode = [NSString stringWithFormat:@"%d",oneRecord.cityID];
+                ApplicationDelegate.cityCode = cityCode;//全局保存地理
+                
                 [[XFBConfig Instance] saveCityCode:cityCode];
                 if ([_offlineMap remove:cityId]) {
                  
@@ -180,7 +182,7 @@
                 }else{
                     
                 };
-                [self loadHotStoreData];//根据定位加载商家
+                [self loadHotStoreAndTuiJianStoreData];//根据定位加载商家
                 
                 [_locService stopUserLocationService];
             }
@@ -212,16 +214,7 @@
                            
                            };
     
-    [[MyAPI sharedAPI] getTuiJianStoreWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        if (success) {
-            [TuiJianArr addObjectsFromArray:arrays];
-            [self.tableView reloadData];
-        }
-        
-        [self endRefresh];
-    } errorResult:^(NSError *enginerError) {
-        [self endRefresh];
-    }];
+
     
     /*
     //走势图
@@ -241,6 +234,7 @@
          [self endRefresh];
     }];
     */
+    
     //广告位
     [[MyAPI sharedAPI] getHomeAddDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
@@ -255,12 +249,12 @@
     }];
 }
 
-- (void)loadHotStoreData{
+- (void)loadHotStoreAndTuiJianStoreData{
   
     NSDictionary *para = @{
-                           @"cityCode":@"127",//cityCode
-                           @"latitude":@"31.74593",//latitudeStr
-                           @"longitude":@"117.287537"//longitudeStr
+                           @"cityCode":ApplicationDelegate.cityCode,//cityCode
+                           @"latitude":ApplicationDelegate.latitude,//latitudeStr
+                           @"longitude":ApplicationDelegate.longitude//longitudeStr
                            };
     [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
@@ -273,6 +267,20 @@
         [self showHint:@"下载出错"];
     }];
    
+    //推荐
+    [[MyAPI sharedAPI] getTuiJianStoreWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [TuiJianArr removeAllObjects];
+            [TuiJianArr addObjectsFromArray:arrays];
+            [self.tableView reloadData];
+        }
+        
+        [self endRefresh];
+    } errorResult:^(NSError *enginerError) {
+        [self endRefresh];
+    }];
+    
+    
 }
 
 - (void)startMap{
@@ -429,10 +437,10 @@
             if (tuijianCell == nil) {
                 tuijianCell = [[[NSBundle mainBundle] loadNibNamed:@"TuiJianTableViewCell" owner:self options:nil] lastObject];
             }
-//            if (HotStoreArr.count > 0) {
-//                HomeStoreModel *model = [HotStoreArr objectAtIndex:indexPath.row];
-//                tuijianCell.storeModel = model;
-//            }
+            if (TuiJianArr.count > 0) {
+                TuiJianModel *model = [TuiJianArr objectAtIndex:indexPath.row];
+                tuijianCell.tuiModel = model;
+            }
             
             tuijianCell.selectionStyle = 0;
             return tuijianCell;
@@ -461,7 +469,12 @@
         
         return 170;
     }else if (indexPath.section == 1) {
-       return 125;
+        
+        if (indexPath.row == 3) {
+            return 145;
+        }else{
+            return 125;
+        }
     }
     else{
         return 125;
@@ -535,10 +548,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
+
+        if (indexPath.row != 3) {
             
-             //[self performSegueWithIdentifier:@"incomeSegue" sender:nil];
+            if (TuiJianArr.count > 0) {
+                Tmodel = [TuiJianArr objectAtIndex:indexPath.row];
+            }
+            
+            [self pushToNextWithIdentiField:@"detailSegue" sender:Tmodel];
+            
         }
+    
+    
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
       
@@ -588,7 +609,7 @@
         adVC.admodel = model;
     }else if ([segue.identifier isEqualToString:@"detailSegue"]){
        
-        HomeStoreModel *model = (HomeStoreModel*)sender;
+        TuiJianModel *model = (TuiJianModel*)sender;
         StoreDeatilViewController *storeDetailVC = segue.destinationViewController;
         storeDetailVC.StoreModel = model;
     

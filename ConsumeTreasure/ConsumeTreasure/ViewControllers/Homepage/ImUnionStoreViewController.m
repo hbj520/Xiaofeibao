@@ -36,9 +36,9 @@
     [[MyAPI sharedAPI] getStoreMasterDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
         
         StoreMmodel = object;
-        self.unionBalance.text = StoreMmodel.money;
-        self.dealNum.text = StoreMmodel.turnover;
-        
+        self.unionBalance.text = [NSString stringWithFormat:@"余额 : %@",StoreMmodel.money];
+        self.dealNumLab.text = StoreMmodel.total;
+        self.allIncomeLab.text = StoreMmodel.turnover;
         
     } errorResult:^(NSError *enginerError) {
         

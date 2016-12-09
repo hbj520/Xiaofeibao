@@ -81,7 +81,7 @@
     NSString *nowPage = [NSString stringWithFormat:@"%ld",(long)page];
     NSDictionary *para = @{
                            @"pageNum":nowPage,
-                           @"pageOffest":pageNum
+                           @"pageOffset":pageNum
                          };
     [[MyAPI sharedAPI] getLookRecordDataWithParaMeters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {

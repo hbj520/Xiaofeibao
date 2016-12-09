@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "starView.h"
+
+#import "TuiJianModel.h"
+
 @interface TuiJianTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *storeImg;
 @property (weak, nonatomic) IBOutlet UILabel *storeNameLa;
@@ -15,5 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointLab;
 @property (weak, nonatomic) IBOutlet UILabel *diatanceLab;
 @property (weak, nonatomic) IBOutlet starView *starV;
+
+
+@property (nonatomic,strong) TuiJianModel *tuiModel;
 
 @end

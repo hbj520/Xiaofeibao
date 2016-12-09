@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9G-nt-Ouv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="35"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dq_720" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-mT-oU7">
                                         <rect key="frame" x="12" y="7" width="20" height="20"/>
@@ -176,11 +176,11 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2aJ-IQ-ooD">
-                                <rect key="frame" x="0.0" y="193" width="375" height="430"/>
+                                <rect key="frame" x="0.0" y="149" width="375" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="han-KX-i2L">
-                                <rect key="frame" x="10" y="139" width="110" height="40"/>
+                                <rect key="frame" x="10" y="95" width="110" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="3PZ-wc-h2s"/>
@@ -200,7 +200,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定位城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bap-pB-fod">
-                                <rect key="frame" x="15" y="111" width="65.5" height="18"/>
+                                <rect key="frame" x="15" y="67" width="65.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="jGv-nc-3db"/>
                                 </constraints>
@@ -640,7 +640,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-Pt-HBe">
-                                <rect key="frame" x="47" y="537" width="281" height="48"/>
+                                <rect key="frame" x="47" y="493" width="281" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="dnW-6d-D3V"/>
                                 </constraints>
@@ -650,7 +650,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="万商联盟" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-0d-P8h">
-                                <rect key="frame" x="41.5" y="106" width="293" height="411"/>
+                                <rect key="frame" x="41.5" y="62" width="293" height="411"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -703,7 +703,7 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3uK-1g-zdS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="557"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="601"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -770,11 +770,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额：680.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-8W-gvW">
-                                        <rect key="frame" x="128" y="126" width="120" height="21"/>
+                                        <rect key="frame" x="118.5" y="126" width="139.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3QM-wQ-H1y"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1189,6 +1189,8 @@
                     <navigationItem key="navigationItem" id="Xxb-F2-WaC"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="allIncomeLab" destination="mJI-YJ-0Dy" id="BCr-A7-D20"/>
+                        <outlet property="dealNumLab" destination="0YT-k7-SgA" id="OWn-al-WYe"/>
                         <outlet property="unionBalance" destination="Rxr-8W-gvW" id="f1g-er-Oa2"/>
                     </connections>
                 </viewController>

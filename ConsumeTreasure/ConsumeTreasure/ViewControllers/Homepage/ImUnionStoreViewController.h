@@ -10,6 +10,8 @@
 
 @interface ImUnionStoreViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *unionBalance;
-@property (weak, nonatomic) IBOutlet UILabel *dealNum;
+
+@property (weak, nonatomic) IBOutlet UILabel *allIncomeLab;
+@property (weak, nonatomic) IBOutlet UILabel *dealNumLab;
 
 @end

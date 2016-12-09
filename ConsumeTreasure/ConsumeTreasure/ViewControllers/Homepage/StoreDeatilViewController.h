@@ -8,9 +8,11 @@
 
 #import "BaseViewController.h"
 #import "HomeStoreModel.h"
+
+#import "TuiJianModel.h"
 @interface StoreDeatilViewController : BaseViewController
 
 
-@property (nonatomic,strong) HomeStoreModel *StoreModel;
+@property (nonatomic,strong) TuiJianModel *StoreModel;
 
 @end

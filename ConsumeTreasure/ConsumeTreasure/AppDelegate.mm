@@ -68,8 +68,9 @@
     HomepageViewController *homeVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"homePageSB"];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homeVC];
     */
-    self.longitude = @"31.4450";
-    self.latitude = @"117.1650";
+    self.latitude = @"31.4450";
+    self.longitude = @"117.1650";
+    self.cityCode = @"127";
     if (KToken) {
         self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];

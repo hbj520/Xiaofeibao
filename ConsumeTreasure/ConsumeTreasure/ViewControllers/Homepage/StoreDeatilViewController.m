@@ -70,7 +70,8 @@
    // [self addRefresh];
 }
 
-- (void)setStoreModel:(HomeStoreModel *)StoreModel{
+
+- (void)setStoreModel:(TuiJianModel *)StoreModel{
     NSLog(@"😝%@😋",StoreModel);
     _keepMemId = StoreModel.memid;
     [self loadDataWithMemId:StoreModel.memid];
