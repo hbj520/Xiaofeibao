@@ -17,7 +17,9 @@
 @property (nonatomic,strong) NSString *shopName;
 @property (nonatomic,strong) NSString *doorImg;
 @property (nonatomic,strong) NSString *memid;
-
+@property (nonatomic,strong) NSString *avgScore;
+@property (nonatomic,strong) NSString *addr2;
+@property (nonatomic,strong) NSString *distance;
 
 
 
