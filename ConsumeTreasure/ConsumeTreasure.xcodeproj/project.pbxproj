@@ -146,6 +146,8 @@
 		D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFB41DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib */; };
 		D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFB81DE4166F0045FB2B /* AccountDetailViewController.m */; };
 		D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFBE1DE433180045FB2B /* TuiJianModel.m */; };
+		D15450FB1DF936D8002F4057 /* TuiJianTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15450F91DF936D8002F4057 /* TuiJianTableViewCell.m */; };
+		D15450FC1DF936D8002F4057 /* TuiJianTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15450FA1DF936D8002F4057 /* TuiJianTableViewCell.xib */; };
 		D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B39391DCB114F009122FE /* HomeStoreModel.m */; };
 		D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393C1DCC6E00009122FE /* StoreDeatilViewController.m */; };
 		D15B39401DCC72B1009122FE /* AddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B393F1DCC72B1009122FE /* AddModel.m */; };
@@ -506,6 +508,9 @@
 		D150DFB81DE4166F0045FB2B /* AccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailViewController.m; sourceTree = "<group>"; };
 		D150DFBD1DE433180045FB2B /* TuiJianModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuiJianModel.h; sourceTree = "<group>"; };
 		D150DFBE1DE433180045FB2B /* TuiJianModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuiJianModel.m; sourceTree = "<group>"; };
+		D15450F81DF936D8002F4057 /* TuiJianTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuiJianTableViewCell.h; sourceTree = "<group>"; };
+		D15450F91DF936D8002F4057 /* TuiJianTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuiJianTableViewCell.m; sourceTree = "<group>"; };
+		D15450FA1DF936D8002F4057 /* TuiJianTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TuiJianTableViewCell.xib; sourceTree = "<group>"; };
 		D15B39381DCB114F009122FE /* HomeStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeStoreModel.h; sourceTree = "<group>"; };
 		D15B39391DCB114F009122FE /* HomeStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeStoreModel.m; sourceTree = "<group>"; };
 		D15B393B1DCC6E00009122FE /* StoreDeatilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDeatilViewController.h; sourceTree = "<group>"; };
@@ -1082,6 +1087,9 @@
 				D170F26B1DAF2F6F00272E57 /* HotStoreTableViewCell.h */,
 				D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */,
 				D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */,
+				D15450F81DF936D8002F4057 /* TuiJianTableViewCell.h */,
+				D15450F91DF936D8002F4057 /* TuiJianTableViewCell.m */,
+				D15450FA1DF936D8002F4057 /* TuiJianTableViewCell.xib */,
 				D12165221DB4FF1A006B06FC /* PartnerTableViewCell.h */,
 				D12165231DB4FF1A006B06FC /* PartnerTableViewCell.m */,
 				D12165241DB4FF1A006B06FC /* PartnerTableViewCell.xib */,
@@ -1853,6 +1861,7 @@
 				AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
+				D15450FC1DF936D8002F4057 /* TuiJianTableViewCell.xib in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 				D16BF2B81DF001A7001A82BF /* shop_area.sqlite in Resources */,
 				D15B39591DD40948009122FE /* StoreContentTableViewCell.xib in Resources */,
@@ -1945,6 +1954,7 @@
 				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
 				AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
+				D15450FB1DF936D8002F4057 /* TuiJianTableViewCell.m in Sources */,
 				D16BF2B31DEFF15B001A82BF /* JFCityTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,

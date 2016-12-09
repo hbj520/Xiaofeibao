@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tuijianCelleId" id="KGk-i7-Jjw" customClass="TuiJianTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodImage" translatesAutoresizingMaskIntoConstraints="NO" id="oEg-ph-Zcd">
+                        <rect key="frame" x="10" y="12" width="112" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="ZZF-wr-Ge9"/>
+                            <constraint firstAttribute="width" constant="112" id="ZlG-cF-uYC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鼠王小炒肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoz-XK-342">
+                        <rect key="frame" x="134" y="25" width="87" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="Twe-Mg-UcI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合肥滨湖新区与天王路交叉口" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgb-De-mcX">
+                        <rect key="frame" x="134" y="56" width="213" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="UR1-4o-qbP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.57647058819999997" green="0.59215686270000001" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d" translatesAutoresizingMaskIntoConstraints="NO" id="rBR-Bd-8ow">
+                        <rect key="frame" x="293" y="83.5" width="15" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="VzC-7f-gXo"/>
+                            <constraint firstAttribute="height" constant="20" id="cmb-Et-2C3"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-PF-VhD" customClass="starView">
+                        <rect key="frame" x="134" y="86" width="90" height="15"/>
+                        <color key="backgroundColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="CMT-Tr-oCr"/>
+                            <constraint firstAttribute="height" constant="15" id="wdw-X7-aeQ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmc-mb-aBG">
+                        <rect key="frame" x="229" y="87" width="22" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="Dv3-et-UFv"/>
+                            <constraint firstAttribute="width" constant="22" id="qER-8P-KrF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;100米" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTU-Lx-veR">
+                        <rect key="frame" x="310" y="87" width="50" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="XGX-Gs-9jY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.57647058819999997" green="0.59215686270000001" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xoz-XK-342" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="60A-E1-a2x"/>
+                    <constraint firstItem="owZ-PF-VhD" firstAttribute="top" secondItem="Xgb-De-mcX" secondAttribute="bottom" constant="15" id="7GQ-IJ-nBI"/>
+                    <constraint firstItem="rBR-Bd-8ow" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" id="E78-lN-rF3"/>
+                    <constraint firstItem="WTU-Lx-veR" firstAttribute="leading" secondItem="rBR-Bd-8ow" secondAttribute="trailing" constant="2" id="FUZ-5M-q3Q"/>
+                    <constraint firstItem="oEg-ph-Zcd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Kyu-TT-c9e"/>
+                    <constraint firstItem="WTU-Lx-veR" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" id="Q4N-Nu-xIp"/>
+                    <constraint firstAttribute="trailing" secondItem="WTU-Lx-veR" secondAttribute="trailing" constant="15" id="Y3F-b9-bJx"/>
+                    <constraint firstItem="Nmc-mb-aBG" firstAttribute="leading" secondItem="owZ-PF-VhD" secondAttribute="trailing" constant="5" id="Zf4-DJ-aDK"/>
+                    <constraint firstItem="Xgb-De-mcX" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="cNA-XB-7fZ"/>
+                    <constraint firstItem="Xoz-XK-342" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="hKI-uJ-3Pa"/>
+                    <constraint firstItem="Nmc-mb-aBG" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" id="pCt-ka-hvw"/>
+                    <constraint firstItem="Xgb-De-mcX" firstAttribute="top" secondItem="Xoz-XK-342" secondAttribute="bottom" constant="13" id="rcZ-op-kQd"/>
+                    <constraint firstItem="owZ-PF-VhD" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="t9f-bz-apG"/>
+                    <constraint firstItem="oEg-ph-Zcd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="uNa-nb-X4N"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLab" destination="Xgb-De-mcX" id="8ge-ZM-LUt"/>
+                <outlet property="diatanceLab" destination="WTU-Lx-veR" id="vPh-TX-DsM"/>
+                <outlet property="pointLab" destination="Nmc-mb-aBG" id="uRA-jC-BPj"/>
+                <outlet property="starV" destination="owZ-PF-VhD" id="5V4-Ji-Qg8"/>
+                <outlet property="storeImg" destination="oEg-ph-Zcd" id="r1C-9Z-qzv"/>
+                <outlet property="storeNameLa" destination="Xoz-XK-342" id="J3l-L8-kmb"/>
+            </connections>
+            <point key="canvasLocation" x="121.5" y="-45.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="d" width="19" height="29"/>
+        <image name="foodImage" width="170" height="149"/>
+    </resources>
+</document>

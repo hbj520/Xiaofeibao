@@ -80,7 +80,7 @@
                 <outlet property="storeImage" destination="fgQ-8W-8ph" id="Glq-jf-fDh"/>
                 <outlet property="storeName" destination="3Ny-PO-yGb" id="kgK-WP-Xll"/>
             </connections>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="-162.5" y="-147.5"/>
         </tableViewCell>
     </objects>
     <resources>
