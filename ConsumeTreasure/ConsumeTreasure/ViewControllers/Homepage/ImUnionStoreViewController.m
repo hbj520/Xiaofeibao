@@ -18,6 +18,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+     [self.navigationController setNavigationBarHidden:YES animated:animated];
     self.tabBarController.tabBar.hidden = YES;
     [self getData];
 }
@@ -27,6 +28,51 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = RGBACOLOR(241, 241, 241, 1);
     [self getData];
+    [self addGes];
+}
+
+- (void)addGes{
+    UITapGestureRecognizer *tapStore = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(storeClick:)];
+    [self.storeControlView addGestureRecognizer:tapStore];
+    
+    UITapGestureRecognizer *tapOrder = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(orderClick:)];
+    [self.orderView addGestureRecognizer:tapOrder];
+    
+    UITapGestureRecognizer *tapMem = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(myMemClick:)];
+    [self.myMemView addGestureRecognizer:tapMem];
+    
+    UITapGestureRecognizer *tapCheck = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkClick:)];
+    [self.checkStandView addGestureRecognizer:tapCheck];
+    
+    
+}
+
+- (void)pushToNextWithIdentiField:(NSString*)identi sender:(id)sender{
+    self.hidesBottomBarWhenPushed = YES;
+    [self performSegueWithIdentifier:identi sender:sender];
+    
+}
+
+- (void)storeClick:(id)Ges{
+    [self pushToNextWithIdentiField:@"goStoreControlSegue" sender:nil];
+
+}
+
+- (void)orderClick:(id)Ges{
+    
+    [self pushToNextWithIdentiField:@"goOrderSegue" sender:nil];
+
+}
+
+- (void)myMemClick:(id)Ges{
+ 
+    [self pushToNextWithIdentiField:@"goMyMemSegue" sender:nil];
+
+}
+
+- (void)checkClick:(id)Ges{
+    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:nil];
+
 }
 
 - (void)getData{

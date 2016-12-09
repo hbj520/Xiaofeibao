@@ -39,7 +39,7 @@
 {
     
     
-    self.sdcycleView =[SDCycleScrollView cycleScrollViewWithFrame:self.sdcycleView.frame delegate:self placeholderImage:[UIImage imageNamed:@"theimage"]];
+   // self.sdcycleView =[SDCycleScrollView cycleScrollViewWithFrame:self.sdcycleView.frame delegate:self placeholderImage:[UIImage imageNamed:@"theimage"]];
     self.sdcycleView.pageControlAliment = 0;
     self.sdcycleView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
     self.sdcycleView.pageControlStyle = 1;

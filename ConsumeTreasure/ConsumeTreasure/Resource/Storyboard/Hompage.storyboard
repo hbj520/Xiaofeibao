@@ -734,6 +734,144 @@
             </objects>
             <point key="canvasLocation" x="-335" y="2147"/>
         </scene>
+        <!--我的会员-->
+        <scene sceneID="CU0-OS-9hB">
+            <objects>
+                <viewController id="ub4-ze-0IT" customClass="MyMemberViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ir3-Oc-uaI"/>
+                        <viewControllerLayoutGuide type="bottom" id="EOp-yV-Z9M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iyf-SQ-odp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbY-ah-DDr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pbY-ah-DDr" secondAttribute="trailing" id="0gd-OK-6at"/>
+                            <constraint firstItem="pbY-ah-DDr" firstAttribute="top" secondItem="Ir3-Oc-uaI" secondAttribute="bottom" id="Al7-TG-fZV"/>
+                            <constraint firstItem="EOp-yV-Z9M" firstAttribute="top" secondItem="pbY-ah-DDr" secondAttribute="bottom" id="DbL-s8-aw8"/>
+                            <constraint firstItem="pbY-ah-DDr" firstAttribute="leading" secondItem="Iyf-SQ-odp" secondAttribute="leading" id="jlx-po-VYm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的会员" id="Nul-wj-hcl">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="ijI-RD-dKK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="HtT-XV-v4f" id="htz-0X-9cj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="pbY-ah-DDr" id="NcJ-aS-pb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uEX-JI-fiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-655.20000000000005" y="3614.8425787106448"/>
+        </scene>
+        <!--订单管理-->
+        <scene sceneID="wh8-WK-aGE">
+            <objects>
+                <viewController id="PhM-X1-BqV" customClass="OrderControlViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="47o-c0-lfN"/>
+                        <viewControllerLayoutGuide type="bottom" id="a5D-x7-4gT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wcy-5R-zA4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2fo-KI-Qey">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fo-KI-Qey" firstAttribute="top" secondItem="47o-c0-lfN" secondAttribute="bottom" id="1eF-BK-eOE"/>
+                            <constraint firstItem="a5D-x7-4gT" firstAttribute="top" secondItem="2fo-KI-Qey" secondAttribute="bottom" id="CWK-b2-FEq"/>
+                            <constraint firstItem="2fo-KI-Qey" firstAttribute="leading" secondItem="wcy-5R-zA4" secondAttribute="leading" id="IE1-E2-0nm"/>
+                            <constraint firstAttribute="trailing" secondItem="2fo-KI-Qey" secondAttribute="trailing" id="OSh-hd-Mhq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="订单管理" id="8Ig-kh-HzY">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="a8B-xf-reB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="HtT-XV-v4f" id="3Tu-Oe-4vf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="2fo-KI-Qey" id="yCD-66-LFj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHZ-np-XZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="我的会员" id="BnF-k9-U7o">
+                    <barButtonItem key="leftBarButtonItem" image="whiteback" id="sBK-0q-PoS">
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="back:" destination="HtT-XV-v4f" id="iPf-3J-tqb"/>
+                        </connections>
+                    </barButtonItem>
+                </navigationItem>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="3614.8425787106448"/>
+        </scene>
+        <!--店铺管理-->
+        <scene sceneID="6H0-Q8-En8">
+            <objects>
+                <viewController id="bEn-Jj-4mR" customClass="StoreControlViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YLr-dF-d4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="y7P-8w-lMJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M47-gX-wh2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="店铺管理" id="hhn-TY-U0c">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="dLX-q9-h0u">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="HtT-XV-v4f" id="ZpR-On-EUU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xkD-wN-5RK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="3615"/>
+        </scene>
+        <!--Checkstand View Controller-->
+        <scene sceneID="1pL-Xb-tfq">
+            <objects>
+                <viewController id="bwN-XB-yOi" customClass="CheckstandViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bHe-EO-7Mk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yg6-r1-Bmv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DRJ-GS-aix">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q1L-Qb-bv5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFw-Nu-mur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="3615"/>
+        </scene>
         <!--Im Union Store View Controller-->
         <scene sceneID="u82-kx-ffL">
             <objects>
@@ -813,11 +951,11 @@
                                         <rect key="frame" x="0.0" y="210" width="187" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666.66" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJI-YJ-0Dy">
-                                                <rect key="frame" x="60" y="8" width="68" height="25"/>
+                                                <rect key="frame" x="56.5" y="8" width="75" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="Tts-m1-yeZ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -844,12 +982,12 @@
                                         <rect key="frame" x="188" y="210" width="187" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1532" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YT-k7-SgA">
-                                                <rect key="frame" x="71" y="8" width="46" height="25"/>
+                                                <rect key="frame" x="69" y="8" width="50.5" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="7Od-5z-08f"/>
                                                     <constraint firstAttribute="height" constant="25" id="Nad-Cs-V6O"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1190,13 +1328,21 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="allIncomeLab" destination="mJI-YJ-0Dy" id="BCr-A7-D20"/>
+                        <outlet property="checkStandView" destination="Pz8-p0-tfa" id="PjF-TP-oBJ"/>
                         <outlet property="dealNumLab" destination="0YT-k7-SgA" id="OWn-al-WYe"/>
+                        <outlet property="myMemView" destination="I8c-Jy-5MV" id="tb6-Vc-voq"/>
+                        <outlet property="orderView" destination="pVK-Ek-zTO" id="m1Z-oT-2eh"/>
+                        <outlet property="storeControlView" destination="Cds-Hr-DJc" id="1Po-Ph-DjD"/>
                         <outlet property="unionBalance" destination="Rxr-8W-gvW" id="f1g-er-Oa2"/>
+                        <segue destination="ub4-ze-0IT" kind="push" identifier="goMyMemSegue" id="1Xp-JF-Wk4"/>
+                        <segue destination="PhM-X1-BqV" kind="push" identifier="goOrderSegue" id="jhg-sL-18h"/>
+                        <segue destination="bEn-Jj-4mR" kind="push" identifier="goStoreControlSegue" id="S7c-22-oZx"/>
+                        <segue destination="bwN-XB-yOi" kind="push" identifier="goCheckStandSegue" id="zMk-Cc-iId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzG-wP-Arj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="381.60000000000002" y="1414.5427286356824"/>
+            <point key="canvasLocation" x="308" y="2810"/>
         </scene>
         <!--Store Deatil View Controller-->
         <scene sceneID="YcB-0Y-eWg">
@@ -1296,7 +1442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWR-Ca-xPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="2096"/>
+            <point key="canvasLocation" x="1110" y="677"/>
         </scene>
         <!--Ad Detail View Controller-->
         <scene sceneID="1Iy-kB-6Oc">
@@ -1425,6 +1571,6 @@
         <image name="万商联盟" width="548" height="745"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8y3-EJ-Rdo"/>
+        <segue reference="NYr-uc-yrf"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -59,6 +59,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-UE-Rq9">
+                    <rect key="frame" x="93" y="0.0" width="282" height="39"/>
+                    <connections>
+                        <action selector="gotoSecTabClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="dws-Vz-4QH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -69,14 +75,19 @@
                 <constraint firstItem="bWY-pk-5XK" firstAttribute="leading" secondItem="4bs-kd-VQb" secondAttribute="trailing" constant="9" id="D5L-mK-3VL"/>
                 <constraint firstItem="bWY-pk-5XK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IiI-aV-fYa"/>
                 <constraint firstItem="paP-PA-I9O" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S3D-QZ-cPE"/>
+                <constraint firstItem="jnq-UE-Rq9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UBt-GP-fIm"/>
+                <constraint firstItem="jnq-UE-Rq9" firstAttribute="leading" secondItem="d05-3O-ok0" secondAttribute="trailing" id="f44-hJ-h6G"/>
                 <constraint firstAttribute="trailing" secondItem="bWY-pk-5XK" secondAttribute="trailing" constant="8" id="idQ-Er-MlB"/>
+                <constraint firstItem="Pqn-zn-j2l" firstAttribute="top" secondItem="jnq-UE-Rq9" secondAttribute="bottom" id="lb0-fu-MSE"/>
                 <constraint firstAttribute="bottom" secondItem="Pqn-zn-j2l" secondAttribute="bottom" id="rEA-4u-wUn"/>
                 <constraint firstItem="Pqn-zn-j2l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ugq-QY-d7y"/>
+                <constraint firstAttribute="trailing" secondItem="jnq-UE-Rq9" secondAttribute="trailing" id="y4Q-Ar-Dyj"/>
                 <constraint firstItem="4bs-kd-VQb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yzD-YQ-sQy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="arrowImg" destination="bWY-pk-5XK" id="HQE-oC-1r7"/>
+                <outlet property="headBtn" destination="jnq-UE-Rq9" id="0mL-e7-sc4"/>
                 <outlet property="moreLab" destination="4bs-kd-VQb" id="UQy-np-GIF"/>
                 <outlet property="titleImg" destination="paP-PA-I9O" id="KSf-h5-Q1B"/>
                 <outlet property="titleLab" destination="d05-3O-ok0" id="9TS-Pe-wKq"/>

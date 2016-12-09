@@ -88,6 +88,12 @@
 		D10EE3F01DB0B66F001C1992 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10EE3EF1DB0B66F001C1992 /* SystemConfiguration.framework */; };
 		D10EE3F21DB0B677001C1992 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10EE3F11DB0B677001C1992 /* CFNetwork.framework */; };
 		D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE45A1DB1CF3F001C1992 /* UIViewController+HUD.m */; };
+		D11171111DFA8EA500AD88DE /* MyMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11171101DFA8EA500AD88DE /* MyMemberViewController.m */; };
+		D11171141DFA8EC400AD88DE /* OrderControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11171131DFA8EC400AD88DE /* OrderControlViewController.m */; };
+		D11171171DFA8EEB00AD88DE /* CheckstandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11171161DFA8EEB00AD88DE /* CheckstandViewController.m */; };
+		D111711A1DFA8F0800AD88DE /* StoreControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11171191DFA8F0800AD88DE /* StoreControlViewController.m */; };
+		D111711E1DFAA8F500AD88DE /* MemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D111711C1DFAA8F500AD88DE /* MemberTableViewCell.m */; };
+		D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D111711D1DFAA8F500AD88DE /* MemberTableViewCell.xib */; };
 		D12054831DEC26A500EB2707 /* StoreMasterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054821DEC26A500EB2707 /* StoreMasterModel.m */; };
 		D12054861DEC348300EB2707 /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054851DEC348300EB2707 /* ApplyViewController.m */; };
 		D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054881DED1C0200EB2707 /* ApplyContentTableViewCell.m */; };
@@ -420,6 +426,17 @@
 		D10EE3F11DB0B677001C1992 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D10EE4591DB1CF3F001C1992 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
 		D10EE45A1DB1CF3F001C1992 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		D111710F1DFA8EA500AD88DE /* MyMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMemberViewController.h; sourceTree = "<group>"; };
+		D11171101DFA8EA500AD88DE /* MyMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMemberViewController.m; sourceTree = "<group>"; };
+		D11171121DFA8EC400AD88DE /* OrderControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderControlViewController.h; sourceTree = "<group>"; };
+		D11171131DFA8EC400AD88DE /* OrderControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderControlViewController.m; sourceTree = "<group>"; };
+		D11171151DFA8EEB00AD88DE /* CheckstandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckstandViewController.h; sourceTree = "<group>"; };
+		D11171161DFA8EEB00AD88DE /* CheckstandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckstandViewController.m; sourceTree = "<group>"; };
+		D11171181DFA8F0700AD88DE /* StoreControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreControlViewController.h; sourceTree = "<group>"; };
+		D11171191DFA8F0800AD88DE /* StoreControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreControlViewController.m; sourceTree = "<group>"; };
+		D111711B1DFAA8F500AD88DE /* MemberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewCell.h; sourceTree = "<group>"; };
+		D111711C1DFAA8F500AD88DE /* MemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewCell.m; sourceTree = "<group>"; };
+		D111711D1DFAA8F500AD88DE /* MemberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		D12054811DEC26A500EB2707 /* StoreMasterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreMasterModel.h; sourceTree = "<group>"; };
 		D12054821DEC26A500EB2707 /* StoreMasterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreMasterModel.m; sourceTree = "<group>"; };
 		D12054841DEC348300EB2707 /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
@@ -993,6 +1010,14 @@
 				D12054851DEC348300EB2707 /* ApplyViewController.m */,
 				D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */,
 				D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */,
+				D111710F1DFA8EA500AD88DE /* MyMemberViewController.h */,
+				D11171101DFA8EA500AD88DE /* MyMemberViewController.m */,
+				D11171121DFA8EC400AD88DE /* OrderControlViewController.h */,
+				D11171131DFA8EC400AD88DE /* OrderControlViewController.m */,
+				D11171151DFA8EEB00AD88DE /* CheckstandViewController.h */,
+				D11171161DFA8EEB00AD88DE /* CheckstandViewController.m */,
+				D11171181DFA8F0700AD88DE /* StoreControlViewController.h */,
+				D11171191DFA8F0800AD88DE /* StoreControlViewController.m */,
 				D12165A41DB6518F006B06FC /* LookRecordViewController.h */,
 				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
 				D12165A71DB65998006B06FC /* IncomeViewController.h */,
@@ -1173,6 +1198,9 @@
 				D16BF2C11DF01C10001A82BF /* LocationTableViewCell.h */,
 				D16BF2C21DF01C10001A82BF /* LocationTableViewCell.m */,
 				D16BF2C31DF01C10001A82BF /* LocationTableViewCell.xib */,
+				D111711B1DFAA8F500AD88DE /* MemberTableViewCell.h */,
+				D111711C1DFAA8F500AD88DE /* MemberTableViewCell.m */,
+				D111711D1DFAA8F500AD88DE /* MemberTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1849,6 +1877,7 @@
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
+				D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */,
 				D12054901DED20A100EB2707 /* IdentiPhotoTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
 				ABFEA49D1DEC11E10002672F /* ZYQAssetPicker.Bundle in Resources */,
@@ -1937,6 +1966,7 @@
 				D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
+				D111711E1DFAA8F500AD88DE /* MemberTableViewCell.m in Sources */,
 				D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */,
 				D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
@@ -1964,9 +1994,11 @@
 				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
 				AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
+				D11171171DFA8EEB00AD88DE /* CheckstandViewController.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D15B394C1DD32981009122FE /* DetailHeadView.m in Sources */,
+				D111711A1DFA8F0800AD88DE /* StoreControlViewController.m in Sources */,
 				D15B3B121DDEE5BB009122FE /* IncomeTableHead.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
@@ -1997,6 +2029,7 @@
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
 				ABFEA4A21DEC12540002672F /* FormData.m in Sources */,
+				D11171111DFA8EA500AD88DE /* MyMemberViewController.m in Sources */,
 				D16BF2B21DEFF15B001A82BF /* JFCityHeaderView.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
@@ -2064,6 +2097,7 @@
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,
+				D11171141DFA8EC400AD88DE /* OrderControlViewController.m in Sources */,
 				D16BF2D11DF14F47001A82BF /* SpecialGoodModel.m in Sources */,
 				D15B39461DD01488009122FE /* ChartModel.m in Sources */,
 				D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */,

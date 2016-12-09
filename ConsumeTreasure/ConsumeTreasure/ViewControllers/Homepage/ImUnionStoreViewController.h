@@ -14,4 +14,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *allIncomeLab;
 @property (weak, nonatomic) IBOutlet UILabel *dealNumLab;
 
+
+@property (weak, nonatomic) IBOutlet UIView *storeControlView;
+@property (weak, nonatomic) IBOutlet UIView *orderView;
+@property (weak, nonatomic) IBOutlet UIView *checkStandView;
+@property (weak, nonatomic) IBOutlet UIView *myMemView;
+
+
+
+
 @end

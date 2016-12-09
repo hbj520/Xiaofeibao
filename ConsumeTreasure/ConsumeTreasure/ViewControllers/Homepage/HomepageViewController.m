@@ -494,6 +494,10 @@
         HotHeadView.backgroundView = [[UIImageView alloc]init];
         HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
         
+        HotHeadView.goBlock =^(){
+            self.tabBarController.selectedIndex = 1;
+        };
+        
         return HotHeadView;
         
     }else if (section == 2){
@@ -502,7 +506,9 @@
         HotHeadView.backgroundView = [[UIImageView alloc]init];
         HotHeadView.backgroundView.backgroundColor = [UIColor whiteColor];
 
-        
+        HotHeadView.goBlock =^(){
+            self.tabBarController.selectedIndex = 1;
+        };
         return HotHeadView;
     }
     else{
@@ -548,28 +554,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-
+        
         if (indexPath.row != 3) {
             
             if (TuiJianArr.count > 0) {
                 Tmodel = [TuiJianArr objectAtIndex:indexPath.row];
+                [self pushToNextWithIdentiField:@"detailSegue" sender:Tmodel];
             }
-            
-            [self pushToNextWithIdentiField:@"detailSegue" sender:Tmodel];
-            
         }
-    
-    
+        
     }else if (indexPath.section == 2){
         NSLog(@"%ld-----%ld",(long)indexPath.section,(long)indexPath.row);
-      
+        
         if (HotStoreArr.count > 0) {
             Smodel = [HotStoreArr objectAtIndex:indexPath.row];
         }
-        
-        
         [self pushToNextWithIdentiField:@"detailSegue" sender:Smodel];
-    
         
     }
 }

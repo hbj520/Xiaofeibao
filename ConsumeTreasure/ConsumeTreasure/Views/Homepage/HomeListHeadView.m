@@ -18,4 +18,15 @@
 }
 */
 
+- (IBAction)gotoSecTabClick:(id)sender {
+
+    if (self.goBlock) {
+        self.goBlock();
+    }
+    
+    
+}
+
+
+
 @end

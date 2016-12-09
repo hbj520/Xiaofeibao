@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^gotoSecBlock)();
 
 @interface HomeListHeadView : UITableViewHeaderFooterView
 @property (weak, nonatomic) IBOutlet UIImageView *titleImg;
@@ -14,5 +15,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *moreLab;
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImg;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *headBtn;
+
+@property (nonatomic,copy) gotoSecBlock goBlock;
 
 @end
