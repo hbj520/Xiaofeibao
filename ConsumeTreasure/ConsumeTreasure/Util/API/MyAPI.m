@@ -625,11 +625,12 @@
 - (void)postFilesWithFormData:(NSArray *)photosArr
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult{
-    AFHTTPSessionManager *uploadManager = [AFHTTPSessionManager manager];
-    uploadManager.requestSerializer.timeoutInterval = 20;
-    uploadManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
+//    AFHTTPSessionManager *uploadManager = [AFHTTPSessionManager manager];
+//    uploadManager.requestSerializer.timeoutInterval = 20;
+//    uploadManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
+    self.manager.requestSerializer.timeoutInterval = 20;
     // 在parameters里存放照片以外的对象
-    [uploadManager POST:@"http://192.168.1.227:8080/upload/testHelloUpload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [self.manager POST:@"upload/doUpload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         // formData: 专门用于拼接需要上传的数据,在此位置生成一个要上传的数据体
         // 这里的_photoArr是你存放图片的数组
         for (int i = 0; i < photosArr.count; i++) {
