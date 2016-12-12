@@ -177,7 +177,9 @@
                 //上传图片
                 [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL sucess, NSString *msg) {
                     
+                    
                 } errorResult:^(NSError *enginerError) {
+                    
                     
                 }];
 
