@@ -18,6 +18,9 @@
 @end
 
 @implementation MyMemberViewController
+- (IBAction)back:(id)sender {
+    [self backTolastPage];
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

@@ -8,7 +8,7 @@
 
 #import "OrderControlViewController.h"
 #import <MJRefresh/MJRefresh.h>
-#import "MemberTableViewCell.h"
+#import "OrderControlTableViewCell.h"
 
 @interface OrderControlViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -35,7 +35,7 @@
 }
 
 - (void)addRefresh{
-    __weak typeof(self) weakSelf = self;
+    //__weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
     }];
@@ -52,9 +52,12 @@
 }
 - (void)creatUI{
     
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"MemberTableViewCell" bundle:nil] forCellReuseIdentifier:@"memCellId"];
+    self.tableView.backgroundColor = RGBACOLOR(235, 235, 235, 0.8);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[UINib nibWithNibName:@"OrderControlTableViewCell" bundle:nil] forCellReuseIdentifier:@"orderCellId"];
     
 }
 
@@ -66,13 +69,13 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    MemberTableViewCell *memCell = [tableView dequeueReusableCellWithIdentifier:@"memCellId"];
-    if (memCell == nil) {
-        memCell = [[[NSBundle mainBundle] loadNibNamed:@"MemberTableViewCell" owner:self options:nil] lastObject];
+    OrderControlTableViewCell *orderCell = [tableView dequeueReusableCellWithIdentifier:@"orderCellId"];
+    if (orderCell == nil) {
+        orderCell = [[[NSBundle mainBundle] loadNibNamed:@"OrderControlTableViewCell" owner:self options:nil] lastObject];
     }
-    memCell.selectionStyle = 0;
+    orderCell.selectionStyle = 0;
     
-    return memCell;
+    return orderCell;
     
 }
 
@@ -81,6 +84,11 @@
     
     return 100;
     
+}
+
+
+- (IBAction)back:(id)sender {
+    [self backTolastPage];
 }
 
 

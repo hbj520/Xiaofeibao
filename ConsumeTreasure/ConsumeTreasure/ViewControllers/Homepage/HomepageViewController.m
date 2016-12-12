@@ -387,9 +387,9 @@
             [self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
         };
         firstCell.storeBlock = ^{//商户入口
-          [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+         // [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
             
-          // [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
+          [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
                   };
         
         

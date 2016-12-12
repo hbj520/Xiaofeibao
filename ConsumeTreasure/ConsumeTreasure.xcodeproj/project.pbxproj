@@ -94,6 +94,10 @@
 		D111711A1DFA8F0800AD88DE /* StoreControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D11171191DFA8F0800AD88DE /* StoreControlViewController.m */; };
 		D111711E1DFAA8F500AD88DE /* MemberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D111711C1DFAA8F500AD88DE /* MemberTableViewCell.m */; };
 		D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D111711D1DFAA8F500AD88DE /* MemberTableViewCell.xib */; };
+		D11736B21DFE42EF00270D26 /* OrderControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11736B01DFE42EF00270D26 /* OrderControlTableViewCell.m */; };
+		D11736B31DFE42EF00270D26 /* OrderControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11736B11DFE42EF00270D26 /* OrderControlTableViewCell.xib */; };
+		D11736BB1DFE7FAE00270D26 /* StoreControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D11736B91DFE7FAE00270D26 /* StoreControlTableViewCell.m */; };
+		D11736BC1DFE7FAE00270D26 /* StoreControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11736BA1DFE7FAE00270D26 /* StoreControlTableViewCell.xib */; };
 		D12054831DEC26A500EB2707 /* StoreMasterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054821DEC26A500EB2707 /* StoreMasterModel.m */; };
 		D12054861DEC348300EB2707 /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054851DEC348300EB2707 /* ApplyViewController.m */; };
 		D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12054881DED1C0200EB2707 /* ApplyContentTableViewCell.m */; };
@@ -437,6 +441,12 @@
 		D111711B1DFAA8F500AD88DE /* MemberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberTableViewCell.h; sourceTree = "<group>"; };
 		D111711C1DFAA8F500AD88DE /* MemberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberTableViewCell.m; sourceTree = "<group>"; };
 		D111711D1DFAA8F500AD88DE /* MemberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
+		D11736AF1DFE42EF00270D26 /* OrderControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderControlTableViewCell.h; sourceTree = "<group>"; };
+		D11736B01DFE42EF00270D26 /* OrderControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderControlTableViewCell.m; sourceTree = "<group>"; };
+		D11736B11DFE42EF00270D26 /* OrderControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderControlTableViewCell.xib; sourceTree = "<group>"; };
+		D11736B81DFE7FAE00270D26 /* StoreControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreControlTableViewCell.h; sourceTree = "<group>"; };
+		D11736B91DFE7FAE00270D26 /* StoreControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreControlTableViewCell.m; sourceTree = "<group>"; };
+		D11736BA1DFE7FAE00270D26 /* StoreControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreControlTableViewCell.xib; sourceTree = "<group>"; };
 		D12054811DEC26A500EB2707 /* StoreMasterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreMasterModel.h; sourceTree = "<group>"; };
 		D12054821DEC26A500EB2707 /* StoreMasterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreMasterModel.m; sourceTree = "<group>"; };
 		D12054841DEC348300EB2707 /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
@@ -1201,6 +1211,12 @@
 				D111711B1DFAA8F500AD88DE /* MemberTableViewCell.h */,
 				D111711C1DFAA8F500AD88DE /* MemberTableViewCell.m */,
 				D111711D1DFAA8F500AD88DE /* MemberTableViewCell.xib */,
+				D11736AF1DFE42EF00270D26 /* OrderControlTableViewCell.h */,
+				D11736B01DFE42EF00270D26 /* OrderControlTableViewCell.m */,
+				D11736B11DFE42EF00270D26 /* OrderControlTableViewCell.xib */,
+				D11736B81DFE7FAE00270D26 /* StoreControlTableViewCell.h */,
+				D11736B91DFE7FAE00270D26 /* StoreControlTableViewCell.m */,
+				D11736BA1DFE7FAE00270D26 /* StoreControlTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1875,11 +1891,13 @@
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
 				D120549A1DED269000EB2707 /* OtherLicenseTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
+				D11736BC1DFE7FAE00270D26 /* StoreControlTableViewCell.xib in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
 				D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */,
 				D12054901DED20A100EB2707 /* IdentiPhotoTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
+				D11736B31DFE42EF00270D26 /* OrderControlTableViewCell.xib in Resources */,
 				ABFEA49D1DEC11E10002672F /* ZYQAssetPicker.Bundle in Resources */,
 				D16BF2C51DF01C10001A82BF /* LocationTableViewCell.xib in Resources */,
 				D120548B1DED1C0200EB2707 /* ApplyContentTableViewCell.xib in Resources */,
@@ -1977,6 +1995,7 @@
 				D15B3AFB1DDC0E5E009122FE /* MD5DataSigner.m in Sources */,
 				AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */,
 				D15B39711DD46AFB009122FE /* LPNavigationBarView.m in Sources */,
+				D11736B21DFE42EF00270D26 /* OrderControlTableViewCell.m in Sources */,
 				D170F2681DAF2CB600272E57 /* HomeListHeadView.m in Sources */,
 				D120549D1DED57FC00EB2707 /* ValuePickerView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
@@ -2046,6 +2065,7 @@
 				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
+				D11736BB1DFE7FAE00270D26 /* StoreControlTableViewCell.m in Sources */,
 				D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
 				D16BF2B41DEFF15B001A82BF /* JFCityViewController.m in Sources */,
