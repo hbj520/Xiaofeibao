@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _imagesArray = [NSMutableArray array];
+   // _imagesArray = [NSMutableArray array];
     
     _imageUrls = [NSMutableArray array];
     
@@ -100,12 +100,12 @@
     NSData * data = UIImageJPEGRepresentation(image, 0.2);
     
     
-    /*
-    UIImage *img = [UIImage imageWithData:data];
-    [_imagesArray addObject:img];
-    
-    [self selectPhotos:_imagesArray];
-     */
+   
+//    UIImage *img = [UIImage imageWithData:data];
+//    [_imagesArray addObject:img];
+//    
+//    [self selectPhotos:_imagesArray];
+   
 }
 
 #pragma mark - ZYQAssetPickerController Delegate

@@ -24,7 +24,7 @@
     [self.starV configWithStarLevel:tuiModel.avgScore.floatValue];
     self.pointLab.text = tuiModel.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
-    self.addressLab.text = tuiModel.addr2;
+    self.addressLab.text = tuiModel.addr;
 }
 - (void)configWithData:(UnionContenModel *)data{
     [self.storeImg sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:@"foodImage"]];

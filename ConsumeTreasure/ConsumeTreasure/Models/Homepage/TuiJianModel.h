@@ -18,7 +18,7 @@
 @property (nonatomic,strong) NSString *doorImg;
 @property (nonatomic,strong) NSString *memid;
 @property (nonatomic,strong) NSString *avgScore;
-@property (nonatomic,strong) NSString *addr2;
+@property (nonatomic,strong) NSString *addr;
 @property (nonatomic,strong) NSString *distance;
 
 
@@ -30,7 +30,7 @@
 @interface arratModel : JSONModel
 
 @property (nonatomic,strong) NSArray<TuiJianModel>* memList;
-@property (nonatomic,strong) NSArray<TuiJianModel>* shoplist;
+//@property (nonatomic,strong) NSArray<TuiJianModel>* shoplist;
 
 
 @end

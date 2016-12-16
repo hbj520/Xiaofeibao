@@ -17,10 +17,17 @@
 
 #import "BeUnionModel.h"
 
+
+
 @interface ApplyViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
 {
     NSMutableArray *_nameArr;
+    
+    //NSMutableArray *imagesArray;
 }
+
+@property (nonatomic,strong) NSMutableArray *imageArr;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) ValuePickerView *pickerView;
@@ -34,6 +41,9 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    
+   // imagesArray = [NSMutableArray array];
+    
     self.tabBarController.tabBar.hidden = YES;
     [self configTableView];
 }
@@ -166,9 +176,48 @@
 
 #pragma mark - UIActionSheet delegate -
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+   
+     __weak typeof(self) weakSelf = self;
+    if (buttonIndex == 0) {
+        [self openCamera];
+  
+
+    }else{
+        [self openPhoto];
+
+    }
+    self.imageBlock = ^(UIImage *img){
+        if (actionSheet.tag == 000) {
+            IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+            [cell.onePhoto setImage:img forState:0];
+            
+            
+             [weakSelf.imageArr removeObject:cell.onePhoto.imageView.image];
+            
+            NSLog(@"👌%@😝",cell.onePhoto.imageView.image);
+            
+            
+            
+        }else if (actionSheet.tag == 111){
+            IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+            [cell.twoPhoto setImage:img forState:0];
+        }else if(actionSheet.tag == 333){
+            BusinessTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+            [cell.licenseBtn setImage:img forState:0];
+        }else{
+            OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
+            [cell.otherBtn setImage:img forState:0];
+        }
+        
+    };
+    /*
     switch (buttonIndex) {
         case 0:
             [self openCamera];
+            self.imageBlock = ^(UIImage *img){
+                
+            };
             break;
         case 1:
             [self openPhoto];
@@ -192,6 +241,7 @@
             break;
      
     }
+     */
 }
 
 

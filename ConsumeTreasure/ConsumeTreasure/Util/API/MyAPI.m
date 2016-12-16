@@ -307,7 +307,7 @@
             NSError *err = nil;
             NSArray *data = responseObject[@"data"][@"mapList"];
             LookTimeArray = [LookTimeMode arrayOfModelsFromDictionaries:data error:&err];
-            
+         
             for (LookTimeMode *mode  in LookTimeArray) {
                 NSMutableArray *modelArray = [NSMutableArray array];
                 for (NSDictionary *modelDic in mode.mlist) {

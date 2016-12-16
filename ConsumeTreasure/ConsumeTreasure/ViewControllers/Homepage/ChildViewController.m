@@ -13,7 +13,7 @@
 #import "PartnerTableViewCell.h"
 #import "starView.h"
 #import <Masonry.h>
-
+#import "MJRefresh.h"
 @interface ChildViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,retain)UITableView * tableView;
 @end
@@ -39,7 +39,7 @@
     [super viewDidLoad];
     
     
-    
+     
     
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     

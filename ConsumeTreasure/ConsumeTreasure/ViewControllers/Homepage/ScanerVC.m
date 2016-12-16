@@ -337,8 +337,8 @@
 
 
             break;
-        }else{
-            
+        }else if([metadata.type isEqualToString:@""]){
+            [self performSegueWithIdentifier:@"justSegue" sender:nil];
 
         }
     }

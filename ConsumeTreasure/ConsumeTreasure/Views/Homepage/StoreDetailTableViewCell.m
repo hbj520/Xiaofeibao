@@ -21,8 +21,8 @@
 - (void)setDeModel:(StoreDetailModel *)deModel{
     if (deModel) {
         self.storeNameLab.text = deModel.shopName;
-        self.adresssLab.text = deModel.addr2;
-        self.phNum = deModel.branchPhone;
+        self.adresssLab.text = deModel.addr;
+        self.phNum = deModel.shopPhone;
         
         if ([deModel.collect isEqualToString:@"1"]) {
             self.collectBtn.selected = YES;

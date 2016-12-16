@@ -171,7 +171,7 @@
     [Tools hideKeyBoard];
     [self showHudInView:self.view hint:@"登录..."];
     [[MyAPI sharedAPI] loginWithParameters:@{
-                                             @"loginName": self.loginPhoneNumTextField.text,
+                                             @"phone ": self.loginPhoneNumTextField.text,
                                              @"password": self.loginPhonePassWordTextfild.text
                                              } result:^(BOOL sucess, NSString *msg) {
                                                  
@@ -200,7 +200,7 @@
     [Tools hideKeyBoard];
     if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.self.registerPasswordTextfield.text.length >= 6 ) {
         [[MyAPI sharedAPI] registerUserWithParameters:@{
-                                                        @"loginName":self.registerPhoneTextField.text,
+                                                        @"phone":self.registerPhoneTextField.text,
                                                         @"password":self.registerPasswordTextfield.text,
                                                         @"validatecode":self.registerVerifyCodeTextfield.text,
                                                         @"invitecode":self.registerInviteCodeTextfileld.text

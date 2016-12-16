@@ -38,6 +38,7 @@
     self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = YES;
    // [self loadDataWithPageNum:_pageNum page:_page];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewDidLoad {
@@ -134,7 +135,7 @@
     LookStoreModel *model = _storeArray[indexPath.section][indexPath.row];
     [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.doorImage] placeholderImage:[UIImage imageNamed:@"foodImage"]];
     hotCell.storeName.text = model.shopName;
-    hotCell.storeAddress.text = model.addr2;
+    hotCell.storeAddress.text = model.addr;
   //  hotCell.storeLikeNum.text = model.collectsnum;
     hotCell.distance.hidden = YES;
     return hotCell;

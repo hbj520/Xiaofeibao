@@ -10,7 +10,7 @@
 
 @interface LookStoreModel : JSONModel
 
-@property (nonatomic,strong) NSString *addr2;
+@property (nonatomic,strong) NSString *addr;
 @property (nonatomic,strong) NSString <Optional>*doorImage;
 @property (nonatomic,strong) NSString *shopName;
 //@property (nonatomic,strong) NSString *objid;
