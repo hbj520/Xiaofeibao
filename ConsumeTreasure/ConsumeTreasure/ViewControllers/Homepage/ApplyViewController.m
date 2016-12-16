@@ -23,6 +23,7 @@
 {
     NSMutableArray *_nameArr;
     
+     NSMutableArray *_cateIdArr;
     //NSMutableArray *imagesArray;
     
     
@@ -54,13 +55,15 @@
 
 - (void)setListArr:(NSArray *)listArr{
     NSLog(@"😝%@😋",listArr);
+    _cateIdArr = [NSMutableArray array];
     _nameArr = [NSMutableArray array];
     if (listArr.count == 0) {
-        NSArray *arr = @[@"暂无数据",@"暂无数据",@"暂无数据",@"暂无数据",@"暂无数据"];
+        NSArray *arr = @[@"暂无数据"];
         [_nameArr addObjectsFromArray:arr];
     }
     for (BeUnionModel *model in listArr) {
         [_nameArr addObject:model.name];
+        [_cateIdArr addObject:model.categoryId];
     }
     [self.tableView reloadData];
 }
