@@ -24,6 +24,10 @@
     NSMutableArray *_nameArr;
     
     //NSMutableArray *imagesArray;
+    
+    
+  
+    
 }
 
 @property (nonatomic,strong) NSMutableArray *imageArr;
@@ -211,7 +215,7 @@
         }
         
     };
-    /*
+    
     switch (buttonIndex) {
         case 0:
             [self openCamera];
@@ -249,7 +253,7 @@
             break;
      
     }
-     */
+    
 }
 
 
