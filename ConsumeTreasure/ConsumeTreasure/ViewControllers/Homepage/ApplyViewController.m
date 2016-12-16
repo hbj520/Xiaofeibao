@@ -223,7 +223,15 @@
             [self openPhoto];
             __weak typeof(self) weakSelf = self;
             self.imageBlock=^(UIImage *img){
-                
+                //上传图片
+                [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL sucess, NSString *msg) {
+                    
+                    
+                } errorResult:^(NSError *enginerError) {
+                    
+                    
+                }];
+
                 if (actionSheet.tag == 000) {
                     IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
                     [cell.onePhoto setImage:img forState:0];
