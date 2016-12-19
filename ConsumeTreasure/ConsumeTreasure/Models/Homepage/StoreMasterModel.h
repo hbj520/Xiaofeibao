@@ -13,5 +13,7 @@
 @property (nonatomic,strong) NSString *money;
 @property (nonatomic,strong) NSString *turnover;
 @property (nonatomic,strong) NSString *total;
+@property (nonatomic,strong) NSString *shopName;
+
 
 @end

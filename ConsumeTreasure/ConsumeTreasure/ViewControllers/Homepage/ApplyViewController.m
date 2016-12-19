@@ -66,6 +66,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _upId = @"";
+    _downId = @"";
+    _licenseId = @"";
+    _otherId = @"";
+    
     // Do any additional setup after loading the view.
     
    // imagesArray = [NSMutableArray array];
@@ -287,26 +292,22 @@
             
         }else{
             
-            if (!img) {
-                OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
-                
-                
-                //上传图片
-                
-                [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
-                    if (success) {
-                        _otherId = (NSString*)object;
-                        [cell.otherBtn setImage:img forState:0];
-                    }else{
-                        [weakSelf showHint:@"错误"];
-                    }
-                } errorResult:^(NSError *enginerError) {
-                    [weakSelf showHint:@"错误"];
-                }];
-            }else{
-                _otherId = @"";
-            }
+            OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
             
+            
+            //上传图片
+            
+            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _otherId = (NSString*)object;
+                    [cell.otherBtn setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+            } errorResult:^(NSError *enginerError) {
+                [weakSelf showHint:@"错误"];
+            }];
+
          
             
         }
@@ -343,9 +344,9 @@
                         };
     
     [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
-        
-        
-        
+        if (sucess) {
+            [self showHint:@"上传成功"];
+        }
     } errorResult:^(NSError *enginerError) {
         
         

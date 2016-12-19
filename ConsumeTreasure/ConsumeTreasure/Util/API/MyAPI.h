@@ -85,6 +85,14 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark --我是商户
 - (void)getStoreMasterDataWithParameters:(NSDictionary*)para result:(ModelBlock)result errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 我的会员
+- (void)getMyMemberDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -- 订单管理
+- (void)orderDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -- 店铺管理
+
 #pragma mark -联盟商户主页面各个区
 - (void)unionShopAreaWithParameters:(NSDictionary *)para
                          result:(ArrayBlock)result

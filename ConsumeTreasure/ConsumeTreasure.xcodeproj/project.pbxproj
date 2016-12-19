@@ -257,6 +257,7 @@
 		D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A61DAD0B6E005B9849 /* ScanerVC.m */; };
 		D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */; };
 		D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */; };
+		D1F916A51E078BF00091B989 /* NemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F916A41E078BF00091B989 /* NemberModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -778,6 +779,8 @@
 		D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+flash.m"; sourceTree = "<group>"; };
 		D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumeHomepageHeaderView.m; sourceTree = "<group>"; };
 		D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumeHomepageHeaderView.h; sourceTree = "<group>"; };
+		D1F916A31E078BF00091B989 /* NemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NemberModel.h; sourceTree = "<group>"; };
+		D1F916A41E078BF00091B989 /* NemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NemberModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -986,6 +989,8 @@
 				D19B6E1A1DE7DA65002A5667 /* AccountModel.m */,
 				D12054811DEC26A500EB2707 /* StoreMasterModel.h */,
 				D12054821DEC26A500EB2707 /* StoreMasterModel.m */,
+				D1F916A31E078BF00091B989 /* NemberModel.h */,
+				D1F916A41E078BF00091B989 /* NemberModel.m */,
 				D1A06AF41DEEB12700855564 /* BeUnionModel.h */,
 				D1A06AF51DEEB12700855564 /* BeUnionModel.m */,
 				D16BF2CC1DF14E72001A82BF /* StoreDetailModel.h */,
@@ -2085,6 +2090,7 @@
 				D15B3AFA1DDC0E5E009122FE /* DataVerifier.m in Sources */,
 				ABF5BEED1DF7EFF100D19DFB /* UserInfoTableViewController.m in Sources */,
 				D12054941DED221800EB2707 /* BusinessTableViewCell.m in Sources */,
+				D1F916A51E078BF00091B989 /* NemberModel.m in Sources */,
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
 				D15B3A441DDAFB30009122FE /* DetailCountHeadView.m in Sources */,
 				AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */,
