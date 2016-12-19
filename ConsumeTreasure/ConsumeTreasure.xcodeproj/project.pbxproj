@@ -66,6 +66,7 @@
 		ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA49C1DEC11E10002672F /* ZYQAssetPickerController.m */; };
 		ABFEA4A21DEC12540002672F /* FormData.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA4A11DEC12540002672F /* FormData.m */; };
 		ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFEA4A41DEC137E0002672F /* BecomeShopUnionViewController.m */; };
+		D10DC93B1E07F8AE00930F74 /* OrderConModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC93A1E07F8AE00930F74 /* OrderConModel.m */; };
 		D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B21DB0B28F001C1992 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B51DB0B28F001C1992 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B71DB0B28F001C1992 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -390,6 +391,8 @@
 		ABFEA4A11DEC12540002672F /* FormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormData.m; sourceTree = "<group>"; };
 		ABFEA4A31DEC137E0002672F /* BecomeShopUnionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BecomeShopUnionViewController.h; sourceTree = "<group>"; };
 		ABFEA4A41DEC137E0002672F /* BecomeShopUnionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BecomeShopUnionViewController.m; sourceTree = "<group>"; };
+		D10DC9391E07F8AE00930F74 /* OrderConModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConModel.h; sourceTree = "<group>"; };
+		D10DC93A1E07F8AE00930F74 /* OrderConModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConModel.m; sourceTree = "<group>"; };
 		D10EE3B11DB0B28F001C1992 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		D10EE3B21DB0B28F001C1992 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		D10EE3B31DB0B28F001C1992 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -997,6 +1000,8 @@
 				D12054821DEC26A500EB2707 /* StoreMasterModel.m */,
 				D1F916A31E078BF00091B989 /* NemberModel.h */,
 				D1F916A41E078BF00091B989 /* NemberModel.m */,
+				D10DC9391E07F8AE00930F74 /* OrderConModel.h */,
+				D10DC93A1E07F8AE00930F74 /* OrderConModel.m */,
 				D1A06AF41DEEB12700855564 /* BeUnionModel.h */,
 				D1A06AF51DEEB12700855564 /* BeUnionModel.m */,
 				D16BF2CC1DF14E72001A82BF /* StoreDetailModel.h */,
@@ -1998,6 +2003,7 @@
 				AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */,
+				D10DC93B1E07F8AE00930F74 /* OrderConModel.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
 				D111711E1DFAA8F500AD88DE /* MemberTableViewCell.m in Sources */,
