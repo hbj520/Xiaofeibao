@@ -1356,6 +1356,7 @@
                         <outlet property="dealNumLab" destination="0YT-k7-SgA" id="OWn-al-WYe"/>
                         <outlet property="myMemView" destination="I8c-Jy-5MV" id="tb6-Vc-voq"/>
                         <outlet property="orderView" destination="pVK-Ek-zTO" id="m1Z-oT-2eh"/>
+                        <outlet property="shopName" destination="kl9-AT-CfT" id="WiJ-Nc-gEB"/>
                         <outlet property="storeControlView" destination="Cds-Hr-DJc" id="1Po-Ph-DjD"/>
                         <outlet property="unionBalance" destination="Rxr-8W-gvW" id="f1g-er-Oa2"/>
                         <segue destination="ub4-ze-0IT" kind="push" identifier="goMyMemSegue" id="1Xp-JF-Wk4"/>

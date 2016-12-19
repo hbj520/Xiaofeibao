@@ -85,7 +85,7 @@
         self.unionBalance.text = [NSString stringWithFormat:@"余额 : %@",StoreMmodel.money];
         self.dealNumLab.text = StoreMmodel.total;
         self.allIncomeLab.text = StoreMmodel.turnover;
-        
+        self.shopName.text = StoreMmodel.shopName;
     } errorResult:^(NSError *enginerError) {
         
     }];

@@ -13,6 +13,10 @@
 #import <MJRefresh/MJRefresh.h>
 
 @interface MyMemberViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray *_memArray;
+    
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -35,6 +39,10 @@
     // Do any additional setup after loading the view.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
      self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    
+    _memArray = [NSMutableArray array];
+    
     [self creatUI];
     [self addRefresh];
 }
@@ -48,6 +56,27 @@
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
        // _page ++;
       //  [self loadAccountDataWithPage:_page pageNum:pageNum];
+    }];
+}
+
+
+
+- (void)loadMemberDataWithPage:(NSInteger)page pageNum:(NSString*)pageNum{
+    
+     NSString *pageNow = [NSString stringWithFormat:@"%ld",(long)page];
+    NSDictionary *para = @{
+                           @"pageNum":pageNow,
+                           @"pageOffset":pageNum
+                           };
+    
+    [[MyAPI sharedAPI] getMyMemberDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [_memArray addObjectsFromArray:arrays];
+            [self.tableView reloadData];
+        }
+        [self endRefresh];
+    } errorResult:^(NSError *enginerError) {
+        [self endRefresh];
     }];
 }
 

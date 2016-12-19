@@ -29,6 +29,10 @@
 #import "SpecialGoodModel.h"
 #import "CollectShopListModel.h"
 #import "UnionContenModel.h"
+#import "NemberModel.h"
+
+
+
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -490,7 +494,7 @@
                              errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                             @"tokenid":KToken,
-                              @"platform":@"0",
+                              @"platform":@"1",
                               @"param":para
                               };
     
@@ -511,7 +515,37 @@
     }];
 }
 
+#pragma mark -- 我的会员
+- (void)getMyMemberDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/myMembers" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            NSMutableArray *memberArr = [NSMutableArray array];
+            memberArr = [NemberModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memList"] error:&error];
+            result(YES,info,memberArr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+    
+}
 
+#pragma mark -- 订单管理
+- (void)orderDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+ 
+    
+}
+
+#pragma mark -- 店铺管理
 
 
 #pragma mark -联盟商户主页面获取城市大区
