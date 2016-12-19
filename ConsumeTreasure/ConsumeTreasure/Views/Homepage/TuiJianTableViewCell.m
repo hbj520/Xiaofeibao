@@ -32,7 +32,7 @@
     [self.starV configWithStarLevel:data.avgScore.floatValue];
     self.pointLab.text = data.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",data.distance.floatValue];
-    self.addressLab.text = data.addr2;
+    self.addressLab.text = data.addr;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

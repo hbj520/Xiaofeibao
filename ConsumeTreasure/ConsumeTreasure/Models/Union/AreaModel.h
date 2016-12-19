@@ -10,6 +10,6 @@
 
 @interface AreaModel : JSONModel
 @property (nonatomic,copy) NSString<Optional> *cityid;
-@property (nonatomic,copy) NSString *memid;
+@property (nonatomic,copy) NSString *districtId;
 @property (nonatomic,copy) NSString *name;
 @end
