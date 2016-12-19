@@ -49,6 +49,8 @@
     #import <MobileCoreServices/MobileCoreServices.h>
     #import "Tools.h"
 //    #import "MyAPI.h"
+
+#import "BQActivityView.h"
     #import <MBProgressHUD/MBProgressHUD.h>
    // #import "MyEnum.h"
     #import <TSMessages/TSMessage.h>

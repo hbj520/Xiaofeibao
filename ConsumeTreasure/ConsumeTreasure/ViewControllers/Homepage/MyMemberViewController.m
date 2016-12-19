@@ -10,11 +10,16 @@
 
 #import "MemberTableViewCell.h"
 
+#import "NemberModel.h"
+
 #import <MJRefresh/MJRefresh.h>
 
 @interface MyMemberViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *_memArray;
+    
+    NSInteger _page;
+    NSString *_pageNum;
     
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -42,6 +47,9 @@
     
     
     _memArray = [NSMutableArray array];
+    _page = 1;
+    _pageNum = @"10";
+    [self loadMemberDataWithPage:_page pageNum:_pageNum];
     
     [self creatUI];
     [self addRefresh];
@@ -50,12 +58,16 @@
 - (void)addRefresh{
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-       
+        if (_memArray.count > 0) {
+            [_memArray removeAllObjects];
+        }
+        _page = 1;
+        [weakSelf loadMemberDataWithPage:_page pageNum:_pageNum];
     }];
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-       // _page ++;
-      //  [self loadAccountDataWithPage:_page pageNum:pageNum];
+        _page ++;
+        [weakSelf loadMemberDataWithPage:_page pageNum:_pageNum];
     }];
 }
 
@@ -71,7 +83,7 @@
     
     [[MyAPI sharedAPI] getMyMemberDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            [_memArray addObjectsFromArray:arrays];
+            [_memArray addObjectsFromArray:arrays[0]];
             [self.tableView reloadData];
         }
         [self endRefresh];
@@ -95,7 +107,7 @@
 #pragma mark - UITableViewDelegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return _memArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -103,6 +115,10 @@
     MemberTableViewCell *memCell = [tableView dequeueReusableCellWithIdentifier:@"memCellId"];
     if (memCell == nil) {
         memCell = [[[NSBundle mainBundle] loadNibNamed:@"MemberTableViewCell" owner:self options:nil] lastObject];
+    }
+    
+    if (_memArray.count > 0) {
+        memCell.memModel = [_memArray objectAtIndex:indexPath.row];
     }
     memCell.selectionStyle = 0;
     

@@ -528,7 +528,7 @@
             NSError *error = nil;
             NSMutableArray *memberArr = [NSMutableArray array];
             memberArr = [NemberModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memList"] error:&error];
-            result(YES,info,memberArr);
+            result(YES,info,@[memberArr]);
         }else{
             result(NO,info,nil);
         }
