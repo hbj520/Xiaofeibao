@@ -127,7 +127,7 @@
 
 
     }
-    [self testWeixinPay];
+   // [self testWeixinPay];
 }
 - (void)testWeixinPay{
     //============================================================
