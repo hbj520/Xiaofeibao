@@ -34,6 +34,7 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
+- (IBAction)applyNowBtn:(id)sender;
 
 @property (nonatomic, weak) LPNavigationBarView *navBar;
 
@@ -424,4 +425,7 @@
 }
 */
 
+- (IBAction)applyNowBtn:(id)sender {
+    [self performSegueWithIdentifier:@"onlinePaySegueId" sender:nil];
+}
 @end

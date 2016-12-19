@@ -23,6 +23,7 @@
 		AB06A98E1DF949B1006F67C2 /* AttentionShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
+		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
 		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
@@ -311,6 +312,8 @@
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB10A8251DF122BD0042586A /* EvaluateListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListModel.h; sourceTree = "<group>"; };
 		AB10A8261DF122BD0042586A /* EvaluateListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListModel.m; sourceTree = "<group>"; };
+		AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinePayViewController.h; sourceTree = "<group>"; };
+		AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinePayViewController.m; sourceTree = "<group>"; };
 		AB32FCBF1DE41A9000032D38 /* EvaluateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListViewController.h; sourceTree = "<group>"; };
 		AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListViewController.m; sourceTree = "<group>"; };
 		AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
@@ -1104,6 +1107,8 @@
 				ABCB954F1D9BEED5008927C7 /* UnionViewController.m */,
 				AB79B36F1DB8B2BC00A7F96A /* UnionListViewController.h */,
 				AB79B3701DB8B2BC00A7F96A /* UnionListViewController.m */,
+				AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */,
+				AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -2006,6 +2011,7 @@
 				D10DC93B1E07F8AE00930F74 /* OrderConModel.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
+				AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */,
 				D111711E1DFAA8F500AD88DE /* MemberTableViewCell.m in Sources */,
 				D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */,
 				D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */,
