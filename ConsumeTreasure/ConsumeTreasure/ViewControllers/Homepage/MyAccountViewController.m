@@ -89,7 +89,7 @@
     NSString *pageNow = [NSString stringWithFormat:@"%ld",(long)page];
     NSDictionary *dic = @{
                           @"pageNum":pageNow,
-                          @"pageOffset":@"10"
+                          @"pageOffset":@"1"
                           };
     [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {

@@ -103,8 +103,11 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                           errorResult:(ErrorBlock)errorResult;
 #pragma mark - 上传图片
 - (void)postFilesWithFormData:(NSArray *)photosArr
-                           result:(StateBlock)result
+                           result:(ModelBlock)result
                       errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -- 申请成为商户
+- (void)upDateInfoForBeUnionWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 
 #pragma mark - 待评价列表
 - (void)NoEvalueteListWithPara:(NSDictionary *)para

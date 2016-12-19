@@ -384,10 +384,12 @@
         
         firstCell.partnerBlock = ^{//合伙人超市partnerSegue
            // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
-            [self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
+            //[self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
+            [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+
         };
         firstCell.storeBlock = ^{//商户入口
-         // [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+          //[self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
             
           [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
                   };

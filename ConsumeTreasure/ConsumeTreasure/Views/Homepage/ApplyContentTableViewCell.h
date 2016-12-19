@@ -14,6 +14,7 @@ typedef void (^BtnBlock)();
 @property (weak, nonatomic) IBOutlet UITextField *identiNum;
 @property (weak, nonatomic) IBOutlet UITextField *storeName;
 @property (weak, nonatomic) IBOutlet UITextField *rangeText;
+@property (weak, nonatomic) IBOutlet UITextField *inviteCodeText;
 
 @property (weak, nonatomic) IBOutlet UIButton *chooseRange;
 

@@ -583,7 +583,7 @@
 }
 #pragma mark -根据条件查询商家列表
 - (void)unionShopSearchWithParameters:(NSDictionary *)para
-                               result:(ArrayBlock)result
+                               result:(ModelBlock)result
                           errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":KToken,
@@ -623,7 +623,7 @@
 }
 #pragma mark - 上传图片
 - (void)postFilesWithFormData:(NSArray *)photosArr
-                           result:(StateBlock)result
+                           result:(ModelBlock)result
                       errorResult:(ErrorBlock)errorResult{
 //    AFHTTPSessionManager *uploadManager = [AFHTTPSessionManager manager];
 //    uploadManager.requestSerializer.timeoutInterval = 20;
@@ -663,13 +663,42 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSLog(@"```上传成功``` %@",responseObject);
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSString *imgStr = responseObject[@"data"][@"filePath"];
+             result(YES,info,imgStr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
         NSLog(@"xxx上传失败xxx %@", error);
-        
+        errorResult(error);
     }];
 }
+
+#pragma mark -- 申请成为商户
+- (void)upDateInfoForBeUnionWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/applyToShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result (YES,info);
+        }else{
+            result (NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult (error);
+    }];
+}
+
 #pragma mark - 待评价列表
 - (void)NoEvalueteListWithPara:(NSDictionary *)para
                         result:(ArrayBlock)result

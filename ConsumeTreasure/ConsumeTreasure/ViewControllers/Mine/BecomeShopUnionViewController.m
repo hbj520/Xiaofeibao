@@ -46,7 +46,7 @@
         return;
     }
 }
-
+/*
 - (void)selectPhotos:(NSMutableArray *)array
 {
     [[MyAPI sharedAPI] postFilesWithFormData:array result:^(BOOL sucess, NSString *msg) {
@@ -57,6 +57,7 @@
     }];
     //self.photosView.imagesArray = array;
 }
+ */
 - (IBAction)selectBtn:(id)sender {
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开照相机",@"从相册选取", nil];
     sheet.tag = 100;

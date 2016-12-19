@@ -143,6 +143,7 @@
             <connections>
                 <outlet property="chooseRange" destination="sjA-dH-o7g" id="N1P-17-hlX"/>
                 <outlet property="identiNum" destination="LXq-qs-C7c" id="RgY-cP-u2Y"/>
+                <outlet property="inviteCodeText" destination="ztG-S7-iXZ" id="5xL-CU-m4k"/>
                 <outlet property="rangeText" destination="XL6-vV-L7i" id="vnC-bY-fXu"/>
                 <outlet property="storeName" destination="dt3-do-Eky" id="G06-MB-gC6"/>
                 <outlet property="trueName" destination="TdO-WA-TiP" id="4xK-IL-0Xf"/>

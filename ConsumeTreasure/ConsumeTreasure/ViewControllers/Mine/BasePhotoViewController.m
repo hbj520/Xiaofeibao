@@ -168,13 +168,15 @@
         [formDataArray addObject:formData];
     }
     NSMutableArray *imageUrls = [NSMutableArray array];
+   /*
     [[MyAPI sharedAPI] postFilesWithFormData:formDataArray result:^(BOOL sucess, NSString *msg) {
         
     } errorResult:^(NSError *enginerError) {
         
         
     }];
-//    [[MyAPI sharedAPI] postFilesWithFormData:formDataArray
+    */
+    //    [[MyAPI sharedAPI] postFilesWithFormData:formDataArray
 //                                      result:
 //     ^(BOOL success, NSString *msg, id object) {
 //         [self hideHud];

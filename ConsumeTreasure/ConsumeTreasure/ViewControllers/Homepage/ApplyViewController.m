@@ -23,21 +23,42 @@
 {
     NSMutableArray *_nameArr;
     
-     NSMutableArray *_cateIdArr;
+  //   NSMutableArray *_cateIdArr;
     //NSMutableArray *imagesArray;
     
+    //保存信息
+    NSString *cateId;//类别
+    NSString *_nameStr;
+    NSString *_identiId;
+    NSString *_storeName;
+    NSString *_inviteCode;
     
-  
+    
+    
+    
+    //保存照片
+    NSString *_upId;
+    NSString *_downId;
+    NSString *_licenseId;
+    NSString *_otherId;
+    
     
 }
 
 @property (nonatomic,strong) NSMutableArray *imageArr;
+
+
+
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) ValuePickerView *pickerView;
 @property (nonatomic, strong) NSArray *stateArr;
 
+@property (nonatomic, strong) NSMutableArray *cateIdArr;//经营范围id
+
+@property (nonatomic,copy) NSString *idStr;
 @end
 
 @implementation ApplyViewController
@@ -73,13 +94,19 @@
     self.pickerView = [[ValuePickerView alloc]init];
     
     self.pickerView.dataSource = _nameArr;
-    self.pickerView.pickerTitle = @"百分比";
+   // self.pickerView.pickerTitle = @"百分比";
    __weak typeof(self) weakSelf = self;
     //self.pickerView.defaultStr = @"50%/5";
     self.pickerView.valueDidSelect = ^(NSString *value){
         _stateArr = [value componentsSeparatedByString:@"/"];
         ApplyContentTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         cell.rangeText.text = weakSelf.stateArr[0];
+        
+        _idStr = weakSelf.stateArr[1];
+        
+     cateId = [weakSelf.cateIdArr objectAtIndex:[weakSelf.idStr integerValue]];
+        
+        NSLog(@"+++++++");
     };
     [self.pickerView show];
 }
@@ -114,6 +141,12 @@
             [self upPikerView];
             
         };
+        _nameStr = applyCell.trueName.text;
+        _storeName = applyCell.storeName.text;
+        _inviteCode = applyCell.inviteCodeText.text;
+        _identiId = applyCell.identiNum.text;
+        
+        
         applyCell.selectionStyle = 0;
         return applyCell;
     }else if (indexPath.section == 1){
@@ -197,68 +230,130 @@
     self.imageBlock = ^(UIImage *img){
         if (actionSheet.tag == 000) {
             IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-            [cell.onePhoto setImage:img forState:0];
+     
+            //上传图片
             
+            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _upId = (NSString*)object;
+                    [cell.onePhoto setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+            } errorResult:^(NSError *enginerError) {
+                 [weakSelf showHint:@"错误"];
+            }];
+         
             
-             [weakSelf.imageArr removeObject:cell.onePhoto.imageView.image];
-            
-            NSLog(@"👌%@😝",cell.onePhoto.imageView.image);
+    
             
             
             
         }else if (actionSheet.tag == 111){
             IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-            [cell.twoPhoto setImage:img forState:0];
+            
+            
+            //上传图片
+            
+            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _downId = (NSString*)object;
+                   [cell.twoPhoto setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+            } errorResult:^(NSError *enginerError) {
+                [weakSelf showHint:@"错误"];
+            }];
+            
+            
+            
         }else if(actionSheet.tag == 333){
             BusinessTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-            [cell.licenseBtn setImage:img forState:0];
+            
+            
+            //上传图片
+            
+            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _licenseId = (NSString*)object;
+                   [cell.licenseBtn setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+            } errorResult:^(NSError *enginerError) {
+                [weakSelf showHint:@"错误"];
+            }];
+            
         }else{
-            OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
-            [cell.otherBtn setImage:img forState:0];
+            
+            if (!img) {
+                OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
+                
+                
+                //上传图片
+                
+                [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+                    if (success) {
+                        _otherId = (NSString*)object;
+                        [cell.otherBtn setImage:img forState:0];
+                    }else{
+                        [weakSelf showHint:@"错误"];
+                    }
+                } errorResult:^(NSError *enginerError) {
+                    [weakSelf showHint:@"错误"];
+                }];
+            }else{
+                _otherId = @"";
+            }
+            
+         
+            
         }
         
     };
-    
-    switch (buttonIndex) {
-        case 0:
-            [self openCamera];
-            self.imageBlock = ^(UIImage *img){
-                
-            };
-            break;
-        case 1:
-            [self openPhoto];
-            __weak typeof(self) weakSelf = self;
-            self.imageBlock=^(UIImage *img){
-                //上传图片
-                [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL sucess, NSString *msg) {
-                    
-                    
-                } errorResult:^(NSError *enginerError) {
-                    
-                    
-                }];
-
-                if (actionSheet.tag == 000) {
-                    IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-                    [cell.onePhoto setImage:img forState:0];
-                }else if (actionSheet.tag == 111){
-                    IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-                    [cell.twoPhoto setImage:img forState:0];
-                }else if(actionSheet.tag == 333){
-                    BusinessTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-                    [cell.licenseBtn setImage:img forState:0];
-                }else{
-                    OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
-                    [cell.otherBtn setImage:img forState:0];
-                }
-            };
-            break;
-     
-    }
-    
 }
 
+- (IBAction)confirmUpdate:(id)sender {
+   
+    
+    
+//    _nameStr = applyCell.trueName.text;
+//    _storeName = applyCell.storeName.text;
+//    _inviteCode = applyCell.inviteCodeText.text;
+//    _identiId = applyCell.identiNum.text;
+
+    
+    ApplyContentTableViewCell *applyCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    NSDictionary *para = @{
+                           @"type":@"1",
+                           @"member":@{
+                               @"name":applyCell.trueName.text,
+                               @"idcardno":applyCell.identiNum.text,
+                               @"invitecode":_inviteCode
+                           },
+                           @"shop":@{
+                               @"shopname":applyCell.storeName.text,
+                               @"categoryid":cateId,
+                               @"businessimg":_licenseId,
+                               @"licenseimg":_otherId,
+                               @"idcardnofrontimg":_upId,
+                               @"idcardnobackimg":_downId
+                           }
+                        };
+    
+    [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
+        
+        
+        
+    } errorResult:^(NSError *enginerError) {
+        
+        
+    }];
+   
+    SHOWALERTVIEW(@"yishenqing ");
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
