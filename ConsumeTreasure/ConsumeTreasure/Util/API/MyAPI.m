@@ -9,6 +9,9 @@
 #import "MyAPI.h"
 #import <AFNetworking.h>
 #import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "Order.h"
+
 
 #import "HomeStoreModel.h"
 #import "AddModel.h"
@@ -133,6 +136,42 @@
         
     }];
 }
+#pragma mark - 支付
+- (void)payMoneyWithParameters:(NSDictionary *)para
+                         resut:(StateBlock)result
+                   errorResult:(ErrorBlock)errorResult{
+    
+     [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         //微信支付
+         if ([para[@"paytype"] isEqualToString:@"1"]) {
+             PayReq *request = [[PayReq alloc] init];
+             NSString *stamp = responseObject[@"data"][@"timestamp"];
+             request.openID= responseObject[@"data"][@"appid"];
+             request.partnerId =responseObject[@"data"][@"partnerid"];
+             request.prepayId= responseObject[@"data"][@"prepayid"];
+             request.package = responseObject[@"data"][@"packageStr"];
+             request.nonceStr= responseObject[@"data"][@"noncestr"];
+             request.sign=responseObject[@"data"][@"sign"];
+             request.timeStamp=stamp.intValue;
+             [WXApi sendReq:request];
+         }else if ([para[@"paytype"] isEqualToString:@"2"]){//支付宝支付
+             NSString *orderString = nil;
+             NSString *appScheme = nil;
+                     // NOTE: 调用支付结果开始支付
+                     [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                             NSLog(@"reslut = %@",resultDic);
+                         }];
+             
+         }
+
+     
+     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+     
+     
+     }];
+     
+     
+}
 #pragma mark - 首页热门商户
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para
                                resulet:(ArrayBlock)result
@@ -164,25 +203,7 @@
      
      
    
-    /*
-    [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        PayReq *request = [[PayReq alloc] init];
-        NSString *stamp = responseObject[@"data"][@"timestamp"];
-        request.openID= responseObject[@"data"][@"appid"];
-        request.partnerId =responseObject[@"data"][@"partnerid"];
-        request.prepayId= responseObject[@"data"][@"prepayid"];
-        request.package = responseObject[@"data"][@"packageStr"];
-        request.nonceStr= responseObject[@"data"][@"noncestr"];
-        request.sign=responseObject[@"data"][@"sign"];
-        request.timeStamp=stamp.intValue;
-        [WXApi sendReq:request];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        
-    }];
-    
-    */
+   
 }
 
 #pragma mark --收益权走势图
