@@ -33,7 +33,7 @@
 #import "CollectShopListModel.h"
 #import "UnionContenModel.h"
 #import "NemberModel.h"
-
+#import "OrderConModel.h"
 
 
 
@@ -571,9 +571,9 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
-            NSMutableArray *memberArr = [NSMutableArray array];
-            memberArr = [NemberModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memList"] error:&error];
-            result(YES,info,@[memberArr]);
+            NSMutableArray *orderArr = [NSMutableArray array];
+            orderArr = [OrderConModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"payorderList"] error:&error];
+            result(YES,info,@[orderArr]);
         }else{
             result(NO,info,nil);
         }

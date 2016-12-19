@@ -19,7 +19,7 @@
 @property (nonatomic,strong) NSString *pay_number;
 @property (nonatomic,strong) NSString *pay_status;
 @property (nonatomic,strong) NSString *total_money;
-@property (nonatomic,strong) NSString *phone;
+@property (nonatomic,strong) NSString *order_description;
 
 
 @end

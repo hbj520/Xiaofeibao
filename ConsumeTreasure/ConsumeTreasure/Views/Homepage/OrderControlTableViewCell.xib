@@ -103,6 +103,10 @@
                     <constraint firstItem="L0I-q4-Bu3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="veW-zO-O7o"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="moneyLab" destination="5c6-OX-3RT" id="Jmh-3U-H8E"/>
+                <outlet property="orderNumLab" destination="yag-NQ-wYh" id="V9b-gh-LpJ"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
