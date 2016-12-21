@@ -68,8 +68,17 @@
 }
 - (IBAction)goApply:(id)sender {
     
-       [self performSegueWithIdentifier:@"ApplySegue" sender:listArr];
-}
+    
+    NSString *isShopId = [[XFBConfig Instance] getIsShop];
+    if ([isShopId isEqualToString:@"0"]) {
+        showAlert(@"正在审核中，请耐心等待");
+    }else{
+        [self performSegueWithIdentifier:@"ApplySegue" sender:listArr];
+    }
+};
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

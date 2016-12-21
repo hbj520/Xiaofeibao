@@ -33,19 +33,33 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQu-BY-oHH">
+                        <rect key="frame" x="218" y="2" width="155" height="47.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="155" id="7Zd-Lw-xPH"/>
+                        </constraints>
+                        <connections>
+                            <action selector="piker:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="M5j-KX-AHC"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ibL-sh-YrB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="9e8-td-LMx"/>
                     <constraint firstItem="NWq-QR-Te4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="DNh-eE-v2q"/>
+                    <constraint firstAttribute="trailing" secondItem="LQu-BY-oHH" secondAttribute="trailing" constant="2" id="RM1-Re-Bi4"/>
                     <constraint firstAttribute="trailing" secondItem="NWq-QR-Te4" secondAttribute="trailing" constant="11" id="UDj-im-dhW"/>
+                    <constraint firstItem="LQu-BY-oHH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="WwH-Rh-Yz5"/>
                     <constraint firstItem="ibL-sh-YrB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iTL-Wt-1DF"/>
                     <constraint firstItem="NWq-QR-Te4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ibL-sh-YrB" secondAttribute="trailing" constant="20" id="ts4-6a-RNT"/>
+                    <constraint firstAttribute="bottom" secondItem="LQu-BY-oHH" secondAttribute="bottom" constant="2" id="v8K-l0-UZq"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="hideBtn" destination="LQu-BY-oHH" id="qRh-ue-kR9"/>
                 <outlet property="placetextfield" destination="NWq-QR-Te4" id="UeT-Ye-sEl"/>
                 <outlet property="storeNameLab" destination="ibL-sh-YrB" id="QtD-It-0Zh"/>
             </connections>
+            <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
 </document>

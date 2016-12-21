@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -651,6 +651,7 @@
                                         </constraints>
                                         <state key="normal" image="whiteback"/>
                                         <connections>
+                                            <action selector="back:" destination="drU-Dg-2Iw" eventType="touchUpInside" id="FCj-pG-kP8"/>
                                             <action selector="back:" destination="vfO-H1-toc" eventType="touchUpInside" id="XSV-zi-fma"/>
                                         </connections>
                                     </button>
@@ -664,7 +665,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额：680.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO2-mk-xpK">
-                                        <rect key="frame" x="119" y="126" width="140" height="21"/>
+                                        <rect key="frame" x="118" y="126" width="139.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="2dP-Fh-cPa"/>
                                         </constraints>
@@ -700,6 +701,7 @@
                                         </constraints>
                                         <state key="normal" image="applyMoney"/>
                                         <connections>
+                                            <action selector="getMoney:" destination="drU-Dg-2Iw" eventType="touchUpInside" id="WuA-gB-4wi"/>
                                             <action selector="getMoney:" destination="vfO-H1-toc" eventType="touchUpInside" id="rVP-yL-Rpd"/>
                                         </connections>
                                     </button>
@@ -777,12 +779,12 @@
                                     <constraint firstAttribute="bottom" secondItem="Lh5-Gv-e4s" secondAttribute="bottom" id="Dhr-Zg-glt"/>
                                     <constraint firstItem="TUe-3n-2bL" firstAttribute="leading" secondItem="FaH-Un-uMZ" secondAttribute="trailing" id="HhL-ou-6U2"/>
                                     <constraint firstItem="1Pb-Ak-nsJ" firstAttribute="centerX" secondItem="j5c-G0-hsC" secondAttribute="centerX" id="I6E-n0-BIe"/>
+                                    <constraint firstItem="fO2-mk-xpK" firstAttribute="centerX" secondItem="j5c-G0-hsC" secondAttribute="centerX" id="JXj-q9-idP"/>
                                     <constraint firstItem="Db2-3H-bKz" firstAttribute="top" secondItem="fO2-mk-xpK" secondAttribute="bottom" constant="15" id="LlV-Re-JKj"/>
                                     <constraint firstItem="1Pb-Ak-nsJ" firstAttribute="top" secondItem="2nv-NQ-mAZ" secondAttribute="bottom" constant="30" id="UDC-bT-v2l"/>
                                     <constraint firstItem="2nv-NQ-mAZ" firstAttribute="top" secondItem="j5c-G0-hsC" secondAttribute="top" constant="37" id="UPo-Ht-Ksq"/>
                                     <constraint firstItem="Db2-3H-bKz" firstAttribute="centerX" secondItem="j5c-G0-hsC" secondAttribute="centerX" id="bTT-wz-OoC"/>
                                     <constraint firstAttribute="bottom" secondItem="TUe-3n-2bL" secondAttribute="bottom" id="cXz-ks-IXb"/>
-                                    <constraint firstItem="fO2-mk-xpK" firstAttribute="leading" secondItem="j5c-G0-hsC" secondAttribute="leading" constant="119" id="dq2-Xx-u6V"/>
                                     <constraint firstItem="Lh5-Gv-e4s" firstAttribute="leading" secondItem="j5c-G0-hsC" secondAttribute="leading" id="g8k-Nq-ccm"/>
                                     <constraint firstItem="2nv-NQ-mAZ" firstAttribute="centerX" secondItem="j5c-G0-hsC" secondAttribute="centerX" id="pXw-eP-r6c"/>
                                     <constraint firstAttribute="bottom" secondItem="FaH-Un-uMZ" secondAttribute="bottom" constant="10" id="rMp-hB-zbD"/>
@@ -804,7 +806,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dpgl" translatesAutoresizingMaskIntoConstraints="NO" id="d69-JV-Cu2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DLwdsh_720" translatesAutoresizingMaskIntoConstraints="NO" id="d69-JV-Cu2">
                                         <rect key="frame" x="49" y="25" width="27" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="GFv-W6-S3c"/>
@@ -856,7 +858,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ddgl" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-4X-vV6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dlSHRZ" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-4X-vV6">
                                         <rect key="frame" x="50" y="25" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="PDi-Ih-kAy"/>
@@ -888,7 +890,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="syt" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-TC-aKR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dlSY" translatesAutoresizingMaskIntoConstraints="NO" id="sTt-TC-aKR">
                                         <rect key="frame" x="49" y="25" width="27" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="aW0-p3-mIU"/>
@@ -935,10 +937,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tlg-PY-nym"/>
+                    <connections>
+                        <outlet property="allInMoney" destination="05O-zD-JXq" id="oAN-ME-FeM"/>
+                        <outlet property="currentMonthMoney" destination="i8X-ia-794" id="Fhn-Vd-Ujr"/>
+                        <outlet property="daliArea" destination="1Pb-Ak-nsJ" id="fOP-fh-i62"/>
+                        <outlet property="goGetStoreDoorView" destination="6xb-Zv-aF8" id="BDB-4e-xZ1"/>
+                        <outlet property="incomeView" destination="2O4-Ye-Drh" id="lIE-Pp-N4h"/>
+                        <outlet property="leftMoney" destination="fO2-mk-xpK" id="t4b-Pl-7dG"/>
+                        <outlet property="myStoreListView" destination="tW2-5P-K5u" id="GhG-xR-hEH"/>
+                        <segue destination="cq0-aG-nzK" kind="push" identifier="myStoreListSegue" id="ajV-c1-eYv"/>
+                        <segue destination="peC-ar-6qe" kind="push" identifier="incomeDetailSegue" id="JBh-6K-Wd5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xu-i8-lDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1058" y="1396"/>
+            <point key="canvasLocation" x="-1058.4000000000001" y="1395.6521739130435"/>
         </scene>
         <!--成为联盟商户-->
         <scene sceneID="bOK-7q-PyV">
@@ -992,6 +1005,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3L-hQ-GCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335.19999999999999" y="1414.5427286356824"/>
+        </scene>
+        <!--Income View Controller-->
+        <scene sceneID="Ifh-Tz-CEi">
+            <objects>
+                <viewController id="peC-ar-6qe" customClass="DLIncomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cd5-sE-lpF"/>
+                        <viewControllerLayoutGuide type="bottom" id="XyE-9I-R1J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x8Q-6h-YpU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kE1-hd-zny"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpp-qp-jhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1076" y="2212"/>
         </scene>
         <!--申请-->
         <scene sceneID="GHP-0h-5gy">
@@ -1896,6 +1928,25 @@
             </objects>
             <point key="canvasLocation" x="-1895" y="1396"/>
         </scene>
+        <!--Store List View Controller-->
+        <scene sceneID="psn-bR-uiI">
+            <objects>
+                <viewController id="cq0-aG-nzK" customClass="DLStoreListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d1G-ZX-wSc"/>
+                        <viewControllerLayoutGuide type="bottom" id="FI9-X3-SJx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WBf-80-vWq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zI5-Eb-e14"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtO-1R-b2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1962" y="2212"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="f7Y-5e-iJL">
             <objects>
@@ -2193,12 +2244,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DLwdsh_720" width="35" height="31"/>
         <image name="applyMoney" width="138" height="33"/>
         <image name="arrow" width="14" height="25"/>
         <image name="backWhite" width="11" height="19"/>
         <image name="binggo" width="33" height="32"/>
         <image name="binggo_on" width="31" height="31"/>
         <image name="ddgl" width="30" height="31"/>
+        <image name="dlSHRZ" width="30" height="31"/>
+        <image name="dlSY" width="32" height="32"/>
         <image name="dpgl" width="35" height="31"/>
         <image name="dq_720" width="29" height="29"/>
         <image name="ljyy_720" width="216" height="84"/>

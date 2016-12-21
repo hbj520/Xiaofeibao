@@ -35,6 +35,7 @@
 #import "TuiJianModel.h"
 #import "AddModel.h"
 #import "HomeStoreModel.h"
+#import "PersonInfoModel.h"
 
 #import "JFCityViewController.h"
 #import "LocationViewController.h"
@@ -60,6 +61,7 @@
     
     HomeStoreModel *Smodel;
     TuiJianModel *Tmodel;
+    PersonInfoModel *infoModel;
 }
 
 @end
@@ -252,6 +254,19 @@
     } errorResult:^(NSError *enginerError) {
          [self endRefresh];
     }];
+    
+    //个人资料
+    [[MyAPI sharedAPI] getInfoPersonalWithParameters:para resulet:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            infoModel = (PersonInfoModel*)object;
+            [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
+            
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
 }
 
 - (void)loadHotStoreAndTuiJianStoreData{
@@ -396,11 +411,14 @@
 
         };
         firstCell.storeBlock = ^{//商户入口
-          [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
             
-          //[self pushToNextWithIdentiField:@"unionSegue" sender:nil];
-                  };
-        
+            NSString *isShopId = [[XFBConfig Instance] getIsShop];
+            if ([isShopId isEqualToString:@"1"]) {
+                [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+            }else{
+                [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
+            }
+        };
         
         firstCell.scanBlock =^{ //扫一扫
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
@@ -414,12 +432,10 @@
            
         };
         firstCell.recordBlock = ^{//浏览记录
-            
              [self pushToNextWithIdentiField:@"historySegue" sender:nil];
           
         };
-        
-        
+
         return firstCell;
 
     }else if (indexPath.section == 1){//第二个section
@@ -436,7 +452,6 @@
                 AddModel *model = addArr[index];
                 [self performSegueWithIdentifier:@"adDetailSegue" sender:model];
             };
-            
             
             return imageChartCell;
         

@@ -17,3 +17,14 @@
 
 
 @end
+
+
+@interface DaLiMasterModel : JSONModel
+
+@property (nonatomic,strong) NSString *type;
+@property (nonatomic,strong) NSString *balance;
+@property (nonatomic,strong) NSString *month_money;
+@property (nonatomic,strong) NSString *total_money;
+
+
+@end

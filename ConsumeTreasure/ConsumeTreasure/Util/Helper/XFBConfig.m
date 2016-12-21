@@ -218,6 +218,19 @@ static XFBConfig * instance = nil;
     [settings setObject:cityCode forKey:@"cityCode"];
     [settings synchronize];
 }
+
+- (void)saveIsShop:(NSString*)isShop{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"isShop"];
+    [settings setObject:isShop forKey:@"isShop"];
+    [settings synchronize];
+}
+
+- (NSString *)getIsShop{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"isShop"];
+}
+
 - (NSString *)getisteacher
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];

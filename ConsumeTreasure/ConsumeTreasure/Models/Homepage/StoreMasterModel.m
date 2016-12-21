@@ -11,3 +11,8 @@
 @implementation StoreMasterModel
 
 @end
+
+@implementation DaLiMasterModel
+
+@end
+

@@ -9,5 +9,12 @@
 #import "BaseViewController.h"
 
 @interface DaLiViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UILabel *daliArea;
+@property (weak, nonatomic) IBOutlet UILabel *leftMoney;
+@property (weak, nonatomic) IBOutlet UILabel *allInMoney;
+@property (weak, nonatomic) IBOutlet UILabel *currentMonthMoney;
 
+@property (weak, nonatomic) IBOutlet UIView *myStoreListView;
+@property (weak, nonatomic) IBOutlet UIView *goGetStoreDoorView;
+@property (weak, nonatomic) IBOutlet UIView *incomeView;
 @end

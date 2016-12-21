@@ -14,6 +14,7 @@
 #import "OtherLicenseTableViewCell.h"
 
 #import "ValuePickerView.h"
+#import "CheckID.h"
 
 #import "BeUnionModel.h"
 
@@ -142,10 +143,16 @@
         if (applyCell == nil) {
             applyCell = [[[NSBundle mainBundle] loadNibNamed:@"ApplyContentTableViewCell" owner:self options:nil] lastObject];
         }
+        
+        __weak typeof(applyCell) weakapplyCell = applyCell;
         applyCell.chooseBlock = ^{
+            //
+            for (UITextField *tf in weakapplyCell.contentView.subviews) {
+                [tf resignFirstResponder];
+            }
             [self upPikerView];
-            
         };
+        
         _nameStr = applyCell.trueName.text;
         _storeName = applyCell.storeName.text;
         _inviteCode = applyCell.inviteCodeText.text;
@@ -227,7 +234,6 @@
     if (buttonIndex == 0) {
         [self openCamera];
   
-
     }else{
         [self openPhoto];
 
@@ -248,16 +254,10 @@
             } errorResult:^(NSError *enginerError) {
                  [weakSelf showHint:@"错误"];
             }];
-         
-            
-    
-            
-            
             
         }else if (actionSheet.tag == 111){
             IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-            
-            
+
             //上传图片
             
             [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
@@ -271,11 +271,8 @@
                 [weakSelf showHint:@"错误"];
             }];
             
-            
-            
         }else if(actionSheet.tag == 333){
             BusinessTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-            
             
             //上传图片
             
@@ -293,8 +290,7 @@
         }else{
             
             OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
-            
-            
+        
             //上传图片
             
             [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
@@ -307,53 +303,57 @@
             } errorResult:^(NSError *enginerError) {
                 [weakSelf showHint:@"错误"];
             }];
-
-         
-            
         }
         
     };
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.view endEditing:YES];
+}
+
 - (IBAction)confirmUpdate:(id)sender {
    
     
-    
-//    _nameStr = applyCell.trueName.text;
-//    _storeName = applyCell.storeName.text;
-//    _inviteCode = applyCell.inviteCodeText.text;
-//    _identiId = applyCell.identiNum.text;
-
-    
     ApplyContentTableViewCell *applyCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    NSDictionary *para = @{
-                           @"type":@"1",
-                           @"member":@{
-                               @"name":applyCell.trueName.text,
-                               @"idcardno":applyCell.identiNum.text,
-                               @"invitecode":_inviteCode
-                           },
-                           @"shop":@{
-                               @"shopname":applyCell.storeName.text,
-                               @"categoryid":cateId,
-                               @"businessimg":_licenseId,
-                               @"licenseimg":_otherId,
-                               @"idcardnofrontimg":_upId,
-                               @"idcardnobackimg":_downId
-                           }
-                        };
     
-    [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
-        if (sucess) {
-            [self showHint:@"上传成功"];
-        }
-    } errorResult:^(NSError *enginerError) {
+    if ([applyCell.rangeText.text isEqualToString:@""]||[applyCell.storeName.text isEqualToString:@""]||[applyCell.trueName.text isEqualToString:@""]||[applyCell.identiNum.text isEqualToString:@""]) {
+        showAlert(@"必填项不可为空");
+    }else if ([CheckID verifyIDCardNumber:applyCell.identiNum.text] == NO){
+        showAlert(@"请输入正确格式的身份证号");
+    }else if ([CheckID deptNameInputShouldChineseWithStr: applyCell.trueName.text] == NO){
+        showAlert(@"姓名请输入汉字");
+    }else if ([_licenseId isEqualToString:@""]||[_upId isEqualToString:@""]||[_downId isEqualToString:@""]){
+        showAlert(@"请上传必须上传照片项");
+    }else{
         
+        NSDictionary *para = @{
+                               @"type":@"1",
+                               @"member":@{
+                                       @"name":applyCell.trueName.text,
+                                       @"idcardno":applyCell.identiNum.text,
+                                       @"invitecode":_inviteCode
+                                       },
+                               @"shop":@{
+                                       @"shopname":applyCell.storeName.text,
+                                       @"categoryid":cateId,
+                                       @"businessimg":_licenseId,
+                                       @"licenseimg":_otherId,
+                                       @"idcardnofrontimg":_upId,
+                                       @"idcardnobackimg":_downId
+                                       }
+                               };
         
-    }];
-   
-    SHOWALERTVIEW(@"yishenqing ");
-    
+        [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
+            if (sucess) {
+                [self showHint:@"上传成功"];
+            }
+        } errorResult:^(NSError *enginerError) {
+            
+            
+        }];
+    }
+ 
 }
 
 - (void)didReceiveMemoryWarning {

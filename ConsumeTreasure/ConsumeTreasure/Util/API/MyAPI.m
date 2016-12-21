@@ -34,7 +34,7 @@
 #import "UnionContenModel.h"
 #import "NemberModel.h"
 #import "OrderConModel.h"
-
+#import "PersonInfoModel.h"
 
 
 @interface MyAPI()
@@ -172,6 +172,34 @@
      
      
 }
+
+#pragma mark -- 保存部分个人资料
+- (void)getInfoPersonalWithParameters:(NSDictionary*)para
+                              resulet:(ModelBlock)result
+                          errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":KToken,
+                              @"platform":@"",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/showPerson" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            PersonInfoModel *InfoModel = [[PersonInfoModel alloc]initWithDictionary:responseObject[@"data"][@"person"] error:&error];
+            result(YES,info,InfoModel);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+
+    
+    
+}
+
 #pragma mark - 首页热门商户
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para
                                resulet:(ArrayBlock)result
@@ -435,7 +463,9 @@
 }
 
 #pragma mark -- 收藏/取消收藏
-- (void)collectStoreOrNotWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)collectStoreOrNotWithParameters:(NSDictionary*)para
+                                 result:(StateBlock)result
+                            errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
                               @"platform":@"0",
@@ -506,6 +536,34 @@
     }];
 
     
+    
+}
+
+#pragma mark ---我是代理
+- (void)getDaiLiMasterDataWithParameters:(NSDictionary*)para
+                                  result:(ModelBlock)result
+                             errorResult:(ErrorBlock)errorResult{
+    NSDictionary *paraDic = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+
+    [self.manager POST:@"userinfo/myProxy" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+            NSError *error = nil;
+            DaLiMasterModel *model = [[DaLiMasterModel alloc]initWithDictionary:responseObject[@"data"][@"proxy"] error:&error];
+            
+            result(YES,info,model);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
     
 }
 

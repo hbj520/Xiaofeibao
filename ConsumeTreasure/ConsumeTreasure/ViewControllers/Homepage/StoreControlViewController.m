@@ -14,6 +14,8 @@
 #import "OrderControlTableViewCell.h"
 #import "StoreControlTableViewCell.h"
 #import "DetailHeadView.h"
+
+#import "DLPickerView.h"
 @interface StoreControlViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSArray *secOne;
@@ -45,9 +47,9 @@
     secTwo = @[@"反币比例",@"真实姓名",@"身份证号码",@"邀请码"];
     secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
     
-    placeOne = @[@"天骏消费宝",@"具体位置",@"0000-0000000",@"09:00 >",@"16:00 >",@"商店详情"];
+    placeOne = @[@"天骏消费宝",@"具体位置",@"请填写正确的号码",@"09:00 >",@"18:00 >",@"商店详情"];
     placeTwo = @[@"10%",@"XXX",@"xxxxxxxxxxxxxx",@"xxxxx"];
-    placeThr = @[@"待上传 >",@"待上传 >",@"待上传 >",@"待上传 >"];
+    placeThr = @[@"已上传 >",@"待上传 >",@"已上传 >",@"已上传 >"];
     
     [self creatUI];
 }
@@ -92,7 +94,29 @@
         storeConCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreControlTableViewCell" owner:self options:nil] lastObject];
     }
     storeConCell.selectionStyle = 0;
+    
+    storeConCell.hideBtn.enabled = NO;
+    
+    __weak typeof(storeConCell) weakCell  = storeConCell;
+    storeConCell.pikerBlock =^{
+        DLPickerView *pickerView = [[DLPickerView alloc] initWithPlistName:@"Time" withSelectedItem:[weakCell.placetextfield.text componentsSeparatedByString:@":"] withSelectedBlock:^(id  _Nonnull item) {
+            
+            weakCell.placetextfield.text = [item componentsJoinedByString:@":"];
+          
+        }];
+        
+        [pickerView show];
+  
+    };
+    
     if (indexPath.section == 0) {
+        
+        if (indexPath.row == 3 ||indexPath.row == 4) {
+            storeConCell.hideBtn.enabled = YES;
+        }else{
+            storeConCell.hideBtn.enabled = NO;
+        }
+        
         storeConCell.storeNameLab.text = secOne[indexPath.row];
         storeConCell.placetextfield.placeholder = placeOne[indexPath.row];
     }else if (indexPath.section == 1){
