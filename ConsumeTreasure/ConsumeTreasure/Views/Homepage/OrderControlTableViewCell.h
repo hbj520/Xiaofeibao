@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OrderConModel.h"
 
 @interface OrderControlTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *orderNumLab;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
+
+@property (nonatomic,strong) OrderConModel *orderModel;
 
 @end

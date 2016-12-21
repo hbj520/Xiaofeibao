@@ -83,6 +83,8 @@
     [self addLocationGes];
     //[self loadHotStoreData];
      localStr = @"模拟定位";//后   需删除
+    [self loadHotStoreAndTuiJianStoreData];
+   
 }
 
 
@@ -93,7 +95,7 @@
     [mapView viewWillAppear];
     mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     
-    [self loadHotStoreAndTuiJianStoreData];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
     
@@ -201,6 +203,7 @@
             [addArr removeAllObjects];
         }
         [weakSelf loadIncomeAndAddsData];
+        [weakSelf loadHotStoreAndTuiJianStoreData];
     }];
     
 }
@@ -234,10 +237,12 @@
          [self endRefresh];
     }];
     */
-    
+    [BQActivityView showActiviTy];
+
     //广告位
     [[MyAPI sharedAPI] getHomeAddDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
+            [BQActivityView hideActiviTy];
             [addArr addObjectsFromArray:arrays];
 
             NSLog(@"=======收益权==%@",addArr);
@@ -256,8 +261,10 @@
                            @"latitude":ApplicationDelegate.latitude,//latitudeStr
                            @"longitude":ApplicationDelegate.longitude//longitudeStr
                            };
+     [BQActivityView showActiviTy];
     [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
+            [BQActivityView hideActiviTy];
             [HotStoreArr removeAllObjects];
             [HotStoreArr addObjectsFromArray:arrays];
             [self.tableView reloadData];
@@ -385,13 +392,13 @@
         firstCell.partnerBlock = ^{//合伙人超市partnerSegue
            // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
             //[self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
-            [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+            [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
 
         };
         firstCell.storeBlock = ^{//商户入口
-          //[self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+          [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
             
-          [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
+          //[self pushToNextWithIdentiField:@"unionSegue" sender:nil];
                   };
         
         

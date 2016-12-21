@@ -15,6 +15,11 @@
     // Initialization code
 }
 
+- (void)setOrderModel:(OrderConModel *)orderModel{
+    self.orderNumLab.text = orderModel.pay_number;
+    self.moneyLab.text = orderModel.total_money;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

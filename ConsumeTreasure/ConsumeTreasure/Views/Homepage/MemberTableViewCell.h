@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NemberModel.h"
 @interface MemberTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *memImg;
+@property (weak, nonatomic) IBOutlet UILabel *memName;
+@property (weak, nonatomic) IBOutlet UILabel *memPhone;
+
+@property (nonatomic,strong) NemberModel *memModel;
 
 @end

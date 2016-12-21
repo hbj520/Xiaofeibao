@@ -7,12 +7,19 @@
 //
 
 #import "MemberTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation MemberTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (void)setMemModel:(NemberModel *)memModel{
+    [self.memImg sd_setImageWithURL:[NSURL URLWithString:memModel.imgUrl] placeholderImage:[UIImage imageNamed:@"tx"]];
+    self.memName.text = memModel.loginName;
+    self.memPhone.text = memModel.phone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
