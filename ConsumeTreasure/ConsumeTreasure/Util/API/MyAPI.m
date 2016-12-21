@@ -44,7 +44,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:CSUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -119,7 +119,7 @@
                             result:(StateBlock)result
                        errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
@@ -140,8 +140,12 @@
 - (void)payMoneyWithParameters:(NSDictionary *)para
                          resut:(StateBlock)result
                    errorResult:(ErrorBlock)errorResult{
-    
-     [self.manager POST:@"pay/getwxpayorder" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+     [self.manager POST:@"pay/getpayorder" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          //微信支付
          if ([para[@"paytype"] isEqualToString:@"1"]) {
              PayReq *request = [[PayReq alloc] init];

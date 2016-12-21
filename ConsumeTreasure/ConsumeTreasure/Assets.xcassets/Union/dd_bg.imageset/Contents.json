@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "zfb.png",
+      "filename" : "dd_bg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "zfb-1.png",
+      "filename" : "dd_bg-1.png",
       "scale" : "2x"
     },
     {

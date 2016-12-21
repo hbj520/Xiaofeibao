@@ -7,7 +7,7 @@
 //
 
 #import "Tools.h"
-//#import "SecurityUtil.h"
+#import "SecurityUtil.h"
 #import "AppDelegate.h"
 
 
@@ -182,18 +182,18 @@
     return lines;
 }
 //对登录密码加密
-//+ (NSString *)loginPasswordSecurityLock:(NSString *)password{
-//    ;
-//    
-//    
-//    return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@yykjAwdx",[SecurityUtil encryptMD5String:password]]]];
-//}
-/*
++ (NSString *)loginPasswordSecurityLock:(NSString *)password{
+    ;
+    
+    
+    return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@yykjAwdx",[SecurityUtil encryptMD5String:password]]]];
+}
+
 + (NSString*)loginPasswdSecurityLock:(NSString*)password{
     return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@nos_qx",[SecurityUtil encryptMD5String:password]]]];
 
 }
-*/
+
 +(UIImage *) imageCompressForSize:(UIImage *)sourceImage targetSize:(CGSize)size{
     UIImage *newImage = nil;
     CGSize imageSize = sourceImage.size;
