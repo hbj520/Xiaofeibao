@@ -31,6 +31,13 @@
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
+		AB50D4791E0928AA00B427E6 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D46D1E0928AA00B427E6 /* NSData+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB50D47A1E0928AA00B427E6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D46F1E0928AA00B427E6 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB50D47B1E0928AA00B427E6 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4711E0928AA00B427E6 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB50D47C1E0928AA00B427E6 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4731E0928AA00B427E6 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB50D47D1E0928AA00B427E6 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4751E0928AA00B427E6 /* SecurityUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB50D47E1E0928AA00B427E6 /* StringEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4771E0928AA00B427E6 /* StringEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
 		AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB678B341DF650D200902C52 /* CollectShopListModel.m */; };
@@ -333,6 +340,20 @@
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
 		AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LianmenRightCollectionViewCell.m; sourceTree = "<group>"; };
 		AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LianmenRightCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB50D46C1E0928AA00B427E6 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		AB50D46D1E0928AA00B427E6 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		AB50D46E1E0928AA00B427E6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		AB50D46F1E0928AA00B427E6 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		AB50D4701E0928AA00B427E6 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		AB50D4711E0928AA00B427E6 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		AB50D4721E0928AA00B427E6 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		AB50D4731E0928AA00B427E6 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		AB50D4741E0928AA00B427E6 /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
+		AB50D4751E0928AA00B427E6 /* SecurityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtil.m; sourceTree = "<group>"; };
+		AB50D4761E0928AA00B427E6 /* StringEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringEncryption.h; sourceTree = "<group>"; };
+		AB50D4771E0928AA00B427E6 /* StringEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEncryption.m; sourceTree = "<group>"; };
+		AB50D47F1E095C9B00B427E6 /* PayMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMoneyTableViewController.h; sourceTree = "<group>"; };
+		AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMoneyTableViewController.m; sourceTree = "<group>"; };
 		AB608C2F1D9D0B1200194FC2 /* NSObject+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNetworking.h"; sourceTree = "<group>"; };
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
@@ -917,9 +938,29 @@
 			path = Union;
 			sourceTree = "<group>";
 		};
+		AB50D4681E0928AA00B427E6 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				AB50D46C1E0928AA00B427E6 /* NSData+AES.h */,
+				AB50D46D1E0928AA00B427E6 /* NSData+AES.m */,
+				AB50D46E1E0928AA00B427E6 /* NSData+Base64.h */,
+				AB50D46F1E0928AA00B427E6 /* NSData+Base64.m */,
+				AB50D4701E0928AA00B427E6 /* NSString+MD5.h */,
+				AB50D4711E0928AA00B427E6 /* NSString+MD5.m */,
+				AB50D4721E0928AA00B427E6 /* NSString+URLEncoding.h */,
+				AB50D4731E0928AA00B427E6 /* NSString+URLEncoding.m */,
+				AB50D4741E0928AA00B427E6 /* SecurityUtil.h */,
+				AB50D4751E0928AA00B427E6 /* SecurityUtil.m */,
+				AB50D4761E0928AA00B427E6 /* StringEncryption.h */,
+				AB50D4771E0928AA00B427E6 /* StringEncryption.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
 		AB608C1B1D9CB66D00194FC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AB50D4681E0928AA00B427E6 /* Security */,
 				AB0F64461DB0846B00A5EB1E /* Marco.h */,
 				D1F275A81DAD0B86005B9849 /* Category */,
 				AB608C201D9CB7A900194FC2 /* Helper */,
@@ -1132,6 +1173,8 @@
 				AB79B3701DB8B2BC00A7F96A /* UnionListViewController.m */,
 				AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */,
 				AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */,
+				AB50D47F1E095C9B00B427E6 /* PayMoneyTableViewController.h */,
+				AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -2065,6 +2108,7 @@
 				D16BF2B31DEFF15B001A82BF /* JFCityTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
 				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,
+				AB50D47B1E0928AA00B427E6 /* NSString+MD5.m in Sources */,
 				D120548F1DED20A100EB2707 /* IdentiPhotoTableViewCell.m in Sources */,
 				D10DC9411E0907D900930F74 /* CheckID.m in Sources */,
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
@@ -2117,19 +2161,24 @@
 				D12165A91DB65998006B06FC /* IncomeViewController.m in Sources */,
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
 				D15B3AF81DDC0E5E009122FE /* base64.m in Sources */,
+				AB50D47C1E0928AA00B427E6 /* NSString+URLEncoding.m in Sources */,
+				AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */,
 				AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */,
+				AB50D47D1E0928AA00B427E6 /* SecurityUtil.m in Sources */,
 				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
 				ABF5BEEA1DF7E97A00D19DFB /* SettingTableViewController.m in Sources */,
 				AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */,
 				D16BF2CE1DF14E72001A82BF /* StoreDetailModel.m in Sources */,
 				D1F916A81E07B4D70091B989 /* DaLiViewController.m in Sources */,
 				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
+				AB50D4791E0928AA00B427E6 /* NSData+AES.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
 				D11736BB1DFE7FAE00270D26 /* StoreControlTableViewCell.m in Sources */,
 				D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
 				D16BF2B41DEFF15B001A82BF /* JFCityViewController.m in Sources */,
+				AB50D47E1E0928AA00B427E6 /* StringEncryption.m in Sources */,
 				AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */,
 				D15B39671DD414A7009122FE /* EstimateTableViewCell.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
@@ -2157,6 +2206,7 @@
 				D15B3B201DDEF0D6009122FE /* DetailIncomeTableViewCell.m in Sources */,
 				D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */,
 				D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */,
+				AB50D47A1E0928AA00B427E6 /* NSData+Base64.m in Sources */,
 				D19B6E1B1DE7DA65002A5667 /* AccountModel.m in Sources */,
 				D15B39841DD99D1F009122FE /* LookStoreModel.m in Sources */,
 				D12054861DEC348300EB2707 /* ApplyViewController.m in Sources */,
