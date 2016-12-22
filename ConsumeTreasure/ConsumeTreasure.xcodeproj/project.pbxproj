@@ -81,6 +81,12 @@
 		D10DC9461E09363300930F74 /* Time.plist in Resources */ = {isa = PBXBuildFile; fileRef = D10DC9451E09363300930F74 /* Time.plist */; };
 		D10DC9491E095A0700930F74 /* DLIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC9481E095A0700930F74 /* DLIncomeViewController.m */; };
 		D10DC94C1E095A2300930F74 /* DLStoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC94B1E095A2300930F74 /* DLStoreListViewController.m */; };
+		D10DC9521E0A307400930F74 /* XWMoneyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC94F1E0A307400930F74 /* XWMoneyTextField.m */; };
+		D10DC9531E0A307400930F74 /* XWMoneyTextFieldLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC9511E0A307400930F74 /* XWMoneyTextFieldLimit.m */; };
+		D10DC9561E0A572500930F74 /* GoPrePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC9551E0A572500930F74 /* GoPrePayViewController.m */; };
+		D10DC9591E0A579200930F74 /* OtherPayWayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC9581E0A579200930F74 /* OtherPayWayViewController.m */; };
+		D10DC95C1E0A907700930F74 /* SetPayPswViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC95B1E0A907700930F74 /* SetPayPswViewController.m */; };
+		D10DC95F1E0AAAA600930F74 /* TXTradePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D10DC95E1E0AAAA600930F74 /* TXTradePasswordView.m */; };
 		D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B21DB0B28F001C1992 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B51DB0B28F001C1992 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10EE3D91DB0B28F001C1992 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D10EE3B71DB0B28F001C1992 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -434,6 +440,18 @@
 		D10DC9481E095A0700930F74 /* DLIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLIncomeViewController.m; sourceTree = "<group>"; };
 		D10DC94A1E095A2300930F74 /* DLStoreListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStoreListViewController.h; sourceTree = "<group>"; };
 		D10DC94B1E095A2300930F74 /* DLStoreListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStoreListViewController.m; sourceTree = "<group>"; };
+		D10DC94E1E0A307400930F74 /* XWMoneyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWMoneyTextField.h; sourceTree = "<group>"; };
+		D10DC94F1E0A307400930F74 /* XWMoneyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMoneyTextField.m; sourceTree = "<group>"; };
+		D10DC9501E0A307400930F74 /* XWMoneyTextFieldLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWMoneyTextFieldLimit.h; sourceTree = "<group>"; };
+		D10DC9511E0A307400930F74 /* XWMoneyTextFieldLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMoneyTextFieldLimit.m; sourceTree = "<group>"; };
+		D10DC9541E0A572500930F74 /* GoPrePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoPrePayViewController.h; sourceTree = "<group>"; };
+		D10DC9551E0A572500930F74 /* GoPrePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoPrePayViewController.m; sourceTree = "<group>"; };
+		D10DC9571E0A579200930F74 /* OtherPayWayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherPayWayViewController.h; sourceTree = "<group>"; };
+		D10DC9581E0A579200930F74 /* OtherPayWayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherPayWayViewController.m; sourceTree = "<group>"; };
+		D10DC95A1E0A907700930F74 /* SetPayPswViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPayPswViewController.h; sourceTree = "<group>"; };
+		D10DC95B1E0A907700930F74 /* SetPayPswViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPayPswViewController.m; sourceTree = "<group>"; };
+		D10DC95D1E0AAAA600930F74 /* TXTradePasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXTradePasswordView.h; sourceTree = "<group>"; };
+		D10DC95E1E0AAAA600930F74 /* TXTradePasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXTradePasswordView.m; sourceTree = "<group>"; };
 		D10EE3B11DB0B28F001C1992 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		D10EE3B21DB0B28F001C1992 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		D10EE3B31DB0B28F001C1992 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -1160,6 +1178,8 @@
 				AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */,
 				AB06A9871DF940D4006F67C2 /* AttentionShopViewController.h */,
 				AB06A9881DF940D4006F67C2 /* AttentionShopViewController.m */,
+				D10DC95A1E0A907700930F74 /* SetPayPswViewController.h */,
+				D10DC95B1E0A907700930F74 /* SetPayPswViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1175,6 +1195,10 @@
 				AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */,
 				AB50D47F1E095C9B00B427E6 /* PayMoneyTableViewController.h */,
 				AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */,
+				D10DC9541E0A572500930F74 /* GoPrePayViewController.h */,
+				D10DC9551E0A572500930F74 /* GoPrePayViewController.m */,
+				D10DC9571E0A579200930F74 /* OtherPayWayViewController.h */,
+				D10DC9581E0A579200930F74 /* OtherPayWayViewController.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -1488,9 +1512,21 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		D10DC94D1E0A307400930F74 /* XWMoneyTextField */ = {
+			isa = PBXGroup;
+			children = (
+				D10DC94E1E0A307400930F74 /* XWMoneyTextField.h */,
+				D10DC94F1E0A307400930F74 /* XWMoneyTextField.m */,
+				D10DC9501E0A307400930F74 /* XWMoneyTextFieldLimit.h */,
+				D10DC9511E0A307400930F74 /* XWMoneyTextFieldLimit.m */,
+			);
+			path = XWMoneyTextField;
+			sourceTree = "<group>";
+		};
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D10DC94D1E0A307400930F74 /* XWMoneyTextField */,
 				D16BF2C61DF106DC001A82BF /* JPullDownMenu */,
 				ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */,
 				D15B3A8E1DDC0E5E009122FE /* AliPay */,
@@ -1806,6 +1842,8 @@
 				D10DC9401E0907D900930F74 /* CheckID.m */,
 				D10DC9421E09307600930F74 /* DLPickerView.h */,
 				D10DC9431E09307600930F74 /* DLPickerView.m */,
+				D10DC95D1E0AAAA600930F74 /* TXTradePasswordView.h */,
+				D10DC95E1E0AAAA600930F74 /* TXTradePasswordView.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -2087,6 +2125,7 @@
 				AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */,
 				D111711E1DFAA8F500AD88DE /* MemberTableViewCell.m in Sources */,
 				D12165F11DB71CCE006B06FC /* SYQMoneyTableViewCell.m in Sources */,
+				D10DC9531E0A307400930F74 /* XWMoneyTextFieldLimit.m in Sources */,
 				D10EE3D81DB0B28F001C1992 /* ASIDataCompressor.m in Sources */,
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
 				D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */,
@@ -2107,6 +2146,7 @@
 				D15450FB1DF936D8002F4057 /* TuiJianTableViewCell.m in Sources */,
 				D16BF2B31DEFF15B001A82BF /* JFCityTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
+				D10DC9591E0A579200930F74 /* OtherPayWayViewController.m in Sources */,
 				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,
 				AB50D47B1E0928AA00B427E6 /* NSString+MD5.m in Sources */,
 				D120548F1DED20A100EB2707 /* IdentiPhotoTableViewCell.m in Sources */,
@@ -2144,7 +2184,9 @@
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
 				AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
+				D10DC9561E0A572500930F74 /* GoPrePayViewController.m in Sources */,
 				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
+				D10DC9521E0A307400930F74 /* XWMoneyTextField.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */,
@@ -2162,6 +2204,7 @@
 				D10EE3E11DB0B28F001C1992 /* NSString+Hashing.m in Sources */,
 				D15B3AF81DDC0E5E009122FE /* base64.m in Sources */,
 				AB50D47C1E0928AA00B427E6 /* NSString+URLEncoding.m in Sources */,
+				D10DC95C1E0A907700930F74 /* SetPayPswViewController.m in Sources */,
 				AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */,
 				AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */,
 				AB50D47D1E0928AA00B427E6 /* SecurityUtil.m in Sources */,
@@ -2219,6 +2262,7 @@
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
 				D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */,
 				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
+				D10DC95F1E0AAAA600930F74 /* TXTradePasswordView.m in Sources */,
 				AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */,
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
 				D10DC9491E095A0700930F74 /* DLIncomeViewController.m in Sources */,

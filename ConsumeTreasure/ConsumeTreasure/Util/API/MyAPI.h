@@ -28,6 +28,11 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                             result:(StateBlock)result
                        errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 通宝币数量和设置密码
+- (void)getTongBaoBiAndPayPswWithParameters:(NSDictionary *)para
+                                      resut:(ModelBlock)result
+                                errorResult:(ErrorBlock)errorResult;
+
 #pragma mark - 支付
 - (void)payMoneyWithParameters:(NSDictionary *)para
                          resut:(StateBlock)result

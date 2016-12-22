@@ -11,3 +11,8 @@
 @implementation PersonInfoModel
 
 @end
+
+
+@implementation tongBaoModel
+
+@end

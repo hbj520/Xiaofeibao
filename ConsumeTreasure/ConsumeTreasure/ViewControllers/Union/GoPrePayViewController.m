@@ -1,0 +1,180 @@
+//
+//  GoPrePayViewController.m
+//  ConsumeTreasure
+//
+//  Created by youyoumacmini3 on 16/12/21.
+//  Copyright © 2016年 youyou. All rights reserved.
+//
+
+#import "GoPrePayViewController.h"
+#import "SetPayPswViewController.h"
+#import "PersonInfoModel.h"
+
+#import <Masonry.h>
+
+@interface GoPrePayViewController ()<XWMoneyTextFieldLimitDelegate>
+{
+    float leftMoney;//保存通宝币余额
+    
+    XWMoneyTextField *Tongtf;
+    
+    tongBaoModel *tongModel;
+}
+@end
+
+@implementation GoPrePayViewController
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    leftMoney = 20;
+    [self setTextField];
+    [self setUseLeftMoney];
+    [self getTongLeft];//请求余额
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)getTongLeft{
+    NSDictionary *para = @{
+                           
+                           };
+    [[MyAPI sharedAPI] getTongBaoBiAndPayPswWithParameters:para resut:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            tongModel = (tongBaoModel*)object;
+            if ([tongModel.hasPayPwd isEqualToString:@"0"]) {
+                UIAlertView * alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您尚未设置支付密码，是否立即前往设置。或者您可以在”我“->“设置”中去设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
+                [alert show];
+            }
+        }
+        
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    self.leftTongMoney.text = [NSString stringWithFormat:@"可用余额%ld",(long)leftMoney];//通宝币余额
+}
+
+
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            
+            break;
+            
+        case 1:
+        {
+           //去设置支付密码
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+            SetPayPswViewController *SetPayPswVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"setPayPswSB"];
+            [self.navigationController pushViewController:SetPayPswVC animated:YES];
+
+        }
+            break;
+    }
+}
+
+- (void)setTextField{
+    CGRect frame = CGRectMake(100,0,[UIScreen mainScreen].bounds.size.width - 100,44);
+    Tongtf = [[XWMoneyTextField alloc] initWithFrame:frame];
+    Tongtf.textAlignment = UITextAlignmentRight;
+    Tongtf.font = [UIFont systemFontOfSize:20];
+    Tongtf.tintColor= [UIColor redColor];
+    Tongtf.textColor = [UIColor redColor];
+    Tongtf.placeholder = @"请输入金额";
+    Tongtf.keyboardType = UIKeyboardTypeDecimalPad;
+    Tongtf.limit.delegate = self;
+    Tongtf.limit.max = @"99999.99";
+    
+    [self.tfView addSubview:Tongtf];
+    
+    [Tongtf mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(@0);
+        // make.left.equalTo(@100);
+        make.right.equalTo(@(-10));
+        make.top.equalTo(@0);
+    }];
+}
+
+- (void)setUseLeftMoney{
+    self.useLeftMoneyBtn.selected = YES;
+    [self.useLeftMoneyBtn setBackgroundImage:[UIImage imageNamed:@"checked"] forState:UIControlStateNormal];
+    [self.useLeftMoneyBtn setBackgroundImage:[UIImage imageNamed:@"check"] forState:UIControlStateSelected];
+    [self.useLeftMoneyBtn addTarget:self action:@selector(chooseUse:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)chooseUse:(UIButton*)button{
+
+    
+    self.disCountMoney.text = @"";
+    Tongtf.text = @"";
+    self.realPay.text = @"";
+    self.getTongMoney.text = @"";
+    button.selected = !button.selected;
+    if (button.selected == NO) {
+        leftMoney = 0;
+    }else{
+        leftMoney = 20;
+    }
+}
+
+
+#pragma mark - XWMoneyTextFieldLimitDelegate
+- (void)valueChange:(id)sender{
+    
+    if ([sender isKindOfClass:[XWMoneyTextField class]]) {
+        
+        XWMoneyTextField *tf = (XWMoneyTextField *)sender;
+        
+      
+        if ([tf.text floatValue] > leftMoney) {
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %ld",(long)leftMoney];//折扣
+            
+            self.realPay.text = [NSString stringWithFormat:@"%.2f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
+            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]/10)];//获得通宝币
+            
+        }else{
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %@",tf.text];
+            self.realPay.text = @"0";
+            self.getTongMoney.text = @"0";
+        }
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [Tongtf resignFirstResponder];
+}
+
+- (IBAction)GopayNext:(id)sender {
+    self.hidesBottomBarWhenPushed = YES;
+    [Tongtf resignFirstResponder];
+    [self performSegueWithIdentifier:@"gotoPay" sender:nil];
+    //self.hidesBottomBarWhenPushed = NO;
+}
+- (IBAction)back:(id)sender {
+    [self backTolastPage];
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

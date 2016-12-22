@@ -426,6 +426,9 @@
 */
 
 - (IBAction)applyNowBtn:(id)sender {
+    self.hidesBottomBarWhenPushed = YES;
     [self performSegueWithIdentifier:@"onlinePaySegueId" sender:nil];
+    //self.hidesBottomBarWhenPushed = NO;
+    
 }
 @end

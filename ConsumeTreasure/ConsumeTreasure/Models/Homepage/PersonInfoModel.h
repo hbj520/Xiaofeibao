@@ -13,3 +13,10 @@
 @property (nonatomic,strong) NSString *isshopchecked;
 
 @end
+
+
+@interface tongBaoModel : JSONModel
+
+@property (nonatomic,strong) NSString *goldNum;
+@property (nonatomic,strong) NSString *hasPayPwd;
+@end

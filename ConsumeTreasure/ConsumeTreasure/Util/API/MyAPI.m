@@ -44,7 +44,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:CSUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -136,6 +136,32 @@
         
     }];
 }
+
+#pragma mark -- 通宝币数量和设置密码
+- (void)getTongBaoBiAndPayPswWithParameters:(NSDictionary *)para
+                                      resut:(ModelBlock)result
+                                errorResult:(ErrorBlock)errorResult{
+    
+    NSDictionary *paraDic = @{
+                              @"tokenid":KToken,
+                              @"platform":@"",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/preferential" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            tongBaoModel *tongModel = [[tongBaoModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
+            result(YES,info,tongModel);
+        }else{
+            result(NO,info,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+
+}
+
 #pragma mark - 支付
 - (void)payMoneyWithParameters:(NSDictionary *)para
                          resut:(StateBlock)result

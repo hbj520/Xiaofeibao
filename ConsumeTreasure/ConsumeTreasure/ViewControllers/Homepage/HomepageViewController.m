@@ -239,7 +239,7 @@
          [self endRefresh];
     }];
     */
-    [BQActivityView showActiviTy];
+   // [BQActivityView showActiviTy];
 
     //广告位
     [[MyAPI sharedAPI] getHomeAddDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
@@ -276,7 +276,7 @@
                            @"latitude":ApplicationDelegate.latitude,//latitudeStr
                            @"longitude":ApplicationDelegate.longitude//longitudeStr
                            };
-     [BQActivityView showActiviTy];
+    // [BQActivityView showActiviTy];
     [[MyAPI sharedAPI]getHomeChartDataWithParameters:para resulet:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             [BQActivityView hideActiviTy];
