@@ -20,4 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *tfView;
 
+
+@property (nonatomic,strong) NSString *toMemId;//收款人
+
 @end

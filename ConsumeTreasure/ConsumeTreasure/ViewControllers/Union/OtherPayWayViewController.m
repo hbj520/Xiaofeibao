@@ -11,6 +11,10 @@
 @interface OtherPayWayViewController ()
 {
     NSInteger payType;
+    
+    NSString *tongBaomoney;//支付的通宝币额
+    NSString *cashMoney;//现金
+    NSString *toMemId;//收款人
 }
 
 @end
@@ -19,9 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    payType = 1;//支付宝
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = YES;
     [self choosePayWay];
+    [self needPAY];
+}
+
+- (void)needPAY{
+    cashMoney = [NSString stringWithFormat:@"%.2f",[_dataArr[0] floatValue]];
+    tongBaomoney = _dataArr[1];
+    toMemId = _dataArr[2];
+    
+    
+    self.realPay.text = [NSString stringWithFormat:@"%.2f",([cashMoney floatValue] - [tongBaomoney floatValue])];
 }
 
 - (void)choosePayWay{
@@ -40,9 +55,11 @@
     if (button.tag == 666) {
         self.aliBtn.selected = YES;
         self.wxBtn.selected = NO;
+        payType = 1;
     }else{
         self.aliBtn.selected = NO;
         self.wxBtn.selected = YES;
+        payType = 2;
 
     }
 }
@@ -55,6 +72,78 @@
     [self backTolastPage];
 }
 - (IBAction)paySure:(id)sender {
+    
+    if (payType == 1) {
+        
+        NSDictionary *SignForPara = @{
+                                      @"tradetype": @"APP",
+                                      @"title": @"支付订单",
+                                      @"ordertype": @"0",
+                                      @"tomemid": toMemId ,//chuan
+                                      @"price": cashMoney,
+                                      @"price_tbb":tongBaomoney,
+                                      @"paytype": @"2",
+                                      @"zfpass":@"123456",
+                                      };
+        NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
+        
+        NSString *sign = [MDEncryption md5:stringA];
+        
+        NSDictionary *para = @{
+                               @"tradetype": @"APP",
+                               @"title": @"支付订单",
+                               @"ordertype": @"0",
+                               @"tomemid": toMemId ,//chuan
+                               @"price": cashMoney,
+                               @"price_tbb":tongBaomoney,
+                               @"paytype": @"2",
+                               @"zfpass":@"123456",
+                               @"sign":sign
+                               };
+        //调支付宝支付
+        [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
+            
+            
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+    }else{
+        
+        NSDictionary *SignForPara = @{
+                                      @"tradetype": @"APP",
+                                      @"title": @"支付订单",
+                                      @"ordertype": @"0",
+                                      @"tomemid": toMemId ,//chuan
+                                      @"price": cashMoney,
+                                      @"price_tbb":tongBaomoney,
+                                      @"paytype": @"1",
+                                      @"zfpass":@"123456",
+                                      };
+        NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
+        
+        NSString *sign = [MDEncryption md5:stringA];
+        
+        NSDictionary *para = @{
+                               @"tradetype": @"APP",
+                               @"title": @"支付订单",
+                               @"ordertype": @"0",
+                               @"tomemid": toMemId ,//chuan
+                               @"price": cashMoney,
+                               @"price_tbb":tongBaomoney,
+                               @"paytype": @"1",
+                               @"zfpass":@"123456",
+                               @"sign":sign
+                               };
+        //调微信支付
+        [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
+            
+            
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+
+    }
+    
 }
 
 /*

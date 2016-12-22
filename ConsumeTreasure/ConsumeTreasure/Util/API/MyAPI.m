@@ -115,6 +115,7 @@
         NSLog(@"验证码发送出错");
     }];
 }
+
 - (void)registerUserWithParameters:(NSDictionary *)para
                             result:(StateBlock)result
                        errorResult:(ErrorBlock)errorResult{
@@ -137,7 +138,31 @@
     }];
 }
 
-#pragma mark -- 通宝币数量和设置密码
+#pragma mark -- 修改交易密码
+- (void)postPayPswWithParameters:(NSDictionary *)para
+                          result:(StateBlock)result
+                     errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/resetpassword" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+
+#pragma mark -- 通宝币数量和是否设置密码
 - (void)getTongBaoBiAndPayPswWithParameters:(NSDictionary *)para
                                       resut:(ModelBlock)result
                                 errorResult:(ErrorBlock)errorResult{
@@ -185,18 +210,25 @@
              request.timeStamp=stamp.intValue;
              [WXApi sendReq:request];
          }else if ([para[@"paytype"] isEqualToString:@"2"]){//支付宝支付
-             NSString *orderString = nil;
-             NSString *appScheme = nil;
-                     // NOTE: 调用支付结果开始支付
-                     [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-                             NSLog(@"reslut = %@",resultDic);
-                         }];
+             NSString *orderString = responseObject[@"data"];
+             NSString *appScheme = @"AliJustPay";
+             [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary*resultDic) {
+                 NSLog(@"reslut = %@",resultDic);
+             }];
              
+         }else{//通宝币支付
+             NSString *info = responseObject[@"msg"];
+             if ([responseObject[@"code"] isEqualToString:@"1"]) {
+                 result(YES,info);
+             }else{
+                 result(NO,info);
+             }
          }
 
      
      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
      
+         errorResult(error);
      
      }];
      

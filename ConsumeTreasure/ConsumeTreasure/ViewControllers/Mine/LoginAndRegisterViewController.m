@@ -170,10 +170,12 @@
 - (IBAction)accountLoginBtn:(id)sender {
     [Tools hideKeyBoard];
     [self showHudInView:self.view hint:@"登录..."];
-    [[MyAPI sharedAPI] loginWithParameters:@{
-                                             @"phone": self.loginPhoneNumTextField.text,
-                                             @"password": self.loginPhonePassWordTextfild.text
-                                             } result:^(BOOL sucess, NSString *msg) {
+    
+    NSDictionary *para = @{
+                           @"phone": self.loginPhoneNumTextField.text,
+                           @"password": self.loginPhonePassWordTextfild.text
+                           };
+    [[MyAPI sharedAPI] loginWithParameters:para result:^(BOOL sucess, NSString *msg) {
                                                  
                                                  if (sucess) {
                                                      [self changeTohom];

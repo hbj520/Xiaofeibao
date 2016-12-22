@@ -270,6 +270,9 @@
 		D170F26E1DAF2F6F00272E57 /* HotStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F26C1DAF2F6F00272E57 /* HotStoreTableViewCell.m */; };
 		D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */; };
 		D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D170F2B01DAFB6A500272E57 /* MineViewController.m */; };
+		D196D5741E0B6C310062AD91 /* PSWVertifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5731E0B6C310062AD91 /* PSWVertifyViewController.m */; };
+		D196D5771E0BB5B40062AD91 /* MXWechatSignAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5761E0BB5B40062AD91 /* MXWechatSignAdaptor.m */; };
+		D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5791E0BCA3C0062AD91 /* MDEncryption.m */; };
 		D19B6E1B1DE7DA65002A5667 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19B6E1A1DE7DA65002A5667 /* AccountModel.m */; };
 		D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A06AF51DEEB12700855564 /* BeUnionModel.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
@@ -340,7 +343,6 @@
 		AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
-		AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
 		AB4826171DE689EE0001EA8B /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		AB4826181DE689EE0001EA8B /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
@@ -828,6 +830,13 @@
 		D170F26D1DAF2F6F00272E57 /* HotStoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotStoreTableViewCell.xib; sourceTree = "<group>"; };
 		D170F2AF1DAFB6A500272E57 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		D170F2B01DAFB6A500272E57 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		D196D5721E0B6C310062AD91 /* PSWVertifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWVertifyViewController.h; sourceTree = "<group>"; };
+		D196D5731E0B6C310062AD91 /* PSWVertifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWVertifyViewController.m; sourceTree = "<group>"; };
+		D196D5751E0BB5B40062AD91 /* MXWechatSignAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWechatSignAdaptor.h; sourceTree = "<group>"; };
+		D196D5761E0BB5B40062AD91 /* MXWechatSignAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWechatSignAdaptor.m; sourceTree = "<group>"; };
+		D196D5781E0BCA3C0062AD91 /* MDEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDEncryption.h; sourceTree = "<group>"; };
+		D196D5791E0BCA3C0062AD91 /* MDEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDEncryption.m; sourceTree = "<group>"; };
+		D196D57E1E0BF75E0062AD91 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
 		D19B6E191DE7DA65002A5667 /* AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
 		D19B6E1A1DE7DA65002A5667 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
 		D1A06AF41DEEB12700855564 /* BeUnionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeUnionModel.h; sourceTree = "<group>"; };
@@ -1180,6 +1189,8 @@
 				AB06A9881DF940D4006F67C2 /* AttentionShopViewController.m */,
 				D10DC95A1E0A907700930F74 /* SetPayPswViewController.h */,
 				D10DC95B1E0A907700930F74 /* SetPayPswViewController.m */,
+				D196D5721E0B6C310062AD91 /* PSWVertifyViewController.h */,
+				D196D5731E0B6C310062AD91 /* PSWVertifyViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1464,8 +1475,8 @@
 		ABF4E2791D9B5E58006AD23C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D196D57E1E0BF75E0062AD91 /* Xiaofei-Prefix.pch */,
 				D10DC9451E09363300930F74 /* Time.plist */,
-				AB3A61B71DAFBCA70071EBA1 /* Xiaofei-Prefix.pch */,
 				ABF4E27A1D9B5E58006AD23C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1844,6 +1855,10 @@
 				D10DC9431E09307600930F74 /* DLPickerView.m */,
 				D10DC95D1E0AAAA600930F74 /* TXTradePasswordView.h */,
 				D10DC95E1E0AAAA600930F74 /* TXTradePasswordView.m */,
+				D196D5751E0BB5B40062AD91 /* MXWechatSignAdaptor.h */,
+				D196D5761E0BB5B40062AD91 /* MXWechatSignAdaptor.m */,
+				D196D5781E0BCA3C0062AD91 /* MDEncryption.h */,
+				D196D5791E0BCA3C0062AD91 /* MDEncryption.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -2119,6 +2134,7 @@
 				AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */,
+				D196D5771E0BB5B40062AD91 /* MXWechatSignAdaptor.m in Sources */,
 				D10DC93B1E07F8AE00930F74 /* OrderConModel.m in Sources */,
 				D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */,
 				D12165EC1DB70EAE006B06FC /* IncomeContentTableViewCell.m in Sources */,
@@ -2225,6 +2241,7 @@
 				AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */,
 				D15B39671DD414A7009122FE /* EstimateTableViewCell.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
+				D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */,
 				D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */,
 				D16BF2AD1DEFF15B001A82BF /* JFAreaDataManager.m in Sources */,
 				D12165181DB4F2B4006B06FC /* UIView+Frame.m in Sources */,
@@ -2232,6 +2249,7 @@
 				D12165191DB4F2B4006B06FC /* YZDisplayTitleLabel.m in Sources */,
 				AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */,
 				D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */,
+				D196D5741E0B6C310062AD91 /* PSWVertifyViewController.m in Sources */,
 				D15B3A491DDB0807009122FE /* MyIncomeViewController.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,

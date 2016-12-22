@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LoginAndRegisterViewController.h"
+
+#import<AlipaySDK/AlipaySDK.h>
 @interface AppDelegate ()
 
 @end
@@ -58,9 +60,42 @@
 - (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url{
     return [WXApi handleOpenURL:url delegate:self];
 }
+/*
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     return [WXApi handleOpenURL:url delegate:self];
 }
+*/
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+    
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            
+            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
+            int resultStatus = resultStatusStr.intValue;
+            NSLog(@"reslut = %d",resultStatus);
+            
+            
+            if (resultStatus == 9000) {
+                
+                showAlert(@"成功");
+                
+            }else{
+                
+                showAlert(@"失败");
+            }
+        }];
+    }
+    
+    return [WXApi handleOpenURL:url delegate:self];
+    
+    
+
+}
+
 #pragma mark - PrivateMethod
 - (void)changeToMain{
     /*
@@ -84,11 +119,32 @@
     }
     
 }
+
+
 #pragma mark -WeixinDelegate
 - (void)onReq:(BaseReq *)req{
     
 }
 - (void)onResp:(BaseResp *)resp{
-    
+    if([resp isKindOfClass:[PayResp class]]){
+        
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        NSString *strMsg;
+        
+        switch (resp.errCode) {
+            case WXSuccess:
+                strMsg = @"支付结果：成功！";
+                NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+                break;
+                
+            default:
+                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
+                NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
+                break;
+        }
+    }
 }
+ 
+ 
+ 
 @end

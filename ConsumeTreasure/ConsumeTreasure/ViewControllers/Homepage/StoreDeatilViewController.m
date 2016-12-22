@@ -7,6 +7,7 @@
 //
 
 #import "StoreDeatilViewController.h"
+#import "GoPrePayViewController.h"
 
 #import "StoreDetailModel.h"
 
@@ -419,15 +420,23 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"onlinePaySegueId"]) {
+        NSString *tomemId = (NSString*)sender;
+        GoPrePayViewController *prePayVC = segue.destinationViewController;
+        prePayVC.toMemId = tomemId;
+    }
+    
 }
-*/
+
 
 - (IBAction)applyNowBtn:(id)sender {
     self.hidesBottomBarWhenPushed = YES;
-    [self performSegueWithIdentifier:@"onlinePaySegueId" sender:nil];
+    [self performSegueWithIdentifier:@"onlinePaySegueId" sender:_keepMemId];
     //self.hidesBottomBarWhenPushed = NO;
     
 }

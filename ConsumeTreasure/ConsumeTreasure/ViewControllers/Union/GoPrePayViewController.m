@@ -8,13 +8,20 @@
 
 #import "GoPrePayViewController.h"
 #import "SetPayPswViewController.h"
+#import "OtherPayWayViewController.h"
 #import "PersonInfoModel.h"
+
+#import "SecurityUtil.h"
 
 #import <Masonry.h>
 
+#import "MDEncryption.h"
+
+
 @interface GoPrePayViewController ()<XWMoneyTextFieldLimitDelegate>
 {
-    float leftMoney;//保存通宝币余额
+    float leftMoney;//可用通宝币余额
+    float realMoney;//拥有通宝币
     
     XWMoneyTextField *Tongtf;
     
@@ -32,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    leftMoney = 20;
+    //leftMoney = 20;
     [self setTextField];
     [self setUseLeftMoney];
     [self getTongLeft];//请求余额
@@ -46,6 +53,9 @@
     [[MyAPI sharedAPI] getTongBaoBiAndPayPswWithParameters:para resut:^(BOOL success, NSString *msg, id object) {
         if (success) {
             tongModel = (tongBaoModel*)object;
+            leftMoney = [tongModel.goldNum floatValue];
+            realMoney = [tongModel.goldNum floatValue];
+            self.leftTongMoney.text = [NSString stringWithFormat:@"可用余额%@",tongModel.goldNum];
             if ([tongModel.hasPayPwd isEqualToString:@"0"]) {
                 UIAlertView * alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您尚未设置支付密码，是否立即前往设置。或者您可以在”我“->“设置”中去设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
                 [alert show];
@@ -57,13 +67,14 @@
         
     }];
     
-    self.leftTongMoney.text = [NSString stringWithFormat:@"可用余额%ld",(long)leftMoney];//通宝币余额
+    
 }
 
 
 #pragma mark - UIAlertViewDelegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    
     switch (buttonIndex) {
         case 0:
             
@@ -121,7 +132,7 @@
     if (button.selected == NO) {
         leftMoney = 0;
     }else{
-        leftMoney = 20;
+        leftMoney = realMoney;
     }
 }
 
@@ -158,11 +169,65 @@
 }
 
 - (IBAction)GopayNext:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
-    [Tongtf resignFirstResponder];
-    [self performSegueWithIdentifier:@"gotoPay" sender:nil];
-    //self.hidesBottomBarWhenPushed = NO;
+    
+    if ([Tongtf.text floatValue] > leftMoney) {
+        self.hidesBottomBarWhenPushed = YES;
+        [Tongtf resignFirstResponder];
+       // NSString *needPayStr = [NSString stringWithFormat:@"%f",([Tongtf.text floatValue] - leftMoney)];
+        NSString *leftMoneyStr = [NSString stringWithFormat:@"%f",leftMoney];
+
+        [self performSegueWithIdentifier:@"gotoPay" sender:@[Tongtf.text,leftMoneyStr,self.toMemId]];
+
+    }else{
+        
+        NSDictionary *SignForPara = @{
+                                      @"tradetype": @"APP",
+                                      @"title": @"支付订单",
+                                      @"ordertype": @"0",
+                                      @"tomemid": self.toMemId ,//chuan
+                                      @"price": Tongtf.text,
+                                      @"price_tbb":Tongtf.text,
+                                      @"paytype": @"3",
+                                      @"zfpass":@"123456",
+                               };
+        
+        NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
+        
+        NSString *sign = [MDEncryption md5:stringA];
+        
+        /*
+        NSString *stingSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,@"XFB@96478YY"];
+        NSString *sign = [[SecurityUtil encryptMD5String:stingSignTemp] uppercaseString];
+*/
+        
+        NSDictionary *para = @{
+                               @"tradetype": @"APP",
+                               @"title": @"支付订单",
+                               @"ordertype": @"0",
+                               @"tomemid": self.toMemId ,//chuan
+                               @"price": Tongtf.text,
+                               @"price_tbb":Tongtf.text,
+                               @"paytype": @"3",
+                               @"zfpass":@"123456",
+                               @"sign":sign
+                               };
+        //调通宝币支付
+        [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
+            if (sucess) {
+                showAlert(@"支付成功");
+                
+            }else{
+                showAlert(@"支付失败");
+            }
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+    }
 }
+
+
+
+
 - (IBAction)back:(id)sender {
     [self backTolastPage];
 }
@@ -171,10 +236,18 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"gotoPay"]) {
+        NSArray *passMoneyArr = (NSArray*)sender;
+        OtherPayWayViewController *otherVC = segue.destinationViewController;
+        otherVC.dataArr = passMoneyArr;
+    }
+    
+    
 }
-*/
 
 @end

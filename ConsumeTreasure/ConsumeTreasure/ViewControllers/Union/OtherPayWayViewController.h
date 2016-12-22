@@ -10,8 +10,12 @@
 
 @interface OtherPayWayViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *realPay;
-@property (weak, nonatomic) IBOutlet UILabel *orderNum;
+
 @property (weak, nonatomic) IBOutlet UIButton *aliBtn;
 @property (weak, nonatomic) IBOutlet UIButton *wxBtn;
+
+@property (nonatomic,strong) NSString *needPayMoney;
+
+@property (nonatomic,strong) NSArray *dataArr;;
 
 @end

@@ -557,21 +557,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥15.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiS-WC-Qew">
-                                <rect key="frame" x="77" y="77" width="73.5" height="24"/>
+                                <rect key="frame" x="77" y="93.5" width="73.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Opt-qp-i2k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买单订单 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHx-5s-nLF">
-                                <rect key="frame" x="77" y="111" width="69.5" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="iPa-Oo-r3E"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TX-NY-2L1">
@@ -580,37 +571,25 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="iYN-Yh-O6W"/>
                                 </constraints>
-                                <state key="normal" title="确认支付 : 15.00">
+                                <state key="normal" title="确认支付 ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="paySure:" destination="9x2-9j-64B" eventType="touchUpInside" id="uWx-De-y5y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubq-I6-3MX">
-                                <rect key="frame" x="156.5" y="111" width="89" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="VOh-e7-Ghd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705882352937" green="0.92156862745098034" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1TX-NY-2L1" firstAttribute="leading" secondItem="gxD-bf-u0H" secondAttribute="leading" constant="16" id="1cu-uu-KIg"/>
                             <constraint firstItem="Xcs-s6-Hbs" firstAttribute="top" secondItem="3nu-dI-qb7" secondAttribute="bottom" constant="10" id="1eF-V1-pNv"/>
-                            <constraint firstItem="wHx-5s-nLF" firstAttribute="top" secondItem="TiS-WC-Qew" secondAttribute="bottom" constant="10" id="2FN-HU-w3a"/>
                             <constraint firstItem="BWR-zx-3er" firstAttribute="top" secondItem="DhG-Ik-sgP" secondAttribute="bottom" id="3Yb-Lb-tyq"/>
                             <constraint firstItem="3nu-dI-qb7" firstAttribute="leading" secondItem="gxD-bf-u0H" secondAttribute="leading" constant="13" id="4UK-d0-tKz"/>
-                            <constraint firstItem="Ubq-I6-3MX" firstAttribute="bottom" secondItem="wHx-5s-nLF" secondAttribute="bottom" id="5xN-3N-QLc"/>
                             <constraint firstItem="DhG-Ik-sgP" firstAttribute="top" secondItem="gxD-bf-u0H" secondAttribute="top" id="9fP-h1-ZHM"/>
-                            <constraint firstItem="TiS-WC-Qew" firstAttribute="top" secondItem="DhG-Ik-sgP" secondAttribute="bottom" constant="13" id="B6y-vK-8g9"/>
                             <constraint firstAttribute="trailing" secondItem="BWR-zx-3er" secondAttribute="trailing" id="BaQ-Nw-Ucn"/>
                             <constraint firstAttribute="trailing" secondItem="DhG-Ik-sgP" secondAttribute="trailing" id="ChJ-JL-f1D"/>
                             <constraint firstItem="Xcs-s6-Hbs" firstAttribute="leading" secondItem="gxD-bf-u0H" secondAttribute="leading" id="FP5-YZ-IGq"/>
-                            <constraint firstItem="Ubq-I6-3MX" firstAttribute="leading" secondItem="wHx-5s-nLF" secondAttribute="trailing" constant="10" id="JR7-32-Nbn"/>
+                            <constraint firstItem="TiS-WC-Qew" firstAttribute="centerY" secondItem="BWR-zx-3er" secondAttribute="centerY" id="GTT-go-l52"/>
                             <constraint firstItem="fRO-7Q-aPR" firstAttribute="centerY" secondItem="BWR-zx-3er" secondAttribute="centerY" id="Mk3-sZ-93O"/>
                             <constraint firstItem="fRO-7Q-aPR" firstAttribute="leading" secondItem="gxD-bf-u0H" secondAttribute="leading" constant="28" id="Noo-ok-0OO"/>
                             <constraint firstAttribute="trailing" secondItem="Xcs-s6-Hbs" secondAttribute="trailing" id="WFO-fq-Ouk"/>
@@ -620,13 +599,11 @@
                             <constraint firstItem="Xcs-s6-Hbs" firstAttribute="top" secondItem="BWR-zx-3er" secondAttribute="bottom" constant="40" id="oRc-wK-LBt"/>
                             <constraint firstItem="DhG-Ik-sgP" firstAttribute="leading" secondItem="gxD-bf-u0H" secondAttribute="leading" id="tPU-Cd-Eow"/>
                             <constraint firstItem="1TX-NY-2L1" firstAttribute="top" secondItem="Xcs-s6-Hbs" secondAttribute="bottom" constant="23" id="wjb-Jm-JYk"/>
-                            <constraint firstItem="wHx-5s-nLF" firstAttribute="leading" secondItem="fRO-7Q-aPR" secondAttribute="trailing" constant="7" id="wqa-dO-Kj2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mcs-Hn-SHD"/>
                     <connections>
                         <outlet property="aliBtn" destination="ELk-gO-cul" id="BYt-X5-sHa"/>
-                        <outlet property="orderNum" destination="Ubq-I6-3MX" id="hlg-8b-Bva"/>
                         <outlet property="realPay" destination="TiS-WC-Qew" id="090-Ny-HuH"/>
                         <outlet property="wxBtn" destination="7qf-tn-MjY" id="LFy-ac-J80"/>
                     </connections>
@@ -2116,8 +2093,8 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-zN-viZ">
                                         <rect key="frame" x="250" y="0.0" width="125" height="44"/>
-                                        <color key="backgroundColor" red="1" green="0.99613221799999996" blue="0.48683803310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button" image="ljyy_720"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.3411764706" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="优惠买单"/>
                                         <connections>
                                             <action selector="applyNowBtn:" destination="gXB-1e-VsV" eventType="touchUpInside" id="UHM-Wc-HK4"/>
                                         </connections>
@@ -3119,7 +3096,6 @@
         <image name="dp" width="58" height="58"/>
         <image name="dpgl" width="35" height="31"/>
         <image name="dq_720" width="29" height="29"/>
-        <image name="ljyy_720" width="216" height="84"/>
         <image name="lo" width="146" height="146"/>
         <image name="location" width="35" height="46"/>
         <image name="shouye_sq" width="532" height="91"/>

@@ -50,6 +50,10 @@
     #import "Tools.h"
 //    #import "MyAPI.h"
 
+#import "MXWechatSignAdaptor.h"
+#import "MDEncryption.h"
+
+
 #import "BQActivityView.h"
     #import <MBProgressHUD/MBProgressHUD.h>
    // #import "MyEnum.h"
