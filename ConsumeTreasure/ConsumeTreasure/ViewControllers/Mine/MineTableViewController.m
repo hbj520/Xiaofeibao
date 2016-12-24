@@ -12,13 +12,17 @@
 #import "WXApi.h"
 #import "WechatAuthSDK.h"
 #import "LookRecordViewController.h"
-
+#import "ImUnionStoreViewController.h"
 #import "MyAccountViewController.h"
-
+#import "TobeUnionViewController.h"
 #import "ApplyViewController.h"
 
 @interface MineTableViewController ()
+{
+    NSString *isShop;
+}
 @property (weak, nonatomic) IBOutlet UILabel *usernamelabel;
+@property (weak, nonatomic) IBOutlet UILabel *shnagjiaLab;
 
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
 - (IBAction)settingBtn:(id)sender;
@@ -38,7 +42,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    isShop = [[XFBConfig Instance] getIsShop];
     
+    if ([isShop isEqualToString:@"1"]) {
+        self.shnagjiaLab.text = @"我是商家";
+    }else{
+        self.shnagjiaLab.text = @"成为联盟商家";
+    }
+
    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     navBarHairlineImageView.hidden = YES;
     NSString *navTitle = @"我";
@@ -56,6 +67,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,7 +81,7 @@
     }else if (section == 1){
         return 4;
     }else if (section == 2){
-        return 4;
+        return 2;
     }
     return 1;
 }
@@ -84,13 +97,9 @@
 }
 - (UIImageView*)findHairlineImageViewUnder:(UIView*)view {
     
-        if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0) {
-                return(UIImageView*)view;
-            }
-        for(UIView*subview in view.subviews) {
-                UIImageView*imageView = [self findHairlineImageViewUnder:subview];
+    if([view isKindOfClass:UIImageView.class] && view.bounds.size.height<=1.0) {return(UIImageView*)view;}for(UIView*subview in view.subviews) {UIImageView*imageView = [self findHairlineImageViewUnder:subview];
                 if(imageView) {
-                        return imageView;
+            return imageView;
                 }
     }
        return nil;
@@ -101,14 +110,17 @@
     }
     if (indexPath.section == 1 ) {
         if (indexPath.row == 1) {
+            
             [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
 
         }else if (indexPath.row == 2){
-            [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
+            showAlert(@"正在建设中. . .");
+           // [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
 
         }else if (indexPath.row == 3){
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
+            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:lookVC animated:YES];
         }else{
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
@@ -118,11 +130,19 @@
         }
     }else if (indexPath.section == 2 ){
         if (indexPath.row == 0) {
-            self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-            ApplyViewController *applyVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"applySTId"];
-            //  [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
-            [self.navigationController pushViewController:applyVC animated:YES];
-        }else if (indexPath.row == 3){
+            
+            if ([isShop isEqualToString:@"1"]) {
+                self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+                ImUnionStoreViewController *UnionVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"imUnionSB"];
+                [self.navigationController pushViewController:UnionVC animated:YES];
+            }else{
+                self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+                TobeUnionViewController *tobeVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"tobeUnionSB"];
+                [self.navigationController pushViewController:tobeVC animated:YES];
+            }
+            
+            
+        }else if (indexPath.row == 1){
              [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
             
         }
@@ -181,14 +201,20 @@
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shangjiaCellId" forIndexPath:indexPath];
     
     // Configure the cell...
+    if ([isShop isEqualToString:@"1"]) {
+        cell.textLabel.text = @"我是商家";
+    }else{
+        cell.textLabel.text = @"成为联盟商家";
+    }
+    
     
     return cell;
 }
-*/
 
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

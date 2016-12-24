@@ -200,7 +200,7 @@
 
 - (IBAction)accountRegisterBtn:(id)sender {
     [Tools hideKeyBoard];
-    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.self.registerPasswordTextfield.text.length >= 6 ) {
+    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.self.registerPasswordTextfield.text.length >= 6 &&!self.registerVerifyCodeTextfield.text) {
         [[MyAPI sharedAPI] registerUserWithParameters:@{
                                                         @"phone":self.registerPhoneTextField.text,
                                                         @"password":self.registerPasswordTextfield.text,
@@ -215,7 +215,8 @@
                                                                 [Tools hideKeyBoard];
                                                                 [self showHint:msg];
                                                             }else{
-                                                                [self showHint:msg];
+                                                                //[self showHint:msg];
+                                                                showAlert(msg);
                                                             }
                                                             
                                                         } errorResult:^(NSError *enginerError) {

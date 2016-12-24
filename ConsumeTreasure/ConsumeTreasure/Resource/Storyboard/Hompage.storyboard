@@ -1325,7 +1325,7 @@
         <!--成为联盟商户-->
         <scene sceneID="bOK-7q-PyV">
             <objects>
-                <viewController id="Nt6-3N-WsH" customClass="TobeUnionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tobeUnionSB" id="Nt6-3N-WsH" customClass="TobeUnionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QF0-Ak-0kZ"/>
                         <viewControllerLayoutGuide type="bottom" id="DWK-eW-ofG"/>
@@ -1799,7 +1799,7 @@
         <!--Im Union Store View Controller-->
         <scene sceneID="u82-kx-ffL">
             <objects>
-                <viewController id="vfO-H1-toc" customClass="ImUnionStoreViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imUnionSB" id="vfO-H1-toc" customClass="ImUnionStoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zwZ-VN-rzY"/>
                         <viewControllerLayoutGuide type="bottom" id="IBR-bl-jdt"/>

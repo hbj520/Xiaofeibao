@@ -120,13 +120,13 @@
                             result:(StateBlock)result
                        errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":KToken,
+                              @"tokenid":@"",
                               @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"userinfo/rigister" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"00000"]) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
             return result(YES,@"注册成功");
         }else{
             return result(NO,info);
