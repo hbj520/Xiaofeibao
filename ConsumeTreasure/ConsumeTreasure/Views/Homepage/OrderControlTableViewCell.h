@@ -13,6 +13,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *orderNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 
+@property (weak, nonatomic) IBOutlet UILabel *oneLab;
+@property (weak, nonatomic) IBOutlet UILabel *twoLab;
+
+
+
 @property (nonatomic,strong) OrderConModel *orderModel;
+
+@property (nonatomic,strong) DaLiIncomeModel *daliIncomeModel;
 
 @end

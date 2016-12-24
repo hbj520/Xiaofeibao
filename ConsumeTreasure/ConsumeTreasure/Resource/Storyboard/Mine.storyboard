@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -84,25 +85,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIS-OI-XnG">
-                                                    <rect key="frame" x="24" y="3" width="64" height="64"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIS-OI-XnG">
+                                                    <rect key="frame" x="24" y="9" width="64" height="64"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="64" id="mah-IJ-Aj5"/>
+                                                        <constraint firstAttribute="width" constant="64" id="q5n-HL-GeT"/>
+                                                    </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tx" translatesAutoresizingMaskIntoConstraints="NO" id="dKF-fN-Ve8">
                                                     <rect key="frame" x="27" y="10" width="59" height="59"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hello Ketty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW3-bY-SFb">
-                                                    <rect key="frame" x="105" y="16" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello Ketty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW3-bY-SFb">
+                                                    <rect key="frame" x="105" y="16" width="81" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="QMO-7x-8PG"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="编辑个人资料" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8y-nz-kQM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编辑个人资料" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8y-nz-kQM">
                                                     <rect key="frame" x="105" y="39" width="107" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -123,9 +128,17 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="MIS-OI-XnG" firstAttribute="leading" secondItem="sdI-7S-4X8" secondAttribute="leading" constant="24" id="1rF-dm-GFE"/>
                                                 <constraint firstItem="0NF-UH-m0g" firstAttribute="top" secondItem="sdI-7S-4X8" secondAttribute="top" constant="25" id="8sv-XM-vt2"/>
+                                                <constraint firstItem="EW3-bY-SFb" firstAttribute="top" secondItem="sdI-7S-4X8" secondAttribute="top" constant="16" id="99s-Ed-8Xm"/>
                                                 <constraint firstItem="uSM-NS-zjM" firstAttribute="top" secondItem="sdI-7S-4X8" secondAttribute="top" constant="22" id="D7r-tg-rzZ"/>
+                                                <constraint firstItem="MIS-OI-XnG" firstAttribute="centerY" secondItem="sdI-7S-4X8" secondAttribute="centerY" id="HCW-eL-kCB"/>
+                                                <constraint firstItem="EW3-bY-SFb" firstAttribute="leading" secondItem="MIS-OI-XnG" secondAttribute="trailing" constant="17" id="K13-HR-mBJ"/>
                                                 <constraint firstItem="0NF-UH-m0g" firstAttribute="leading" secondItem="uSM-NS-zjM" secondAttribute="trailing" constant="8" id="PuL-iI-2HZ"/>
+                                                <constraint firstItem="uSM-NS-zjM" firstAttribute="leading" secondItem="a8y-nz-kQM" secondAttribute="trailing" constant="99" id="Zlr-EL-Z7I"/>
+                                                <constraint firstItem="a8y-nz-kQM" firstAttribute="leading" secondItem="EW3-bY-SFb" secondAttribute="leading" id="d2E-hx-IYU"/>
+                                                <constraint firstItem="a8y-nz-kQM" firstAttribute="top" secondItem="EW3-bY-SFb" secondAttribute="bottom" constant="2" id="fKc-gq-UUN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="a8y-nz-kQM" secondAttribute="bottom" constant="13" id="tbm-UY-oyq"/>
                                                 <constraint firstAttribute="trailing" secondItem="0NF-UH-m0g" secondAttribute="trailing" constant="16" id="xUl-fH-eiV"/>
                                             </constraints>
                                         </tableViewCellContentView>

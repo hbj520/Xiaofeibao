@@ -76,8 +76,8 @@
             daliModel = (DaLiMasterModel*)object;
             self.daliArea.text = daliModel.type;
             self.leftMoney.text = [NSString stringWithFormat:@"余额 : %@",daliModel.balance];
-            self.allInMoney.text = daliModel.total_money;
-            self.currentMonthMoney.text = daliModel.month_money;
+            self.allInMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.total_money floatValue]];
+            self.currentMonthMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.month_money floatValue]];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -87,6 +87,9 @@
 
 - (IBAction)getMoney:(id)sender {
     NSLog(@"提现");
+    
+    [self pushToNextWithIdentiField:@"DLTXsegue" sender:nil];
+
 }
 
 

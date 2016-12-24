@@ -53,9 +53,12 @@
 - (void)saveCityCode:(NSString *)cityCode;//保存城市citycode
 
 - (void)saveIsShop:(NSString*)isShop;
+- (void)saveIsAgency:(NSString*)isAgency;
 
 
 - (NSString *)getIsShop;
+- (NSString *)getIsAgency;
+
 - (NSString *)getTeminate;//
 - (NSString *)getUserId;       //获取用户id
 - (NSString *)getUserName;     //获取用户名

@@ -15,3 +15,12 @@
 @implementation orderArrayModel
 
 @end
+
+
+@implementation DaLiIncomeModel
+
+@end
+
+@implementation incomeArrModel
+
+@end

@@ -45,6 +45,7 @@
     self.sdcycleView.pageControlStyle = 1;
     self.sdcycleView.imageURLStringsGroup = arr;
     self.sdcycleView.pageControlDotSize = CGSizeMake(6, 6);
+    self.sdcycleView.delegate =self;
     //加载网络图片
     [self.contentView addSubview:self.sdcycleView];
 }

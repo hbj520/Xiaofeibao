@@ -32,7 +32,10 @@
 
 #define BaseUrl @"http://192.168.1.221:8888/xfb/"
 
-#define CSUrl @"http://192.168.1.242:8080/xfb/"
+#define XFBUrl @"http://116.62.34.84/xfb/"
+
+#define testURL @"http://120.27.148.135:8090/xfb/"
+
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 

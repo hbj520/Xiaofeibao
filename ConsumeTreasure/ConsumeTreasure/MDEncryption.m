@@ -14,7 +14,6 @@
 +(NSString *) md5:(NSString *)str
 {
     const char *cStr = [str UTF8String];
-    //加密规则，因为逗比微信没有出微信支付demo，这里加密规则是参照安卓demo来得
     unsigned char result[16]= "0123456789abcdef";
     CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
     //这里的x是小写则产生的md5也是小写，x是大写则md5是大写，这里只能用大写，逗比微信的大小写验证很逗

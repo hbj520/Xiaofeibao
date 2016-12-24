@@ -273,6 +273,11 @@
 		D196D5741E0B6C310062AD91 /* PSWVertifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5731E0B6C310062AD91 /* PSWVertifyViewController.m */; };
 		D196D5771E0BB5B40062AD91 /* MXWechatSignAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5761E0BB5B40062AD91 /* MXWechatSignAdaptor.m */; };
 		D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5791E0BCA3C0062AD91 /* MDEncryption.m */; };
+		D196D5811E0C21210062AD91 /* CashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5801E0C21210062AD91 /* CashViewController.m */; };
+		D196D5851E0CC3490062AD91 /* DaiLiShopsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5831E0CC3490062AD91 /* DaiLiShopsTableViewCell.m */; };
+		D196D5861E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D196D5841E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib */; };
+		D196D5891E0CFB850062AD91 /* AgencyIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D5881E0CFB850062AD91 /* AgencyIntroViewController.m */; };
+		D196D58C1E0CFB9E0062AD91 /* TobeAgencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D58B1E0CFB9E0062AD91 /* TobeAgencyViewController.m */; };
 		D19B6E1B1DE7DA65002A5667 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19B6E1A1DE7DA65002A5667 /* AccountModel.m */; };
 		D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A06AF51DEEB12700855564 /* BeUnionModel.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
@@ -837,6 +842,15 @@
 		D196D5781E0BCA3C0062AD91 /* MDEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDEncryption.h; sourceTree = "<group>"; };
 		D196D5791E0BCA3C0062AD91 /* MDEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDEncryption.m; sourceTree = "<group>"; };
 		D196D57E1E0BF75E0062AD91 /* Xiaofei-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Xiaofei-Prefix.pch"; sourceTree = "<group>"; };
+		D196D57F1E0C21210062AD91 /* CashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashViewController.h; sourceTree = "<group>"; };
+		D196D5801E0C21210062AD91 /* CashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashViewController.m; sourceTree = "<group>"; };
+		D196D5821E0CC3490062AD91 /* DaiLiShopsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiLiShopsTableViewCell.h; sourceTree = "<group>"; };
+		D196D5831E0CC3490062AD91 /* DaiLiShopsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiLiShopsTableViewCell.m; sourceTree = "<group>"; };
+		D196D5841E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaiLiShopsTableViewCell.xib; sourceTree = "<group>"; };
+		D196D5871E0CFB850062AD91 /* AgencyIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgencyIntroViewController.h; sourceTree = "<group>"; };
+		D196D5881E0CFB850062AD91 /* AgencyIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgencyIntroViewController.m; sourceTree = "<group>"; };
+		D196D58A1E0CFB9E0062AD91 /* TobeAgencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TobeAgencyViewController.h; sourceTree = "<group>"; };
+		D196D58B1E0CFB9E0062AD91 /* TobeAgencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TobeAgencyViewController.m; sourceTree = "<group>"; };
 		D19B6E191DE7DA65002A5667 /* AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
 		D19B6E1A1DE7DA65002A5667 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
 		D1A06AF41DEEB12700855564 /* BeUnionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeUnionModel.h; sourceTree = "<group>"; };
@@ -1132,8 +1146,14 @@
 				D11171131DFA8EC400AD88DE /* OrderControlViewController.m */,
 				D11171151DFA8EEB00AD88DE /* CheckstandViewController.h */,
 				D11171161DFA8EEB00AD88DE /* CheckstandViewController.m */,
+				D196D5871E0CFB850062AD91 /* AgencyIntroViewController.h */,
+				D196D5881E0CFB850062AD91 /* AgencyIntroViewController.m */,
+				D196D58A1E0CFB9E0062AD91 /* TobeAgencyViewController.h */,
+				D196D58B1E0CFB9E0062AD91 /* TobeAgencyViewController.m */,
 				D1F916A61E07B4D70091B989 /* DaLiViewController.h */,
 				D1F916A71E07B4D70091B989 /* DaLiViewController.m */,
+				D196D57F1E0C21210062AD91 /* CashViewController.h */,
+				D196D5801E0C21210062AD91 /* CashViewController.m */,
 				D10DC9471E095A0700930F74 /* DLIncomeViewController.h */,
 				D10DC9481E095A0700930F74 /* DLIncomeViewController.m */,
 				D10DC94A1E095A2300930F74 /* DLStoreListViewController.h */,
@@ -1341,6 +1361,9 @@
 				D11736B81DFE7FAE00270D26 /* StoreControlTableViewCell.h */,
 				D11736B91DFE7FAE00270D26 /* StoreControlTableViewCell.m */,
 				D11736BA1DFE7FAE00270D26 /* StoreControlTableViewCell.xib */,
+				D196D5821E0CC3490062AD91 /* DaiLiShopsTableViewCell.h */,
+				D196D5831E0CC3490062AD91 /* DaiLiShopsTableViewCell.m */,
+				D196D5841E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2058,6 +2081,7 @@
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				D10DC9461E09363300930F74 /* Time.plist in Resources */,
+				D196D5861E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib in Resources */,
 				D15450FC1DF936D8002F4057 /* TuiJianTableViewCell.xib in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 				D16BF2B81DF001A7001A82BF /* shop_area.sqlite in Resources */,
@@ -2184,8 +2208,10 @@
 				D12054831DEC26A500EB2707 /* StoreMasterModel.m in Sources */,
 				ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */,
 				D16BF2BE1DF01B5A001A82BF /* ProvinceHeadView.m in Sources */,
+				D196D5811E0C21210062AD91 /* CashViewController.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
 				ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */,
+				D196D5851E0CC3490062AD91 /* DaiLiShopsTableViewCell.m in Sources */,
 				D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
@@ -2231,6 +2257,7 @@
 				D1F916A81E07B4D70091B989 /* DaLiViewController.m in Sources */,
 				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
 				AB50D4791E0928AA00B427E6 /* NSData+AES.m in Sources */,
+				D196D5891E0CFB850062AD91 /* AgencyIntroViewController.m in Sources */,
 				D10EE3E81DB0B2A4001C1992 /* RequstEngine.m in Sources */,
 				D12165881DB5B4D2006B06FC /* ChildViewController.m in Sources */,
 				D11736BB1DFE7FAE00270D26 /* StoreControlTableViewCell.m in Sources */,
@@ -2280,6 +2307,7 @@
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
 				D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */,
 				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
+				D196D58C1E0CFB9E0062AD91 /* TobeAgencyViewController.m in Sources */,
 				D10DC95F1E0AAAA600930F74 /* TXTradePasswordView.m in Sources */,
 				AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */,
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,

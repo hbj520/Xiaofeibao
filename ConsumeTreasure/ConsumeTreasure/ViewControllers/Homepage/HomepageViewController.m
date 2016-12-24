@@ -260,7 +260,7 @@
         if (success) {
             infoModel = (PersonInfoModel*)object;
             [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
-            
+            [[XFBConfig Instance] saveIsAgency:infoModel.isproxychecked];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -407,8 +407,14 @@
         firstCell.partnerBlock = ^{//合伙人超市partnerSegue
            // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
             //[self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
-            [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
+            
+            NSString *IsAgency = @"1";//[[XFBConfig Instance] getIsAgency];
+            if ([IsAgency isEqualToString:@"1"]) {
+                [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
+            }else{
+                [self pushToNextWithIdentiField:@"AgencydesSegue" sender:nil];
 
+            }
         };
         firstCell.storeBlock = ^{//商户入口
             
@@ -424,8 +430,9 @@
             [self performSegueWithIdentifier:@"scanSegue" sender:nil];
         };
         firstCell.incomeBlock = ^{//收益权
-            [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
+           // [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
         
+            showAlert(@"敬请期待！");
         };
         firstCell.accountBlock =^{
             [self pushToNextWithIdentiField:@"myAccountSegue" sender:nil];
@@ -446,9 +453,14 @@
                 imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
             }
             imageChartCell.selectionStyle = 0;
-            imageChartCell.addArray = addArr;
+            
+            if (addArr.count > 0) {
+                imageChartCell.addArray = addArr;
+            }
+            
+            
             imageChartCell.indexBlock = ^(NSInteger index){
-                
+                NSLog(@"----------------------------");
                 AddModel *model = addArr[index];
                 [self performSegueWithIdentifier:@"adDetailSegue" sender:model];
             };

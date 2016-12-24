@@ -16,8 +16,17 @@
 }
 
 - (void)setOrderModel:(OrderConModel *)orderModel{
+    self.oneLab.text = @"订单号：";
+    self.twoLab.text = @"订单金额：";
     self.orderNumLab.text = orderModel.pay_number;
     self.moneyLab.text = orderModel.total_money;
+}
+
+- (void)setDaliIncomeModel:(DaLiIncomeModel *)daliIncomeModel{
+    self.oneLab.text = @"收益时间：";
+    self.twoLab.text = @"收益金额：";
+    self.orderNumLab.text = daliIncomeModel.createdate;
+    self.moneyLab.text = daliIncomeModel.money;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

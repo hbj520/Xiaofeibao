@@ -27,3 +27,26 @@
 @interface orderArrayModel : JSONModel
 @property (nonatomic,strong) NSArray<OrderConModel>* payorderList;
 @end
+
+
+/*
+ 收益明细
+ */
+@protocol DaLiIncomeModel
+
+@end
+
+@interface DaLiIncomeModel : JSONModel
+
+@property (nonatomic,strong) NSString *bill_description;
+@property (nonatomic,strong) NSString *createdate;
+@property (nonatomic,strong) NSString *money;
+@property (nonatomic,strong) NSString *type;
+
+
+@end
+
+@interface incomeArrModel : JSONModel
+@property (nonatomic,strong) NSArray<DaLiIncomeModel>* billlogList;
+@end
+

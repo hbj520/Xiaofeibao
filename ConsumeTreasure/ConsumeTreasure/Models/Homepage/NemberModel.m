@@ -15,3 +15,11 @@
 @implementation listModel
 
 @end
+
+@implementation shopModel
+
+@end
+
+@implementation shoplistModel
+
+@end

@@ -13,6 +13,7 @@
 #import "WechatAuthSDK.h"
 #import "LookRecordViewController.h"
 
+#import "MyAccountViewController.h"
 
 #import "ApplyViewController.h"
 
@@ -26,14 +27,18 @@
 
 @implementation MineTableViewController
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:NO];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     self.tabBarController.tabBar.hidden = NO;
-   
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     navBarHairlineImageView.hidden = YES;
     NSString *navTitle = @"我";
@@ -43,15 +48,8 @@
     self.navigationController.navigationBar.titleTextAttributes = attributeDict;
     self.navigationItem.title = navTitle;
    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
-    //tongbaoMoneyView.money = @"10.65";
+  
     [self.moneyView addSubview: tongbaoMoneyView];
-    //self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -112,6 +110,11 @@
             self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
             LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
             [self.navigationController pushViewController:lookVC animated:YES];
+        }else{
+            self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+            MyAccountViewController *AccountVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"accountSB"];
+            [self.navigationController pushViewController:AccountVC animated:YES];
+
         }
     }else if (indexPath.section == 2 ){
         if (indexPath.row == 0) {

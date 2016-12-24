@@ -14,4 +14,6 @@
 + (BOOL) checkCardNo:(NSString*) cardNo;
 
 + (BOOL) deptNameInputShouldChineseWithStr:(NSString*)str;
+
++ (BOOL)isMobileNumber:(NSString *)mobileNum;
 @end

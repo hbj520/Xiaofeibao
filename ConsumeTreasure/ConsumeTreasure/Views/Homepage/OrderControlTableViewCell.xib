@@ -105,7 +105,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="moneyLab" destination="5c6-OX-3RT" id="Jmh-3U-H8E"/>
+                <outlet property="oneLab" destination="pEQ-AN-njw" id="cMM-pv-bR1"/>
                 <outlet property="orderNumLab" destination="yag-NQ-wYh" id="V9b-gh-LpJ"/>
+                <outlet property="twoLab" destination="KBU-ka-p8X" id="0zS-t7-X3Z"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>

@@ -226,9 +226,21 @@ static XFBConfig * instance = nil;
     [settings synchronize];
 }
 
+- (void)saveIsAgency:(NSString*)isAgency{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"isAgency"];
+    [settings setObject:isAgency forKey:@"isAgency"];
+    [settings synchronize];
+}
+
 - (NSString *)getIsShop{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"isShop"];
+}
+
+- (NSString *)getIsAgency{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"isAgency"];
 }
 
 - (NSString *)getisteacher

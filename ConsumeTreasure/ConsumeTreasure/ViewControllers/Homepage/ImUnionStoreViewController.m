@@ -71,7 +71,8 @@
 }
 
 - (void)checkClick:(id)Ges{
-    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:nil];
+    showAlert(@"敬请期待");
+   // [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:nil];
 
 }
 
@@ -102,6 +103,7 @@
 
 - (IBAction)getMoney:(id)sender {
     //申请提现
+[self pushToNextWithIdentiField:@"SHTXsegue" sender:nil];
 }
 
 

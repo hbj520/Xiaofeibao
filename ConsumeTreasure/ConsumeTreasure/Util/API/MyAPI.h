@@ -104,6 +104,13 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)getDaiLiMasterDataWithParameters:(NSDictionary*)para
                                   result:(ModelBlock)result
                              errorResult:(ErrorBlock)errorResult;
+
+#pragma mark --我的商户（代理）
+- (void)getDaLiStoreListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+#pragma mark --收益明细（代理）
+- (void)getDaLiIncomeListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 #pragma mark --我是商户
 - (void)getStoreMasterDataWithParameters:(NSDictionary*)para result:(ModelBlock)result errorResult:(ErrorBlock)errorResult;
 
@@ -135,6 +142,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)postFilesWithFormData:(NSArray *)photosArr
                            result:(ModelBlock)result
                       errorResult:(ErrorBlock)errorResult;
+#pragma mark -- 申请成为代理
+- (void)PostNameAndPhoneWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 
 #pragma mark -- 申请成为商户
 - (void)upDateInfoForBeUnionWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
