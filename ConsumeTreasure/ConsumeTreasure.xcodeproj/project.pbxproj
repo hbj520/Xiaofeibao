@@ -48,6 +48,9 @@
 		AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B3701DB8B2BC00A7F96A /* UnionListViewController.m */; };
 		AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B38D1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m */; };
 		AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */; };
+		AB894B391E10AF8400DF5CBC /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = AB894B371E10AF8400DF5CBC /* KGModal.m */; };
+		AB894B3D1E10AFC600DF5CBC /* ChangeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB894B3B1E10AFC600DF5CBC /* ChangeHeadView.m */; };
+		AB894B3E1E10AFC600DF5CBC /* ChangeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB894B3C1E10AFC600DF5CBC /* ChangeHeadView.xib */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
@@ -385,6 +388,11 @@
 		AB79B38C1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionTitleCollectionViewCell.h; sourceTree = "<group>"; };
 		AB79B38D1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionTitleCollectionViewCell.m; sourceTree = "<group>"; };
 		AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB894B361E10AF8400DF5CBC /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
+		AB894B371E10AF8400DF5CBC /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
+		AB894B3A1E10AFC600DF5CBC /* ChangeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeHeadView.h; sourceTree = "<group>"; };
+		AB894B3B1E10AFC600DF5CBC /* ChangeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeHeadView.m; sourceTree = "<group>"; };
+		AB894B3C1E10AFC600DF5CBC /* ChangeHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeHeadView.xib; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -1038,6 +1046,16 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		AB894B381E10AF8400DF5CBC /* KGModal */ = {
+			isa = PBXGroup;
+			children = (
+				AB894B361E10AF8400DF5CBC /* KGModal.h */,
+				AB894B371E10AF8400DF5CBC /* KGModal.m */,
+			);
+			name = KGModal;
+			path = ../../../../FUYI/FUYIFinance/FUYIFinance/Vendor;
+			sourceTree = "<group>";
+		};
 		ABCB95301D9B8972008927C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1371,6 +1389,9 @@
 		ABCB953B1D9B8A05008927C7 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				AB894B3A1E10AFC600DF5CBC /* ChangeHeadView.h */,
+				AB894B3B1E10AFC600DF5CBC /* ChangeHeadView.m */,
+				AB894B3C1E10AFC600DF5CBC /* ChangeHeadView.xib */,
 				AB6FBA631DB5B82500C682F8 /* TongbaoMoneyView.h */,
 				AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */,
 				AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */,
@@ -1560,6 +1581,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AB894B381E10AF8400DF5CBC /* KGModal */,
 				D10DC94D1E0A307400930F74 /* XWMoneyTextField */,
 				D16BF2C61DF106DC001A82BF /* JPullDownMenu */,
 				ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */,
@@ -2036,6 +2058,7 @@
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */,
 				D15B3B211DDEF0D6009122FE /* DetailIncomeTableViewCell.xib in Resources */,
+				AB894B3E1E10AFC600DF5CBC /* ChangeHeadView.xib in Resources */,
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
@@ -2202,6 +2225,7 @@
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D15B394C1DD32981009122FE /* DetailHeadView.m in Sources */,
 				D111711A1DFA8F0800AD88DE /* StoreControlViewController.m in Sources */,
+				AB894B391E10AF8400DF5CBC /* KGModal.m in Sources */,
 				D15B3B121DDEE5BB009122FE /* IncomeTableHead.m in Sources */,
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
@@ -2321,6 +2345,7 @@
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,
 				D10DC9441E09307600930F74 /* DLPickerView.m in Sources */,
+				AB894B3D1E10AFC600DF5CBC /* ChangeHeadView.m in Sources */,
 				D11171141DFA8EC400AD88DE /* OrderControlViewController.m in Sources */,
 				D16BF2D11DF14F47001A82BF /* SpecialGoodModel.m in Sources */,
 				D15B39461DD01488009122FE /* ChartModel.m in Sources */,

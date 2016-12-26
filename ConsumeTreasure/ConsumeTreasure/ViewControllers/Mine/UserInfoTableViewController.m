@@ -8,9 +8,17 @@
 
 #import "UserInfoTableViewController.h"
 #import "ModfyNickNameViewController.h"
-
-@interface UserInfoTableViewController ()
+#import "KGModal.h"
+#import "ChangeHeadView.h"
+@interface UserInfoTableViewController ()<UIImagePickerControllerDelegate,UIActionSheetDelegate>
+{
+    UIImagePickerController *_picker;
+    NSString *imgeUrl;
+}
 - (IBAction)backBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
 
 @end
 
@@ -24,6 +32,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self initPickView];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //添加通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
@@ -60,6 +69,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [self showModalView];
+        }
         if (indexPath.row == 1) {
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             UILabel *userNameLabel = [cell viewWithTag:10];
@@ -90,6 +102,43 @@
     
 }
 #pragma mark -PrivateMethod
+- (void)initPickView{
+    _picker = [[UIImagePickerController alloc] init];
+    _picker.delegate = self;
+}
+- (void)openCamera{
+    _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_picker animated:YES completion:nil];
+}
+- (void)openPhotoAlbum{
+    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:_picker animated:YES completion:nil];
+}
+//弹出选择照片视图
+- (void)showModalView
+{
+    
+    [[KGModal sharedInstance] setCloseButtonType:KGModalCloseButtonTypeNone];
+    [KGModal sharedInstance].modalBackgroundColor = [UIColor whiteColor];
+    
+    ChangeHeadView * modifyView = [[[NSBundle mainBundle] loadNibNamed:@"ChangeHeadView" owner:self options:nil] lastObject];
+    
+    [[KGModal sharedInstance] showWithContentView:modifyView andAnimated:YES];
+    
+    modifyView.LibraryBlock = ^(){
+        [self openPhotoAlbum];
+        [[KGModal sharedInstance] hideAnimated:YES];
+    };
+    modifyView.TakeBlock = ^(){
+        [self openCamera];
+        [[KGModal sharedInstance] hideAnimated:YES];
+    };
+    
+    
+}
+- (void)resetImage{
+    
+}
 - (void)recieveNotice:(NSNotification *)sender{
     NSDictionary *noti = sender.userInfo;
     NSArray *keys = [noti allKeys];
@@ -109,6 +158,29 @@
         
     }
     
+}
+#pragma mark-UINavigationControllerDelegate & UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage * image = info[UIImagePickerControllerOriginalImage];
+    
+    NSData * data = UIImageJPEGRepresentation(image, 0.1);
+    
+    [self showHudInView:self.view hint:@"上传图片中"];
+//    [[MyAPI sharedAPI] uploadImage:data result:^(BOOL sucess, NSString *msg) {
+//        if(sucess){
+//            imageUrl = msg;
+//            [self.headImage sd_setImageWithURL:[NSURL URLWithString:msg] placeholderImage:[UIImage imageNamed:@"defaulticon"]];
+//            [[Config Instance] saveIcon:msg];
+//            
+//            [self hideHud];
+//        }else{
+//            [self.headImage setImage:[UIImage imageNamed:@"defaulticon"]];
+//        }
+//    } errorResult:^(NSError *enginerError) {
+//        
+//    }];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

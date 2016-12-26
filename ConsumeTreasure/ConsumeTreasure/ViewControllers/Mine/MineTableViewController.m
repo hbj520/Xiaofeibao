@@ -26,6 +26,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
 - (IBAction)settingBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImgaView;
 
 @end
 
@@ -42,26 +43,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    isShop = [[XFBConfig Instance] getIsShop];
+   
+    [self createUI];
     
-    if ([isShop isEqualToString:@"1"]) {
-        self.shnagjiaLab.text = @"我是商家";
-    }else{
-        self.shnagjiaLab.text = @"成为联盟商家";
-    }
-
-   UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    navBarHairlineImageView.hidden = YES;
-    NSString *navTitle = @"我";
-    self.usernamelabel.text = [[XFBConfig Instance] getUserName];
-    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
-    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
-    self.navigationItem.title = navTitle;
-   TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
-  
-    [self.moneyView addSubview: tongbaoMoneyView];
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -151,6 +138,29 @@
 
     }
    // [self testWeixinPay];
+}
+#pragma mark - PrivateMethod
+- (void)createUI{
+    isShop = [[XFBConfig Instance] getIsShop];
+    
+    if ([isShop isEqualToString:@"1"]) {
+        self.shnagjiaLab.text = @"我是商家";
+    }else{
+        self.shnagjiaLab.text = @"成为联盟商家";
+    }
+    
+    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    navBarHairlineImageView.hidden = YES;
+    NSString *navTitle = @"我";
+    self.usernamelabel.text = [[XFBConfig Instance] getUserName];
+    
+    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+    self.navigationItem.title = navTitle;
+    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
+    
+    [self.moneyView addSubview: tongbaoMoneyView];
 }
 - (void)testWeixinPay{
     //============================================================
