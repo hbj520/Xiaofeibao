@@ -282,6 +282,8 @@
 		D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A06AF51DEEB12700855564 /* BeUnionModel.m */; };
 		D1A3C0721E10C6DB0040AAD9 /* JHCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C06F1E10C6DB0040AAD9 /* JHCoverView.m */; };
 		D1A3C0731E10C6DB0040AAD9 /* NewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0711E10C6DB0040AAD9 /* NewTextField.m */; };
+		D1A3C0771E1113C70040AAD9 /* ChangeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0751E1113C70040AAD9 /* ChangeHeadView.m */; };
+		D1A3C0781E1113C70040AAD9 /* ChangeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0761E1113C70040AAD9 /* ChangeHeadView.xib */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -861,6 +863,9 @@
 		D1A3C06F1E10C6DB0040AAD9 /* JHCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCoverView.m; sourceTree = "<group>"; };
 		D1A3C0701E10C6DB0040AAD9 /* NewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTextField.h; sourceTree = "<group>"; };
 		D1A3C0711E10C6DB0040AAD9 /* NewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTextField.m; sourceTree = "<group>"; };
+		D1A3C0741E1113C70040AAD9 /* ChangeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeHeadView.h; sourceTree = "<group>"; };
+		D1A3C0751E1113C70040AAD9 /* ChangeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeHeadView.m; sourceTree = "<group>"; };
+		D1A3C0761E1113C70040AAD9 /* ChangeHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeHeadView.xib; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1377,6 +1382,9 @@
 		ABCB953B1D9B8A05008927C7 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				D1A3C0741E1113C70040AAD9 /* ChangeHeadView.h */,
+				D1A3C0751E1113C70040AAD9 /* ChangeHeadView.m */,
+				D1A3C0761E1113C70040AAD9 /* ChangeHeadView.xib */,
 				AB6FBA631DB5B82500C682F8 /* TongbaoMoneyView.h */,
 				AB6FBA641DB5B82500C682F8 /* TongbaoMoneyView.m */,
 				AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */,
@@ -2054,6 +2062,7 @@
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */,
 				D15B3B211DDEF0D6009122FE /* DetailIncomeTableViewCell.xib in Resources */,
+				D1A3C0781E1113C70040AAD9 /* ChangeHeadView.xib in Resources */,
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
@@ -2319,6 +2328,7 @@
 				D15B39841DD99D1F009122FE /* LookStoreModel.m in Sources */,
 				D12054861DEC348300EB2707 /* ApplyViewController.m in Sources */,
 				D16BF2B61DEFF15B001A82BF /* JFLocation.m in Sources */,
+				D1A3C0771E1113C70040AAD9 /* ChangeHeadView.m in Sources */,
 				D16BF2D41DF15004001A82BF /* CommentModel.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,

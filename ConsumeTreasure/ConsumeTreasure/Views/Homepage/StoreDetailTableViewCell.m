@@ -61,7 +61,7 @@
             
         case 1:
         {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.phNum]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.phNum]]];
         }
             break;
     }
