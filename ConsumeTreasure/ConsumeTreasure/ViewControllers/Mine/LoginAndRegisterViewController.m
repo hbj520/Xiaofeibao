@@ -171,9 +171,11 @@
     [Tools hideKeyBoard];
     [self showHudInView:self.view hint:@"登录..."];
     
+    NSString *securityLogin = [Tools loginPasswordSecurityLock:self.loginPhonePassWordTextfild.text];
+    
     NSDictionary *para = @{
                            @"phone": self.loginPhoneNumTextField.text,
-                           @"password": self.loginPhonePassWordTextfild.text
+                           @"password": securityLogin
                            };
     [[MyAPI sharedAPI] loginWithParameters:para result:^(BOOL sucess, NSString *msg) {
                                                  
@@ -200,10 +202,14 @@
 
 - (IBAction)accountRegisterBtn:(id)sender {
     [Tools hideKeyBoard];
-    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.self.registerPasswordTextfield.text.length >= 6 &&!self.registerVerifyCodeTextfield.text) {
+    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.registerPasswordTextfield.text.length >= 6 ) {
+        
+        NSString *securityString = [Tools loginPasswordSecurityLock:self.registerPasswordTextfield.text];
+      
+        
         [[MyAPI sharedAPI] registerUserWithParameters:@{
                                                         @"phone":self.registerPhoneTextField.text,
-                                                        @"password":self.registerPasswordTextfield.text,
+                                                        @"password":securityString,
                                                         @"validatecode":self.registerVerifyCodeTextfield.text,
                                                         @"invitecode":self.registerInviteCodeTextfileld.text
                                                         } result:^(BOOL sucess, NSString *msg) {
