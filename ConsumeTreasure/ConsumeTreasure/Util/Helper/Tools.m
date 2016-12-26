@@ -186,11 +186,12 @@
     ;
     
     
-    return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@yykjAwdx",[SecurityUtil encryptMD5String:password]]]];
+    return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@XFB@796521",[SecurityUtil encryptMD5String:password]]]];
 }
 
-+ (NSString*)loginPasswdSecurityLock:(NSString*)password{
-    return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@nos_qx",[SecurityUtil encryptMD5String:password]]]];
+//支付密码
++ (NSString *)payPasswdSecurityLock:(NSString*)password{
+    return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@XFB@96478YY",[SecurityUtil encryptMD5String:password]]]];
 
 }
 
