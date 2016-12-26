@@ -65,7 +65,8 @@ static XFBConfig * instance = nil;
              token:(NSString *)token
          loginName:(NSString *)loginName
            balance:(NSString *)balance
-            qrCode:(NSString *)qrCode{
+            qrCode:(NSString *)qrCode
+             phone:(NSString *)phone{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults]
     ;
     [settings removeObjectForKey:@"imgUrl"];
@@ -82,6 +83,9 @@ static XFBConfig * instance = nil;
     
     [settings removeObjectForKey:@"qrCode"];
     [settings setObject:qrCode forKey:@"qrCode"];
+    
+    [settings removeObjectForKey:@"phone"];
+    [settings setObject:phone forKey:@"phone"];
     
     [settings synchronize];
 }
@@ -256,6 +260,11 @@ static XFBConfig * instance = nil;
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"userid"];
+}
+
+- (NSString *)getPhone{
+    NSUserDefaults * settings =[NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"phone"];
 }
 
 - (NSString*)getUserName

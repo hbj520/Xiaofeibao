@@ -56,6 +56,7 @@
             leftMoney = [tongModel.goldNum floatValue];
             realMoney = [tongModel.goldNum floatValue];
             self.leftTongMoney.text = [NSString stringWithFormat:@"可用余额%@",tongModel.goldNum];
+            tongModel.hasPayPwd = @"0";
             if ([tongModel.hasPayPwd isEqualToString:@"0"]) {
                 UIAlertView * alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您尚未设置支付密码，是否立即前往设置。或者您可以在”我“->“设置”中去设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
                 [alert show];

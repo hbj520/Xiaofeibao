@@ -33,7 +33,8 @@
              token:(NSString *)token
          loginName:(NSString *)loginName
            balance:(NSString *)balance
-            qrCode:(NSString *)qrCode;
+            qrCode:(NSString *)qrCode
+             phone:(NSString *)phone;
 
 //保存优币值
 - (void)saveUcoin:(NSString *)ucoin;
@@ -61,6 +62,7 @@
 
 - (NSString *)getTeminate;//
 - (NSString *)getUserId;       //获取用户id
+- (NSString *)getPhone;
 - (NSString *)getUserName;     //获取用户名
 - (NSString *)getUserPhoneNum; //获取用户手机号码
 - (NSString *)getisteacher;    //获取是否是讲师

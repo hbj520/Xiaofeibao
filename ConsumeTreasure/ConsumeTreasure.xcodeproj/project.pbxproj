@@ -280,6 +280,8 @@
 		D196D58C1E0CFB9E0062AD91 /* TobeAgencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D196D58B1E0CFB9E0062AD91 /* TobeAgencyViewController.m */; };
 		D19B6E1B1DE7DA65002A5667 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D19B6E1A1DE7DA65002A5667 /* AccountModel.m */; };
 		D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A06AF51DEEB12700855564 /* BeUnionModel.m */; };
+		D1A3C0721E10C6DB0040AAD9 /* JHCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C06F1E10C6DB0040AAD9 /* JHCoverView.m */; };
+		D1A3C0731E10C6DB0040AAD9 /* NewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0711E10C6DB0040AAD9 /* NewTextField.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -855,6 +857,10 @@
 		D19B6E1A1DE7DA65002A5667 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
 		D1A06AF41DEEB12700855564 /* BeUnionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeUnionModel.h; sourceTree = "<group>"; };
 		D1A06AF51DEEB12700855564 /* BeUnionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeUnionModel.m; sourceTree = "<group>"; };
+		D1A3C06E1E10C6DB0040AAD9 /* JHCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHCoverView.h; sourceTree = "<group>"; };
+		D1A3C06F1E10C6DB0040AAD9 /* JHCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHCoverView.m; sourceTree = "<group>"; };
+		D1A3C0701E10C6DB0040AAD9 /* NewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTextField.h; sourceTree = "<group>"; };
+		D1A3C0711E10C6DB0040AAD9 /* NewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTextField.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1560,6 +1566,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D1A3C06D1E10C6DB0040AAD9 /* payViewControl */,
 				D10DC94D1E0A307400930F74 /* XWMoneyTextField */,
 				D16BF2C61DF106DC001A82BF /* JPullDownMenu */,
 				ABFEA4991DEC11E10002672F /* ZYQAssetPickerController */,
@@ -1886,6 +1893,17 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		D1A3C06D1E10C6DB0040AAD9 /* payViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				D1A3C06E1E10C6DB0040AAD9 /* JHCoverView.h */,
+				D1A3C06F1E10C6DB0040AAD9 /* JHCoverView.m */,
+				D1A3C0701E10C6DB0040AAD9 /* NewTextField.h */,
+				D1A3C0711E10C6DB0040AAD9 /* NewTextField.m */,
+			);
+			path = payViewControl;
+			sourceTree = "<group>";
+		};
 		D1F2759E1DAD0A5A005B9849 /* ScanerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2195,6 +2213,7 @@
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
 				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
 				AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */,
+				D1A3C0721E10C6DB0040AAD9 /* JHCoverView.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D11171171DFA8EEB00AD88DE /* CheckstandViewController.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
@@ -2289,6 +2308,7 @@
 				AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
+				D1A3C0731E10C6DB0040AAD9 /* NewTextField.m in Sources */,
 				AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */,
 				AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */,
 				D15B3B201DDEF0D6009122FE /* DetailIncomeTableViewCell.m in Sources */,

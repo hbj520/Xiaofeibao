@@ -80,11 +80,15 @@
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];
             NSString *qrcode = userDic[@"qrcord"];
+            
+            NSString *phone = para[@"phone"];
+            
             [[XFBConfig Instance] saveImgUrl:imgurl
                                        token:token
                                    loginName:loginName
                                      balance:goldNum
-                                      qrCode:qrcode];
+                                      qrCode:qrcode
+                                       phone:phone];
             result(YES,@"登陆成功");
         }else{
             result(NO,@"登录失败");

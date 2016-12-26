@@ -8,6 +8,8 @@
 
 #import "PSWVertifyViewController.h"
 
+#import "GoPrePayViewController.h"
+
 @interface PSWVertifyViewController ()
 {
     //NSString *savePayPsw;
@@ -27,8 +29,11 @@
 }
 
 - (void)postVertify{
+    
+    NSString *stt = [[XFBConfig Instance] getPhone];
+    
     NSDictionary *para = @{
-                           @"phone":[[XFBConfig Instance]getUserName],
+                           @"phone":[[XFBConfig Instance] getPhone],
                            @"type":@"1"
                            };
     [[MyAPI sharedAPI] postVerifyCodeWithParameters:para result:^(BOOL sucess, NSString *msg) {
@@ -46,8 +51,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)post:(id)sender {
+    [self.vertifyText resignFirstResponder];
     NSDictionary *para = @{
-                           @"phone":[[XFBConfig Instance]getUserName],
+                           @"phone":[[XFBConfig Instance] getPhone],
                            @"repassword":self.savePsw,
                            @"validatecode":self.vertifyText.text,
                            @"type":@"2"
@@ -55,6 +61,13 @@
     [[MyAPI sharedAPI] postPayPswWithParameters:para result:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             showAlert(@"设置成功");
+            UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"设置成功，请前往支付" preferredStyle:1];
+            UIAlertAction *goAction = [UIAlertAction actionWithTitle:@"前往支付" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                //通知重新输入密码的时候，以前输入的密码清空
+                GoPrePayViewController *prePay = [[GoPrePayViewController alloc]init];
+                [self.navigationController popToViewController:prePay animated:YES];
+            }];
+            [alertCon addAction:goAction];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -63,9 +76,17 @@
     
     
 }
+
+
+
 - (IBAction)back:(id)sender {
     [self backTolastPage];
 }
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.vertifyText resignFirstResponder];
+}
+
 
 /*
 #pragma mark - Navigation
