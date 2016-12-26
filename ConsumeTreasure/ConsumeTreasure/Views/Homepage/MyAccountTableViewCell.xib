@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可提现金额680.00元" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-RW-dQH">
-                        <rect key="frame" x="20" y="136" width="335" height="13"/>
+                        <rect key="frame" x="20" y="135" width="335" height="13"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="cEp-4S-829"/>
                         </constraints>
@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="680.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRt-LR-Cph">
-                        <rect key="frame" x="123" y="68" width="130" height="33"/>
+                        <rect key="frame" x="123" y="77" width="130" height="33"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="33" id="kom-rg-4AO"/>
                         </constraints>
@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通宝币" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khf-C2-d6W">
-                        <rect key="frame" x="258" y="84" width="38" height="15"/>
+                        <rect key="frame" x="258" y="95" width="38" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="38" id="Qp7-Fq-gXw"/>
                             <constraint firstAttribute="height" constant="15" id="tWI-lY-uEF"/>
@@ -67,40 +67,24 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nr-Mp-zVP">
-                        <rect key="frame" x="150" y="109" width="75" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="17" id="Ll4-VU-vje"/>
-                            <constraint firstAttribute="width" constant="75" id="oB6-DG-uo0"/>
-                        </constraints>
-                        <state key="normal" image="applyMoney">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="applyMoney:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uC1-Fr-9Vw"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="hjf-Ka-vFd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="0vZ-hx-gDr"/>
-                    <constraint firstItem="khf-C2-d6W" firstAttribute="bottom" secondItem="WRt-LR-Cph" secondAttribute="bottom" constant="-2" id="5b8-Fz-2tD"/>
+                    <constraint firstItem="khf-C2-d6W" firstAttribute="bottom" secondItem="WRt-LR-Cph" secondAttribute="bottom" id="5b8-Fz-2tD"/>
                     <constraint firstItem="7S4-RW-dQH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7z7-e5-AID"/>
                     <constraint firstItem="khf-C2-d6W" firstAttribute="leading" secondItem="WRt-LR-Cph" secondAttribute="trailing" constant="5" id="BaP-JN-I5O"/>
                     <constraint firstAttribute="trailing" secondItem="7S4-RW-dQH" secondAttribute="trailing" constant="20" id="KYa-og-yaU"/>
                     <constraint firstAttribute="bottom" secondItem="7S4-RW-dQH" secondAttribute="bottom" constant="15" id="MVF-tJ-QaQ"/>
                     <constraint firstItem="Ur0-hU-8qR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Tv6-ou-dbN"/>
                     <constraint firstItem="WRt-LR-Cph" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="X0Y-jL-TBO"/>
-                    <constraint firstItem="WRt-LR-Cph" firstAttribute="top" secondItem="hjf-Ka-vFd" secondAttribute="bottom" constant="13" id="gfk-de-L5c"/>
+                    <constraint firstItem="WRt-LR-Cph" firstAttribute="top" secondItem="hjf-Ka-vFd" secondAttribute="bottom" constant="22" id="gfk-de-L5c"/>
                     <constraint firstItem="Ur0-hU-8qR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="meW-Ms-kcK"/>
-                    <constraint firstItem="0Nr-Mp-zVP" firstAttribute="top" secondItem="WRt-LR-Cph" secondAttribute="bottom" constant="8" symbolic="YES" id="qdB-Ix-clO"/>
                     <constraint firstItem="hjf-Ka-vFd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ryp-FB-cCj"/>
-                    <constraint firstItem="0Nr-Mp-zVP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="u6X-ZM-6vD"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="applyMoneyBtn" destination="0Nr-Mp-zVP" id="cUn-ub-70E"/>
                 <outlet property="backBtn" destination="Ur0-hU-8qR" id="qjW-Jy-aJp"/>
                 <outlet property="explainLab" destination="7S4-RW-dQH" id="vUL-9H-CuI"/>
                 <outlet property="moneyLab" destination="WRt-LR-Cph" id="9DI-PH-PHD"/>
@@ -109,7 +93,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="applyMoney" width="138" height="33"/>
         <image name="whiteback" width="10" height="17"/>
     </resources>
 </document>

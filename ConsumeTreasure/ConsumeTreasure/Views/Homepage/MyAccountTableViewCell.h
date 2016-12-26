@@ -12,7 +12,7 @@ typedef void (^TapViewBlock)();
 @interface MyAccountTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
-@property (weak, nonatomic) IBOutlet UIButton *applyMoneyBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *applyMoneyBtn;
 @property (weak, nonatomic) IBOutlet UILabel *explainLab;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 

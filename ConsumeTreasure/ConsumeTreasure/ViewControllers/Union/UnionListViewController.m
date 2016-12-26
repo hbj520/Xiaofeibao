@@ -12,6 +12,8 @@
 #import "TuiJianTableViewCell.h"
 #import "TuiJianModel.h"
 #import "AdDetailViewController.h"
+#import "StoreDeatilViewController.h"
+
 #import "JPullDownMenu.h"
 #import "AppDelegate.h"
 #import "UnionContenModel.h"
@@ -59,7 +61,7 @@ UICollectionViewDataSource>
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.tabBarController.tabBar.hidden = NO;
 }
 - (void)didReceiveMemoryWarning {
@@ -104,7 +106,7 @@ UICollectionViewDataSource>
     
     [self.view addSubview:self.menu];
     
-    __weak typeof(self) _self = self;
+    __weak typeof(self) weakSelf = self;
     [self.menu setHandleSelectDataBlock:^(NSString *selectTitle, NSUInteger selectIndex, NSUInteger selectButtonTag) {
         
     }];
@@ -283,8 +285,10 @@ UICollectionViewDataSource>
         
     }else if (tableView == self.contentTabelView){
         UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-        AdDetailViewController *adVC = [storybord instantiateViewControllerWithIdentifier:@"detail"];
-        [self.navigationController pushViewController:adVC animated:YES];
+        StoreDeatilViewController *deatilVC = [storybord instantiateViewControllerWithIdentifier:@"detailSB"];
+        deatilVC.StoreModel = [dataSource objectAtIndex:indexPath.row];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:deatilVC animated:YES];
     }
 }
 
