@@ -10,6 +10,7 @@
 #import "ModfyNickNameViewController.h"
 #import "KGModal.h"
 #import "ChangeHeadView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface UserInfoTableViewController ()<UIImagePickerControllerDelegate,UIActionSheetDelegate>
 {
     UIImagePickerController *_picker;
@@ -31,8 +32,8 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self initPickView];
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;]
+    [self createUI];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //添加通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
@@ -102,6 +103,12 @@
     
 }
 #pragma mark -PrivateMethod
+- (void)createUI{
+    [self initPickView];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
+    self.userNameLabel.text = [[XFBConfig Instance] getUserName];
+    self.phoneNumLabel.text = [[XFBConfig Instance] getUserPhoneNum];
+}
 - (void)initPickView{
     _picker = [[UIImagePickerController alloc] init];
     _picker.delegate = self;
@@ -134,9 +141,6 @@
         [[KGModal sharedInstance] hideAnimated:YES];
     };
     
-    
-}
-- (void)resetImage{
     
 }
 - (void)recieveNotice:(NSNotification *)sender{

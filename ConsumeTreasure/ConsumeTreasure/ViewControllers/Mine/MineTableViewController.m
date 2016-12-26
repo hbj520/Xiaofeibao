@@ -16,6 +16,7 @@
 #import "MyAccountViewController.h"
 #import "TobeUnionViewController.h"
 #import "ApplyViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MineTableViewController ()
 {
@@ -161,6 +162,7 @@
     TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     
     [self.moneyView addSubview: tongbaoMoneyView];
+    [self.iconImgaView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
 }
 - (void)testWeixinPay{
     //============================================================

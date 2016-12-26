@@ -68,8 +68,8 @@ static XFBConfig * instance = nil;
             qrCode:(NSString *)qrCode{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults]
     ;
-    [settings removeObjectForKey:@"imgUrl"];
-    [settings setObject:imgUrl forKey:@"imgUrl"];
+    [settings removeObjectForKey:@"icon"];
+    [settings setObject:imgUrl forKey:@"icon"];
     
     [settings removeObjectForKey:@"token"];
     [settings setObject:token forKey:@"token"];

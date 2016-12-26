@@ -74,6 +74,7 @@
 - (NSString *)getOrderNum; //获取订单号
 - (NSString *)getIsWifi;//是否可在wifi下观看视频
 - (NSString *)getCityCode;
+- (NSString *)getIcon;
 - (void)logout;               //退出登录
 - (void)deleteTeminate;
 
