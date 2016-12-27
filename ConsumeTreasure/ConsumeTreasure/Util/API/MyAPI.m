@@ -1002,7 +1002,7 @@
                         errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"userinfo/queryAttShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -1027,5 +1027,64 @@
     }];
     
 }
-
+#pragma mark - 上传头像
+- (void)postIconWithParameters:(NSDictionary *)para
+                        result:(StateBlock)result
+                   errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"myAccount/modifyImgUrl" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+#pragma mark - 修改用户名
+- (void)fixUserNameWithParameters:(NSDictionary *)para
+                           result:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"myAccount/modifyUserName" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+#pragma mark -修改手机号码
+- (void)fixPhoneNumWithParameters:(NSDictionary *)para
+                           result:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"myAccount/modifyPhone" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 @end

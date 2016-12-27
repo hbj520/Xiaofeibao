@@ -53,7 +53,9 @@
 - (IBAction)post:(id)sender {
     [self.vertifyText resignFirstResponder];
     NSDictionary *para = @{
-                           @"phone":[[XFBConfig Instance] getphoneNum],
+                           @"phone":[[XFBConfig Instance] getphoneNum
+                                     
+                                     ],
                            @"repassword":self.savePsw,
                            @"validatecode":self.vertifyText.text,
                            @"type":@"2"

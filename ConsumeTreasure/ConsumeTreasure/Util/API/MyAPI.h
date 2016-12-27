@@ -156,5 +156,16 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)attentionShopWithParameters:(NSDictionary *)para
                              result:(ArrayBlock )result
                         errorResult:(ErrorBlock)errorResult;
-
+#pragma mark - 上传头像
+- (void)postIconWithParameters:(NSDictionary *)para
+                        result:(StateBlock)result
+                   errorResult:(ErrorBlock)errorResult;
+#pragma mark - 修改用户名
+- (void)fixUserNameWithParameters:(NSDictionary *)para
+                           result:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult;
+#pragma mark -修改手机号码
+- (void)fixPhoneNumWithParameters:(NSDictionary *)para
+                           result:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult;
 @end
