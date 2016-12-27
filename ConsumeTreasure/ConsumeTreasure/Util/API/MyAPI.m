@@ -1052,7 +1052,7 @@
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
@@ -1072,7 +1072,7 @@
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
