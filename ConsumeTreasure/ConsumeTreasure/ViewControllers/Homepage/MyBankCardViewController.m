@@ -68,6 +68,8 @@
     
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -81,6 +83,8 @@
     [self performSegueWithIdentifier:@"addBankSegue" sender:nil];
     
 }
+
+
 
 /*
 #pragma mark - Navigation

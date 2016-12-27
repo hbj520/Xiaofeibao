@@ -119,7 +119,9 @@
 //    }
     
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.window endEditing:YES];
+}
 
 #pragma mark -WeixinDelegate
 - (void)onReq:(BaseReq *)req{

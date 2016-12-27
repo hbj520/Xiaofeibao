@@ -8,6 +8,15 @@
 
 #import "BaseViewController.h"
 
-@interface AddBankViewController : BaseViewController
+typedef void (^ChooseBankBlock)();
 
+@interface AddBankViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITextField *cardMasterName;
+@property (weak, nonatomic) IBOutlet UITextField *cardNum;
+@property (weak, nonatomic) IBOutlet UITextField *cardBankName;
+@property (weak, nonatomic) IBOutlet UITextField *cardArea;
+
+@property (weak, nonatomic) IBOutlet UIView *oneView;
+
+@property (nonatomic,copy) ChooseBankBlock chooseBank;
 @end
