@@ -111,6 +111,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark -- 银行卡信息录入
 - (void)typeInInfoWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 删除银行卡信息
+- (void)deleteBankInfoWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
 #pragma mark --我的商户（代理）
 - (void)getDaLiStoreListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 

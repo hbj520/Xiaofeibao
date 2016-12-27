@@ -47,6 +47,7 @@
 @property (nonatomic,strong) NSString *bankname;
 @property (nonatomic,strong) NSString *bankno;
 @property (nonatomic,strong) NSString *bankusername;
+@property (nonatomic,strong) NSString *bank_id;
 
 @end
 

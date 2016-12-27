@@ -674,6 +674,25 @@
     }];
 }
 
+#pragma mark -- 删除银行卡信息
+- (void)deleteBankInfoWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/deleteMyBank" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result (YES,info);
+        }else{
+            result (NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult (error);
+    }];
+}
+
 
 #pragma mark --我的商户（代理）
 - (void)getDaLiStoreListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{

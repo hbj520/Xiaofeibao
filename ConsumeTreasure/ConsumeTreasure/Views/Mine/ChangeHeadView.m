@@ -18,15 +18,15 @@
     [self.btn2 addTarget:self action:@selector(btnclick2) forControlEvents:UIControlEventTouchUpInside];
     
     CGRect newframe1 = self.backView.frame;
-    newframe1.size.width = ScreenWidth - 72;
+    newframe1.size.width = ScreenWidth - 108;
     self.backView.frame = newframe1;
     
     CGRect newframe2 = self.btn1.frame;
-    newframe2.size.width = ScreenWidth - 72;
+    newframe2.size.width = ScreenWidth - 108;
     self.btn1.frame = newframe2;
     
     CGRect newframe3 = self.btn2.frame;
-    newframe3.size.width = ScreenWidth - 72;
+    newframe3.size.width = ScreenWidth - 108;
     self.btn2.frame = newframe3;
 
 }

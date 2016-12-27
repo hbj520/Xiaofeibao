@@ -26,7 +26,10 @@
 
 
 @implementation bankCardModel
-
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"id" : @"bank_id"}];
+}
 @end
 
 @implementation cardArrModel

@@ -1,18 +1,18 @@
 //
-//  CashViewController.m
+//  WithDrawViewController.m
 //  ConsumeTreasure
 //
-//  Created by youyoumacmini3 on 16/12/22.
+//  Created by youyoumacmini3 on 16/12/27.
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
-#import "CashViewController.h"
+#import "WithDrawViewController.h"
 
-@interface CashViewController ()
+@interface WithDrawViewController ()
 
 @end
 
-@implementation CashViewController
+@implementation WithDrawViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,19 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)back:(id)sender {
-    [self backTolastPage];
-}
-- (IBAction)GetMoneyRecordClick:(id)sender {
-    //提现记录
-}
-- (IBAction)getMoneyNow:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:nil];
-    
-}
-- (IBAction)getHistoryMoney:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:nil];
 }
 
 /*

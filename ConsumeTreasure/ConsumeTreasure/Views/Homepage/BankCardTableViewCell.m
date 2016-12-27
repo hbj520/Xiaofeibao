@@ -43,6 +43,10 @@
 - (IBAction)delete:(id)sender {
 
     NSLog(@"删除");
+    if (self.deleteBlock) {
+        self.deleteBlock();
+    }
+
 }
 
 

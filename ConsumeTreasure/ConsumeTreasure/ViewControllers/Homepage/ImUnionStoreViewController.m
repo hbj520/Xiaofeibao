@@ -57,7 +57,7 @@
 }
 
 - (void)cardClick:(id)Ges{
-    [self pushToNextWithIdentiField:@"goStoreControlSegue" sender:nil];
+    [self pushToNextWithIdentiField:@"myBankCardSegue" sender:nil];
     
 }
 

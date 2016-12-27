@@ -289,6 +289,7 @@
 		D1A3C0891E1246DA0040AAD9 /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0871E1246DA0040AAD9 /* BankCardTableViewCell.m */; };
 		D1A3C08A1E1246DA0040AAD9 /* BankCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0881E1246DA0040AAD9 /* BankCardTableViewCell.xib */; };
 		D1A3C08D1E1252D90040AAD9 /* AddBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */; };
+		D1A3C0901E12ABDB0040AAD9 /* WithDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C08F1E12ABDB0040AAD9 /* WithDrawViewController.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -880,6 +881,8 @@
 		D1A3C0881E1246DA0040AAD9 /* BankCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCardTableViewCell.xib; sourceTree = "<group>"; };
 		D1A3C08B1E1252D90040AAD9 /* AddBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankViewController.h; sourceTree = "<group>"; };
 		D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankViewController.m; sourceTree = "<group>"; };
+		D1A3C08E1E12ABDB0040AAD9 /* WithDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithDrawViewController.h; sourceTree = "<group>"; };
+		D1A3C08F1E12ABDB0040AAD9 /* WithDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawViewController.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1203,6 +1206,8 @@
 				D1A3C0841E123E3B0040AAD9 /* MyBankCardViewController.m */,
 				D1A3C08B1E1252D90040AAD9 /* AddBankViewController.h */,
 				D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */,
+				D1A3C08E1E12ABDB0040AAD9 /* WithDrawViewController.h */,
+				D1A3C08F1E12ABDB0040AAD9 /* WithDrawViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2379,6 +2384,7 @@
 				D10EE3E31DB0B28F001C1992 /* CompressUtils.m in Sources */,
 				D10DC9491E095A0700930F74 /* DLIncomeViewController.m in Sources */,
 				D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */,
+				D1A3C0901E12ABDB0040AAD9 /* WithDrawViewController.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
 				D1A3C0891E1246DA0040AAD9 /* BankCardTableViewCell.m in Sources */,
@@ -2546,7 +2552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2668,7 +2674,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wq.xiaofeibao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2682,7 +2688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2804,7 +2810,7 @@
 					"-Objc",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wq.xiaofeibao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

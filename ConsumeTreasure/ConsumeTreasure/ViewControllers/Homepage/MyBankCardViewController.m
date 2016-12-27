@@ -21,6 +21,11 @@
 
 @implementation MyBankCardViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -72,10 +77,40 @@
     if (_cardList.count > 0) {
         bankCell.bankModel = [_cardList objectAtIndex:indexPath.row];
     }
+    
+    bankCell.deleteBlock =^(){
+        
+        [self deleteBankInfoWithIndex:indexPath.row];
+    };
+    
     bankCell.selectionStyle = 0;
     
     return bankCell;
     
+}
+
+
+- (void)deleteBankInfoWithIndex:(NSInteger)index{
+    
+    bankCardModel *model = [_cardList objectAtIndex:index];
+   // UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathWithIndex:index]];
+    NSDictionary *para = @{
+                           @"id":model.bank_id
+                           };
+    [[MyAPI sharedAPI] deleteBankInfoWithParameters:para result:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            [_cardList removeObject:[_cardList objectAtIndex:index]];
+            //[self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+
+            [self.tableView reloadData];
+            
+        }else{
+            [self showHint:msg];
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
