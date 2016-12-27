@@ -44,12 +44,20 @@
     UITapGestureRecognizer *tapCheck = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkClick:)];
     [self.checkStandView addGestureRecognizer:tapCheck];
     
+    UITapGestureRecognizer *tapCard = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cardClick:)];
+    [self.myBCardView addGestureRecognizer:tapCard];
+    
     
 }
 
 - (void)pushToNextWithIdentiField:(NSString*)identi sender:(id)sender{
     self.hidesBottomBarWhenPushed = YES;
     [self performSegueWithIdentifier:identi sender:sender];
+    
+}
+
+- (void)cardClick:(id)Ges{
+    [self pushToNextWithIdentiField:@"goStoreControlSegue" sender:nil];
     
 }
 

@@ -42,11 +42,20 @@
     
     UITapGestureRecognizer *tapIncome = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(incomeClick:)];
     [self.incomeView addGestureRecognizer:tapIncome];
+    
+    UITapGestureRecognizer *tapbankCard = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bankClick:)];
+    [self.myBCardView addGestureRecognizer:tapbankCard];
+    
 }
 
 - (void)pushToNextWithIdentiField:(NSString*)identi sender:(id)sender{
     self.hidesBottomBarWhenPushed = YES;
     [self performSegueWithIdentifier:identi sender:sender];
+    
+}
+
+- (void)bankClick:(id)Ges{
+    [self pushToNextWithIdentiField:@"myBankCardSegue" sender:nil];
     
 }
 

@@ -13,7 +13,6 @@
 		AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0149A41DE7D69D0068067B /* ZanTableViewCell.m */; };
 		AB0149A71DE7D69D0068067B /* ZanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */; };
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
-		AB03C2451E120E980043860B /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03C2431E120E980043860B /* KGModal.m */; };
 		AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */; };
 		AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */; };
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
@@ -285,6 +284,11 @@
 		D1A3C0731E10C6DB0040AAD9 /* NewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0711E10C6DB0040AAD9 /* NewTextField.m */; };
 		D1A3C0771E1113C70040AAD9 /* ChangeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0751E1113C70040AAD9 /* ChangeHeadView.m */; };
 		D1A3C0781E1113C70040AAD9 /* ChangeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0761E1113C70040AAD9 /* ChangeHeadView.xib */; };
+		D1A3C0821E123B2F0040AAD9 /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0811E123B2F0040AAD9 /* KGModal.m */; };
+		D1A3C0851E123E3B0040AAD9 /* MyBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0841E123E3B0040AAD9 /* MyBankCardViewController.m */; };
+		D1A3C0891E1246DA0040AAD9 /* BankCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0871E1246DA0040AAD9 /* BankCardTableViewCell.m */; };
+		D1A3C08A1E1246DA0040AAD9 /* BankCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0881E1246DA0040AAD9 /* BankCardTableViewCell.xib */; };
+		D1A3C08D1E1252D90040AAD9 /* AddBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -325,8 +329,6 @@
 		AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZanTableViewCell.xib; sourceTree = "<group>"; };
 		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
 		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
-		AB03C2421E120E980043860B /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
-		AB03C2431E120E980043860B /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
 		AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEvaluateTableViewCell.h; sourceTree = "<group>"; };
 		AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEvaluateTableViewCell.m; sourceTree = "<group>"; };
 		AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreEvaluateTableViewCell.xib; sourceTree = "<group>"; };
@@ -869,6 +871,15 @@
 		D1A3C0741E1113C70040AAD9 /* ChangeHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeHeadView.h; sourceTree = "<group>"; };
 		D1A3C0751E1113C70040AAD9 /* ChangeHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeHeadView.m; sourceTree = "<group>"; };
 		D1A3C0761E1113C70040AAD9 /* ChangeHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeHeadView.xib; sourceTree = "<group>"; };
+		D1A3C0801E123B2F0040AAD9 /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
+		D1A3C0811E123B2F0040AAD9 /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
+		D1A3C0831E123E3B0040AAD9 /* MyBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBankCardViewController.h; sourceTree = "<group>"; };
+		D1A3C0841E123E3B0040AAD9 /* MyBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBankCardViewController.m; sourceTree = "<group>"; };
+		D1A3C0861E1246DA0040AAD9 /* BankCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardTableViewCell.h; sourceTree = "<group>"; };
+		D1A3C0871E1246DA0040AAD9 /* BankCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardTableViewCell.m; sourceTree = "<group>"; };
+		D1A3C0881E1246DA0040AAD9 /* BankCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankCardTableViewCell.xib; sourceTree = "<group>"; };
+		D1A3C08B1E1252D90040AAD9 /* AddBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankViewController.h; sourceTree = "<group>"; };
+		D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankViewController.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -991,16 +1002,6 @@
 				ABEBA2571DDEFC8500601187 /* UnionContenModel.m */,
 			);
 			path = Union;
-			sourceTree = "<group>";
-		};
-		AB03C2441E120E980043860B /* KGModal */ = {
-			isa = PBXGroup;
-			children = (
-				AB03C2421E120E980043860B /* KGModal.h */,
-				AB03C2431E120E980043860B /* KGModal.m */,
-			);
-			name = KGModal;
-			path = ../../../../Desktop/FUYI/FUYIFinance/FUYIFinance/Vendor;
 			sourceTree = "<group>";
 		};
 		AB50D4681E0928AA00B427E6 /* Security */ = {
@@ -1198,6 +1199,10 @@
 				D15B3A481DDB0807009122FE /* MyIncomeViewController.m */,
 				D15B3B1A1DDEEE78009122FE /* NewIncomeViewController.h */,
 				D15B3B1B1DDEEE78009122FE /* NewIncomeViewController.m */,
+				D1A3C0831E123E3B0040AAD9 /* MyBankCardViewController.h */,
+				D1A3C0841E123E3B0040AAD9 /* MyBankCardViewController.m */,
+				D1A3C08B1E1252D90040AAD9 /* AddBankViewController.h */,
+				D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1388,6 +1393,9 @@
 				D196D5821E0CC3490062AD91 /* DaiLiShopsTableViewCell.h */,
 				D196D5831E0CC3490062AD91 /* DaiLiShopsTableViewCell.m */,
 				D196D5841E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib */,
+				D1A3C0861E1246DA0040AAD9 /* BankCardTableViewCell.h */,
+				D1A3C0871E1246DA0040AAD9 /* BankCardTableViewCell.m */,
+				D1A3C0881E1246DA0040AAD9 /* BankCardTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -1587,7 +1595,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				AB03C2441E120E980043860B /* KGModal */,
+				D1A3C07F1E123B2F0040AAD9 /* KGModel */,
 				D1A3C06D1E10C6DB0040AAD9 /* payViewControl */,
 				D10DC94D1E0A307400930F74 /* XWMoneyTextField */,
 				D16BF2C61DF106DC001A82BF /* JPullDownMenu */,
@@ -1926,6 +1934,15 @@
 			path = payViewControl;
 			sourceTree = "<group>";
 		};
+		D1A3C07F1E123B2F0040AAD9 /* KGModel */ = {
+			isa = PBXGroup;
+			children = (
+				D1A3C0801E123B2F0040AAD9 /* KGModal.h */,
+				D1A3C0811E123B2F0040AAD9 /* KGModal.m */,
+			);
+			path = KGModel;
+			sourceTree = "<group>";
+		};
 		D1F2759E1DAD0A5A005B9849 /* ScanerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2071,6 +2088,7 @@
 				ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */,
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
 				D12165F21DB71CCE006B06FC /* SYQMoneyTableViewCell.xib in Resources */,
+				D1A3C08A1E1246DA0040AAD9 /* BankCardTableViewCell.xib in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				D15B3AF31DDC0E5E009122FE /* AlipaySDK.bundle in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
@@ -2236,11 +2254,13 @@
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
 				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
 				AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */,
+				D1A3C0851E123E3B0040AAD9 /* MyBankCardViewController.m in Sources */,
 				D1A3C0721E10C6DB0040AAD9 /* JHCoverView.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D11171171DFA8EEB00AD88DE /* CheckstandViewController.m in Sources */,
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10DC94C1E095A2300930F74 /* DLStoreListViewController.m in Sources */,
+				D1A3C08D1E1252D90040AAD9 /* AddBankViewController.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D15B394C1DD32981009122FE /* DetailHeadView.m in Sources */,
 				D111711A1DFA8F0800AD88DE /* StoreControlViewController.m in Sources */,
@@ -2281,7 +2301,7 @@
 				D11171111DFA8EA500AD88DE /* MyMemberViewController.m in Sources */,
 				D16BF2B21DEFF15B001A82BF /* JFCityHeaderView.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
-				AB03C2451E120E980043860B /* KGModal.m in Sources */,
+				D1A3C0821E123B2F0040AAD9 /* KGModal.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
 				D15B39621DD4117E009122FE /* StoreSpecialTableViewCell.m in Sources */,
@@ -2360,6 +2380,7 @@
 				D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
+				D1A3C0891E1246DA0040AAD9 /* BankCardTableViewCell.m in Sources */,
 				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,
 				D12054991DED269000EB2707 /* OtherLicenseTableViewCell.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,

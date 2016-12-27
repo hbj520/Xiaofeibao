@@ -1138,7 +1138,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DLwdsh_720" translatesAutoresizingMaskIntoConstraints="NO" id="De1-bF-AS8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_720" translatesAutoresizingMaskIntoConstraints="NO" id="De1-bF-AS8">
                                         <rect key="frame" x="49" y="25" width="27" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="Ler-Yp-ll3"/>
@@ -1146,7 +1146,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-bw-7oC">
-                                        <rect key="frame" x="29" y="62" width="66.5" height="16"/>
+                                        <rect key="frame" x="29" y="62" width="67" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="Uxv-3z-hf6"/>
                                         </constraints>
@@ -1210,10 +1210,12 @@
                         <outlet property="goGetStoreDoorView" destination="6xb-Zv-aF8" id="BDB-4e-xZ1"/>
                         <outlet property="incomeView" destination="2O4-Ye-Drh" id="lIE-Pp-N4h"/>
                         <outlet property="leftMoney" destination="fO2-mk-xpK" id="t4b-Pl-7dG"/>
+                        <outlet property="myBCardView" destination="AVD-26-cIW" id="T5s-bo-dgi"/>
                         <outlet property="myStoreListView" destination="tW2-5P-K5u" id="GhG-xR-hEH"/>
                         <segue destination="cq0-aG-nzK" kind="push" identifier="myStoreListSegue" id="ajV-c1-eYv"/>
                         <segue destination="peC-ar-6qe" kind="push" identifier="incomeDetailSegue" id="JBh-6K-Wd5"/>
                         <segue destination="9Lz-ZP-R46" kind="push" identifier="DLTXsegue" id="Cge-eV-Uzy"/>
+                        <segue destination="MHO-1M-Xv9" kind="push" identifier="myBankCardSegue" id="tMY-yY-dhf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xu-i8-lDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1474,7 +1476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpp-qp-jhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282.4000000000001" y="3620.2398800599703"/>
+            <point key="canvasLocation" x="-3289" y="3618"/>
         </scene>
         <!--申请-->
         <scene sceneID="GHP-0h-5gy">
@@ -1533,6 +1535,93 @@
             </objects>
             <point key="canvasLocation" x="-447.19999999999999" y="2612.7436281859073"/>
         </scene>
+        <!--我的银行卡-->
+        <scene sceneID="5DW-E0-o9j">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8k-Eq-Z49" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="MHO-1M-Xv9" customClass="MyBankCardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L1N-zz-Hko"/>
+                        <viewControllerLayoutGuide type="bottom" id="IES-e6-9G0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9TW-Yz-JMc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pCI-2a-fxe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.91372549020000005" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.91372549020000005" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IES-e6-9G0" firstAttribute="top" secondItem="pCI-2a-fxe" secondAttribute="bottom" id="MPs-XJ-b5N"/>
+                            <constraint firstItem="pCI-2a-fxe" firstAttribute="top" secondItem="L1N-zz-Hko" secondAttribute="bottom" id="SSY-mz-OHT"/>
+                            <constraint firstAttribute="trailing" secondItem="pCI-2a-fxe" secondAttribute="trailing" id="gQl-zR-ITK"/>
+                            <constraint firstItem="pCI-2a-fxe" firstAttribute="leading" secondItem="9TW-Yz-JMc" secondAttribute="leading" id="kpk-fo-7yw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的银行卡" id="FKI-IL-Mre">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="huZ-IF-wIB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="MHO-1M-Xv9" id="E49-p4-KQg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="add_720" id="HMe-be-qJs">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addBank:" destination="MHO-1M-Xv9" id="J2l-mv-pnI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="pCI-2a-fxe" id="cRe-ob-11d"/>
+                        <segue destination="BGt-8R-QaP" kind="push" identifier="addBankSegue" id="yDC-V5-ZwH"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-991.20000000000005" y="3614.8425787106448"/>
+        </scene>
+        <!--添加银行卡-->
+        <scene sceneID="pF4-d3-5xr">
+            <objects>
+                <viewController id="BGt-8R-QaP" customClass="AddBankViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jad-VT-zMM"/>
+                        <viewControllerLayoutGuide type="bottom" id="7MG-MW-e0Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="urk-I0-jVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-j7-dsZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="333.5"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ndb-j7-dsZ" secondAttribute="trailing" id="Jqi-ut-VMB"/>
+                            <constraint firstItem="ndb-j7-dsZ" firstAttribute="height" secondItem="urk-I0-jVC" secondAttribute="height" multiplier="0.5" id="eKS-Q6-OrR"/>
+                            <constraint firstItem="ndb-j7-dsZ" firstAttribute="leading" secondItem="urk-I0-jVC" secondAttribute="leading" id="mg8-SM-Tw0"/>
+                            <constraint firstItem="ndb-j7-dsZ" firstAttribute="top" secondItem="Jad-VT-zMM" secondAttribute="bottom" id="ydd-c5-d0j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加银行卡" id="PMT-bO-Ran">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="dde-n3-FRd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="ub4-ze-0IT" id="gh1-qk-675"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Md7-N7-fRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-991" y="4326"/>
+        </scene>
         <!--我的会员-->
         <scene sceneID="CU0-OS-9hB">
             <objects>
@@ -1573,7 +1662,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEX-JI-fiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655.20000000000005" y="3614.8425787106448"/>
+            <point key="canvasLocation" x="-278" y="3615"/>
         </scene>
         <!--订单管理-->
         <scene sceneID="wh8-WK-aGE">
@@ -1623,7 +1712,7 @@
                     </barButtonItem>
                 </navigationItem>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="3614.8425787106448"/>
+            <point key="canvasLocation" x="458" y="3615"/>
         </scene>
         <!--店铺管理-->
         <scene sceneID="6H0-Q8-En8">
@@ -1671,9 +1760,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkD-wN-5RK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="3615"/>
+            <point key="canvasLocation" x="1180" y="3615"/>
         </scene>
-        <!--Checkstand View Controller-->
+        <!--收银台-->
         <scene sceneID="1pL-Xb-tfq">
             <objects>
                 <viewController id="bwN-XB-yOi" customClass="CheckstandViewController" sceneMemberID="viewController">
@@ -1686,11 +1775,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="q1L-Qb-bv5"/>
+                    <navigationItem key="navigationItem" title="收银台" id="xmR-p6-jQ2">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="JEU-nL-AQ5">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="bEn-Jj-4mR" id="AhY-Zz-XnP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="yes_1080" id="8Gs-jI-azz">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="PostData:" destination="bEn-Jj-4mR" id="gHd-P9-qsR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFw-Nu-mur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402" y="3615"/>
+            <point key="canvasLocation" x="1927" y="3615"/>
         </scene>
         <!--Cash View Controller-->
         <scene sceneID="Icf-1S-4gv">
@@ -1852,7 +1955,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhT-XQ-t47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="3615"/>
+            <point key="canvasLocation" x="-1721" y="3606"/>
         </scene>
         <!--Im Union Store View Controller-->
         <scene sceneID="u82-kx-ffL">
@@ -2224,7 +2327,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQI-si-Yi7">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_720" translatesAutoresizingMaskIntoConstraints="NO" id="wQI-si-Yi7">
                                         <rect key="frame" x="49" y="25" width="27" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="M0d-Vr-2J5"/>
@@ -2331,6 +2434,7 @@
                         <outlet property="allIncomeLab" destination="mJI-YJ-0Dy" id="BCr-A7-D20"/>
                         <outlet property="checkStandView" destination="Pz8-p0-tfa" id="PjF-TP-oBJ"/>
                         <outlet property="dealNumLab" destination="0YT-k7-SgA" id="OWn-al-WYe"/>
+                        <outlet property="myBCardView" destination="0CO-8f-v6b" id="JDd-fU-LLr"/>
                         <outlet property="myMemView" destination="I8c-Jy-5MV" id="tb6-Vc-voq"/>
                         <outlet property="orderView" destination="pVK-Ek-zTO" id="m1Z-oT-2eh"/>
                         <outlet property="shopName" destination="kl9-AT-CfT" id="WiJ-Nc-gEB"/>
@@ -2341,6 +2445,7 @@
                         <segue destination="bEn-Jj-4mR" kind="push" identifier="goStoreControlSegue" id="S7c-22-oZx"/>
                         <segue destination="bwN-XB-yOi" kind="push" identifier="goCheckStandSegue" id="zMk-Cc-iId"/>
                         <segue destination="9Lz-ZP-R46" kind="push" identifier="SHTXsegue" id="fkz-Fo-52f"/>
+                        <segue destination="MHO-1M-Xv9" kind="push" identifier="myBankCardSegue" id="AMY-WY-xLC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzG-wP-Arj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2580,7 +2685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtO-1R-b2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3002.4000000000001" y="3614.8425787106448"/>
+            <point key="canvasLocation" x="-4076" y="3615"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f7Y-5e-iJL">
@@ -3172,7 +3277,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hjr-F8-BBy" id="X7w-XS-92K">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6U5-98-cQk">
@@ -3212,7 +3317,7 @@
                                         <rect key="frame" x="0.0" y="60" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcD-uN-02R" id="aXP-IS-Vs2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wye-Hk-UR3">
@@ -3252,7 +3357,7 @@
                                         <rect key="frame" x="0.0" y="104" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lm8-nQ-iPZ" id="gBi-rc-Qv6">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="抵用券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUF-cR-Rne">
@@ -3269,7 +3374,7 @@
                                         <rect key="frame" x="0.0" y="148" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OvM-0s-4jY" id="f3H-3i-JNg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实付金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNl-26-sMF">
@@ -3297,7 +3402,7 @@
                                         <rect key="frame" x="0.0" y="192" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Efs-zT-PoI" id="9dA-e2-T8e">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="此次消费可获得通宝币" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFA-WT-3bT">
@@ -3321,7 +3426,7 @@
                                         <rect key="frame" x="0.0" y="236" width="375" height="367"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s2W-1Z-nQi" id="KGj-bN-bY6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bys-0P-zgP">
@@ -3356,15 +3461,34 @@
             </objects>
             <point key="canvasLocation" x="2598" y="4224"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Tw3-Sk-iGX">
+            <objects>
+                <viewController id="G1L-Gb-o0S" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GTT-AQ-Wjp"/>
+                        <viewControllerLayoutGuide type="bottom" id="EQM-dd-Wsp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IYW-PK-J7d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGs-fa-eJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="DLwdsh_720" width="35" height="31"/>
+        <image name="add_720" width="20" height="20"/>
         <image name="applyMoney" width="138" height="33"/>
         <image name="arrow" width="14" height="25"/>
         <image name="backWhite" width="11" height="19"/>
         <image name="bg_720-1" width="682" height="366"/>
         <image name="binggo" width="33" height="32"/>
         <image name="binggo_on" width="31" height="31"/>
+        <image name="card_720" width="35" height="31"/>
         <image name="check" width="25" height="25"/>
         <image name="dd_bg" width="540" height="122"/>
         <image name="ddgl" width="30" height="31"/>
@@ -3386,6 +3510,7 @@
         <image name="万商联盟" width="548" height="745"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tMY-yY-dhf"/>
         <segue reference="Cge-eV-Uzy"/>
     </inferredMetricsTieBreakers>
 </document>

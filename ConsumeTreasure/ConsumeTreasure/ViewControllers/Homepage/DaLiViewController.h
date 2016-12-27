@@ -17,4 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIView *myStoreListView;
 @property (weak, nonatomic) IBOutlet UIView *goGetStoreDoorView;
 @property (weak, nonatomic) IBOutlet UIView *incomeView;
+@property (weak, nonatomic) IBOutlet UIView *myBCardView;
+
 @end

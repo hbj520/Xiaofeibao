@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *orderView;
 @property (weak, nonatomic) IBOutlet UIView *checkStandView;
 @property (weak, nonatomic) IBOutlet UIView *myMemView;
+@property (weak, nonatomic) IBOutlet UIView *myBCardView;
 
 
 
