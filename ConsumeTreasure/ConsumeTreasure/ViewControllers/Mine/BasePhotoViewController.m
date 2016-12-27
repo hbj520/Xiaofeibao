@@ -32,6 +32,7 @@
     
     _picker = [[UIImagePickerController alloc] init];
     _picker.delegate = self;
+  // self.view.layer.cornerRadius
 }
 
 - (void)didReceiveMemoryWarning {

@@ -913,7 +913,7 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSString *imgStr = responseObject[@"data"][@"filePath"];
-             result(YES,info,imgStr);
+             result(YES,imgStr,imgStr);
         }else{
             result(NO,info,nil);
         }
