@@ -8,9 +8,19 @@
 
 #import "UserInfoTableViewController.h"
 #import "ModfyNickNameViewController.h"
-
-@interface UserInfoTableViewController ()
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "KGModal.h"
+#import "ChangeHeadView.h"
+@interface UserInfoTableViewController ()<UIImagePickerControllerDelegate>
+{
+    UIImagePickerController * _picker;                              //照片选择控制器
+    NSString * imageUrl;
+    
+}
 - (IBAction)backBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
 
 @end
 
@@ -18,7 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self initPickView];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -26,11 +37,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //添加通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationItem.hidesBackButton = YES;
+    [self createUI];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,7 +72,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
+            [self showModalView];
+        }else if (indexPath.row == 1) {
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             UILabel *userNameLabel = [cell viewWithTag:10];
             [self performSegueWithIdentifier:@"fixNameSegueId" sender:@[@"用户名",userNameLabel.text]];
@@ -90,26 +104,99 @@
     
 }
 #pragma mark -PrivateMethod
-- (void)recieveNotice:(NSNotification *)sender{
-    NSDictionary *noti = sender.userInfo;
-    NSArray *keys = [noti allKeys];
-    NSString *key = keys[0];
-    NSString *content = noti[key];
-   
-    if ([key isEqualToString:@"nickname"]) {
-        NSIndexPath *indexPath =[NSIndexPath indexPathForRow:1 inSection:0];
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        UILabel *nicknameLabel = [cell viewWithTag:10];
-        nicknameLabel.text = content;
-    }else if ([key isEqualToString:@"phoneNum"]){
-        NSIndexPath *indexPath =[NSIndexPath indexPathForRow:0 inSection:1];
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        UILabel *phoneLabel = [cell viewWithTag:10];
-        phoneLabel.text = content;
-        
-    }
+//弹出选择照片视图
+- (void)showModalView
+{
+    
+    [[KGModal sharedInstance] setCloseButtonType:KGModalCloseButtonTypeNone];
+    [KGModal sharedInstance].modalBackgroundColor = [UIColor whiteColor];
+    
+    ChangeHeadView * modifyView = [[[NSBundle mainBundle] loadNibNamed:@"ChangeHeadView" owner:self options:nil] lastObject];
+    
+    [[KGModal sharedInstance] showWithContentView:modifyView andAnimated:YES];
+    
+    modifyView.LibraryBlock = ^(){
+        [self openPhotoAlbun];
+        [[KGModal sharedInstance] hideAnimated:YES];
+    };
+    modifyView.TakeBlock = ^(){
+        [self openCamera];
+        [[KGModal sharedInstance] hideAnimated:YES];
+    };
+    
     
 }
+
+
+#pragma mark-UINavigationControllerDelegate & UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImage * image = info[UIImagePickerControllerOriginalImage];
+    
+    NSData * data = UIImageJPEGRepresentation(image, 0.1);
+    
+   // [self showHudInView:self.view hint:@"上传图片中"];
+//    [[MyAPI sharedAPI] uploadImage:data result:^(BOOL sucess, NSString *msg) {
+//        if(sucess){
+//            imageUrl = msg;
+//            [self.headImage sd_setImageWithURL:[NSURL URLWithString:msg] placeholderImage:[UIImage imageNamed:@"defaulticon"]];
+//            [[Config Instance] saveIcon:msg];
+//            
+//            [self hideHud];
+//        }else{
+//            [self.headImage setImage:[UIImage imageNamed:@"defaulticon"]];
+//        }
+//    } errorResult:^(NSError *enginerError) {
+//        
+//    }];
+}
+//初始化照片选择控制器
+- (void)initPickView
+{
+    _picker = [[UIImagePickerController alloc] init];
+    _picker.delegate = self;
+}
+
+//打开手机照相机
+- (void)openCamera
+{
+    _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_picker animated:YES completion:nil];
+}
+
+//打开手机相册
+- (void)openPhotoAlbun
+{
+    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:_picker animated:YES completion:nil];
+}
+
+- (void)createUI{
+    self.userNameLabel.text = [[XFBConfig Instance] getUserName];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
+    self.phoneNumLabel.text = [[XFBConfig Instance] getphoneNum];
+}
+//- (void)recieveNotice:(NSNotification *)sender{
+//    NSDictionary *noti = sender.userInfo;
+//    NSArray *keys = [noti allKeys];
+//    NSString *key = keys[0];
+//    NSString *content = noti[key];
+//   
+//    if ([key isEqualToString:@"nickname"]) {
+//        NSIndexPath *indexPath =[NSIndexPath indexPathForRow:1 inSection:0];
+//        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//        UILabel *nicknameLabel = [cell viewWithTag:10];
+//        nicknameLabel.text = content;
+//    }else if ([key isEqualToString:@"phoneNum"]){
+//        NSIndexPath *indexPath =[NSIndexPath indexPathForRow:0 inSection:1];
+//        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//        UILabel *phoneLabel = [cell viewWithTag:10];
+//        phoneLabel.text = content;
+//        
+//    }
+//    
+//}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
@@ -167,7 +254,7 @@
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"returnnick" object:nil];
-}
+//- (void)dealloc{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"returnnick" object:nil];
+//}
 @end

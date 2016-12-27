@@ -30,10 +30,10 @@
 
 - (void)postVertify{
     
-    NSString *stt = [[XFBConfig Instance] getPhone];
+    NSString *stt = [[XFBConfig Instance] getphoneNum];
     
     NSDictionary *para = @{
-                           @"phone":[[XFBConfig Instance] getPhone],
+                           @"phone":[[XFBConfig Instance] getphoneNum],
                            @"type":@"1"
                            };
     [[MyAPI sharedAPI] postVerifyCodeWithParameters:para result:^(BOOL sucess, NSString *msg) {
@@ -53,7 +53,7 @@
 - (IBAction)post:(id)sender {
     [self.vertifyText resignFirstResponder];
     NSDictionary *para = @{
-                           @"phone":[[XFBConfig Instance] getPhone],
+                           @"phone":[[XFBConfig Instance] getphoneNum],
                            @"repassword":self.savePsw,
                            @"validatecode":self.vertifyText.text,
                            @"type":@"2"

@@ -13,6 +13,7 @@
 		AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0149A41DE7D69D0068067B /* ZanTableViewCell.m */; };
 		AB0149A71DE7D69D0068067B /* ZanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */; };
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
+		AB03C2451E120E980043860B /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03C2431E120E980043860B /* KGModal.m */; };
 		AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */; };
 		AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */; };
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
@@ -324,6 +325,8 @@
 		AB0149A51DE7D69D0068067B /* ZanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZanTableViewCell.xib; sourceTree = "<group>"; };
 		AB01504D1DC8883900AC1AB9 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = "<group>"; };
 		AB01504E1DC8883900AC1AB9 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = "<group>"; };
+		AB03C2421E120E980043860B /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
+		AB03C2431E120E980043860B /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
 		AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEvaluateTableViewCell.h; sourceTree = "<group>"; };
 		AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEvaluateTableViewCell.m; sourceTree = "<group>"; };
 		AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreEvaluateTableViewCell.xib; sourceTree = "<group>"; };
@@ -990,6 +993,16 @@
 			path = Union;
 			sourceTree = "<group>";
 		};
+		AB03C2441E120E980043860B /* KGModal */ = {
+			isa = PBXGroup;
+			children = (
+				AB03C2421E120E980043860B /* KGModal.h */,
+				AB03C2431E120E980043860B /* KGModal.m */,
+			);
+			name = KGModal;
+			path = ../../../../Desktop/FUYI/FUYIFinance/FUYIFinance/Vendor;
+			sourceTree = "<group>";
+		};
 		AB50D4681E0928AA00B427E6 /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -1574,6 +1587,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AB03C2441E120E980043860B /* KGModal */,
 				D1A3C06D1E10C6DB0040AAD9 /* payViewControl */,
 				D10DC94D1E0A307400930F74 /* XWMoneyTextField */,
 				D16BF2C61DF106DC001A82BF /* JPullDownMenu */,
@@ -2267,6 +2281,7 @@
 				D11171111DFA8EA500AD88DE /* MyMemberViewController.m in Sources */,
 				D16BF2B21DEFF15B001A82BF /* JFCityHeaderView.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
+				AB03C2451E120E980043860B /* KGModal.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
 				D15B39621DD4117E009122FE /* StoreSpecialTableViewCell.m in Sources */,

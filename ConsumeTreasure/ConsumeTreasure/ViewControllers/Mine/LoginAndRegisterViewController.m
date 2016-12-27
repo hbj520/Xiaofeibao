@@ -181,7 +181,7 @@
                                                  
                                                  if (sucess) {
                                                      [self changeTohom];
-
+                                                     [[XFBConfig Instance] savePhoneNum:self.loginPhoneNumTextField.text];
                                                  }else{
                                                      [self showHint:@"您输入的账号或密码有误"];
                                                  }

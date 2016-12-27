@@ -40,13 +40,15 @@
     NSString *key = nil;
     if ([self.title isEqualToString:@"用户名"]) {
         key = @"nickname";
+        [[XFBConfig Instance] saveUsername:self.nicknamefield.text];
     }else{
         key = @"phoneNum";
+        [[XFBConfig Instance] savePhoneNum:self.nicknamefield.text];
     }
-    NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:self.nicknamefield.text,key ,nil];
-    NSNotification * notification = [NSNotification notificationWithName:@"returnnick" object:nil userInfo:dict];
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
-    [self.navigationController popViewControllerAnimated:YES];
+//    NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:self.nicknamefield.text,key ,nil];
+//    NSNotification * notification = [NSNotification notificationWithName:@"returnnick" object:nil userInfo:dict];
+//    [[NSNotificationCenter defaultCenter] postNotification:notification];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

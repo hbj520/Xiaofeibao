@@ -16,16 +16,18 @@
 #import "MyAccountViewController.h"
 #import "TobeUnionViewController.h"
 #import "ApplyViewController.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface MineTableViewController ()
 {
     NSString *isShop;
+    
 }
 @property (weak, nonatomic) IBOutlet UILabel *usernamelabel;
 @property (weak, nonatomic) IBOutlet UILabel *shnagjiaLab;
 
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
 - (IBAction)settingBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 
 @end
 
@@ -36,31 +38,14 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     self.tabBarController.tabBar.hidden = NO;
+    [self createUI];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    isShop = [[XFBConfig Instance] getIsShop];
-    
-    if ([isShop isEqualToString:@"1"]) {
-        self.shnagjiaLab.text = @"我是商家";
-    }else{
-        self.shnagjiaLab.text = @"成为联盟商家";
-    }
-
-   UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    navBarHairlineImageView.hidden = YES;
-    NSString *navTitle = @"我";
-    self.usernamelabel.text = [[XFBConfig Instance] getUserName];
-    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
-    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
-    self.navigationItem.title = navTitle;
-   TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
-  
-    [self.moneyView addSubview: tongbaoMoneyView];
+   
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -198,6 +183,29 @@
        // return @"服务器返回错误";
     }
     
+}
+#pragma mark - PrivateMethod
+- (void)createUI{
+    isShop = [[XFBConfig Instance] getIsShop];
+    
+    if ([isShop isEqualToString:@"1"]) {
+        self.shnagjiaLab.text = @"我是商家";
+    }else{
+        self.shnagjiaLab.text = @"成为联盟商家";
+    }
+    
+    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    navBarHairlineImageView.hidden = YES;
+    NSString *navTitle = @"我";
+    self.usernamelabel.text = [[XFBConfig Instance] getUserName];
+    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+    self.navigationItem.title = navTitle;
+    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
+    
+    [self.moneyView addSubview: tongbaoMoneyView];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

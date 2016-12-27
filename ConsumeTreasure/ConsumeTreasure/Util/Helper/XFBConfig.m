@@ -69,14 +69,14 @@ static XFBConfig * instance = nil;
              phone:(NSString *)phone{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults]
     ;
-    [settings removeObjectForKey:@"imgUrl"];
-    [settings setObject:imgUrl forKey:@"imgUrl"];
+    [settings removeObjectForKey:@"icon"];
+    [settings setObject:imgUrl forKey:@"icon"];
     
     [settings removeObjectForKey:@"token"];
     [settings setObject:token forKey:@"token"];
     
-    [settings removeObjectForKey:@"loginName"];
-    [settings setObject:loginName forKey:@"loginName"];
+    [settings removeObjectForKey:@"username"];
+    [settings setObject:loginName forKey:@"username"];
     
     [settings removeObjectForKey:@"balance"];
     [settings setObject:balance forKey:@"balance"];
@@ -262,15 +262,15 @@ static XFBConfig * instance = nil;
     return [settings stringForKey:@"userid"];
 }
 
-- (NSString *)getPhone{
+- (NSString *)getphoneNum{
     NSUserDefaults * settings =[NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"phone"];
+    return [settings stringForKey:@"phonenum"];
 }
 
 - (NSString*)getUserName
 {
     NSUserDefaults * settings =[NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"loginName"];
+    return [settings stringForKey:@"username"];
 }
 
 - (NSString*)getPassword
