@@ -106,17 +106,17 @@
     self.latitude = @"31.4450";
     self.longitude = @"117.1650";
     self.cityCode = @"127";
-    if (KToken) {
+  //  if (KToken) {
         self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
         self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homVC];
         homVC.navigationController.navigationBarHidden = YES;
 
-    }else{
-        self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
-        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
-    }
+//    }else{
+//        self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        LoginAndRegisterViewController *loginAndRegisterVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+//        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+//    }
     
 }
 

@@ -40,10 +40,32 @@
     NSString *key = nil;
     if ([self.title isEqualToString:@"用户名"]) {
         key = @"nickname";
-        [[XFBConfig Instance] saveUsername:self.nicknamefield.text];
+        [[MyAPI sharedAPI] fixUserNameWithParameters:@{@"loginName":self.nicknamefield.text} result:^(BOOL sucess, NSString *msg) {
+            if (sucess) {
+                [[XFBConfig Instance] saveUsername:self.nicknamefield.text];
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                [self showHint:@"修改失败"];
+            }
+        } errorResult:^(NSError *enginerError) {
+            [self showHint:@"修改出错"];
+
+        }];
     }else{
         key = @"phoneNum";
-        [[XFBConfig Instance] savePhoneNum:self.nicknamefield.text];
+        [[MyAPI sharedAPI] fixPhoneNumWithParameters:@{@"phone":self.nicknamefield.text} result:^(BOOL sucess, NSString *msg) {
+            if (sucess) {
+                [[XFBConfig Instance] savePhoneNum:self.nicknamefield.text];
+                [self.navigationController popViewControllerAnimated:YES];
+             
+            }else{
+                [self showHint:@"修改失败"];
+ 
+            }
+        } errorResult:^(NSError *enginerError) {
+            [self showHint:@"修改出错"];
+
+        }];
     }
 //    NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:self.nicknamefield.text,key ,nil];
 //    NSNotification * notification = [NSNotification notificationWithName:@"returnnick" object:nil userInfo:dict];

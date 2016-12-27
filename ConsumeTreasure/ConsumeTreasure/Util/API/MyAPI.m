@@ -913,7 +913,7 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSString *imgStr = responseObject[@"data"][@"filePath"];
-             result(YES,info,imgStr);
+             result(YES,imgStr,imgStr);
         }else{
             result(NO,info,nil);
         }
@@ -1052,7 +1052,7 @@
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };
@@ -1072,7 +1072,7 @@
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"0430a46364f54bbebc326ca4dd13dcb2",
+                              @"tokenid":KToken,
                               @"platform":@"1",
                               @"param":para
                               };

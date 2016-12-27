@@ -193,10 +193,12 @@
 }
 
 - (void)changeTohom{
-    self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
-    [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
-    [self.navigationController pushViewController:homVC animated:YES];
+    //[self.tabBarController setSelectedIndex:0];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+//    [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
+//    [self.navigationController pushViewController:homVC animated:YES];
 }
 
 

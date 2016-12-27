@@ -134,9 +134,32 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage * image = info[UIImagePickerControllerOriginalImage];
     
-    NSData * data = UIImageJPEGRepresentation(image, 0.1);
+    //NSData * data = UIImageJPEGRepresentation(image, 0.1);
     
-   // [self showHudInView:self.view hint:@"上传图片中"];
+    [self showHudInView:self.view hint:@"上传图片中"];
+    [[MyAPI sharedAPI] postFilesWithFormData:@[image] result:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            imageUrl = msg;
+            [[MyAPI sharedAPI] postIconWithParameters:@{@"imgUrl":msg} result:^(BOOL sucess, NSString *msg) {
+                if (success) {
+                    NSString *Url = [NSString stringWithFormat:@"%@img%@",BaseUrl,imageUrl];
+                    [[XFBConfig Instance] saveIcon:Url];
+                    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
+                }else{
+                    [self showHint:@"上传失败"];
+                }
+                [self hideHud];
+            } errorResult:^(NSError *enginerError) {
+                [self hideHud];
+            }];
+        }else{
+            [self showHint:@"上传失败"];
+            [self hideHud];
+        }
+    } errorResult:^(NSError *enginerError) {
+        [self showHint:@"上传出错"];
+        [self hideHud];
+    }];
 //    [[MyAPI sharedAPI] uploadImage:data result:^(BOOL sucess, NSString *msg) {
 //        if(sucess){
 //            imageUrl = msg;
@@ -176,6 +199,7 @@
     self.userNameLabel.text = [[XFBConfig Instance] getUserName];
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
     self.phoneNumLabel.text = [[XFBConfig Instance] getphoneNum];
+    self.iconImageView.layer.masksToBounds = YES;
 }
 //- (void)recieveNotice:(NSNotification *)sender{
 //    NSDictionary *noti = sender.userInfo;

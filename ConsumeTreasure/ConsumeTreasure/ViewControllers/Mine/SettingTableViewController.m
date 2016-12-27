@@ -64,19 +64,20 @@
     
     }else if (indexPath.section == 1){
        UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
-        loginAndRegisterVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+       // LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+        UINavigationController *loginVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+        loginVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
        // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
-        [self presentModalViewController:loginAndRegisterVC animated:YES];
-        
+        [self.navigationController presentModalViewController:loginVC animated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
        // [ApplicationDelegate.window.rootViewController removeFromParentViewController];
-        for (UIView *vc in self.view.subviews) {
-            
-            
-            [vc removeFromSuperview];
-        }
+//        for (UIView *vc in self.view.subviews) {
+//            
+//            
+//            [vc removeFromSuperview];
+//        }
         [[XFBConfig Instance] logout];
-         ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+//         ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
     }
 }
 /*

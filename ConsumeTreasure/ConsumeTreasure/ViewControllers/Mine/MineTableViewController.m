@@ -206,6 +206,7 @@
     
     [self.moneyView addSubview: tongbaoMoneyView];
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
+    self.iconImageView.layer.masksToBounds = YES;
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
