@@ -105,6 +105,12 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                                   result:(ModelBlock)result
                              errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 我的银行卡
+- (void)getMyBankCardDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -- 银行卡信息录入
+- (void)typeInInfoWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
 #pragma mark --我的商户（代理）
 - (void)getDaLiStoreListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 

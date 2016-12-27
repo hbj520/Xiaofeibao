@@ -25,6 +25,9 @@
                             <constraint firstAttribute="width" constant="38" id="8n5-Yd-z1H"/>
                         </constraints>
                         <state key="normal" image="close_720"/>
+                        <connections>
+                            <action selector="delete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tjh-st-uoq"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVh-ZU-8Dh">
                         <rect key="frame" x="10" y="17" width="70" height="18"/>

@@ -16,7 +16,7 @@
     
     self.layer.cornerRadius = 8;
     self.layer.masksToBounds = YES;
-    // 开启离屏渲染
+    
     self.contentView.layer.shouldRasterize = YES;
     self.contentView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
@@ -33,6 +33,18 @@
     
     [super setFrame:frame];
 }
+
+- (void)setBankModel:(bankCardModel *)bankModel{
+    self.cardName.text = bankModel.bankname;
+    self.cardType.text = @"借记卡";
+    self.cardNum.text = bankModel.bankno;
+}
+
+- (IBAction)delete:(id)sender {
+
+    NSLog(@"删除");
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

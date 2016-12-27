@@ -12,6 +12,9 @@
 #import "BankCardTableViewCell.h"
 
 @interface MyBankCardViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray *_cardList;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -25,7 +28,24 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    
+    _cardList = [NSMutableArray array];
+    
     [self creatUI];
+    [self loadData];
+}
+
+- (void)loadData{
+    NSDictionary *para = @{
+                           
+                           };
+    [[MyAPI sharedAPI] getMyBankCardDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        [_cardList removeAllObjects];
+        _cardList = arrays[0];
+        [self.tableView reloadData];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 
 - (void)creatUI{
@@ -39,7 +59,7 @@
 #pragma mark - UITableViewDelegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return _cardList.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -49,9 +69,9 @@
         bankCell = [[[NSBundle mainBundle] loadNibNamed:@"BankCardTableViewCell" owner:self options:nil] lastObject];
     }
     
-//    if (_memArray.count > 0) {
-//        memCell.memModel = [_memArray objectAtIndex:indexPath.row];
-//    }
+    if (_cardList.count > 0) {
+        bankCell.bankModel = [_cardList objectAtIndex:indexPath.row];
+    }
     bankCell.selectionStyle = 0;
     
     return bankCell;

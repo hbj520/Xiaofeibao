@@ -23,3 +23,16 @@
 @implementation shoplistModel
 
 @end
+
+
+@implementation bankCardModel
+
+@end
+
+@implementation cardArrModel
+
+@end
+
+
+
+

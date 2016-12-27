@@ -38,3 +38,19 @@
 @property (nonatomic,strong) NSArray<shopModel>* shopList;
 @end
 
+
+@protocol bankCardModel
+
+@end
+@interface bankCardModel : JSONModel
+@property (nonatomic,strong) NSString *bankaddr;
+@property (nonatomic,strong) NSString *bankname;
+@property (nonatomic,strong) NSString *bankno;
+@property (nonatomic,strong) NSString *bankusername;
+
+@end
+
+@interface cardArrModel : JSONModel
+
+@property (nonatomic,strong) NSArray<bankCardModel>* bkList;
+@end

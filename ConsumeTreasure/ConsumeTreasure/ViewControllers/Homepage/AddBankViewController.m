@@ -21,6 +21,8 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.cardNum.tag = 555;
+    self.cardMasterName.enabled = NO;
+    self.cardMasterName.text = @"啦啦啦";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,10 +34,29 @@
 }
 - (IBAction)sure:(id)sender {
     //确认绑定
-    if (self.chooseBank) {
-        self.chooseBank();
-    }
-    [self backTolastPage];
+    
+    NSDictionary *para = @{
+                           @"payPwd":@"123456",
+                           @"bankaddr":self.cardArea.text,
+                           @"bankname":self.cardBankName.text,
+                           @"bankno":self.cardNum.text
+                           };
+    
+    [[MyAPI sharedAPI] typeInInfoWithParameters:para result:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            
+            showAlert(@"添加成功");
+            if (self.chooseBank) {
+                self.chooseBank();
+            }
+            [self backTolastPage];
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+   
 }
 
 

@@ -632,6 +632,49 @@
     }];
     
 }
+
+#pragma mark -- 我的银行卡
+- (void)getMyBankCardDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                               };
+    [self.manager POST:@"userinfo/myBank" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            NSMutableArray *cardListArr = [NSMutableArray array];
+            cardListArr = [bankCardModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"bkList"] error:&error];
+            result(YES,info,@[cardListArr]);
+        }else{
+            result(NO,info,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+#pragma mark -- 银行卡信息录入
+- (void)typeInInfoWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/bankManage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result (YES,info);
+        }else{
+            result (NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult (error);
+    }];
+}
+
+
 #pragma mark --我的商户（代理）
 - (void)getDaLiStoreListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
