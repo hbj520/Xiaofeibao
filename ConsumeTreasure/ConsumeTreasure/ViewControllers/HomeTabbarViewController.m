@@ -44,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveLog:) name:@"logoutNotice" object:nil];
        menusVCs = [NSMutableArray array];
     self.tabBar.tintColor = [UIColor redColor];
     
@@ -70,7 +71,9 @@
     }
     self.viewControllers = menusVCs;
 }
-
+- (void)receiveLog:(id)sender{
+    self.selectedIndex = 0;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -85,5 +88,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"logoutNotice" object:nil];
+}
 @end
