@@ -14,7 +14,8 @@ typedef void (^ArrayBlock) (BOOL success, NSString *msg, NSArray *arrays);
 typedef void (^ErrorBlock) (NSError *enginerError);
 @interface MyAPI : NSObject
 + (MyAPI *)sharedAPI;
-
+//取消所有网路全部请求
+- (void)cancelAllOperation;
 #pragma mark - 登录和注册
 - (void)loginWithParameters:(NSDictionary *)para
                      result:(StateBlock)result

@@ -64,6 +64,9 @@
     return sharedAPIInstance;
   
 }
+- (void)cancelAllOperation{
+    [self.manager.operationQueue cancelAllOperations];
+}
 #pragma mark - 登录和注册
 - (void)loginWithParameters:(NSDictionary *)para
                      result:(StateBlock)result
@@ -76,6 +79,7 @@
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
             NSString * goldNum = (NSString *)userDic[@"all_money"];//用户余额
@@ -115,6 +119,8 @@
         NSString *message = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,message);
         }else{
@@ -137,6 +143,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             return result(YES,@"注册成功");
         }else{
@@ -163,6 +171,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
@@ -189,6 +199,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             tongBaoModel *tongModel = [[tongBaoModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
@@ -235,6 +247,8 @@
              NSString *info = responseObject[@"msg"];
              if ([responseObject[@"code"] isEqualToString:@"-1"]) {
                  result(NO,@"-1");
+                 [self cancelAllOperation];
+
              }if ([responseObject[@"code"] isEqualToString:@"1"]) {
                  result(YES,info);
              }else{
@@ -265,6 +279,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             PersonInfoModel *InfoModel = [[PersonInfoModel alloc]initWithDictionary:responseObject[@"data"][@"person"] error:&error];
@@ -294,6 +310,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *provinceArray = [NSMutableArray array];
@@ -338,6 +356,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *hotArr = [NSMutableArray array];
             NSError *error = nil;
@@ -372,6 +392,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSMutableArray *charArr = [NSMutableArray array];
@@ -400,6 +422,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *addArray = [NSMutableArray array];
@@ -452,6 +476,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *accountArr = [NSMutableArray array];
             NSError *err = nil;
@@ -485,6 +511,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *LookTimeArray = [NSMutableArray array];
@@ -527,6 +555,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSArray *arr = responseObject[@"data"][@"memList"];
             
@@ -561,6 +591,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *typeArray = [NSMutableArray array];
@@ -588,6 +620,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             StoreDetailModel *detailModel = [[StoreDetailModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
@@ -614,6 +648,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
            result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             result(YES,info);
@@ -640,6 +676,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *specialArray = [NSMutableArray array];
@@ -667,6 +705,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *commentArray = [NSMutableArray array];
@@ -698,6 +738,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSError *error = nil;
@@ -725,6 +767,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *cardListArr = [NSMutableArray array];
@@ -749,6 +793,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
@@ -770,6 +816,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
@@ -792,6 +840,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *myShopListArr = [NSMutableArray array];
@@ -818,6 +868,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *IncomeListsArr = [NSMutableArray array];
@@ -847,6 +899,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSError *error = nil;
@@ -873,6 +927,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *memberArr = [NSMutableArray array];
@@ -899,6 +955,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *orderArr = [NSMutableArray array];
@@ -939,6 +997,8 @@
     [self.manager POST:@"welcome/getDistrictlist" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSArray *data = responseObject[@"data"][@"districts"];
             NSMutableArray *modelArray = [NSMutableArray array];
@@ -968,6 +1028,8 @@
     [self.manager POST:@"shop/getCategory" parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }
         if ([responseObject[@"code"] isEqualToString:@"1"]){
             NSArray *data = responseObject[@"data"][@"categorys"];
@@ -1005,6 +1067,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *error = nil;
@@ -1079,6 +1143,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSString *imgStr = responseObject[@"data"][@"filePath"];
              result(YES,imgStr,imgStr);
@@ -1106,6 +1172,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
@@ -1127,6 +1195,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
@@ -1181,6 +1251,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *error = nil;
@@ -1214,6 +1286,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
@@ -1236,6 +1310,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
@@ -1258,6 +1334,8 @@
         NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
            result(NO,@"-1");
+            [self cancelAllOperation];
+
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
