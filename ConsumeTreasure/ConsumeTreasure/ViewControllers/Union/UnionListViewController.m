@@ -103,12 +103,20 @@ UICollectionViewDataSource>
     sortRuleArray=@[@"距离",@"评分",@"最新",@"最热"];
     
     self.menu.menuDataArray = [NSMutableArray arrayWithObjects:areaArray, cateArray , sortRuleArray, nil];
-    
+
     [self.view addSubview:self.menu];
     
     __weak typeof(self) weakSelf = self;
     [self.menu setHandleSelectDataBlock:^(NSString *selectTitle, NSUInteger selectIndex, NSUInteger selectButtonTag) {
-        
+        if (selectButtonTag == 0) {
+       AreaModel *areaModel =    regionArray[selectIndex];
+            [weakSelf searchShopListWithSorting:@"" shopDistrictId:areaModel.districtId categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
+        }else if (selectButtonTag == 1){
+            UnionCategoryModel *cateModel = classTypeArray[selectIndex];
+            [weakSelf searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:cateModel.categoryId latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
+        }else if (selectButtonTag == 2){
+            [weakSelf searchShopListWithSorting:[NSString stringWithFormat:@"%ld",selectIndex] shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
+        }
     }];
     
     
@@ -143,7 +151,7 @@ UICollectionViewDataSource>
         [self showHint:@"分类出错"];
     }];
     //商家列表
-    [self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10"];
+    [self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:YES];
 }
 //查询商家列表
 - (void)searchShopListWithSorting:(NSString *)sorting
@@ -152,7 +160,8 @@ UICollectionViewDataSource>
                          latitude:(NSString *)latitude
                         longitude:(NSString *)longitude
                           pageNum:(NSString *)pageNum
-                       pageOffset:(NSString *)pageOffset{
+                       pageOffset:(NSString *)pageOffset
+                      isfristTime:(BOOL)isfirstTime{
     [[MyAPI sharedAPI] unionShopSearchWithParameters:@{
                                                       @"sorting":sorting,
                                                       @"shopDistrictId":shopDistrictId,
@@ -164,7 +173,9 @@ UICollectionViewDataSource>
                                                       } result:^(BOOL success, NSString *msg, NSArray *arrays) {
                                                           if (success) {
                                                               dataSource = [NSMutableArray arrayWithArray:arrays];
-                                                              [self addTopMenu];
+                                                              if (isfirstTime) {
+                                                                  [self addTopMenu];
+                                                              }
                                                               [self.contentTabelView reloadData];
                                                           }
                                                           [self.contentTabelView.mj_header endRefreshing];

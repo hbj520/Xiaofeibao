@@ -17,7 +17,7 @@
 @interface JPullDownMenu : UIView
 
 /*!@brief 分别为:选中cell的text、cell的index、cell对应的Button。 */
-@property (nonatomic) void (^handleSelectDataBlock) (NSString *selectTitle, NSUInteger selectIndex ,NSUInteger selectButtonTag);
+@property (nonatomic,copy) void (^handleSelectDataBlock) (NSString *selectTitle, NSUInteger selectIndex ,NSUInteger selectButtonTag);
 
 @property (nonatomic) UIButton  *tempButton;
 
