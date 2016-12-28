@@ -7,12 +7,20 @@
 //
 
 #import "AddBankViewController.h"
+#import "JHCoverView.h"
 
-@interface AddBankViewController ()
+@interface AddBankViewController ()<JHCoverViewDelegate>
+{
+    NSString *payPsw;
+    
+}
 
+@property (nonatomic, strong) JHCoverView *coverView;
 @end
 
 @implementation AddBankViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +31,21 @@
     self.cardNum.tag = 555;
     self.cardMasterName.enabled = NO;
     self.cardMasterName.text = @"啦啦啦";
+    
+    [self upPayKeyBoard];
+    
+}
+
+- (void)upPayKeyBoard{
+    
+    [self.view layoutIfNeeded];
+    JHCoverView *coverView = [[JHCoverView alloc] initWithFrame:self.view.bounds];
+    coverView.delegate = self;
+    self.coverView = coverView;
+    coverView.hidden = YES;
+    coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    [self.view addSubview:coverView];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,8 +58,31 @@
 - (IBAction)sure:(id)sender {
     //确认绑定
     
+    
+    self.coverView.hidden = NO;
+    [self.coverView.payTextField becomeFirstResponder];
+    
+    __weak typeof(self) weakSelf = self;
+    self.coverView.tBlock =^(NSString *str){
+        
+        weakSelf.coverView.hidden = YES;
+        [weakSelf.coverView.payTextField resignFirstResponder];
+        payPsw = str;
+        
+         [weakSelf postDataWithStr:str];
+    };
+    
+    
+    
+   
+}
+
+- (void)postDataWithStr:(NSString*)str{
+    
+    NSString *payPswSafe = [Tools loginPasswordSecurityLock:str];
+    
     NSDictionary *para = @{
-                           @"payPwd":@"123456",
+                           @"payPwd":payPswSafe,
                            @"bankaddr":self.cardArea.text,
                            @"bankname":self.cardBankName.text,
                            @"bankno":self.cardNum.text
@@ -45,38 +91,37 @@
     [[MyAPI sharedAPI] typeInInfoWithParameters:para result:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             
-            showAlert(@"添加成功");
+            [self.coverView.payTextField resignFirstResponder];
+            [self backTolastPage];
+            
             if (self.chooseBank) {
                 self.chooseBank();
             }
-            [self backTolastPage];
+            
         }
         
     } errorResult:^(NSError *enginerError) {
         
     }];
-    
-   
 }
 
-
--(void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    if (textField.tag == 555) {
-        [UIView animateWithDuration:0.26 animations:^{
-            self.view.frame=CGRectMake(0, -200, WIDTH, HEIGHT);
-        }];
-    }
-   
-    
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [UIView animateWithDuration:0.26 animations:^{
-        self.view.frame=CGRectMake(0, 0, WIDTH, HEIGHT);
-    }];
-}
+//-(void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    if (textField.tag == 555) {
+//        [UIView animateWithDuration:0.26 animations:^{
+//            self.view.frame=CGRectMake(0, -200, WIDTH, HEIGHT);
+//        }];
+//    }
+//   
+//    
+//}
+//
+//-(void)textFieldDidEndEditing:(UITextField *)textField
+//{
+//    [UIView animateWithDuration:0.26 animations:^{
+//        self.view.frame=CGRectMake(0, 0, WIDTH, HEIGHT);
+//    }];
+//}
 
 /*
 #pragma mark - Navigation

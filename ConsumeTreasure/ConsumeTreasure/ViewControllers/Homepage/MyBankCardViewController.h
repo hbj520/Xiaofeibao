@@ -7,7 +7,15 @@
 //
 
 #import "BaseViewController.h"
+#import "NemberModel.h"
+
+typedef void(^chooseBankBlock) (bankCardModel *mdoel);
+
 
 @interface MyBankCardViewController : BaseViewController
+
+@property (nonatomic,strong) NSString *type;
+
+@property (nonatomic,copy) chooseBankBlock bankBlock;
 
 @end

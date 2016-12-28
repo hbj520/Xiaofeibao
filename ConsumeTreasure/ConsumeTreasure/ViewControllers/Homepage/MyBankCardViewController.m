@@ -22,6 +22,7 @@
 @implementation MyBankCardViewController
 
 - (void)viewWillAppear:(BOOL)animated{
+    
     [super viewWillAppear:animated];
     [self loadData];
 }
@@ -114,6 +115,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if ([self.type isEqualToString:@"1"]) {
+        
+        bankCardModel *model = [_cardList objectAtIndex:indexPath.row];
+        
+        if (self.bankBlock) {
+            self.bankBlock(model);
+        }
+    
+        [self backTolastPage];
+        
+    }
     
 }
 

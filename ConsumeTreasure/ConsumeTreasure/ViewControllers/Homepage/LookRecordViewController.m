@@ -49,8 +49,8 @@
     _pageNum = @"10";
     _page = 1;
     // Do any additional setup after loading the view.
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    //self.tabBarController.tabBar.hidden = YES;
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self loadDataWithPageNum:_pageNum page:_page];
     [self creatUI];

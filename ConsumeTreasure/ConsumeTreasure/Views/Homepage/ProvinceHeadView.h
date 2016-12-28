@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "LookTimeMode.h"
+
 typedef void(^JustBlock)();
 @interface ProvinceHeadView : UITableViewHeaderFooterView
 
@@ -14,6 +17,8 @@ typedef void(^JustBlock)();
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
 
 @property (nonatomic,strong) NSIndexPath *indexPath;
+
+@property (nonatomic,strong) provinceModel *proModel;
 
 @property (nonatomic,copy) JustBlock openBlock;
 

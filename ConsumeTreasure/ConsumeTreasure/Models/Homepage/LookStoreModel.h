@@ -13,15 +13,12 @@
 @property (nonatomic,strong) NSString *addr;
 @property (nonatomic,strong) NSString <Optional>*doorImage;
 @property (nonatomic,strong) NSString *shopName;
-//@property (nonatomic,strong) NSString *objid;
-//@property (nonatomic,strong) NSString *collectsnum;
-//-(void)setValue:(id)value forUndefinedKey:(NSString *)key;
 
 @end
 
-/*
-@interface mListModel : JSONModel
-@property (nonatomic,strong) NSArray<LookStoreModel *>* mLIst;
+@interface locationModel : JSONModel
+
+@property (nonatomic,strong) NSString *city;
+@property (nonatomic,strong) NSString *cityCode;
 
 @end
-*/

@@ -21,3 +21,18 @@
 @property (nonatomic,strong) NSArray<LookTimeMode>* mapList;
 
 @end
+
+
+@protocol provinceModel
+@end
+
+@interface provinceModel : JSONModel
+@property (nonatomic,strong) NSString *province;
+@property (nonatomic,strong) NSArray *clist;
+@end
+
+
+@interface pcListModel : JSONModel
+@property (nonatomic,strong) NSArray<provinceModel>* pcList;
+
+@end

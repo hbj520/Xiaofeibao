@@ -21,6 +21,10 @@
     
      NSArray* _dataArray;
     
+    
+    NSMutableArray *_locationArray;
+    NSMutableArray *_provinceArray;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -42,21 +46,37 @@
     self.cityNowLab.text = self.locaStr;
     [self.caityNowBtn setTitle:self.locaStr forState:0];
     
-    self.tabBarController.tabBar.hidden = YES;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self configTableView];
     [self setNavi];
-    _sectionTitleArray = [[NSArray alloc] initWithObjects:@"家人",@"朋友",@"同学", nil];
+
     
-    NSArray* array0 = @[@"爸爸",@"妈妈",@"哥哥",@"姐姐",@"妹妹",@"弟弟"];
-    NSArray* array1 = @[@"张三",@"李四",@"王五"];
-    NSArray* array2 = @[@"艾克",@"光辉",@"aa",@"bb"];
+    [self loadLocationData];
     
-    _dataArray = [[NSArray alloc] initWithObjects:array0,array1,array2, nil];
+}
+
+- (void)loadLocationData{
+    NSDictionary *para = @{
+                           
+                           };
+    [[MyAPI sharedAPI] getdevelopCityArrWithMeters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [_provinceArray removeAllObjects];
+            [_locationArray removeAllObjects];
+            
+            _locationArray = arrays[1];
+            _provinceArray = arrays[0];
+            [self.tableView reloadData];
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 
 - (void)setNavi{
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 
@@ -90,12 +110,12 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-   return _dataArray.count;
+   return _provinceArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (_isExpand[section]) {
-        return [_dataArray[section] count];
+        return [_locationArray[section] count];
     }
     return 0;
 }
@@ -121,14 +141,19 @@
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LocationTableViewCell" owner:self options:nil]lastObject];
     }
-    cell.cityName.text = _dataArray[indexPath.section][indexPath.row];
+    
+    if (_locationArray.count > 0) {
+        cell.model = _locationArray[indexPath.section][indexPath.row];
+    }
+    
+    
     
     return cell;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     ProvinceHeadView *view = [[[NSBundle mainBundle] loadNibNamed:@"ProvinceHeadView" owner:self options:nil]lastObject];
-    view.provinceName.text = _sectionTitleArray[section];
+    view.proModel = _provinceArray[section];
     view.arrowImage.image = [UIImage imageNamed:@"ss_720"];
       __weak typeof(view) weakViewSelf = view;
     view.openBlock =^{

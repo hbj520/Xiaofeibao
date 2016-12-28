@@ -144,7 +144,7 @@
     UIButton *deleteBtn = [[UIButton alloc] init];
     deleteBtn.bounds = CGRectMake(0, 0, 100, 100);
     deleteBtn.center = CGPointMake(deleteBtn.bounds.size.width/2 + 10, headerView.bounds.size.height/2);
-    [deleteBtn setImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+    [deleteBtn setImage:[UIImage imageNamed:@"x_on_720"] forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:deleteBtn];
     //输入密码提示
@@ -296,23 +296,16 @@
     NSLog(@"textChange==%@",self.pwStr);
     
     if (self.pwStr.length == 6) {
-        if ([self.pwStr isEqualToString:@"199103"]) {//如果输入的密码是199103表示输入密码正确
-            
-            NSLog(@"密码正确==%@",self.pwStr);
-            
-            if ([self.delegate respondsToSelector:@selector(inputCorrectCoverView:)]) {
-                [self deleteClick:nil];
-                [self.delegate inputCorrectCoverView:self];
-            }
-        }else{
-            
-            NSLog(@"密码错误＝＝%@",self.pwStr);
-            
-            if ([self.delegate respondsToSelector:@selector(coverView:)]) {
-                [self.delegate coverView:self];
-            }
+        
+        if (self.tBlock) {
+            self.tBlock(self.pwStr);
         }
         
+        
+//        if ([self.delegate respondsToSelector:@selector(inputCorrectCoverView:)]) {
+//            [self deleteClick:nil];
+//            [self.delegate inputCorrectCoverView:self];
+//        }
     }
 }
 
