@@ -21,6 +21,8 @@
 		AB06A9891DF940D4006F67C2 /* AttentionShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A9881DF940D4006F67C2 /* AttentionShopViewController.m */; };
 		AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A98B1DF949B1006F67C2 /* AttentionShopTableViewCell.m */; };
 		AB06A98E1DF949B1006F67C2 /* AttentionShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */; };
+		AB0808731E13B4C10074D573 /* MyEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808701E13B4C10074D573 /* MyEnum.m */; };
+		AB0808741E13B4C10074D573 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808721E13B4C10074D573 /* FileHelper.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
@@ -344,6 +346,10 @@
 		AB06A98A1DF949B1006F67C2 /* AttentionShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionShopTableViewCell.h; sourceTree = "<group>"; };
 		AB06A98B1DF949B1006F67C2 /* AttentionShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionShopTableViewCell.m; sourceTree = "<group>"; };
 		AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttentionShopTableViewCell.xib; sourceTree = "<group>"; };
+		AB08086F1E13B4C10074D573 /* MyEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnum.h; sourceTree = "<group>"; };
+		AB0808701E13B4C10074D573 /* MyEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEnum.m; sourceTree = "<group>"; };
+		AB0808711E13B4C10074D573 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
+		AB0808721E13B4C10074D573 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -1056,6 +1062,10 @@
 		AB608C201D9CB7A900194FC2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AB08086F1E13B4C10074D573 /* MyEnum.h */,
+				AB0808701E13B4C10074D573 /* MyEnum.m */,
+				AB0808711E13B4C10074D573 /* FileHelper.h */,
+				AB0808721E13B4C10074D573 /* FileHelper.m */,
 				AB6FBA601DB4B05100C682F8 /* NoticeHelper.h */,
 				AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */,
 				AB8D45391DADC89400694E6C /* Tools.h */,
@@ -2213,6 +2223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */,
+				AB0808741E13B4C10074D573 /* FileHelper.m in Sources */,
 				D15B3AFC1DDC0E5E009122FE /* NSDataEx.m in Sources */,
 				D16BF2B01DEFF15B001A82BF /* JFCityCollectionFlowLayout.m in Sources */,
 				D15B3AF91DDC0E5E009122FE /* DataSigner.m in Sources */,
@@ -2346,6 +2357,7 @@
 				AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */,
 				D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */,
 				D196D5741E0B6C310062AD91 /* PSWVertifyViewController.m in Sources */,
+				AB0808731E13B4C10074D573 /* MyEnum.m in Sources */,
 				D15B3A491DDB0807009122FE /* MyIncomeViewController.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,

@@ -10,6 +10,8 @@
 #import "LoginAndRegisterViewController.h"
 #import "AppDelegate.h"
 #import "SetPayPswViewController.h"
+#import "FileHelper.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface SettingTableViewController ()<UIAlertViewDelegate>
 - (IBAction)backBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *cash;
@@ -30,6 +32,16 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationItem.hidesBackButton = YES;
+    //计算检查缓存大小
+    
+    float tmpSize = [[SDImageCache sharedImageCache] getSize];
+    
+    NSLog(@"%f",tmpSize);
+    
+//    NSString *clearCacheName = tmpSize >= 1 ? [NSString stringWithFormat:@"%.1fM",tmpSize] : [NSString stringWithFormat:@"%.1fK",tmpSize * 1024];
+    
+    self.cash.text = [FileHelper formatFileSize:[FileHelper getFileSize:[FileHelper getNotePath]]];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -161,7 +173,20 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (alertView.tag == 1008) {
         if (buttonIndex == 1) {
+            //清空照片
+            NSArray*paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+            NSString *documentsDirectory= [paths objectAtIndex:0];
+            NSString *savedImagePath=[documentsDirectory stringByAppendingPathComponent:@"avatar.png"];
+            NSFileManager* manager = [NSFileManager defaultManager];  //设置文件管理器
+            
+            if ([manager fileExistsAtPath:savedImagePath]) {
+                [manager removeItemAtPath:savedImagePath error:nil];
+            }
+            
+            [FileHelper deleteSub:[FileHelper getNotePath]];
+            [[SDImageCache sharedImageCache] clearDisk];
             self.cash.text = @"0.0M";
+
         }
     }
     
