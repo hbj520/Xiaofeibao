@@ -128,7 +128,7 @@
     
     _scanBtn=[UIButton buttonWithType:UIButtonTypeCustom];
 //    _scanBtn.backgroundColor=[UIColor cyanColor];
-    _scanBtn.frame=CGRectMake(W(60), H(15), W(40), H(60));
+    _scanBtn.frame=CGRectMake(W(140), H(15), W(40), H(60));
     _scanBtn.enabled=NO;
     [_scanBtn setImage:[UIImage imageNamed:@"ewm_clk"] forState:0];
     [_scanBtn addTarget:self action:@selector(scanOrder) forControlEvents:UIControlEventTouchUpInside];
@@ -139,7 +139,7 @@
     [_keyinBtn setImage:[UIImage imageNamed:@"fkm_nor"] forState:0];
     _keyinBtn.frame=CGRectMake(W(220), H(15), W(40), H(60));
     [_keyinBtn addTarget:self action:@selector(putOrder) forControlEvents:UIControlEventTouchUpInside];
-    [_coverView addSubview:_keyinBtn];
+    //[_coverView addSubview:_keyinBtn];
    // [self addLayout];
 }
 

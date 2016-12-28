@@ -7,7 +7,7 @@
 //
 
 #import "ChangeHeadView.h"
-
+#import "NoticeHelper.h"
 @implementation ChangeHeadView
 
 - (void)awakeFromNib
@@ -18,15 +18,15 @@
     [self.btn2 addTarget:self action:@selector(btnclick2) forControlEvents:UIControlEventTouchUpInside];
     
     CGRect newframe1 = self.backView.frame;
-    newframe1.size.width = ScreenWidth - 108;
+    newframe1.size.width = ScreenWidth - [NoticeHelper ISIphoneType]*36;
     self.backView.frame = newframe1;
     
     CGRect newframe2 = self.btn1.frame;
-    newframe2.size.width = ScreenWidth - 108;
+    newframe2.size.width =ScreenWidth - [NoticeHelper ISIphoneType]*36;
     self.btn1.frame = newframe2;
     
     CGRect newframe3 = self.btn2.frame;
-    newframe3.size.width = ScreenWidth - 108;
+    newframe3.size.width =ScreenWidth - [NoticeHelper ISIphoneType]*36;
     self.btn2.frame = newframe3;
 
 }
