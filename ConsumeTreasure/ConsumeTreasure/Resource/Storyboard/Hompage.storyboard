@@ -2327,8 +2327,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJi-v0-a1z">
-                                <rect key="frame" x="148" y="369" width="79" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJi-v0-a1z">
+                                <rect key="frame" x="137" y="369" width="101" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Zgf-b7-e1z"/>
                                 </constraints>
@@ -2390,6 +2390,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="rZW-eh-XJm"/>
                     <connections>
+                        <outlet property="allIncome" destination="FJi-v0-a1z" id="jqa-Re-YdL"/>
+                        <outlet property="dayIncome" destination="QU3-qR-enS" id="ibJ-QA-xok"/>
                         <segue destination="hnI-Wk-1sj" kind="push" identifier="goWithdrawSegue" id="xr8-XJ-Bqb"/>
                     </connections>
                 </viewController>

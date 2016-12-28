@@ -260,20 +260,20 @@
     }];
     
     //个人资料
-    [[MyAPI sharedAPI] getInfoPersonalWithParameters:para resulet:^(BOOL success, NSString *msg, id object) {
-        if (success) {
-            infoModel = (PersonInfoModel*)object;
-            [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
-            [[XFBConfig Instance] saveIsAgency:infoModel.isproxychecked];
-        }else{
-            if ([msg isEqualToString:@"-1"]) {
-                [self logout];
+    if (KToken) {
+        [[MyAPI sharedAPI] getInfoPersonalWithParameters:para resulet:^(BOOL success, NSString *msg, id object) {
+            if (success) {
+                infoModel = (PersonInfoModel*)object;
+                [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
+                [[XFBConfig Instance] saveIsAgency:infoModel.isproxychecked];
+            }else{
+            
             }
-        }
-        
-    } errorResult:^(NSError *enginerError) {
-        
-    }];
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+    }
+   
     
 }
 
