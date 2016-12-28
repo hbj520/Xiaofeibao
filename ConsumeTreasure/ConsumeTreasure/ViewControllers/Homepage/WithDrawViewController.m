@@ -31,25 +31,25 @@
 }
 
 - (void)setTextField{
-    CGRect frame = CGRectMake(100,0,[UIScreen mainScreen].bounds.size.width - 100,44);
-    Tongtf = [[XWMoneyTextField alloc] initWithFrame:frame];
-    Tongtf.textAlignment = UITextAlignmentRight;
-    Tongtf.font = [UIFont systemFontOfSize:20];
-    Tongtf.tintColor= [UIColor redColor];
-    Tongtf.textColor = [UIColor redColor];
-    Tongtf.placeholder = @"请输入金额";
-    Tongtf.keyboardType = UIKeyboardTypeDecimalPad;
-    Tongtf.limit.delegate = self;
-    Tongtf.limit.max = @"99999.99";
-    
-    [self.tfView addSubview:Tongtf];
-    
-    [Tongtf mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(@0);
-        // make.left.equalTo(@100);
-        make.right.equalTo(@(-10));
-        make.top.equalTo(@0);
-    }];
+//    CGRect frame = CGRectMake(100,0,[UIScreen mainScreen].bounds.size.width - 100,44);
+//    Tongtf = [[XWMoneyTextField alloc] initWithFrame:frame];
+//    Tongtf.textAlignment = UITextAlignmentRight;
+//    Tongtf.font = [UIFont systemFontOfSize:20];
+//    Tongtf.tintColor= [UIColor redColor];
+//    Tongtf.textColor = [UIColor redColor];
+//    Tongtf.placeholder = @"请输入金额";
+//    Tongtf.keyboardType = UIKeyboardTypeDecimalPad;
+//    Tongtf.limit.delegate = self;
+//    Tongtf.limit.max = @"99999.99";
+//    
+//    [self.tfView addSubview:Tongtf];
+//    
+//    [Tongtf mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(@0);
+//        // make.left.equalTo(@100);
+//        make.right.equalTo(@(-10));
+//        make.top.equalTo(@0);
+//    }];
 }
 
 
