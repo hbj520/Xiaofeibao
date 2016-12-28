@@ -10,4 +10,8 @@
 
 @interface CashViewController : BaseViewController
 
+@property (nonatomic,strong) NSArray *incomeMoney;
+@property (weak, nonatomic) IBOutlet UILabel *dayIncome;
+@property (weak, nonatomic) IBOutlet UILabel *allIncome;
+
 @end
