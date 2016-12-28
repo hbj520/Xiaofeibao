@@ -23,6 +23,11 @@
 
 @implementation WithDrawViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //[self judgeBankCard];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,21 +46,28 @@
                            
                            };
     [[MyAPI sharedAPI] getMyBankCardDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        [_cardList removeAllObjects];
-        _cardList = arrays[0];
-        if (_cardList.count > 0) {
-            bankCardModel *model = _cardList[0];
-            self.defaultBank.text = model.bankname;
-            self.defaultBankNum.text = [NSString stringWithFormat:@"尾号%@",model.bankno];
-            self.defaultCardType.text = @"储蓄卡";
+        
+        if (success) {
+            [_cardList removeAllObjects];
+            _cardList = arrays[0];
+            if (_cardList.count > 0) {
+                bankCardModel *model = _cardList[0];
+                self.defaultBank.text = model.bankname;
+                self.defaultBankNum.text = [NSString stringWithFormat:@"尾号%@",model.bankno];
+                self.defaultCardType.text = @"储蓄卡";
+            }else{
+               
+                [self gotoAddBankCard];
+                
+                
+            }
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [Tools logoutWithNowVC:self];
             }
-            [self gotoAddBankCard];
-            
-            
         }
+        
+    
     } errorResult:^(NSError *enginerError) {
         
     }];
@@ -73,7 +85,7 @@
         
     }];
     [alertCon addAction:goAction];
-
+    [self presentViewController:alertCon animated:YES completion:nil];
 }
 
 - (void)setTextField{

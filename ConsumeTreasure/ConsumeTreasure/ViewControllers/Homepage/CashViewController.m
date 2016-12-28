@@ -29,11 +29,10 @@
 - (void)setIncomeMoney:(NSArray *)incomeMoney{
     
     if (incomeMoney.count > 0) {
-        self.dayIncome.text = incomeMoney[0];//[NSString stringWithFormat:@"%.2f",[incomeMoney[0] floatValue]];
-        
-        self.allIncome.text = incomeMoney[1];//[NSString stringWithFormat:@"%.2f",[incomeMoney[1] floatValue]];
+        self.dayIncome.text = incomeMoney[0];
+        NSString *str = incomeMoney[0];
+        self.allIncome.text = incomeMoney[1];
     }
-    
    
 }
 

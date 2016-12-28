@@ -142,9 +142,9 @@
     [headerView addSubview:lineView];
     //删除(左上角的叉号)
     UIButton *deleteBtn = [[UIButton alloc] init];
-    deleteBtn.bounds = CGRectMake(0, 0, 100, 100);
+    deleteBtn.bounds = CGRectMake(0, 0, 30, 30);
     deleteBtn.center = CGPointMake(deleteBtn.bounds.size.width/2 + 10, headerView.bounds.size.height/2);
-    [deleteBtn setImage:[UIImage imageNamed:@"x_on_720"] forState:UIControlStateNormal];
+    [deleteBtn setImage:[UIImage imageNamed:@"closedown"] forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:deleteBtn];
     //输入密码提示

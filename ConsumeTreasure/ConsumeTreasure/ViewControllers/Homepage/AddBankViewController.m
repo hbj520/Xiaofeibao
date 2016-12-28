@@ -7,6 +7,8 @@
 //
 
 #import "AddBankViewController.h"
+#import "MyBankCardViewController.h"
+
 #import "JHCoverView.h"
 
 @interface AddBankViewController ()<JHCoverViewDelegate>
@@ -92,6 +94,8 @@
         if (sucess) {
             
             [self.coverView.payTextField resignFirstResponder];
+            
+            
             [self backTolastPage];
             
             if (self.chooseBank) {

@@ -30,7 +30,7 @@
 
 - (void)postVertify{
     
-    NSString *stt = [[XFBConfig Instance] getphoneNum];
+   // NSString *stt = [[XFBConfig Instance] getphoneNum];
     
     NSDictionary *para = @{
                            @"phone":[[XFBConfig Instance] getphoneNum],
@@ -74,6 +74,7 @@
                 [self.navigationController popToViewController:prePay animated:YES];
             }];
             [alertCon addAction:goAction];
+             [self presentViewController:alertCon animated:YES completion:nil];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
