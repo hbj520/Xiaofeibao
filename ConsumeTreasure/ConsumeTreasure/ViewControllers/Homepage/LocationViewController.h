@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-typedef void (^LocationBlock)(NSString *locaStr);
+typedef void (^LocationBlock)(NSArray *arr);
 @interface LocationViewController : BaseViewController
 
 @property (nonatomic,copy) LocationBlock locaBlock;

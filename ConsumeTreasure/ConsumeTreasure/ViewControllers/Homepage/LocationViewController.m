@@ -123,17 +123,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     cell.rightImage.hidden = NO;
+    
+    locationModel *model = _locationArray[indexPath.section][indexPath.row];
     if (self.locaBlock) {
-        self.locaBlock(cell.cityName.text);
+        self.locaBlock(@[model.city,model.cityCode]);
     }
     [self backTolastPage];
    
 }
-
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-//    LocationTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//    cell.rightImage.hidden = YES;
-//}
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

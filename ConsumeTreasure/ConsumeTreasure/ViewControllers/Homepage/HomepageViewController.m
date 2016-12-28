@@ -100,7 +100,7 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
-    
+    [self loadHotStoreAndTuiJianStoreData];
     //  _locService.delegate = self;
 }
 -(void)viewWillDisappear:(BOOL)animated
@@ -389,7 +389,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1){
-        return 4;
+        return TuiJianArr.count+1;
     }else{
         return HotStoreArr.count;
     }
@@ -447,7 +447,7 @@
 
     }else if (indexPath.section == 1){//第二个section
         
-        if (indexPath.row == 3) {
+        if (indexPath.row == TuiJianArr.count) {
             ImageTableViewCell *imageChartCell = [tableView dequeueReusableCellWithIdentifier:@"chartImageCellId"];
             if (imageChartCell == nil) {
                 imageChartCell = [[[NSBundle mainBundle] loadNibNamed:@"ImageTableViewCell" owner:self options:nil] lastObject];
@@ -656,11 +656,11 @@
         
         locaVC.locaStr = locaCity;
         
-        locaVC.locaBlock =^(NSString *str){
+        locaVC.locaBlock =^(NSArray *arr){
             
-            localStr = str;
-            self.locationCityName.text = str;
-            
+            localStr = arr[0];
+            self.locationCityName.text = arr[0];
+            ApplicationDelegate.cityCode = arr[1];
         };
     }
 }
