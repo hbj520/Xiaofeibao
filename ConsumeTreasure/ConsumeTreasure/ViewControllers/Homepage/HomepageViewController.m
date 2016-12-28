@@ -266,6 +266,7 @@
                 infoModel = (PersonInfoModel*)object;
                 [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
                 [[XFBConfig Instance] saveIsAgency:infoModel.isproxychecked];
+                [[XFBConfig Instance] saveloginName:infoModel.loginName];
             }else{
             
             }

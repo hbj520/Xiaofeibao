@@ -237,6 +237,17 @@ static XFBConfig * instance = nil;
     [settings synchronize];
 }
 
+- (void)saveloginName:(NSString*)name{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"loginName"];
+    [settings setObject:name forKey:@"loginName"];
+    [settings synchronize];
+}
+
+- (NSString *)getloginName{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"loginName"];
+}
 - (NSString *)getIsShop{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"isShop"];

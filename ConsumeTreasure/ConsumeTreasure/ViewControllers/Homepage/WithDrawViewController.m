@@ -26,6 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //[self judgeBankCard];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -39,6 +40,8 @@
     
     [self setTextField];
     [self judgeBankCard];
+    
+    self.leftMoney.text = [NSString stringWithFormat:@"可提现余额为%@元",self.canGetMoney];
 }
 
 - (void)judgeBankCard{
@@ -117,18 +120,13 @@
         
         XWMoneyTextField *tf = (XWMoneyTextField *)sender;
         
+        if (tf.text.floatValue < 1000) {
+            self.chargeNum.text = @"提现手续费为0.5元";
+        }else{
+            self.chargeNum.text = @"提现手续费为0元";
+        }
         
-//        if ([tf.text floatValue] > leftMoney) {
-//            self.disCountMoney.text = [NSString stringWithFormat:@"- %ld",(long)leftMoney];//折扣
-//            
-//            self.realPay.text = [NSString stringWithFormat:@"%.2f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
-//            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]/10)];//获得通宝币
-//            
-//        }else{
-//            self.disCountMoney.text = [NSString stringWithFormat:@"- %@",tf.text];
-//            self.realPay.text = @"0";
-//            self.getTongMoney.text = @"0";
-//        }
+
     }
 }
 
@@ -147,12 +145,33 @@
 }
 
 - (IBAction)getAllLeftMoney:(id)sender {
-    
+
+    NSLog(@"%@",self.canGetMoney);
+    Tongtf.text = self.canGetMoney;
 }
 
 
 - (IBAction)getMoneyNow:(id)sender {
     NSLog(@"立即提现");
+    
+    if (Tongtf.text.floatValue > 0) {
+        
+        NSDictionary *para =@{
+                              @"total_fee":Tongtf.text,
+                              @"trade_type":@"",
+                              @"bankid":@"",
+                              @"zfpass":@""
+                              
+                              };
+        
+        
+        
+    }else{
+        showAlert(@"请确认提现额度不为0");
+    }
+    
+    
+    
 }
 
 /*

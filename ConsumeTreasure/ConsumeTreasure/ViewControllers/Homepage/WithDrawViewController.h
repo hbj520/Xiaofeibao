@@ -22,6 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *withdrawView;
 
-
+@property (nonatomic,strong) NSString *canGetMoney;
 
 @end

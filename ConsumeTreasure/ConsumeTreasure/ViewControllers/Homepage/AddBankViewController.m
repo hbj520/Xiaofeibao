@@ -32,7 +32,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.cardNum.tag = 555;
     self.cardMasterName.enabled = NO;
-    self.cardMasterName.text = @"啦啦啦";
+    self.cardMasterName.text = [[XFBConfig Instance] getloginName];
     
     [self upPayKeyBoard];
     
