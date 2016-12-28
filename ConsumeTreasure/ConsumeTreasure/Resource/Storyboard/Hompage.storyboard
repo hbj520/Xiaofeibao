@@ -1809,6 +1809,7 @@
                         <outlet property="leftMoney" destination="RkI-bO-YfR" id="ZJW-YM-p2Q"/>
                         <outlet property="withdrawView" destination="M0l-FE-e2d" id="5ES-mW-dbV"/>
                         <segue destination="MHO-1M-Xv9" kind="push" identifier="goBankSegue" id="cJN-Ke-JUr"/>
+                        <segue destination="BGt-8R-QaP" kind="push" identifier="goAddBankCardSegue" id="6Ku-Vt-ebf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yw-BT-Wr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3950,6 +3951,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fkz-Fo-52f"/>
+        <segue reference="6Ku-Vt-ebf"/>
         <segue reference="cJN-Ke-JUr"/>
     </inferredMetricsTieBreakers>
 </document>

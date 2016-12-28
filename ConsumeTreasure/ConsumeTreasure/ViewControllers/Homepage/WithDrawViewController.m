@@ -14,6 +14,9 @@
 @interface WithDrawViewController ()<XWMoneyTextFieldLimitDelegate>
 {
     XWMoneyTextField *Tongtf;
+    
+    
+    NSMutableArray *_cardList;
 }
 
 @end
@@ -27,7 +30,48 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    _cardList = [NSMutableArray array];
+    
     [self setTextField];
+    [self judgeBankCard];
+}
+
+- (void)judgeBankCard{
+    NSDictionary *para = @{
+                           
+                           };
+    [[MyAPI sharedAPI] getMyBankCardDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        [_cardList removeAllObjects];
+        _cardList = arrays[0];
+        if (_cardList.count > 0) {
+            bankCardModel *model = _cardList[0];
+            self.defaultBank.text = model.bankname;
+            self.defaultBankNum.text = [NSString stringWithFormat:@"尾号%@",model.bankno];
+            self.defaultCardType.text = @"储蓄卡";
+        }else{
+            
+            [self gotoAddBankCard];
+            
+            
+        }
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+
+}
+
+
+- (void)gotoAddBankCard{
+    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"尚未设置银行卡，请前往添加。" preferredStyle:1];
+    UIAlertAction *goAction = [UIAlertAction actionWithTitle:@"前往添加" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+     
+        
+        [self performSegueWithIdentifier:@"goAddBankCardSegue" sender:nil];
+        
+        
+    }];
+    [alertCon addAction:goAction];
+
 }
 
 - (void)setTextField{
