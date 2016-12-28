@@ -671,14 +671,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7.03M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyP-tW-o6R">
-                                                    <rect key="frame" x="302" y="11" width="50" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.03M" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyP-tW-o6R">
+                                                    <rect key="frame" x="272" y="11" width="80" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="8L6-Qz-xdJ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="V1i-Sd-dS4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CyP-tW-o6R" firstAttribute="top" secondItem="MYk-sW-P7c" secondAttribute="top" constant="11" id="Rzt-mc-xYC"/>
+                                                <constraint firstAttribute="trailing" secondItem="CyP-tW-o6R" secondAttribute="trailing" constant="23" id="acj-Xq-olp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="EDq-QD-hii">
@@ -770,6 +777,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cash" destination="CyP-tW-o6R" id="tqp-yn-Bjt"/>
                         <segue destination="HOl-aq-Hz1" kind="push" identifier="gosetPswSegue" id="JRy-3U-DDn"/>
                     </connections>
                 </tableViewController>

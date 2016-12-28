@@ -9,9 +9,10 @@
 #import "SettingTableViewController.h"
 #import "LoginAndRegisterViewController.h"
 #import "AppDelegate.h"
-
-@interface SettingTableViewController ()
+#import "SetPayPswViewController.h"
+@interface SettingTableViewController ()<UIAlertViewDelegate>
 - (IBAction)backBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *cash;
 
 @end
 
@@ -61,7 +62,19 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-    
+        if (indexPath.row == 0) {//清除图片缓存
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定清空缓存数据吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil, nil];
+            alert.tag = 1008;
+            [alert show];
+        }else if (indexPath.row == 1){
+            
+        }else if (indexPath.row == 2){
+            
+        }else if (indexPath.row == 3){//设置支付宝密码
+            SetPayPswViewController *setPayPswVC = [[SetPayPswViewController alloc] init];
+            [self.navigationController pushViewController:setPayPswVC animated:YES];
+        }
+
     }else if (indexPath.section == 1){
         
         [Tools logoutWithNowVC:self];
@@ -143,5 +156,14 @@
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 
+}
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 1008) {
+        if (buttonIndex == 1) {
+            self.cash.text = @"0.0M";
+        }
+    }
+    
 }
 @end
