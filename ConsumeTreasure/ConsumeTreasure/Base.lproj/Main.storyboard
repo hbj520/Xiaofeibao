@@ -205,7 +205,7 @@
                                             <constraint firstAttribute="height" constant="14" id="fLH-eB-vR0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="我已阅读同意消费宝用户协议">
+                                        <state key="normal" title="我已阅读同意智慧返用户协议">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
