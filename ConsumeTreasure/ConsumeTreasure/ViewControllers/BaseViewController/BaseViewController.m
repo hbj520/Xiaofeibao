@@ -56,7 +56,9 @@
 - (void)backTolastPage{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
+- (void)logout{
+    [Tools logoutWithNowVC:self];
+}
 /*
 #pragma mark - Navigation
 

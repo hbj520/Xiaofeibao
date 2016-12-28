@@ -62,4 +62,7 @@
 +(NSString *)dealtimeStr:(NSString*)str;
 + (NSString *)timeWithTimeIntervalString:(NSString *)timeString;
 
+//登录超时
++(void)logoutWithNowVC:(UIViewController *)VC;
+
 @end

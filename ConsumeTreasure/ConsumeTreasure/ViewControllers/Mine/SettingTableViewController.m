@@ -63,13 +63,17 @@
     if (indexPath.section == 0) {
     
     }else if (indexPath.section == 1){
-       UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-       // LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
-        UINavigationController *loginVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
-        loginVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-       // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
-        [self.navigationController presentModalViewController:loginVC animated:YES];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
+        
+        [Tools logoutWithNowVC:self];
+//       UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//
+//        UINavigationController *loginVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+//        loginVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//
+//        [self.navigationController presentModalViewController:loginVC animated:YES];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
+               // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+               // LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
        // [ApplicationDelegate.window.rootViewController removeFromParentViewController];
 //        for (UIView *vc in self.view.subviews) {
 //            

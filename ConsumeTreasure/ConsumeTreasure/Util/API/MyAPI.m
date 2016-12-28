@@ -5,7 +5,7 @@
 //  Created by youyou on 11/1/16.
 //  Copyright © 2016 youyou. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "MyAPI.h"
 #import <AFNetworking.h>
 #import "WXApi.h"
@@ -44,7 +44,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -62,6 +62,7 @@
         sharedAPIInstance = [[self alloc] init];
     });
     return sharedAPIInstance;
+  
 }
 #pragma mark - 登录和注册
 - (void)loginWithParameters:(NSDictionary *)para
@@ -73,7 +74,9 @@
                               @"param":para
                               };
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
             NSString * goldNum = (NSString *)userDic[@"all_money"];//用户余额
             NSString *loginName = userDic[@"loginName"];//用户登录名
@@ -110,7 +113,9 @@
                               };
     [self.manager POST:@"sms/sendRegisterMessage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *message = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,message);
         }else{
             result(NO,message);
@@ -130,7 +135,9 @@
                               };
     [self.manager POST:@"userinfo/rigister" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             return result(YES,@"注册成功");
         }else{
             return result(NO,info);
@@ -154,7 +161,9 @@
     [self.manager POST:@"shop/resetpassword" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
             result(NO,info);
@@ -178,7 +187,9 @@
                               };
     [self.manager POST:@"shop/preferential" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             tongBaoModel *tongModel = [[tongBaoModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
             result(YES,info,tongModel);
@@ -222,7 +233,9 @@
              
          }else{//通宝币支付
              NSString *info = responseObject[@"msg"];
-             if ([responseObject[@"code"] isEqualToString:@"1"]) {
+             if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+                 result(NO,@"-1");
+             }if ([responseObject[@"code"] isEqualToString:@"1"]) {
                  result(YES,info);
              }else{
                  result(NO,info);
@@ -250,7 +263,9 @@
                               };
     [self.manager POST:@"userinfo/showPerson" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             PersonInfoModel *InfoModel = [[PersonInfoModel alloc]initWithDictionary:responseObject[@"data"][@"person"] error:&error];
             result(YES,info,InfoModel);
@@ -277,7 +292,9 @@
                                };
     [self.manager POST:@"welcome/provinceCity" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *provinceArray = [NSMutableArray array];
             NSMutableArray *locationArr = [NSMutableArray array];
@@ -319,7 +336,9 @@
     [self.manager POST:@"welcome/hotShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *hotArr = [NSMutableArray array];
             NSError *error = nil;
             hotArr = [HomeStoreModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memberPojoList"] error:&error];
@@ -351,7 +370,9 @@
                                };
     [self.manager POST:@"welcome/incomerightRate" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSMutableArray *charArr = [NSMutableArray array];
             charArr = [ChartModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"IncomerightRateList"] error:nil];
@@ -377,7 +398,9 @@
                               };
     [self.manager POST:@"welcome/adIndex" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *addArray = [NSMutableArray array];
             NSError *err = nil;
@@ -427,7 +450,9 @@
                               };
     [self.manager POST:@"myAccount/mineAccount" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *accountArr = [NSMutableArray array];
             NSError *err = nil;
             NSArray *data = responseObject[@"data"][@"list"];
@@ -458,7 +483,9 @@
                                };
     [self.manager POST:@"userinfo/getBrowseList" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             //  NSArray *arr = responseObject[@"data"][@"adList"];
             NSMutableArray *LookTimeArray = [NSMutableArray array];
             NSMutableArray *lookStoreArr = [NSMutableArray array];
@@ -498,7 +525,9 @@
     [self.manager POST:@"welcome/getRecommended" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSArray *arr = responseObject[@"data"][@"memList"];
             
             NSMutableArray *storeArr = [NSMutableArray array];
@@ -530,7 +559,9 @@
                               };
     [self.manager POST:@"shop/applyNow" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *typeArray = [NSMutableArray array];
             typeArray = [BeUnionModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"list"] error:&error];
@@ -555,7 +586,9 @@
                               };
     [self.manager POST:@"shop/getOneShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             StoreDetailModel *detailModel = [[StoreDetailModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
             result(YES,info,detailModel);
@@ -579,7 +612,9 @@
                               };
     [self.manager POST:@"myAccount/myCollection" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+           result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             result(YES,info);
         }else{
@@ -603,7 +638,9 @@
                               };
     [self.manager POST:@"shop/getProducts" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *specialArray = [NSMutableArray array];
             specialArray = [SpecialGoodModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"products"] error:&error];
@@ -628,7 +665,9 @@
                               };
     [self.manager POST:@"shop/getShopComment" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+           result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *commentArray = [NSMutableArray array];
             commentArray = [CommentModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"commentlist"] error:&error];
@@ -657,7 +696,9 @@
 
     [self.manager POST:@"userinfo/myProxy" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSError *error = nil;
             DaLiMasterModel *model = [[DaLiMasterModel alloc]initWithDictionary:responseObject[@"data"][@"proxy"] error:&error];
@@ -682,7 +723,9 @@
                                };
     [self.manager POST:@"userinfo/myBank" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *cardListArr = [NSMutableArray array];
             cardListArr = [bankCardModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"bkList"] error:&error];
@@ -704,7 +747,9 @@
                               };
     [self.manager POST:@"userinfo/bankManage" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
             result (NO,info);
@@ -723,7 +768,9 @@
                               };
     [self.manager POST:@"userinfo/deleteMyBank" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
             result (NO,info);
@@ -743,7 +790,9 @@
                               };
     [self.manager POST:@"userinfo/proxyShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *myShopListArr = [NSMutableArray array];
             myShopListArr = [shopModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"shopList"] error:&error];
@@ -767,7 +816,9 @@
                               };
     [self.manager POST:@"userinfo/moneyDetail" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *IncomeListsArr = [NSMutableArray array];
             IncomeListsArr = [DaLiIncomeModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"billlogList"] error:&error];
@@ -794,7 +845,9 @@
     
     [self.manager POST:@"userinfo/myShopAccount" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSError *error = nil;
             StoreMasterModel *model = [[StoreMasterModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
@@ -818,7 +871,9 @@
                               };
     [self.manager POST:@"userinfo/myMembers" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+           result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *memberArr = [NSMutableArray array];
             memberArr = [NemberModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memList"] error:&error];
@@ -842,7 +897,9 @@
                               };
     [self.manager POST:@"userinfo/shopOrders" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+           result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *orderArr = [NSMutableArray array];
             orderArr = [OrderConModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"payorderList"] error:&error];
@@ -880,7 +937,9 @@
                               @"param":para
                               };
     [self.manager POST:@"welcome/getDistrictlist" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSArray *data = responseObject[@"data"][@"districts"];
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *err = nil;
@@ -907,6 +966,9 @@
                              result:(ArrayBlock)result
                         errorResult:(ErrorBlock)errorResult{
     [self.manager POST:@"shop/getCategory" parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }
         if ([responseObject[@"code"] isEqualToString:@"1"]){
             NSArray *data = responseObject[@"data"][@"categorys"];
             NSMutableArray *modelArray = [NSMutableArray array];
@@ -941,7 +1003,9 @@
                               };
     [self.manager POST:@"shop/shopList" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *error = nil;
             NSDictionary *dataDic = responseObject[@"data"];
@@ -1013,7 +1077,9 @@
         
         NSLog(@"```上传成功``` %@",responseObject);
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSString *imgStr = responseObject[@"data"][@"filePath"];
              result(YES,imgStr,imgStr);
         }else{
@@ -1038,7 +1104,9 @@
                               };
     [self.manager POST:@"userinfo/applyToProxy" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
             result (NO,info);
@@ -1057,7 +1125,9 @@
                               };
     [self.manager POST:@"shop/applyToShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{
             result (NO,info);
@@ -1109,7 +1179,9 @@
                               };
     [self.manager POST:@"userinfo/queryAttShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *error = nil;
             NSDictionary *dataDic = responseObject[@"data"];
@@ -1140,7 +1212,9 @@
                               };
     [self.manager POST:@"myAccount/modifyImgUrl" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
             result(NO,info);
@@ -1160,7 +1234,9 @@
                               };
     [self.manager POST:@"myAccount/modifyUserName" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
             result(NO,info);
@@ -1180,7 +1256,9 @@
                               };
     [self.manager POST:@"myAccount/modifyPhone" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *info = responseObject[@"msg"];
-        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+           result(NO,@"-1");
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result(YES,info);
         }else{
             result(NO,info);

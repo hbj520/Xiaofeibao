@@ -306,6 +306,15 @@
     NSString* dateString = [formatter stringFromDate:date];
     return dateString;
 }
-
+//登录超时
++(void)logoutWithNowVC:(UIViewController *)VC{
+    UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    // LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+    UINavigationController *loginVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
+    loginVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
+    [VC.navigationController presentModalViewController:loginVC animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
+}
 
 @end
