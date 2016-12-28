@@ -11,6 +11,6 @@
 @interface TongbaoMoneyView : UIView
 @property (nonatomic,strong) UILabel *moneyLabel;
 @property (nonatomic,strong) UIButton *enableSeeButton;
-@property (nonatomic,copy) NSString *money;
+@property (nonatomic,strong) NSString *money;
 - (id)initWithFrame:(CGRect)frame money:(float)money;
 @end

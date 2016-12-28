@@ -180,7 +180,8 @@
     [[MyAPI sharedAPI] loginWithParameters:para result:^(BOOL sucess, NSString *msg) {
                                                  
                                                  if (sucess) {
-                                                     [self changeTohom];
+                                                     [Tools chooseRootController];
+                                                   //  [self changeTohom];
                                                      [[XFBConfig Instance] savePhoneNum:self.loginPhoneNumTextField.text];
                                                  }else{
                                                      [self showHint:@"您输入的账号或密码有误"];

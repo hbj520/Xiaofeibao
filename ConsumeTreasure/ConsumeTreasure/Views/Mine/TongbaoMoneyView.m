@@ -36,6 +36,16 @@
     [self addSubview:self.enableSeeButton];
     
 }
+- (void)setMoney:(NSString *)money{
+    NSString *moneyString = [NSString stringWithFormat:@"%.2f",money.floatValue];
+    NSArray *moneyArray = [moneyString componentsSeparatedByString:@"."];
+    NSString *integerMoney = moneyArray[0];
+    NSString *newInterMoney = [self newMoneyString:integerMoney];
+    NSString *newMoney = [NSString stringWithFormat:@"%@.%@",newInterMoney,moneyArray[1]];
+    self.moneyLabel.text = newMoney;
+    _money = money;
+}
+
 - (void)attentionShopAct:(UIButton *)btn{
     btn.selected = !btn.selected;
     if (btn.selected) {
@@ -54,7 +64,9 @@
     }
     return newMoneyString;
 }
-
+//- (NSString *)money{
+//    re;
+//}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

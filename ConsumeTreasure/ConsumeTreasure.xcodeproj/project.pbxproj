@@ -23,6 +23,7 @@
 		AB06A98E1DF949B1006F67C2 /* AttentionShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */; };
 		AB0808731E13B4C10074D573 /* MyEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808701E13B4C10074D573 /* MyEnum.m */; };
 		AB0808741E13B4C10074D573 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808721E13B4C10074D573 /* FileHelper.m */; };
+		AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808761E13C53C0074D573 /* GuideViewController.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
@@ -350,6 +351,8 @@
 		AB0808701E13B4C10074D573 /* MyEnum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEnum.m; sourceTree = "<group>"; };
 		AB0808711E13B4C10074D573 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
 		AB0808721E13B4C10074D573 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
+		AB0808751E13C53C0074D573 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		AB0808761E13C53C0074D573 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
@@ -1465,6 +1468,8 @@
 		ABCB953E1D9B8D58008927C7 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AB0808751E13C53C0074D573 /* GuideViewController.h */,
+				AB0808761E13C53C0074D573 /* GuideViewController.m */,
 				ABCB953F1D9B8D72008927C7 /* BaseViewController.h */,
 				ABCB95401D9B8D72008927C7 /* BaseViewController.m */,
 			);
@@ -2257,6 +2262,7 @@
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
 				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
+				AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */,
 				AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
 				D15450FB1DF936D8002F4057 /* TuiJianTableViewCell.m in Sources */,

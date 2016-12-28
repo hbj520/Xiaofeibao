@@ -37,6 +37,7 @@
 
 //保存昵称
 - (IBAction)saveNickname:(id)sender {
+    [Tools hideKeyBoard];
     NSString *key = nil;
     if ([self.title isEqualToString:@"用户名"]) {
         key = @"nickname";
