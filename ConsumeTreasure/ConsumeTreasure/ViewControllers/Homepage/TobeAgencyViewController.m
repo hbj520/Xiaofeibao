@@ -56,6 +56,9 @@
             if (sucess) {
                 showAlert(@"已申请成功，请等候客服人员与您联系");
             }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
                 showAlert(msg);
             }
             

@@ -109,6 +109,10 @@
             if (success) {
                 _deModel = object;
                 [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
             
         } errorResult:^(NSError *enginerError) {
@@ -120,6 +124,10 @@
             if (success) {
                 [_spacialGoodArr addObjectsFromArray:arrays];
                 [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
         } errorResult:^(NSError *enginerError) {
             
@@ -131,6 +139,10 @@
             if (success) {
                 [_commetsArr addObjectsFromArray:arrays];
                 [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
         } errorResult:^(NSError *enginerError) {
             
@@ -202,6 +214,10 @@
                 [self showHint:@"收藏成功"];
             }else{
                 [self showHint:@"取消收藏成功"];
+            }
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
             }
         }
         

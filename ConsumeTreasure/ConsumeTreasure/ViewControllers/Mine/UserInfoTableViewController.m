@@ -146,6 +146,9 @@
                     [[XFBConfig Instance] saveIcon:Url];
                     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
                 }else{
+                    if ([msg isEqualToString:@"-1"]) {
+                        [Tools logoutWithNowVC:self];
+                    }
                     [self showHint:@"上传失败"];
                 }
                 [self hideHud];

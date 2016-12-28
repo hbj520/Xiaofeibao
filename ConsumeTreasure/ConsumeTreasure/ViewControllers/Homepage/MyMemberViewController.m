@@ -86,6 +86,10 @@
         if (success) {
             [_memArray addObjectsFromArray:arrays[0]];
             [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         [self endRefresh];
     } errorResult:^(NSError *enginerError) {

@@ -45,6 +45,9 @@
                 [[XFBConfig Instance] saveUsername:self.nicknamefield.text];
                 [self.navigationController popViewControllerAnimated:YES];
             }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
                 [self showHint:@"修改失败"];
             }
         } errorResult:^(NSError *enginerError) {
@@ -59,6 +62,9 @@
                 [self.navigationController popViewControllerAnimated:YES];
              
             }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
                 [self showHint:@"修改失败"];
  
             }

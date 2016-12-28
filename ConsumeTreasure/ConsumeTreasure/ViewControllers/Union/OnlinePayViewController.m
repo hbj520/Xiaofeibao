@@ -106,7 +106,13 @@
                                                 @"sign":sign
                                                 } resut:^(BOOL sucess, NSString *msg) {
         
-        
+                                                    if (sucess) {
+                                                        
+                                                    }else{
+                                                        if ([msg isEqualToString:@"-1"]) {
+                                                            [self logout];
+                                                        }
+                                                    }
     } errorResult:^(NSError *enginerError) {
         
         

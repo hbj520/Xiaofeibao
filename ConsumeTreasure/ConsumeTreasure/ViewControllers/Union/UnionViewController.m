@@ -51,7 +51,9 @@ UICollectionViewDataSource>
                                                             [self.leftTableView reloadData];
                                                         }else{
                                                             // areaArray = [NSMutableArray arrayWithArray:@[@"包河区",@"滨湖新区",@"政务区",@"蜀山区",@"经开区",@"庐阳区",@"高新区"]];
-                                                            
+                                                            if ([msg isEqualToString:@"-1"]) {
+                                                                [self logout];
+                                                            }
                                                         }
                                                         
                                                     } errorResult:^(NSError *enginerError) {
@@ -63,7 +65,9 @@ UICollectionViewDataSource>
             itemArray = [NSMutableArray arrayWithArray:arrays];
             [self.rightCollectionView reloadData];
         }else{
-            
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
     } errorResult:^(NSError *enginerError) {
         

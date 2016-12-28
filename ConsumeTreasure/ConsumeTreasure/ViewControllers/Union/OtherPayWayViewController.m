@@ -102,7 +102,13 @@
                                };
         //调支付宝支付
         [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
-            
+            if (sucess) {
+                
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
+            }
             
         } errorResult:^(NSError *enginerError) {
             
@@ -137,7 +143,13 @@
         //调微信支付
         [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
             
-            
+            if (sucess) {
+                
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
+            }
         } errorResult:^(NSError *enginerError) {
             
         }];

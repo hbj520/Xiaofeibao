@@ -50,6 +50,10 @@
     [[MyAPI sharedAPI] getShangHuRequestDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             listArr = arrays;
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
  
     } errorResult:^(NSError *enginerError) {

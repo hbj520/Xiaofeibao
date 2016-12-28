@@ -95,6 +95,10 @@
             [_storeArray addObjectsFromArray:arrays[1]];
             [self.tableView reloadData];
             
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         [self endRefresh];
     } errorResult:^(NSError *enginerError) {

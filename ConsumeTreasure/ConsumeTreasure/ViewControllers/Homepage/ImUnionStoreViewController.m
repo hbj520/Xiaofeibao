@@ -89,12 +89,18 @@
                            
                            };
     [[MyAPI sharedAPI] getStoreMasterDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
-        
-        StoreMmodel = object;
-        self.unionBalance.text = [NSString stringWithFormat:@"余额 : %@",StoreMmodel.money];
-        self.dealNumLab.text = StoreMmodel.total;
-        self.allIncomeLab.text = StoreMmodel.turnover;
-        self.shopName.text = StoreMmodel.shopName;
+        if (success) {
+            StoreMmodel = object;
+            self.unionBalance.text = [NSString stringWithFormat:@"余额 : %@",StoreMmodel.money];
+            self.dealNumLab.text = StoreMmodel.total;
+            self.allIncomeLab.text = StoreMmodel.turnover;
+            self.shopName.text = StoreMmodel.shopName;
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+        }
+
     } errorResult:^(NSError *enginerError) {
         
     }];

@@ -87,6 +87,10 @@
             self.leftMoney.text = [NSString stringWithFormat:@"余额 : %@",daliModel.balance];
             self.allInMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.total_money floatValue]];
             self.currentMonthMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.month_money floatValue]];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {

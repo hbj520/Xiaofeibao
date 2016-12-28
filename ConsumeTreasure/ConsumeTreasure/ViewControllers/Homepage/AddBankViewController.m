@@ -98,6 +98,10 @@
                 self.chooseBank();
             }
             
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {

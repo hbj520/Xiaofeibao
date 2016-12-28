@@ -131,6 +131,10 @@ UICollectionViewDataSource>
                 [areaArray addObject:areaModel.name];
             }
             //[self.menu.menuDataArray addObject:areaArray];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
     
     } errorResult:^(NSError *enginerError) {
@@ -145,6 +149,10 @@ UICollectionViewDataSource>
                 [cateArray addObject:cateModel.name];
             }
            // [self.menu.menuDataArray addObject:cateArray];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -177,6 +185,10 @@ UICollectionViewDataSource>
                                                                   [self addTopMenu];
                                                               }
                                                               [self.contentTabelView reloadData];
+                                                          }else{
+                                                              if ([msg isEqualToString:@"-1"]) {
+                                                                  [self logout];
+                                                              }
                                                           }
                                                           [self.contentTabelView.mj_header endRefreshing];
                                                       } errorResult:^(NSError *enginerError) {

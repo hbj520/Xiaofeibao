@@ -249,6 +249,10 @@
 
             NSLog(@"=======收益权==%@",addArr);
             [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
          [self endRefresh];
     } errorResult:^(NSError *enginerError) {
@@ -261,6 +265,10 @@
             infoModel = (PersonInfoModel*)object;
             [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
             [[XFBConfig Instance] saveIsAgency:infoModel.isproxychecked];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -283,6 +291,10 @@
             [HotStoreArr removeAllObjects];
             [HotStoreArr addObjectsFromArray:arrays];
             [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -295,6 +307,10 @@
             [TuiJianArr removeAllObjects];
             [TuiJianArr addObjectsFromArray:arrays];
             [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
         [self endRefresh];

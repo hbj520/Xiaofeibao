@@ -98,6 +98,10 @@
          
             
             [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
         

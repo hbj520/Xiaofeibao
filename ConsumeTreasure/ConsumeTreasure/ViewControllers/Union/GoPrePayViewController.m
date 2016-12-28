@@ -61,6 +61,10 @@
                 UIAlertView * alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您尚未设置支付密码，是否立即前往设置。或者您可以在”我“->“设置”中去设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
                 [alert show];
             }
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
         
@@ -218,6 +222,9 @@
                 showAlert(@"支付成功");
                 
             }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
                 showAlert(@"支付失败");
             }
         } errorResult:^(NSError *enginerError) {

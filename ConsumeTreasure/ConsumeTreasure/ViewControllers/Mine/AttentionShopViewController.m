@@ -47,6 +47,10 @@ UITableViewDataSource>
                                                           if (success) {
                                                               dataSource = [NSMutableArray arrayWithArray:arrays];
                                                               [self.tableView reloadData];
+                                                          }else{
+                                                              if ([msg isEqualToString:@"-1"]) {
+                                                                  [self logout];
+                                                              }
                                                           }
                                                       } errorResult:^(NSError *enginerError) {
                                                           

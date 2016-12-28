@@ -66,6 +66,10 @@
             _locationArray = arrays[1];
             _provinceArray = arrays[0];
             [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {

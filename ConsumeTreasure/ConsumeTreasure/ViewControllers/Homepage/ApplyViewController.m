@@ -249,6 +249,9 @@
                     _upId = (NSString*)object;
                     [cell.onePhoto setImage:img forState:0];
                 }else{
+                    if ([msg isEqualToString:@"-1"]) {
+                        [weakSelf logout];
+                    }
                     [weakSelf showHint:@"错误"];
                 }
             } errorResult:^(NSError *enginerError) {
@@ -265,6 +268,9 @@
                     _downId = (NSString*)object;
                    [cell.twoPhoto setImage:img forState:0];
                 }else{
+                    if ([msg isEqualToString:@"-1"]) {
+                        [weakSelf logout];
+                    }
                     [weakSelf showHint:@"错误"];
                 }
             } errorResult:^(NSError *enginerError) {
@@ -281,6 +287,9 @@
                     _licenseId = (NSString*)object;
                    [cell.licenseBtn setImage:img forState:0];
                 }else{
+                    if ([msg isEqualToString:@"-1"]) {
+                        [weakSelf logout];
+                    }
                     [weakSelf showHint:@"错误"];
                 }
             } errorResult:^(NSError *enginerError) {
@@ -298,6 +307,9 @@
                     _otherId = (NSString*)object;
                     [cell.otherBtn setImage:img forState:0];
                 }else{
+                    if ([msg isEqualToString:@"-1"]) {
+                        [weakSelf logout];
+                    }
                     [weakSelf showHint:@"错误"];
                 }
             } errorResult:^(NSError *enginerError) {
@@ -347,6 +359,10 @@
         [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
             if (sucess) {
                 [self showHint:@"上传成功"];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
         } errorResult:^(NSError *enginerError) {
             

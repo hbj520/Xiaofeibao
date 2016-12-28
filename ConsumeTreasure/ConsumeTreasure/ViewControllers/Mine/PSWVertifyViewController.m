@@ -39,6 +39,10 @@
     [[MyAPI sharedAPI] postVerifyCodeWithParameters:para result:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             showAlert(@"验证码发送成功，请稍等");
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -70,6 +74,10 @@
                 [self.navigationController popToViewController:prePay animated:YES];
             }];
             [alertCon addAction:goAction];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
         }
         
     } errorResult:^(NSError *enginerError) {

@@ -49,7 +49,9 @@
             self.defaultBankNum.text = [NSString stringWithFormat:@"尾号%@",model.bankno];
             self.defaultCardType.text = @"储蓄卡";
         }else{
-            
+            if ([msg isEqualToString:@"-1"]) {
+                [Tools logoutWithNowVC:self];
+            }
             [self gotoAddBankCard];
             
             

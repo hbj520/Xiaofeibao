@@ -46,9 +46,16 @@
                            
                            };
     [[MyAPI sharedAPI] getMyBankCardDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        [_cardList removeAllObjects];
-        _cardList = arrays[0];
-        [self.tableView reloadData];
+        if (success) {
+            [_cardList removeAllObjects];
+            _cardList = arrays[0];
+            [self.tableView reloadData];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+        }
+
     } errorResult:^(NSError *enginerError) {
         
     }];
@@ -106,6 +113,9 @@
             [self.tableView reloadData];
             
         }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
             [self showHint:msg];
         }
         
