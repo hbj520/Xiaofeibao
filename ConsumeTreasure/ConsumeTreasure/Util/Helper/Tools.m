@@ -9,7 +9,7 @@
 #import "Tools.h"
 #import "SecurityUtil.h"
 #import "AppDelegate.h"
-
+#import "GuideViewController.h"
 
 @implementation Tools
 
@@ -262,7 +262,7 @@
     //    if ([currentVersion isEqualToString:lastVersion]) {
     //        [ApplicationDelegate changeToMain];
     //    } else { // 新版本
-   // [UIApplication sharedApplication].keyWindow.rootViewController = [[GuideViewController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController = [[GuideViewController alloc] init];
     //        // 存储新版本
     //        [defaults setObject:currentVersion forKey:key];
     //        [defaults synchronize];

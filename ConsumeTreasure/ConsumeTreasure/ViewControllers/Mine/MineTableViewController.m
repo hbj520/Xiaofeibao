@@ -20,7 +20,7 @@
 @interface MineTableViewController ()
 {
     NSString *isShop;
-    
+    TongbaoMoneyView *tongbaoMoneyView;
 }
 @property (weak, nonatomic) IBOutlet UILabel *usernamelabel;
 @property (weak, nonatomic) IBOutlet UILabel *shnagjiaLab;
@@ -36,7 +36,6 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-
     self.tabBarController.tabBar.hidden = NO;
     [self createUI];
 }
@@ -44,8 +43,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
+    tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
+    [self.moneyView addSubview: tongbaoMoneyView];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -90,50 +90,54 @@
        return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        [self performSegueWithIdentifier:@"userInfoSegueId" sender:nil];
-    }
-    if (indexPath.section == 1 ) {
-        if (indexPath.row == 1) {
-            
-            [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
-
-        }else if (indexPath.row == 2){
-            showAlert(@"正在建设中. . .");
-           // [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
-
-        }else if (indexPath.row == 3){
-            self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-            LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
-            self.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:lookVC animated:YES];
-        }else{
-            self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-            MyAccountViewController *AccountVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"accountSB"];
-            [self.navigationController pushViewController:AccountVC animated:YES];
-
+    if ([KToken isEqualToString:@""]) {
+        [Tools logoutWithNowVC:self];
+    }else{
+        if (indexPath.section == 0) {
+            [self performSegueWithIdentifier:@"userInfoSegueId" sender:nil];
         }
-    }else if (indexPath.section == 2 ){
-        if (indexPath.row == 0) {
-            
-            if ([isShop isEqualToString:@"1"]) {
+        if (indexPath.section == 1 ) {
+            if (indexPath.row == 1) {
+                
+                [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
+                
+            }else if (indexPath.row == 2){
+                showAlert(@"正在建设中. . .");
+                // [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
+                
+            }else if (indexPath.row == 3){
                 self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-                ImUnionStoreViewController *UnionVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"imUnionSB"];
-                [self.navigationController pushViewController:UnionVC animated:YES];
+                LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:lookVC animated:YES];
             }else{
                 self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
-                TobeUnionViewController *tobeVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"tobeUnionSB"];
-                [self.navigationController pushViewController:tobeVC animated:YES];
+                MyAccountViewController *AccountVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"accountSB"];
+                [self.navigationController pushViewController:AccountVC animated:YES];
+                
+            }
+        }else if (indexPath.section == 2 ){
+            if (indexPath.row == 0) {
+                
+                if ([isShop isEqualToString:@"1"]) {
+                    self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+                    ImUnionStoreViewController *UnionVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"imUnionSB"];
+                    [self.navigationController pushViewController:UnionVC animated:YES];
+                }else{
+                    self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+                    TobeUnionViewController *tobeVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"tobeUnionSB"];
+                    [self.navigationController pushViewController:tobeVC animated:YES];
+                }
+                
+                
+            }else if (indexPath.row == 1){
+                [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
+                
             }
             
             
-        }else if (indexPath.row == 1){
-             [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
             
         }
-      
-
-
     }
    // [self testWeixinPay];
 }
@@ -187,26 +191,34 @@
 #pragma mark - PrivateMethod
 - (void)createUI{
     isShop = [[XFBConfig Instance] getIsShop];
-    
+    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    navBarHairlineImageView.hidden = YES;
+    NSString *navTitle = @"我";
     if ([isShop isEqualToString:@"1"]) {
         self.shnagjiaLab.text = @"我是商家";
     }else{
         self.shnagjiaLab.text = @"成为联盟商家";
     }
     
-    UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    navBarHairlineImageView.hidden = YES;
-    NSString *navTitle = @"我";
-    self.usernamelabel.text = [[XFBConfig Instance] getUserName];
-    // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
-    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
-    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
-    self.navigationItem.title = navTitle;
-    TongbaoMoneyView *tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
+    if ([KToken isEqualToString:@""]) {//未登录
+        self.usernamelabel.text = @"未登录,点击登录";
+        tongbaoMoneyView.moneyLabel.text = @"****";
+    }else{
+        self.usernamelabel.text = [[XFBConfig Instance] getUserName];
+        // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
+        NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+        self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+        self.navigationItem.title = navTitle;
+        if (!tongbaoMoneyView.enableSeeButton.selected) {
+            tongbaoMoneyView.money = [NSString stringWithFormat:@"%.2f",[[XFBConfig Instance] getMoney].floatValue];
+        }
+        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
+        self.iconImageView.layer.masksToBounds = YES;
+    }
     
-    [self.moneyView addSubview: tongbaoMoneyView];
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
-    self.iconImageView.layer.masksToBounds = YES;
+
+
+   
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
