@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 typedef NS_ENUM(NSInteger , ISIphoneType) {
-    ISIphone4,
+    ISIphone4=0,
     ISIphone5,
     ISIphone6,
     ISIphone6P,
