@@ -17,6 +17,8 @@
     DaLiMasterModel *daliModel;
     
     NSString *dayIncome;//今日收益余额
+    
+    NSString *canGetMoney;
 }
 
 @end
@@ -90,7 +92,8 @@
         if (success) {
             daliModel = (DaLiMasterModel*)object;
             self.daliArea.text = daliModel.proxyname;
-            self.leftMoney.text = [NSString stringWithFormat:@"余额 : %@",daliModel.balance];
+            canGetMoney = daliModel.balance;
+            self.leftMoney.text =  [NSString stringWithFormat:@"余额 : %@",daliModel.balance];
             self.allInMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.total_money floatValue]];
             self.currentMonthMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.month_money floatValue]];
             dayIncome = daliModel.day_money;
@@ -108,7 +111,7 @@
 - (IBAction)getMoney:(id)sender {
     NSLog(@"提现");
     
-    [self pushToNextWithIdentiField:@"DLTXsegue" sender:@[dayIncome,self.allInMoney.text]];
+    [self pushToNextWithIdentiField:@"DLTXsegue" sender:@[dayIncome,self.allInMoney.text,canGetMoney]];
 
 }
 

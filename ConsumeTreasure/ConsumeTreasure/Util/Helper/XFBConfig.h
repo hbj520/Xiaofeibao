@@ -56,7 +56,10 @@
 - (void)saveIsShop:(NSString*)isShop;
 - (void)saveIsAgency:(NSString*)isAgency;
 //- (void)saveIcon:(NSString *)icon;
+- (void)saveloginName:(NSString*)name;
 
+
+- (NSString *)getloginName;
 - (NSString *)getIsShop;
 - (NSString *)getIsAgency;
 

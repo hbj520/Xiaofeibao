@@ -7,8 +7,15 @@
 //
 
 #import "CashViewController.h"
+#import "WithDrawViewController.h"
 
 @interface CashViewController ()
+{
+    NSString *strday;//今日收益
+    NSString *strall;//历史收益
+    
+    NSString *canWithDraw;//可提现
+}
 
 @end
 
@@ -16,22 +23,25 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationController setNavigationBarHidden:YES];
+    
   
+    self.dayIncome.text = strday;
+    self.allIncome.text = strall;
 }
 
 - (void)setIncomeMoney:(NSArray *)incomeMoney{
     
     if (incomeMoney.count > 0) {
-        self.dayIncome.text = incomeMoney[0];
-        NSString *str = incomeMoney[0];
-        self.allIncome.text = incomeMoney[1];
+        
+        strday = incomeMoney[0];
+        strall = incomeMoney[1];
+        canWithDraw = incomeMoney[2];
     }
    
 }
@@ -49,21 +59,31 @@
     //提现记录
 }
 - (IBAction)getMoneyNow:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:nil];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:canWithDraw];
     
 }
 - (IBAction)getHistoryMoney:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:nil];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:canWithDraw];
 }
 
 /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"goWithdrawSegue"]) {
+        NSString *canWithDrawMoney = (NSString*)sender;
+        WithDrawViewController *withVC = segue.destinationViewController;
+        withVC.canGetMoney = canWithDrawMoney;
+        
+    }
+    
 }
-*/
+
 
 @end
