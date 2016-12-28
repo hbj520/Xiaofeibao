@@ -7,7 +7,17 @@
 //
 
 #import "BaseViewController.h"
+#import "XWMoneyTextField.h"
 
 @interface WithDrawViewController : BaseViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *defaultBank;
+@property (weak, nonatomic) IBOutlet UILabel *defaultBankNum;
+@property (weak, nonatomic) IBOutlet UILabel *defaultCardType;
+@property (weak, nonatomic) IBOutlet UILabel *chargeNum;
+
+@property (weak, nonatomic) IBOutlet UILabel *leftMoney;
+
+
 
 @end

@@ -1635,6 +1635,9 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-sZ-Qkb">
                                         <rect key="frame" x="155" y="0.0" width="220" height="85"/>
+                                        <connections>
+                                            <action selector="chooseBankClick:" destination="hnI-Wk-1sj" eventType="touchUpInside" id="T74-3R-SHM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1723,6 +1726,9 @@
                                         <state key="normal" title="全部提现">
                                             <color key="titleColor" red="0.99215686270000003" green="0.3411764706" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getAllLeftMoney:" destination="hnI-Wk-1sj" eventType="touchUpInside" id="2u8-7Z-DF7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1768,6 +1774,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getMoneyNow:" destination="hnI-Wk-1sj" eventType="touchUpInside" id="Hx1-2n-9fN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89411764709999997" green="0.91372549020000005" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1794,11 +1803,18 @@
                         <barButtonItem key="leftBarButtonItem" image="whiteback" id="fxd-AF-BA0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="BGt-8R-QaP" id="Qa5-cQ-E3r"/>
+                                <action selector="back:" destination="hnI-Wk-1sj" id="Yfx-q6-1vu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="chargeNum" destination="dM4-GX-yid" id="Kry-e7-mk3"/>
+                        <outlet property="defaultBank" destination="NBA-0G-4j0" id="SGH-He-2oK"/>
+                        <outlet property="defaultBankNum" destination="5w6-Wd-5cd" id="VVu-eK-52S"/>
+                        <outlet property="defaultCardType" destination="UYI-5Q-cE0" id="CmY-d6-LVl"/>
+                        <outlet property="leftMoney" destination="RkI-bO-YfR" id="ZJW-YM-p2Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yw-BT-Wr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
