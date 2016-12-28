@@ -20,4 +20,8 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UIView *withdrawView;
+
+
+
 @end

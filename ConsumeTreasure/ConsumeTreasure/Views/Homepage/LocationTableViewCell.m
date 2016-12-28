@@ -15,6 +15,10 @@
     // Initialization code
 }
 
+- (void)setModel:(locationModel *)model{
+    self.cityName.text = model.city;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

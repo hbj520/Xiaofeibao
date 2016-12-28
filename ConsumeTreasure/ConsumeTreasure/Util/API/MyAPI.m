@@ -44,7 +44,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -265,6 +265,46 @@
     
     
 }
+
+#pragma mark -- 获取地区
+- (void)getdevelopCityArrWithMeters:(NSDictionary*)para
+                             result:(ArrayBlock)result
+                        errorResult:(ErrorBlock)errorResult{
+    NSDictionary * dicPara = @{
+                               @"tokenid":@"",
+                               @"platform":@"1",
+                               @"param":para
+                               };
+    [self.manager POST:@"welcome/provinceCity" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            //  NSArray *arr = responseObject[@"data"][@"adList"];
+            NSMutableArray *provinceArray = [NSMutableArray array];
+            NSMutableArray *locationArr = [NSMutableArray array];
+            
+            NSError *err = nil;
+            NSArray *data = responseObject[@"data"][@"pcList"];
+            provinceArray = [provinceModel arrayOfModelsFromDictionaries:data error:&err];
+            
+            for (provinceModel *mode  in provinceArray) {
+                NSMutableArray *modelArray = [NSMutableArray array];
+                for (NSDictionary *modelDic in mode.clist) {
+                    NSError* err = nil;
+                    
+                    locationModel* model = [[locationModel alloc] initWithDictionary:modelDic error:&err];
+                    [modelArray addObject:model];
+                }
+                [locationArr addObject:modelArray];
+            }
+            result(YES,info,@[provinceArray,locationArr]);
+        }else{
+            result(NO,info,nil);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
 
 #pragma mark - 首页热门商户
 - (void)getHomeChartDataWithParameters:(NSDictionary*)para

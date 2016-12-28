@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NewTextField.h"
+
+typedef void(^textBlock) (NSMutableString *str);
+
 @class JHCoverView;
 
 @protocol JHCoverViewDelegate <NSObject>
@@ -37,5 +40,8 @@
 @property (nonatomic, strong) NewTextField *payTextField;
 
 @property (nonatomic,weak) id<JHCoverViewDelegate> delegate;
+
+@property (nonatomic,copy) textBlock tBlock;
+
 
 @end

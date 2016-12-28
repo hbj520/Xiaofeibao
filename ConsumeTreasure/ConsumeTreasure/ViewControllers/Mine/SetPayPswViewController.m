@@ -19,6 +19,8 @@
     NSInteger type;//判断第几次输入
     NSInteger same;
     
+    NSString *safePsw;//保存加密后的密码
+    
     NSString *psw;//保存第一次输入密码
 }
 
@@ -89,13 +91,15 @@
 #pragma mark  密码输入结束后调用此方法
 -(void)TXTradePasswordView:(TXTradePasswordView *)view WithPasswordString:(NSString *)Password
 {
+    safePsw = [Tools loginPasswordSecurityLock:Password];
+    
      [TXView.TF resignFirstResponder];
     if (type == 1) {
        
-        psw = Password;
+        psw = safePsw;
         NSLog(@"密码 = %@",Password);
     }else{
-        if ([Password isEqualToString:psw]) {
+        if ([safePsw isEqualToString:psw]) {
             same = 2;
         }
     }

@@ -1538,7 +1538,6 @@
         <!--我的银行卡-->
         <scene sceneID="5DW-E0-o9j">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8k-Eq-Z49" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MHO-1M-Xv9" customClass="MyBankCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L1N-zz-Hko"/>
@@ -1581,6 +1580,7 @@
                         <segue destination="BGt-8R-QaP" kind="push" identifier="addBankSegue" id="yDC-V5-ZwH"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8k-Eq-Z49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-991.20000000000005" y="3614.8425787106448"/>
         </scene>
@@ -1678,13 +1678,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-TY-h2A">
-                                        <rect key="frame" x="56" y="45" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现手续费为0元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-GX-yid">
                                         <rect key="frame" x="248" y="51" width="109" height="23"/>
                                         <constraints>
@@ -1814,6 +1807,8 @@
                         <outlet property="defaultBankNum" destination="5w6-Wd-5cd" id="VVu-eK-52S"/>
                         <outlet property="defaultCardType" destination="UYI-5Q-cE0" id="CmY-d6-LVl"/>
                         <outlet property="leftMoney" destination="RkI-bO-YfR" id="ZJW-YM-p2Q"/>
+                        <outlet property="withdrawView" destination="M0l-FE-e2d" id="5ES-mW-dbV"/>
+                        <segue destination="MHO-1M-Xv9" kind="push" identifier="goBankSegue" id="cJN-Ke-JUr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yw-BT-Wr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3954,7 +3949,7 @@
         <image name="万商联盟" width="548" height="745"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AMY-WY-xLC"/>
         <segue reference="fkz-Fo-52f"/>
+        <segue reference="cJN-Ke-JUr"/>
     </inferredMetricsTieBreakers>
 </document>

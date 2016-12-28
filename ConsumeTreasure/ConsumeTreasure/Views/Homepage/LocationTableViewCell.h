@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LookStoreModel.h"
 
 @interface LocationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *cityName;
 @property (weak, nonatomic) IBOutlet UIImageView *rightImage;
+
+@property (nonatomic,strong) locationModel *model;
 
 @end

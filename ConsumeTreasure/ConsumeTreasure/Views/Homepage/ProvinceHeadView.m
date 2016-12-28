@@ -28,7 +28,9 @@
     self.openBlock();
 }
 
-
+- (void)setProModel:(provinceModel *)proModel{
+    self.provinceName.text = proModel.province;
+}
 
 
 /*

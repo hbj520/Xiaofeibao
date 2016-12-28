@@ -189,7 +189,7 @@
     return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@XFB@796521",[SecurityUtil encryptMD5String:password]]]];
 }
 
-//支付密码
+//暂不用
 + (NSString *)payPasswdSecurityLock:(NSString*)password{
     return     [SecurityUtil encryptMD5String:[SecurityUtil encodeBase64String:[NSString stringWithFormat:@"%@XFB@96478YY",[SecurityUtil encryptMD5String:password]]]];
 

@@ -16,3 +16,15 @@
 @implementation mapListModel
 
 @end
+
+
+@implementation provinceModel
+
+@end
+
+
+@implementation pcListModel
+
+@end
+
+
