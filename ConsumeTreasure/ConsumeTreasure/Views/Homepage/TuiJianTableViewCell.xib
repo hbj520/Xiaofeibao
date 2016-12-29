@@ -26,7 +26,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鼠王小炒肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xoz-XK-342">
-                        <rect key="frame" x="134" y="25" width="87" height="18"/>
+                        <rect key="frame" x="134" y="25" width="134" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="Twe-Mg-UcI"/>
                         </constraints>
@@ -82,7 +82,7 @@
                             <constraint firstAttribute="width" constant="75" id="4pu-BN-bbh"/>
                             <constraint firstAttribute="height" constant="23" id="jDe-Eq-H8e"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="13"/>
                         <color key="textColor" red="0.98823529409999999" green="0.60784313729999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -104,12 +104,14 @@
                     <constraint firstItem="Nmc-mb-aBG" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" constant="3" id="pCt-ka-hvw"/>
                     <constraint firstItem="Xgb-De-mcX" firstAttribute="top" secondItem="Xoz-XK-342" secondAttribute="bottom" constant="13" id="rcZ-op-kQd"/>
                     <constraint firstItem="owZ-PF-VhD" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="t9f-bz-apG"/>
+                    <constraint firstItem="pjj-mm-6E9" firstAttribute="leading" secondItem="Xoz-XK-342" secondAttribute="trailing" constant="20" id="tBH-5Q-ZNL"/>
                     <constraint firstItem="oEg-ph-Zcd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="uNa-nb-X4N"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="addressLab" destination="Xgb-De-mcX" id="8ge-ZM-LUt"/>
                 <outlet property="diatanceLab" destination="WTU-Lx-veR" id="vPh-TX-DsM"/>
+                <outlet property="disCountLab" destination="pjj-mm-6E9" id="HqF-gh-iZ2"/>
                 <outlet property="pointLab" destination="Nmc-mb-aBG" id="uRA-jC-BPj"/>
                 <outlet property="starV" destination="owZ-PF-VhD" id="5V4-Ji-Qg8"/>
                 <outlet property="storeImg" destination="oEg-ph-Zcd" id="r1C-9Z-qzv"/>

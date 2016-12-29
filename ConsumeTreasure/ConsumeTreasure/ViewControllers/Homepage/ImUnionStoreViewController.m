@@ -7,10 +7,16 @@
 //
 #import "StoreMasterModel.h"
 #import "ImUnionStoreViewController.h"
+#import "CashViewController.h"
+
 
 @interface ImUnionStoreViewController ()
 {
     StoreMasterModel *StoreMmodel;
+    
+    NSString *dayStr;
+    NSString *allStr;
+    
 }
 @end
 
@@ -95,6 +101,10 @@
             self.dealNumLab.text = StoreMmodel.total;
             self.allIncomeLab.text = StoreMmodel.turnover;
             self.shopName.text = StoreMmodel.shopName;
+            
+            dayStr = StoreMmodel.today_withdrawal;
+            allStr = StoreMmodel.history_withdrawal;
+            
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
@@ -117,7 +127,7 @@
 
 - (IBAction)getMoney:(id)sender {
     //申请提现
-[self pushToNextWithIdentiField:@"SHTXsegue" sender:nil];
+    [self pushToNextWithIdentiField:@"SHTXsegue" sender:@[dayStr,allStr]];
 }
 
 
@@ -127,10 +137,18 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"SHTXsegue"]) {
+        NSArray *arr = (NSArray*)sender;
+        CashViewController *cashVC = segue.destinationViewController;
+        cashVC.incomeMoney = arr;
+    }
+    
 }
-*/
+
 
 @end

@@ -9,6 +9,8 @@
 #import "JSONModel.h"
 
 @interface StoreMasterModel : JSONModel
+@property (nonatomic,strong) NSString *history_withdrawal;//日成交额
+@property (nonatomic,strong) NSString *today_withdrawal;//余额
 @property (nonatomic,strong) NSString *day_turnover;//日成交额
 @property (nonatomic,strong) NSString *money;//余额
 @property (nonatomic,strong) NSString *turnover;//累计成交额
@@ -20,7 +22,8 @@
 
 
 @interface DaLiMasterModel : JSONModel
-
+@property (nonatomic,strong) NSString *today_withdrawal;
+@property (nonatomic,strong) NSString *history_withdrawal;//日收入
 @property (nonatomic,strong) NSString *proxyname;
 @property (nonatomic,strong) NSString *day_money;//日收入
 @property (nonatomic,strong) NSString *type;//代理类型

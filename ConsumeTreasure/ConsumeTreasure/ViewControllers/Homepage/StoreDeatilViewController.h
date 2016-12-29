@@ -15,4 +15,7 @@
 
 @property (nonatomic,strong) TuiJianModel *StoreModel;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *collectNewBtn;
+
 @end

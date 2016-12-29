@@ -11,10 +11,10 @@
 
 @interface CashViewController ()
 {
+    //均可提现
     NSString *strday;//今日收益
     NSString *strall;//历史收益
     
-    NSString *canWithDraw;//可提现
 }
 
 @end
@@ -41,7 +41,7 @@
         
         strday = incomeMoney[0];
         strall = incomeMoney[1];
-        canWithDraw = incomeMoney[2];
+    
     }
    
 }
@@ -59,11 +59,11 @@
     //提现记录
 }
 - (IBAction)getMoneyNow:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:canWithDraw];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:strday];
     
 }
 - (IBAction)getHistoryMoney:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:canWithDraw];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:strall];
 }
 
 /*

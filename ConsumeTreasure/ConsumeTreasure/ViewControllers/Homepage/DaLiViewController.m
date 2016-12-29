@@ -17,6 +17,7 @@
     DaLiMasterModel *daliModel;
     
     NSString *dayIncome;//今日收益余额
+    NSString *allIncome;//历史
     
     NSString *canGetMoney;
 }
@@ -96,7 +97,8 @@
             self.leftMoney.text =  [NSString stringWithFormat:@"余额 : %@",daliModel.balance];
             self.allInMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.total_money floatValue]];
             self.currentMonthMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.month_money floatValue]];
-            dayIncome = daliModel.day_money;
+            dayIncome = daliModel.today_withdrawal;
+            allIncome = daliModel.history_withdrawal;
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
@@ -111,7 +113,7 @@
 - (IBAction)getMoney:(id)sender {
     NSLog(@"提现");
     
-    [self pushToNextWithIdentiField:@"DLTXsegue" sender:@[dayIncome,self.allInMoney.text,canGetMoney]];
+    [self pushToNextWithIdentiField:@"DLTXsegue" sender:@[dayIncome,allIncome]];
 
 }
 

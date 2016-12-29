@@ -13,6 +13,8 @@
 
 #import "TuiJianModel.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface TuiJianTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *storeImg;
 @property (weak, nonatomic) IBOutlet UILabel *storeNameLa;
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointLab;
 @property (weak, nonatomic) IBOutlet UILabel *diatanceLab;
 @property (weak, nonatomic) IBOutlet starView *starV;
+@property (weak, nonatomic) IBOutlet UILabel *disCountLab;
 
 
 @property (nonatomic,strong) TuiJianModel *tuiModel;

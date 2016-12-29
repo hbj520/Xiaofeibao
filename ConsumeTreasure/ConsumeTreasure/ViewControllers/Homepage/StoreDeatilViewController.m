@@ -69,6 +69,10 @@
     _spacialGoodArr = [NSMutableArray array];
     [self addTableView];
     [self addNavBarView];//导航栏
+    
+    [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"unlikeColl"] forState:UIControlStateNormal];
+    [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"likeColle"] forState:UIControlStateSelected];
+    
    // [self addRefresh];
 }
 
@@ -240,6 +244,13 @@
     }else{
         //未登录
     }
+}
+
+- (IBAction)collectNew:(UIButton*)button {
+    button.selected = !button.selected;
+    
+    [self collectOrNotWith:button.selected];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

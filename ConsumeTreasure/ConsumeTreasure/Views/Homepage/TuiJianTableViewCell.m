@@ -15,6 +15,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.disCountLab.layer.borderColor = RGBACOLOR(251, 156, 64, 1).CGColor;
+    self.disCountLab.layer.borderWidth = 1;
+    self.disCountLab.layer.cornerRadius = 8;
+    self.disCountLab.layer.masksToBounds = YES;
 }
 
 
@@ -25,6 +30,9 @@
     self.pointLab.text = tuiModel.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
     self.addressLab.text = tuiModel.addr;
+    
+   
+    
 }
 - (void)configWithData:(UnionContenModel *)data{
     [self.storeImg sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:@"foodImage"]];

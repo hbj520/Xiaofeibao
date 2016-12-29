@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -2939,9 +2938,24 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYl-q0-bkV">
+                                        <rect key="frame" x="15" y="7" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="M5X-tb-iZa"/>
+                                            <constraint firstAttribute="width" constant="30" id="j4p-eA-jQD"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="collectNew:" destination="gXB-1e-VsV" eventType="touchUpInside" id="bfp-xu-D2f"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.92156862745098034" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="yYl-q0-bkV" firstAttribute="centerY" secondItem="W6v-cR-54Q" secondAttribute="centerY" id="2or-iQ-4GD"/>
+                                    <constraint firstItem="yYl-q0-bkV" firstAttribute="leading" secondItem="W6v-cR-54Q" secondAttribute="leading" constant="15" id="9QK-Mc-xxe"/>
                                     <constraint firstItem="vJU-zN-viZ" firstAttribute="leading" secondItem="MgM-me-TTf" secondAttribute="trailing" constant="30" id="Doo-n9-2zS"/>
                                     <constraint firstItem="wAN-H5-Wsn" firstAttribute="centerY" secondItem="W6v-cR-54Q" secondAttribute="centerY" id="FaY-Xr-8o1"/>
                                     <constraint firstItem="MgM-me-TTf" firstAttribute="centerY" secondItem="W6v-cR-54Q" secondAttribute="centerY" id="Jzm-I6-4jO"/>
@@ -2969,6 +2983,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bottomBarView" destination="W6v-cR-54Q" id="oRn-ml-mEq"/>
+                        <outlet property="collectNewBtn" destination="yYl-q0-bkV" id="4Gz-8O-LzD"/>
                         <outlet property="tableView" destination="grJ-vI-M8x" id="fi6-J7-fUd"/>
                         <segue destination="0Ho-Ig-crO" kind="push" identifier="onlinePaySegueId" id="tWF-ah-xlW"/>
                     </connections>

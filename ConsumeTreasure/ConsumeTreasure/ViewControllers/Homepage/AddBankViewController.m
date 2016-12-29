@@ -119,8 +119,13 @@
             }
             
         }else{
+            
+            
+            
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
+            }else{
+                showAlert(msg);
             }
         }
         

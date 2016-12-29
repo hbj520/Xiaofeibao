@@ -12,7 +12,7 @@
 
 @property (nonatomic,strong) NSString *isshopchecked;
 @property (nonatomic,strong) NSString *isproxychecked;
-@property (nonatomic,strong) NSString *loginName;
+@property (nonatomic,strong) NSString *name;
 
 @end
 
