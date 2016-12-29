@@ -8,15 +8,18 @@
 
 #import "AddBankViewController.h"
 #import "MyBankCardViewController.h"
-
+#import "SetPayPswViewController.h"
 #import "JHCoverView.h"
 
 #import "CheckID.h"
 
+#import "PersonInfoModel.h"
+
 @interface AddBankViewController ()<JHCoverViewDelegate>
 {
     NSString *payPsw;
-    
+    tongBaoModel *tongModel;
+
 }
 
 @property (nonatomic, strong) JHCoverView *coverView;
@@ -37,7 +40,53 @@
     self.cardMasterName.text = [[XFBConfig Instance] getloginName];
     
     [self upPayKeyBoard];
+    [self getTongLeft];
+}
+
+- (void)getTongLeft{
+    NSDictionary *para = @{
+                           
+                           };
+    [[MyAPI sharedAPI] getTongBaoBiAndPayPswWithParameters:para resut:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            tongModel = (tongBaoModel*)object;
+          
+            if ([tongModel.hasPayPwd isEqualToString:@"0"]) {
+                UIAlertView * alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您尚未设置支付密码，是否立即前往设置。或者您可以在”我“->“设置”中去设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
+                [alert show];
+            }
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+        }
+        
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
     
+    
+}
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    switch (buttonIndex) {
+        case 0:
+            
+            break;
+            
+        case 1:
+        {
+            //去设置支付密码
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+            SetPayPswViewController *SetPayPswVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"setPayPswSB"];
+            [self.navigationController pushViewController:SetPayPswVC animated:YES];
+            
+        }
+            break;
+    }
 }
 
 - (void)upPayKeyBoard{

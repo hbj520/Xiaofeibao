@@ -59,11 +59,11 @@
     //提现记录
 }
 - (IBAction)getMoneyNow:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:strday];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strday,@"2"]];
     
 }
 - (IBAction)getHistoryMoney:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:strall];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strall,@"1"]];
 }
 
 /*
@@ -77,9 +77,9 @@
     // Pass the selected object to the new view controller.
     
     if ([segue.identifier isEqualToString:@"goWithdrawSegue"]) {
-        NSString *canWithDrawMoney = (NSString*)sender;
+        NSArray *moneyType = (NSArray*)sender;
         WithDrawViewController *withVC = segue.destinationViewController;
-        withVC.canGetMoney = canWithDrawMoney;
+        withVC.moneyType = moneyType;
         
     }
     
