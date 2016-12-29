@@ -48,7 +48,7 @@
     [self getTongLeft];//请求余额
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
-     [self upPayKeyBoard];
+    // [self upPayKeyBoard];
 }
 
 - (void)getTongLeft{
