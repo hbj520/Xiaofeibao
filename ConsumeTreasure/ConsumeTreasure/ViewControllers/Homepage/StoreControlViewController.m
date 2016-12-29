@@ -129,7 +129,7 @@
             storeConCell.hideBtn.enabled = YES;
            // __weak typeof(storeConCell) weakStoreCell = storeConCell;
             storeConCell.textBlock =^(){
-             [self performSegueWithIdentifier:@"goWriteSegue" sender:@""];
+                [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"带入",@"1"]];
                 
             };
             storeConCell.placetextfield.text = strText;
@@ -137,8 +137,9 @@
         }else if (indexPath.row == 6){
             storeConCell.hideBtn.enabled = YES;
             // __weak typeof(storeConCell) weakStoreCell = storeConCell;
+            
             storeConCell.textBlock =^(){
-                [self performSegueWithIdentifier:@"goWriteSegue" sender:@""];
+                [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"带入",@"2"]];
                 
             };
             storeConCell.placetextfield.text = strText;
@@ -216,12 +217,21 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"goWriteSegue"]) {
-        NSString *str = (NSString *)sender;
+        NSArray *strArr = (NSArray *)sender;
         TextViewController *teVC = segue.destinationViewController;
-        teVC.textView.text = str;
+        teVC.arr = strArr;
         teVC.textBlock =^(NSString *str){
-            strText = str;
+            
+            if ([strArr[0] isEqualToString:@"1"]) {
+                strText = str;
+            }
+            
+            
             [self.tableView reloadData];
+            
+            
+            
+            
         };
     }
     

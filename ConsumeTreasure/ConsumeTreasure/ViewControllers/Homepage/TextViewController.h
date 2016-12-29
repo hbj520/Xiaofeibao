@@ -12,6 +12,9 @@ typedef void(^BackTextBlock) (NSString *str);
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
+
+@property (nonatomic,strong) NSArray *arr;
+
 @property (nonatomic,copy) BackTextBlock textBlock;
 
 @end
