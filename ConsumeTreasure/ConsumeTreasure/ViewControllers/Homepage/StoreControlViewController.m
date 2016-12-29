@@ -34,6 +34,11 @@
     NSString *strAddr;//保存地址文本
     NSString *strDescri;//保存介绍文本
     
+    NSString *yingyeImg;
+    NSString *jingyingImg;
+    NSString *IDFrontImg;
+    NSString *IDBackImg;
+    
     
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,12 +60,13 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    secOne = @[@"店铺名称",@"门店地址",@"定位地址",@"门店电话",@"开始经营时间",@"结束经营时间",@"商家介绍"];
-    secTwo = @[@"反币比例",@"真实姓名",@"身份证号码"];
+
+    secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号"];
+    secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例"];
     secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
     
-    placeOne = @[@"智惠返",@"具体位置",@"具体位置",@"请填写正确的号码",@"09:00 >",@"18:00 >",@"商店详情"];
-    placeTwo = @[@"10%",@"XXX",@"xxxxxxxxxxxxxx"];
+    placeOne = @[@"智惠返",@"请填写正确的号码",@"XXX",@"xxxxxxxxxxxxxx"];
+    placeTwo = @[@"具体位置",@"具体位置",@"商店详情",@"09:00 >",@"18:00 >",@"10%"];
     placeThr = @[@"已上传 >",@"待上传 >",@"已上传 >",@"已上传 >"];
     
     [self creatUI];
@@ -93,9 +99,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 7;
+        return 4;
     }else if (section == 1){
-        return 3;
+        return 6;
     }else{
         return 4;
     }
@@ -103,14 +109,87 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    StoreControlTableViewCell *storeConCell = [tableView dequeueReusableCellWithIdentifier:@"storeConCellId"];
-    if (storeConCell == nil) {
-        storeConCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreControlTableViewCell" owner:self options:nil] lastObject];
+    if (indexPath.section == 0) {
+        StoreControlTableViewCell *storeConCell = [tableView dequeueReusableCellWithIdentifier:@"storeConCellId"];
+        if (storeConCell == nil) {
+            storeConCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreControlTableViewCell" owner:self options:nil] lastObject];
+        }
+        storeConCell.selectionStyle = 0;
+        
+        storeConCell.storeNameLab.text = secOne[indexPath.row];
+        storeConCell.placetextfield.placeholder = placeOne[indexPath.row];
+        return storeConCell;
+        
+    }else{
+        
+        StoreConLabTableViewCell *labCell = [tableView dequeueReusableCellWithIdentifier:@"labelCellId"];
+        if (labCell == nil) {
+            labCell = [[[NSBundle mainBundle]loadNibNamed:@"StoreConLabTableViewCell" owner:self options:nil]lastObject];
+        }
+        
+        labCell.selectionStyle = 0;
+        
+        if (indexPath.section == 1) {
+            labCell.leftLab.text = secTwo[indexPath.row];
+            labCell.detailLab.text = placeTwo[indexPath.row];
+            if (indexPath.row == 3 ||indexPath.row == 4) {
+              
+                
+                __weak typeof(labCell) weakCell  = labCell;
+                labCell.pikerBlock =^{
+                    DLPickerView *pickerView = [[DLPickerView alloc] initWithPlistName:@"Time" withSelectedItem:[weakCell.detailLab.text componentsSeparatedByString:@":"] withSelectedBlock:^(id  _Nonnull item) {
+                        
+                        weakCell.detailLab.text = [item componentsJoinedByString:@":"];
+                        
+                    }];
+                    
+                    [pickerView show];
+                    
+                };
+
+            }else if (indexPath.row == 0){
+                labCell.pikerBlock =^{
+             
+                    [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"门面地址",@"1"]];
+                    
+                };
+
+                labCell.detailLab.text = strAddr;
+                
+            }else if (indexPath.row == 2){
+                labCell.pikerBlock =^{
+                    
+                    [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"商家介绍",@"2"]];
+                    
+                };
+                labCell.detailLab.text = strDescri;
+            }
+            
+            else if (indexPath.row == 1){
+                labCell.pikerBlock =^{
+                    
+                   [self performSegueWithIdentifier:@"goGetLocationSegue" sender:nil];
+                    
+                };
+                
+               
+            }
+            
+        }else{
+            labCell.btn.enabled = NO;
+            labCell.leftLab.text = secThr[indexPath.row];
+            labCell.detailLab.text = placeThr[indexPath.row];
+            
+            
+            
+            
+        }
+        
+        return labCell;
     }
-    storeConCell.selectionStyle = 0;
     
-    storeConCell.hideBtn.enabled = NO;
-    
+  
+    /*
   
     
     if (indexPath.section == 0) {
@@ -177,6 +256,8 @@
     }
 
     return storeConCell;
+     
+     */
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -193,7 +274,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 2) {
-        [self performSegueWithIdentifier:@"goChooseImageSegue" sender:nil];
+        
+        if (indexPath.row == 0) {
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"营业执照",@"1"]];
+        }else if (indexPath.row == 1) {
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"经营许可",@"2"]];
+        }else if (indexPath.row == 2) {
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"身份正面",@"3"]];
+        }else{
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"身份反面",@"4"]];
+        }
+        
+        
     
     }
 }
@@ -231,14 +323,24 @@
             }else{
                 strDescri = str;
             }
-            
-            
             [self.tableView reloadData];
-            
-            
-            
-            
         };
+    }else if ([segue.identifier isEqualToString:@"goChooseImageSegue"]){
+        NSArray *imageArr = (NSArray *)sender;
+        ImageViewController *imgVC = segue.destinationViewController;
+        imgVC.imageArray = imageArr;
+        imgVC.imgBlock =^(NSString *imageStr){
+            if ([imageArr[1] isEqualToString:@"1"]) {
+                yingyeImg = imageStr;
+            }else if ([imageArr[1] isEqualToString:@"2"]){
+                jingyingImg = imageStr;
+            }else if ([imageArr[1] isEqualToString:@"3"]){
+                IDFrontImg = imageStr;
+            }else{
+                IDBackImg = imageStr;
+            }
+        };
+        
     }
     
     

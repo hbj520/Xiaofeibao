@@ -20,16 +20,7 @@
 
     // Configure the view for the selected state
 }
-- (IBAction)piker:(id)sender {
-    
-    if (self.pikerBlock) {
-        self.pikerBlock();
-    }
-    
-    if (self.textBlock) {
-        self.textBlock();
-    }
-    
-}
+
+
 
 @end
