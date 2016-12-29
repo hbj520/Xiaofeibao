@@ -9,10 +9,10 @@
 #import <JSONModel/JSONModel.h>
 
 @interface UnionContenModel : JSONModel
-@property (nonatomic,copy) NSString *addr;
-@property (nonatomic,copy) NSString *avgScore;
-@property (nonatomic,copy) NSString *distance;
-@property (nonatomic,copy) NSString *doorImg;
-@property (nonatomic,copy) NSString *memid;
-@property (nonatomic,copy) NSString *shopName;
+@property (nonatomic,copy) NSString<Optional> *addr;
+@property (nonatomic,copy) NSString<Optional> *avgScore;
+@property (nonatomic,copy) NSString<Optional> *distance;
+@property (nonatomic,copy) NSString<Optional> *doorImg;
+@property (nonatomic,copy) NSString<Optional> *memid;
+@property (nonatomic,copy) NSString<Optional> *shopName;
 @end

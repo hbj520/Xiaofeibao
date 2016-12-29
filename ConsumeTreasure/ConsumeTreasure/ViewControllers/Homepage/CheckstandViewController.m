@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self addNavBarTitle];
-    NSString *cardName = [NSString stringWithFormat:@"http:www.xftb168.com/web/paytomem?tomem=%@",self.memId];
+    NSString *cardName = [NSString stringWithFormat:@"http://www.xftb168.com/web/paytomem?tomem=%@",self.memId];
    __block UIImage *avatar = [UIImage imageNamed:@"logo"];
     UIImageView *loadImgView = [[UIImageView alloc] init];
     NSString *icon = [[XFBConfig Instance] getIcon];
@@ -64,7 +64,7 @@
 */
 
 - (IBAction)refreshBtn:(id)sender {
-    NSString *cardName = [NSString stringWithFormat:@"http:www.xftb168.com/web/paytomem?tomem=%@",self.memId];
+    NSString *cardName = [NSString stringWithFormat:@"http://www.xftb168.com/web/paytomem?tomem=%@",self.memId];
     __block UIImage *avatar = [UIImage imageNamed:@"logo"];
     UIImageView *loadImgView = [[UIImageView alloc] init];
    // NSString *icon = [[XFBConfig Instance] getIcon];
