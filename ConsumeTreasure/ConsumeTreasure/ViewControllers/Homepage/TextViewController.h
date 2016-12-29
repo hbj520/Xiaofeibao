@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
-
+typedef void(^BackTextBlock) (NSString *str);
 @interface TextViewController : BaseViewController
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property (nonatomic,copy) BackTextBlock textBlock;
 
 @end
