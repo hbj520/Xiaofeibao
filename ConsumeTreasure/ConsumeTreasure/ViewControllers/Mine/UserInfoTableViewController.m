@@ -142,7 +142,7 @@
             imageUrl = msg;
             [[MyAPI sharedAPI] postIconWithParameters:@{@"imgUrl":msg} result:^(BOOL sucess, NSString *msg) {
                 if (success) {
-                    NSString *Url = [NSString stringWithFormat:@"%@img%@",BaseUrl,imageUrl];
+                    NSString *Url = [NSString stringWithFormat:@"%@img%@",XFBUrl,imageUrl];
                     [[XFBConfig Instance] saveIcon:Url];
                     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
                 }else{
