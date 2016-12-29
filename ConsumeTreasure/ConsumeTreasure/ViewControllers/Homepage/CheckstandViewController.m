@@ -8,9 +8,10 @@
 
 #import "CheckstandViewController.h"
 #import "HMScannerController.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface CheckstandViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction)refreshBtn:(id)sender;
 
 @end
 
@@ -20,12 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *cardName = @"http://www.xftb168.com/web/paytomem?tomem=0049500a-23fb-4b04-876f-7171c6f60d32";
-    UIImage *avatar = [UIImage imageNamed:@"logo"];
-    
-    [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
-        self.imageView.image = image;
+    [self addNavBarTitle];
+    NSString *cardName = [NSString stringWithFormat:@"http:www.xftb168.com/web/paytomem?tomem=%@",self.memId];
+   __block UIImage *avatar = [UIImage imageNamed:@"logo"];
+    UIImageView *loadImgView = [[UIImageView alloc] init];
+    NSString *icon = [[XFBConfig Instance] getIcon];
+    [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+            avatar = image;
+        }
+        [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
+            self.imageView.image = image;
+        }];
     }];
+
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -34,6 +43,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)addNavBarTitle{
+  NSString *  navTitle = @"收银台";
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributeDict;
+    self.navigationItem.title = navTitle;
 }
 - (IBAction)backBtn:(id)sender {
     [self backTolastPage];
@@ -48,4 +63,18 @@
 }
 */
 
+- (IBAction)refreshBtn:(id)sender {
+    NSString *cardName = [NSString stringWithFormat:@"http:www.xftb168.com/web/paytomem?tomem=%@",self.memId];
+    __block UIImage *avatar = [UIImage imageNamed:@"logo"];
+    UIImageView *loadImgView = [[UIImageView alloc] init];
+    NSString *icon = [[XFBConfig Instance] getIcon];
+    [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+            avatar = image;
+        }
+        [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
+            self.imageView.image = image;
+        }];
+    }];
+}
 @end

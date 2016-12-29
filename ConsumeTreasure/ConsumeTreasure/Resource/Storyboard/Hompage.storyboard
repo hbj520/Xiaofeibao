@@ -2231,10 +2231,10 @@
                                 <action selector="backBtn:" destination="bwN-XB-yOi" id="tyL-Xa-Jjr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="yes_1080" id="8Gs-jI-azz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8Gs-jI-azz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="PostData:" destination="bEn-Jj-4mR" id="gHd-P9-qsR"/>
+                                <action selector="refreshBtn:" destination="bwN-XB-yOi" id="iOo-6C-Pno"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
