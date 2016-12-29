@@ -11,6 +11,7 @@
 #import "UIAlertView+flash.h"
 #import "ScanerVC.h"
 #import "ScanerView.h"
+#import "GoPrePayViewController.h"
 //#import "AccountViewController.h"
 //#import "ScanerPayViewController.h"
 //#import "CollectionViewController.h"
@@ -68,7 +69,25 @@
     
     //
 }
+#pragma mark - viewVillAppear
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [_mainScrollView endEditing:YES];
+    //self.navigationController.navigationBar.translucent = NO;
+    
+    //初始化扫码
+    //    [self setupAVFoundation];
+}
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+    [self.previewLayer removeFromSuperlayer];
+    //    [self.session re]
+}
 #pragma mark -PrivateMethod
 - (void)addLayout{
 [_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -322,14 +341,16 @@
             }
             else
             {
-                UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
-                                                            message:metadata.stringValue
-                                                           delegate:self
-                                                  cancelButtonTitle:@"取消"
-                                                  otherButtonTitles:@"复制内容", nil];
-                av.delegate=self;
-                _erweima=metadata.stringValue;
-                [av show];
+                NSArray *separateStringArray = [metadata.stringValue componentsSeparatedByString:@"="];
+                [self performSegueWithIdentifier:@"sacanPrePaySegueId" sender:separateStringArray[1]];
+//                UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
+//                                                            message:metadata.stringValue
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"取消"
+//                                                  otherButtonTitles:@"复制内容", nil];
+//                av.delegate=self;
+//                _erweima=metadata.stringValue;
+//                [av show];
             }
 
            
@@ -583,24 +604,12 @@
     //初始化扫码
 //    [self setupAVFoundation];
 }
-
-#pragma mark - viewVillAppear
--(void)viewWillAppear:(BOOL)animated
-{
-    self.tabBarController.tabBar.hidden = YES;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-
-    [_mainScrollView endEditing:YES];
-    //self.navigationController.navigationBar.translucent = NO;
-
-    //初始化扫码
-//    [self setupAVFoundation];
+#pragma mark - PerformSegueDelegate
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"sacanPrePaySegueId"]) {
+        GoPrePayViewController *goPreVC = (GoPrePayViewController *)segue.destinationViewController;
+        goPreVC.toMemId = (NSString *)sender;
+    }
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    
-    [self.previewLayer removeFromSuperlayer];
-//    [self.session re]
-}
 @end
