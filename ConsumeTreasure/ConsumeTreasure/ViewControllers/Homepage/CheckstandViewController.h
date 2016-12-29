@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface CheckstandViewController : BaseViewController
-
+@property (nonatomic,copy) NSString *memId;
 @end
