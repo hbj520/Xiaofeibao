@@ -41,14 +41,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    secOne = @[@"店铺名称",@"门店地址",@"门店电话",@"开始经营时间",@"结束经营时间",@"商家介绍"];
+
+    secOne = @[@"店铺名称",@"门店地址",@"定位地址",@"门店电话",@"开始经营时间",@"结束经营时间",@"商家介绍"];
     secTwo = @[@"反币比例",@"真实姓名",@"身份证号码"];
     secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
     
-    placeOne = @[@"智惠返",@"具体位置",@"请填写正确的号码",@"09:00 >",@"18:00 >",@"商店详情"];
-    placeTwo = @[@"10%",@"XXX",@"xxxxxxxxxxxxxx",@"xxxxx"];
+    placeOne = @[@"智惠返",@"具体位置",@"具体位置",@"请填写正确的号码",@"09:00 >",@"18:00 >",@"商店详情"];
+    placeTwo = @[@"10%",@"XXX",@"xxxxxxxxxxxxxx"];
     placeThr = @[@"已上传 >",@"待上传 >",@"已上传 >",@"已上传 >"];
     
     [self creatUI];
@@ -79,7 +81,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 6;
+        return 7;
     }else if (section == 1){
         return 3;
     }else{
@@ -97,23 +99,43 @@
     
     storeConCell.hideBtn.enabled = NO;
     
-    __weak typeof(storeConCell) weakCell  = storeConCell;
-    storeConCell.pikerBlock =^{
-        DLPickerView *pickerView = [[DLPickerView alloc] initWithPlistName:@"Time" withSelectedItem:[weakCell.placetextfield.text componentsSeparatedByString:@":"] withSelectedBlock:^(id  _Nonnull item) {
-            
-            weakCell.placetextfield.text = [item componentsJoinedByString:@":"];
-          
-        }];
-        
-        [pickerView show];
   
-    };
     
     if (indexPath.section == 0) {
         
         if (indexPath.row == 3 ||indexPath.row == 4) {
             storeConCell.hideBtn.enabled = YES;
-        }else{
+            
+            __weak typeof(storeConCell) weakCell  = storeConCell;
+            storeConCell.pikerBlock =^{
+                DLPickerView *pickerView = [[DLPickerView alloc] initWithPlistName:@"Time" withSelectedItem:[weakCell.placetextfield.text componentsSeparatedByString:@":"] withSelectedBlock:^(id  _Nonnull item) {
+                    
+                    weakCell.placetextfield.text = [item componentsJoinedByString:@":"];
+                    
+                }];
+                
+                [pickerView show];
+                
+            };
+        }else if (indexPath.row == 1 ||indexPath.row == 6){
+            storeConCell.hideBtn.enabled = YES;
+            storeConCell.textBlock =^(){
+             [self performSegueWithIdentifier:@"goWriteSegue" sender:nil];
+                
+            };
+            
+            
+        }else if(indexPath.row == 2){
+            
+            
+            storeConCell.hideBtn.enabled = YES;
+            storeConCell.textBlock =^(){
+                [self performSegueWithIdentifier:@"goGetLocationSegue" sender:nil];
+                
+            };
+        }
+        
+        else{
             storeConCell.hideBtn.enabled = NO;
         }
         
@@ -123,6 +145,7 @@
         storeConCell.storeNameLab.text = secTwo[indexPath.row];
         storeConCell.placetextfield.placeholder = placeTwo[indexPath.row];
     }else{
+     
         storeConCell.storeNameLab.text = secThr[indexPath.row];
         storeConCell.placetextfield.placeholder = placeThr[indexPath.row];
     }
@@ -141,6 +164,14 @@
     grayView.backgroundColor = RGBACOLOR(235, 235, 235, 1);
     return grayView;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 2) {
+        [self performSegueWithIdentifier:@"goChooseImageSegue" sender:nil];
+    
+    }
+}
+
 
 - (IBAction)back:(id)sender {
     [self backTolastPage];

@@ -26,6 +26,10 @@
         self.pikerBlock();
     }
     
+    if (self.textBlock) {
+        self.textBlock();
+    }
+    
 }
 
 @end

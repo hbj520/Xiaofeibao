@@ -16,7 +16,7 @@
 #import <Masonry.h>
 
 #import "MDEncryption.h"
-
+#import "JHCoverView.h"
 
 @interface GoPrePayViewController ()<XWMoneyTextFieldLimitDelegate>
 {
@@ -27,6 +27,9 @@
     
     tongBaoModel *tongModel;
 }
+
+@property (nonatomic, strong) JHCoverView *coverView;
+
 @end
 
 @implementation GoPrePayViewController
@@ -44,6 +47,8 @@
     [self setUseLeftMoney];
     [self getTongLeft];//请求余额
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+     [self upPayKeyBoard];
 }
 
 - (void)getTongLeft{
@@ -173,6 +178,18 @@
     [Tongtf resignFirstResponder];
 }
 
+- (void)upPayKeyBoard{
+    
+    [self.view layoutIfNeeded];
+    JHCoverView *coverView = [[JHCoverView alloc] initWithFrame:self.view.bounds];
+    coverView.delegate = self;
+    self.coverView = coverView;
+    coverView.hidden = YES;
+    coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    [self.view addSubview:coverView];
+    
+}
+
 - (IBAction)GopayNext:(id)sender {
     
     if ([Tongtf.text floatValue] > leftMoney) {
@@ -185,54 +202,81 @@
 
     }else{
         
-        NSDictionary *SignForPara = @{
-                                      @"tradetype": @"APP",
-                                      @"title": @"支付订单",
-                                      @"ordertype": @"0",
-                                      @"tomemid": self.toMemId ,//chuan
-                                      @"price": Tongtf.text,
-                                      @"price_tbb":Tongtf.text,
-                                      @"paytype": @"3",
-                                      @"zfpass":@"123456",
-                               };
+        self.coverView.hidden = NO;
         
-        NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
+        [self.coverView.payTextField becomeFirstResponder];
         
-        NSString *sign = [MDEncryption md5:stringA];
-        
-        /*
-        NSString *stingSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,@"XFB@96478YY"];
-        NSString *sign = [[SecurityUtil encryptMD5String:stingSignTemp] uppercaseString];
-*/
-        
-        NSDictionary *para = @{
-                               @"tradetype": @"APP",
-                               @"title": @"支付订单",
-                               @"ordertype": @"0",
-                               @"tomemid": self.toMemId ,//chuan
-                               @"price": Tongtf.text,
-                               @"price_tbb":Tongtf.text,
-                               @"paytype": @"3",
-                               @"zfpass":@"123456",
-                               @"sign":sign
-                               };
-        //调通宝币支付
-        [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
-            if (sucess) {
-                showAlert(@"支付成功");
-                
-            }else{
-                if ([msg isEqualToString:@"-1"]) {
-                    [self logout];
-                }
-                showAlert(@"支付失败");
-            }
-        } errorResult:^(NSError *enginerError) {
+        __weak typeof(self) weakSelf = self;
+        self.coverView.tBlock =^(NSString *str){
             
-        }];
+            weakSelf.coverView.hidden = YES;
+            [weakSelf.coverView.payTextField resignFirstResponder];
+           
+            
+            [weakSelf postDataWithStr:str];
+        };
+        
     }
-}
+        
+        
+           }
 
+
+- (void)postDataWithStr:(NSString*)str{
+
+     NSString *payPswSafe = [Tools loginPasswordSecurityLock:str];
+    
+    NSDictionary *SignForPara = @{
+                                  @"tradetype": @"APP",
+                                  @"title": @"支付订单",
+                                  @"ordertype": @"0",
+                                  @"tomemid": self.toMemId ,//chuan
+                                  @"price": Tongtf.text,
+                                  @"price_tbb":Tongtf.text,
+                                  @"paytype": @"3",
+                                  @"zfpass":payPswSafe,
+                                  };
+    
+    NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
+    
+    NSString *sign = [MDEncryption md5:stringA];
+    
+    /*
+     NSString *stingSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,@"XFB@96478YY"];
+     NSString *sign = [[SecurityUtil encryptMD5String:stingSignTemp] uppercaseString];
+     */
+    
+    NSDictionary *para = @{
+                           @"tradetype": @"APP",
+                           @"title": @"支付订单",
+                           @"ordertype": @"0",
+                           @"tomemid": self.toMemId ,//chuan
+                           @"price": Tongtf.text,
+                           @"price_tbb":Tongtf.text,
+                           @"paytype": @"3",
+                           @"zfpass":payPswSafe,
+                           @"sign":sign
+                           };
+    
+    
+    
+    //调通宝币支付
+    [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            showAlert(msg);
+            
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+            showAlert(msg);
+        }
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+
+    
+}
 
 
 

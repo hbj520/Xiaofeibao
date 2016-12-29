@@ -299,6 +299,9 @@
 		D1A3C0A11E14DCAE0040AAD9 /* HMScannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0991E14DCAE0040AAD9 /* HMScannerController.m */; };
 		D1A3C0A21E14DCAE0040AAD9 /* HMScannerMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C09B1E14DCAE0040AAD9 /* HMScannerMaskView.m */; };
 		D1A3C0A31E14DCAE0040AAD9 /* HMScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C09D1E14DCAE0040AAD9 /* HMScannerViewController.m */; };
+		D1A3C0A61E15009E0040AAD9 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0A51E15009E0040AAD9 /* ImageViewController.m */; };
+		D1A3C0A91E1500AF0040AAD9 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0A81E1500AF0040AAD9 /* TextViewController.m */; };
+		D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -910,6 +913,12 @@
 		D1A3C09B1E14DCAE0040AAD9 /* HMScannerMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerMaskView.m; sourceTree = "<group>"; };
 		D1A3C09C1E14DCAE0040AAD9 /* HMScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerViewController.h; sourceTree = "<group>"; };
 		D1A3C09D1E14DCAE0040AAD9 /* HMScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerViewController.m; sourceTree = "<group>"; };
+		D1A3C0A41E15009E0040AAD9 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		D1A3C0A51E15009E0040AAD9 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		D1A3C0A71E1500AF0040AAD9 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		D1A3C0A81E1500AF0040AAD9 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		D1A3C0AA1E1500D80040AAD9 /* MapLocateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLocateViewController.h; sourceTree = "<group>"; };
+		D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocateViewController.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1219,6 +1228,12 @@
 				D10DC94B1E095A2300930F74 /* DLStoreListViewController.m */,
 				D11171181DFA8F0700AD88DE /* StoreControlViewController.h */,
 				D11171191DFA8F0800AD88DE /* StoreControlViewController.m */,
+				D1A3C0A41E15009E0040AAD9 /* ImageViewController.h */,
+				D1A3C0A51E15009E0040AAD9 /* ImageViewController.m */,
+				D1A3C0A71E1500AF0040AAD9 /* TextViewController.h */,
+				D1A3C0A81E1500AF0040AAD9 /* TextViewController.m */,
+				D1A3C0AA1E1500D80040AAD9 /* MapLocateViewController.h */,
+				D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */,
 				D12165A41DB6518F006B06FC /* LookRecordViewController.h */,
 				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
 				D12165A71DB65998006B06FC /* IncomeViewController.h */,
@@ -2390,11 +2405,13 @@
 				D11736BB1DFE7FAE00270D26 /* StoreControlTableViewCell.m in Sources */,
 				D12165951DB607D3006B06FC /* TobeUnionViewController.m in Sources */,
 				D10EE3E41DB0B28F001C1992 /* EncryptUtils.m in Sources */,
+				D1A3C0A61E15009E0040AAD9 /* ImageViewController.m in Sources */,
 				D16BF2B41DEFF15B001A82BF /* JFCityViewController.m in Sources */,
 				AB50D47E1E0928AA00B427E6 /* StringEncryption.m in Sources */,
 				AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */,
 				D15B39671DD414A7009122FE /* EstimateTableViewCell.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
+				D1A3C0A91E1500AF0040AAD9 /* TextViewController.m in Sources */,
 				D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */,
 				D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */,
 				D16BF2AD1DEFF15B001A82BF /* JFAreaDataManager.m in Sources */,
@@ -2454,6 +2471,7 @@
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,
 				D10DC9441E09307600930F74 /* DLPickerView.m in Sources */,
+				D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */,
 				D1A3C09E1E14DCAE0040AAD9 /* HMScanerCardViewController.m in Sources */,
 				D11171141DFA8EC400AD88DE /* OrderControlViewController.m in Sources */,
 				D16BF2D11DF14F47001A82BF /* SpecialGoodModel.m in Sources */,
