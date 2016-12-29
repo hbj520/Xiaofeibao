@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,9 +76,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="享九折优惠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-mm-6E9">
-                        <rect key="frame" x="288" y="22" width="75" height="23"/>
+                        <rect key="frame" x="283" y="22" width="80" height="23"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="4pu-BN-bbh"/>
+                            <constraint firstAttribute="width" constant="80" id="UX5-rA-ETI"/>
                             <constraint firstAttribute="height" constant="23" id="jDe-Eq-H8e"/>
                         </constraints>
                         <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="13"/>
@@ -89,6 +88,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="pjj-mm-6E9" firstAttribute="leading" secondItem="Xoz-XK-342" secondAttribute="trailing" constant="15" id="4i1-RY-gQh"/>
                     <constraint firstItem="Xoz-XK-342" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="60A-E1-a2x"/>
                     <constraint firstItem="owZ-PF-VhD" firstAttribute="top" secondItem="Xgb-De-mcX" secondAttribute="bottom" constant="15" id="7GQ-IJ-nBI"/>
                     <constraint firstItem="rBR-Bd-8ow" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" id="E78-lN-rF3"/>
@@ -104,7 +104,6 @@
                     <constraint firstItem="Nmc-mb-aBG" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" constant="3" id="pCt-ka-hvw"/>
                     <constraint firstItem="Xgb-De-mcX" firstAttribute="top" secondItem="Xoz-XK-342" secondAttribute="bottom" constant="13" id="rcZ-op-kQd"/>
                     <constraint firstItem="owZ-PF-VhD" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="t9f-bz-apG"/>
-                    <constraint firstItem="pjj-mm-6E9" firstAttribute="leading" secondItem="Xoz-XK-342" secondAttribute="trailing" constant="20" id="tBH-5Q-ZNL"/>
                     <constraint firstItem="oEg-ph-Zcd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="uNa-nb-X4N"/>
                 </constraints>
             </tableViewCellContentView>

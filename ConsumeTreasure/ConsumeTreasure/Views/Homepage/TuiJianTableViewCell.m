@@ -31,7 +31,7 @@
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
     self.addressLab.text = tuiModel.addr;
     
-   
+    self.disCountLab.text = [NSString stringWithFormat:@"享%@折优惠",tuiModel.discount];
     
 }
 - (void)configWithData:(UnionContenModel *)data{

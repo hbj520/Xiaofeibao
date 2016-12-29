@@ -20,7 +20,7 @@
 @property (nonatomic,strong) NSString *avgScore;
 @property (nonatomic,strong) NSString *addr;
 @property (nonatomic,strong) NSString *distance;
-
+@property (nonatomic,strong) NSString *discount;
 
 
 @end

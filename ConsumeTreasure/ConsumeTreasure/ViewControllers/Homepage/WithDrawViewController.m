@@ -18,6 +18,8 @@
     
     NSString *payPsw;
     NSMutableArray *_cardList;
+    
+    NSString *theType;//区分今日或历史
 }
 @property (nonatomic, strong) JHCoverView *coverView;
 @end
@@ -43,7 +45,8 @@
     [self judgeBankCard];
     [self upPayKeyBoard];
     
-    self.leftMoney.text = [NSString stringWithFormat:@"可提现余额为%@元",self.canGetMoney];
+    self.leftMoney.text = [NSString stringWithFormat:@"可提现余额为%@元",self.moneyType[0]];
+    theType = self.moneyType[1];
 }
 
 - (void)upPayKeyBoard{
@@ -160,8 +163,8 @@
 
 - (IBAction)getAllLeftMoney:(id)sender {
 
-    NSLog(@"%@",self.canGetMoney);
-    Tongtf.text = self.canGetMoney;
+    NSLog(@"%@",self.moneyType);
+    Tongtf.text = self.moneyType[0];
 }
 
 
@@ -192,6 +195,23 @@
 
 - (void)postDataWithStr:(NSString*)str{
 
+    NSDictionary *para = @{
+                           @"total_fee":Tongtf.text,
+                           @"trade_type":theType,
+                           @"bankid":self.defaultBankNum.text,
+                           @"zfpass":str
+                           };
+    [[MyAPI sharedAPI] getMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            showAlert(msg);
+            
+        }else{
+            showAlert(msg);
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 
 
 }
