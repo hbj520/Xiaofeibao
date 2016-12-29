@@ -9,7 +9,6 @@
 #import "TextViewController.h"
 
 @interface TextViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -32,7 +31,10 @@
     [self backTolastPage];
 }
 - (IBAction)queding:(id)sender {
-    
+    if (self.textBlock) {
+        self.textBlock(self.textView.text);
+    }
+    [self backTolastPage];
 }
 
 /*

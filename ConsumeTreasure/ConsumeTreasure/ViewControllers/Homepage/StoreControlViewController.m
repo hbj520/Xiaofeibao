@@ -7,6 +7,10 @@
 //
 
 #import "StoreControlViewController.h"
+#import "ImageViewController.h"
+#import "TextViewController.h"
+#import "MapLocateViewController.h"
+
 
 #import <MJRefresh/MJRefresh.h>
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -25,6 +29,10 @@
     NSArray *placeOne;
     NSArray *placeTwo;
     NSArray *placeThr;
+    
+    NSString *strText;//保存文本
+    
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -117,15 +125,28 @@
                 [pickerView show];
                 
             };
-        }else if (indexPath.row == 1 ||indexPath.row == 6){
+        }else if (indexPath.row == 1){
             storeConCell.hideBtn.enabled = YES;
+           // __weak typeof(storeConCell) weakStoreCell = storeConCell;
             storeConCell.textBlock =^(){
-             [self performSegueWithIdentifier:@"goWriteSegue" sender:nil];
+             [self performSegueWithIdentifier:@"goWriteSegue" sender:@""];
                 
             };
+            storeConCell.placetextfield.text = strText;
             
-            
-        }else if(indexPath.row == 2){
+        }else if (indexPath.row == 6){
+            storeConCell.hideBtn.enabled = YES;
+            // __weak typeof(storeConCell) weakStoreCell = storeConCell;
+            storeConCell.textBlock =^(){
+                [self performSegueWithIdentifier:@"goWriteSegue" sender:@""];
+                
+            };
+            storeConCell.placetextfield.text = strText;
+
+        }
+        
+        
+        else if(indexPath.row == 2){
             
             
             storeConCell.hideBtn.enabled = YES;
@@ -190,10 +211,23 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"goWriteSegue"]) {
+        NSString *str = (NSString *)sender;
+        TextViewController *teVC = segue.destinationViewController;
+        teVC.textView.text = str;
+        teVC.textBlock =^(NSString *str){
+            strText = str;
+            [self.tableView reloadData];
+        };
+    }
+    
+    
+    
 }
-*/
+
 
 @end
