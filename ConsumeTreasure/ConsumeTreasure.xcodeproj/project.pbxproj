@@ -43,6 +43,8 @@
 		AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
+		AB61EC9D1E153B580053650A /* StoreConLabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61EC9B1E153B580053650A /* StoreConLabTableViewCell.m */; };
+		AB61EC9E1E153B580053650A /* StoreConLabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB61EC9C1E153B580053650A /* StoreConLabTableViewCell.xib */; };
 		AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB678B341DF650D200902C52 /* CollectShopListModel.m */; };
 		AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FBA561DB4A00100C682F8 /* MineTableViewController.m */; };
 		AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */; };
@@ -399,6 +401,9 @@
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
 		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
+		AB61EC9A1E153B580053650A /* StoreConLabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreConLabTableViewCell.h; sourceTree = "<group>"; };
+		AB61EC9B1E153B580053650A /* StoreConLabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreConLabTableViewCell.m; sourceTree = "<group>"; };
+		AB61EC9C1E153B580053650A /* StoreConLabTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreConLabTableViewCell.xib; sourceTree = "<group>"; };
 		AB678B331DF650D200902C52 /* CollectShopListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectShopListModel.h; sourceTree = "<group>"; };
 		AB678B341DF650D200902C52 /* CollectShopListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectShopListModel.m; sourceTree = "<group>"; };
 		AB6FBA551DB4A00100C682F8 /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewController.h; sourceTree = "<group>"; };
@@ -1441,6 +1446,9 @@
 				D11736B81DFE7FAE00270D26 /* StoreControlTableViewCell.h */,
 				D11736B91DFE7FAE00270D26 /* StoreControlTableViewCell.m */,
 				D11736BA1DFE7FAE00270D26 /* StoreControlTableViewCell.xib */,
+				AB61EC9A1E153B580053650A /* StoreConLabTableViewCell.h */,
+				AB61EC9B1E153B580053650A /* StoreConLabTableViewCell.m */,
+				AB61EC9C1E153B580053650A /* StoreConLabTableViewCell.xib */,
 				D196D5821E0CC3490062AD91 /* DaiLiShopsTableViewCell.h */,
 				D196D5831E0CC3490062AD91 /* DaiLiShopsTableViewCell.m */,
 				D196D5841E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib */,
@@ -2176,6 +2184,7 @@
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */,
+				AB61EC9E1E153B580053650A /* StoreConLabTableViewCell.xib in Resources */,
 				D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
 				D12054951DED221800EB2707 /* BusinessTableViewCell.xib in Resources */,
@@ -2348,6 +2357,7 @@
 				ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */,
 				D16BF2BE1DF01B5A001A82BF /* ProvinceHeadView.m in Sources */,
 				D196D5811E0C21210062AD91 /* CashViewController.m in Sources */,
+				AB61EC9D1E153B580053650A /* StoreConLabTableViewCell.m in Sources */,
 				D15B39401DCC72B1009122FE /* AddModel.m in Sources */,
 				ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */,
 				D196D5851E0CC3490062AD91 /* DaiLiShopsTableViewCell.m in Sources */,

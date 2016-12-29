@@ -17,6 +17,7 @@
 
 #import "OrderControlTableViewCell.h"
 #import "StoreControlTableViewCell.h"
+#import "StoreConLabTableViewCell.h"
 #import "DetailHeadView.h"
 
 #import "DLPickerView.h"
@@ -30,7 +31,8 @@
     NSArray *placeTwo;
     NSArray *placeThr;
     
-    NSString *strText;//保存文本
+    NSString *strAddr;//保存地址文本
+    NSString *strDescri;//保存介绍文本
     
     
 }
@@ -81,6 +83,8 @@
     self.tableView.sectionHeaderHeight = 9;
     //self.tableView.backgroundColor = RGBACOLOR(235, 235, 235, 0.8);
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreControlTableViewCell" bundle:nil] forCellReuseIdentifier:@"storeConCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"StoreConLabTableViewCell" bundle:nil] forCellReuseIdentifier:@"labelCellId"];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -132,7 +136,7 @@
                 [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"带入",@"1"]];
                 
             };
-            storeConCell.placetextfield.text = strText;
+            storeConCell.placetextfield.text = strAddr;
             
         }else if (indexPath.row == 6){
             storeConCell.hideBtn.enabled = YES;
@@ -142,7 +146,7 @@
                 [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"带入",@"2"]];
                 
             };
-            storeConCell.placetextfield.text = strText;
+            storeConCell.placetextfield.text = strDescri;
 
         }
         
@@ -222,8 +226,10 @@
         teVC.arr = strArr;
         teVC.textBlock =^(NSString *str){
             
-            if ([strArr[0] isEqualToString:@"1"]) {
-                strText = str;
+            if ([strArr[1] isEqualToString:@"1"]) {
+                strAddr = str;
+            }else{
+                strDescri = str;
             }
             
             
@@ -238,6 +244,7 @@
     
     
 }
+
 
 
 @end
