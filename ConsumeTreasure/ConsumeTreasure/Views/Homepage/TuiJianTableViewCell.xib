@@ -52,7 +52,6 @@
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-PF-VhD" customClass="starView">
                         <rect key="frame" x="134" y="86" width="80" height="15"/>
-                        <color key="backgroundColor" red="0.99607843139999996" green="0.52941176469999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="CMT-Tr-oCr"/>
                             <constraint firstAttribute="height" constant="15" id="wdw-X7-aeQ"/>
@@ -77,6 +76,17 @@
                         <color key="textColor" red="0.57647058819999997" green="0.59215686270000001" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="享九折优惠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-mm-6E9">
+                        <rect key="frame" x="288" y="22" width="75" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="4pu-BN-bbh"/>
+                            <constraint firstAttribute="height" constant="23" id="jDe-Eq-H8e"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.98823529409999999" green="0.60784313729999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Xoz-XK-342" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="60A-E1-a2x"/>
@@ -85,10 +95,12 @@
                     <constraint firstItem="WTU-Lx-veR" firstAttribute="leading" secondItem="rBR-Bd-8ow" secondAttribute="trailing" constant="4" id="FUZ-5M-q3Q"/>
                     <constraint firstItem="oEg-ph-Zcd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Kyu-TT-c9e"/>
                     <constraint firstItem="WTU-Lx-veR" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" id="Q4N-Nu-xIp"/>
+                    <constraint firstAttribute="trailing" secondItem="pjj-mm-6E9" secondAttribute="trailing" constant="12" id="V82-w2-hpg"/>
                     <constraint firstAttribute="trailing" secondItem="WTU-Lx-veR" secondAttribute="trailing" constant="15" id="Y3F-b9-bJx"/>
                     <constraint firstItem="Nmc-mb-aBG" firstAttribute="leading" secondItem="owZ-PF-VhD" secondAttribute="trailing" constant="5" id="Zf4-DJ-aDK"/>
                     <constraint firstItem="Xgb-De-mcX" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="cNA-XB-7fZ"/>
                     <constraint firstItem="Xoz-XK-342" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="hKI-uJ-3Pa"/>
+                    <constraint firstItem="pjj-mm-6E9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="kDd-BF-vFL"/>
                     <constraint firstItem="Nmc-mb-aBG" firstAttribute="centerY" secondItem="owZ-PF-VhD" secondAttribute="centerY" constant="3" id="pCt-ka-hvw"/>
                     <constraint firstItem="Xgb-De-mcX" firstAttribute="top" secondItem="Xoz-XK-342" secondAttribute="bottom" constant="13" id="rcZ-op-kQd"/>
                     <constraint firstItem="owZ-PF-VhD" firstAttribute="leading" secondItem="oEg-ph-Zcd" secondAttribute="trailing" constant="12" id="t9f-bz-apG"/>

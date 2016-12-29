@@ -199,7 +199,7 @@
     //忘记密码
     UIButton *forgetPWBtn = [[UIButton alloc] init];
     self.forgetPWBtn = forgetPWBtn;
-    [forgetPWBtn setTitle:@"忘记密码？" forState:UIControlStateNormal];
+    [forgetPWBtn setTitle:@"" forState:UIControlStateNormal];
     [forgetPWBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     forgetPWBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [forgetPWBtn sizeToFit];
@@ -300,7 +300,7 @@
         if (self.tBlock) {
             self.tBlock(self.pwStr);
         }
-        
+        self.payTextField.text = @"";
         
 //        if ([self.delegate respondsToSelector:@selector(inputCorrectCoverView:)]) {
 //            [self deleteClick:nil];

@@ -448,7 +448,8 @@
         };
         firstCell.incomeBlock = ^{//收益权
            // [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
-        
+         
+
             showAlert(@"敬请期待！");
         };
         firstCell.accountBlock =^{

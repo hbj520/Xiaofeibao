@@ -11,6 +11,8 @@
 
 #import "JHCoverView.h"
 
+#import "CheckID.h"
+
 @interface AddBankViewController ()<JHCoverViewDelegate>
 {
     NSString *payPsw;
@@ -60,19 +62,33 @@
 - (IBAction)sure:(id)sender {
     //确认绑定
     
-    
-    self.coverView.hidden = NO;
-    [self.coverView.payTextField becomeFirstResponder];
-    
-    __weak typeof(self) weakSelf = self;
-    self.coverView.tBlock =^(NSString *str){
+    if ([self.cardNum.text isEqualToString:@""]||[self.cardBankName.text isEqualToString:@""]||[self.cardArea.text isEqualToString:@""]) {
+        showAlert(@"请填写完整");
+    }else if ([CheckID deptNameInputShouldChineseWithStr:self.cardBankName.text] == NO){
+        showAlert(@"银行名称请输入汉字");
+    }
+    /*          需要加上
+    else if ([CheckID checkCardNo:self.cardNum.text] == NO){
+        showAlert(@"请填写正确的银行卡号");
+    }
+     */
+    else{
+        self.coverView.hidden = NO;
         
-        weakSelf.coverView.hidden = YES;
-        [weakSelf.coverView.payTextField resignFirstResponder];
-        payPsw = str;
+        [self.coverView.payTextField becomeFirstResponder];
         
-         [weakSelf postDataWithStr:str];
-    };
+        __weak typeof(self) weakSelf = self;
+        self.coverView.tBlock =^(NSString *str){
+            
+            weakSelf.coverView.hidden = YES;
+            [weakSelf.coverView.payTextField resignFirstResponder];
+            payPsw = str;
+            
+            [weakSelf postDataWithStr:str];
+        };
+
+    }
+
     
     
     

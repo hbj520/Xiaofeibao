@@ -10,15 +10,16 @@
 #import "MyBankCardViewController.h"
 #import <Masonry.h>
 
+#import "JHCoverView.h"
 
-@interface WithDrawViewController ()<XWMoneyTextFieldLimitDelegate>
+@interface WithDrawViewController ()<XWMoneyTextFieldLimitDelegate,JHCoverViewDelegate>
 {
     XWMoneyTextField *Tongtf;
     
-    
+    NSString *payPsw;
     NSMutableArray *_cardList;
 }
-
+@property (nonatomic, strong) JHCoverView *coverView;
 @end
 
 @implementation WithDrawViewController
@@ -40,8 +41,21 @@
     
     [self setTextField];
     [self judgeBankCard];
+    [self upPayKeyBoard];
     
     self.leftMoney.text = [NSString stringWithFormat:@"可提现余额为%@元",self.canGetMoney];
+}
+
+- (void)upPayKeyBoard{
+    
+    [self.view layoutIfNeeded];
+    JHCoverView *coverView = [[JHCoverView alloc] initWithFrame:self.view.bounds];
+    coverView.delegate = self;
+    self.coverView = coverView;
+    coverView.hidden = YES;
+    coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+    [self.view addSubview:coverView];
+    
 }
 
 - (void)judgeBankCard{
@@ -156,22 +170,30 @@
     
     if (Tongtf.text.floatValue > 0) {
         
-        NSDictionary *para =@{
-                              @"total_fee":Tongtf.text,
-                              @"trade_type":@"",
-                              @"bankid":@"",
-                              @"zfpass":@""
-                              
-                              };
+        self.coverView.hidden = NO;
+        [self.coverView.payTextField becomeFirstResponder];
+        
+        __weak typeof(self) weakSelf = self;
+        self.coverView.tBlock =^(NSString *str){
+            
+            weakSelf.coverView.hidden = YES;
+            [weakSelf.coverView.payTextField resignFirstResponder];
+            payPsw = str;
+            
+            [weakSelf postDataWithStr:str];
+        };
         
         
         
     }else{
         showAlert(@"请确认提现额度不为0");
     }
-    
-    
-    
+}
+
+- (void)postDataWithStr:(NSString*)str{
+
+
+
 }
 
 /*
