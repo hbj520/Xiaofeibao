@@ -184,9 +184,19 @@
     JHCoverView *coverView = [[JHCoverView alloc] initWithFrame:self.view.bounds];
     coverView.delegate = self;
     self.coverView = coverView;
-    coverView.hidden = YES;
+    //coverView.hidden = YES;
     coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
-    [self.view addSubview:coverView];
+    [self.coverView.payTextField becomeFirstResponder];
+    [self.view addSubview:self.coverView];
+    __weak typeof(self) weakSelf = self;
+
+    self.coverView.tBlock =^(NSString *str){
+        
+        weakSelf.coverView.hidden = YES;
+        [weakSelf.coverView.payTextField resignFirstResponder];
+        [weakSelf postDataWithStr:str];
+        [weakSelf.coverView removeFromSuperview];
+    };
     
 }
 
@@ -201,21 +211,10 @@
         [self performSegueWithIdentifier:@"gotoPay" sender:@[Tongtf.text,leftMoneyStr,self.toMemId]];
 
     }else{
+       // self.coverView.hidden = NO;
         
-        self.coverView.hidden = NO;
-        
-        [self.coverView.payTextField becomeFirstResponder];
-        
-        __weak typeof(self) weakSelf = self;
-        self.coverView.tBlock =^(NSString *str){
-            
-            weakSelf.coverView.hidden = YES;
-            [weakSelf.coverView.payTextField resignFirstResponder];
-           
-            
-            [weakSelf postDataWithStr:str];
-        };
-        
+        [self upPayKeyBoard];
+
     }
         
         
@@ -263,13 +262,16 @@
     //调通宝币支付
     [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
         if (sucess) {
-            showAlert(msg);
-            
+            [self showHint:msg];
+            //showAlert(msg);
+            [self.navigationController popViewControllerAnimated:YES];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
             }
-            showAlert(msg);
+            [self showHint:msg];
+
+           // showAlert(msg);
         }
     } errorResult:^(NSError *enginerError) {
         
