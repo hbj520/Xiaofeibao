@@ -997,7 +997,38 @@
 }
 
 #pragma mark -- 店铺资料查询
-
+- (void)getStoreInfoDataWithParameters:(NSDictionary *)para
+                                result:(ModelBlock)result
+                           errorResult:(ErrorBlock)errorResult{
+    
+    NSDictionary *paraDic = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    
+    [self.manager POST:@"shop/queryApplyShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+            NSError *error = nil;
+            StoreMasterModel *model = [[StoreMasterModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
+            
+            result(YES,info,model);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+ 
+    
 
 #pragma mark -- 店铺管理
 

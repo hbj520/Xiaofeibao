@@ -33,3 +33,26 @@
 
 
 @end
+
+
+//商户资料
+@interface storeInfoModel : JSONModel
+@property (nonatomic,strong) NSString *name;//不要
+@property (nonatomic,strong) NSString *idcardno;//不要
+@property (nonatomic,strong) NSString *addr;//
+@property (nonatomic,strong) NSString *doorimg;//日收入
+@property (nonatomic,strong) NSString *shopname;//代理类型
+@property (nonatomic,strong) NSString *categoryid;
+@property (nonatomic,strong) NSString *businessimg;//月累计收入
+@property (nonatomic,strong) NSString *licenseimg;//累计收入
+@property (nonatomic,strong) NSString *idcardnofrontimg;//日收入
+@property (nonatomic,strong) NSString *idcardnobackimg;
+@property (nonatomic,strong) NSString *introduction;//日收入
+@property (nonatomic,strong) NSString *startbusinesstime;//代理类型
+@property (nonatomic,strong) NSString *endbusinesstime;
+
+
+@end
+
+
+

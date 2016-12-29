@@ -44,7 +44,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     secOne = @[@"店铺名称",@"门店地址",@"门店电话",@"开始经营时间",@"结束经营时间",@"商家介绍"];
-    secTwo = @[@"反币比例",@"真实姓名",@"身份证号码",@"邀请码"];
+    secTwo = @[@"反币比例",@"真实姓名",@"身份证号码"];
     secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
     
     placeOne = @[@"智惠返",@"具体位置",@"请填写正确的号码",@"09:00 >",@"18:00 >",@"商店详情"];
@@ -81,7 +81,7 @@
     if (section == 0) {
         return 6;
     }else if (section == 1){
-        return 4;
+        return 3;
     }else{
         return 4;
     }
