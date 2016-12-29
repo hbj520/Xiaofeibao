@@ -16,7 +16,7 @@
 @property (nonatomic,strong) NSString *turnover;//累计成交额
 @property (nonatomic,strong) NSString *total;//订单总数
 @property (nonatomic,strong) NSString *shopName;//商户名称
-
+@property (nonatomic,strong) NSString *memid;//商户id
 
 @end
 

@@ -8,7 +8,7 @@
 #import "StoreMasterModel.h"
 #import "ImUnionStoreViewController.h"
 #import "CashViewController.h"
-
+#import "CheckstandViewController.h"
 
 @interface ImUnionStoreViewController ()
 {
@@ -86,7 +86,7 @@
 
 - (void)checkClick:(id)Ges{
    // showAlert(@"敬请期待");
-    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:nil];
+    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:StoreMmodel.memid];
 
 }
 
@@ -146,6 +146,9 @@
         NSArray *arr = (NSArray*)sender;
         CashViewController *cashVC = segue.destinationViewController;
         cashVC.incomeMoney = arr;
+    }else if ([segue.identifier isEqualToString:@"goCheckStandSegue"]){
+        CheckstandViewController *checkVC = segue.destinationViewController;
+        checkVC.memId = (NSString *)sender;
     }
     
 }
