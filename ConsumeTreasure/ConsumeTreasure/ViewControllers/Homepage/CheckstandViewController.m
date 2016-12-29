@@ -67,7 +67,7 @@
     NSString *cardName = [NSString stringWithFormat:@"http:www.xftb168.com/web/paytomem?tomem=%@",self.memId];
     __block UIImage *avatar = [UIImage imageNamed:@"logo"];
     UIImageView *loadImgView = [[UIImageView alloc] init];
-    NSString *icon = [[XFBConfig Instance] getIcon];
+   // NSString *icon = [[XFBConfig Instance] getIcon];
     [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (image) {
             avatar = image;
