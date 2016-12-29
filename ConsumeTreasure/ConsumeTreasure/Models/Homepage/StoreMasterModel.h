@@ -20,6 +20,7 @@
 
 
 @interface DaLiMasterModel : JSONModel
+
 @property (nonatomic,strong) NSString *proxyname;
 @property (nonatomic,strong) NSString *day_money;//日收入
 @property (nonatomic,strong) NSString *type;//代理类型
