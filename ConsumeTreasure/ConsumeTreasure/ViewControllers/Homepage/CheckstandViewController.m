@@ -7,23 +7,37 @@
 //
 
 #import "CheckstandViewController.h"
+#import "HMScannerController.h"
 
 @interface CheckstandViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation CheckstandViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *cardName = @"http://www.xftb168.com/web/paytomem?tomem=0049500a-23fb-4b04-876f-7171c6f60d32";
+    UIImage *avatar = [UIImage imageNamed:@"logo"];
+    
+    [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
+        self.imageView.image = image;
+    }];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (IBAction)backBtn:(id)sender {
+    [self backTolastPage];
+}
 /*
 #pragma mark - Navigation
 

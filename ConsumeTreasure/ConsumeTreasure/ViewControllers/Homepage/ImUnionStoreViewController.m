@@ -85,8 +85,8 @@
 }
 
 - (void)checkClick:(id)Ges{
-    showAlert(@"敬请期待");
-   // [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:nil];
+   // showAlert(@"敬请期待");
+    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:nil];
 
 }
 

@@ -31,6 +31,13 @@
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
 		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
+		AB443D2F1E14BF0700A2B826 /* HMScannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB443D221E14BF0700A2B826 /* HMScannerController.m */; };
+		AB443D301E14BF0700A2B826 /* HMScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB443D241E14BF0700A2B826 /* HMScannerViewController.m */; };
+		AB443D311E14BF0700A2B826 /* HMScanerCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB443D261E14BF0700A2B826 /* HMScanerCardViewController.m */; };
+		AB443D321E14BF0700A2B826 /* HMScannerBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = AB443D281E14BF0700A2B826 /* HMScannerBorder.m */; };
+		AB443D331E14BF0700A2B826 /* HMScannerMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB443D2A1E14BF0700A2B826 /* HMScannerMaskView.m */; };
+		AB443D341E14BF0700A2B826 /* HMScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AB443D2C1E14BF0700A2B826 /* HMScanner.m */; };
+		AB443D351E14BF0700A2B826 /* HMScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB443D2D1E14BF0700A2B826 /* HMScanner.bundle */; };
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
@@ -367,6 +374,19 @@
 		AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
+		AB443D211E14BF0700A2B826 /* HMScannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerController.h; sourceTree = "<group>"; };
+		AB443D221E14BF0700A2B826 /* HMScannerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerController.m; sourceTree = "<group>"; };
+		AB443D231E14BF0700A2B826 /* HMScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerViewController.h; sourceTree = "<group>"; };
+		AB443D241E14BF0700A2B826 /* HMScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerViewController.m; sourceTree = "<group>"; };
+		AB443D251E14BF0700A2B826 /* HMScanerCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScanerCardViewController.h; sourceTree = "<group>"; };
+		AB443D261E14BF0700A2B826 /* HMScanerCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScanerCardViewController.m; sourceTree = "<group>"; };
+		AB443D271E14BF0700A2B826 /* HMScannerBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerBorder.h; sourceTree = "<group>"; };
+		AB443D281E14BF0700A2B826 /* HMScannerBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerBorder.m; sourceTree = "<group>"; };
+		AB443D291E14BF0700A2B826 /* HMScannerMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScannerMaskView.h; sourceTree = "<group>"; };
+		AB443D2A1E14BF0700A2B826 /* HMScannerMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScannerMaskView.m; sourceTree = "<group>"; };
+		AB443D2B1E14BF0700A2B826 /* HMScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScanner.h; sourceTree = "<group>"; };
+		AB443D2C1E14BF0700A2B826 /* HMScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScanner.m; sourceTree = "<group>"; };
+		AB443D2D1E14BF0700A2B826 /* HMScanner.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HMScanner.bundle; sourceTree = "<group>"; };
 		AB4826171DE689EE0001EA8B /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		AB4826181DE689EE0001EA8B /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1016,6 +1036,27 @@
 			path = Union;
 			sourceTree = "<group>";
 		};
+		AB443D2E1E14BF0700A2B826 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				AB443D211E14BF0700A2B826 /* HMScannerController.h */,
+				AB443D221E14BF0700A2B826 /* HMScannerController.m */,
+				AB443D231E14BF0700A2B826 /* HMScannerViewController.h */,
+				AB443D241E14BF0700A2B826 /* HMScannerViewController.m */,
+				AB443D251E14BF0700A2B826 /* HMScanerCardViewController.h */,
+				AB443D261E14BF0700A2B826 /* HMScanerCardViewController.m */,
+				AB443D271E14BF0700A2B826 /* HMScannerBorder.h */,
+				AB443D281E14BF0700A2B826 /* HMScannerBorder.m */,
+				AB443D291E14BF0700A2B826 /* HMScannerMaskView.h */,
+				AB443D2A1E14BF0700A2B826 /* HMScannerMaskView.m */,
+				AB443D2B1E14BF0700A2B826 /* HMScanner.h */,
+				AB443D2C1E14BF0700A2B826 /* HMScanner.m */,
+				AB443D2D1E14BF0700A2B826 /* HMScanner.bundle */,
+			);
+			name = QRCode;
+			path = "../../../HMQRCodeScanner-master/HMQRCodeScanner/QRCode";
+			sourceTree = "<group>";
+		};
 		AB50D4681E0928AA00B427E6 /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -1615,6 +1656,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AB443D2E1E14BF0700A2B826 /* QRCode */,
 				D1A3C07F1E123B2F0040AAD9 /* KGModel */,
 				D1A3C06D1E10C6DB0040AAD9 /* payViewControl */,
 				D10DC94D1E0A307400930F74 /* XWMoneyTextField */,
@@ -2156,6 +2198,7 @@
 				D12165FA1DB79F37006B06FC /* MyAccountTableViewCell.xib in Resources */,
 				D15B395E1DD40AD7009122FE /* ListHeadView.xib in Resources */,
 				AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */,
+				AB443D351E14BF0700A2B826 /* HMScanner.bundle in Resources */,
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
@@ -2268,6 +2311,8 @@
 				D15450FB1DF936D8002F4057 /* TuiJianTableViewCell.m in Sources */,
 				D16BF2B31DEFF15B001A82BF /* JFCityTableViewCell.m in Sources */,
 				D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */,
+				AB443D2F1E14BF0700A2B826 /* HMScannerController.m in Sources */,
+				AB443D301E14BF0700A2B826 /* HMScannerViewController.m in Sources */,
 				D10DC9591E0A579200930F74 /* OtherPayWayViewController.m in Sources */,
 				D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */,
 				AB50D47B1E0928AA00B427E6 /* NSString+MD5.m in Sources */,
@@ -2317,6 +2362,8 @@
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */,
+				AB443D331E14BF0700A2B826 /* HMScannerMaskView.m in Sources */,
+				AB443D311E14BF0700A2B826 /* HMScanerCardViewController.m in Sources */,
 				D15B3AF71DDC0E5E009122FE /* Order.m in Sources */,
 				D12165F91DB79F37006B06FC /* MyAccountTableViewCell.m in Sources */,
 				D10EE3DB1DB0B28F001C1992 /* ASIFormDataRequest.m in Sources */,
@@ -2339,6 +2386,7 @@
 				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
 				ABF5BEEA1DF7E97A00D19DFB /* SettingTableViewController.m in Sources */,
 				AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */,
+				AB443D321E14BF0700A2B826 /* HMScannerBorder.m in Sources */,
 				D16BF2CE1DF14E72001A82BF /* StoreDetailModel.m in Sources */,
 				D1F916A81E07B4D70091B989 /* DaLiViewController.m in Sources */,
 				D12165A11DB64E93006B06FC /* LookRecordHeadView.m in Sources */,
@@ -2395,6 +2443,7 @@
 				D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */,
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
 				D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */,
+				AB443D341E14BF0700A2B826 /* HMScanner.m in Sources */,
 				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
 				D196D58C1E0CFB9E0062AD91 /* TobeAgencyViewController.m in Sources */,
 				D10DC95F1E0AAAA600930F74 /* TXTradePasswordView.m in Sources */,
