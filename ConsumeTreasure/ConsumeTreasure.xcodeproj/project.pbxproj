@@ -304,6 +304,7 @@
 		D1A3C0A61E15009E0040AAD9 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0A51E15009E0040AAD9 /* ImageViewController.m */; };
 		D1A3C0A91E1500AF0040AAD9 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0A81E1500AF0040AAD9 /* TextViewController.m */; };
 		D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */; };
+		D1A3C0AF1E160F9A0040AAD9 /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -924,6 +925,8 @@
 		D1A3C0A81E1500AF0040AAD9 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		D1A3C0AA1E1500D80040AAD9 /* MapLocateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLocateViewController.h; sourceTree = "<group>"; };
 		D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocateViewController.m; sourceTree = "<group>"; };
+		D1A3C0AD1E160F9A0040AAD9 /* cityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
+		D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1165,6 +1168,8 @@
 				D15B39451DD01488009122FE /* ChartModel.m */,
 				D15B397F1DD99D02009122FE /* LookTimeMode.h */,
 				D15B39801DD99D02009122FE /* LookTimeMode.m */,
+				D1A3C0AD1E160F9A0040AAD9 /* cityModel.h */,
+				D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */,
 				D15B39821DD99D1F009122FE /* LookStoreModel.h */,
 				D15B39831DD99D1F009122FE /* LookStoreModel.m */,
 				D150DFBD1DE433180045FB2B /* TuiJianModel.h */,
@@ -2354,6 +2359,7 @@
 				D10EE3D71DB0B28F001C1992 /* ASIAuthenticationDialog.m in Sources */,
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				D12054831DEC26A500EB2707 /* StoreMasterModel.m in Sources */,
+				D1A3C0AF1E160F9A0040AAD9 /* cityModel.m in Sources */,
 				ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */,
 				D16BF2BE1DF01B5A001A82BF /* ProvinceHeadView.m in Sources */,
 				D196D5811E0C21210062AD91 /* CashViewController.m in Sources */,
