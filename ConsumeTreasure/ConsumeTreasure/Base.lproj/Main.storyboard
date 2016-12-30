@@ -170,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgR-GW-Wv5">
-                                        <rect key="frame" x="72.5" y="271" width="22" height="22"/>
+                                        <rect key="frame" x="73" y="271" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="uQZ-ct-Ibe"/>
                                             <constraint firstAttribute="width" constant="22" id="vmg-Hh-mNp"/>
@@ -199,7 +199,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86k-6e-k9k">
-                                        <rect key="frame" x="100.5" y="275" width="174" height="14"/>
+                                        <rect key="frame" x="101" y="275" width="174" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="174" id="MX6-4X-ZWP"/>
                                             <constraint firstAttribute="height" constant="14" id="fLH-eB-vR0"/>
@@ -210,7 +210,7 @@
                                         </state>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGa-7L-mVJ">
-                                        <rect key="frame" x="150.5" y="319" width="74" height="21"/>
+                                        <rect key="frame" x="151" y="319" width="74" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="iN0-bq-R51"/>
                                             <constraint firstAttribute="height" constant="21" id="r34-Mf-VxX"/>
@@ -244,7 +244,7 @@
                                         <state key="normal" image="weixin"/>
                                     </button>
                                     <button hidden="YES" opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeQ-ul-Fr7">
-                                        <rect key="frame" x="169.5" y="358" width="36" height="36"/>
+                                        <rect key="frame" x="170" y="358" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Xly-Wj-boz"/>
                                             <constraint firstAttribute="height" constant="36" id="gbs-kk-xrs"/>
@@ -270,7 +270,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFD-2u-WaW">
-                                        <rect key="frame" x="159.5" y="401" width="56" height="21"/>
+                                        <rect key="frame" x="160" y="401" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="37V-YQ-5ne"/>
                                             <constraint firstAttribute="width" constant="56" id="edv-Sl-rb0"/>
@@ -418,7 +418,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUR-8Z-H5Q">
-                                        <rect key="frame" x="47.5" y="220" width="280" height="45"/>
+                                        <rect key="frame" x="48" y="220" width="280" height="45"/>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="2bK-h1-WyY"/>
@@ -438,7 +438,7 @@
                                         </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxN-3J-nmi">
-                                        <rect key="frame" x="22.5" y="320" width="120" height="1"/>
+                                        <rect key="frame" x="23" y="320" width="120" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="YfR-T2-oJK"/>
@@ -446,7 +446,7 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-y1-fFX">
-                                        <rect key="frame" x="232.5" y="320" width="120" height="1"/>
+                                        <rect key="frame" x="233" y="320" width="120" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Ncv-ME-cgy"/>
@@ -472,7 +472,7 @@
                                         <state key="normal" image="weixin"/>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-BY-bSM">
-                                        <rect key="frame" x="169.5" y="347" width="36" height="36"/>
+                                        <rect key="frame" x="170" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="lbj-f3-YKU"/>
                                             <constraint firstAttribute="width" constant="36" id="pbC-Q4-rOr"/>
@@ -498,7 +498,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微博登陆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHb-SC-U5z">
-                                        <rect key="frame" x="159.5" y="391" width="56" height="21"/>
+                                        <rect key="frame" x="160" y="391" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8n2-Vg-e0h"/>
                                             <constraint firstAttribute="width" constant="56" id="s62-S7-u5N"/>
@@ -574,7 +574,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEh-Vl-IGa">
-                                <rect key="frame" x="42.5" y="129" width="80" height="30"/>
+                                <rect key="frame" x="43" y="129" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Ahd-f1-HiP"/>
                                     <constraint firstAttribute="height" constant="30" id="mhR-lr-ISl"/>
@@ -588,7 +588,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kE-Gk-5WI">
-                                <rect key="frame" x="252.5" y="129" width="80" height="30"/>
+                                <rect key="frame" x="253" y="129" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Z4U-Ll-ltK"/>
                                     <constraint firstAttribute="height" constant="30" id="kmE-ky-rYp"/>
@@ -831,7 +831,7 @@
         <image name="backWhite" width="11" height="19"/>
         <image name="chose" width="11" height="11"/>
         <image name="dl_header_bg" width="720" height="345"/>
-        <image name="logo" width="136" height="136"/>
+        <image name="logo" width="68" height="69"/>
         <image name="qq" width="36" height="36"/>
         <image name="sj" width="27" height="13"/>
         <image name="top" width="360" height="62"/>
