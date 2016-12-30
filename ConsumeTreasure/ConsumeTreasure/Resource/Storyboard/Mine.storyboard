@@ -779,11 +779,47 @@
                     <connections>
                         <outlet property="cash" destination="CyP-tW-o6R" id="tqp-yn-Bjt"/>
                         <segue destination="HOl-aq-Hz1" kind="push" identifier="gosetPswSegue" id="JRy-3U-DDn"/>
+                        <segue destination="6lL-3v-sKU" kind="push" identifier="aboutSegueId" id="KQf-dc-JsR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XD-Mx-97l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="2966"/>
+            <point key="canvasLocation" x="-82" y="3483"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="HJ6-lY-5ze">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="6lL-3v-sKU" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZNb-Ls-ogF"/>
+                        <viewControllerLayoutGuide type="bottom" id="MZJ-0z-OLx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Ww-qT-alm">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sye-2j-wXk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PiW-FR-rGV">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="fpG-fK-HUv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="6lL-3v-sKU" id="A8W-Hr-tkE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="Sye-2j-wXk" id="uQQ-Np-ua8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Whg-z0-o1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.79999999999995" y="3617.5412293853078"/>
         </scene>
         <!--设置支付密码-->
         <scene sceneID="BBY-yK-q6C">
