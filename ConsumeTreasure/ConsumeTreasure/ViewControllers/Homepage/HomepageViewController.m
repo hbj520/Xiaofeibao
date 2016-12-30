@@ -116,11 +116,7 @@
    // self.tabBarController.tabBar.hidden = YES;
     //  _locService.delegate = nil;
 }
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
 
-}
 #pragma mark-mapMethod
 
 - (void)addLocationGes{
