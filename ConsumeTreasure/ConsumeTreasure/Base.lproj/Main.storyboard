@@ -44,7 +44,7 @@
         <!--Login And Register View Controller-->
         <scene sceneID="f9i-48-aK5">
             <objects>
-                <viewController storyboardIdentifier="LoginAndRegisterId" id="A4f-ao-Lfo" customClass="LoginAndRegisterViewController" sceneMemberID="viewController">
+                <viewController id="A4f-ao-Lfo" customClass="LoginAndRegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Jk-vZ-ifA"/>
                         <viewControllerLayoutGuide type="bottom" id="btd-4m-PoN"/>
@@ -665,7 +665,7 @@
         <!--Navigation Controller-->
         <scene sceneID="khh-GY-bUZ">
             <objects>
-                <navigationController navigationBarHidden="YES" id="MfO-Hq-heq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginAndRegisterId" navigationBarHidden="YES" id="MfO-Hq-heq" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ta8-EX-Kxd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
