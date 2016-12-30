@@ -22,6 +22,17 @@
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    if ([self.imageArray[1] isEqualToString:@"1"]) {
+        self.navigationItem.title = @"营业执照";
+    }else if ([self.imageArray[1] isEqualToString:@"2"]) {
+        self.navigationItem.title = @"经营许可证";
+    }else if ([self.imageArray[1] isEqualToString:@"3"]) {
+        self.navigationItem.title = @"身份证正面";
+    }else{
+        self.navigationItem.title = @"身份证反面";
+    }
+    
+    
 }
 - (IBAction)addNewImage:(id)sender {
     
@@ -76,6 +87,7 @@
     if (self.imgBlock) {
         self.imgBlock(imageOne);
     }
+    [self backTolastPage];
 }
 
 - (void)didReceiveMemoryWarning {
