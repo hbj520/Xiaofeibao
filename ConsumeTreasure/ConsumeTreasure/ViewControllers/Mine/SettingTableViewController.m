@@ -79,9 +79,9 @@
             alert.tag = 1008;
             [alert show];
         }else if (indexPath.row == 1){
-            
+            [self performSegueWithIdentifier:@"aboutSegueId" sender:nil];
         }else if (indexPath.row == 2){
-            
+            [self performSegueWithIdentifier:@"aboutSegueId" sender:nil];
         }else if (indexPath.row == 3){//设置支付宝密码
             SetPayPswViewController *setPayPswVC = [[SetPayPswViewController alloc] init];
             [self.navigationController pushViewController:setPayPswVC animated:YES];

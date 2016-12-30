@@ -180,6 +180,8 @@
     [[MyAPI sharedAPI] loginWithParameters:para result:^(BOOL sucess, NSString *msg) {
                                                  
                                                  if (sucess) {
+                                                     [self.view removeFromSuperview];
+                                                     [self removeFromParentViewController];
                                                      [Tools chooseRootController];
                                                    //  [self changeTohom];
                                                      [[XFBConfig Instance] savePhoneNum:self.loginPhoneNumTextField.text];

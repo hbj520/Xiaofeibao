@@ -26,6 +26,7 @@
 		AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808761E13C53C0074D573 /* GuideViewController.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
+		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
@@ -370,6 +371,8 @@
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB10A8251DF122BD0042586A /* EvaluateListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListModel.h; sourceTree = "<group>"; };
 		AB10A8261DF122BD0042586A /* EvaluateListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListModel.m; sourceTree = "<group>"; };
+		AB1496641E1645C70042637C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		AB1496651E1645C70042637C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinePayViewController.h; sourceTree = "<group>"; };
 		AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinePayViewController.m; sourceTree = "<group>"; };
 		AB32FCBF1DE41A9000032D38 /* EvaluateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListViewController.h; sourceTree = "<group>"; };
@@ -1301,6 +1304,8 @@
 				D10DC95B1E0A907700930F74 /* SetPayPswViewController.m */,
 				D196D5721E0B6C310062AD91 /* PSWVertifyViewController.h */,
 				D196D5731E0B6C310062AD91 /* PSWVertifyViewController.m */,
+				AB1496641E1645C70042637C /* AboutViewController.h */,
+				AB1496651E1645C70042637C /* AboutViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2479,6 +2484,7 @@
 				D15B39811DD99D02009122FE /* LookTimeMode.m in Sources */,
 				D1A3C0901E12ABDB0040AAD9 /* WithDrawViewController.m in Sources */,
 				D10EE3DE1DB0B28F001C1992 /* ASINetworkQueue.m in Sources */,
+				AB1496661E1645C70042637C /* AboutViewController.m in Sources */,
 				D15B396B1DD417C3009122FE /* BottomFootView.m in Sources */,
 				D1A3C0891E1246DA0040AAD9 /* BankCardTableViewCell.m in Sources */,
 				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,
