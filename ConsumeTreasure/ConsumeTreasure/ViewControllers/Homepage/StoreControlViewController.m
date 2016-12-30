@@ -21,7 +21,7 @@
 #import "DetailHeadView.h"
 
 #import "DLPickerView.h"
-@interface StoreControlViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface StoreControlViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     NSArray *secOne;
     NSArray *secTwo;
@@ -70,6 +70,7 @@
     placeThr = @[@"已上传 >",@"待上传 >",@"已上传 >",@"已上传 >"];
     
     [self creatUI];
+    
 }
 
 - (void)viewDidLayoutSubviews{
@@ -118,7 +119,16 @@
         
         storeConCell.storeNameLab.text = secOne[indexPath.row];
         storeConCell.placetextfield.placeholder = placeOne[indexPath.row];
+        
+            storeConCell.placetextfield.tag = 8888;
+            storeConCell.placetextfield.delegate = self;
+        
+        
+        
         return storeConCell;
+        
+        
+        
         
     }else{
         
@@ -346,7 +356,17 @@
     
     
 }
-
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField.tag == 8888) {
+        [UIView animateWithDuration:0.26 animations:^{
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:1 animated:YES];
+        }];
+    }
+    
+    
+  
+}
 
 
 @end
