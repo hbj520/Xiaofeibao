@@ -14,6 +14,11 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)click:(id)sender {
+    if (self.pikerBlock) {
+        self.pikerBlock();
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

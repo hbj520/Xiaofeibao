@@ -6,10 +6,15 @@
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
-#import "BaseViewController.h"
-
-@interface ImageViewController : BaseViewController
+#import "BasePhotoViewController.h"
+typedef void(^IMGBlock) (NSString *imgStr);
+@interface ImageViewController : BasePhotoViewController
 @property (weak, nonatomic) IBOutlet UIImageView *theImage;
 @property (weak, nonatomic) IBOutlet UIButton *chooseBtn;
+
+
+@property (nonatomic,strong) NSArray *imageArray;
+
+@property (nonatomic,copy) IMGBlock imgBlock;
 
 @end

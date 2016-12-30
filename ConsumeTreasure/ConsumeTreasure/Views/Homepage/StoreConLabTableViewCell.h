@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^UpPikerViewBlock)();
 @interface StoreConLabTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *leftLab;
 @property (weak, nonatomic) IBOutlet UILabel *detailLab;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+
+
+@property (nonatomic ,copy) UpPikerViewBlock pikerBlock;
 
 
 @end

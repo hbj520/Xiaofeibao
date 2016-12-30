@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^UpPikerViewBlock)();
-typedef void (^textBlock)();
+
 
 @interface StoreControlTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *storeNameLab;
 @property (weak, nonatomic) IBOutlet UITextField *placetextfield;
-@property (weak, nonatomic) IBOutlet UIButton *hideBtn;
 
-@property (nonatomic ,copy) UpPikerViewBlock pikerBlock;
-@property (nonatomic ,copy) textBlock textBlock;
+
+
 @end

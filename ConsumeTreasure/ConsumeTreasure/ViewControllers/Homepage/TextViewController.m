@@ -20,7 +20,11 @@
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
-
+    if ([self.arr[1] isEqualToString:@"1"]) {
+        self.navigationItem.title = @"门面地址";
+    }else{
+        self.navigationItem.title = @"商家介绍";
+    }
 }
 
 - (void)didReceiveMemoryWarning {

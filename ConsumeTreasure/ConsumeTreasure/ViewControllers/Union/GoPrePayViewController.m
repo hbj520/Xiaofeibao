@@ -18,7 +18,7 @@
 #import "MDEncryption.h"
 #import "JHCoverView.h"
 
-@interface GoPrePayViewController ()<XWMoneyTextFieldLimitDelegate>
+@interface GoPrePayViewController ()<XWMoneyTextFieldLimitDelegate,JHCoverViewDelegate>
 {
     float leftMoney;//可用通宝币余额
     float realMoney;//拥有通宝币
@@ -195,7 +195,7 @@
         weakSelf.coverView.hidden = YES;
         [weakSelf.coverView.payTextField resignFirstResponder];
         [weakSelf postDataWithStr:str];
-        [weakSelf.coverView removeFromSuperview];
+        [self.coverView removeFromSuperview];
     };
     
 }
@@ -262,16 +262,18 @@
     //调通宝币支付
     [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
         if (sucess) {
-            [self showHint:msg];
-            //showAlert(msg);
+            //[self showHint:msg];
+            showAlert(msg);
             [self.navigationController popViewControllerAnimated:YES];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
             }
+          //
+            
             [self showHint:msg];
 
-           // showAlert(msg);
+            showAlert(msg);
         }
     } errorResult:^(NSError *enginerError) {
         
@@ -303,5 +305,9 @@
     
     
 }
-
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+}
 @end

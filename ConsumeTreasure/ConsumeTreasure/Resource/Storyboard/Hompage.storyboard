@@ -2307,13 +2307,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnG-vl-8lt">
                                 <rect key="frame" x="10" y="289" width="355" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gos-5A-Cot">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gos-5A-Cot">
                                         <rect key="frame" x="8" y="8" width="68" height="68"/>
-                                        <color key="backgroundColor" red="0.039215686270000001" green="0.85738146550000005" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="68" id="6EQ-PR-yZW"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="upload_sfz"/>
                                         <connections>
                                             <action selector="addNewImage:" destination="ou9-MN-nUo" eventType="touchUpInside" id="hJx-2A-HWa"/>
                                         </connections>
@@ -4428,6 +4427,7 @@
         <image name="location" width="35" height="46"/>
         <image name="shouye_sq" width="532" height="91"/>
         <image name="syt" width="32" height="32"/>
+        <image name="upload_sfz" width="204" height="199"/>
         <image name="wdhy" width="35" height="31"/>
         <image name="weixin" width="36" height="36"/>
         <image name="whiteback" width="10" height="17"/>
