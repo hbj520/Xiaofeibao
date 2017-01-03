@@ -48,6 +48,7 @@
     NSString *endTime;
     NSString *disCount;
     
+    NSString *doorImg;//店铺首图
     NSString *yingyeImg;
     NSString *jingyingImg;
     NSString *IDFrontImg;
@@ -107,6 +108,7 @@
             jingyingImg = model.licenseimg;
             IDFrontImg = model.idcardnofrontimg;
             IDBackImg = model.idcardnobackimg;
+            doorImg = model.doorimg;
 
             [self.tableView reloadData];
         }

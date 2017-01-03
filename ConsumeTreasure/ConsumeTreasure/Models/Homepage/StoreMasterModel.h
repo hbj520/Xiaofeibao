@@ -54,6 +54,7 @@
 @property (nonatomic,strong) NSString *licenseimg;//许可证
 @property (nonatomic,strong) NSString *idcardnofrontimg;//正面
 @property (nonatomic,strong) NSString *idcardnobackimg;//反面
+@property (nonatomic,strong) NSString *doorimg;//反面
 
 @end
 
