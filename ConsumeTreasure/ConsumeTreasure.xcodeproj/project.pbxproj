@@ -306,6 +306,7 @@
 		D1A3C0A91E1500AF0040AAD9 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0A81E1500AF0040AAD9 /* TextViewController.m */; };
 		D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */; };
 		D1A3C0AF1E160F9A0040AAD9 /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */; };
+		D1A3C0B21E1BC5080040AAD9 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -930,6 +931,8 @@
 		D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLocateViewController.m; sourceTree = "<group>"; };
 		D1A3C0AD1E160F9A0040AAD9 /* cityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
 		D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
+		D1A3C0B01E1BC5080040AAD9 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1195,6 +1198,8 @@
 				D16BF2D31DF15004001A82BF /* CommentModel.m */,
 				D10DC93C1E08D0A300930F74 /* PersonInfoModel.h */,
 				D10DC93D1E08D0A300930F74 /* PersonInfoModel.m */,
+				D1A3C0B01E1BC5080040AAD9 /* MapAnnotation.h */,
+				D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2400,6 +2405,7 @@
 				D11171111DFA8EA500AD88DE /* MyMemberViewController.m in Sources */,
 				D16BF2B21DEFF15B001A82BF /* JFCityHeaderView.m in Sources */,
 				D121651B1DB4F2B4006B06FC /* YZFlowLayout.m in Sources */,
+				D1A3C0B21E1BC5080040AAD9 /* MapAnnotation.m in Sources */,
 				D1A3C0821E123B2F0040AAD9 /* KGModal.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,

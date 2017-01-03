@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+typedef void (^getJWDBlock)(NSArray *arr);
 /*
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
@@ -29,5 +30,8 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
 @interface MapLocateViewController : UIViewController
+
+
+@property (nonatomic,copy) getJWDBlock jwdBlock;
 
 @end

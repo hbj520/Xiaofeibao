@@ -17,5 +17,6 @@
 @property (nonatomic,strong) NSString *shopName;
 @property (nonatomic,strong) NSString *shopPhone;
 @property (nonatomic,strong) NSString *collect;
+@property (nonatomic,strong) NSString *shopReturnRate;
 //@property (nonatomic,strong) NSString *startBusinessTime;
 @end

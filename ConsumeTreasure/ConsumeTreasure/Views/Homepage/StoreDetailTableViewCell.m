@@ -14,8 +14,8 @@
     [super awakeFromNib];
     // Initialization code
     
-//    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_720"] forState:UIControlStateNormal];
-//    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_on_720"] forState:UIControlStateSelected];
+
+    
     self.collectBtn.hidden = YES;
 }
 
@@ -24,7 +24,7 @@
         self.storeNameLab.text = deModel.shopName;
         self.adresssLab.text = deModel.addr;
         self.phNum = deModel.shopPhone;
-        
+        self.discountLab.text = [NSString stringWithFormat:@"现金支付立返%.2f%%",[deModel.shopReturnRate floatValue]*100];
 //        if ([deModel.collect isEqualToString:@"1"]) {
 //            self.collectBtn.selected = YES;
 //        }else{
@@ -32,6 +32,17 @@
 //        }
     }
 }
+
+
+
+- (IBAction)location:(id)sender {
+    
+    if (self.colleBlock) {
+         self.colleBlock();
+    }
+}
+
+
 
 //- (IBAction)collectClick:(UIButton*)button {
 //    button.selected = !button.selected;

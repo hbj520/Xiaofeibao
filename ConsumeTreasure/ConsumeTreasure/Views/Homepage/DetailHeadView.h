@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^ChangeImgBlock)();
 
 @interface DetailHeadView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+
+@property (nonatomic,copy) ChangeImgBlock imgBlock;
 
 @end

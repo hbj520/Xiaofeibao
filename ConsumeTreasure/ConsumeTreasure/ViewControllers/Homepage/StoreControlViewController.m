@@ -26,6 +26,9 @@
 
 @interface StoreControlViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
+    
+    DetailHeadView * headView;
+    
     NSArray *secOne;
     NSArray *secTwo;
     NSArray *secThr;
@@ -54,6 +57,22 @@
     NSString *IDFrontImg;
     NSString *IDBackImg;
     
+    //*************************************
+    NSString *doorImg2;//上传用图
+    NSString *yingyeImg2;
+    NSString *jingyingImg2;
+    NSString *IDFrontImg2;
+    NSString *IDBackImg2;
+    
+    
+    //代替文字
+    NSString *img1;
+    NSString *img2;
+    NSString *img3;
+    NSString *img4;
+    
+    NSString *sTime;
+    NSString *eTime;
     
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -109,7 +128,47 @@
             IDFrontImg = model.idcardnofrontimg;
             IDBackImg = model.idcardnobackimg;
             doorImg = model.doorimg;
+            
+            if (startTime.length > 0) {
+                sTime = startTime;
+            }else{
+                sTime = @"9:00";
+            }
+            
+            if (endTime.length > 0) {
+                eTime = endTime;
+            }else{
+                eTime = @"18:00";
+            }
+            
+            
+            if (jingyingImg.length > 0) {
+                img1 = @"已上传";
+            }else{
+                img1 = @"未上传";
+            }
+            if (yingyeImg.length > 0) {
+                img2 = @"已上传";
+            }else{
+                img2 = @"未上传";
+            }  if (IDFrontImg.length > 0) {
+                img3 = @"已上传";
+            }else{
+                img3 = @"未上传";
+            }  if (IDBackImg.length > 0) {
+                img4 = @"已上传";
+            }else{
+                img4 = @"未上传";
+            }
 
+            secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号"];
+            secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例"];
+            secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
+            
+            placeOne = @[storeName,storePhone,realName,IDNum];
+            placeTwo = @[strAddr,@"开始定位",strDescri,sTime,eTime,disCount];
+            placeThr = @[img1,img2,img3,img4];
+            
             [self.tableView reloadData];
         }
         
@@ -117,24 +176,57 @@
         
     }];
     
-    secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号"];
-    secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例"];
-    secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
-    
-    placeOne = @[@"智惠返",@"请填写正确的号码",@"XXX",@"xxxxxxxxxxxxxx"];
-    placeTwo = @[@"具体位置",@"具体位置",@"商店详情",@"09:00 >",@"18:00 >",@"10%"];
-    placeThr = @[@"已上传 >",@"待上传 >",@"已上传 >",@"已上传 >"];
+
 }
 
 - (void)viewDidLayoutSubviews{
-    DetailHeadView * headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
-    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:@"storeHead"] placeholderImage:[UIImage imageNamed:@"storeHead"]];
+    headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
+    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:doorImg] placeholderImage:[UIImage imageNamed:@"storeHead"]];
     headView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    headView.imgBlock =^(){
+        
+        UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从照片库选取",nil];
+       // action.tag = tagg;
+        [action showInView:self.navigationController.view];
+        
+    };
     
     headView.frame = CGRectMake(0, 0, ScreenWidth, 170);
     self.tableView.tableHeaderView = headView;
 }
 
+
+#pragma mark - UIActionSheet delegate -
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    
+    __weak typeof(self) weakSelf = self;
+    if (buttonIndex == 0) {
+        [self openCamera];
+        
+    }else{
+        [self openPhoto];
+        
+    }
+    __weak typeof(headView)weakHead = headView;
+    self.imageBlock = ^(UIImage *image){
+        [[MyAPI sharedAPI] postFilesWithFormData:@[image] result:^(BOOL success, NSString *msg, id object) {
+            if (success) {
+                weakHead.headerImage.image = image;
+                doorImg2 = (NSString*)object;
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [weakSelf logout];
+                }
+                [weakSelf showHint:msg];
+            }
+        } errorResult:^(NSError *enginerError) {
+            [weakSelf showHint:@"异常错误"];
+        }];
+        
+    };
+}
 
 - (void)creatUI{
     
@@ -161,6 +253,20 @@
     }
 }
 
+-(void)change:(UITextField*)textField{
+    if (textField.tag == 8888) {
+        storeName = textField.text;
+    }else if (textField.tag == 7777){
+        storePhone = textField.text;
+    }else if (textField.tag == 6666){
+        realName = textField.text;
+    }else{
+        IDNum = textField.text;
+    }
+    
+}
+
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.section == 0) {
@@ -171,17 +277,26 @@
         storeConCell.selectionStyle = 0;
         
         storeConCell.storeNameLab.text = secOne[indexPath.row];
-        storeConCell.placetextfield.placeholder = placeOne[indexPath.row];
+        storeConCell.placetextfield.text = placeOne[indexPath.row];
         
+        
+        storeConCell.placetextfield.delegate = self;
+        [storeConCell.placetextfield addTarget:self action:@selector(change:) forControlEvents:UIControlEventEditingChanged];
+        if (indexPath.row == 0) {
             storeConCell.placetextfield.tag = 8888;
-            storeConCell.placetextfield.delegate = self;
+        }else if(indexPath.row == 1){
+            storeConCell.placetextfield.tag = 7777;
+        }else if (indexPath.row == 2){
+            storeConCell.placetextfield.tag = 6666;
+        }else{
+            storeConCell.placetextfield.tag = 5555;
+        }
         
         
         
         return storeConCell;
         
-        
-        
+       
         
     }else{
         
@@ -202,6 +317,12 @@
                 labCell.pikerBlock =^{
                     DLPickerView *pickerView = [[DLPickerView alloc] initWithPlistName:@"Time" withSelectedItem:[weakCell.detailLab.text componentsSeparatedByString:@":"] withSelectedBlock:^(id  _Nonnull item) {
                         
+                        if (indexPath.row == 3) {
+                            sTime = [item componentsJoinedByString:@":"];
+                        }else if (indexPath.row == 4){
+                            eTime =  [item componentsJoinedByString:@":"];
+                        }
+                        
                         weakCell.detailLab.text = [item componentsJoinedByString:@":"];
                         
                     }];
@@ -218,6 +339,8 @@
                 };
 
                 labCell.detailLab.text = strAddr;
+                
+               // strAddr6 = labCell.detailLab.text;
                 
             }else if (indexPath.row == 2){
                 labCell.pikerBlock =^{
@@ -252,75 +375,7 @@
     }
     
   
-    /*
   
-    
-    if (indexPath.section == 0) {
-        
-        if (indexPath.row == 3 ||indexPath.row == 4) {
-            storeConCell.hideBtn.enabled = YES;
-            
-            __weak typeof(storeConCell) weakCell  = storeConCell;
-            storeConCell.pikerBlock =^{
-                DLPickerView *pickerView = [[DLPickerView alloc] initWithPlistName:@"Time" withSelectedItem:[weakCell.placetextfield.text componentsSeparatedByString:@":"] withSelectedBlock:^(id  _Nonnull item) {
-                    
-                    weakCell.placetextfield.text = [item componentsJoinedByString:@":"];
-                    
-                }];
-                
-                [pickerView show];
-                
-            };
-        }else if (indexPath.row == 1){
-            storeConCell.hideBtn.enabled = YES;
-           // __weak typeof(storeConCell) weakStoreCell = storeConCell;
-            storeConCell.textBlock =^(){
-                [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"带入",@"1"]];
-                
-            };
-            storeConCell.placetextfield.text = strAddr;
-            
-        }else if (indexPath.row == 6){
-            storeConCell.hideBtn.enabled = YES;
-            // __weak typeof(storeConCell) weakStoreCell = storeConCell;
-            
-            storeConCell.textBlock =^(){
-                [self performSegueWithIdentifier:@"goWriteSegue" sender:@[@"带入",@"2"]];
-                
-            };
-            storeConCell.placetextfield.text = strDescri;
-
-        }
-        
-        
-        else if(indexPath.row == 2){
-            
-            
-            storeConCell.hideBtn.enabled = YES;
-            storeConCell.textBlock =^(){
-                [self performSegueWithIdentifier:@"goGetLocationSegue" sender:nil];
-                
-            };
-        }
-        
-        else{
-            storeConCell.hideBtn.enabled = NO;
-        }
-        
-        storeConCell.storeNameLab.text = secOne[indexPath.row];
-        storeConCell.placetextfield.placeholder = placeOne[indexPath.row];
-    }else if (indexPath.section == 1){
-        storeConCell.storeNameLab.text = secTwo[indexPath.row];
-        storeConCell.placetextfield.placeholder = placeTwo[indexPath.row];
-    }else{
-     
-        storeConCell.storeNameLab.text = secThr[indexPath.row];
-        storeConCell.placetextfield.placeholder = placeThr[indexPath.row];
-    }
-
-    return storeConCell;
-     
-     */
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -339,17 +394,14 @@
     if (indexPath.section == 2) {
         
         if (indexPath.row == 0) {
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"营业执照",@"1"]];
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[yingyeImg,@"1"]];
         }else if (indexPath.row == 1) {
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"经营许可",@"2"]];
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[jingyingImg,@"2"]];
         }else if (indexPath.row == 2) {
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"身份正面",@"3"]];
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[IDFrontImg,@"3"]];
         }else{
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[@"身份反面",@"4"]];
+            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[IDBackImg,@"4"]];
         }
-        
-        
-    
     }
 }
 
@@ -360,6 +412,59 @@
 
 - (IBAction)PostData:(id)sender {
     NSLog(@"保存数据");
+    
+//    StoreControlTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+//    StoreControlTableViewCell *storeNameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+//    StoreControlTableViewCell *storePhoneCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+//    StoreControlTableViewCell *IDNumCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    
+//    StoreConLabTableViewCell *addrCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+//    StoreConLabTableViewCell *introCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]];
+//    StoreConLabTableViewCell *startTCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]];
+//    StoreConLabTableViewCell *endTCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:1]];
+    
+//    NSString *endtime;
+//    if ([endTCell isKindOfClass:nil]) {
+//        endtime = endTime;
+//    }else{
+//        endtime = endTCell.detailLab.text;
+//    }
+    
+    
+    NSDictionary *para = @{
+                           @"type":@"2",
+                           @"member":@{
+                                   @"name":realName,
+                                   @"idcardno":IDNum
+                                   },
+                           @"shop":@{
+                                   @"addr":strAddr,
+                                   @"shopPhone":storePhone,
+                                   @"doorimg":doorImg2,
+                                   @"shopname":storeName,
+                                   @"businessimg":yingyeImg2,
+                                   @"licenseimg":jingyingImg2,
+                                   @"idcardnofrontimg":IDFrontImg2,
+                                   @"idcardnobackimg":IDBackImg2,
+                                   @"latitude":latituedeStr,
+                                   @"longitude":longtitudeStr,
+                                   @"introduction":strDescri,
+                                   @"endbusinesstime":eTime,
+                                   @"startbusinesstime":sTime
+                                   }
+                           
+                           };
+    [[MyAPI sharedAPI] finishStoreInfoWithParameters:para resulet:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            
+            
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -394,15 +499,24 @@
         imgVC.imageArray = imageArr;
         imgVC.imgBlock =^(NSString *imageStr){
             if ([imageArr[1] isEqualToString:@"1"]) {
-                yingyeImg = imageStr;
+                yingyeImg2 = imageStr;
             }else if ([imageArr[1] isEqualToString:@"2"]){
-                jingyingImg = imageStr;
+                jingyingImg2 = imageStr;
             }else if ([imageArr[1] isEqualToString:@"3"]){
-                IDFrontImg = imageStr;
+                IDFrontImg2 = imageStr;
             }else{
-                IDBackImg = imageStr;
+                IDBackImg2 = imageStr;
             }
         };
+        
+    }else if([segue.identifier isEqualToString:@"goGetLocationSegue"]){
+        MapLocateViewController *locaVC = segue.destinationViewController;
+        locaVC.jwdBlock =^(NSArray *locaArray){
+            longtitudeStr = locaArray[1];
+            latituedeStr = locaArray[0];
+            
+        };
+        
         
     }
     
@@ -411,7 +525,7 @@
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if (textField.tag == 8888) {
+    if (textField.tag == 8888 ||textField.tag == 7777||textField.tag == 6666||textField.tag == 5555) {
         [UIView animateWithDuration:0.26 animations:^{
             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:1 animated:YES];
         }];

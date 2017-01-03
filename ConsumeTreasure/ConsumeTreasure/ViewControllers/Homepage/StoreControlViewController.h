@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
-@interface StoreControlViewController : BaseViewController
+#import "BasePhotoViewController.h"
+@interface StoreControlViewController : BasePhotoViewController
 
 @end

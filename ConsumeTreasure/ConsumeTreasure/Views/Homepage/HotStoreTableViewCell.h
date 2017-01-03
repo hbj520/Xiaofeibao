@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *storeAddress;
 //@property (weak, nonatomic) IBOutlet UILabel *storeLikeNum;
 @property (weak, nonatomic) IBOutlet UILabel *distance;
+@property (weak, nonatomic) IBOutlet UILabel *discountLab;
 
 @property (nonatomic,strong)HomeStoreModel* storeModel;
 

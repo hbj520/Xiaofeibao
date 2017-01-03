@@ -6,6 +6,9 @@
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
+#import "MapAnnotation.h"
+
 #import "StoreDeatilViewController.h"
 #import "GoPrePayViewController.h"
 
@@ -24,8 +27,11 @@
 #import <Masonry.h>
 #import <MJRefresh/MJRefresh.h>
 #import <SDWebImage/UIImageView+WebCache.h>
-@interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource,MKMapViewDelegate>
 {
+    MKMapView *mapView;
+    UIView *bgView;
+    
     StoreDetailModel *_deModel;
     
     NSMutableArray *_spacialGoodArr;
@@ -57,6 +63,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+  
+    
     // Do any additional setup after loading the view.
     self.tabBarController.tabBar.hidden = YES;
     [self.bottomBarView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,12 +79,67 @@
     [self addTableView];
     [self addNavBarView];//导航栏
     
-    [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"unlikeColl"] forState:UIControlStateNormal];
-    [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"likeColle"] forState:UIControlStateSelected];
+    [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"wsc"] forState:UIControlStateNormal];
+    [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"ysc"] forState:UIControlStateSelected];
     
-   // [self addRefresh];
+   // [self getDiTu];
 }
 
+- (void)getDiTu{
+    
+//    bgView = [[UIView alloc]initWithFrame:self.view.bounds];
+//    bgView.backgroundColor = [UIColor blackColor];
+//    bgView.alpha = 0.7;
+//    [self.view addSubview:bgView];
+    
+    mapView = [[MKMapView alloc]initWithFrame:CGRectMake(20, 20, ScreenWidth - 40, ScreenHeight - 40)];
+    mapView.alpha = 1;
+    [self.view addSubview:mapView];
+    
+    [mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(ScreenWidth*0.7,ScreenHeight*0.5));
+    }];
+    
+        UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [deleteBtn setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
+        [deleteBtn addTarget:self action:@selector(delete) forControlEvents:UIControlEventTouchUpInside];
+        [mapView addSubview:deleteBtn];
+        
+        [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.right.equalTo(@10);
+            make.top.equalTo(@10);
+        }];
+        
+        // 设置代理
+        mapView.delegate = self;
+        
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([@"31.856672" doubleValue],[@"117.302757" doubleValue]);
+        MapAnnotation *annotation = [[MapAnnotation alloc] init];
+        annotation.coordinate = coordinate;
+        annotation.title = @"";
+        [mapView addAnnotation:annotation];
+        [mapView setRegion:MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000)];
+        mapView.hidden = NO;
+    
+//    self.tableView.backgroundColor = [UIColor blackColor];
+//    self.tableView.alpha = 0.65;
+}
+
+- (void)delete{
+    
+    mapView.hidden = YES;
+    //[mapView removeFromSuperview];
+}
+
+//地图
+- (MKAnnotationView *)mapView:(MKMapView *)mapView     viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapSample"];
+    annotationView.canShowCallout = YES;
+    return annotationView;
+}
 
 - (void)setStoreModel:(TuiJianModel *)StoreModel{
     NSLog(@"😝%@😋",StoreModel);
@@ -112,6 +176,7 @@
         [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
             if (success) {
                 _deModel = object;
+                self.discountBtnLab.text = [NSString stringWithFormat:@"现金支付立返%.2f%%",[_deModel.shopReturnRate floatValue]*100];
                 [self.tableView reloadData];
             }else{
                 if ([msg isEqualToString:@"-1"]) {
@@ -264,6 +329,14 @@
 //        storeDetailCell.colleBlock =^(BOOL select){
 //            [self collectOrNotWith:select];
 //        };
+        
+        
+        storeDetailCell.colleBlock =^(){
+            NSLog(@"------------");
+            [self getDiTu];
+            
+        };
+        
         storeDetailCell.deModel = _deModel;
         storeDetailCell.selectionStyle = 0;
         return storeDetailCell;

@@ -144,7 +144,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                                   errorResult:(ErrorBlock)errorResult;
 
 #pragma mark -- 店铺管理
-
+- (void)finishStoreInfoWithParameters:(NSDictionary*)para
+                              resulet:(StateBlock)result
+                          errorResult:(ErrorBlock)errorResult;
 #pragma mark -联盟商户主页面各个区
 - (void)unionShopAreaWithParameters:(NSDictionary *)para
                          result:(ArrayBlock)result
