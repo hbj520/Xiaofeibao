@@ -32,6 +32,7 @@ UICollectionViewDataSource>
     NSMutableArray *sortRuleArray;
     NSMutableArray *areaArray;
     NSMutableArray *cateArray;
+    NSInteger page;
 }
 - (IBAction)backBtn:(id)sender;
 - (IBAction)backTitleBtn:(id)sender;
@@ -50,6 +51,7 @@ UICollectionViewDataSource>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    page = 1;
     [self loadData];
     
     [self addNavBar];
@@ -87,6 +89,10 @@ UICollectionViewDataSource>
         }
         [weakSelf loadData];
     }];
+    self.contentTabelView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page++;
+        [weakSelf searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
+    }];
 }
 - (void)addNavBar{
     NSString *navTitle = @"联盟";
@@ -96,7 +102,7 @@ UICollectionViewDataSource>
     self.navigationItem.title = navTitle;
 }
 - (void)addTopMenu{
-    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"自定义"]];
+    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"筛选"]];
     
     //     regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
     //    classTypeArray=@[@"水果",@"火锅",@"生鲜",@"小吃",@"糕点"];
@@ -108,6 +114,7 @@ UICollectionViewDataSource>
     
     __weak typeof(self) weakSelf = self;
     [self.menu setHandleSelectDataBlock:^(NSString *selectTitle, NSUInteger selectIndex, NSUInteger selectButtonTag) {
+        page = 0;
         if (selectButtonTag == 0) {
        AreaModel *areaModel =    regionArray[selectIndex];
             [weakSelf searchShopListWithSorting:@"" shopDistrictId:areaModel.districtId categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
@@ -159,7 +166,7 @@ UICollectionViewDataSource>
         [self showHint:@"分类出错"];
     }];
     //商家列表
-    [self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:YES];
+    [self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
 }
 //查询商家列表
 - (void)searchShopListWithSorting:(NSString *)sorting
@@ -180,7 +187,20 @@ UICollectionViewDataSource>
                                                       @"pageOffest":pageOffset
                                                       } result:^(BOOL success, NSString *msg, NSArray *arrays) {
                                                           if (success) {
+                                                              if (arrays.count == 0) {
+                                                                  [self.contentTabelView.mj_footer endRefreshingWithNoMoreData];
+
+                                                              }else{
+                                                                  [self.contentTabelView.mj_footer endRefreshing];
+
+                                                              }
+                                                              if (page > 1) {
+                                                                  
+                                                                  [dataSource addObjectsFromArray:arrays];
+                                                              }else{
                                                               dataSource = [NSMutableArray arrayWithArray:arrays];
+                                                              }
+
                                                               if (isfirstTime) {
                                                                   [self addTopMenu];
                                                               }
@@ -191,6 +211,7 @@ UICollectionViewDataSource>
                                                               }
                                                           }
                                                           [self.contentTabelView.mj_header endRefreshing];
+                                                          
                                                       } errorResult:^(NSError *enginerError) {
                                                           [self.contentTabelView.mj_header endRefreshing];
  
