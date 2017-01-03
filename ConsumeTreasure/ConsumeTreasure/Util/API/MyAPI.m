@@ -997,7 +997,7 @@
 }
 
 #pragma mark -- 店铺资料查询
-- (void)getStoreInfoDataWithParameters:(NSDictionary *)para
+- (void)getStoreControlInfoDataWithParameters:(NSDictionary *)para
                                 result:(ModelBlock)result
                            errorResult:(ErrorBlock)errorResult{
     
@@ -1016,7 +1016,7 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSError *error = nil;
-            StoreMasterModel *model = [[StoreMasterModel alloc]initWithDictionary:responseObject[@"data"][@"shop"] error:&error];
+            storeInfoModel *model = [[storeInfoModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
             
             result(YES,info,model);
         }else{
@@ -1027,7 +1027,7 @@
         errorResult(error);
     }];
 }
- 
+
     
 
 #pragma mark -- 店铺管理

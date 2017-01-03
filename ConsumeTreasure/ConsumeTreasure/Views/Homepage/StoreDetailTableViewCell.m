@@ -14,8 +14,9 @@
     [super awakeFromNib];
     // Initialization code
     
-    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_720"] forState:UIControlStateNormal];
-    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_on_720"] forState:UIControlStateSelected];
+//    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_720"] forState:UIControlStateNormal];
+//    [self.collectBtn setBackgroundImage:[UIImage imageNamed:@"x_on_720"] forState:UIControlStateSelected];
+    self.collectBtn.hidden = YES;
 }
 
 - (void)setDeModel:(StoreDetailModel *)deModel{
@@ -24,20 +25,20 @@
         self.adresssLab.text = deModel.addr;
         self.phNum = deModel.shopPhone;
         
-        if ([deModel.collect isEqualToString:@"1"]) {
-            self.collectBtn.selected = YES;
-        }else{
-            self.collectBtn.selected = NO;
-        }
+//        if ([deModel.collect isEqualToString:@"1"]) {
+//            self.collectBtn.selected = YES;
+//        }else{
+//            self.collectBtn.selected = NO;
+//        }
     }
 }
 
-- (IBAction)collectClick:(UIButton*)button {
-    button.selected = !button.selected;
-    if (self.colleBlock) {
-        self.colleBlock(button.selected);
-    }
-}
+//- (IBAction)collectClick:(UIButton*)button {
+//    button.selected = !button.selected;
+//    if (self.colleBlock) {
+//        self.colleBlock(button.selected);
+//    }
+//}
 
 - (IBAction)phoneClick:(id)sender {
     

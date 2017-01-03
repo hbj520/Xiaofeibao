@@ -21,6 +21,9 @@
 #import "DetailHeadView.h"
 
 #import "DLPickerView.h"
+
+#import "StoreMasterModel.h"
+
 @interface StoreControlViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     NSArray *secOne;
@@ -31,8 +34,19 @@
     NSArray *placeTwo;
     NSArray *placeThr;
     
+    //保存
+    NSString *storeName;
+    NSString *storePhone;
+    NSString *realName;
+    NSString *IDNum;
+    
     NSString *strAddr;//保存地址文本
+    NSString *latituedeStr;//纬度
+    NSString *longtitudeStr;//经度
     NSString *strDescri;//保存介绍文本
+    NSString *startTime;
+    NSString *endTime;
+    NSString *disCount;
     
     NSString *yingyeImg;
     NSString *jingyingImg;
@@ -60,7 +74,47 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
 
+    
+    [self loadData];
+  
+    
+    [self creatUI];
+    
+}
 
+- (void)loadData{
+    
+    NSDictionary *para = @{
+                           
+                           };
+    [[MyAPI sharedAPI] getStoreControlInfoDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            storeInfoModel *model = (storeInfoModel*)object;
+            storeName = model.shopname;
+            storePhone = model.shopPhone;
+            realName = model.name;
+            IDNum = model.idcardno;
+            
+            strAddr = model.addr;
+            latituedeStr = model.latitude;
+            longtitudeStr = model.longitude;
+            strDescri = model.introduction;
+            startTime = model.startbusinesstime;
+            endTime = model.endbusinesstime;
+            disCount = model.discount;
+            
+            yingyeImg = model.businessimg;
+            jingyingImg = model.licenseimg;
+            IDFrontImg = model.idcardnofrontimg;
+            IDBackImg = model.idcardnobackimg;
+
+            [self.tableView reloadData];
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
     secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号"];
     secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例"];
     secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
@@ -68,9 +122,6 @@
     placeOne = @[@"智惠返",@"请填写正确的号码",@"XXX",@"xxxxxxxxxxxxxx"];
     placeTwo = @[@"具体位置",@"具体位置",@"商店详情",@"09:00 >",@"18:00 >",@"10%"];
     placeThr = @[@"已上传 >",@"待上传 >",@"已上传 >",@"已上传 >"];
-    
-    [self creatUI];
-    
 }
 
 - (void)viewDidLayoutSubviews{

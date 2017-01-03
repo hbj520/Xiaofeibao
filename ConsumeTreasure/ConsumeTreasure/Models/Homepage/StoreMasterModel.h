@@ -35,22 +35,25 @@
 @end
 
 
-//商户资料
+//商户资料查询
 @interface storeInfoModel : JSONModel
-@property (nonatomic,strong) NSString *name;//不要
-@property (nonatomic,strong) NSString *idcardno;//不要
-@property (nonatomic,strong) NSString *addr;//
-@property (nonatomic,strong) NSString *doorimg;//日收入
-@property (nonatomic,strong) NSString *shopname;//代理类型
-@property (nonatomic,strong) NSString *categoryid;
-@property (nonatomic,strong) NSString *businessimg;//月累计收入
-@property (nonatomic,strong) NSString *licenseimg;//累计收入
-@property (nonatomic,strong) NSString *idcardnofrontimg;//日收入
-@property (nonatomic,strong) NSString *idcardnobackimg;
-@property (nonatomic,strong) NSString *introduction;//日收入
-@property (nonatomic,strong) NSString *startbusinesstime;//代理类型
-@property (nonatomic,strong) NSString *endbusinesstime;
+@property (nonatomic,strong) NSString *shopname;//店名
+@property (nonatomic,strong) NSString *shopPhone;//门面电话
+@property (nonatomic,strong) NSString *name;//真实姓名
+@property (nonatomic,strong) NSString *idcardno;//身份证号
 
+@property (nonatomic,strong) NSString *addr;//地址
+@property (nonatomic,strong) NSString *latitude;
+@property (nonatomic,strong) NSString *longitude;//定位坐标
+@property (nonatomic,strong) NSString *introduction;//商家介绍
+@property (nonatomic,strong) NSString *startbusinesstime;//开始时间
+@property (nonatomic,strong) NSString *endbusinesstime;//结束时间
+@property (nonatomic,strong) NSString *discount;//反比比例
+
+@property (nonatomic,strong) NSString *businessimg;//营业执照
+@property (nonatomic,strong) NSString *licenseimg;//许可证
+@property (nonatomic,strong) NSString *idcardnofrontimg;//正面
+@property (nonatomic,strong) NSString *idcardnobackimg;//反面
 
 @end
 

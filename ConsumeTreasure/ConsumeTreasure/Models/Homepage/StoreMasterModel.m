@@ -16,3 +16,6 @@
 
 @end
 
+@implementation storeInfoModel
+
+@end

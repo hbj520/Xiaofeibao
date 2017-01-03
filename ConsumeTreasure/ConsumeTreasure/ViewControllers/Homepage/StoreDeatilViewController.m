@@ -260,10 +260,10 @@
             storeDetailCell = [[[NSBundle mainBundle] loadNibNamed:@"StoreDetailTableViewCell" owner:self options:nil] lastObject];
         }
         
-        //收藏按钮
-        storeDetailCell.colleBlock =^(BOOL select){
-            [self collectOrNotWith:select];
-        };
+//        //收藏按钮
+//        storeDetailCell.colleBlock =^(BOOL select){
+//            [self collectOrNotWith:select];
+//        };
         storeDetailCell.deModel = _deModel;
         storeDetailCell.selectionStyle = 0;
         return storeDetailCell;

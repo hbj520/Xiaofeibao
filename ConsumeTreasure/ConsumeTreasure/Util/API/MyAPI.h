@@ -138,6 +138,11 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark -- 订单管理
 - (void)orderDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 店铺资料查询
+- (void)getStoreControlInfoDataWithParameters:(NSDictionary *)para
+                                       result:(ModelBlock)result
+                                  errorResult:(ErrorBlock)errorResult;
+
 #pragma mark -- 店铺管理
 
 #pragma mark -联盟商户主页面各个区
