@@ -27,7 +27,7 @@
     self.oneLab.text = @"收益时间：";
     self.twoLab.text = @"收益金额：";
     self.orderNumLab.text = daliIncomeModel.createdate;
-    self.moneyLab.text = daliIncomeModel.money;
+    self.moneyLab.text = [NSString stringWithFormat:@"%.2f",daliIncomeModel.money];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

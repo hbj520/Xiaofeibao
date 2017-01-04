@@ -169,6 +169,9 @@
             placeTwo = @[strAddr,@"开始定位",strDescri,sTime,eTime,disCount];
             placeThr = @[img1,img2,img3,img4];
             
+            [self head:doorImg];
+          
+            
             [self.tableView reloadData];
         }
         
@@ -179,21 +182,25 @@
 
 }
 
-- (void)viewDidLayoutSubviews{
+- (void)head:(NSString*)imgStr{
     headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
-    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:doorImg] placeholderImage:[UIImage imageNamed:@"storeHead"]];
+    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:imgStr] placeholderImage:[UIImage imageNamed:DEFAULTHEADIMAGE]];
     headView.contentMode = UIViewContentModeScaleAspectFill;
     
     headView.imgBlock =^(){
         
         UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从照片库选取",nil];
-       // action.tag = tagg;
+        // action.tag = tagg;
         [action showInView:self.navigationController.view];
         
     };
     
     headView.frame = CGRectMake(0, 0, ScreenWidth, 170);
     self.tableView.tableHeaderView = headView;
+}
+
+- (void)viewDidLayoutSubviews{
+ 
 }
 
 
@@ -205,7 +212,7 @@
     if (buttonIndex == 0) {
         [self openCamera];
         
-    }else{
+    }else if (buttonIndex == 1){
         [self openPhoto];
         
     }
@@ -214,7 +221,7 @@
         [[MyAPI sharedAPI] postFilesWithFormData:@[image] result:^(BOOL success, NSString *msg, id object) {
             if (success) {
                 weakHead.headerImage.image = image;
-                doorImg2 = (NSString*)object;
+                doorImg = (NSString*)object;
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [weakSelf logout];
@@ -425,12 +432,12 @@
                            @"shop":@{
                                    @"addr":strAddr,
                                    @"shopPhone":storePhone,
-                                   @"doorimg":doorImg2,
+                                   @"doorimg":doorImg,
                                    @"shopname":storeName,
-                                   @"businessimg":yingyeImg2,
-                                   @"licenseimg":jingyingImg2,
-                                   @"idcardnofrontimg":IDFrontImg2,
-                                   @"idcardnobackimg":IDBackImg2,
+                                   @"businessimg":yingyeImg,
+                                   @"licenseimg":jingyingImg,
+                                   @"idcardnofrontimg":IDFrontImg,
+                                   @"idcardnobackimg":IDBackImg,
                                    @"latitude":latituedeStr,
                                    @"longitude":longtitudeStr,
                                    @"introduction":strDescri,
@@ -442,7 +449,9 @@
     [[MyAPI sharedAPI] finishStoreInfoWithParameters:para resulet:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             
-            
+            [self showHint:@"上传成功"];
+        }else{
+            [self showHint:msg];
         }
         
     } errorResult:^(NSError *enginerError) {
@@ -484,13 +493,13 @@
         imgVC.imageArray = imageArr;
         imgVC.imgBlock =^(NSString *imageStr){
             if ([imageArr[1] isEqualToString:@"1"]) {
-                yingyeImg2 = imageStr;
+                yingyeImg = imageStr;
             }else if ([imageArr[1] isEqualToString:@"2"]){
-                jingyingImg2 = imageStr;
+                jingyingImg = imageStr;
             }else if ([imageArr[1] isEqualToString:@"3"]){
-                IDFrontImg2 = imageStr;
+                IDFrontImg = imageStr;
             }else{
-                IDBackImg2 = imageStr;
+                IDBackImg = imageStr;
             }
         };
         

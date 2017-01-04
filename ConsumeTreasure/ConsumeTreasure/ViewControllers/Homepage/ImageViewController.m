@@ -54,7 +54,7 @@
     if (buttonIndex == 0) {
         [self openCamera];
         
-    }else{
+    }else if(buttonIndex == 1){
         [self openPhoto];
         
     }
@@ -65,8 +65,14 @@
             [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
                 if (success) {
                     imageOne = (NSString*)object;
-                    [weakSelf.chooseBtn setImage:img forState:0];
-                    [weakSelf.theImage setImage:img];
+                    
+                    NSData *imageData = UIImageJPEGRepresentation(img, 0.5);
+                    
+                    UIImage *image =   [UIImage imageWithData:imageData];
+                    
+                  //  + (UIImage *)imageWithData:(NSData *)data;
+                    [weakSelf.chooseBtn setImage:image forState:0];
+                    [weakSelf.theImage setImage:image];
                 }else{
                     if ([msg isEqualToString:@"-1"]) {
                         [weakSelf logout];

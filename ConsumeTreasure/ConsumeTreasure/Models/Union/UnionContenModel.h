@@ -15,4 +15,6 @@
 @property (nonatomic,copy) NSString<Optional> *doorImg;
 @property (nonatomic,copy) NSString<Optional> *memid;
 @property (nonatomic,copy) NSString<Optional> *shopName;
+@property (nonatomic,strong) NSString *discount;
+
 @end

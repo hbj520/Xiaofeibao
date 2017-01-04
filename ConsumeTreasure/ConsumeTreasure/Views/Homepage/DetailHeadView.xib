@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storeHead" translatesAutoresizingMaskIntoConstraints="NO" id="RQX-mU-puB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RQX-mU-puB">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-Tq-jJd">
@@ -43,7 +43,4 @@
             <point key="canvasLocation" x="16.5" y="-244"/>
         </view>
     </objects>
-    <resources>
-        <image name="storeHead" width="377" height="173"/>
-    </resources>
 </document>

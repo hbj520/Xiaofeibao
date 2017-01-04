@@ -222,7 +222,7 @@
 
 - (void)viewDidLayoutSubviews{
     DetailHeadView * headView = [[[NSBundle mainBundle]loadNibNamed:@"DetailHeadView" owner:self options:nil]lastObject];
-    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:_deModel.doorImg] placeholderImage:[UIImage imageNamed:@"storeHead"]];
+    [headView.headerImage sd_setImageWithURL:[NSURL URLWithString:_deModel.doorImg] placeholderImage:[UIImage imageNamed:DEFAULTHEADIMAGE]];
      headView.contentMode = UIViewContentModeScaleAspectFill;
     
     headView.frame = CGRectMake(0, 0, ScreenWidth, 170);

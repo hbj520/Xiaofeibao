@@ -40,7 +40,8 @@
 
 @property (nonatomic,strong) NSString *bill_description;
 @property (nonatomic,strong) NSString *createdate;
-@property (nonatomic,strong) NSString *money;
+//@property (nonatomic,strong) NSString *money;
+@property (nonatomic,assign) double money;
 @property (nonatomic,strong) NSString *type;
 
 

@@ -34,8 +34,9 @@
 #define kDown(VIEW)                 (VIEW.frame.origin.y + VIEW.frame.size.height)
 
 //默认图片
-#define DEFAULTIMAGE @"默认商家"//默认一商店商品图片
-#define DEFAULTADVERTISING @"默认banner"  //默认广告图片
+#define DEFAULBANNERTIMAGE @"首页banner"
+#define DEFAULTHEADIMAGE @"预约商户商家图片"
+#define DEFAULTSTOREIMAGE @"首页商家图片"
 
 #define WIDTH [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT [[UIScreen mainScreen] bounds].size.height

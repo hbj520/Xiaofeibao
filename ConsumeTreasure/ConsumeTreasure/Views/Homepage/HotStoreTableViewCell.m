@@ -22,10 +22,10 @@
 
 - (void)setStoreModel:(HomeStoreModel *)storeModel{
     self.storeName.text = storeModel.shopname;
-    [self.storeImage sd_setImageWithURL:[NSURL URLWithString:storeModel.doorimg] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    [self.storeImage sd_setImageWithURL:[NSURL URLWithString:storeModel.doorimg] placeholderImage:[UIImage imageNamed:DEFAULTSTOREIMAGE]];
     self.distance.text = [NSString stringWithFormat:@"%.2fkm",storeModel.distance.floatValue];
     self.storeAddress.text = storeModel.addr;
-    self.discountLab.text = [NSString stringWithFormat:@"享%@折优惠",storeModel.discount];
+    self.discountLab.text = [NSString stringWithFormat:@"%@",storeModel.discount];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

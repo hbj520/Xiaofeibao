@@ -440,7 +440,7 @@
         };
         
         firstCell.scanBlock =^{ //扫一扫
-            [self performSegueWithIdentifier:@"scanSegue" sender:nil];
+            [self pushToNextWithIdentiField:@"scanSegue" sender:nil];
         };
         firstCell.incomeBlock = ^{//收益权
            // [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
@@ -476,7 +476,7 @@
             imageChartCell.indexBlock = ^(NSInteger index){
                 NSLog(@"----------------------------");
                 AddModel *model = addArr[index];
-                [self performSegueWithIdentifier:@"adDetailSegue" sender:model];
+                [self pushToNextWithIdentiField:@"adDetailSegue" sender:model];
             };
             
             return imageChartCell;

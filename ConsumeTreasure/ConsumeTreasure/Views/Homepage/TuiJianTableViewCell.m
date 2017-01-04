@@ -24,23 +24,24 @@
 
 
 - (void)setTuiModel:(TuiJianModel *)tuiModel{
-    [self.storeImg sd_setImageWithURL:[NSURL URLWithString:tuiModel.doorImg] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    [self.storeImg sd_setImageWithURL:[NSURL URLWithString:tuiModel.doorImg] placeholderImage:[UIImage imageNamed:DEFAULTSTOREIMAGE]];
     self.storeNameLa.text = tuiModel.shopName;
     [self.starV configWithStarLevel:tuiModel.avgScore.floatValue];
     self.pointLab.text = tuiModel.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
     self.addressLab.text = tuiModel.addr;
     
-    self.disCountLab.text = [NSString stringWithFormat:@"享%@折优惠",tuiModel.discount];
+    self.disCountLab.text = [NSString stringWithFormat:@"%@",tuiModel.discount];
     
 }
 - (void)configWithData:(UnionContenModel *)data{
-    [self.storeImg sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    [self.storeImg sd_setImageWithURL:[NSURL URLWithString:data.doorImg] placeholderImage:[UIImage imageNamed:DEFAULTSTOREIMAGE]];
     self.storeNameLa.text = data.shopName;
     [self.starV configWithStarLevel:data.avgScore.floatValue];
     self.pointLab.text = data.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",data.distance.floatValue];
     self.addressLab.text = data.addr;
+    self.disCountLab.text = [NSString stringWithFormat:@"%@",data.discount];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
