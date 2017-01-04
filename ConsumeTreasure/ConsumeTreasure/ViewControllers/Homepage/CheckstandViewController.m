@@ -37,7 +37,7 @@
             self.imageView.image = image;
         }];
     self.timeLable.text =  [NSDate date].raziString;
-    self.storeNameLabel.text = self.storeName;
+    self.storeNameLabel.text = [NSString stringWithFormat:@"%@的收款码",self.storeName];
 //    }];
 
 }
@@ -81,7 +81,7 @@
             self.imageView.image = image;
         }];
     self.timeLable.text =  [NSDate date].raziString;
-    self.storeNameLabel.text = self.storeName;
+    self.storeNameLabel.text = [NSString stringWithFormat:@"%@的收款码",self.storeName];
 //    }];
 }
 @end
