@@ -7,7 +7,7 @@
 //
 
 #import "ImageViewController.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface ImageViewController ()<UIActionSheetDelegate>
 {
     NSString *imageOne;
@@ -32,6 +32,7 @@
         self.navigationItem.title = @"身份证反面";
     }
     
+    [self.theImage sd_setImageWithURL:[NSURL URLWithString:_imageArray[0]] placeholderImage:[UIImage imageNamed:@"upload_yyzz_720"]];
     
 }
 - (IBAction)addNewImage:(id)sender {

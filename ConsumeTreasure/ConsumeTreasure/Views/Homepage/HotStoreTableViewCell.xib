@@ -26,7 +26,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鼠王小炒肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ny-PO-yGb">
-                        <rect key="frame" x="134" y="25" width="87" height="18"/>
+                        <rect key="frame" x="134" y="25" width="134" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="kDg-nR-9eM"/>
                         </constraints>
@@ -59,9 +59,22 @@
                             <constraint firstAttribute="height" constant="20" id="dUs-HM-bCg"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="享九折优惠" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIV-Pv-acL">
+                        <rect key="frame" x="283" y="22" width="80" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="5Za-K0-JGj"/>
+                            <constraint firstAttribute="height" constant="23" id="IxV-F3-cce"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="13"/>
+                        <color key="textColor" red="0.98823529409999999" green="0.60784313729999995" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="3Ny-PO-yGb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="0Aa-M0-t9d"/>
+                    <constraint firstItem="CIV-Pv-acL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="2j2-D2-0rC"/>
+                    <constraint firstItem="CIV-Pv-acL" firstAttribute="leading" secondItem="3Ny-PO-yGb" secondAttribute="trailing" constant="15" id="5F7-7p-rqD"/>
                     <constraint firstItem="7eQ-an-7fW" firstAttribute="leading" secondItem="fgQ-8W-8ph" secondAttribute="trailing" constant="12" id="DPr-R8-V16"/>
                     <constraint firstItem="fgQ-8W-8ph" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="KhH-Cb-fSn"/>
                     <constraint firstItem="reo-U4-kQc" firstAttribute="bottom" secondItem="fgQ-8W-8ph" secondAttribute="bottom" id="Moc-6I-MvR"/>
@@ -71,10 +84,12 @@
                     <constraint firstItem="reo-U4-kQc" firstAttribute="leading" secondItem="fgQ-8W-8ph" secondAttribute="trailing" constant="12" id="lEL-kv-FLs"/>
                     <constraint firstItem="3Ny-PO-yGb" firstAttribute="leading" secondItem="fgQ-8W-8ph" secondAttribute="trailing" constant="12" id="lyg-6w-6Uw"/>
                     <constraint firstItem="fgQ-8W-8ph" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mri-Xp-ExI"/>
+                    <constraint firstAttribute="trailing" secondItem="CIV-Pv-acL" secondAttribute="trailing" constant="12" id="sKs-GZ-sGJ"/>
                     <constraint firstItem="AOV-V0-dDd" firstAttribute="bottom" secondItem="fgQ-8W-8ph" secondAttribute="bottom" constant="-3" id="yxm-eW-NCg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="discountLab" destination="CIV-Pv-acL" id="NOb-vz-WXn"/>
                 <outlet property="distance" destination="AOV-V0-dDd" id="hmW-7Q-Q1C"/>
                 <outlet property="storeAddress" destination="7eQ-an-7fW" id="o5M-Am-TG2"/>
                 <outlet property="storeImage" destination="fgQ-8W-8ph" id="Glq-jf-fDh"/>

@@ -19,6 +19,7 @@
 @property (nonatomic,strong) NSString *memid;
 @property (nonatomic,strong) NSString *shopname;
 @property (nonatomic,strong) NSString *addr;
+@property (nonatomic,strong) NSString *discount;
 
 @end
 

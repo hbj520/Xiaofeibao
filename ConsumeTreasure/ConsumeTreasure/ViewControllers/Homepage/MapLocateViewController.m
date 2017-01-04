@@ -164,6 +164,10 @@
 }
 - (IBAction)sure:(id)sender {
     
+    if (self.jwdBlock) {
+        self.jwdBlock(@[self.latitudeLab.text,self.longtitudeLab.text]);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

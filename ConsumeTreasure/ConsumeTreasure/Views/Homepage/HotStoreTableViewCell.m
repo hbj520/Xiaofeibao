@@ -14,6 +14,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.discountLab.layer.borderColor = RGBACOLOR(251, 156, 64, 1).CGColor;
+    self.discountLab.layer.borderWidth = 1;
+    self.discountLab.layer.cornerRadius = 8;
+    self.discountLab.layer.masksToBounds = YES;
 }
 
 - (void)setStoreModel:(HomeStoreModel *)storeModel{
@@ -21,6 +25,7 @@
     [self.storeImage sd_setImageWithURL:[NSURL URLWithString:storeModel.doorimg] placeholderImage:[UIImage imageNamed:@"foodImage"]];
     self.distance.text = [NSString stringWithFormat:@"%.2fkm",storeModel.distance.floatValue];
     self.storeAddress.text = storeModel.addr;
+    self.discountLab.text = [NSString stringWithFormat:@"享%@折优惠",storeModel.discount];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

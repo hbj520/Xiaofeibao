@@ -18,19 +18,29 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storeHead" translatesAutoresizingMaskIntoConstraints="NO" id="RQX-mU-puB">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LP-Tq-jJd">
+                    <rect key="frame" x="8" y="8" width="359" height="154"/>
+                    <connections>
+                        <action selector="change:" destination="iN0-l3-epB" eventType="touchUpInside" id="t73-p9-woa"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8LP-Tq-jJd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Kpl-8s-6Da"/>
                 <constraint firstAttribute="bottom" secondItem="RQX-mU-puB" secondAttribute="bottom" id="R38-te-M6w"/>
                 <constraint firstItem="RQX-mU-puB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TLP-Km-KWT"/>
                 <constraint firstAttribute="trailing" secondItem="RQX-mU-puB" secondAttribute="trailing" id="ZUL-yN-Zbo"/>
+                <constraint firstItem="8LP-Tq-jJd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="gnW-yy-Ldd"/>
+                <constraint firstAttribute="bottom" secondItem="8LP-Tq-jJd" secondAttribute="bottom" constant="8" id="hu2-3o-zBD"/>
                 <constraint firstItem="RQX-mU-puB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qlh-oQ-gKx"/>
+                <constraint firstAttribute="trailing" secondItem="8LP-Tq-jJd" secondAttribute="trailing" constant="8" id="uGd-z6-vTG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="headerImage" destination="RQX-mU-puB" id="zwx-E0-D2y"/>
             </connections>
-            <point key="canvasLocation" x="17" y="-244"/>
+            <point key="canvasLocation" x="16.5" y="-244"/>
         </view>
     </objects>
     <resources>
