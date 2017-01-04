@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *oneLab;
 @property (weak, nonatomic) IBOutlet UILabel *twoLab;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 
 

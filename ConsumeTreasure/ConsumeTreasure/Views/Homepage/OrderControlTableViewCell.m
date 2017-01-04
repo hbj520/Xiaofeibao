@@ -20,6 +20,7 @@
     self.twoLab.text = @"订单金额：";
     self.orderNumLab.text = orderModel.pay_number;
     self.moneyLab.text = orderModel.total_money;
+    self.timeLabel.text = orderModel.createDate;
 }
 
 - (void)setDaliIncomeModel:(DaLiIncomeModel *)daliIncomeModel{

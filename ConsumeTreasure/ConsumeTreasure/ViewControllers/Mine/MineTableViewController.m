@@ -108,7 +108,7 @@
             }else if (indexPath.row == 3){
                 self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
                 LookRecordViewController *lookVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"watchRecordStorybordId"];
-                self.hidesBottomBarWhenPushed = YES;
+               // self.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:lookVC animated:YES];
             }else{
                 self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
