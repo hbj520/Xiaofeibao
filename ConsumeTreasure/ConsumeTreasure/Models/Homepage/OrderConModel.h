@@ -15,7 +15,7 @@
 @interface OrderConModel : JSONModel
 
 @property (nonatomic,strong) NSString *createDate;
-@property (nonatomic,strong) NSString *loginName;
+@property (nonatomic,strong) NSString<Optional> *loginName;
 @property (nonatomic,strong) NSString *pay_number;
 @property (nonatomic,strong) NSString *pay_status;
 @property (nonatomic,strong) NSString *total_money;
