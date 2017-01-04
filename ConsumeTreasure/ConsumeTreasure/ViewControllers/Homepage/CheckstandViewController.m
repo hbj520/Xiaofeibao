@@ -9,9 +9,12 @@
 #import "CheckstandViewController.h"
 #import "HMScannerController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "NSDate+Utilities.h"
 @interface CheckstandViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)refreshBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *storeNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLable;
 
 @end
 
@@ -23,17 +26,19 @@
     // Do any additional setup after loading the view.
     [self addNavBarTitle];
     NSString *cardName = [NSString stringWithFormat:@"http://www.xftb168.com/web/paytomem?tomem=%@",self.memId];
-   __block UIImage *avatar = [UIImage imageNamed:@"logo"];
-    UIImageView *loadImgView = [[UIImageView alloc] init];
-    NSString *icon = [[XFBConfig Instance] getIcon];
-    [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (image) {
-            avatar = image;
-        }
-        [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
+//   __block UIImage *avatar = [UIImage imageNamed:@"logo"];
+//    UIImageView *loadImgView = [[UIImageView alloc] init];
+//    NSString *icon = [[XFBConfig Instance] getIcon];
+//    [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        if (image) {
+//            avatar = image;
+//        }
+        [HMScannerController cardImageWithCardName:cardName avatar:[UIImage imageNamed:@"qrImg"] scale:0.2 completion:^(UIImage *image) {
             self.imageView.image = image;
         }];
-    }];
+    self.timeLable.text =  [NSDate date].raziString;
+    self.storeNameLabel.text = self.storeName;
+//    }];
 
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -65,16 +70,16 @@
 
 - (IBAction)refreshBtn:(id)sender {
     NSString *cardName = [NSString stringWithFormat:@"http://www.xftb168.com/web/paytomem?tomem=%@",self.memId];
-    __block UIImage *avatar = [UIImage imageNamed:@"logo"];
-    UIImageView *loadImgView = [[UIImageView alloc] init];
+//    __block UIImage *avatar = [UIImage imageNamed:@"logo"];
+//    UIImageView *loadImgView = [[UIImageView alloc] init];
    // NSString *icon = [[XFBConfig Instance] getIcon];
-    [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (image) {
-            avatar = image;
-        }
-        [HMScannerController cardImageWithCardName:cardName avatar:avatar scale:0.2 completion:^(UIImage *image) {
+//    [loadImgView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        if (image) {
+//            avatar = image;
+//        }
+        [HMScannerController cardImageWithCardName:cardName avatar:[UIImage imageNamed:@"qrImg"] scale:0.2 completion:^(UIImage *image) {
             self.imageView.image = image;
         }];
-    }];
+//    }];
 }
 @end

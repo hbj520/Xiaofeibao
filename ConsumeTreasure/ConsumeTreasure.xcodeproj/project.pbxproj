@@ -15,6 +15,7 @@
 		AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01504E1DC8883900AC1AB9 /* MyAPI.m */; };
 		AB057DEA1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */; };
 		AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */; };
+		AB05A7121E1C9C7300881EFE /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05A7111E1C9C7300881EFE /* NSDate+Utilities.m */; };
 		AB05ABB01DD599A300208DB9 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB05ABAF1DD599A300208DB9 /* AreaModel.m */; };
 		AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A97F1DF8FF74006F67C2 /* ModfyNickNameViewController.m */; };
 		AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06A9821DF92C63006F67C2 /* ModifyPwdViewController.m */; };
@@ -350,6 +351,8 @@
 		AB057DE71DE5883C00F6A9C2 /* PreEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreEvaluateTableViewCell.h; sourceTree = "<group>"; };
 		AB057DE81DE5883C00F6A9C2 /* PreEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreEvaluateTableViewCell.m; sourceTree = "<group>"; };
 		AB057DE91DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreEvaluateTableViewCell.xib; sourceTree = "<group>"; };
+		AB05A7101E1C9C7300881EFE /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		AB05A7111E1C9C7300881EFE /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		AB05ABAE1DD599A300208DB9 /* AreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaModel.h; sourceTree = "<group>"; };
 		AB05ABAF1DD599A300208DB9 /* AreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaModel.m; sourceTree = "<group>"; };
 		AB06A97E1DF8FF74006F67C2 /* ModfyNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModfyNickNameViewController.h; sourceTree = "<group>"; };
@@ -1106,6 +1109,8 @@
 		AB608C201D9CB7A900194FC2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AB05A7101E1C9C7300881EFE /* NSDate+Utilities.h */,
+				AB05A7111E1C9C7300881EFE /* NSDate+Utilities.m */,
 				AB08086F1E13B4C10074D573 /* MyEnum.h */,
 				AB0808701E13B4C10074D573 /* MyEnum.m */,
 				AB0808711E13B4C10074D573 /* FileHelper.h */,
@@ -2419,6 +2424,7 @@
 				AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */,
 				AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */,
 				AB50D47D1E0928AA00B427E6 /* SecurityUtil.m in Sources */,
+				AB05A7121E1C9C7300881EFE /* NSDate+Utilities.m in Sources */,
 				D12165A61DB6518F006B06FC /* LookRecordViewController.m in Sources */,
 				ABF5BEEA1DF7E97A00D19DFB /* SettingTableViewController.m in Sources */,
 				AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */,

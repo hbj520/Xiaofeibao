@@ -86,7 +86,7 @@
 
 - (void)checkClick:(id)Ges{
    // showAlert(@"敬请期待");
-    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:StoreMmodel.memid];
+    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:@[StoreMmodel.memid,StoreMmodel.shopName]];
 
 }
 
@@ -148,7 +148,12 @@
         cashVC.incomeMoney = arr;
     }else if ([segue.identifier isEqualToString:@"goCheckStandSegue"]){
         CheckstandViewController *checkVC = segue.destinationViewController;
-        checkVC.memId = (NSString *)sender;
+        NSArray *array = sender;
+        if (array.count == 2) {
+            checkVC.memId = (NSString *)array[0];
+            checkVC.storeName = (NSString *)array[1];
+        }
+ 
     }
     
 }

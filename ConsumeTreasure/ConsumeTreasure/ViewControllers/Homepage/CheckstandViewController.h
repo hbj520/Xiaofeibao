@@ -10,4 +10,5 @@
 
 @interface CheckstandViewController : BaseViewController
 @property (nonatomic,copy) NSString *memId;
+@property (nonatomic,copy) NSString *storeName;
 @end

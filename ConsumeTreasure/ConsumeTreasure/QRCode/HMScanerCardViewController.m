@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor darkGrayColor];
+    self.view.backgroundColor = [UIColor redColor];
     [self prepareNavigationBar];
     
     CGFloat width = self.view.bounds.size.width - 80;
@@ -43,8 +43,8 @@
     
     [self.view addSubview:cardImageView];
     
-    [HMScanner qrImageWithString:self.cardName avatar:self.avatar completion:^(UIImage *image) {
-        cardImageView.image = image;
+    [HMScanner qrImageWithString:self.cardName avatar:[UIImage imageNamed:@"AppIcon"] completion:^(UIImage *image) {
+       // cardImageView.image = image;
     }];
 }
 
