@@ -80,6 +80,8 @@
         [HMScannerController cardImageWithCardName:cardName avatar:[UIImage imageNamed:@"qrImg"] scale:0.2 completion:^(UIImage *image) {
             self.imageView.image = image;
         }];
+    self.timeLable.text =  [NSDate date].raziString;
+    self.storeNameLabel.text = self.storeName;
 //    }];
 }
 @end
