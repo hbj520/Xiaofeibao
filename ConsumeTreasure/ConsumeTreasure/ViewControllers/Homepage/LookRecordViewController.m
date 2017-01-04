@@ -40,7 +40,10 @@
    // [self loadDataWithPageNum:_pageNum page:_page];
     [self.tableView.mj_header beginRefreshing];
 }
-
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
