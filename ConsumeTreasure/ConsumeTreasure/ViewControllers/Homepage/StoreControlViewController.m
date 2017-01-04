@@ -282,6 +282,7 @@
         
         storeConCell.placetextfield.delegate = self;
         [storeConCell.placetextfield addTarget:self action:@selector(change:) forControlEvents:UIControlEventEditingChanged];
+        
         if (indexPath.row == 0) {
             storeConCell.placetextfield.tag = 8888;
         }else if(indexPath.row == 1){
@@ -413,22 +414,6 @@
 - (IBAction)PostData:(id)sender {
     NSLog(@"保存数据");
     
-//    StoreControlTableViewCell *nameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-//    StoreControlTableViewCell *storeNameCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-//    StoreControlTableViewCell *storePhoneCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-//    StoreControlTableViewCell *IDNumCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
-    
-//    StoreConLabTableViewCell *addrCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-//    StoreConLabTableViewCell *introCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]];
-//    StoreConLabTableViewCell *startTCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]];
-//    StoreConLabTableViewCell *endTCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:1]];
-    
-//    NSString *endtime;
-//    if ([endTCell isKindOfClass:nil]) {
-//        endtime = endTime;
-//    }else{
-//        endtime = endTCell.detailLab.text;
-//    }
     
     
     NSDictionary *para = @{

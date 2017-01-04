@@ -33,6 +33,10 @@
 #define kHeight(VIEW)               VIEW.frame.size.height
 #define kDown(VIEW)                 (VIEW.frame.origin.y + VIEW.frame.size.height)
 
+//默认图片
+#define DEFAULTIMAGE @"默认商家"//默认一商店商品图片
+#define DEFAULTADVERTISING @"默认banner"  //默认广告图片
+
 #define WIDTH [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define H(X) ((HEIGHT) * ((X) / 568.0))    // 适配屏幕高度（以568为基准iphone5s）
