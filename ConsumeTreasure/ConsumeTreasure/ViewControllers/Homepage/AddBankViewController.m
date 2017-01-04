@@ -75,7 +75,7 @@
     switch (buttonIndex) {
         case 0:
             
-            break;
+            [self backTolastPage];
             
         case 1:
         {
