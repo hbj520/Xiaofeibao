@@ -402,13 +402,25 @@
     if (indexPath.section == 2) {
         
         if (indexPath.row == 0) {
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[yingyeImg,@"1"]];
+            if (yingyeImg) {
+                [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[yingyeImg,@"1"]];
+
+            }
         }else if (indexPath.row == 1) {
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[jingyingImg,@"2"]];
+            if (jingyingImg) {
+                [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[jingyingImg,@"2"]];
+
+            }
         }else if (indexPath.row == 2) {
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[IDFrontImg,@"3"]];
+            if (IDFrontImg) {
+                [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[IDFrontImg,@"3"]];
+
+            }
         }else{
-            [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[IDBackImg,@"4"]];
+            if (IDBackImg) {
+                [self performSegueWithIdentifier:@"goChooseImageSegue" sender:@[IDBackImg,@"4"]];
+
+            }
         }
     }
 }

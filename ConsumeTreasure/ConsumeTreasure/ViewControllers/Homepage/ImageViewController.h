@@ -9,8 +9,8 @@
 #import "BasePhotoViewController.h"
 typedef void(^IMGBlock) (NSString *imgStr);
 @interface ImageViewController : BasePhotoViewController
-@property (weak, nonatomic) IBOutlet UIImageView *theImage;
-@property (weak, nonatomic) IBOutlet UIButton *chooseBtn;
+@property (strong, nonatomic) IBOutlet UIImageView *theImage;
+@property (strong, nonatomic) IBOutlet UIButton *chooseBtn;
 
 
 @property (nonatomic,strong) NSArray *imageArray;

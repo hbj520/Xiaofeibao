@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // _imagesArray = [NSMutableArray array];
+    _imagesArray = [NSMutableArray array];
     
     _imageUrls = [NSMutableArray array];
     
@@ -102,10 +102,10 @@
     
     
    
-//    UIImage *img = [UIImage imageWithData:data];
-//    [_imagesArray addObject:img];
-//    
-//    [self selectPhotos:_imagesArray];
+    UIImage *img = [UIImage imageWithData:data];
+    [_imagesArray addObject:img];
+    
+    [self selectPhotos:_imagesArray];
    
 }
 
