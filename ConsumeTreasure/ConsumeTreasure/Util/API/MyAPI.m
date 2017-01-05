@@ -82,7 +82,8 @@
             [self cancelAllOperation];
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
-            NSString * goldNum = (NSString *)userDic[@"all_money"];//用户余额
+            NSString *gold = userDic[@"all_money"];
+            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
             NSString *loginName = userDic[@"loginName"];//用户登录名
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];

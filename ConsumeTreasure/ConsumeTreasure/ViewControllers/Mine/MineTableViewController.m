@@ -43,6 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //
     tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     [self.moneyView addSubview: tongbaoMoneyView];
 

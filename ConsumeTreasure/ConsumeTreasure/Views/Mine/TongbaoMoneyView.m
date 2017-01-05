@@ -56,13 +56,13 @@
     }
 }
 - (NSString *)newMoneyString:(NSString *)money{
-    NSMutableString * newMoneyString = [NSMutableString stringWithString:money];
-    if (money.length/3 > 0) {
-        for (NSInteger i = 0; i < money.length/3; i++) {
-            [newMoneyString insertString:@"," atIndex:(i+1)*3 +i];
-        }
-    }
-    return newMoneyString;
+  //  NSMutableString * newMoneyString = [NSMutableString stringWithString:money];
+//    if (money.length/4 > 0) {
+//        for (NSInteger i = 0; i < money.length/4; i++) {
+//            [newMoneyString insertString:@"," atIndex:(i+1)*4 +i];
+//        }
+//    }
+    return money;
 }
 //- (NSString *)money{
 //    re;
