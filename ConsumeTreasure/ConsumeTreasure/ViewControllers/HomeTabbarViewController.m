@@ -71,6 +71,7 @@
     }
     self.viewControllers = menusVCs;
 }
+
 - (void)receiveLog:(id)sender{
     self.selectedIndex = 0;
 }

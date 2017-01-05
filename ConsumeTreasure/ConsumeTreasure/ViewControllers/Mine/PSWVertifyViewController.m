@@ -7,7 +7,7 @@
 //
 
 #import "PSWVertifyViewController.h"
-
+#import "WithDrawViewController.h"
 #import "GoPrePayViewController.h"
 
 @interface PSWVertifyViewController ()
@@ -70,7 +70,7 @@
             UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"设置成功，请前往支付" preferredStyle:1];
             UIAlertAction *goAction = [UIAlertAction actionWithTitle:@"前往支付" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 //通知重新输入密码的时候，以前输入的密码清空
-                GoPrePayViewController *prePay = [[GoPrePayViewController alloc]init];
+                WithDrawViewController *prePay = [[WithDrawViewController alloc]init];
                 [self.navigationController popToViewController:prePay animated:YES];
             }];
             [alertCon addAction:goAction];

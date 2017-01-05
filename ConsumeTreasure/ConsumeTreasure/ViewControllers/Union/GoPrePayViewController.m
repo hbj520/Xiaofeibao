@@ -112,7 +112,7 @@
     Tongtf.placeholder = @"请输入金额";
     Tongtf.keyboardType = UIKeyboardTypeDecimalPad;
     Tongtf.limit.delegate = self;
-    Tongtf.limit.max = @"99999.99";
+    Tongtf.limit.max = @"9999.99";
     
     [self.tfView addSubview:Tongtf];
     

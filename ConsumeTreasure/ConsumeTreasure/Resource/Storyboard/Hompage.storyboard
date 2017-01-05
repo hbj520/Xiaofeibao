@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -3250,14 +3250,37 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dlSY" translatesAutoresizingMaskIntoConstraints="NO" id="ciR-eI-au4">
+                                        <rect key="frame" x="49" y="25" width="27" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="27" id="0t8-MS-Nbm"/>
+                                            <constraint firstAttribute="height" constant="27" id="c9r-Fk-zZI"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="gvR-Zq-Ymt"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="mb8-b7-J9v"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收益明细" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86v-Zp-1Om">
+                                        <rect key="frame" x="35" y="60" width="54" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="9mo-qv-M0L"/>
+                                            <constraint firstAttribute="height" constant="16" id="V5C-4o-ab8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="ciR-eI-au4" firstAttribute="top" secondItem="glY-L5-s4T" secondAttribute="top" constant="25" id="7Kn-z5-Z0Z"/>
+                                    <constraint firstItem="ciR-eI-au4" firstAttribute="centerX" secondItem="glY-L5-s4T" secondAttribute="centerX" id="7WC-Rz-SSn"/>
                                     <constraint firstAttribute="height" constant="100" id="BXc-Bl-rQW"/>
                                     <constraint firstItem="osd-3y-LTl" firstAttribute="leading" secondItem="6R6-jm-rwg" secondAttribute="trailing" id="JQy-Bb-Qde"/>
                                     <constraint firstAttribute="bottom" secondItem="osd-3y-LTl" secondAttribute="bottom" id="SpF-ts-DAm"/>
                                     <constraint firstItem="osd-3y-LTl" firstAttribute="top" secondItem="glY-L5-s4T" secondAttribute="top" id="dxM-wt-bHu"/>
                                     <constraint firstAttribute="bottom" secondItem="6R6-jm-rwg" secondAttribute="bottom" id="hjf-ip-dvP"/>
+                                    <constraint firstItem="86v-Zp-1Om" firstAttribute="centerX" secondItem="glY-L5-s4T" secondAttribute="centerX" id="tBq-d3-ymB"/>
+                                    <constraint firstItem="86v-Zp-1Om" firstAttribute="top" secondItem="ciR-eI-au4" secondAttribute="bottom" constant="8" id="vQ0-gD-fgY"/>
                                     <constraint firstAttribute="trailing" secondItem="osd-3y-LTl" secondAttribute="trailing" id="ypB-Ey-rlu"/>
                                     <constraint firstItem="6R6-jm-rwg" firstAttribute="leading" secondItem="glY-L5-s4T" secondAttribute="leading" id="zi8-og-h9M"/>
                                 </constraints>
