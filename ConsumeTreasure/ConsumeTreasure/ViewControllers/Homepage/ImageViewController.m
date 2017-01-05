@@ -39,6 +39,9 @@
     
     [self pickPhotosWithTag:333];
 }
+- (IBAction)backBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)pickPhotosWithTag:(NSInteger)tagg{
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从照片库选取",nil];
@@ -50,7 +53,6 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     
-    __weak typeof(self) weakSelf = self;
     if (buttonIndex == 0) {
         [self openCamera];
         
@@ -58,34 +60,9 @@
         [self openPhoto];
         
     }
-    self.imageBlock = ^(UIImage *img){
-        if (actionSheet.tag == 333) {
-            //上传图片
+    
             
-            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
-                if (success) {
-                    imageOne = (NSString*)object;
-                    
-                    NSData *imageData = UIImageJPEGRepresentation(img, 0.5);
-                    
-                    UIImage *image =   [UIImage imageWithData:imageData];
-                    
-                  //  + (UIImage *)imageWithData:(NSData *)data;
-                    [weakSelf.chooseBtn setImage:image forState:0];
-                    [weakSelf.theImage setImage:image];
-                }else{
-                    if ([msg isEqualToString:@"-1"]) {
-                        [weakSelf logout];
-                    }
-                    [weakSelf showHint:msg];
-                }
-            } errorResult:^(NSError *enginerError) {
-                [weakSelf showHint:@"异常错误"];
-            }];
-            
-        }
-        
-    };
+    
    
 }
 
@@ -96,12 +73,35 @@
     }
     [self backTolastPage];
 }
-
+- (void)selectPhotos:(NSMutableArray *)array{
+    //上传图片
+    __weak  ImageViewController *weakSelf = self;
+    self.theImage.image = array[0];
+    [self.chooseBtn setImage:array[0] forState:0];
+    [[MyAPI sharedAPI] postFilesWithFormData:array result:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            imageOne = (NSString*)object;
+            
+//            NSData *imageData = UIImageJPEGRepresentation(img, 0.1);
+//            
+//            UIImage *image =   [UIImage imageWithData:imageData];
+            
+            //  + (UIImage *)imageWithData:(NSData *)data;
+            
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [weakSelf logout];
+            }
+            [weakSelf showHint:msg];
+        }
+    } errorResult:^(NSError *enginerError) {
+        [weakSelf showHint:@"异常错误"];
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 
