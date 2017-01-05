@@ -30,7 +30,7 @@
 
 
 /*
- 收益明细
+ 收益明细（代理）
  */
 @protocol DaLiIncomeModel
 
@@ -49,5 +49,28 @@
 
 @interface incomeArrModel : JSONModel
 @property (nonatomic,strong) NSArray<DaLiIncomeModel>* billlogList;
+@end
+
+
+/*
+ 收益明细（商户）
+ */
+@protocol ShangHuIncomeModel
+
+@end
+
+@interface ShangHuIncomeModel : JSONModel
+
+@property (nonatomic,strong) NSString *shop_description;
+@property (nonatomic,strong) NSString *createdate;
+//@property (nonatomic,strong) NSString *money;
+@property (nonatomic,assign) double money;
+@property (nonatomic,strong) NSString *type;
+
+
+@end
+
+@interface ShangHuincomeArrModel : JSONModel
+@property (nonatomic,strong) NSArray<ShangHuIncomeModel>* shopList;
 @end
 

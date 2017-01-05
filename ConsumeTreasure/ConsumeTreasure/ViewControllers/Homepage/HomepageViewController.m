@@ -40,11 +40,11 @@
 #import "JFCityViewController.h"
 #import "LocationViewController.h"
 
-@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
+@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
     
-    BMKMapView* mapView;
-    BMKGeoCodeSearch* _geocodesearch;//反编码
+   // BMKMapView* mapView;
+    //BMKGeoCodeSearch* _geocodesearch;//反编码
     BMKLocationService* _locService;//定位
     BMKOfflineMap * _offlineMap;
     int _oldY;
@@ -84,7 +84,7 @@
     [self creatUI];
     [self addLocationGes];
     //[self loadHotStoreData];
-     localStr = @"模拟定位";//后   需删除
+     //localStr = @"模拟定位";//后   需删除
     [self loadHotStoreAndTuiJianStoreData];
    
 }
@@ -94,28 +94,11 @@
 {
     [super viewWillAppear:animated];
     
-    [mapView viewWillAppear];
-    mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
-    
-    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
     [self loadHotStoreAndTuiJianStoreData];
-    //  _locService.delegate = self;
 }
--(void)viewWillDisappear:(BOOL)animated
-{
-    //self.navigationController.navigationBarHidden = NO;
-    // [self.navigationController setNavigationBarHidden:NO animated:animated];
-    
 
-    
-    [super viewWillDisappear:animated];
-    [mapView viewWillDisappear];
-    mapView.delegate = nil; // 不用时，置nil
-   // self.tabBarController.tabBar.hidden = YES;
-    //  _locService.delegate = nil;
-}
 
 #pragma mark-mapMethod
 
@@ -324,9 +307,9 @@
     //启动LocationService
     [_locService startUserLocationService];//启动定位服务
     
-    _geocodesearch = [[BMKGeoCodeSearch alloc] init];
-    //编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
-    _geocodesearch.delegate = self;//设置代理为self
+//    _geocodesearch = [[BMKGeoCodeSearch alloc] init];
+//    //编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
+//    _geocodesearch.delegate = self;//设置代理为self
     _offlineMap = [[BMKOfflineMap alloc] init];
 
 }

@@ -9,12 +9,12 @@
 #import "JSONModel.h"
 
 @interface StoreMasterModel : JSONModel
-@property (nonatomic,strong) NSString *history_withdrawal;//日成交额
+@property (nonatomic,strong) NSString *history_withdrawal;//
 @property (nonatomic,strong) NSString *today_withdrawal;//余额
 @property (nonatomic,strong) NSString *day_turnover;//日成交额
-@property (nonatomic,strong) NSString *money;//余额
-@property (nonatomic,strong) NSString *turnover;//累计成交额
-@property (nonatomic,strong) NSString *total;//订单总数
+@property (nonatomic,assign) double money;//余额
+@property (nonatomic,assign) double turnover;//累计成交额
+@property (nonatomic,assign) double total;//订单总数
 @property (nonatomic,strong) NSString *shopName;//商户名称
 @property (nonatomic,strong) NSString *memid;//商户id
 

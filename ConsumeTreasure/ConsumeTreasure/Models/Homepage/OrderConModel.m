@@ -24,3 +24,17 @@
 @implementation incomeArrModel
 
 @end
+
+@implementation ShangHuIncomeModel
+
+@end
+
+@implementation ShangHuincomeArrModel
+
+@end
+
+
+
+
+
+

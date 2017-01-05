@@ -38,6 +38,11 @@
     NSMutableArray *_commetsArr;
     
     NSString *_keepMemId;
+    
+    
+    NSString *longti;
+    NSString *lati;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
@@ -92,36 +97,42 @@
 //    bgView.alpha = 0.7;
 //    [self.view addSubview:bgView];
     
-    mapView = [[MKMapView alloc]initWithFrame:CGRectMake(20, 20, ScreenWidth - 40, ScreenHeight - 40)];
-    mapView.alpha = 1;
-    [self.view addSubview:mapView];
-    
-    [mapView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(ScreenWidth*0.7,ScreenHeight*0.5));
-    }];
-    
+    if (!mapView) {
+        mapView = [[MKMapView alloc]initWithFrame:CGRectMake(20, 20, ScreenWidth - 40, ScreenHeight - 40)];
+        mapView.alpha = 1;
+        [self.view addSubview:mapView];
+        
+        [mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.size.mas_equalTo(CGSizeMake(ScreenWidth*0.7,ScreenHeight*0.5));
+        }];
+        
         UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [deleteBtn setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
+        [deleteBtn setImage:[UIImage imageNamed:@"deleteMap"] forState:UIControlStateNormal];
         [deleteBtn addTarget:self action:@selector(delete) forControlEvents:UIControlEventTouchUpInside];
         [mapView addSubview:deleteBtn];
         
         [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(35, 35));
-            make.right.equalTo(@10);
+            make.right.equalTo(@(-10));
             make.top.equalTo(@10);
         }];
         
         // 设置代理
         mapView.delegate = self;
         
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([@"31.856672" doubleValue],[@"117.302757" doubleValue]);
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([lati doubleValue],[longti doubleValue]);
         MapAnnotation *annotation = [[MapAnnotation alloc] init];
         annotation.coordinate = coordinate;
         annotation.title = @"";
         [mapView addAnnotation:annotation];
         [mapView setRegion:MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000)];
+        
+    }else{
         mapView.hidden = NO;
+    }
+    
+   
     
 //    self.tableView.backgroundColor = [UIColor blackColor];
 //    self.tableView.alpha = 0.65;
@@ -130,6 +141,7 @@
 - (void)delete{
     
     mapView.hidden = YES;
+    
     //[mapView removeFromSuperview];
 }
 
@@ -177,6 +189,8 @@
             if (success) {
                 _deModel = object;
                 self.discountBtnLab.text = [NSString stringWithFormat:@"现金支付立返%.2f%%",[_deModel.shopReturnRate floatValue]*100];
+                lati = _deModel.latitude;
+                longti = _deModel.longitude;
                 [self.tableView reloadData];
             }else{
                 if ([msg isEqualToString:@"-1"]) {

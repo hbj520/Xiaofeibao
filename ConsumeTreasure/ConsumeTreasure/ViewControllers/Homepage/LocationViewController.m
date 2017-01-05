@@ -6,6 +6,13 @@
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
+//百度
+#import "AppDelegate.h"
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+
 #import "LocationViewController.h"
 
 #import "LocationTableViewCell.h"
@@ -13,7 +20,7 @@
 
 #import <Masonry.h>
 
-@interface LocationViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface LocationViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>{
    
     BOOL _isExpand[3];
     
@@ -24,6 +31,16 @@
     
     NSMutableArray *_locationArray;
     NSMutableArray *_provinceArray;
+    
+    
+    BMKLocationService* _locService;//定位
+    BMKOfflineMap * _offlineMap;
+    BMKGeoCodeSearch* _geocodesearch;//反编码
+    
+    NSString *longitudeStr;
+    NSString *latitudeStr;
+    NSString *localStr;
+    NSString *cityCode;
     
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -43,16 +60,60 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.cityNowLab.text = self.locaStr;
-    [self.caityNowBtn setTitle:self.locaStr forState:0];
+    self.cityNowLab.text = [NSString stringWithFormat:@"当前城市：%@",self.locaStr];
+   // [self.caityNowBtn setTitle:self.locaStr forState:0];
     
     [self configTableView];
     [self setNavi];
 
-    
+    [self startMap];
     [self loadLocationData];
     
 }
+
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+    
+    BMKCoordinateRegion region;
+    
+    region.center.latitude  = userLocation.location.coordinate.latitude;
+    region.center.longitude = userLocation.location.coordinate.longitude;
+    region.span.latitudeDelta = 0;
+    region.span.longitudeDelta = 0;
+    NSLog(@"当前的坐标是:%f,%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    longitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
+    latitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
+    // ApplicationDelegate
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation: userLocation.location completionHandler:^(NSArray *array, NSError *error) {
+        if (array.count > 0) {
+            CLPlacemark *placemark = [array objectAtIndex:0];
+            if (placemark != nil) {
+                NSString *city = placemark.locality;
+                
+                NSLog(@"当前城市名称------%@",city);
+                [self.caityNowBtn setTitle:city forState:0] ;
+                localStr = city;
+                NSArray* records = [_offlineMap searchCity:city];
+                BMKOLSearchRecord* oneRecord = [records objectAtIndex:0];
+                //城市编码如:北京为131
+                int cityId = oneRecord.cityID;
+                
+                cityCode = [NSString stringWithFormat:@"%d",oneRecord.cityID];
+             
+                if ([_offlineMap remove:cityId]) {
+                    
+                }else{
+                    
+                };
+                
+                [_locService stopUserLocationService];
+            }
+        }
+    }];
+}
+
+
 
 - (void)loadLocationData{
     NSDictionary *para = @{
@@ -77,6 +138,16 @@
     }];
 }
 
+- (void)startMap{
+    _locService = [[BMKLocationService alloc]init];//定位功能的初始化
+    _locService.delegate = self;//设置代理位self
+    //启动LocationService
+    [_locService startUserLocationService];//启动定位服务
+    
+    _offlineMap = [[BMKOfflineMap alloc] init];
+    
+}
+
 - (void)setNavi{
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -88,21 +159,14 @@
     
     NSLog(@"😝%@",self.caityNowBtn.titleLabel.text);
     if (self.locaBlock) {
-        self.locaBlock(self.caityNowBtn.titleLabel.text);
+        self.locaBlock(@[localStr,cityCode]);
     }
     [self backTolastPage];
 }
 
 
 - (void)configTableView{
-    
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(@0);
-//        make.left.equalTo(@0);
-//        make.right.equalTo(@0);
-//       // make.height.equalTo(@(self.tableView.rowHeight*[_dataArray[section] count]));
-//        
-//    }];
+
     
     self.tableView.delegate = self;
     self.tableView.dataSource =self;

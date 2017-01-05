@@ -308,6 +308,7 @@
 		D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */; };
 		D1A3C0AF1E160F9A0040AAD9 /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */; };
 		D1A3C0B21E1BC5080040AAD9 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */; };
+		D1A3C0DE1E1DF55B0040AAD9 /* UnionIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0DD1E1DF55B0040AAD9 /* UnionIncomeViewController.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -936,6 +937,8 @@
 		D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
 		D1A3C0B01E1BC5080040AAD9 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		D1A3C0DC1E1DF55B0040AAD9 /* UnionIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionIncomeViewController.h; sourceTree = "<group>"; };
+		D1A3C0DD1E1DF55B0040AAD9 /* UnionIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionIncomeViewController.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1231,6 +1234,8 @@
 				D12054851DEC348300EB2707 /* ApplyViewController.m */,
 				D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */,
 				D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */,
+				D1A3C0DC1E1DF55B0040AAD9 /* UnionIncomeViewController.h */,
+				D1A3C0DD1E1DF55B0040AAD9 /* UnionIncomeViewController.m */,
 				D111710F1DFA8EA500AD88DE /* MyMemberViewController.h */,
 				D11171101DFA8EA500AD88DE /* MyMemberViewController.m */,
 				D11171121DFA8EC400AD88DE /* OrderControlViewController.h */,
@@ -2343,6 +2348,7 @@
 				D120549D1DED57FC00EB2707 /* ValuePickerView.m in Sources */,
 				D15B39491DD0B2C0009122FE /* AdDetailViewController.m in Sources */,
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
+				D1A3C0DE1E1DF55B0040AAD9 /* UnionIncomeViewController.m in Sources */,
 				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
 				AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */,
 				AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */,

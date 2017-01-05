@@ -53,12 +53,19 @@
     UITapGestureRecognizer *tapCard = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cardClick:)];
     [self.myBCardView addGestureRecognizer:tapCard];
     
+    UITapGestureRecognizer *tapIncome = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(incomeClick:)];
+    [self.incomeView addGestureRecognizer:tapIncome];
     
 }
 
 - (void)pushToNextWithIdentiField:(NSString*)identi sender:(id)sender{
     self.hidesBottomBarWhenPushed = YES;
     [self performSegueWithIdentifier:identi sender:sender];
+    
+}
+
+- (void)incomeClick:(id)Ges{
+    [self pushToNextWithIdentiField:@"shuanghuIncomeSegue" sender:nil];
     
 }
 
@@ -97,9 +104,9 @@
     [[MyAPI sharedAPI] getStoreMasterDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
         if (success) {
             StoreMmodel = object;
-            self.unionBalance.text = [NSString stringWithFormat:@"余额 : %@",StoreMmodel.money];
-            self.dealNumLab.text = StoreMmodel.total;
-            self.allIncomeLab.text = StoreMmodel.turnover;
+            self.unionBalance.text = [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.money];
+            self.dealNumLab.text =  [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.total];
+            self.allIncomeLab.text = [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.turnover];
             self.shopName.text = StoreMmodel.shopName;
             
             dayStr = StoreMmodel.today_withdrawal;

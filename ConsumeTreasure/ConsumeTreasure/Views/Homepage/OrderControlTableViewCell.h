@@ -23,4 +23,5 @@
 
 @property (nonatomic,strong) DaLiIncomeModel *daliIncomeModel;
 
+@property (nonatomic,strong) ShangHuIncomeModel *shanghuIncomeModel;
 @end

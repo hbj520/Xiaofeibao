@@ -909,6 +909,35 @@
     
 }
 
+#pragma mark -- 收益明细(商户)
+- (void)getIncomeOfShangHuWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/shopFund" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            NSMutableArray *IncomeListsArr = [NSMutableArray array];
+            IncomeListsArr = [ShangHuIncomeModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"shopList"] error:&error];
+            result(YES,info,@[IncomeListsArr]);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+    
+}
+
+
 #pragma mark --我是商户
 - (void)getStoreMasterDataWithParameters:(NSDictionary*)para
                                   result:(ModelBlock)result

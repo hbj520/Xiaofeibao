@@ -18,5 +18,8 @@
 @property (nonatomic,strong) NSString *shopPhone;
 @property (nonatomic,strong) NSString *collect;
 @property (nonatomic,strong) NSString *shopReturnRate;
+
+@property (nonatomic,strong) NSString<Optional> *longitude;
+@property (nonatomic,strong) NSString<Optional> *latitude;
 //@property (nonatomic,strong) NSString *startBusinessTime;
 @end

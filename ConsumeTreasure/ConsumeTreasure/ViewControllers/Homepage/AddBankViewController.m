@@ -150,7 +150,7 @@
     
     NSDictionary *para = @{
                            @"payPwd":payPswSafe,
-                           @"bankaddr":self.cardArea.text,
+                           @"bankaddr":@"",
                            @"bankname":self.cardBankName.text,
                            @"bankno":self.cardNum.text
                            };

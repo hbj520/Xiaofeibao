@@ -94,7 +94,7 @@
             daliModel = (DaLiMasterModel*)object;
             self.daliArea.text = daliModel.proxyname;
             canGetMoney = daliModel.balance;
-            self.leftMoney.text =  [NSString stringWithFormat:@"余额 : %@",daliModel.balance];
+            self.leftMoney.text =  [NSString stringWithFormat:@"余额 : %.2f",[daliModel.balance floatValue]];
             self.allInMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.total_money floatValue]];
             self.currentMonthMoney.text = [NSString stringWithFormat:@"%.2f",[daliModel.month_money floatValue]];
             dayIncome = daliModel.today_withdrawal;

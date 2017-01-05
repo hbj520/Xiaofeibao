@@ -118,7 +118,7 @@
     Tongtf.placeholder = @"请输入金额";
     Tongtf.keyboardType = UIKeyboardTypeDecimalPad;
     Tongtf.limit.delegate = self;
-    Tongtf.limit.max = @"999999999.99";
+    Tongtf.limit.max = @"9999999.99";
     
     [self.withdrawView addSubview:Tongtf];
     
@@ -171,7 +171,7 @@
 - (IBAction)getMoneyNow:(id)sender {
     NSLog(@"立即提现");
     
-    if (Tongtf.text.floatValue > 0) {
+    if (Tongtf.text.floatValue >= 1) {
         
         self.coverView.hidden = NO;
         [self.coverView.payTextField becomeFirstResponder];
@@ -189,7 +189,7 @@
         
         
     }else{
-        showAlert(@"请确认提现额度不为0");
+        showAlert(@"请确认提现额度不得低于1元");
     }
 }
 

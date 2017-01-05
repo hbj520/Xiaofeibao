@@ -12,7 +12,7 @@
 
 @interface MapLocateViewController ()<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKLocationServiceDelegate>
 {
-    BMKPinAnnotationView *newAnnotation;
+    //BMKPinAnnotationView *newAnnotation;
     
     BMKGeoCodeSearch *_geoCodeSearch;
     
@@ -21,9 +21,7 @@
     BMKLocationService *_locService;
 }
 @property (weak, nonatomic) IBOutlet BMKMapView *mapView;
-
-@property (weak, nonatomic) IBOutlet UIButton *mapPin;
-
+@property (weak, nonatomic) IBOutlet UIButton *mapPin;//大头针
 @property (weak, nonatomic) IBOutlet UILabel *longtitudeLab;//经度
 @property (weak, nonatomic) IBOutlet UILabel *latitudeLab;//纬度
 
@@ -36,6 +34,24 @@
     // Do any additional setup after loading the view.
     [self initLocationService];
 }
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [_mapView viewWillAppear];
+    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+ 
+    [super viewWillDisappear:animated];
+    [_mapView viewWillDisappear];
+    _mapView.delegate = nil; // 不用时，置nil
+
+}
+
 
 #pragma mark 初始化地图，定位
 -(void)initLocationService
@@ -53,7 +69,6 @@
     if (_locService==nil) {
         
         _locService = [[BMKLocationService alloc]init];
-        
         [_locService setDesiredAccuracy:kCLLocationAccuracyBest];
     }
     
@@ -76,16 +91,10 @@
     //设置地图中心为用户经纬度
     [_mapView updateLocationData:userLocation];
     
-    
-    //    _mapView.centerCoordinate = userLocation.location.coordinate;
     BMKCoordinateRegion region ;//表示范围的结构体
     region.center = _mapView.centerCoordinate;//中心点
     region.span.latitudeDelta = 0.004;//经度范围（设置为0.1表示显示范围为0.2的纬度范围）
     region.span.longitudeDelta = 0.004;//纬度范围
-    
-    
-//    self.latitudeLab.text = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
-//    self.longtitudeLab.text = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
     
     [_mapView setRegion:region animated:YES];
     
@@ -98,6 +107,7 @@
     //屏幕坐标转地图经纬度
     CLLocationCoordinate2D MapCoordinate=[_mapView convertPoint:_mapPin.center toCoordinateFromView:_mapView];
     
+    //获取经纬度
     self.latitudeLab.text = [NSString stringWithFormat:@"%f",MapCoordinate.latitude];
     self.longtitudeLab.text = [NSString stringWithFormat:@"%f",MapCoordinate.longitude];
     
@@ -108,7 +118,6 @@
         
     }
     if (_reverseGeoCodeOption==nil) {
-        
         //初始化反地理编码类
         _reverseGeoCodeOption= [[BMKReverseGeoCodeOption alloc] init];
     }
@@ -116,16 +125,7 @@
     //需要逆地理编码的坐标位置
     _reverseGeoCodeOption.reverseGeoPoint =MapCoordinate;
     [_geoCodeSearch reverseGeoCode:_reverseGeoCodeOption];
-    
-    /*
-    MKCoordinateRegion region;
-    CLLocationCoordinate2D centerCoordinate = mapView.region.center;
-    region.center= centerCoordinate;
-    
-    NSLog(@" regionDidChangeAnimated %f,%f",centerCoordinate.latitude, centerCoordinate.longitude);
-    
-     */
-     
+ 
 }
 
 #pragma mark BMKGeoCodeSearchDelegate
