@@ -331,7 +331,7 @@ UICollectionViewDataSource>
         UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
         StoreDeatilViewController *deatilVC = [storybord instantiateViewControllerWithIdentifier:@"detailSB"];
         deatilVC.StoreModel = [dataSource objectAtIndex:indexPath.row];
-        self.hidesBottomBarWhenPushed = YES;
+        //self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:deatilVC animated:YES];
     }
 }
