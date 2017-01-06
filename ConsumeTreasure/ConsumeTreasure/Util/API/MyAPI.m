@@ -273,7 +273,7 @@
                           errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"userinfo/showPerson" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
