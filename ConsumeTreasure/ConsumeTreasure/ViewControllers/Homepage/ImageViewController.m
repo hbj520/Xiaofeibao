@@ -57,8 +57,8 @@
         [self openCamera];
         
     }else if(buttonIndex == 1){
-        [self openPhoto];
-        
+       [self openPhoto];
+       
     }
     
             

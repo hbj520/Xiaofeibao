@@ -10,7 +10,7 @@
 #import "SetPayPswViewController.h"
 #import "OtherPayWayViewController.h"
 #import "PersonInfoModel.h"
-
+#import "StoreDetailModel.h"
 #import "SecurityUtil.h"
 
 #import <Masonry.h>
@@ -26,6 +26,10 @@
     XWMoneyTextField *Tongtf;
     
     tongBaoModel *tongModel;
+    
+    double discountStr;
+    
+    StoreDetailModel *_deModel;
 }
 
 @property (nonatomic, strong) JHCoverView *coverView;
@@ -46,10 +50,35 @@
     [self setTextField];
     [self setUseLeftMoney];
     [self getTongLeft];//请求余额
+    [self getDisCount];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     // [self upPayKeyBoard];
 }
+
+- (void)getDisCount{
+    NSDictionary *para = @{
+                           @"memid":self.toMemId
+                           };
+    [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            _deModel = object;
+            discountStr = _deModel.shopReturnRate;
+        
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+
+    
+    
+}
+
 
 - (void)getTongLeft{
     NSDictionary *para = @{
@@ -159,7 +188,7 @@
             self.disCountMoney.text = [NSString stringWithFormat:@"- %ld",(long)leftMoney];//折扣
             
             self.realPay.text = [NSString stringWithFormat:@"%.2f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
-            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]/10)];//获得通宝币
+            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];//获得通宝币
             
         }else{
             self.disCountMoney.text = [NSString stringWithFormat:@"- %@",tf.text];

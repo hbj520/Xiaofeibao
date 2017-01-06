@@ -37,7 +37,8 @@
     NSMutableArray *_spacialGoodArr;
     NSMutableArray *_commetsArr;
     
-    NSString *_keepMemId;
+    NSString *_keepMemId;///商家id
+    NSString *_disCountStr;
     
     
     NSString *longti;
@@ -188,7 +189,8 @@
         [[MyAPI sharedAPI] getDetailStoreWithParameters:para result:^(BOOL success, NSString *msg, id object) {
             if (success) {
                 _deModel = object;
-                self.discountBtnLab.text = [NSString stringWithFormat:@"现金支付立返%.2f%%",[_deModel.shopReturnRate floatValue]*100];
+                _disCountStr = [NSString stringWithFormat:@"%f",_deModel.shopReturnRate];
+                self.discountBtnLab.text = [NSString stringWithFormat:@"现金支付立返%.f%%",_deModel.shopReturnRate*100];
                 lati = _deModel.latitude;
                 longti = _deModel.longitude;
                 [self.tableView reloadData];
