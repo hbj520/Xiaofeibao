@@ -9,18 +9,14 @@
 #import "JSONModel.h"
 
 @protocol BeUnionModel
-
 @end
 
 @interface BeUnionModel : JSONModel
-
 @property (nonatomic,strong) NSString *iconurl;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *categoryId;
 @end
 
-
 @interface arrayUnionModel : JSONModel
-
 @property (nonatomic,strong) NSArray<BeUnionModel>* list;
 @end

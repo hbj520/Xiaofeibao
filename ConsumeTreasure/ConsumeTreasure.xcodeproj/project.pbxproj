@@ -309,6 +309,8 @@
 		D1A3C0AF1E160F9A0040AAD9 /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0AE1E160F9A0040AAD9 /* cityModel.m */; };
 		D1A3C0B21E1BC5080040AAD9 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */; };
 		D1A3C0DE1E1DF55B0040AAD9 /* UnionIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0DD1E1DF55B0040AAD9 /* UnionIncomeViewController.m */; };
+		D1A3C0E21E1F9EAC0040AAD9 /* NewAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */; };
+		D1A3C0E31E1F9EAD0040AAD9 /* NewAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -939,6 +941,9 @@
 		D1A3C0B11E1BC5080040AAD9 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		D1A3C0DC1E1DF55B0040AAD9 /* UnionIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionIncomeViewController.h; sourceTree = "<group>"; };
 		D1A3C0DD1E1DF55B0040AAD9 /* UnionIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionIncomeViewController.m; sourceTree = "<group>"; };
+		D1A3C0DF1E1F9EAC0040AAD9 /* NewAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountTableViewCell.h; sourceTree = "<group>"; };
+		D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountTableViewCell.m; sourceTree = "<group>"; };
+		D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAccountTableViewCell.xib; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1242,10 +1247,10 @@
 				D11171131DFA8EC400AD88DE /* OrderControlViewController.m */,
 				D11171151DFA8EEB00AD88DE /* CheckstandViewController.h */,
 				D11171161DFA8EEB00AD88DE /* CheckstandViewController.m */,
-				D196D5881E0CFB850062AD91 /* AgencyIntroViewController.m */,
 				D196D58A1E0CFB9E0062AD91 /* TobeAgencyViewController.h */,
 				D196D58B1E0CFB9E0062AD91 /* TobeAgencyViewController.m */,
 				D196D5871E0CFB850062AD91 /* AgencyIntroViewController.h */,
+				D196D5881E0CFB850062AD91 /* AgencyIntroViewController.m */,
 				D1F916A61E07B4D70091B989 /* DaLiViewController.h */,
 				D1F916A71E07B4D70091B989 /* DaLiViewController.m */,
 				D196D57F1E0C21210062AD91 /* CashViewController.h */,
@@ -1480,6 +1485,9 @@
 				D1A3C0861E1246DA0040AAD9 /* BankCardTableViewCell.h */,
 				D1A3C0871E1246DA0040AAD9 /* BankCardTableViewCell.m */,
 				D1A3C0881E1246DA0040AAD9 /* BankCardTableViewCell.xib */,
+				D1A3C0DF1E1F9EAC0040AAD9 /* NewAccountTableViewCell.h */,
+				D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */,
+				D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2253,6 +2261,7 @@
 				D15450FC1DF936D8002F4057 /* TuiJianTableViewCell.xib in Resources */,
 				ABF4E2841D9B5E58006AD23C /* Main.storyboard in Resources */,
 				D16BF2B81DF001A7001A82BF /* shop_area.sqlite in Resources */,
+				D1A3C0E31E1F9EAD0040AAD9 /* NewAccountTableViewCell.xib in Resources */,
 				D15B39591DD40948009122FE /* StoreContentTableViewCell.xib in Resources */,
 				D15B3A4E1DDB08D8009122FE /* MyIncomeTableViewCell.xib in Resources */,
 				D12165261DB4FF1A006B06FC /* PartnerTableViewCell.xib in Resources */,
@@ -2305,7 +2314,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure-frameworks.sh\"\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 		CDAD98FAABD7E98207D9DEBC /* [CP] Copy Pods Resources */ = {
@@ -2320,7 +2330,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure-resources.sh\"\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2332,6 +2343,7 @@
 			files = (
 				D15B393A1DCB114F009122FE /* HomeStoreModel.m in Sources */,
 				AB0808741E13B4C10074D573 /* FileHelper.m in Sources */,
+				D1A3C0E21E1F9EAC0040AAD9 /* NewAccountTableViewCell.m in Sources */,
 				D15B3AFC1DDC0E5E009122FE /* NSDataEx.m in Sources */,
 				D16BF2B01DEFF15B001A82BF /* JFCityCollectionFlowLayout.m in Sources */,
 				D15B3AF91DDC0E5E009122FE /* DataSigner.m in Sources */,

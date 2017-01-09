@@ -404,7 +404,7 @@
            // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
             //[self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
             
-            NSString *IsAgency = @"1";//[[XFBConfig Instance] getIsAgency];
+            NSString *IsAgency = [[XFBConfig Instance] getIsAgency];
             if ([IsAgency isEqualToString:@"1"]) {
                 [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
             }else{

@@ -94,9 +94,9 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
-//    if (self.imageBlock) {
-//        self.imageBlock(image);
-//    }
+    if (self.imageBlock) {
+        self.imageBlock(image);
+    }
     NSData * data = UIImageJPEGRepresentation(image, 0.2);
     UIImage *img = [UIImage imageWithData:data];
     [_imagesArray addObject:img];

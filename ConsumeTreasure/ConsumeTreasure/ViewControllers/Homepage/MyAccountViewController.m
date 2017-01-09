@@ -14,6 +14,7 @@
 #import "MyAccountTableViewCell.h"
 #import "LevelTableViewCell.h"
 #import "DetailCountHeadView.h"
+#import "NewAccountTableViewCell.h"
 
 #import "AccountModel.h"
 
@@ -117,7 +118,7 @@
     self.tableView.dataSource = self;
     //self.tableView.allowsSelection = YES;
     [self.tableView registerNib:[UINib nibWithNibName:@"MyAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"accountCelleId"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"LevelTableViewCell" bundle:nil] forCellReuseIdentifier:@"levelCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"NewAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"newAccountCellId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SpreadTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuiguangCelleId"];
    }
 
@@ -150,9 +151,9 @@
         return accountCell;
     }else{
     
-            LevelTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"levelCellId"];
+            NewAccountTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"newAccountCellId"];
             if (levelCell == nil) {
-                levelCell = [[[NSBundle mainBundle] loadNibNamed:@"LevelTableViewCell" owner:self options:nil] lastObject];
+                levelCell = [[[NSBundle mainBundle] loadNibNamed:@"NewAccountTableViewCell" owner:self options:nil] lastObject];
             }
         
         if (levelArr.count > 0) {
@@ -184,9 +185,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 164;
+        return 150;
     }else{
-        return 55;
+        return 65;
     }
 }
 

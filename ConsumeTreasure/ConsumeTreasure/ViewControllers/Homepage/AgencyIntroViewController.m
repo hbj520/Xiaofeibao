@@ -30,7 +30,7 @@
     self.scrollView.contentSize = CGSizeMake(ScreenWidth, 1390);
     self.scrollView.directionalLockEnabled = YES;
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"agencyApply"]];
-   
+    imageView.frame = CGRectMake(0, 0, ScreenWidth, 1390);
     /*
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = [UIColor redColor];
@@ -46,18 +46,13 @@
     }];
     */
      
-    [self.scrollView addSubview:imageView];
-    
-    
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-     //   make.bottom.equalTo(@(-100));
-        make.top.equalTo(@0);
-        make.width.equalTo(@(ScreenWidth*0.9));
-        make.height.equalTo(@(ScreenWidth*100));
-        make.center.equalTo(self.scrollView);
-     //make.left.and.top.mas_equalTo(0);
-    }];
+  [self.scrollView addSubview:imageView];
+//    
+//    
+//    
+//    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//   make.edges.equalTo(self.scrollView).with.insets(UIEdgeInsetsMake(10, 10, 10, 10));
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +68,26 @@
     if ([isShopId isEqualToString:@"0"]) {
         showAlert(@"正在审核中，请耐心等待");
     }else{
-        [self performSegueWithIdentifier:@"tobeAgencySegue" sender:nil];
+        //[self performSegueWithIdentifier:@"tobeAgencySegue" sender:nil];
+        
+        NSDictionary *para = @{
+
+                               };
+        [[MyAPI sharedAPI] PostNameAndPhoneWith:para result:^(BOOL sucess, NSString *msg) {
+            if (sucess) {
+                showAlert(@"已申请成功，请等候客服人员与您联系");
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
+                showAlert(msg);
+            }
+            
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+
+        
     }
 }
 

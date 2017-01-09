@@ -9,14 +9,7 @@
 #import "AccountModel.h"
 
 @implementation AccountModel
-
-
-
-
 @end
 
-
 @implementation AccountArrayModel
-
-
 @end
