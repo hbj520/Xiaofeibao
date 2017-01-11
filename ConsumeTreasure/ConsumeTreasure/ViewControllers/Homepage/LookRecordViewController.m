@@ -140,11 +140,18 @@
     hotCell.selectionStyle = 0;
     
     LookStoreModel *model = _storeArray[indexPath.section][indexPath.row];
-    [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.doorImage] placeholderImage:[UIImage imageNamed:@"foodImage"]];
+    [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.doorImg] placeholderImage:[UIImage imageNamed:DEFAULTSTOREIMAGE]];
     hotCell.storeName.text = model.shopName;
     hotCell.storeAddress.text = model.addr;
     hotCell.discountLab.text = model.discount;
-    hotCell.distance.hidden = YES;
+    hotCell.locationImageView.hidden = YES;
+    CGRect frame = hotCell.distance.frame;
+    frame.origin.x = 134;
+    frame.origin.y = 92;
+    hotCell.distance.frame = frame;
+    hotCell.distance.text = model.browseDate;
+    
+    //hotCell.distance.hidden = YES;
     return hotCell;
 }
 

@@ -207,7 +207,7 @@
 
 - (IBAction)accountRegisterBtn:(id)sender {
     [Tools hideKeyBoard];
-    if (circleSelectBtn.selected && self.registerPhoneTextField.text.length >= 11 && self.registerPasswordTextfield.text.length >= 6 ) {
+    if ( self.registerPhoneTextField.text.length >= 11 && self.registerPasswordTextfield.text.length >= 6 ) {
         
         NSString *securityString = [Tools loginPasswordSecurityLock:self.registerPasswordTextfield.text];
       

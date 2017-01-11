@@ -238,21 +238,6 @@
          [self endRefresh];
     }];
     
-    //个人资料
-    if (KToken) {
-        [[MyAPI sharedAPI] getInfoPersonalWithParameters:para resulet:^(BOOL success, NSString *msg, id object) {
-            if (success) {
-                infoModel = (PersonInfoModel*)object;
-                [[XFBConfig Instance] saveIsShop:infoModel.isshopchecked];
-                [[XFBConfig Instance] saveIsAgency:infoModel.isproxychecked];
-                [[XFBConfig Instance] saveloginName:infoModel.name];
-            }else{
-            
-            }
-        } errorResult:^(NSError *enginerError) {
-            
-        }];
-    }
    
     
 }
@@ -403,23 +388,52 @@
         firstCell.partnerBlock = ^{//合伙人超市partnerSegue
            // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
             //[self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
-            
-            NSString *IsAgency = [[XFBConfig Instance] getIsAgency];
-            if ([IsAgency isEqualToString:@"1"]) {
-                [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
-            }else{
-                [self pushToNextWithIdentiField:@"AgencydesSegue" sender:nil];
+            [[MyAPI sharedAPI] getInfoPersonalWithParameters:@{} resulet:^(BOOL success, NSString *msg, id object) {
+                    if (success) {
+                        infoModel = (PersonInfoModel*)object;
+                        if ([infoModel.isproxychecked isEqualToString:@"1"]) {
+                            [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
+                        }else{
+                            
+                            [self pushToNextWithIdentiField:@"AgencydesSegue" sender:nil];
+                            
+                        }
+                    }else{
+                        if ([msg isEqualToString:@"-1"]) {
+                            [self logout];
+                        }else{
+                            [self showHint:msg];
+                        }
+ 
+                    }
+                } errorResult:^(NSError *enginerError) {
+                    [self showHint:@"出错"];
+                }];
 
-            }
         };
         firstCell.storeBlock = ^{//商户入口
             
-            NSString *isShopId = [[XFBConfig Instance] getIsShop];
-            if ([isShopId isEqualToString:@"1"]) {
-                [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
-            }else{
-                [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
-            }
+                [[MyAPI sharedAPI] getInfoPersonalWithParameters:@{} resulet:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    infoModel = (PersonInfoModel*)object;
+                    if ([infoModel.isshopchecked isEqualToString:@"1"]) {
+                        [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
+                    }else{
+                        
+                        [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
+                        
+                    }
+                }else{
+                    if ([msg isEqualToString:@"-1"]) {
+                        [self logout];
+                    }else{
+                        [self showHint:msg];
+                    }
+                    
+                }
+            } errorResult:^(NSError *enginerError) {
+                [self showHint:@"出错"];
+            }];
         };
         
         firstCell.scanBlock =^{ //扫一扫

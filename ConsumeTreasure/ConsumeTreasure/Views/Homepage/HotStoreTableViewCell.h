@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *discountLab;
 
 @property (nonatomic,strong)HomeStoreModel* storeModel;
+@property (weak, nonatomic) IBOutlet UIImageView *locationImageView;
 
 @end

@@ -14,12 +14,12 @@
 
 @interface HomeStoreModel : JSONModel
 
-@property (nonatomic,strong) NSString *distance;
+@property (nonatomic,strong) NSString<Optional> *distance;
 @property (nonatomic,strong) NSString *doorimg;
 @property (nonatomic,strong) NSString *memid;
 @property (nonatomic,strong) NSString *shopname;
 @property (nonatomic,strong) NSString *addr;
-@property (nonatomic,strong) NSString *discount;
+@property (nonatomic,strong) NSString<Optional> *discount;
 
 @end
 

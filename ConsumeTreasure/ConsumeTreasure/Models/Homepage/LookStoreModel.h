@@ -11,11 +11,11 @@
 @interface LookStoreModel : JSONModel
 
 @property (nonatomic,strong) NSString *addr;
-@property (nonatomic,strong) NSString <Optional>*doorImage;
+@property (nonatomic,strong) NSString <Optional>*doorImg;
 @property (nonatomic,strong) NSString *shopName;
 @property (nonatomic,strong) NSString *discount;
 @property (nonatomic,strong) NSString *memid;
-
+@property (nonatomic,strong) NSString *browseDate;
 @end
 
 @interface locationModel : JSONModel
