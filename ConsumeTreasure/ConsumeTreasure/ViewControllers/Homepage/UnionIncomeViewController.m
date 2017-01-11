@@ -118,7 +118,7 @@
     }
     
     if (_incomeArray.count > 0) {
-        levelCell.accountModel = [_incomeArray objectAtIndex:indexPath.row];
+        levelCell.shanghuModel = [_incomeArray objectAtIndex:indexPath.row];
     }
     levelCell.selectionStyle = 0;
     return levelCell;

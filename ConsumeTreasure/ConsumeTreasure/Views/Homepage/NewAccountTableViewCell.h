@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AccountModel.h"
+#import "OrderConModel.h"
 @interface NewAccountTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *dayTimeStr;
 @property (weak, nonatomic) IBOutlet UILabel *detailTimeStr;
@@ -16,5 +17,6 @@
 
 
 @property (nonatomic, strong) AccountModel *accountModel;
-
+@property (nonatomic, strong) ShangHuIncomeModel *shanghuModel;
+@property (nonatomic, strong) DaLiIncomeModel *daliModel;
 @end

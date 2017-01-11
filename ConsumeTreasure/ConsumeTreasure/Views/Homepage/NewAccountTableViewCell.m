@@ -31,6 +31,40 @@
     }
 }
 
+- (void)setShanghuModel:(ShangHuIncomeModel *)shanghuModel{
+    if (shanghuModel) {
+        
+        self.dayTimeStr.text = shanghuModel.createdate;
+        self.detailTimeStr.text = shanghuModel.createtime;
+        
+        if ([shanghuModel.type isEqualToString:@"0"]) {
+            self.shouzhiImage.image = [UIImage imageNamed:@"zhi"];
+            self.moneyStr.text = [NSString stringWithFormat:@"- %.2f",shanghuModel.money];
+        }else{
+            self.shouzhiImage.image = [UIImage imageNamed:@"shou"];
+            self.moneyStr.text = [NSString stringWithFormat:@"+ %.2f",shanghuModel.money];
+        }
+    }
+
+}
+
+-(void)setDaliModel:(DaLiIncomeModel *)daliModel{
+    if (daliModel) {
+        
+        self.dayTimeStr.text = daliModel.createdate;
+        self.detailTimeStr.text = daliModel.createtime;
+        
+        if ([daliModel.type isEqualToString:@"0"]) {
+            self.shouzhiImage.image = [UIImage imageNamed:@"zhi"];
+            self.moneyStr.text = [NSString stringWithFormat:@"- %.2f",daliModel.money];
+        }else{
+            self.shouzhiImage.image = [UIImage imageNamed:@"shou"];
+            self.moneyStr.text = [NSString stringWithFormat:@"+ %.2f",daliModel.money];
+        }
+    }
+}
+
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

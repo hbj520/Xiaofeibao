@@ -120,7 +120,7 @@
     }
     
     if (_incomeArray.count > 0) {
-        levelCell.accountModel = [_incomeArray objectAtIndex:indexPath.row];
+        levelCell.daliModel = [_incomeArray objectAtIndex:indexPath.row];
     }
     levelCell.selectionStyle = 0;
     return levelCell;

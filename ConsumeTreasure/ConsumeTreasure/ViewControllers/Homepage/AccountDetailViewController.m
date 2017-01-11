@@ -26,6 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     if (incomeType == 1) {
         self.shopNameLab.text = self.shopNameLab2.text = _aModel.shopName;
         if ([_aModel.type isEqualToString:@"0"]) {
@@ -39,28 +41,30 @@
         self.accountDescripTextView.text = _aModel.account_description;
     }else if (incomeType == 2){
         
-        self.shopNameLab.text = self.shopNameLab2.text = _aModel.shopName;
+        self.shopNameLab.text = self.shopNameLab2.text = _shanghuModel.title;
         if ([_aModel.type isEqualToString:@"0"]) {
-            self.accountChangeLab.text = [NSString stringWithFormat:@"- %@",_aModel.goldnum];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"- %.2f",_shanghuModel.money];
         }else{
-            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %@",_aModel.goldnum];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.2f",_shanghuModel.money];
         }
-        self.actionTimeLab.text = _aModel.createtime;
-        self.dateLab.text = _aModel.createdate;
-        self.accountDescripTextView.text = _aModel.account_description;
+        self.actionTimeLab.text = _shanghuModel.createtime;
+        self.dateLab.text = _shanghuModel.createdate;
+        self.accountDescripTextView.text = _shanghuModel.shop_description;
     }else{
-        self.shopNameLab.text = self.shopNameLab2.text = _aModel.shopName;
+        self.shopNameLab.text = self.shopNameLab2.text = _daliModel.title;
         if ([_aModel.type isEqualToString:@"0"]) {
-            self.accountChangeLab.text = [NSString stringWithFormat:@"- %@",_aModel.goldnum];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"- %.2f",_daliModel.money];
         }else{
-            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %@",_aModel.goldnum];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.2f",_daliModel.money];
         }
-        self.actionTimeLab.text = _aModel.createtime;
-        self.dateLab.text = _aModel.createdate;
-        self.accountDescripTextView.text = _aModel.account_description;
+        self.actionTimeLab.text = _daliModel.createtime;
+        self.dateLab.text = _daliModel.createdate;
+        self.accountDescripTextView.text = _daliModel.bill_description;
     }
 }
- 
+
+
+
 
 - (void)setModel:(AccountModel *)model{
     
