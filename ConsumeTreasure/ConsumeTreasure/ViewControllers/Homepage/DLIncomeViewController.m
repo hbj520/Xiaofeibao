@@ -11,6 +11,8 @@
 #import <MJRefresh/MJRefresh.h>
 #import "OrderControlTableViewCell.h"
 
+#import "NewAccountTableViewCell.h"
+#import "AccountDetailViewController.h"
 @interface DLIncomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *_incomeArray;
@@ -97,7 +99,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 100;
+    self.tableView.rowHeight = 65;
     self.tableView.backgroundColor = RGBACOLOR(235, 235, 235, 0.8);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderControlTableViewCell" bundle:nil] forCellReuseIdentifier:@"orderCellId"];
@@ -112,20 +114,25 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    OrderControlTableViewCell *orderCell = [tableView dequeueReusableCellWithIdentifier:@"orderCellId"];
-    if (orderCell == nil) {
-        orderCell = [[[NSBundle mainBundle] loadNibNamed:@"OrderControlTableViewCell" owner:self options:nil] lastObject];
+    NewAccountTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"newAccountCellId"];
+    if (levelCell == nil) {
+        levelCell = [[[NSBundle mainBundle] loadNibNamed:@"NewAccountTableViewCell" owner:self options:nil] lastObject];
     }
-    if (_incomeArray.count > 0) {
-        orderCell.daliIncomeModel = [_incomeArray objectAtIndex:indexPath.row];
-    }
-    orderCell.selectionStyle = 0;
     
-    return orderCell;
+    if (_incomeArray.count > 0) {
+        levelCell.accountModel = [_incomeArray objectAtIndex:indexPath.row];
+    }
+    levelCell.selectionStyle = 0;
+    return levelCell;
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+        self.hidesBottomBarWhenPushed = YES;
+        DaLiIncomeModel *model = [_incomeArray objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"daliIncomeSegue" sender:model];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -139,10 +146,16 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"daliIncomeSegue"]) {
+        DaLiIncomeModel *model = (DaLiIncomeModel*)sender;
+        AccountDetailViewController *accDetailVC = segue.destinationViewController;
+        accDetailVC.daliModel = model;
+    }
 }
-*/
+
 
 @end

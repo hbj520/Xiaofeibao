@@ -10,10 +10,14 @@
 #import "HomeStoreModel.h"
 
 #import "TuiJianModel.h"
+
+#import "LookStoreModel.h"
+
 @interface StoreDeatilViewController : BaseViewController
 
 
 @property (nonatomic,strong) TuiJianModel *StoreModel;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *discountBtnLab;
 

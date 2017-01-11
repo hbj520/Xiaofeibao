@@ -15,6 +15,8 @@
 @interface AccountModel : JSONModel
 @property (nonatomic,strong) NSString *createtime;
 @property (nonatomic,strong) NSString *createdate;
+@property (nonatomic,strong) NSString *createyear;
+
 @property (nonatomic,strong) NSString *account_description;
 @property (nonatomic,strong) NSString *goldnum;
 @property (nonatomic,strong) NSString *shopName;

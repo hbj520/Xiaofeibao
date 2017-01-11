@@ -5,11 +5,11 @@
 //  Created by youyoumacmini3 on 16/10/18.
 //  Copyright © 2016年 youyou. All rights reserved.
 //
-
+#import "StoreDeatilViewController.h"
 #import "LookRecordViewController.h"
 #import "HotStoreTableViewCell.h"
 #import "LookRecordHeadView.h"
-
+#import "TuiJianModel.h"
 #import "LookTimeMode.h"
 #import "LookStoreModel.h"
 #import <MJRefresh/MJRefresh.h>
@@ -143,7 +143,7 @@
     [hotCell.storeImage sd_setImageWithURL:[NSURL URLWithString:model.doorImage] placeholderImage:[UIImage imageNamed:@"foodImage"]];
     hotCell.storeName.text = model.shopName;
     hotCell.storeAddress.text = model.addr;
-  //  hotCell.storeLikeNum.text = model.collectsnum;
+    hotCell.discountLab.text = model.discount;
     hotCell.distance.hidden = YES;
     return hotCell;
 }
@@ -170,7 +170,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"=====%ld_______%ld",indexPath.section,indexPath.row);
-    
+    if (_storeArray.count > 0) {
+        TuiJianModel *model = _storeArray[indexPath.section][indexPath.row];
+        self.hidesBottomBarWhenPushed = YES;
+        [self performSegueWithIdentifier:@"goDetailFromRecordSegue" sender:model];
+        
+    }
     
 }
 
@@ -187,10 +192,19 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"goDetailFromRecordSegue"]){
+        
+        TuiJianModel *model = (TuiJianModel*)sender;
+        StoreDeatilViewController *storeDetailVC = segue.destinationViewController;
+        storeDetailVC.StoreModel = model;
+        
+    }
 }
-*/
+
 
 @end
