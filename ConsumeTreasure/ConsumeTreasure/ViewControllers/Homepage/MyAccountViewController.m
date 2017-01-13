@@ -94,6 +94,14 @@
                           };
     [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
+            
+            if (arrays.count == 0) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                
+            }else{
+                [self.tableView.mj_footer endRefreshing];
+                
+            }
             accountNum = arrays[1];
             [levelArr addObjectsFromArray:arrays[0]];
          

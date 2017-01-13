@@ -75,11 +75,13 @@
 
 - (void)setShanghuModel:(ShangHuIncomeModel *)shanghuModel{
     _shanghuModel = shanghuModel;
+    self.changeStr.text = @"类型";
     incomeType = 2;
 }
 
 - (void)setDaliModel:(DaLiIncomeModel *)daliModel{
     _daliModel = daliModel;
+    self.changeStr.text = @"类型";
     incomeType = 3;
 }
 
