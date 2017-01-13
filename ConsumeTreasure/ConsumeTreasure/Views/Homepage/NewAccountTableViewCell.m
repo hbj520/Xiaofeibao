@@ -20,7 +20,7 @@
         
         self.dayTimeStr.text = accountModel.createdate;
         self.detailTimeStr.text = accountModel.createtime;
-        
+        self.easyContent.text = accountModel.account_description;
         if ([accountModel.type isEqualToString:@"0"]) {
             self.shouzhiImage.image = [UIImage imageNamed:@"zhi"];
             self.moneyStr.text = [NSString stringWithFormat:@"- %@",accountModel.goldnum];
@@ -36,7 +36,7 @@
         
         self.dayTimeStr.text = shanghuModel.createdate;
         self.detailTimeStr.text = shanghuModel.createtime;
-        
+        self.easyContent.text = shanghuModel.shop_description;
         if ([shanghuModel.type isEqualToString:@"0"]) {
             self.shouzhiImage.image = [UIImage imageNamed:@"zhi"];
             self.moneyStr.text = [NSString stringWithFormat:@"- %.2f",shanghuModel.money];
@@ -50,7 +50,7 @@
 
 -(void)setDaliModel:(DaLiIncomeModel *)daliModel{
     if (daliModel) {
-        
+        self.easyContent.text = daliModel.bill_description;
         self.dayTimeStr.text = daliModel.createdate;
         self.detailTimeStr.text = daliModel.createtime;
         

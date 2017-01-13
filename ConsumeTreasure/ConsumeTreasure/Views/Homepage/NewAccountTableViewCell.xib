@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
+                <rect key="frame" x="0.0" y="0.0" width="342" height="65"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwj-ei-b9l">
@@ -43,8 +43,8 @@
                             <constraint firstAttribute="width" constant="38" id="Spk-Nw-w0s"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+425.13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b21-7P-GQN">
-                        <rect key="frame" x="104" y="13" width="63" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b21-7P-GQN">
+                        <rect key="frame" x="104" y="13" width="0.0" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="L6e-sI-Syu"/>
                         </constraints>
@@ -52,8 +52,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消费报、宝单次支出-转账" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jp-ME-Fbv">
-                        <rect key="frame" x="103" y="41" width="152" height="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jp-ME-Fbv">
+                        <rect key="frame" x="103" y="41" width="0.0" height="13"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="pka-fG-NVF"/>
                         </constraints>
@@ -78,6 +78,7 @@
             <connections>
                 <outlet property="dayTimeStr" destination="Kwj-ei-b9l" id="bvx-ps-K3U"/>
                 <outlet property="detailTimeStr" destination="TBC-AM-Vr6" id="6u7-UU-iDx"/>
+                <outlet property="easyContent" destination="4jp-ME-Fbv" id="uPr-gj-gzf"/>
                 <outlet property="moneyStr" destination="b21-7P-GQN" id="96F-Dn-2Lb"/>
                 <outlet property="shouzhiImage" destination="opX-DJ-I2C" id="qvQ-FO-Ftw"/>
             </connections>

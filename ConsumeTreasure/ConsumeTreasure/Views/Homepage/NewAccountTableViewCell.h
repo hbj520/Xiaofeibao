@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *shouzhiImage;
 @property (weak, nonatomic) IBOutlet UILabel *moneyStr;
 
+@property (weak, nonatomic) IBOutlet UILabel *easyContent;
 
 @property (nonatomic, strong) AccountModel *accountModel;
 @property (nonatomic, strong) ShangHuIncomeModel *shanghuModel;
