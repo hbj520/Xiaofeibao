@@ -27,6 +27,7 @@
 		AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808761E13C53C0074D573 /* GuideViewController.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
+		AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */; };
 		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
@@ -378,6 +379,7 @@
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB10A8251DF122BD0042586A /* EvaluateListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListModel.h; sourceTree = "<group>"; };
 		AB10A8261DF122BD0042586A /* EvaluateListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListModel.m; sourceTree = "<group>"; };
+		AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		AB1496641E1645C70042637C /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		AB1496651E1645C70042637C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinePayViewController.h; sourceTree = "<group>"; };
@@ -1605,6 +1607,7 @@
 		ABF4E2781D9B5E58006AD23C /* ConsumeTreasure */ = {
 			isa = PBXGroup;
 			children = (
+				AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */,
 				ABCB95311D9B8972008927C7 /* Resource */,
 				D10EE3911DB0B21D001C1992 /* Vender */,
 				AB608C1B1D9CB66D00194FC2 /* Util */,
@@ -2216,6 +2219,7 @@
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
 				AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */,
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
+				AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */,
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */,
 				AB61EC9E1E153B580053650A /* StoreConLabTableViewCell.xib in Resources */,

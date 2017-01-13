@@ -87,6 +87,8 @@ UICollectionViewDataSource>
         if (dataSource.count > 0 ) {
             [dataSource removeAllObjects];
         }
+        page = 1;
+
         [weakSelf loadData];
     }];
     self.contentTabelView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -130,7 +132,7 @@ UICollectionViewDataSource>
 }
 - (void)loadData{
   //市下辖区县
-    [[MyAPI sharedAPI] unionShopAreaWithParameters:@{@"cityCode":@"127"} result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    [[MyAPI sharedAPI] unionShopAreaWithParameters:@{@"cityCode":ApplicationDelegate.cityCode} result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             regionArray = [NSMutableArray arrayWithArray:arrays];
             areaArray = [NSMutableArray array];
