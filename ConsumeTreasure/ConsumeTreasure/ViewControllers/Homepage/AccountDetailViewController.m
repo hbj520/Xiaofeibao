@@ -29,7 +29,8 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     if (incomeType == 1) {
-        self.shopNameLab.text = self.shopNameLab2.text = _aModel.shopName;
+        self.shopNameLab2.text = _aModel.shopName;
+        self.shopNameLab.text  = _aModel.shopName;
         if ([_aModel.type isEqualToString:@"0"]) {
             self.accountChangeLab.text = [NSString stringWithFormat:@"- %@",_aModel.goldnum];
         }else{
@@ -40,8 +41,8 @@
         self.yearLab.text = _aModel.createyear;
         self.accountDescripTextView.text = _aModel.account_description;
     }else if (incomeType == 2){
-        
-        self.shopNameLab.text = self.shopNameLab2.text = _shanghuModel.title;
+        self.shopNameLab2.text = _shanghuModel.title;
+        self.shopNameLab.text = _shanghuModel.title;
         if ([_aModel.type isEqualToString:@"0"]) {
             self.accountChangeLab.text = [NSString stringWithFormat:@"- %.2f",_shanghuModel.money];
         }else{
@@ -51,7 +52,8 @@
         self.dateLab.text = _shanghuModel.createdate;
         self.accountDescripTextView.text = _shanghuModel.shop_description;
     }else{
-        self.shopNameLab.text = self.shopNameLab2.text = _daliModel.title;
+        self.shopNameLab2.text = _daliModel.title;
+        self.shopNameLab.text  = _daliModel.title;
         if ([_aModel.type isEqualToString:@"0"]) {
             self.accountChangeLab.text = [NSString stringWithFormat:@"- %.2f",_daliModel.money];
         }else{

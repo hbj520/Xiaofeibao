@@ -74,6 +74,13 @@
     
     [[MyAPI sharedAPI] getIncomeOfShangHuWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
+            
+            if ([arrays[0] count] == 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                });
+                _page--;
+            }
             [_incomeArray addObjectsFromArray:arrays[0]];
             [self.tableView reloadData];
         }else{

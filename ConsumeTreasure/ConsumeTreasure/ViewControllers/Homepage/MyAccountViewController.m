@@ -95,19 +95,24 @@
     [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             
-            if (arrays.count == 0) {
-                [self.tableView.mj_footer endRefreshingWithNoMoreData];
-                
-            }else{
-                [self.tableView.mj_footer endRefreshing];
-                
+            if ([arrays[0] count] == 0) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                });
+                _page--;
             }
-            accountNum = arrays[1];
+           
             [levelArr addObjectsFromArray:arrays[0]];
+            
+            accountNum = arrays[1];
+            
          
             
             [self.tableView reloadData];
         }else{
+            
+            
+            
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
             }
