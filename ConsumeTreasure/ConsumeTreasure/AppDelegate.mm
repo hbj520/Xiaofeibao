@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LoginAndRegisterViewController.h"
-
+#import "CHSocialService.h"
+#import "UMSocialConfig.h"
+#import "UMSocialControllerService.h"
 #import<AlipaySDK/AlipaySDK.h>
 @interface AppDelegate ()
 
@@ -31,6 +33,10 @@
         NSLog(@"manager start failed!");
     }
      [self changeToMain];
+    
+    //友盟
+    //设置友盟appkey
+    [self configThirdLogin];
     return YES;
    
 }
@@ -124,9 +130,12 @@
 }
 
 #pragma mark -WeixinDelegate
-- (void)onReq:(BaseReq *)req{
-    
+- (void)configThirdLogin{
+    [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
+  //  [UMSocialData setAppKey:@"507fcab25270157b37000010"];
+    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"b170f4c7718470926acb509fb62c3529" redirectURL:nil sourceURL:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=7a9e5e98-d0c4-11e6-ad4a-6c92bf2cdbd1" type:CHSocialWeChat];
 }
+
 - (void)onResp:(BaseResp *)resp{
     if([resp isKindOfClass:[PayResp class]]){
         

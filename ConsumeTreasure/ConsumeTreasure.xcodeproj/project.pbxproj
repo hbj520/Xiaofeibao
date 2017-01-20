@@ -34,6 +34,9 @@
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
 		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
+		AB4405181E30C2CF00AF1589 /* CHSocialServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4405121E30C2CF00AF1589 /* CHSocialServiceCenter.m */; };
+		AB4405191E30C2CF00AF1589 /* CHSocialHandlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4405141E30C2CF00AF1589 /* CHSocialHandlerData.m */; };
+		AB44051A1E30C2CF00AF1589 /* CHSocialResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4405161E30C2CF00AF1589 /* CHSocialResponseData.m */; };
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
@@ -391,6 +394,13 @@
 		AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
+		AB4405101E30C2CF00AF1589 /* CHSocialService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialService.h; sourceTree = "<group>"; };
+		AB4405111E30C2CF00AF1589 /* CHSocialServiceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialServiceCenter.h; sourceTree = "<group>"; };
+		AB4405121E30C2CF00AF1589 /* CHSocialServiceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialServiceCenter.m; sourceTree = "<group>"; };
+		AB4405131E30C2CF00AF1589 /* CHSocialHandlerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialHandlerData.h; sourceTree = "<group>"; };
+		AB4405141E30C2CF00AF1589 /* CHSocialHandlerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialHandlerData.m; sourceTree = "<group>"; };
+		AB4405151E30C2CF00AF1589 /* CHSocialResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialResponseData.h; sourceTree = "<group>"; };
+		AB4405161E30C2CF00AF1589 /* CHSocialResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialResponseData.m; sourceTree = "<group>"; };
 		AB4826171DE689EE0001EA8B /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		AB4826181DE689EE0001EA8B /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1070,6 +1080,21 @@
 			path = Union;
 			sourceTree = "<group>";
 		};
+		AB4405171E30C2CF00AF1589 /* CHSocialService */ = {
+			isa = PBXGroup;
+			children = (
+				AB4405101E30C2CF00AF1589 /* CHSocialService.h */,
+				AB4405111E30C2CF00AF1589 /* CHSocialServiceCenter.h */,
+				AB4405121E30C2CF00AF1589 /* CHSocialServiceCenter.m */,
+				AB4405131E30C2CF00AF1589 /* CHSocialHandlerData.h */,
+				AB4405141E30C2CF00AF1589 /* CHSocialHandlerData.m */,
+				AB4405151E30C2CF00AF1589 /* CHSocialResponseData.h */,
+				AB4405161E30C2CF00AF1589 /* CHSocialResponseData.m */,
+			);
+			name = CHSocialService;
+			path = ../../../../../Desktop/FUYI/FUYIFinance/FUYIFinance/Util/CHSocialService;
+			sourceTree = "<group>";
+		};
 		AB50D4681E0928AA00B427E6 /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,6 +1117,7 @@
 		AB608C1B1D9CB66D00194FC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AB4405171E30C2CF00AF1589 /* CHSocialService */,
 				AB50D4681E0928AA00B427E6 /* Security */,
 				AB0F64461DB0846B00A5EB1E /* Marco.h */,
 				D1F275A81DAD0B86005B9849 /* Category */,
@@ -2160,7 +2186,7 @@
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3S4HP5TK72;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -2382,6 +2408,7 @@
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
 				D1A3C0DE1E1DF55B0040AAD9 /* UnionIncomeViewController.m in Sources */,
 				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
+				AB4405181E30C2CF00AF1589 /* CHSocialServiceCenter.m in Sources */,
 				AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */,
 				AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
@@ -2404,6 +2431,7 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10DC94C1E095A2300930F74 /* DLStoreListViewController.m in Sources */,
 				D1A3C08D1E1252D90040AAD9 /* AddBankViewController.m in Sources */,
+				AB44051A1E30C2CF00AF1589 /* CHSocialResponseData.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D15B394C1DD32981009122FE /* DetailHeadView.m in Sources */,
 				D1A3C0A11E14DCAE0040AAD9 /* HMScannerController.m in Sources */,
@@ -2438,6 +2466,7 @@
 				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
 				D10DC9521E0A307400930F74 /* XWMoneyTextField.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
+				AB4405191E30C2CF00AF1589 /* CHSocialHandlerData.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */,
 				D15B3AF71DDC0E5E009122FE /* Order.m in Sources */,
@@ -2703,8 +2732,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3S4HP5TK72;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2828,8 +2857,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a5ed6e32-9d98-4f89-8179-cbc50f3d5ae3";
-				PROVISIONING_PROFILE_SPECIFIER = xiaofeibaoAppDistributionProfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2839,8 +2868,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3S4HP5TK72;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2964,8 +2993,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a5ed6e32-9d98-4f89-8179-cbc50f3d5ae3";
-				PROVISIONING_PROFILE_SPECIFIER = xiaofeibaoAppDistributionProfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
