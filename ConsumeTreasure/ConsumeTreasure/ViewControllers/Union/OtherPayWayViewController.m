@@ -12,7 +12,7 @@
 {
     NSInteger payType;
     
-    NSString *tongBaomoney;//支付的通宝币额
+    NSString *tongBaomoney;//支付的智惠币额
     NSString *cashMoney;//现金
     NSString *toMemId;//收款人
 }

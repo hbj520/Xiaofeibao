@@ -17,7 +17,7 @@
 - (IBAction)payNowBtn:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *weixinBtn;
 @property (weak, nonatomic) IBOutlet UIButton *alipayBtn;
-@property (weak, nonatomic) IBOutlet UILabel *restMoney;//通宝币余额
+@property (weak, nonatomic) IBOutlet UILabel *restMoney;//智惠币余额
 - (IBAction)backBtn:(id)sender;
 
 @end

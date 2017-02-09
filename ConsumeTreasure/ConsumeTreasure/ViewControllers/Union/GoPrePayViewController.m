@@ -20,8 +20,8 @@
 
 @interface GoPrePayViewController ()<XWMoneyTextFieldLimitDelegate,JHCoverViewDelegate>
 {
-    float leftMoney;//可用通宝币余额
-    float realMoney;//拥有通宝币
+    float leftMoney;//可用智惠币余额
+    float realMoney;//拥有智惠币
     
     XWMoneyTextField *Tongtf;
     
@@ -188,7 +188,7 @@
             self.disCountMoney.text = [NSString stringWithFormat:@"- %ld",(long)leftMoney];//折扣
             
             self.realPay.text = [NSString stringWithFormat:@"%.2f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
-            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];//获得通宝币
+            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];//获得智惠币
             
         }else{
             self.disCountMoney.text = [NSString stringWithFormat:@"- %@",tf.text];
@@ -288,7 +288,7 @@
     
     
     
-    //调通宝币支付
+    //调智惠币支付
     [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             //[self showHint:msg];

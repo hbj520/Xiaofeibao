@@ -40,7 +40,7 @@
 
 @property(nonatomic,strong)NSString * returnBate;//返币比例
 
-@property(nonatomic,strong)NSString * goldNum;//通宝币
+@property(nonatomic,strong)NSString * goldNum;//智惠币
 
 @property(nonatomic,strong)NSString * shopId;//店铺Id
 

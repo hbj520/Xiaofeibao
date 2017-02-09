@@ -186,7 +186,7 @@
 }
 
 
-#pragma mark -- 通宝币数量和是否设置密码
+#pragma mark -- 智惠币数量和是否设置密码
 - (void)getTongBaoBiAndPayPswWithParameters:(NSDictionary *)para
                                       resut:(ModelBlock)result
                                 errorResult:(ErrorBlock)errorResult{
@@ -244,7 +244,7 @@
                  NSLog(@"reslut = %@",resultDic);
              }];
              
-         }else{//通宝币支付
+         }else{//智惠币支付
              NSString *info = responseObject[@"msg"];
              if ([responseObject[@"code"] isEqualToString:@"-1"]) {
                  result(NO,@"-1");

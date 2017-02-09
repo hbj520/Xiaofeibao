@@ -678,11 +678,12 @@
     }
 }
 //分享app
+/*
 - (IBAction)shareappBtn:(id)sender {
     [[CHSocialServiceCenter shareInstance]shareTitle:@"智惠返邀您一起享优惠" content:@"赶快来一起加入吧" imageURL:@"http://p2pguide.sudaotech.com/platform/image/1/20160318/3c896c87-65b6-481d-81ca-1b4a0b6d8dd4/" image:[UIImage imageNamed:@"qrImg"] urlResource:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=7a9e5e98-d0c4-11e6-ad4a-6c92bf2cdbd1" controller:self completion:^(BOOL successful) {
         
     }];
 }
-
+*/
 
 @end
