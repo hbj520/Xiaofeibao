@@ -16,10 +16,12 @@
 {
     XWMoneyTextField *Tongtf;
     
-    NSString *payPsw;
+    NSString *_payPsw;
     NSMutableArray *_cardList;
     
     NSString *theType;//区分今日或历史
+    
+    NSString *_bankID;
 }
 @property (nonatomic, strong) JHCoverView *coverView;
 @end
@@ -75,10 +77,13 @@
                 self.defaultBank.text = model.bankname;
                 self.defaultBankNum.text = [NSString stringWithFormat:@"尾号%@",model.bankno];
                 self.defaultCardType.text = @"储蓄卡";
-            }else{
-               
-                [self gotoAddBankCard];
                 
+                _bankID = model.bank_id;
+            }else{
+                self.defaultBank.text = @"尚未设置银行卡";
+                self.defaultBankNum.text = @"请点击前往添加";
+                self.defaultCardType.text = @"";
+                [self gotoAddBankCard];
                 
             }
         }else{
@@ -142,8 +147,6 @@
         }else{
             self.chargeNum.text = @"提现手续费为0元";
         }
-        
-
     }
 }
 
@@ -170,7 +173,7 @@
 
 - (IBAction)getMoneyNow:(id)sender {
     NSLog(@"立即提现");
-    
+   // NSLog(@"========%@======",_bankID);
     if (Tongtf.text.floatValue >= 1) {
         
         self.coverView.hidden = NO;
@@ -181,9 +184,10 @@
             
             weakSelf.coverView.hidden = YES;
             [weakSelf.coverView.payTextField resignFirstResponder];
-            payPsw = str;
-            
-            [weakSelf postDataWithStr:str];
+            //payPsw = str;
+            //加个密
+            _payPsw = [Tools loginPasswordSecurityLock:str];
+            [weakSelf postDataWithStr:_payPsw];
         };
         
         
@@ -198,7 +202,7 @@
     NSDictionary *para = @{
                            @"total_fee":Tongtf.text,
                            @"trade_type":theType,
-                           @"bankid":self.defaultBankNum.text,
+                           @"bankid":_bankID,
                            @"zfpass":str
                            };
     [[MyAPI sharedAPI] getMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
@@ -236,6 +240,7 @@
             self.defaultBank.text = model.bankname;
             self.defaultBankNum.text = [NSString stringWithFormat:@"尾号%@",model.bankno];
             self.defaultCardType.text = @"储蓄卡";
+            _bankID = model.bank_id;
         };
         
     }

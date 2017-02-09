@@ -34,9 +34,6 @@
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
 		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
-		AB4405181E30C2CF00AF1589 /* CHSocialServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4405121E30C2CF00AF1589 /* CHSocialServiceCenter.m */; };
-		AB4405191E30C2CF00AF1589 /* CHSocialHandlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4405141E30C2CF00AF1589 /* CHSocialHandlerData.m */; };
-		AB44051A1E30C2CF00AF1589 /* CHSocialResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4405161E30C2CF00AF1589 /* CHSocialResponseData.m */; };
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
@@ -315,6 +312,9 @@
 		D1A3C0DE1E1DF55B0040AAD9 /* UnionIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0DD1E1DF55B0040AAD9 /* UnionIncomeViewController.m */; };
 		D1A3C0E21E1F9EAC0040AAD9 /* NewAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */; };
 		D1A3C0E31E1F9EAD0040AAD9 /* NewAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */; };
+		D1E130631E4B2351006DF83E /* CHSocialHandlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1305D1E4B2351006DF83E /* CHSocialHandlerData.m */; };
+		D1E130641E4B2351006DF83E /* CHSocialResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1305F1E4B2351006DF83E /* CHSocialResponseData.m */; };
+		D1E130651E4B2351006DF83E /* CHSocialServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E130621E4B2351006DF83E /* CHSocialServiceCenter.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -394,13 +394,6 @@
 		AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAndRegisterViewController.h; sourceTree = "<group>"; };
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
-		AB4405101E30C2CF00AF1589 /* CHSocialService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialService.h; sourceTree = "<group>"; };
-		AB4405111E30C2CF00AF1589 /* CHSocialServiceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialServiceCenter.h; sourceTree = "<group>"; };
-		AB4405121E30C2CF00AF1589 /* CHSocialServiceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialServiceCenter.m; sourceTree = "<group>"; };
-		AB4405131E30C2CF00AF1589 /* CHSocialHandlerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialHandlerData.h; sourceTree = "<group>"; };
-		AB4405141E30C2CF00AF1589 /* CHSocialHandlerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialHandlerData.m; sourceTree = "<group>"; };
-		AB4405151E30C2CF00AF1589 /* CHSocialResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialResponseData.h; sourceTree = "<group>"; };
-		AB4405161E30C2CF00AF1589 /* CHSocialResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialResponseData.m; sourceTree = "<group>"; };
 		AB4826171DE689EE0001EA8B /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		AB4826181DE689EE0001EA8B /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
@@ -956,6 +949,13 @@
 		D1A3C0DF1E1F9EAC0040AAD9 /* NewAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountTableViewCell.h; sourceTree = "<group>"; };
 		D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountTableViewCell.m; sourceTree = "<group>"; };
 		D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAccountTableViewCell.xib; sourceTree = "<group>"; };
+		D1E1305C1E4B2351006DF83E /* CHSocialHandlerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialHandlerData.h; sourceTree = "<group>"; };
+		D1E1305D1E4B2351006DF83E /* CHSocialHandlerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialHandlerData.m; sourceTree = "<group>"; };
+		D1E1305E1E4B2351006DF83E /* CHSocialResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialResponseData.h; sourceTree = "<group>"; };
+		D1E1305F1E4B2351006DF83E /* CHSocialResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialResponseData.m; sourceTree = "<group>"; };
+		D1E130601E4B2351006DF83E /* CHSocialService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialService.h; sourceTree = "<group>"; };
+		D1E130611E4B2351006DF83E /* CHSocialServiceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialServiceCenter.h; sourceTree = "<group>"; };
+		D1E130621E4B2351006DF83E /* CHSocialServiceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialServiceCenter.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1080,21 +1080,6 @@
 			path = Union;
 			sourceTree = "<group>";
 		};
-		AB4405171E30C2CF00AF1589 /* CHSocialService */ = {
-			isa = PBXGroup;
-			children = (
-				AB4405101E30C2CF00AF1589 /* CHSocialService.h */,
-				AB4405111E30C2CF00AF1589 /* CHSocialServiceCenter.h */,
-				AB4405121E30C2CF00AF1589 /* CHSocialServiceCenter.m */,
-				AB4405131E30C2CF00AF1589 /* CHSocialHandlerData.h */,
-				AB4405141E30C2CF00AF1589 /* CHSocialHandlerData.m */,
-				AB4405151E30C2CF00AF1589 /* CHSocialResponseData.h */,
-				AB4405161E30C2CF00AF1589 /* CHSocialResponseData.m */,
-			);
-			name = CHSocialService;
-			path = ../../../../../Desktop/FUYI/FUYIFinance/FUYIFinance/Util/CHSocialService;
-			sourceTree = "<group>";
-		};
 		AB50D4681E0928AA00B427E6 /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -1117,7 +1102,7 @@
 		AB608C1B1D9CB66D00194FC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				AB4405171E30C2CF00AF1589 /* CHSocialService */,
+				D1E1305B1E4B2351006DF83E /* CHSocialService */,
 				AB50D4681E0928AA00B427E6 /* Security */,
 				AB0F64461DB0846B00A5EB1E /* Marco.h */,
 				D1F275A81DAD0B86005B9849 /* Category */,
@@ -2086,6 +2071,20 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		D1E1305B1E4B2351006DF83E /* CHSocialService */ = {
+			isa = PBXGroup;
+			children = (
+				D1E1305C1E4B2351006DF83E /* CHSocialHandlerData.h */,
+				D1E1305D1E4B2351006DF83E /* CHSocialHandlerData.m */,
+				D1E1305E1E4B2351006DF83E /* CHSocialResponseData.h */,
+				D1E1305F1E4B2351006DF83E /* CHSocialResponseData.m */,
+				D1E130601E4B2351006DF83E /* CHSocialService.h */,
+				D1E130611E4B2351006DF83E /* CHSocialServiceCenter.h */,
+				D1E130621E4B2351006DF83E /* CHSocialServiceCenter.m */,
+			);
+			path = CHSocialService;
+			sourceTree = "<group>";
+		};
 		D1F2759E1DAD0A5A005B9849 /* ScanerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2408,7 +2407,6 @@
 				D15B395C1DD40AC9009122FE /* ListHeadView.m in Sources */,
 				D1A3C0DE1E1DF55B0040AAD9 /* UnionIncomeViewController.m in Sources */,
 				AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */,
-				AB4405181E30C2CF00AF1589 /* CHSocialServiceCenter.m in Sources */,
 				AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */,
 				AB06A9831DF92C63006F67C2 /* ModifyPwdViewController.m in Sources */,
 				D15B3B171DDEEBF1009122FE /* MyIncoSectionView.m in Sources */,
@@ -2431,7 +2429,6 @@
 				D12165891DB5B4D2006B06FC /* YZJRViewController.m in Sources */,
 				D10DC94C1E095A2300930F74 /* DLStoreListViewController.m in Sources */,
 				D1A3C08D1E1252D90040AAD9 /* AddBankViewController.m in Sources */,
-				AB44051A1E30C2CF00AF1589 /* CHSocialResponseData.m in Sources */,
 				AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */,
 				D15B394C1DD32981009122FE /* DetailHeadView.m in Sources */,
 				D1A3C0A11E14DCAE0040AAD9 /* HMScannerController.m in Sources */,
@@ -2449,6 +2446,7 @@
 				ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */,
 				D196D5851E0CC3490062AD91 /* DaiLiShopsTableViewCell.m in Sources */,
 				D1A06AF61DEEB12700855564 /* BeUnionModel.m in Sources */,
+				D1E130631E4B2351006DF83E /* CHSocialHandlerData.m in Sources */,
 				AB79B3711DB8B2BC00A7F96A /* UnionListViewController.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
@@ -2466,7 +2464,6 @@
 				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
 				D10DC9521E0A307400930F74 /* XWMoneyTextField.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
-				AB4405191E30C2CF00AF1589 /* CHSocialHandlerData.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */,
 				D15B3AF71DDC0E5E009122FE /* Order.m in Sources */,
@@ -2480,6 +2477,7 @@
 				D1A3C0B21E1BC5080040AAD9 /* MapAnnotation.m in Sources */,
 				D1A3C0821E123B2F0040AAD9 /* KGModal.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
+				D1E130651E4B2351006DF83E /* CHSocialServiceCenter.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
 				D15B39621DD4117E009122FE /* StoreSpecialTableViewCell.m in Sources */,
 				D1A3C09F1E14DCAE0040AAD9 /* HMScanner.m in Sources */,
@@ -2533,6 +2531,7 @@
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
 				D15B3A441DDAFB30009122FE /* DetailCountHeadView.m in Sources */,
 				AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */,
+				D1E130641E4B2351006DF83E /* CHSocialResponseData.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
 				D1A3C0731E10C6DB0040AAD9 /* NewTextField.m in Sources */,
