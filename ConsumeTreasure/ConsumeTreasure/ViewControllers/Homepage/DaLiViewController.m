@@ -9,7 +9,7 @@
 #import "DaLiViewController.h"
 #import "CashViewController.h"
 
-
+#import "CHSocialService.h"
 
 #import "StoreMasterModel.h"
 @interface DaLiViewController ()
@@ -55,12 +55,21 @@
     UITapGestureRecognizer *tapbankCard = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bankClick:)];
     [self.myBCardView addGestureRecognizer:tapbankCard];
     
+    UITapGestureRecognizer *tapShare = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareClick:)];
+    [self.shareView addGestureRecognizer:tapShare];
+    
 }
 
 - (void)pushToNextWithIdentiField:(NSString*)identi sender:(id)sender{
     self.hidesBottomBarWhenPushed = YES;
     [self performSegueWithIdentifier:identi sender:sender];
     
+}
+
+- (void)shareClick:(id)Ges{
+    [[CHSocialServiceCenter shareInstance]shareTitle:@"智惠返邀您一起享优惠" content:@"扫码支付实时到账，商户提现秒到，万亿市场等您来享！" imageURL:@"http://p2pguide.sudaotech.com/platform/image/1/20160318/3c896c87-65b6-481d-81ca-1b4a0b6d8dd4/" image:[UIImage imageNamed:@"qrImg"] urlResource:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=7a9e5e98-d0c4-11e6-ad4a-6c92bf2cdbd1" controller:self completion:^(BOOL successful) {
+        
+    }];
 }
 
 - (void)bankClick:(id)Ges{

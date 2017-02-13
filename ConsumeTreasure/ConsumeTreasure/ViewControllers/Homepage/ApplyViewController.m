@@ -100,8 +100,8 @@
     self.pickerView = [[ValuePickerView alloc]init];
     
     self.pickerView.dataSource = _nameArr;
-   // self.pickerView.pickerTitle = @"百分比";
-   __weak typeof(self) weakSelf = self;
+    // self.pickerView.pickerTitle = @"百分比";
+    __weak typeof(self) weakSelf = self;
     //self.pickerView.defaultStr = @"50%/5";
     self.pickerView.valueDidSelect = ^(NSString *value){
         _stateArr = [value componentsSeparatedByString:@"/"];
@@ -110,7 +110,7 @@
         
         _idStr = weakSelf.stateArr[1];
         
-     cateId = [weakSelf.cateIdArr objectAtIndex:[weakSelf.idStr integerValue]];
+        cateId = [weakSelf.cateIdArr objectAtIndex:[weakSelf.idStr integerValue]-1];
         
         NSLog(@"+++++++");
     };
