@@ -199,6 +199,7 @@
 
 - (void)postDataWithStr:(NSString*)str{
 
+    [BQActivityView showActiviTy];
     NSDictionary *para = @{
                            @"total_fee":Tongtf.text,
                            @"trade_type":theType,
@@ -207,14 +208,16 @@
                            };
     [[MyAPI sharedAPI] getMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
         if (sucess) {
+            [BQActivityView hideActiviTy];
             showAlert(msg);
             
         }else{
+            [BQActivityView hideActiviTy];
             showAlert(msg);
         }
         
     } errorResult:^(NSError *enginerError) {
-        
+        [BQActivityView hideActiviTy];
     }];
 
 

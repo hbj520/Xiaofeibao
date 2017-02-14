@@ -1670,6 +1670,25 @@
             </objects>
             <point key="canvasLocation" x="-991.20000000000005" y="3614.8425787106448"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="J20-74-4CV">
+            <objects>
+                <viewController id="yFa-aU-XPR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uKZ-5m-EmF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZVX-wO-ltE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ubr-If-pze">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mdL-FF-VHN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTR-ie-elP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2570" y="4420"/>
+        </scene>
         <!--提现-->
         <scene sceneID="i2K-Wc-iIh">
             <objects>
@@ -1900,7 +1919,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yw-BT-Wr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1836" y="4324"/>
+            <point key="canvasLocation" x="-1802" y="4406"/>
         </scene>
         <!--添加银行卡-->
         <scene sceneID="pF4-d3-5xr">
@@ -2902,6 +2921,7 @@
                         <outlet property="allIncome" destination="FJi-v0-a1z" id="jqa-Re-YdL"/>
                         <outlet property="dayIncome" destination="QU3-qR-enS" id="ibJ-QA-xok"/>
                         <segue destination="hnI-Wk-1sj" kind="push" identifier="goWithdrawSegue" id="xr8-XJ-Bqb"/>
+                        <segue destination="yFa-aU-XPR" kind="push" identifier="withDrawRecordSegue" id="q7Y-f0-QLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhT-XQ-t47" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4854,8 +4874,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8y3-EJ-Rdo"/>
-        <segue reference="tMY-yY-dhf"/>
         <segue reference="Cge-eV-Uzy"/>
+        <segue reference="cJN-Ke-JUr"/>
         <segue reference="6Ku-Vt-ebf"/>
         <segue reference="hqb-t9-kRK"/>
     </inferredMetricsTieBreakers>

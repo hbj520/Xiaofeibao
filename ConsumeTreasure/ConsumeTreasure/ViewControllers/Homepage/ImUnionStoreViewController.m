@@ -117,7 +117,7 @@
         if (success) {
             StoreMmodel = object;
             self.unionBalance.text = [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.money];
-            self.dealNumLab.text =  [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.total];
+            self.dealNumLab.text =  [NSString stringWithFormat:@"销量 : %.0f",StoreMmodel.total];
             self.allIncomeLab.text = [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.turnover];
             self.shopName.text = StoreMmodel.shopName;
             
