@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1479,29 +1479,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lc-Pt-HBe">
-                                <rect key="frame" x="47" y="537" width="281" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="dnW-6d-D3V"/>
-                                </constraints>
-                                <state key="normal" image="shouye_sq"/>
-                                <connections>
-                                    <action selector="goApply:" destination="Nt6-3N-WsH" eventType="touchUpInside" id="eMY-4S-IjS"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="万商联盟" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-0d-P8h">
-                                <rect key="frame" x="41.5" y="106" width="293" height="411"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JhF-Z2-GAp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IzP-0d-P8h" firstAttribute="height" secondItem="d5v-bN-fQW" secondAttribute="height" multiplier="350/568" id="6jc-Mj-VC4"/>
-                            <constraint firstItem="IzP-0d-P8h" firstAttribute="top" secondItem="QF0-Ak-0kZ" secondAttribute="bottom" constant="42" id="Iqe-cr-zc4"/>
-                            <constraint firstItem="3lc-Pt-HBe" firstAttribute="width" secondItem="d5v-bN-fQW" secondAttribute="width" multiplier="0.75" id="JI9-LA-Vsc"/>
-                            <constraint firstItem="3lc-Pt-HBe" firstAttribute="centerX" secondItem="d5v-bN-fQW" secondAttribute="centerX" id="csV-PG-L6V"/>
-                            <constraint firstItem="IzP-0d-P8h" firstAttribute="centerX" secondItem="d5v-bN-fQW" secondAttribute="centerX" id="fyU-DZ-AjP"/>
-                            <constraint firstItem="IzP-0d-P8h" firstAttribute="width" secondItem="d5v-bN-fQW" secondAttribute="width" multiplier="250/320" id="sSt-OL-nWS"/>
-                            <constraint firstItem="3lc-Pt-HBe" firstAttribute="top" secondItem="IzP-0d-P8h" secondAttribute="bottom" constant="20" id="yY4-qn-3q5"/>
+                            <constraint firstItem="JhF-Z2-GAp" firstAttribute="top" secondItem="QF0-Ak-0kZ" secondAttribute="bottom" id="3cx-up-e4o"/>
+                            <constraint firstItem="DWK-eW-ofG" firstAttribute="top" secondItem="JhF-Z2-GAp" secondAttribute="bottom" id="Pet-B9-wow"/>
+                            <constraint firstItem="JhF-Z2-GAp" firstAttribute="leading" secondItem="d5v-bN-fQW" secondAttribute="leading" id="YhQ-Al-CFi"/>
+                            <constraint firstAttribute="trailing" secondItem="JhF-Z2-GAp" secondAttribute="trailing" id="vM2-Xp-iqh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="成为联盟商户" id="jh8-eb-b9C">
@@ -1514,12 +1501,13 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="imageview" destination="JhF-Z2-GAp" id="aPl-f3-jLA"/>
                         <segue destination="MRs-ew-4Z8" kind="push" identifier="ApplySegue" id="fNz-0v-kUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3L-hQ-GCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446" y="1914"/>
+            <point key="canvasLocation" x="-447.19999999999999" y="1913.793103448276"/>
         </scene>
         <!--收益明细-->
         <scene sceneID="Ifh-Tz-CEi">
@@ -4861,7 +4849,6 @@
         <image name="location" width="35" height="46"/>
         <image name="serach_Map" width="228" height="228"/>
         <image name="share" width="35" height="31"/>
-        <image name="shouye_sq" width="532" height="91"/>
         <image name="syt" width="32" height="32"/>
         <image name="upload_sfz" width="204" height="199"/>
         <image name="wdhy" width="35" height="31"/>
@@ -4870,7 +4857,6 @@
         <image name="wx" width="29" height="27"/>
         <image name="yes_1080" width="20" height="14"/>
         <image name="zfb" width="36" height="36"/>
-        <image name="万商联盟" width="540" height="910"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8y3-EJ-Rdo"/>

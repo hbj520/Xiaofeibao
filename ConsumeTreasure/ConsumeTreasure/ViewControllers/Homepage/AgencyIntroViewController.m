@@ -8,6 +8,7 @@
 
 #import "AgencyIntroViewController.h"
 #import <Masonry.h>
+#import "NoticeHelper.h"
 @interface AgencyIntroViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -27,10 +28,18 @@
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     // Do any additional setup after loading the view.
-    self.scrollView.contentSize = CGSizeMake(ScreenWidth, 1390);
+    CGFloat height = 1390;
+    if ([NoticeHelper ISIphoneType] == ISIphone5) {
+        height = 528;
+    }else if ([NoticeHelper ISIphoneType] == ISIphone6){
+        height = 619;
+    }else if ([NoticeHelper ISIphoneType] == ISIphone6P){
+        height = 891;
+    }
+    self.scrollView.contentSize = CGSizeMake(ScreenWidth, height);
     self.scrollView.directionalLockEnabled = YES;
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"agencyApply"]];
-    imageView.frame = CGRectMake(0, 0, ScreenWidth, 1390);
+    imageView.frame = CGRectMake(0, 0, ScreenWidth, height);
     /*
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = [UIColor redColor];

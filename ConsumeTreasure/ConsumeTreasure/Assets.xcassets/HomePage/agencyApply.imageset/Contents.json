@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "立即申请_iphone5.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "1080.png",
+      "filename" : "立即申请_iphone6.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "立即申请_iphone6P.png",
       "scale" : "3x"
     }
   ],

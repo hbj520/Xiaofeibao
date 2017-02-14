@@ -16,6 +16,7 @@
     NSArray *listArr;
  
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @end
 
@@ -36,6 +37,10 @@
     // Do any additional setup after loading the view.
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
+    self.imageview.image = [UIImage imageNamed:@"tobeunion"];
+    self.imageview.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goApply:)];
+    [self.imageview addGestureRecognizer:tap];
     
     [self loadData];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -71,7 +76,7 @@
     self.contentLab.bounds = CGRectMake(0, 0, ScreenWidth, height);
     */
 }
-- (IBAction)goApply:(id)sender {
+- (void)goApply:(id)sender {
     
     
     NSString *isShopId = [[XFBConfig Instance] getIsShop];
