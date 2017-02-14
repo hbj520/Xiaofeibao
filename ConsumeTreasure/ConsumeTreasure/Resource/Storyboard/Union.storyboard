@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K2y-cz-6VO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K2y-cz-6VO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfq-ar-oeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="1199"/>
+            <point key="canvasLocation" x="609" y="1330"/>
         </scene>
         <!--Union List View Controller-->
         <scene sceneID="eyR-x1-nzQ">
@@ -123,14 +123,44 @@
                             <constraint firstAttribute="trailing" secondItem="6B7-aL-1I9" secondAttribute="trailing" id="UiH-Aq-NYu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7u9-Nb-uko"/>
+                    <navigationItem key="navigationItem" id="7u9-Nb-uko">
+                        <barButtonItem key="rightBarButtonItem" image="s_720" id="CKE-gc-ww3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="search:" destination="cFw-ed-hsH" id="GLG-dS-CxM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTabelView" destination="6B7-aL-1I9" id="zY4-2K-xQQ"/>
+                        <segue destination="rrc-q8-qdY" kind="push" identifier="searchSegue" id="cQY-Dh-Pmc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CB8-j8-NCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1533.5999999999999" y="580.65967016491754"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ebo-tB-NKE">
+            <objects>
+                <viewController id="rrc-q8-qdY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AIl-MS-mjT"/>
+                        <viewControllerLayoutGuide type="bottom" id="qrq-yq-Coy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ur-5c-lFG">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PUv-s2-0Ne"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHJ-dS-YaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="581"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="s_720" width="21" height="20"/>
+    </resources>
 </document>

@@ -70,6 +70,10 @@ UICollectionViewDataSource>
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)search:(id)sender {
+    
+   // [self performSegueWithIdentifier:@"searchSegue" sender:nil];
+}
 
 /*
 #pragma mark - Navigation
