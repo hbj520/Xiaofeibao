@@ -57,6 +57,7 @@
 }
 - (IBAction)GetMoneyRecordClick:(id)sender {
     //提现记录
+    [self performSegueWithIdentifier:@"withDrawRecordSegue" sender:nil];
 }
 - (IBAction)getMoneyNow:(id)sender {
     [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strday,@"2"]];

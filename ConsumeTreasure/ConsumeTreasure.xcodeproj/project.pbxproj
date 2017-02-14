@@ -315,6 +315,7 @@
 		D1E130631E4B2351006DF83E /* CHSocialHandlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1305D1E4B2351006DF83E /* CHSocialHandlerData.m */; };
 		D1E130641E4B2351006DF83E /* CHSocialResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1305F1E4B2351006DF83E /* CHSocialResponseData.m */; };
 		D1E130651E4B2351006DF83E /* CHSocialServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E130621E4B2351006DF83E /* CHSocialServiceCenter.m */; };
+		D1E1306B1E52D9F7006DF83E /* WithDrawRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1306A1E52D9F7006DF83E /* WithDrawRecordViewController.m */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -955,6 +956,8 @@
 		D1E130601E4B2351006DF83E /* CHSocialService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialService.h; sourceTree = "<group>"; };
 		D1E130611E4B2351006DF83E /* CHSocialServiceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialServiceCenter.h; sourceTree = "<group>"; };
 		D1E130621E4B2351006DF83E /* CHSocialServiceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialServiceCenter.m; sourceTree = "<group>"; };
+		D1E130691E52D9F7006DF83E /* WithDrawRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithDrawRecordViewController.h; sourceTree = "<group>"; };
+		D1E1306A1E52D9F7006DF83E /* WithDrawRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithDrawRecordViewController.m; sourceTree = "<group>"; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1234,9 +1237,9 @@
 				D1F275A51DAD0B6E005B9849 /* ScanerVC.h */,
 				D1F275A61DAD0B6E005B9849 /* ScanerVC.m */,
 				D12165841DB5B4D2006B06FC /* ChildViewController.h */,
-				D12165871DB5B4D2006B06FC /* YZJRViewController.m */,
 				D12165851DB5B4D2006B06FC /* ChildViewController.m */,
 				D12165861DB5B4D2006B06FC /* YZJRViewController.h */,
+				D12165871DB5B4D2006B06FC /* YZJRViewController.m */,
 				D12165931DB607D3006B06FC /* TobeUnionViewController.h */,
 				D12165941DB607D3006B06FC /* TobeUnionViewController.m */,
 				D12054841DEC348300EB2707 /* ApplyViewController.h */,
@@ -1259,6 +1262,8 @@
 				D1F916A71E07B4D70091B989 /* DaLiViewController.m */,
 				D196D57F1E0C21210062AD91 /* CashViewController.h */,
 				D196D5801E0C21210062AD91 /* CashViewController.m */,
+				D1E130691E52D9F7006DF83E /* WithDrawRecordViewController.h */,
+				D1E1306A1E52D9F7006DF83E /* WithDrawRecordViewController.m */,
 				D10DC9471E095A0700930F74 /* DLIncomeViewController.h */,
 				D10DC9481E095A0700930F74 /* DLIncomeViewController.m */,
 				D10DC94A1E095A2300930F74 /* DLStoreListViewController.h */,
@@ -2547,6 +2552,7 @@
 				D16BF2D41DF15004001A82BF /* CommentModel.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
+				D1E1306B1E52D9F7006DF83E /* WithDrawRecordViewController.m in Sources */,
 				D16BF2BB1DF017B3001A82BF /* LocationViewController.m in Sources */,
 				D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */,
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,

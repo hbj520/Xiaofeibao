@@ -1456,4 +1456,36 @@
         errorResult(error);
     }];
 }
+
+#pragma mark -- 提现记录
+- (void)getWithDrawRecordWithWithParameters:(NSDictionary*)para
+                                     result:(ArrayBlock)result
+                                errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/withdrawalRecord" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *recordArr = [NSMutableArray array];
+            NSError *err = nil;
+            NSArray *data = responseObject[@"data"];
+            recordArr = [recordModel arrayOfModelsFromDictionaries:data error:&err];
+            
+            result(YES,info,recordArr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
 @end

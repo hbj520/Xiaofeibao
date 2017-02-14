@@ -16,7 +16,6 @@
 @property (nonatomic,strong) NSString *createtime;
 @property (nonatomic,strong) NSString *createdate;
 @property (nonatomic,strong) NSString *createyear;
-
 @property (nonatomic,strong) NSString *account_description;
 @property (nonatomic,strong) NSString *goldnum;
 @property (nonatomic,strong) NSString *shopName;
@@ -30,3 +29,21 @@
 @property (nonatomic,strong) NSString *balance;
 @property (nonatomic,strong) NSArray<AccountModel>* list;
 @end
+
+
+@protocol recordModel
+@end
+
+@interface recordModel : JSONModel
+@property (nonatomic,strong) NSString *money;
+@property (nonatomic,strong) NSString *record_description;
+@property (nonatomic,strong) NSString *after_money;
+@end
+
+@interface recordArrayModel : JSONModel
+@property (nonatomic,strong) NSArray<recordModel>* data;
+@end
+
+
+
+

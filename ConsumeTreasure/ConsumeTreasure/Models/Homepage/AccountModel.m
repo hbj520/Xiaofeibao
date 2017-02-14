@@ -13,3 +13,14 @@
 
 @implementation AccountArrayModel
 @end
+
+
+@implementation recordModel
++(JSONKeyMapper *)keyMapper{
+    return [[JSONKeyMapper alloc]initWithDictionary:@{@"description":@"record_description"}];
+}
+
+@end
+
+@implementation recordArrayModel
+@end

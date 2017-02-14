@@ -196,4 +196,11 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)fixPhoneNumWithParameters:(NSDictionary *)para
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -- 提现记录
+- (void)getWithDrawRecordWithWithParameters:(NSDictionary*)para
+                                     result:(ArrayBlock)result
+                                errorResult:(ErrorBlock)errorResult;
+
+
 @end
