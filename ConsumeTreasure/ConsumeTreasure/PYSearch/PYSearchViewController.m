@@ -16,6 +16,7 @@
 #import "AccountModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+#import "StoreDeatilViewController.h"
 #define PYRectangleTagMaxCol 3 // 矩阵标签时，最多列数
 #define PYTextColor PYColor(113, 113, 113)  // 文本字体颜色
 #define PYColorPolRandomColor self.colorPol[arc4random_uniform((uint32_t)self.colorPol.count)] // 随机选取颜色池中的颜色
@@ -239,7 +240,7 @@
     _page = 1;
     _pageNum = @"10";
    
-    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     [self.searchResultController.tableView registerNib:[UINib nibWithNibName:@"TuiJianTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuijianCelleId"];
 }
@@ -249,6 +250,7 @@
 {
     [super viewWillAppear:animated];
        self.navigationController.navigationBar.barTintColor = RGBACOLOR(244, 87, 59, 1);
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     // 没有热门搜索并且搜索历史为默认PYHotSearchStyleDefault就隐藏
     if (self.hotSearches.count == 0 && self.searchHistoryStyle == PYHotSearchStyleDefault) {
         self.baseSearchTableView.tableHeaderView.py_height = 0;
@@ -260,7 +262,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-   
+    self.navigationController.navigationBar.barTintColor = RGBACOLOR(244, 87, 59, 1);
+
     // 弹出键盘
     [self.searchBar becomeFirstResponder];
 }
@@ -1023,7 +1026,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.searchResultController.tableView) {
-        return 120;
+        return 125;
     }else{
         return 0;
     }
@@ -1042,6 +1045,25 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.searchBar.text = cell.textLabel.text;
     [self searchBarSearchButtonClicked:self.searchBar];
+    
+    if (tableView == self.searchResultController.tableView){
+        
+        
+        if (_searchArray.count > 0) {
+           
+            UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+            StoreDeatilViewController *deatilVC = [storybord instantiateViewControllerWithIdentifier:@"detailSB"];
+            deatilVC.StoreModel = [_searchArray objectAtIndex:indexPath.row];
+            //self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:deatilVC animated:YES];
+
+        }
+
+        
+    }
+    
+    
+    
 }
 
 
