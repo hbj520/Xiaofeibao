@@ -281,8 +281,28 @@
     //创建一个左边按钮
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStylePlain target:self action:@selector(cancelDidClick)];
     //    leftButton.
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"whiteback"] style:UIBarButtonItemStylePlain target:self action:@selector(cancelDidClick)];
+   // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"whiteback"] style:UIBarButtonItemStylePlain target:self action:@selector(cancelDidClick)];
     //self.navigationItem.leftBarButtonItem setImag
+    
+    
+    
+    UIButton* leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    leftBtn.frame=CGRectMake(0,0,20,30);
+    
+    [leftBtn setImage:[UIImage imageNamed:@"whiteback"] forState:UIControlStateNormal];
+    
+    
+    
+    [leftBtn addTarget:self action:@selector(cancelDidClick)forControlEvents:UIControlEventTouchUpInside];//右侧按钮
+    
+    UIBarButtonItem* leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    
+    self.navigationItem.leftBarButtonItem= leftItem;
+    
+    
+    
+    
     /*
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                    [UIFont fontWithName:@"Helvetica-Bold" size:17.0], NSFontAttributeName,
@@ -880,12 +900,7 @@
     
     [self addRefresh];
     [self loadMemberDataWithPage:_page pageNum:_pageNum keyWord:searchBar.text];
-    
-    
     _searchWord = searchBar.text;
-    
-    
-    
     
     // 先移除再刷新
     [self.searchHistories removeObject:searchBar.text];
