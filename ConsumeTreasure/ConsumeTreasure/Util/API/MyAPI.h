@@ -202,5 +202,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                                      result:(ArrayBlock)result
                                 errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 搜索
+- (void)getSearchResultWithParameters:(NSDictionary*)para
+                               result:(ArrayBlock)result
+                          errorResult:(ErrorBlock)errorResult;
 
 @end

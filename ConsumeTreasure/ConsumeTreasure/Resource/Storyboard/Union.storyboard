@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="1533.5999999999999" y="580.65967016491754"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="ebo-tB-NKE">
             <objects>
-                <viewController id="rrc-q8-qdY" sceneMemberID="viewController">
+                <viewController id="rrc-q8-qdY" customClass="PYSearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AIl-MS-mjT"/>
                         <viewControllerLayoutGuide type="bottom" id="qrq-yq-Coy"/>

@@ -1488,4 +1488,37 @@
     }];
 }
 
+#pragma mark -- 搜索
+- (void)getSearchResultWithParameters:(NSDictionary*)para
+                               result:(ArrayBlock)result
+                          errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"welcome/searchShop" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *searchArr = [NSMutableArray array];
+            NSError *err = nil;
+            NSArray *data = responseObject[@"data"];
+            searchArr = [searchModel arrayOfModelsFromDictionaries:data error:&err];
+            
+            result(YES,info,searchArr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+
+
 @end

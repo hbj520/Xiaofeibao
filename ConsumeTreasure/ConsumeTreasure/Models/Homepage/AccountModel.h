@@ -45,5 +45,19 @@
 @end
 
 
+@protocol searchModel
+@end
 
+@interface searchModel : JSONModel
+@property (nonatomic,strong) NSString *addr;
+@property (nonatomic,strong) NSString *avgScore;
+@property (nonatomic,strong) NSString *discount;
+@property (nonatomic,strong) NSString *doorimg;
+@property (nonatomic,strong) NSString *memid;
+@property (nonatomic,strong) NSString *shopname;
+@end
+
+@interface searchArrayModel : JSONModel
+@property (nonatomic,strong) NSArray<searchModel>* data;
+@end
 

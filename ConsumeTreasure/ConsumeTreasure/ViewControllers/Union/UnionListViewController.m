@@ -20,6 +20,9 @@
 #import "UnionCategoryModel.h"
 #import "AreaModel.h"
 #import <MJRefresh/MJRefresh.h>
+
+#import "PYSearch.h"
+
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -72,7 +75,32 @@ UICollectionViewDataSource>
 }
 - (IBAction)search:(id)sender {
     
-   // [self performSegueWithIdentifier:@"searchSegue" sender:nil];
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:nil searchBarPlaceholder:@"搜索" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+        // 开始(点击)搜索时执行以下代码
+        // 如：跳转到指定控制器
+        //  [searchViewController.navigationController pushViewController:[[UIViewController alloc] init] animated:YES];
+      /*
+        UIViewController* vc = [[UIViewController alloc]init];
+        vc.view.backgroundColor = [UIColor redColor];
+        
+        [searchViewController addChildViewController:vc];
+        */
+    }];
+    
+    self.hidesBottomBarWhenPushed = YES;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav  animated:YES completion:nil];
+    //[self performSegueWithIdentifier:@"searchSegue" sender:nil];
+    self.hidesBottomBarWhenPushed = NO;
+    // 设置搜索模式为内嵌
+    searchViewController.searchResultShowMode = PYSearchResultShowModeEmbed;
+    // 隐藏搜索建议
+    searchViewController.searchSuggestionHidden = NO;
+    
+    searchViewController.hotSearchStyle = PYHotSearchStyleColorfulTag;
+    
+    searchViewController.searchHistoryStyle = PYSearchHistoryStyleARCBorderTag;
 }
 
 /*

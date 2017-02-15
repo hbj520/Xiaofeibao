@@ -24,3 +24,14 @@
 
 @implementation recordArrayModel
 @end
+
+
+@implementation searchModel
+@end
+
+@implementation searchArrayModel
+@end
+
+
+
+
