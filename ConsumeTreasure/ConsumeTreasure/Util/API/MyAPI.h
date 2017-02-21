@@ -207,4 +207,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                                result:(ArrayBlock)result
                           errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 第三方登录
+- (void)loginWithThirdWayWithWithParamters:(NSString *)type
+                               thirdOpenId:(NSString *)openId
+                                    result:(ModelBlock)result
+                               errorResult:(ErrorBlock)errorResult;
 @end

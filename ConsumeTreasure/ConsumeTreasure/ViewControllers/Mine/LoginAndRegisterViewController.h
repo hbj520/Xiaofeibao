@@ -11,4 +11,9 @@
 @interface LoginAndRegisterViewController : UIViewController
 @property (strong,nonatomic) UIStoryboard *mStorybord;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *wxLogin;
+
+
 @end

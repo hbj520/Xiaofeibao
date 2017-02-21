@@ -322,6 +322,7 @@
 		D1E130B21E54216F006DF83E /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E130AA1E54216F006DF83E /* PYSearchViewController.m */; };
 		D1E130B31E54216F006DF83E /* UIColor+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E130AC1E54216F006DF83E /* UIColor+PYExtension.m */; };
 		D1E130B41E54216F006DF83E /* UIView+PYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E130AE1E54216F006DF83E /* UIView+PYExtension.m */; };
+		D1E130B61E557C3B006DF83E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E130B51E557C3B006DF83E /* libiconv.tbd */; };
 		D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */; };
 		D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */; };
 		D1F275A41DAD0A5A005B9849 /* ScanerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A21DAD0A5A005B9849 /* ScanerView.m */; };
@@ -976,6 +977,7 @@
 		D1E130AC1E54216F006DF83E /* UIColor+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PYExtension.m"; sourceTree = "<group>"; };
 		D1E130AD1E54216F006DF83E /* UIView+PYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PYExtension.h"; sourceTree = "<group>"; };
 		D1E130AE1E54216F006DF83E /* UIView+PYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PYExtension.m"; sourceTree = "<group>"; };
+		D1E130B51E557C3B006DF83E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		D1F2759B1DAD0A4B005B9849 /* SellerDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellerDataModel.h; sourceTree = "<group>"; };
 		D1F2759C1DAD0A4B005B9849 /* SellerDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellerDataModel.m; sourceTree = "<group>"; };
 		D1F2759F1DAD0A5A005B9849 /* ff_QRCodeScanLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ff_QRCodeScanLine.png; sourceTree = "<group>"; };
@@ -1001,6 +1003,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E130B61E557C3B006DF83E /* libiconv.tbd in Frameworks */,
 				D15B3B091DDC0F0D009122FE /* CoreMotion.framework in Frameworks */,
 				D15B3B071DDC0EF0009122FE /* Foundation.framework in Frameworks */,
 				D15B3B051DDC0EE5009122FE /* UIKit.framework in Frameworks */,
@@ -1055,6 +1058,7 @@
 		578EB4AF2E4319123E151ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1E130B51E557C3B006DF83E /* libiconv.tbd */,
 				D15B3B081DDC0F0D009122FE /* CoreMotion.framework */,
 				D15B3B061DDC0EF0009122FE /* Foundation.framework */,
 				D15B3B041DDC0EE5009122FE /* UIKit.framework */,
@@ -2780,7 +2784,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2820,6 +2824,7 @@
 					"\"$(SRCROOT)/ConsumeTreasure/WXApi.h\"",
 					"\"$(SRCROOT)/ConsumeTreasure/WXApiObject.h\"",
 					"$(PROJECT_DIR)/ConsumeTreasure/AliPay",
+					"$(PROJECT_DIR)/ConsumeTreasure/OpenSDK1.7.6",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2916,7 +2921,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2956,6 +2961,7 @@
 					"\"$(SRCROOT)/ConsumeTreasure/WXApi.h\"",
 					"\"$(SRCROOT)/ConsumeTreasure/WXApiObject.h\"",
 					"$(PROJECT_DIR)/ConsumeTreasure/AliPay",
+					"$(PROJECT_DIR)/ConsumeTreasure/OpenSDK1.7.6",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

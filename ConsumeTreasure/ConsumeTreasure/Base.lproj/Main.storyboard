@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -437,7 +437,7 @@
                                             <action selector="accountLoginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="MZ4-Mc-N6i"/>
                                         </connections>
                                     </button>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxN-3J-nmi">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxN-3J-nmi">
                                         <rect key="frame" x="23" y="320" width="120" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -445,7 +445,7 @@
                                             <constraint firstAttribute="height" constant="1" id="dcp-hi-3Ey"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-y1-fFX">
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eed-y1-fFX">
                                         <rect key="frame" x="233" y="320" width="120" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -453,7 +453,7 @@
                                             <constraint firstAttribute="width" constant="120" id="P8E-K9-16L"/>
                                         </constraints>
                                     </view>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MG-lz-dMW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他方式登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MG-lz-dMW">
                                         <rect key="frame" x="155" y="310" width="65" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="mkS-qt-5Mt"/>
@@ -463,13 +463,16 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-Us-xLP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-Us-xLP">
                                         <rect key="frame" x="95" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Waw-JA-MMC"/>
                                             <constraint firstAttribute="height" constant="36" id="zUw-2U-zdG"/>
                                         </constraints>
                                         <state key="normal" image="weixin"/>
+                                        <connections>
+                                            <action selector="wxLogin:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="VDC-1g-wsp"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-BY-bSM">
                                         <rect key="frame" x="170" y="347" width="36" height="36"/>
@@ -487,7 +490,7 @@
                                         </constraints>
                                         <state key="normal" image="qq"/>
                                     </button>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
                                         <rect key="frame" x="85" y="391" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="1i3-MU-U1t"/>
@@ -655,12 +658,13 @@
                         <outlet property="registerVerifyCodeTextfield" destination="lKL-kY-r52" id="O5F-ec-rnr"/>
                         <outlet property="registerView" destination="qRZ-bD-Lkm" id="hXd-CP-2FB"/>
                         <outlet property="topLayoutConstraint" destination="PKQ-ih-34W" id="gPj-ST-cd6"/>
+                        <outlet property="wxLogin" destination="izp-Us-xLP" id="KAX-SK-6Hr"/>
                         <segue destination="aoB-3T-lMX" kind="push" identifier="forgetPasswordSegue" id="2Dn-80-Zn0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wkj-7r-Ny6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="85"/>
+            <point key="canvasLocation" x="1844" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="khh-GY-bUZ">

@@ -14,11 +14,18 @@
 #import "NoticeHelper.h"
 
 
+#import "WXApi.h"
+#import "AppDelegate.h"
+
+
 @interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
 {
     NSTimer *timer;
     NSInteger time;
     UIButton *circleSelectBtn;
+    
+    
+    AppDelegate *appdelegate;
 }
 @property (weak, nonatomic) IBOutlet UITextField *loginPhoneNumTextField;
 @property (weak, nonatomic) IBOutlet UITextField *loginPhonePassWordTextfild;
@@ -245,6 +252,31 @@
 //    [self.navigationController pushViewController:forgetVC animated:YES];
     [self performSegueWithIdentifier:@"forgetPasswordSegue" sender:nil];
 }
+
+
+- (IBAction)wxLogin:(id)sender {
+    if ([WXApi isWXAppInstalled]){
+        
+        SendAuthReq *req = [[SendAuthReq alloc]init];
+        req.scope = @"snsapi_userinfo";
+        req.openID = @"wxbbcf236b07638282";
+        req.state = @"App";
+        
+        
+        [WXApi sendReq:req];
+
+        
+    }else{
+        //self.wxLogin.hidden = YES;
+
+    }
+    
+    
+    
+}
+
+
+
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [Tools hideKeyBoard];
