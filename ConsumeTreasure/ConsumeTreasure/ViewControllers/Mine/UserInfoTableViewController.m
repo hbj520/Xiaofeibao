@@ -29,13 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initPickView];
-
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+ //   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //添加通知
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
 }
@@ -61,7 +61,7 @@
     if (section == 0) {
         return 2;
     }else if (section == 1){
-        return 4;
+        return 3;
     }else if (section == 2){
         return 2;
     }
