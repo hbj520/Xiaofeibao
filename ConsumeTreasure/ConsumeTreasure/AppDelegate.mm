@@ -154,6 +154,25 @@
                 break;
         }
     }
+    
+    if ([resp isKindOfClass:[SendAuthResp class]]) {
+        SendAuthResp *temp = (SendAuthResp *)resp;
+        NSLog(@"================%@===============",temp.code);
+       
+        NSDictionary *para = @{
+                               @"type":@"wx",
+                               @"code":temp.code
+                               };
+        
+        [[MyAPI sharedAPI] loginWithThirdWayWithWithParamters:para result:^(BOOL success, NSString *msg, id object) {
+            
+            
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+    }
+    
+    
 }
  
  

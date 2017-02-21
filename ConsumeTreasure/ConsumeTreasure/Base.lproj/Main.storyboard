@@ -660,11 +660,31 @@
                         <outlet property="topLayoutConstraint" destination="PKQ-ih-34W" id="gPj-ST-cd6"/>
                         <outlet property="wxLogin" destination="izp-Us-xLP" id="KAX-SK-6Hr"/>
                         <segue destination="aoB-3T-lMX" kind="push" identifier="forgetPasswordSegue" id="2Dn-80-Zn0"/>
+                        <segue destination="dNM-YT-lYv" kind="push" id="7km-UH-0eA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wkj-7r-Ny6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="79"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KmC-Dm-4QR">
+            <objects>
+                <viewController id="dNM-YT-lYv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Glq-ro-30U"/>
+                        <viewControllerLayoutGuide type="bottom" id="mAA-ql-aC2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="elP-dd-wPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FxU-uS-5MW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Der-Am-cRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2652" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="khh-GY-bUZ">
