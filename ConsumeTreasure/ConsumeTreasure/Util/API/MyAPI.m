@@ -1520,14 +1520,14 @@
 }
 
 #pragma mark -- 第三方登录
-- (void)loginWithThirdWayWithWithParamters:(NSString *)type
-                               thirdcodeId:(NSString *)codeId
+- (void)loginWithThirdWayWithWithParamters:(NSDictionary *)para
                                     result:(ModelBlock)result
                                errorResult:(ErrorBlock)errorResult{
 
     NSDictionary *dicPara = @{
-                              @"type":type,
-                              @"code":codeId
+                              @"param":para,
+                              @"tokenid":KToken,
+                              @"platform":@"1"
                               };
     [self.manager POST:@"ThirdUser/thirdAuthorization" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
