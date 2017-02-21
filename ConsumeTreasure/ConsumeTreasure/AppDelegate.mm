@@ -12,6 +12,9 @@
 #import "UMSocialConfig.h"
 #import "UMSocialControllerService.h"
 #import<AlipaySDK/AlipaySDK.h>
+
+#import <AFNetworking.h>
+
 @interface AppDelegate ()
 
 @end
@@ -132,11 +135,14 @@
 #pragma mark -WeixinDelegate
 - (void)configThirdLogin{
     [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
-  //  [UMSocialData setAppKey:@"507fcab25270157b37000010"];
-    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"b170f4c7718470926acb509fb62c3529" redirectURL:nil sourceURL:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=7a9e5e98-d0c4-11e6-ad4a-6c92bf2cdbd1" type:CHSocialWeChat];
+  
+    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxc32457c6b81423c8" secret:@"ca47273eea61762769946b2f9cb7082c" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
 }
 
 - (void)onResp:(BaseResp *)resp{
+    
+    
+    
     if([resp isKindOfClass:[PayResp class]]){
         
         //支付返回结果，实际支付结果需要去微信服务器端查询
@@ -154,24 +160,58 @@
                 break;
         }
     }
-    
+    /*
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         SendAuthResp *temp = (SendAuthResp *)resp;
         NSLog(@"================%@===============",temp.code);
        
-        NSDictionary *para = @{
-                               @"type":@"wx",
-                               @"code":temp.code
-                               };
+        __weak typeof(*&self) weakSelf = self;
         
-        [[MyAPI sharedAPI] loginWithThirdWayWithWithParamters:para result:^(BOOL success, NSString *msg, id object) {
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];//请求
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];//响应
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", @"text/json",@"text/plain", nil];
+        //通过 appid  secret 认证code . 来发送获取 access_token的请求
+        [manager GET:[NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",@"wxbbcf236b07638282",@"b170f4c7718470926acb509fb62c3529",temp.code] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
             
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {  //获得access_token，然后根据access_token获取用户信息请求。
             
-        } errorResult:^(NSError *enginerError) {
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+            NSLog(@"dic %@",dic);
             
-        }];
-    }
-    
+            /*
+             access_token	接口调用凭证
+             expires_in	access_token接口调用凭证超时时间，单位（秒）
+             refresh_token	用户刷新access_token
+             openid	授权用户唯一标识
+             scope	用户授权的作用域，使用逗号（,）分隔
+             unionid	 当且仅当该移动应用已获得该用户的userinfo授权时，才会出现该字段
+             */
+       //    NSString* accessToken=[dic valueForKey:@"access_token"];
+      //      NSString* openID=[dic valueForKey:@"openid"];
+           // [weakSelf requestUserInfoByToken:accessToken andOpenid:openID];
+     //   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+     //       NSLog(@"error %@",error.localizedFailureReason);
+      //  }];
+        
+        
+        
+        
+        
+        
+//        NSDictionary *para = @{
+//                               @"type":@"wx",
+//                               @"code":temp.code
+//                               };
+//        
+//        [[MyAPI sharedAPI] loginWithThirdWayWithWithParamters:para result:^(BOOL success, NSString *msg, id object) {
+//            
+//            
+//        } errorResult:^(NSError *enginerError) {
+//            
+//        }];
+ //   }
+ //  */
     
 }
  

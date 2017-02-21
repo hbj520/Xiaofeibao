@@ -16,7 +16,7 @@
 
 #import "WXApi.h"
 #import "AppDelegate.h"
-
+#import "CHSocialService.h"
 
 @interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
 {
@@ -255,6 +255,22 @@
 
 
 - (IBAction)wxLogin:(id)sender {
+   
+    [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
+     (CHSocialResponseData *response) {
+         if (response.openId) {
+   
+             NSLog(@"%@------------",response.openId);
+            
+        }
+        
+    }];
+    
+ 
+
+    
+    
+    /*
     if ([WXApi isWXAppInstalled]){
         
         SendAuthReq *req = [[SendAuthReq alloc]init];
@@ -270,7 +286,7 @@
         //self.wxLogin.hidden = YES;
 
     }
-    
+    */
     
     
 }
