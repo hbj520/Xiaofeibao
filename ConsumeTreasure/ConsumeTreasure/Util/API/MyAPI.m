@@ -89,8 +89,8 @@
             NSString *imgurl = userDic[@"imgUrl"];
             NSString *qrcode = userDic[@"qrcord"];
             
-            NSString *phone = para[@"phone"];
-            NSString *app_version = para[@"app_version"];
+            NSString *phone = userDic[@"phone"];
+            NSString *app_version = userDic[@"app_version"];
             NSString *isNew = @"";
             if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
                 isNew = @"0";
