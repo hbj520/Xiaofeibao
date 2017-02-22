@@ -16,6 +16,7 @@
 
 #import "WXApi.h"
 #import "AppDelegate.h"
+#import "CHSocialService.h"
 
 
 @interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
@@ -71,6 +72,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    
+    [self verifyThirdPlatform];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -258,9 +261,58 @@
 //    [self.navigationController pushViewController:forgetVC animated:YES];
     [self performSegueWithIdentifier:@"forgetPasswordSegue" sender:nil];
 }
+- (void)verifyThirdPlatform{
+  
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]])
+    {
+        self.wxLogin.hidden = NO;
+     
+    }
+    
+}
 
 
 - (IBAction)wxLogin:(id)sender {
+   /*
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:self completion:^(id result, NSError *error) {
+        
+        UMSocialUserInfoResponse *resp = result;
+        
+        // 第三方登录数据(为空表示平台未提供)
+        // 授权数据
+        NSLog(@" uid: %@", resp.uid);
+        NSLog(@" openid: %@", resp.openid);
+        NSLog(@" accessToken: %@", resp.accessToken);
+        NSLog(@" refreshToken: %@", resp.refreshToken);
+        NSLog(@" expiration: %@", resp.expiration);
+        
+        // 用户数据
+        NSLog(@" name: %@", resp.name);
+        NSLog(@" iconurl: %@", resp.iconurl);
+        NSLog(@" gender: %@", resp.gender);
+        
+        // 第三方平台SDK原始数据
+        NSLog(@" originalResponse: %@", resp.originalResponse);
+    }];
+    
+    
+    */
+   
+    [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
+     (CHSocialResponseData *response) {
+         if (response.openId) {
+   
+             NSLog(@"%@------------",response.openId);
+            
+        }
+        
+    }];
+   
+ 
+
+    
+    
+    /*
     if ([WXApi isWXAppInstalled]){
         
         SendAuthReq *req = [[SendAuthReq alloc]init];
@@ -276,7 +328,7 @@
         //self.wxLogin.hidden = YES;
 
     }
-    
+    */
     
     
 }
