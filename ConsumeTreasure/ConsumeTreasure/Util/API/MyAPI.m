@@ -69,7 +69,7 @@
 }
 #pragma mark - 登录和注册
 - (void)loginWithParameters:(NSDictionary *)para
-                     result:(StateBlock)result
+                     result:(ArrayBlock)result
                 errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
@@ -78,7 +78,7 @@
                               };
     [self.manager POST:@"userinfo/login" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
-            result(NO,@"-1");
+            result(NO,@"-1",nil);
             [self cancelAllOperation];
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
@@ -90,16 +90,23 @@
             NSString *qrcode = userDic[@"qrcord"];
             
             NSString *phone = para[@"phone"];
-            
+            NSString *app_version = para[@"app_version"];
+            NSString *isNew = @"";
+            if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
+                isNew = @"0";
+            }else{
+                [[XFBConfig Instance] saveVersion:app_version];
+               isNew = @"1";
+            }
             [[XFBConfig Instance] saveImgUrl:imgurl
                                        token:token
                                    loginName:loginName
                                      balance:goldNum
                                       qrCode:qrcode
                                        phone:phone];
-            result(YES,@"登陆成功");
+            result(YES,@"登陆成功",@[isNew]);
         }else{
-            result(NO,@"登录失败");
+            result(NO,responseObject[@"msg"],nil);
         }
         
         

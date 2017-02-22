@@ -18,7 +18,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)cancelAllOperation;
 #pragma mark - 登录和注册
 - (void)loginWithParameters:(NSDictionary *)para
-                     result:(StateBlock)result
+                     result:(ArrayBlock)result
                 errorResult:(ErrorBlock)errorResult;
 #pragma mark - 注册发送验证码
 - (void)postVerifyCodeWithParameters:(NSDictionary *)para

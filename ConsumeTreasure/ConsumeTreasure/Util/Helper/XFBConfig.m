@@ -243,6 +243,13 @@ static XFBConfig * instance = nil;
     [settings setObject:name forKey:@"loginName"];
     [settings synchronize];
 }
+- (void)saveVersion:(NSString *)version{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"version"];
+    [settings setObject:version forKey:@"version"];
+    [settings synchronize];
+}
+
 
 - (NSString *)getloginName{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
@@ -313,11 +320,7 @@ static XFBConfig * instance = nil;
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"cityCode"];
 }
-- (NSString *)getIcon
-{
-    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"icon"];
-}
+
 
 - (NSString *)getMoney
 {
@@ -350,7 +353,15 @@ static XFBConfig * instance = nil;
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"phonenum"];
 }
-
+- (NSString *)getIcon
+{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"icon"];
+}
+- (NSString *)getVersion{
+    NSUserDefaults *settins = [NSUserDefaults standardUserDefaults];
+    return [settins stringForKey:@"version"];
+}
 - (void)logout{
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
     [settings removeObjectForKey:@"token"];

@@ -187,13 +187,19 @@
                            @"phone": self.loginPhoneNumTextField.text,
                            @"password": securityLogin
                            };
-    [[MyAPI sharedAPI] loginWithParameters:para result:^(BOOL sucess, NSString *msg) {
+    [[MyAPI sharedAPI] loginWithParameters:para result:^(BOOL sucess, NSString *msg, NSArray *array) {
                                                  
                                                  if (sucess) {
-                                                     [self.view removeFromSuperview];
-                                                     [self removeFromParentViewController];
-                                                     [Tools chooseRootController];
-                                                   //  [self changeTohom];
+                                                     
+                                                     if ([array[0] isEqualToString:@"1"]) {
+
+                                                         [self.view removeFromSuperview];
+                                                         [self removeFromParentViewController];
+                                                         [Tools chooseRootController];
+                                                     }else{
+                                                         [self changeTohom];
+                                                     }
+                                                    
                                                      [[XFBConfig Instance] savePhoneNum:self.loginPhoneNumTextField.text];
                                                  }else{
                                                      [self showHint:@"您输入的账号或密码有误"];
