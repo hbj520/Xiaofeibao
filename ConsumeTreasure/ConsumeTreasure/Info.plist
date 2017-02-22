@@ -47,6 +47,8 @@
 	<string>1.0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+        <string>wechat</string>
+        <string>weixin</string>
 		<string>uppayx1</string>
 		<string>uppayx2</string>
 		<string>uppayx3</string>

@@ -60,14 +60,22 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [CHSocialServiceCenter  applicationDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
+}
+
+
 - (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url{
     return [WXApi handleOpenURL:url delegate:self];
+    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
 }
 /*
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
@@ -136,7 +144,7 @@
 - (void)configThirdLogin{
     [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
   
-    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxc32457c6b81423c8" secret:@"ca47273eea61762769946b2f9cb7082c" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
+    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"b170f4c7718470926acb509fb62c3529" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
 }
 
 - (void)onResp:(BaseResp *)resp{
