@@ -21,6 +21,7 @@
 @property (strong,nonatomic) NSString *latitude;//精度
 @property (strong,nonatomic) NSString *longitude;//维度
 @property (strong,nonatomic) NSString *cityCode;//维度
+@property (assign,nonatomic) BOOL isOne;
 - (void)changeToMain;
 @end
 

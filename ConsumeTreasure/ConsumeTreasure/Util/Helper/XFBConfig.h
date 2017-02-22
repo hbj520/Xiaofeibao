@@ -57,6 +57,7 @@
 - (void)saveIsAgency:(NSString*)isAgency;
 //- (void)saveIcon:(NSString *)icon;
 - (void)saveloginName:(NSString*)name;
+- (void)saveVersion:(NSString *)version; //保存版本号
 
 
 - (NSString *)getloginName;
@@ -80,6 +81,7 @@
 - (NSString *)getIsWifi;//是否可在wifi下观看视频
 - (NSString *)getCityCode;
 - (NSString *)getIcon;
+- (NSString *)getVersion;//获取版本号
 - (void)logout;               //退出登录
 - (void)deleteTeminate;
 
