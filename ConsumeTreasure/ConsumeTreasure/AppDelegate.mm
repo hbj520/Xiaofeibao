@@ -25,7 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [WXApi registerApp:@"wxbbcf236b07638282"];
+   // [WXApi registerApp:@"wxbbcf236b07638282"];
     
     self.cityCode = @"127";
     // 要使用百度地图，请先启动BaiduMapManager
@@ -69,23 +69,6 @@
 
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
-}
-
-
-- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url{
-    return [WXApi handleOpenURL:url delegate:self];
-    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
-}
-/*
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    return [WXApi handleOpenURL:url delegate:self];
-}
-*/
-// NOTE: 9.0以后使用新API接口
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
-{
-    
     if ([url.host isEqualToString:@"safepay"]) {
         //跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
@@ -106,12 +89,47 @@
             }
         }];
     }
-    
-    return [WXApi handleOpenURL:url delegate:self];
-    
-    
-
+    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
 }
+
+
+//- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url{
+//    return [WXApi handleOpenURL:url delegate:self];
+//    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
+//}
+/*
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+*/
+// NOTE: 9.0以后使用新API接口
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+//{
+//    
+//    if ([url.host isEqualToString:@"safepay"]) {
+//        //跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"result = %@",resultDic);
+//            
+//            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
+//            int resultStatus = resultStatusStr.intValue;
+//            NSLog(@"reslut = %d",resultStatus);
+//            
+//            
+//            if (resultStatus == 9000) {
+//                
+//                showAlert(@"成功");
+//                
+//            }else{
+//                
+//                showAlert(@"失败");
+//            }
+//        }];
+//    }
+//    
+//    return [WXApi handleOpenURL:url delegate:self];
+//    
+//}
 
 #pragma mark - PrivateMethod
 - (void)changeToMain{
@@ -147,82 +165,30 @@
     [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"b170f4c7718470926acb509fb62c3529" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
 }
 
-- (void)onResp:(BaseResp *)resp{
-    
-    
-    
-    if([resp isKindOfClass:[PayResp class]]){
-        
-        //支付返回结果，实际支付结果需要去微信服务器端查询
-        NSString *strMsg;
-        
-        switch (resp.errCode) {
-            case WXSuccess:
-                strMsg = @"支付结果：成功！";
-                NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
-                break;
-                
-            default:
-                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
-                NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
-                break;
-        }
-    }
-    /*
-    if ([resp isKindOfClass:[SendAuthResp class]]) {
-        SendAuthResp *temp = (SendAuthResp *)resp;
-        NSLog(@"================%@===============",temp.code);
-       
-        __weak typeof(*&self) weakSelf = self;
-        
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];//请求
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];//响应
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", @"text/json",@"text/plain", nil];
-        //通过 appid  secret 认证code . 来发送获取 access_token的请求
-        [manager GET:[NSString stringWithFormat:@"https://api.weixin.qq.com/sns/oauth2/access_token?appid=%@&secret=%@&code=%@&grant_type=authorization_code",@"wxbbcf236b07638282",@"b170f4c7718470926acb509fb62c3529",temp.code] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {  //获得access_token，然后根据access_token获取用户信息请求。
-            
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-            NSLog(@"dic %@",dic);
-            
-            /*
-             access_token	接口调用凭证
-             expires_in	access_token接口调用凭证超时时间，单位（秒）
-             refresh_token	用户刷新access_token
-             openid	授权用户唯一标识
-             scope	用户授权的作用域，使用逗号（,）分隔
-             unionid	 当且仅当该移动应用已获得该用户的userinfo授权时，才会出现该字段
-             */
-       //    NSString* accessToken=[dic valueForKey:@"access_token"];
-      //      NSString* openID=[dic valueForKey:@"openid"];
-           // [weakSelf requestUserInfoByToken:accessToken andOpenid:openID];
-     //   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-     //       NSLog(@"error %@",error.localizedFailureReason);
-      //  }];
-        
-        
-        
-        
-        
-        
-//        NSDictionary *para = @{
-//                               @"type":@"wx",
-//                               @"code":temp.code
-//                               };
+//- (void)onResp:(BaseResp *)resp{
+//    
+//    
+//    
+//    if([resp isKindOfClass:[PayResp class]]){
 //        
-//        [[MyAPI sharedAPI] loginWithThirdWayWithWithParamters:para result:^(BOOL success, NSString *msg, id object) {
-//            
-//            
-//        } errorResult:^(NSError *enginerError) {
-//            
-//        }];
- //   }
- //  */
-    
-}
- 
+//        //支付返回结果，实际支付结果需要去微信服务器端查询
+//        NSString *strMsg;
+//        
+//        switch (resp.errCode) {
+//            case WXSuccess:
+//                strMsg = @"支付结果：成功！";
+//                NSLog(@"支付成功－PaySuccess，retcode = %d", resp.errCode);
+//                break;
+//                
+//            default:
+//                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
+//                NSLog(@"错误，retcode = %d, retstr = %@", resp.errCode,resp.errStr);
+//                break;
+//        }
+//    }
+//    
+//}
+
  
  
 @end
