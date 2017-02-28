@@ -25,7 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [WXApi registerApp:@"wxbbcf236b07638282"];
+  //  [WXApi registerApp:@"wxbbcf236b07638282"];
     
     self.cityCode = @"127";
     // 要使用百度地图，请先启动BaiduMapManager
@@ -118,6 +118,7 @@
     [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
   
     [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxc32457c6b81423c8" secret:@"0297442cc771f12fab3dc1fcec7f5fe3" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
+   // [[CHSocialServiceCenter shareInstance] configurationAppKey:<#(NSString *)#> AppIdentifier:<#(NSString *)#> secret:<#(NSString *)#> redirectURL:<#(NSString *)#> sourceURL:<#(NSString *)#> type:<#(CHSocialType)#>];
 }
 
 - (void)onResp:(BaseResp *)resp{

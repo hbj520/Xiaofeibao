@@ -482,13 +482,16 @@
                                         </constraints>
                                         <state key="normal" image="weibo"/>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-gi-fwc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-gi-fwc">
                                         <rect key="frame" x="244" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0VX-8p-dhG"/>
                                             <constraint firstAttribute="width" constant="36" id="Skc-E8-eAz"/>
                                         </constraints>
-                                        <state key="normal" image="qq"/>
+                                        <state key="normal" image="zfb_3"/>
+                                        <connections>
+                                            <action selector="zfbLoginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="0Rp-y2-gKE"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
                                         <rect key="frame" x="85" y="391" width="56" height="21"/>
@@ -510,10 +513,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pv-Sg-xza">
-                                        <rect key="frame" x="234" y="391" width="56" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pv-Sg-xza">
+                                        <rect key="frame" x="227" y="391" width="70" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="56" id="3m1-WD-EwJ"/>
+                                            <constraint firstAttribute="width" constant="70" id="3m1-WD-EwJ"/>
                                             <constraint firstAttribute="height" constant="21" id="SCz-9R-wjs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -861,5 +864,6 @@
         <image name="top" width="360" height="62"/>
         <image name="weibo" width="36" height="36"/>
         <image name="weixin" width="36" height="36"/>
+        <image name="zfb_3" width="72" height="72"/>
     </resources>
 </document>
