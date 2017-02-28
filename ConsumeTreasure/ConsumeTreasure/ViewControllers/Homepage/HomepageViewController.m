@@ -602,15 +602,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
-     (CHSocialResponseData *response) {
-         if (response.openId) {
-             
-             NSLog(@"%@------------",response.openId);
-             
-         }
-         
-     }];
     if (indexPath.section == 1) {
         
         if (indexPath.row != 3) {
