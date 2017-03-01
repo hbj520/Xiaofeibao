@@ -200,7 +200,7 @@
     
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"shop/preferential" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -592,7 +592,7 @@
                                 errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":KToken,
-                              @"platform":@"0",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"shop/applyNow" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -621,7 +621,7 @@
                          errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"shop/getOneShop" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -649,7 +649,7 @@
                             errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"0",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"myAccount/myCollection" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -677,7 +677,7 @@
                              errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"shop/getProducts" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -706,7 +706,7 @@
                       errorResult:(ErrorBlock)errorResult{
     NSDictionary *paraDic = @{
                               @"tokenid":KToken,
-                              @"platform":@"",
+                              @"platform":@"1",
                               @"param":para
                               };
     [self.manager POST:@"shop/getShopComment" parameters:paraDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
