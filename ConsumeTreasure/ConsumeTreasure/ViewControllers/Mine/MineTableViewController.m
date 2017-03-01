@@ -67,7 +67,7 @@
     }else if (section == 1){
         return 4;
     }else if (section == 2){
-        return 2;
+        return 1;
     }
     return 1;
 }
@@ -118,6 +118,8 @@
                 
             }
         }else if (indexPath.section == 2 ){
+           
+            /*
             if (indexPath.row == 0) {
                 
                 if ([isShop isEqualToString:@"1"]) {
@@ -130,11 +132,11 @@
                     [self.navigationController pushViewController:tobeVC animated:YES];
                 }
                 
-                
-            }else if (indexPath.row == 1){
+              */
+           // }else if (indexPath.row == 1){
                 [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
                 
-            }
+          //  }
             
             
             
