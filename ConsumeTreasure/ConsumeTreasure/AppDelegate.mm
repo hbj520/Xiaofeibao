@@ -117,7 +117,7 @@
 - (void)configThirdLogin{
     [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
   
-    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxc32457c6b81423c8" secret:@"0297442cc771f12fab3dc1fcec7f5fe3" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
+    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"dfdec49a41e45c6dbbdbfaa215da1454" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
    // [[CHSocialServiceCenter shareInstance] configurationAppKey:<#(NSString *)#> AppIdentifier:<#(NSString *)#> secret:<#(NSString *)#> redirectURL:<#(NSString *)#> sourceURL:<#(NSString *)#> type:<#(CHSocialType)#>];
 }
 
