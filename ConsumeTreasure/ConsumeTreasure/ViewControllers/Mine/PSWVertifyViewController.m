@@ -87,9 +87,6 @@
     
     
 }
-
-
-
 - (IBAction)back:(id)sender {
     [self backTolastPage];
 }

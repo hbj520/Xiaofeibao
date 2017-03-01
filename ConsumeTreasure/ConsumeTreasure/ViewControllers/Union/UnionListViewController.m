@@ -136,11 +136,8 @@ UICollectionViewDataSource>
     self.navigationItem.title = navTitle;
 }
 - (void)addTopMenu{
-    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"筛选"]];
-    
-    //     regionArray =@[@"滨湖新区",@"包河区",@"经开区",@"庐阳区",@"高新区",@"不限"];
-    //    classTypeArray=@[@"水果",@"火锅",@"生鲜",@"小吃",@"糕点"];
-    sortRuleArray=@[@"距离",@"评分",@"最新",@"最热"];
+    self.menu = [[JPullDownMenu alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, 40) menuTitleArray:@[@"区域",@"分类",@"距离"]];
+        sortRuleArray=@[@"距离",@"评分",@"最新",@"最热"];
     
     self.menu.menuDataArray = [NSMutableArray arrayWithObjects:areaArray, cateArray , sortRuleArray, nil];
 
@@ -200,7 +197,7 @@ UICollectionViewDataSource>
         [self showHint:@"分类出错"];
     }];
     //商家列表
-    [self searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
+    [self searchShopListWithSorting:@"0" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
 }
 //查询商家列表
 - (void)searchShopListWithSorting:(NSString *)sorting
