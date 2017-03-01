@@ -30,6 +30,9 @@
     double discountStr;
     
     StoreDetailModel *_deModel;
+    
+    NSString *payWayStr;//支付方式
+    NSString *useZHB;
 }
 
 @property (nonatomic, strong) JHCoverView *coverView;
@@ -47,6 +50,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //leftMoney = 20;
+    
+    payWayStr  = @"0";//默认通宝币支付
+    
     [self setTextField];
     [self setUseLeftMoney];
     [self getTongLeft];//请求余额
@@ -161,17 +167,41 @@
 }
 
 - (void)chooseUse:(UIButton*)button{
-
     
-    self.disCountMoney.text = @"";
-    Tongtf.text = @"";
+    button.selected = !button.selected;
+    
+    //self.disCountMoney.text = @"";
+    //Tongtf.text = @"";
     self.realPay.text = @"";
     self.getTongMoney.text = @"";
-    button.selected = !button.selected;
+    
     if (button.selected == NO) {
+        
+        self.disCountMoney.text = @"";
         leftMoney = 0;
+        useZHB = @"0";
+        self.realPay.text = Tongtf.text;
+        self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];
     }else{
         leftMoney = realMoney;
+        useZHB = @"1";
+        if ([Tongtf.text floatValue] <= realMoney) {
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %.2f",[Tongtf.text floatValue]];
+            self.realPay.text = @"0";
+            self.getTongMoney.text = @"0";
+        }else{
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %.2f",realMoney];
+            self.realPay.text = [NSString stringWithFormat:@"%.2f",([Tongtf.text floatValue] - leftMoney)];
+            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
 
@@ -183,9 +213,9 @@
         
         XWMoneyTextField *tf = (XWMoneyTextField *)sender;
         
-      
+        
         if ([tf.text floatValue] > leftMoney) {
-            self.disCountMoney.text = [NSString stringWithFormat:@"- %ld",(long)leftMoney];//折扣
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %.2f",leftMoney];//折扣
             
             self.realPay.text = [NSString stringWithFormat:@"%.2f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
             self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];//获得智惠币
@@ -195,8 +225,7 @@
             self.realPay.text = @"0";
             self.getTongMoney.text = @"0";
         }
-    }
-}
+    }}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -207,7 +236,7 @@
     [Tongtf resignFirstResponder];
 }
 
-- (void)upPayKeyBoard{
+- (void)upPayKeyBoardWithPayWay:(NSString*)PWStr{
     
     [self.view layoutIfNeeded];
     JHCoverView *coverView = [[JHCoverView alloc] initWithFrame:self.view.bounds];
@@ -218,36 +247,66 @@
     [self.coverView.payTextField becomeFirstResponder];
     [self.view addSubview:self.coverView];
     __weak typeof(self) weakSelf = self;
-
+    
     self.coverView.tBlock =^(NSString *str){
         
-        weakSelf.coverView.hidden = YES;
-        [weakSelf.coverView.payTextField resignFirstResponder];
-        [weakSelf postDataWithStr:str];
-        [self.coverView removeFromSuperview];
+        if ([PWStr isEqualToString:@"1"]) {
+            
+            weakSelf.coverView.hidden = YES;
+            [weakSelf.coverView.payTextField resignFirstResponder];
+            [weakSelf postDataWithStr:str];
+            [self.coverView removeFromSuperview];
+            
+        }else{
+            
+            NSString *SafeStr = [Tools loginPasswordSecurityLock:str];
+            
+            NSDictionary *para = @{
+                                   @"zfpass":SafeStr
+                                   };
+            [[MyAPI sharedAPI] makeSurePassWordWithParameters:para result:^(BOOL sucess, NSString *msg) {
+                if (sucess) {
+                    self.hidesBottomBarWhenPushed = YES;
+                    [self.coverView.payTextField resignFirstResponder];
+                    [self.coverView removeFromSuperview];
+                    // NSString *needPayStr = [NSString stringWithFormat:@"%f",([Tongtf.text floatValue] - leftMoney)];
+                    NSString *leftMoneyStr = [NSString stringWithFormat:@"%.2f",leftMoney];
+                    
+                    [self performSegueWithIdentifier:@"gotoPay" sender:@[Tongtf.text,leftMoneyStr,self.toMemId,SafeStr]];
+                    
+                }else{
+                    [self.coverView.payTextField resignFirstResponder];
+                    [self.coverView removeFromSuperview];
+                    [self showHint:msg];
+                }
+                
+            } errorResult:^(NSError *enginerError) {
+                
+            }];
+            
+        }
     };
-    
 }
+
 
 - (IBAction)GopayNext:(id)sender {
     
     if ([Tongtf.text floatValue] > leftMoney) {
-        self.hidesBottomBarWhenPushed = YES;
-        [Tongtf resignFirstResponder];
-       // NSString *needPayStr = [NSString stringWithFormat:@"%f",([Tongtf.text floatValue] - leftMoney)];
-        NSString *leftMoneyStr = [NSString stringWithFormat:@"%f",leftMoney];
-
-        [self performSegueWithIdentifier:@"gotoPay" sender:@[Tongtf.text,leftMoneyStr,self.toMemId]];
-
+        //不用智慧币
+        if ([useZHB isEqualToString:@"0"]||leftMoney==0 ) {
+            self.hidesBottomBarWhenPushed = YES;
+            NSString *leftMoneyStr = [NSString stringWithFormat:@"%f",leftMoney];
+            [self performSegueWithIdentifier:@"gotoPay" sender:@[Tongtf.text,leftMoneyStr,self.toMemId,@"0"]];
+        }else{
+            [self upPayKeyBoardWithPayWay:@"0"];//多方支付
+        }
+        
     }else{
-       // self.coverView.hidden = NO;
+        // self.coverView.hidden = NO;
+        [self upPayKeyBoardWithPayWay:@"1"];//智慧币支付
         
-        [self upPayKeyBoard];
-
     }
-        
-        
-           }
+}
 
 
 - (void)postDataWithStr:(NSString*)str{

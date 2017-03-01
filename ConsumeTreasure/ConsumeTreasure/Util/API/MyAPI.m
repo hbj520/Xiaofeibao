@@ -1555,8 +1555,28 @@
         errorResult(error);
     }];
     
-    
-    
-    
 }
+
+
+#pragma mark -验证支付密码
+- (void)makeSurePassWordWithParameters:(NSDictionary *)para
+                                result:(StateBlock)result
+                           errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"pay/yzzfpass" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
 @end

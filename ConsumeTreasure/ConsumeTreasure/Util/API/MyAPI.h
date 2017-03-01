@@ -211,4 +211,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)loginWithThirdWayWithWithParamters:(NSDictionary *)para
                                     result:(ModelBlock)result
                                errorResult:(ErrorBlock)errorResult;
+
+#pragma mark -验证支付密码
+- (void)makeSurePassWordWithParameters:(NSDictionary *)para
+                                result:(StateBlock)result
+                           errorResult:(ErrorBlock)errorResult;
 @end

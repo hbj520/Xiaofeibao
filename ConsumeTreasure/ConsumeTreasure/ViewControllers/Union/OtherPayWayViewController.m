@@ -15,6 +15,8 @@
     NSString *tongBaomoney;//支付的智惠币额
     NSString *cashMoney;//现金
     NSString *toMemId;//收款人
+    
+    NSString *pswStr;//支付密码
 }
 
 @end
@@ -34,7 +36,7 @@
     cashMoney = [NSString stringWithFormat:@"%.2f",[_dataArr[0] floatValue]];
     tongBaomoney = _dataArr[1];
     toMemId = _dataArr[2];
-    
+    pswStr = _dataArr[3];
     
     self.realPay.text = [NSString stringWithFormat:@"%.2f",([cashMoney floatValue] - [tongBaomoney floatValue])];
 }
@@ -83,7 +85,7 @@
                                       @"price": cashMoney,
                                       @"price_tbb":tongBaomoney,
                                       @"paytype": @"2",
-                                      @"zfpass":@"123456",
+                                      @"zfpass":pswStr,
                                       };
         NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
         
@@ -97,7 +99,7 @@
                                @"price": cashMoney,
                                @"price_tbb":tongBaomoney,
                                @"paytype": @"2",
-                               @"zfpass":@"123456",
+                               @"zfpass":pswStr,
                                @"sign":sign
                                };
         //调支付宝支付
@@ -123,7 +125,7 @@
                                       @"price": cashMoney,
                                       @"price_tbb":tongBaomoney,
                                       @"paytype": @"1",
-                                      @"zfpass":@"123456",
+                                      @"zfpass":pswStr,
                                       };
         NSString *stringA = [MXWechatSignAdaptor createMd5Sign:SignForPara];
         
@@ -137,7 +139,7 @@
                                @"price": cashMoney,
                                @"price_tbb":tongBaomoney,
                                @"paytype": @"1",
-                               @"zfpass":@"123456",
+                               @"zfpass":pswStr,
                                @"sign":sign
                                };
         //调微信支付

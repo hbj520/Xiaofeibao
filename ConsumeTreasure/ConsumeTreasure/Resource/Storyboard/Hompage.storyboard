@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -612,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dny-Fw-Jhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="2290"/>
+            <point key="canvasLocation" x="2049" y="2244"/>
         </scene>
         <!--Account Detail View Controller-->
         <scene sceneID="dOy-dD-DaB">
@@ -1265,6 +1265,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2yr-Bk-Gz9" firstAttribute="leading" secondItem="wyo-TL-mFC" secondAttribute="leading" id="2YM-NP-opp"/>
+                            <constraint firstItem="6xb-Zv-aF8" firstAttribute="width" secondItem="wyo-TL-mFC" secondAttribute="width" multiplier="1/3" id="3o4-ky-8ow"/>
+                            <constraint firstItem="tW2-5P-K5u" firstAttribute="width" secondItem="wyo-TL-mFC" secondAttribute="width" multiplier="1/3" id="6wK-KR-56k"/>
                             <constraint firstItem="j5c-G0-hsC" firstAttribute="top" secondItem="wyo-TL-mFC" secondAttribute="top" id="76h-5D-FFo"/>
                             <constraint firstItem="6xb-Zv-aF8" firstAttribute="centerX" secondItem="j5c-G0-hsC" secondAttribute="centerX" id="78r-ca-kJK"/>
                             <constraint firstItem="Fbo-qw-pj8" firstAttribute="leading" secondItem="AVD-26-cIW" secondAttribute="trailing" id="CWI-IF-B0W"/>
@@ -1277,6 +1279,8 @@
                             <constraint firstItem="2O4-Ye-Drh" firstAttribute="leading" secondItem="6xb-Zv-aF8" secondAttribute="trailing" id="MTv-uU-iBo"/>
                             <constraint firstItem="2O4-Ye-Drh" firstAttribute="trailing" secondItem="j5c-G0-hsC" secondAttribute="trailing" id="RYa-FF-bKK"/>
                             <constraint firstItem="Fbo-qw-pj8" firstAttribute="width" secondItem="wyo-TL-mFC" secondAttribute="width" multiplier="1/3" id="UW3-27-9co"/>
+                            <constraint firstItem="AVD-26-cIW" firstAttribute="top" secondItem="2yr-Bk-Gz9" secondAttribute="bottom" id="V5g-0r-Wx3"/>
+                            <constraint firstItem="2O4-Ye-Drh" firstAttribute="width" secondItem="wyo-TL-mFC" secondAttribute="width" multiplier="1/3" id="ZMb-51-F92"/>
                             <constraint firstItem="6xb-Zv-aF8" firstAttribute="leading" secondItem="tW2-5P-K5u" secondAttribute="trailing" id="cge-xq-P3u"/>
                             <constraint firstAttribute="trailing" secondItem="2yr-Bk-Gz9" secondAttribute="trailing" id="dHx-dv-Si9"/>
                             <constraint firstItem="tW2-5P-K5u" firstAttribute="leading" secondItem="j5c-G0-hsC" secondAttribute="leading" id="eHp-Aa-oR8"/>
@@ -1284,6 +1288,7 @@
                             <constraint firstItem="j5c-G0-hsC" firstAttribute="leading" secondItem="wyo-TL-mFC" secondAttribute="leading" id="hX1-um-cnV"/>
                             <constraint firstAttribute="trailing" secondItem="j5c-G0-hsC" secondAttribute="trailing" id="jne-bO-nXZ"/>
                             <constraint firstItem="6xb-Zv-aF8" firstAttribute="top" secondItem="tW2-5P-K5u" secondAttribute="top" id="mAA-Lf-uKA"/>
+                            <constraint firstItem="Fbo-qw-pj8" firstAttribute="top" secondItem="2yr-Bk-Gz9" secondAttribute="bottom" id="x4Z-he-cmP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tlg-PY-nym"/>
@@ -3686,7 +3691,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="a1K-Rk-NIG" kind="push" identifier="justSegue" id="3w7-QJ-21D"/>
-                        <segue destination="wUD-9Z-A0O" kind="push" identifier="sacanPrePaySegueId" id="dUr-ho-Qde"/>
+                        <segue destination="0Ho-Ig-crO" kind="push" identifier="sacanPrePaySegueId" id="SjJ-0Z-ase"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGB-NU-7MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4367,7 +4372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yda-9U-eQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="2290"/>
+            <point key="canvasLocation" x="1254" y="2244"/>
         </scene>
         <!--范跑跑商店-->
         <scene sceneID="nib-ba-ykA">
@@ -4883,9 +4888,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0yz-DO-JMd"/>
-        <segue reference="AMY-WY-xLC"/>
-        <segue reference="fkz-Fo-52f"/>
+        <segue reference="Cge-eV-Uzy"/>
+        <segue reference="tMY-yY-dhf"/>
         <segue reference="6Ku-Vt-ebf"/>
         <segue reference="ep5-xb-kd2"/>
+        <segue reference="SjJ-0Z-ase"/>
     </inferredMetricsTieBreakers>
 </document>
