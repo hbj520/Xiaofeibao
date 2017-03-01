@@ -84,8 +84,9 @@
         }else if (indexPath.row == 2){
             [self performSegueWithIdentifier:@"aboutSegueId" sender:nil];
         }else if (indexPath.row == 3){//设置支付宝密码
-            SetPayPswViewController *setPayPswVC = [[SetPayPswViewController alloc] init];
-            [self.navigationController pushViewController:setPayPswVC animated:YES];
+//            SetPayPswViewController *setPayPswVC = [[SetPayPswViewController alloc] init];
+//            [self.navigationController pushViewController:setPayPswVC animated:YES];
+            [self performSegueWithIdentifier:@"gosetPswSegue" sender:nil];
         }else if (indexPath.row == 4){//修改登录密码
             [self performSegueWithIdentifier:@"setingResetPasswordSegueId" sender:nil];
         }

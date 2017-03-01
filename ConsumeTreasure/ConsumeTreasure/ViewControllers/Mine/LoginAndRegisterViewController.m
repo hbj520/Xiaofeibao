@@ -17,7 +17,7 @@
 #import "WXApi.h"
 #import "AppDelegate.h"
 #import "CHSocialService.h"
-
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
 {
@@ -309,7 +309,9 @@
 }
 
 - (IBAction)zfbLoginBtn:(id)sender {
-    
+    [[AlipaySDK defaultService] auth_V2WithInfo:@"apiname=com.alipay.account.auth&app_id=2016122904717216&app_name=mc&auth_type=LOGIN&biz_type=openservice&method=alipay.open.auth.sdk.code.get&pid=2088121834499540&product_id=APP_FAST_LOGIN&scope=kuaijie&sign_type=RSA2&target_id=20170301&sign=fMcp4GtiM6rxSIeFnJCVePJKV43eXrUP86CQgiLhDHH2u%2FdN75eEvmywc2ulkm7qKRetkU9fbVZtJIqFdMJcJ9Yp%2BJI%2FF%2FpESafFR6rB2fRjiQQLGXvxmDGVMjPSxHxVtIqpZy5FDoKUSjQ2%2FILDKpu3%2F%2BtAtm2jRw1rUoMhgt0%3D" fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
+        
+    }];
 }
 
 
