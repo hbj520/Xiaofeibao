@@ -92,6 +92,10 @@
             NSString *phone = userDic[@"phone"];
             NSString *app_version = userDic[@"app_version"];
             NSString *isNew = @"";
+            NSString *wx = userDic[@"wxopenid"];
+            NSString *zfb = userDic[@"zfbuserid"];
+            [[XFBConfig Instance] saveWeixin:wx];
+            [[XFBConfig Instance] saveZFB:zfb];
             if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
                 isNew = @"0";
             }else{
@@ -1527,35 +1531,182 @@
 }
 
 #pragma mark -- 第三方登录
-- (void)loginWithThirdWayWithWithParamters:(NSDictionary *)para
-                                    result:(ModelBlock)result
-                               errorResult:(ErrorBlock)errorResult{
-
-    NSDictionary *dicPara = @{
-                              @"param":para,
-                              @"tokenid":KToken,
-                              @"platform":@"1"
-                              };
-    [self.manager POST:@"ThirdUser/thirdAuthorization" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+- (void)ThirdPlatformLoginWithParamters:(NSString *)type
+                            thirdOpenId:(NSString *)openId
+                                 result:(ModelBlock)result
+                            errorResult:(ErrorBlock)errorResult{
+    
+    NSDictionary *parameters = @{
+                                 @"tokenid": @"",
+                                 @"platform":@"",
+                                 @"param": @{
+                                     @"openid":openId,
+                                     @"type":type
+                                     }
+                                 };
+    [self.manager POST:@"thirdUser/thirdAuthorization" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1",nil);
             [self cancelAllOperation];
-        }if ([responseObject[@"code"] isEqualToString:@"1"]){
-            NSDictionary *dataDic = responseObject[@"data"];
-            NSString *allMoney = dataDic[@"all_money"];
-            NSString *imgStr = dataDic[@"imgUrl"];
-            NSString *token = dataDic[@"token"];
-            NSString *userId = dataDic[@"userId"];
-            NSString *loginName = dataDic[@"loginName"];
-            NSString *isShop = dataDic[@"isShop"];
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+            NSDictionary *data = responseObject[@"data"];
+            NSString *status = data[@"status"];
+            NSDictionary *userDic = data[@"user"];
+            if ([status isEqualToString:@"0"]) {
+                result(NO,responseObject[@"msg"],nil);
+            }else{
+                NSString *gold = userDic[@"all_money"];
+                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
+                NSString *loginName = userDic[@"loginName"];//用户登录名
+                NSString *token = userDic[@"token"];
+                NSString *imgurl = userDic[@"imgUrl"];
+                NSString *qrcode = userDic[@"qrcord"];
+                
+                NSString *phone = userDic[@"phone"];
+                NSString *app_version = userDic[@"app_version"];
+                NSString *isNew = @"";
+                NSString *wx = userDic[@"wxopenid"];
+                NSString *zfb = userDic[@"zfbuserid"];
+                [[XFBConfig Instance] saveWeixin:wx];
+                [[XFBConfig Instance] saveZFB:zfb];
+                if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
+                    isNew = @"0";
+                }else{
+                    [[XFBConfig Instance] saveVersion:app_version];
+                    isNew = @"1";
+                }
+                [[XFBConfig Instance] saveImgUrl:imgurl
+                                           token:token
+                                       loginName:loginName
+                                         balance:goldNum
+                                          qrCode:qrcode
+                                           phone:phone];
+                result(YES,@"登陆成功",@[isNew]);
+            }
+
         }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+- (void)ThirdPlatformRegisterWithParameters:(NSString *)phoneNum
+                                 verifyCode:(NSString *)verifyCode
+                                       type:(NSString *)type
+                                     openid:(NSString *)openid
+                                    iconUrl:(NSString *)iconUrl
+                                   nickName:(NSString *)nickName
+                                    resulet:(StateBlock)result
+                                errorResult:(ErrorBlock)errorResult{
+    NSDictionary *parameters = @{
+                                 @"tokenid": @"",
+                                 @"platform":@"",
+                                 @"param": @{
+                                     @"type":type,
+                                     @"phone":phoneNum,
+                                     @"openid":openid,
+                                     @"validatecode":verifyCode,
+                                     @"nickName":nickName,
+                                     @"headimgurl":iconUrl
+                                 }
+                                 };
+    [self.manager POST:@"thirdUser/thirdBindingZhf" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            
+            NSDictionary *userDic = responseObject[@"data"];
+            NSString *status = userDic[@"status"];
+           
+                NSString *gold = userDic[@"all_money"];
+                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
+                NSString *loginName = userDic[@"loginName"];//用户登录名
+                NSString *token = userDic[@"token"];
+                NSString *imgurl = userDic[@"imgUrl"];
+                NSString *qrcode = userDic[@"qrcord"];
+                
+                NSString *phone = userDic[@"phone"];
+                NSString *app_version = userDic[@"app_version"];
+                NSString *isNew = @"";
+            NSString *wx = userDic[@"wxopenid"];
+            NSString *zfb = userDic[@"zfbuserid"];
+            [[XFBConfig Instance] saveWeixin:wx];
+            [[XFBConfig Instance] saveZFB:zfb];
+                if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
+                    isNew = @"0";
+                }else{
+                    [[XFBConfig Instance] saveVersion:app_version];
+                    isNew = @"1";
+                }
+                [[XFBConfig Instance] saveImgUrl:imgurl
+                                           token:token
+                                       loginName:loginName
+                                         balance:goldNum
+                                          qrCode:qrcode
+                                           phone:phone];
+                result(YES,@"登陆成功");
+            
+        }else{
+            result(NO,@"绑定失败");
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+    }];
+}
+- (void)ThirdPlatformVerifyWithParameters:(NSString *)phoneNum
+                                   result:(StateBlock)result
+                              errorResult:(ErrorBlock)errorResult{
+    NSDictionary *parameters = @{
+        @"tokenid": @"",
+        @"platform":@"",
+        @"param": @{
+            @"phone":phoneNum,
+            @"type":@"0"
+        }
+    };
+    [self.manager POST:@"sms/sendBindingMessage" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *status = responseObject[@"status"];
+        NSString *info = responseObject[@"info"];
+        if ([status isEqualToString:@"1"]) {
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         errorResult(error);
     }];
     
 }
+//- (void)loginWithThirdWayWithWithParamters:(NSDictionary *)para
+//                                    result:(ModelBlock)result
+//                               errorResult:(ErrorBlock)errorResult{
+//
+//    NSDictionary *dicPara = @{
+//                              @"param":para,
+//                              @"tokenid":KToken,
+//                              @"platform":@"1"
+//                              };
+//    [self.manager POST:@"ThirdUser/thirdAuthorization" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+//            result(NO,@"-1",nil);
+//            [self cancelAllOperation];
+//        }if ([responseObject[@"code"] isEqualToString:@"1"]){
+//            NSDictionary *dataDic = responseObject[@"data"];
+//            NSString *allMoney = dataDic[@"all_money"];
+//            NSString *imgStr = dataDic[@"imgUrl"];
+//            NSString *token = dataDic[@"token"];
+//            NSString *userId = dataDic[@"userId"];
+//            NSString *loginName = dataDic[@"loginName"];
+//            NSString *isShop = dataDic[@"isShop"];
+//        }
+//        
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        errorResult(error);
+//    }];
+//    
+//}
 
 
 #pragma mark -验证支付密码

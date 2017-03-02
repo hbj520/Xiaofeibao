@@ -208,10 +208,21 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                           errorResult:(ErrorBlock)errorResult;
 
 #pragma mark -- 第三方登录
-- (void)loginWithThirdWayWithWithParamters:(NSDictionary *)para
-                                    result:(ModelBlock)result
-                               errorResult:(ErrorBlock)errorResult;
-
+- (void)ThirdPlatformLoginWithParamters:(NSString *)type
+                            thirdOpenId:(NSString *)openId
+                                 result:(ModelBlock)result
+                            errorResult:(ErrorBlock)errorResult;
+- (void)ThirdPlatformRegisterWithParameters:(NSString *)phoneNum
+                                 verifyCode:(NSString *)verifyCode
+                                       type:(NSString *)type
+                                     openid:(NSString *)openid
+                                    iconUrl:(NSString *)iconUrl
+                                   nickName:(NSString *)nickName
+                                    resulet:(StateBlock)result
+                                errorResult:(ErrorBlock)errorResult;
+- (void)ThirdPlatformVerifyWithParameters:(NSString *)phoneNum
+                                   result:(StateBlock)result
+                              errorResult:(ErrorBlock)errorResult;
 #pragma mark -验证支付密码
 - (void)makeSurePassWordWithParameters:(NSDictionary *)para
                                 result:(StateBlock)result

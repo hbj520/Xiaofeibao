@@ -249,7 +249,20 @@ static XFBConfig * instance = nil;
     [settings setObject:version forKey:@"version"];
     [settings synchronize];
 }
-
+//是否绑定微信
+- (void)saveWeixin:(NSString *)wx{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"wx"];
+    [settings setObject:wx forKey:@"wx"];
+    [settings synchronize];
+}
+//绑定支付宝
+- (void)saveZFB:(NSString *)zfb{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"zfb"];
+    [settings setObject:zfb forKey:@"zfb"];
+    [settings synchronize];
+}
 
 - (NSString *)getloginName{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
@@ -361,6 +374,16 @@ static XFBConfig * instance = nil;
 - (NSString *)getVersion{
     NSUserDefaults *settins = [NSUserDefaults standardUserDefaults];
     return [settins stringForKey:@"version"];
+}
+//是否绑定微信
+- (NSString *)getLinkWX{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"wx"];
+}
+//是否绑定支付宝
+- (NSString *)getZFB{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"zfb"];
 }
 - (void)logout{
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];

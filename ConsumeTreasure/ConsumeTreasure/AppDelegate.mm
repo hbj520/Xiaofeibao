@@ -66,9 +66,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+     [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+         
+         
+     }];
     if ([url.host isEqualToString:@"safepay"]) {
         //跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
@@ -89,8 +93,36 @@
             }
         }];
     }
+    
     return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
+    
+    
+    
 }
+
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+//    if ([url.host isEqualToString:@"safepay"]) {
+//        //跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"result = %@",resultDic);
+//            
+//            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
+//            int resultStatus = resultStatusStr.intValue;
+//            NSLog(@"reslut = %d",resultStatus);
+//            
+//            
+//            if (resultStatus == 9000) {
+//                
+//                showAlert(@"成功");
+//                
+//            }else{
+//                
+//                showAlert(@"失败");
+//            }
+//        }];
+//    }
+//    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
+//}
 
 
 
@@ -118,7 +150,7 @@
     [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
   
     [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"dfdec49a41e45c6dbbdbfaa215da1454" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
-   // [[CHSocialServiceCenter shareInstance] configurationAppKey:<#(NSString *)#> AppIdentifier:<#(NSString *)#> secret:<#(NSString *)#> redirectURL:<#(NSString *)#> sourceURL:<#(NSString *)#> type:<#(CHSocialType)#>];
+  
 }
 
 - (void)onResp:(BaseResp *)resp{

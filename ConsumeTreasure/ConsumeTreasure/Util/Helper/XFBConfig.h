@@ -58,7 +58,8 @@
 //- (void)saveIcon:(NSString *)icon;
 - (void)saveloginName:(NSString*)name;
 - (void)saveVersion:(NSString *)version; //保存版本号
-
+- (void)saveWeixin:(NSString *)wx;//是否绑定微信
+- (void)saveZFB:(NSString *)zfb;//绑定支付宝
 
 - (NSString *)getloginName;
 - (NSString *)getIsShop;
@@ -82,6 +83,8 @@
 - (NSString *)getCityCode;
 - (NSString *)getIcon;
 - (NSString *)getVersion;//获取版本号
+- (NSString *)getLinkWX;//是否绑定微信
+- (NSString *)getZFB;//是否绑定支付宝
 - (void)logout;               //退出登录
 - (void)deleteTeminate;
 

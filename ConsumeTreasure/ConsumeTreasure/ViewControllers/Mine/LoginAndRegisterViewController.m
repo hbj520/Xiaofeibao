@@ -12,13 +12,11 @@
 #import "ForgetPasswordViewController.h"
 #import "HexColor.h"
 #import "NoticeHelper.h"
-
-
 #import "WXApi.h"
 #import "AppDelegate.h"
 #import "CHSocialService.h"
 #import <AlipaySDK/AlipaySDK.h>
-
+#import "ThirdPlatformViewController.h"
 @interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
 {
     NSTimer *timer;
@@ -276,8 +274,10 @@
     [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
      (CHSocialResponseData *response) {
          if (response.openId) {
-   
-             
+             [self thirdLoginWithPlatform:@"wx"
+                                   openId:response.openId
+                                 nickName:response.userName
+                                  iconUrl:response.iconURL];
             
         }
         
@@ -309,12 +309,39 @@
 }
 
 - (IBAction)zfbLoginBtn:(id)sender {
-    [[AlipaySDK defaultService] auth_V2WithInfo:@"apiname=com.alipay.account.auth&app_id=2016122904717216&app_name=mc&auth_type=LOGIN&biz_type=openservice&method=alipay.open.auth.sdk.code.get&pid=2088121834499540&product_id=APP_FAST_LOGIN&scope=kuaijie&sign_type=RSA2&target_id=20170301&sign=fMcp4GtiM6rxSIeFnJCVePJKV43eXrUP86CQgiLhDHH2u%2FdN75eEvmywc2ulkm7qKRetkU9fbVZtJIqFdMJcJ9Yp%2BJI%2FF%2FpESafFR6rB2fRjiQQLGXvxmDGVMjPSxHxVtIqpZy5FDoKUSjQ2%2FILDKpu3%2F%2BtAtm2jRw1rUoMhgt0%3D" fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
+    [[AlipaySDK defaultService] auth_V2WithInfo:@"apiname=com.alipay.account.auth&app_id=2016122904717216&app_name=mc&auth_type=LOGIN&biz_type=openservice&method=alipay.open.auth.sdk.code.get&pid=2088121834499540&product_id=APP_FAST_LOGIN&scope=kuaijie&sign_type=RSA2&target_id=20170301&sign=TLzCeK2%2BlCJVxh7TKMXqrZTrQ0%2B7bnWtfsYESMNFYFnsPGNQ3NnBTtvmypb4%2FCqU%2BxUUCxAcY0MVemScNvsKWZ0zBhU1bbwUdoBshhlqLOAM09%2BQQ248EAZ6PHm3NH%2BihjXrR1NC9DY1Fkj11d%2BnRYlLIm4VuViDoklE7IsPZNm0656K9nEyBn6p22vaHtMQeVJpQNBMqjhIW7hhxFPtKzs3%2FCHeW%2FXyWTCToH8Shx5Tb6IGDBmI7ep9Tbo8y1AdDzqshMbYrh%2B4tjMNKIF5qL2HlY6sPSr0%2FBtr4OFgvoW%2BKTl6wEpwmWVVKM46WOEToHcaOXgB63A03UELN9ft%2FQ%3D%3D" fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
+        
         
     }];
+   
 }
-
-
+- (void)thirdLoginWithPlatform:(NSString *)platform
+                        openId:(NSString *)openId
+                      nickName:(NSString *)nickName
+                       iconUrl:(NSString *)iconUrl {
+    [[MyAPI sharedAPI] ThirdPlatformLoginWithParamters:platform
+                                           thirdOpenId:openId
+                                                result:^(BOOL success, NSString *msg, id object) {
+                                                    
+                                                    if (success) {
+                                                        //已经绑定的直接登录
+                                                        [self showHint:@"登陆成功!"];
+                                                        [self changeTohom];
+                                                    }else{
+                                                        //未绑定的进行账号绑定
+                                                        [self performSegueWithIdentifier:@"thirdplatformSegue" sender:@[platform,openId,nickName,iconUrl]];
+                                                    }
+                                                } errorResult:^(NSError *enginerError) {
+                                                    
+                                                    
+                                                }];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"thirdplatformSegue"]) {
+        ThirdPlatformViewController *thirdPlatformVC = segue.destinationViewController;
+        thirdPlatformVC.thirdPlatformData = (NSArray *)sender;
+    }
+}
 #pragma mark - UIViewDelegete
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [Tools hideKeyBoard];

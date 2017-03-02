@@ -30,6 +30,7 @@
 		AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */; };
 		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
+		AB24F2A11E67026200764DA7 /* ThirdPlatformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
 		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
@@ -394,6 +395,8 @@
 		AB1496651E1645C70042637C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinePayViewController.h; sourceTree = "<group>"; };
 		AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinePayViewController.m; sourceTree = "<group>"; };
+		AB24F29F1E67026200764DA7 /* ThirdPlatformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPlatformViewController.h; sourceTree = "<group>"; };
+		AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPlatformViewController.m; sourceTree = "<group>"; };
 		AB32FCBF1DE41A9000032D38 /* EvaluateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListViewController.h; sourceTree = "<group>"; };
 		AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListViewController.m; sourceTree = "<group>"; };
 		AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
@@ -1325,6 +1328,8 @@
 		ABCB95381D9B89FC008927C7 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				AB24F29F1E67026200764DA7 /* ThirdPlatformViewController.h */,
+				AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */,
 				ABFEA4961DEC118C0002672F /* BasePhotoViewController.h */,
 				ABFEA4971DEC118C0002672F /* BasePhotoViewController.m */,
 				AB3A61B41DAF87730071EBA1 /* LoginAndRegisterViewController.h */,
@@ -2519,6 +2524,7 @@
 				AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */,
 				D1A3C0851E123E3B0040AAD9 /* MyBankCardViewController.m in Sources */,
 				D1A3C0721E10C6DB0040AAD9 /* JHCoverView.m in Sources */,
+				AB24F2A11E67026200764DA7 /* ThirdPlatformViewController.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D1E130B21E54216F006DF83E /* PYSearchViewController.m in Sources */,
 				D11171171DFA8EEB00AD88DE /* CheckstandViewController.m in Sources */,
