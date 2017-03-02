@@ -31,6 +31,10 @@
 		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
 		AB24F2A11E67026200764DA7 /* ThirdPlatformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */; };
+		AB24F2A41E681A0600764DA7 /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A31E681A0600764DA7 /* APAuthV2Info.m */; };
+		AB24F2A71E681A9A00764DA7 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A61E681A9A00764DA7 /* RSADataSigner.m */; };
+		AB24F2AA1E681BA400764DA7 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A91E681BA400764DA7 /* openssl_wrapper.m */; };
+		AB24F2AD1E681BCE00764DA7 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2AC1E681BCE00764DA7 /* RSADataVerifier.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
 		AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB32FCC41DE425BA00032D38 /* EvaluateTableViewCell.xib */; };
@@ -228,9 +232,6 @@
 		D15B3AFA1DDC0E5E009122FE /* DataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3AE81DDC0E5E009122FE /* DataVerifier.m */; };
 		D15B3AFB1DDC0E5E009122FE /* MD5DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3AEA1DDC0E5E009122FE /* MD5DataSigner.m */; };
 		D15B3AFC1DDC0E5E009122FE /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3AEC1DDC0E5E009122FE /* NSDataEx.m */; };
-		D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3AEE1DDC0E5E009122FE /* openssl_wrapper.m */; };
-		D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3AF01DDC0E5E009122FE /* RSADataSigner.m */; };
-		D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3AF21DDC0E5E009122FE /* RSADataVerifier.m */; };
 		D15B3B011DDC0E8B009122FE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B3B001DDC0E8B009122FE /* libc++.tbd */; };
 		D15B3B031DDC0ED4009122FE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B3B021DDC0ED4009122FE /* CoreText.framework */; };
 		D15B3B051DDC0EE5009122FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B3B041DDC0EE5009122FE /* UIKit.framework */; };
@@ -397,6 +398,14 @@
 		AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinePayViewController.m; sourceTree = "<group>"; };
 		AB24F29F1E67026200764DA7 /* ThirdPlatformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPlatformViewController.h; sourceTree = "<group>"; };
 		AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPlatformViewController.m; sourceTree = "<group>"; };
+		AB24F2A21E681A0600764DA7 /* APAuthV2Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAuthV2Info.h; sourceTree = "<group>"; };
+		AB24F2A31E681A0600764DA7 /* APAuthV2Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAuthV2Info.m; sourceTree = "<group>"; };
+		AB24F2A51E681A9A00764DA7 /* RSADataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataSigner.h; sourceTree = "<group>"; };
+		AB24F2A61E681A9A00764DA7 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
+		AB24F2A81E681BA400764DA7 /* openssl_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
+		AB24F2A91E681BA400764DA7 /* openssl_wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
+		AB24F2AB1E681BCE00764DA7 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
+		AB24F2AC1E681BCE00764DA7 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
 		AB32FCBF1DE41A9000032D38 /* EvaluateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListViewController.h; sourceTree = "<group>"; };
 		AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListViewController.m; sourceTree = "<group>"; };
 		AB32FCC21DE425BA00032D38 /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
@@ -810,12 +819,6 @@
 		D15B3AEA1DDC0E5E009122FE /* MD5DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5DataSigner.m; sourceTree = "<group>"; };
 		D15B3AEB1DDC0E5E009122FE /* NSDataEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataEx.h; sourceTree = "<group>"; };
 		D15B3AEC1DDC0E5E009122FE /* NSDataEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataEx.m; sourceTree = "<group>"; };
-		D15B3AED1DDC0E5E009122FE /* openssl_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openssl_wrapper.h; sourceTree = "<group>"; };
-		D15B3AEE1DDC0E5E009122FE /* openssl_wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
-		D15B3AEF1DDC0E5E009122FE /* RSADataSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataSigner.h; sourceTree = "<group>"; };
-		D15B3AF01DDC0E5E009122FE /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
-		D15B3AF11DDC0E5E009122FE /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
-		D15B3AF21DDC0E5E009122FE /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
 		D15B3B001DDC0E8B009122FE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D15B3B021DDC0ED4009122FE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		D15B3B041DDC0EE5009122FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1158,6 +1161,8 @@
 				AB6FBA601DB4B05100C682F8 /* NoticeHelper.h */,
 				AB6FBA611DB4B05100C682F8 /* NoticeHelper.m */,
 				AB8D45391DADC89400694E6C /* Tools.h */,
+				AB24F2A21E681A0600764DA7 /* APAuthV2Info.h */,
+				AB24F2A31E681A0600764DA7 /* APAuthV2Info.m */,
 				AB8D453A1DADC89400694E6C /* Tools.m */,
 				D15B3B0A1DDC129E009122FE /* XFBConfig.h */,
 				D15B3B0B1DDC129E009122FE /* XFBConfig.m */,
@@ -1966,6 +1971,12 @@
 				D15B3AE21DDC0E5E009122FE /* base64.h */,
 				D15B3AE31DDC0E5E009122FE /* base64.m */,
 				D15B3AE41DDC0E5E009122FE /* config.h */,
+				AB24F2A51E681A9A00764DA7 /* RSADataSigner.h */,
+				AB24F2A61E681A9A00764DA7 /* RSADataSigner.m */,
+				AB24F2A81E681BA400764DA7 /* openssl_wrapper.h */,
+				AB24F2A91E681BA400764DA7 /* openssl_wrapper.m */,
+				AB24F2AB1E681BCE00764DA7 /* RSADataVerifier.h */,
+				AB24F2AC1E681BCE00764DA7 /* RSADataVerifier.m */,
 				D15B3AE51DDC0E5E009122FE /* DataSigner.h */,
 				D15B3AE61DDC0E5E009122FE /* DataSigner.m */,
 				D15B3AE71DDC0E5E009122FE /* DataVerifier.h */,
@@ -1974,12 +1985,6 @@
 				D15B3AEA1DDC0E5E009122FE /* MD5DataSigner.m */,
 				D15B3AEB1DDC0E5E009122FE /* NSDataEx.h */,
 				D15B3AEC1DDC0E5E009122FE /* NSDataEx.m */,
-				D15B3AED1DDC0E5E009122FE /* openssl_wrapper.h */,
-				D15B3AEE1DDC0E5E009122FE /* openssl_wrapper.m */,
-				D15B3AEF1DDC0E5E009122FE /* RSADataSigner.h */,
-				D15B3AF01DDC0E5E009122FE /* RSADataSigner.m */,
-				D15B3AF11DDC0E5E009122FE /* RSADataVerifier.h */,
-				D15B3AF21DDC0E5E009122FE /* RSADataVerifier.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2525,6 +2530,7 @@
 				D1A3C0851E123E3B0040AAD9 /* MyBankCardViewController.m in Sources */,
 				D1A3C0721E10C6DB0040AAD9 /* JHCoverView.m in Sources */,
 				AB24F2A11E67026200764DA7 /* ThirdPlatformViewController.m in Sources */,
+				AB24F2AA1E681BA400764DA7 /* openssl_wrapper.m in Sources */,
 				D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */,
 				D1E130B21E54216F006DF83E /* PYSearchViewController.m in Sources */,
 				D11171171DFA8EEB00AD88DE /* CheckstandViewController.m in Sources */,
@@ -2556,6 +2562,7 @@
 				D16BF2CB1DF106DC001A82BF /* JPullDownMenu.m in Sources */,
 				D16BF2B51DEFF15B001A82BF /* JFSearchView.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
+				AB24F2A71E681A9A00764DA7 /* RSADataSigner.m in Sources */,
 				D16BF2B11DEFF15B001A82BF /* JFCityCollectionViewCell.m in Sources */,
 				AB06A9891DF940D4006F67C2 /* AttentionShopViewController.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
@@ -2638,6 +2645,7 @@
 				D1E130641E4B2351006DF83E /* CHSocialResponseData.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
+				AB24F2A41E681A0600764DA7 /* APAuthV2Info.m in Sources */,
 				D1A3C0731E10C6DB0040AAD9 /* NewTextField.m in Sources */,
 				AB01504F1DC8883900AC1AB9 /* MyAPI.m in Sources */,
 				AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */,
@@ -2656,10 +2664,8 @@
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D1E1306B1E52D9F7006DF83E /* WithDrawRecordViewController.m in Sources */,
 				D16BF2BB1DF017B3001A82BF /* LocationViewController.m in Sources */,
-				D15B3AFF1DDC0E5E009122FE /* RSADataVerifier.m in Sources */,
 				D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */,
 				D120548A1DED1C0200EB2707 /* ApplyContentTableViewCell.m in Sources */,
-				D15B3AFD1DDC0E5E009122FE /* openssl_wrapper.m in Sources */,
 				D196D58C1E0CFB9E0062AD91 /* TobeAgencyViewController.m in Sources */,
 				D10DC95F1E0AAAA600930F74 /* TXTradePasswordView.m in Sources */,
 				AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */,
@@ -2675,7 +2681,6 @@
 				D12054991DED269000EB2707 /* OtherLicenseTableViewCell.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
-				D15B3AFE1DDC0E5E009122FE /* RSADataSigner.m in Sources */,
 				D10DC9441E09307600930F74 /* DLPickerView.m in Sources */,
 				D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */,
 				D1A3C09E1E14DCAE0040AAD9 /* HMScanerCardViewController.m in Sources */,
@@ -2689,6 +2694,7 @@
 				D10EE3DC1DB0B28F001C1992 /* ASIHTTPRequest.m in Sources */,
 				D121651A1DB4F2B4006B06FC /* YZDisplayViewController.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
+				AB24F2AD1E681BCE00764DA7 /* RSADataVerifier.m in Sources */,
 				D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,
 				ABFEA4981DEC118C0002672F /* BasePhotoViewController.m in Sources */,
