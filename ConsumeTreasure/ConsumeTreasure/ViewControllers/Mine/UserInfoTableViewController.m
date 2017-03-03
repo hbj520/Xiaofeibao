@@ -149,7 +149,7 @@
                                                     
                                                     if (success) {
                                                         //已经绑定的直接登录
-                                                        [self showHint:@"登陆成功!"];
+                                                        [self showHint:@"绑定成功!"];
                                                         [self changeTohom];
                                                     }else{
                                                         //未绑定的进行账号绑定
