@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wxLinkLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zfbLinkLabel;
 
 @end
 
@@ -84,6 +86,10 @@
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
             UILabel *phoneLabel = [cell viewWithTag:10];
             [self performSegueWithIdentifier:@"fixNameSegueId" sender:@[@"手机号",phoneLabel.text]];
+        }else if (indexPath.row == 1){
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        }else if (indexPath.row == 2){
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
@@ -203,6 +209,17 @@
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
     self.phoneNumLabel.text = [[XFBConfig Instance] getphoneNum];
     self.iconImageView.layer.masksToBounds = YES;
+    
+    if ([[XFBConfig Instance] getLinkWX].length > 2 ) {
+        self.wxLinkLabel.text = @"已绑定";
+    }else{
+        self.wxLinkLabel.text = @"未绑定";
+    }
+    if ([[XFBConfig Instance] getZFB].length > 2 ) {
+            self.zfbLinkLabel.text = @"已绑定";
+    }else{
+        self.zfbLinkLabel.text = @"未绑定";
+    }
 }
 //- (void)recieveNotice:(NSNotification *)sender{
 //    NSDictionary *noti = sender.userInfo;
