@@ -1678,35 +1678,25 @@
     }];
     
 }
-//- (void)loginWithThirdWayWithWithParamters:(NSDictionary *)para
-//                                    result:(ModelBlock)result
-//                               errorResult:(ErrorBlock)errorResult{
-//
-//    NSDictionary *dicPara = @{
-//                              @"param":para,
-//                              @"tokenid":KToken,
-//                              @"platform":@"1"
-//                              };
-//    [self.manager POST:@"ThirdUser/thirdAuthorization" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
-//            result(NO,@"-1",nil);
-//            [self cancelAllOperation];
-//        }if ([responseObject[@"code"] isEqualToString:@"1"]){
-//            NSDictionary *dataDic = responseObject[@"data"];
-//            NSString *allMoney = dataDic[@"all_money"];
-//            NSString *imgStr = dataDic[@"imgUrl"];
-//            NSString *token = dataDic[@"token"];
-//            NSString *userId = dataDic[@"userId"];
-//            NSString *loginName = dataDic[@"loginName"];
-//            NSString *isShop = dataDic[@"isShop"];
-//        }
-//        
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        errorResult(error);
-//    }];
-//    
-//}
+- (void)releaseThirdPlatformWithParameters:(NSDictionary *)para
+                                    result:(StateBlock)result
+                               errorResult:(ErrorBlock)errorResult{
+    NSDictionary *parameterDic = @{
+                                   @"tokenid":KToken,
+                                   @"platform":@"",
+                                   @"param":para
+                                   };
+    [self.manager POST:@"thirdUser/thirdUnbindZhf" parameters:parameterDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,responseObject[@"msg"]);
+        }else{
+            result(NO,responseObject[@"msg"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
 
 
 #pragma mark -验证支付密码

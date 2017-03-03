@@ -11,6 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "KGModal.h"
 #import "ChangeHeadView.h"
+#import "CHSocialService.h"
 @interface UserInfoTableViewController ()<UIImagePickerControllerDelegate>
 {
     UIImagePickerController * _picker;                              //照片选择控制器
@@ -23,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wxLinkLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zfbLinkLabel;
-
 @end
 
 @implementation UserInfoTableViewController
@@ -87,9 +87,12 @@
             UILabel *phoneLabel = [cell viewWithTag:10];
             [self performSegueWithIdentifier:@"fixNameSegueId" sender:@[@"手机号",phoneLabel.text]];
         }else if (indexPath.row == 1){
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            if ([self.wxLinkLabel.text isEqualToString:@"已绑定"]) {
+                [self releaseThirdPlatformLinkIsWX:YES];
+            }else{
+                [self LinkThirdPlatformIsWX:YES];
+            }
         }else if (indexPath.row == 2){
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
@@ -110,6 +113,61 @@
     
 }
 #pragma mark -PrivateMethod
+//解绑
+- (void)releaseThirdPlatformLinkIsWX:(BOOL)isWX{
+    if (isWX) {//解绑微信
+        showAlert(@"是否解除微信绑定");
+    }else{//解绑支付宝
+        showAlert(@"是否解除支付宝绑定");
+    }
+}
+//绑定
+- (void)LinkThirdPlatformIsWX:(BOOL)isWX{
+    if (isWX) {//绑定微信
+        [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
+         (CHSocialResponseData *response) {
+             if (response.openId) {
+                 [self thirdLoginWithPlatform:@"wx"
+                                       openId:response.openId
+                                     nickName:response.userName
+                                      iconUrl:response.iconURL];
+                 
+             }
+             
+         }];
+    }else{//绑定支付宝
+        
+    }
+}
+- (void)thirdLoginWithPlatform:(NSString *)platform
+                        openId:(NSString *)openId
+                      nickName:(NSString *)nickName
+                       iconUrl:(NSString *)iconUrl {
+    [[MyAPI sharedAPI] ThirdPlatformLoginWithParamters:platform
+                                           thirdOpenId:openId
+                                                result:^(BOOL success, NSString *msg, id object) {
+                                                    
+                                                    if (success) {
+                                                        //已经绑定的直接登录
+                                                        [self showHint:@"登陆成功!"];
+                                                        [self changeTohom];
+                                                    }else{
+                                                        //未绑定的进行账号绑定
+                                                        [self performSegueWithIdentifier:@"thirdPlatformLinkSegue" sender:@[platform,openId,nickName,iconUrl]];
+                                                    }
+                                                } errorResult:^(NSError *enginerError) {
+                                                    
+                                                    
+                                                }];
+}
+- (void)changeTohom{
+    //[self.tabBarController setSelectedIndex:0];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //    self.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    HomepageViewController *homVC = [self.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
+    //    [self.navigationController didAnimateFirstHalfOfRotationToInterfaceOrientation:UIInterfaceOrientationLandscapeRight];
+    //    [self.navigationController pushViewController:homVC animated:YES];
+}
 //弹出选择照片视图
 - (void)showModalView
 {
@@ -169,19 +227,7 @@
         [self showHint:@"上传出错"];
         [self hideHud];
     }];
-//    [[MyAPI sharedAPI] uploadImage:data result:^(BOOL sucess, NSString *msg) {
-//        if(sucess){
-//            imageUrl = msg;
-//            [self.headImage sd_setImageWithURL:[NSURL URLWithString:msg] placeholderImage:[UIImage imageNamed:@"defaulticon"]];
-//            [[Config Instance] saveIcon:msg];
-//            
-//            [self hideHud];
-//        }else{
-//            [self.headImage setImage:[UIImage imageNamed:@"defaulticon"]];
-//        }
-//    } errorResult:^(NSError *enginerError) {
-//        
-//    }];
+
 }
 //初始化照片选择控制器
 - (void)initPickView
@@ -219,6 +265,33 @@
             self.zfbLinkLabel.text = @"已绑定";
     }else{
         self.zfbLinkLabel.text = @"未绑定";
+    }
+}
+#pragma mark - UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    switch (buttonIndex) {
+        case 1:
+        {
+            if ([alertView.message isEqualToString:@"是否解除微信绑定"]) {
+                [[MyAPI sharedAPI] releaseThirdPlatformWithParameters:@{
+                                                                       @"type":@"wx",
+                                                                       @"phone":[[XFBConfig Instance] getphoneNum]
+                                                                       }result:^(BOOL sucess, NSString *msg) {
+                                                                           if (sucess) {
+                                                                               [[XFBConfig Instance] saveWeixin:@""];
+                                                                               self.wxLinkLabel.text = @"未绑定";
+                                                                           }
+                                                                           [self showHint:msg];
+                                                                       } errorResult:^(NSError *enginerError) {
+                                                                           
+                                                                       }];
+            }else if ([alertView.message isEqualToString:@"是否解除支付宝绑定"]){//解除支付宝绑定
+                
+            }
+        }
+            break;
     }
 }
 //- (void)recieveNotice:(NSNotification *)sender{
