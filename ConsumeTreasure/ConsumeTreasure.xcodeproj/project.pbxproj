@@ -243,6 +243,12 @@
 		D15B3B1C1DDEEE78009122FE /* NewIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B1B1DDEEE78009122FE /* NewIncomeViewController.m */; };
 		D15B3B201DDEF0D6009122FE /* DetailIncomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D15B3B1E1DDEF0D6009122FE /* DetailIncomeTableViewCell.m */; };
 		D15B3B211DDEF0D6009122FE /* DetailIncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15B3B1F1DDEF0D6009122FE /* DetailIncomeTableViewCell.xib */; };
+		D15B653E1E67AADC00BAB25D /* jcore-ios-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B653B1E67AADC00BAB25D /* jcore-ios-1.1.1.a */; };
+		D15B653F1E67AADC00BAB25D /* jpush-ios-3.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B653C1E67AADC00BAB25D /* jpush-ios-3.0.2.a */; };
+		D15B65421E67AB5B00BAB25D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B65411E67AB5B00BAB25D /* CoreFoundation.framework */; };
+		D15B65441E67AB9700BAB25D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B65431E67AB9700BAB25D /* UserNotifications.framework */; };
+		D15B65461E67ABAC00BAB25D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B65451E67ABAC00BAB25D /* libresolv.tbd */; };
+		D15B65481E67BF4300BAB25D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15B65471E67BF4300BAB25D /* AdSupport.framework */; };
 		D161807C1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */; };
 		D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */; };
 		D16BF2AD1DEFF15B001A82BF /* JFAreaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D16BF2991DEFF15B001A82BF /* JFAreaDataManager.m */; };
@@ -831,6 +837,14 @@
 		D15B3B1D1DDEF0D6009122FE /* DetailIncomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailIncomeTableViewCell.h; sourceTree = "<group>"; };
 		D15B3B1E1DDEF0D6009122FE /* DetailIncomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailIncomeTableViewCell.m; sourceTree = "<group>"; };
 		D15B3B1F1DDEF0D6009122FE /* DetailIncomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailIncomeTableViewCell.xib; sourceTree = "<group>"; };
+		D15B653B1E67AADC00BAB25D /* jcore-ios-1.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.1.1.a"; sourceTree = "<group>"; };
+		D15B653C1E67AADC00BAB25D /* jpush-ios-3.0.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.2.a"; sourceTree = "<group>"; };
+		D15B653D1E67AADC00BAB25D /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		D15B65401E67AB0B00BAB25D /* ConsumeTreasure.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConsumeTreasure.entitlements; sourceTree = "<group>"; };
+		D15B65411E67AB5B00BAB25D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D15B65431E67AB9700BAB25D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		D15B65451E67ABAC00BAB25D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		D15B65471E67BF4300BAB25D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D16180791DAE2AFA0052C94D /* HomePageFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageFirstTableViewCell.h; sourceTree = "<group>"; };
 		D161807A1DAE2AFA0052C94D /* HomePageFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageFirstTableViewCell.m; sourceTree = "<group>"; };
 		D161807B1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageFirstTableViewCell.xib; sourceTree = "<group>"; };
@@ -1003,7 +1017,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D15B65481E67BF4300BAB25D /* AdSupport.framework in Frameworks */,
+				D15B65461E67ABAC00BAB25D /* libresolv.tbd in Frameworks */,
+				D15B65441E67AB9700BAB25D /* UserNotifications.framework in Frameworks */,
+				D15B65421E67AB5B00BAB25D /* CoreFoundation.framework in Frameworks */,
 				D1E130B61E557C3B006DF83E /* libiconv.tbd in Frameworks */,
+				D15B653E1E67AADC00BAB25D /* jcore-ios-1.1.1.a in Frameworks */,
 				D15B3B091DDC0F0D009122FE /* CoreMotion.framework in Frameworks */,
 				D15B3B071DDC0EF0009122FE /* Foundation.framework in Frameworks */,
 				D15B3B051DDC0EE5009122FE /* UIKit.framework in Frameworks */,
@@ -1014,6 +1033,7 @@
 				D12164B31DB47539006B06FC /* libstdc++.6.0.9.tbd in Frameworks */,
 				D12164B11DB47528006B06FC /* CoreTelephony.framework in Frameworks */,
 				D12164AF1DB47521006B06FC /* libsqlite3.0.tbd in Frameworks */,
+				D15B653F1E67AADC00BAB25D /* jpush-ios-3.0.2.a in Frameworks */,
 				D12164AD1DB47519006B06FC /* Security.framework in Frameworks */,
 				D12164BA1DB48046006B06FC /* MapKit.framework in Frameworks */,
 				D12164AB1DB47513006B06FC /* CoreGraphics.framework in Frameworks */,
@@ -1058,6 +1078,10 @@
 		578EB4AF2E4319123E151ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D15B65471E67BF4300BAB25D /* AdSupport.framework */,
+				D15B65451E67ABAC00BAB25D /* libresolv.tbd */,
+				D15B65431E67AB9700BAB25D /* UserNotifications.framework */,
+				D15B65411E67AB5B00BAB25D /* CoreFoundation.framework */,
 				D1E130B51E557C3B006DF83E /* libiconv.tbd */,
 				D15B3B081DDC0F0D009122FE /* CoreMotion.framework */,
 				D15B3B061DDC0EF0009122FE /* Foundation.framework */,
@@ -1636,6 +1660,7 @@
 		ABF4E2781D9B5E58006AD23C /* ConsumeTreasure */ = {
 			isa = PBXGroup;
 			children = (
+				D15B65401E67AB0B00BAB25D /* ConsumeTreasure.entitlements */,
 				AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */,
 				ABCB95311D9B8972008927C7 /* Resource */,
 				D10EE3911DB0B21D001C1992 /* Vender */,
@@ -1730,6 +1755,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D15B653A1E67AADC00BAB25D /* Lib */,
 				D1E130A21E54216F006DF83E /* PYSearch */,
 				D1A3C0911E14DCAE0040AAD9 /* QRCode */,
 				D1A3C07F1E123B2F0040AAD9 /* KGModel */,
@@ -1977,6 +2003,17 @@
 				D15B3AF21DDC0E5E009122FE /* RSADataVerifier.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D15B653A1E67AADC00BAB25D /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				D15B653B1E67AADC00BAB25D /* jcore-ios-1.1.1.a */,
+				D15B653C1E67AADC00BAB25D /* jpush-ios-3.0.2.a */,
+				D15B653D1E67AADC00BAB25D /* JPUSHService.h */,
+			);
+			name = Lib;
+			path = "../../../../JPush-iOS-SDK-3.0.2/Lib";
 			sourceTree = "<group>";
 		};
 		D16BF2961DEFF15B001A82BF /* JFCityViewController */ = {
@@ -2237,7 +2274,13 @@
 						DevelopmentTeam = 3S4HP5TK72;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -2830,6 +2873,7 @@
 			baseConfigurationReference = EEE3C430ED334AB4F616B014 /* Pods-ConsumeTreasure.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3S4HP5TK72;
@@ -2873,6 +2917,8 @@
 					"\"$(SRCROOT)/ConsumeTreasure/WXApiObject.h\"",
 					"$(PROJECT_DIR)/ConsumeTreasure/AliPay",
 					"$(PROJECT_DIR)/ConsumeTreasure/OpenSDK1.7.6",
+					"\"$(SRCROOT)/ConsumeTreasure/Lib/jpush-ios-3.0.2.a\"",
+					"$(PROJECT_DIR)/ConsumeTreasure/Lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2967,6 +3013,7 @@
 			baseConfigurationReference = 0A0B893EA1ECABC8400E4944 /* Pods-ConsumeTreasure.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3S4HP5TK72;
@@ -3010,6 +3057,8 @@
 					"\"$(SRCROOT)/ConsumeTreasure/WXApiObject.h\"",
 					"$(PROJECT_DIR)/ConsumeTreasure/AliPay",
 					"$(PROJECT_DIR)/ConsumeTreasure/OpenSDK1.7.6",
+					"\"$(SRCROOT)/ConsumeTreasure/Lib/jpush-ios-3.0.2.a\"",
+					"$(PROJECT_DIR)/ConsumeTreasure/Lib",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
