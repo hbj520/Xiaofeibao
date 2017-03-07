@@ -32,7 +32,7 @@
 
 #define BaseUrl @"http://192.168.1.221:8888/xfb/"
 
-#define XFBUrl @"http://116.62.34.84/xfb/"//正式
+#define XFBUrl @"http://www.xftb168.com/"//正式
 
 #define testURL @"http://192.168.1.242/"
 

@@ -2281,7 +2281,7 @@
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3S4HP5TK72;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -3014,8 +3014,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "58b318f7-af79-43a5-83b5-cbacf5563b2c";
+				PROVISIONING_PROFILE_SPECIFIER = xiaofeibaoDevProfile;
 			};
 			name = Debug;
 		};
@@ -3154,8 +3154,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "58b318f7-af79-43a5-83b5-cbacf5563b2c";
+				PROVISIONING_PROFILE_SPECIFIER = xiaofeibaoDevProfile;
 			};
 			name = Release;
 		};

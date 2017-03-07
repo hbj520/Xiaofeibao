@@ -267,7 +267,8 @@
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]])
     {
         self.wxLogin.hidden = NO;
-     
+        self.wxLoginLabel.hidden = NO;
+        self.thirdLoginLabel.hidden = NO;
     }
     
 }

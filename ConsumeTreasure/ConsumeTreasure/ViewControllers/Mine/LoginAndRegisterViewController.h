@@ -12,8 +12,10 @@
 @property (strong,nonatomic) UIStoryboard *mStorybord;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
+@property (weak, nonatomic) IBOutlet UILabel *wxLoginLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *wxLogin;
 
+@property (weak, nonatomic) IBOutlet UILabel *thirdLoginLabel;
 
 @end

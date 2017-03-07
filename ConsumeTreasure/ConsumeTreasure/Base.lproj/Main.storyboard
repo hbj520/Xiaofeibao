@@ -463,7 +463,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-Us-xLP">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izp-Us-xLP">
                                         <rect key="frame" x="95" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Waw-JA-MMC"/>
@@ -482,7 +482,7 @@
                                         </constraints>
                                         <state key="normal" image="weibo"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-gi-fwc">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpY-gi-fwc">
                                         <rect key="frame" x="244" y="347" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0VX-8p-dhG"/>
@@ -493,7 +493,7 @@
                                             <action selector="zfbLoginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="0Rp-y2-gKE"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
                                         <rect key="frame" x="85" y="391" width="56" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="56" id="1i3-MU-U1t"/>
@@ -513,7 +513,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pv-Sg-xza">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pv-Sg-xza">
                                         <rect key="frame" x="227" y="391" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="3m1-WD-EwJ"/>
@@ -660,8 +660,10 @@
                         <outlet property="registerPhoneTextField" destination="YPg-4q-yWN" id="uNo-Kx-WiM"/>
                         <outlet property="registerVerifyCodeTextfield" destination="lKL-kY-r52" id="O5F-ec-rnr"/>
                         <outlet property="registerView" destination="qRZ-bD-Lkm" id="hXd-CP-2FB"/>
+                        <outlet property="thirdLoginLabel" destination="6MG-lz-dMW" id="nZY-BO-Mkf"/>
                         <outlet property="topLayoutConstraint" destination="PKQ-ih-34W" id="gPj-ST-cd6"/>
                         <outlet property="wxLogin" destination="izp-Us-xLP" id="KAX-SK-6Hr"/>
+                        <outlet property="wxLoginLabel" destination="Uoe-RO-jjF" id="PJW-Ek-44Y"/>
                         <segue destination="aoB-3T-lMX" kind="push" identifier="forgetPasswordSegue" id="2Dn-80-Zn0"/>
                         <segue destination="dNM-YT-lYv" kind="push" id="7km-UH-0eA"/>
                         <segue destination="bXd-5d-3kr" kind="push" identifier="thirdplatformSegue" id="jue-he-W2q"/>
