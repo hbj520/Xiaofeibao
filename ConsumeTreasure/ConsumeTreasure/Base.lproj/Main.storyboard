@@ -489,9 +489,6 @@
                                             <constraint firstAttribute="width" constant="36" id="Skc-E8-eAz"/>
                                         </constraints>
                                         <state key="normal" image="zfb_3"/>
-                                        <connections>
-                                            <action selector="zfbLoginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="0Rp-y2-gKE"/>
-                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
                                         <rect key="frame" x="85" y="391" width="56" height="21"/>
@@ -664,6 +661,8 @@
                         <outlet property="topLayoutConstraint" destination="PKQ-ih-34W" id="gPj-ST-cd6"/>
                         <outlet property="wxLogin" destination="izp-Us-xLP" id="KAX-SK-6Hr"/>
                         <outlet property="wxLoginLabel" destination="Uoe-RO-jjF" id="PJW-Ek-44Y"/>
+                        <outlet property="zfbLoginBtn" destination="cpY-gi-fwc" id="y9Q-a5-3x3"/>
+                        <outlet property="zfbLoginLabel" destination="3Pv-Sg-xza" id="KOn-G4-xwY"/>
                         <segue destination="aoB-3T-lMX" kind="push" identifier="forgetPasswordSegue" id="2Dn-80-Zn0"/>
                         <segue destination="dNM-YT-lYv" kind="push" id="7km-UH-0eA"/>
                         <segue destination="bXd-5d-3kr" kind="push" identifier="thirdplatformSegue" id="jue-he-W2q"/>

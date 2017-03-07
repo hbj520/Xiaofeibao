@@ -44,9 +44,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>2.1</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>alipayshare</string>
+		<string>alipay</string>
 		<string>wechat</string>
 		<string>weixin</string>
 		<string>uppayx1</string>

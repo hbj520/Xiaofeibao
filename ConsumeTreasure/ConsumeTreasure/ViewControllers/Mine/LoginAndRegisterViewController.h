@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *wxLoginLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *wxLogin;
+@property (weak, nonatomic) IBOutlet UIButton *zfbLoginBtn;
+
+@property (weak, nonatomic) IBOutlet UILabel *zfbLoginLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *thirdLoginLabel;
 

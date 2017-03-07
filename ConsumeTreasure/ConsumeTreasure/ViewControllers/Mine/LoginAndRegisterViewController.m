@@ -285,6 +285,13 @@
         self.wxLoginLabel.hidden = NO;
         self.thirdLoginLabel.hidden = NO;
     }
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"alipay://"]])
+    {
+        self.zfbLoginBtn.hidden = NO;
+        self.zfbLoginLabel.hidden = NO;
+      //  self.thirdLoginLabel.hidden = NO;
+    }
+
     
 }
 
