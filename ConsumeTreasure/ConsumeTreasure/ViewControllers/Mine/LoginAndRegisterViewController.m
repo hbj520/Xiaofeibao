@@ -20,6 +20,8 @@
 #import "APAuthV2Info.h"
 #import "RSADataSigner.h"
 #import "ThirdPlatformViewController.h"
+
+#import "JPUSHService.h"
 @interface LoginAndRegisterViewController ()<UINavigationControllerDelegate>
 {
     NSTimer *timer;
@@ -202,6 +204,8 @@
                                                      }
                                                     
                                                      [[XFBConfig Instance] savePhoneNum:self.loginPhoneNumTextField.text];
+                                                     [self setAlias];
+                                                     
                                                  }else{
                                                      [self showHint:@"您输入的账号或密码有误"];
                                                  }
@@ -254,6 +258,17 @@
     }else{
         [self showHint:@"请填写正确的账号，验证码，密码"];
     }
+}
+
+
+- (void)setAlias{
+    //[JPUSHService registrationID];
+    // NSLog(@"registrationID:%@",[JPUSHService registrationID]);
+    
+    NSString *alias = self.loginPhoneNumTextField.text;
+    [JPUSHService setTags:nil alias:alias fetchCompletionHandle:^(int iResCode,NSSet *iTags, NSString *iAlias) {
+        NSLog(@"rescode: %d, \n tags: %@, \n alias: %@\n", iResCode, iTags , iAlias);//对应的状态码返回为0，代表成功
+    }];
 }
 
 - (IBAction)forgetPassword:(id)sender {
