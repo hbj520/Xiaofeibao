@@ -1697,7 +1697,18 @@
     }];
 }
 
-
+- (void)getZfbInfoWithResult:(StateBlock)result
+                 errorResult:(ErrorBlock)errorResult{
+    [self.manager POST:@"web/getAutoInfoV2" parameters:@{} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,responseObject[@"data"]);
+        }else{
+            result(NO,responseObject[@"msg"]);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 
 #pragma mark -验证支付密码
 - (void)makeSurePassWordWithParameters:(NSDictionary *)para

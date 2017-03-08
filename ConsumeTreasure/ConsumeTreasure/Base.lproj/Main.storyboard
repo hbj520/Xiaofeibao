@@ -489,6 +489,9 @@
                                             <constraint firstAttribute="width" constant="36" id="Skc-E8-eAz"/>
                                         </constraints>
                                         <state key="normal" image="zfb_3"/>
+                                        <connections>
+                                            <action selector="zfbLoginBtn:" destination="A4f-ao-Lfo" eventType="touchUpInside" id="KLJ-Ds-IYT"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信登陆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uoe-RO-jjF">
                                         <rect key="frame" x="85" y="391" width="56" height="21"/>
