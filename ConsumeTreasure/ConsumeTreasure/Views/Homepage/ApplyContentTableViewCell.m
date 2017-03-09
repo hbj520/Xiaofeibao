@@ -26,4 +26,11 @@
     }
 }
 
+- (IBAction)position:(id)sender {
+    if (self.positionBlock) {
+        self.positionBlock();
+    }
+}
+
+
 @end

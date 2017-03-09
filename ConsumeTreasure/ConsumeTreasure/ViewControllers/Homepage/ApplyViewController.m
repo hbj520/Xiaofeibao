@@ -7,6 +7,7 @@
 //
 
 #import "ApplyViewController.h"
+#import "MapLocateViewController.h"
 
 #import "ApplyContentTableViewCell.h"
 #import "IdentiPhotoTableViewCell.h"
@@ -32,16 +33,19 @@
     NSString *_nameStr;
     NSString *_identiId;
     NSString *_storeName;
-    NSString *_inviteCode;
+    //NSString *_inviteCode;
     
-    
+    NSString *_phoneStr;//手机号
+    NSString *_storeAddr;//地址
+    NSString *latituedeStr;//纬度
+    NSString *longtitudeStr;//经度
     
     
     //保存照片
     NSString *_upId;
     NSString *_downId;
     NSString *_licenseId;
-    NSString *_otherId;
+    NSString *_storeId;
     
     
 }
@@ -70,7 +74,7 @@
     _upId = @"";
     _downId = @"";
     _licenseId = @"";
-    _otherId = @"";
+    _storeId = @"";
     
     // Do any additional setup after loading the view.
     
@@ -153,10 +157,19 @@
             [self upPikerView];
         };
         
+        applyCell.positionBlock =^{
+          [self performSegueWithIdentifier:@"getPositionSegue" sender:nil];
+            
+        };
+        
         _nameStr = applyCell.trueName.text;
         _storeName = applyCell.storeName.text;
-        _inviteCode = applyCell.inviteCodeText.text;
+        //_inviteCode = applyCell.inviteCodeText.text;
         _identiId = applyCell.identiNum.text;
+        
+        _phoneStr = applyCell.phoneText.text;
+        _storeAddr = applyCell.storeAddrText.text;
+        
         
         
         applyCell.selectionStyle = 0;
@@ -204,7 +217,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 221;
+        return 308;
     }else if (indexPath.section == 1){
         return 138;
     }else{
@@ -230,11 +243,15 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
    
-     __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     if (buttonIndex == 0) {
         [self openCamera];
-  
-    }else{
+    }
+    else if(buttonIndex == 2){
+        
+    }
+    
+    else{
         [self openPhoto];
 
     }
@@ -304,7 +321,7 @@
             
             [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
                 if (success) {
-                    _otherId = (NSString*)object;
+                    _storeId = (NSString*)object;
                     [cell.otherBtn setImage:img forState:0];
                 }else{
                     if ([msg isEqualToString:@"-1"]) {
@@ -329,36 +346,46 @@
     
     ApplyContentTableViewCell *applyCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
-    if ([applyCell.rangeText.text isEqualToString:@""]||[applyCell.storeName.text isEqualToString:@""]||[applyCell.trueName.text isEqualToString:@""]||[applyCell.identiNum.text isEqualToString:@""]) {
+    if ([applyCell.rangeText.text isEqualToString:@""]||[applyCell.storeName.text isEqualToString:@""]||[applyCell.trueName.text isEqualToString:@""]||[applyCell.identiNum.text isEqualToString:@""]||[applyCell.phoneText.text isEqualToString:@""]||[applyCell.storeAddrText.text isEqualToString:@""]) {
         showAlert(@"必填项不可为空");
     }else if ([CheckID verifyIDCardNumber:applyCell.identiNum.text] == NO){
         showAlert(@"请输入正确格式的身份证号");
     }else if ([CheckID deptNameInputShouldChineseWithStr: applyCell.trueName.text] == NO){
         showAlert(@"姓名请输入汉字");
-    }else if ([_licenseId isEqualToString:@""]||[_upId isEqualToString:@""]||[_downId isEqualToString:@""]){
+    }
+    /*
+    else if ([_storeId isEqualToString:@""]){
         showAlert(@"请上传必须上传照片项");
-    }else{
+    }
+    */
+    else{
         
-        NSDictionary *para = @{
-                               @"type":@"1",
+        NSDictionary *para = @{ 
                                @"member":@{
                                        @"name":applyCell.trueName.text,
                                        @"idcardno":applyCell.identiNum.text,
-                                       @"invitecode":_inviteCode
+                                       @"phone":applyCell.phoneText.text
+                                      
+                                       //@"invitecode":_inviteCode
                                        },
                                @"shop":@{
                                        @"shopname":applyCell.storeName.text,
                                        @"categoryid":cateId,
                                        @"businessimg":_licenseId,
-                                       @"licenseimg":_otherId,
+                                       @"doorimg":_storeId,
                                        @"idcardnofrontimg":_upId,
-                                       @"idcardnobackimg":_downId
+                                       @"idcardnobackimg":_downId,
+                                       @"addr":applyCell.storeAddrText.text,
+                                       @"latitude":latituedeStr,
+                                       @"longitude":longtitudeStr
+                                       
+                                       
                                        }
                                };
         
         [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
             if (sucess) {
-                [self showHint:@"上传成功"];
+                [self showHint:msg];
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [self logout];
@@ -384,10 +411,20 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"getPositionSegue"]){
+        MapLocateViewController *locaVC = segue.destinationViewController;
+        locaVC.jwdBlock =^(NSArray *locaArray){
+            longtitudeStr = locaArray[1];
+            latituedeStr = locaArray[0];
+            
+        };
+    }
 }
-*/
+
 
 @end
