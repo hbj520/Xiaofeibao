@@ -38,7 +38,16 @@
     self.confirmPhoneNumBtn.layer.cornerRadius = 6;
     self.confirmPhoneNumBtn.layer.masksToBounds = YES;
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -126,11 +135,7 @@
     [self.view endEditing:YES];
 }
 - (void)loginSucessAct{
-    //@{@"isTech":[NSNumber numberWithBool:self.isTeacher]}
-    // NSNotification * notification = [NSNotification notificationWithName:@"refreshView" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil userInfo:@{@"isTech":[NSNumber numberWithBool:self.isTeacher],@"refresh":@"yes"}];
-    [self dismissModalViewControllerAnimated:YES];
-    [self.tabBarController setSelectedIndex:3];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     

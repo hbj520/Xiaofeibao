@@ -227,15 +227,19 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-     [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-         //linkzfbNotice
-         if (self.isLinkVc) {
-              [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
-         }else{
-                      [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
-         }
-
-     }];
+    if (self.iszfbLink) {
+        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+            //linkzfbNotice
+            
+            if (self.isLinkVc) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
+            }
+            
+        }];
+    }
+   
     if ([url.host isEqualToString:@"safepay"]) {
         //跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
