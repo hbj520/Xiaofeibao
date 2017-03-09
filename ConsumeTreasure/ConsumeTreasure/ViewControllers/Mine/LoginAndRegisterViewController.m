@@ -97,8 +97,9 @@
 }
 */
 #pragma mark - PrivateMethod
-- (void)recieveZfbNoticeAct:(NSDictionary *)userInfo{
-    
+- (void)recieveZfbNoticeAct:(NSNotification *)userInfo{
+    NSString *auth_code = userInfo.userInfo[@"auth_code"];
+    [self thirdLoginWithPlatform:@"zfb" openId:auth_code nickName:@"" iconUrl:@""];
 }
 - (void)addAgreeBtn{
   circleSelectBtn =  [self.registerView viewWithTag:16];
@@ -408,10 +409,10 @@
 //    // 将签名成功字符串格式化为订单字符串,请严格按照该格式
 //    if (signedString.length > 0) {
 //        authInfoStr = [NSString stringWithFormat:@"%@&sign=%@", authInfoStr, signedString];
+     appdelegate.isLinkVc = NO;
        [[MyAPI sharedAPI] getZfbInfoWithResult:^(BOOL sucess, NSString *msg) {
            if (sucess) {
                [[AlipaySDK defaultService] auth_V2WithInfo:msg fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
-                   
                    
                }];
            }else{

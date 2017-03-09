@@ -12,6 +12,8 @@
 #import "KGModal.h"
 #import "ChangeHeadView.h"
 #import "CHSocialService.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "AppDelegate.h"
 @interface UserInfoTableViewController ()<UIImagePickerControllerDelegate>
 {
     UIImagePickerController * _picker;                              //照片选择控制器
@@ -38,8 +40,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
  //   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //添加通知
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"returnnick" object:nil];
+  //  添加通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotice:) name:@"linkzfbNotice" object:nil];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -50,7 +52,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"linkzfbNotice" object:nil];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -93,6 +97,11 @@
                 [self LinkThirdPlatformIsWX:YES];
             }
         }else if (indexPath.row == 2){
+            if ([self.zfbLinkLabel.text isEqualToString:@"已绑定"]) {
+                [self releaseThirdPlatformLinkIsWX:NO];
+            }else{
+                [self LinkThirdPlatformIsWX:NO];
+            }
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0) {
@@ -113,6 +122,13 @@
     
 }
 #pragma mark -PrivateMethod
+- (void)recieveNotice:(NSNotification *)noti{
+     NSString *auth_code = noti.userInfo[@"auth_code"];
+    [self thirdLoginWithPlatform:@"zfb"
+                          openId:auth_code
+                        nickName:@""
+                         iconUrl:@""];
+}
 //解绑
 - (void)releaseThirdPlatformLinkIsWX:(BOOL)isWX{
     if (isWX) {//解绑微信
@@ -136,7 +152,19 @@
              
          }];
     }else{//绑定支付宝
-        
+        ApplicationDelegate.isLinkVc = YES;
+        [[MyAPI sharedAPI] getZfbInfoWithResult:^(BOOL sucess, NSString *msg) {
+            if (sucess) {
+                [[AlipaySDK defaultService] auth_V2WithInfo:msg fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
+                    
+                    
+                }];
+            }else{
+                [self showHint:msg];
+            }
+        } errorResult:^(NSError *enginerError) {
+            [self showHint:@"支付宝参数请求出错"];
+        }];
     }
 }
 - (void)thirdLoginWithPlatform:(NSString *)platform
@@ -285,10 +313,22 @@
                                                                            }
                                                                            [self showHint:msg];
                                                                        } errorResult:^(NSError *enginerError) {
-                                                                           
+                                                                           [self showHint:@"解绑失败"];
                                                                        }];
             }else if ([alertView.message isEqualToString:@"是否解除支付宝绑定"]){//解除支付宝绑定
-                
+                NSString *phone = [[XFBConfig Instance] getphoneNum];
+                [[MyAPI sharedAPI] releaseThirdPlatformWithParameters:@{
+                                                                        @"type":@"zfb",
+                                                                        @"phone":[[XFBConfig Instance] getphoneNum]
+                                                                        }result:^(BOOL sucess, NSString *msg) {
+                                                                            if (sucess) {
+                                                                                [[XFBConfig Instance] saveWeixin:@""];
+                                                                                self.wxLinkLabel.text = @"未绑定";
+                                                                            }
+                                                                            [self showHint:msg];
+                                                                        } errorResult:^(NSError *enginerError) {
+                                                                            [self showHint:@"解绑失败"];
+                                                                        }];
             }
         }
             break;

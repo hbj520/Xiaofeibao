@@ -1665,7 +1665,7 @@
         }
     };
     [self.manager POST:@"sms/sendBindingMessage" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *status = responseObject[@"status"];
+        NSString *status = responseObject[@"code"];
         NSString *info = responseObject[@"info"];
         if ([status isEqualToString:@"1"]) {
             result(YES,info);

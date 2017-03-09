@@ -22,6 +22,7 @@
 @property (strong,nonatomic) NSString *longitude;//维度
 @property (strong,nonatomic) NSString *cityCode;//维度
 @property (assign,nonatomic) BOOL isOne;
+@property (assign,nonatomic) BOOL isLinkVc;//是否在解绑页面
 - (void)changeToMain;
 @end
 
