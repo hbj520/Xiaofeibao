@@ -1546,6 +1546,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3uK-1g-zdS" id="7OI-CX-Xpa"/>
+                        <segue destination="h3W-LN-Hlq" kind="push" identifier="getPositionSegue" id="eJT-ye-vUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKt-AK-7Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2424,7 +2425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4c-D7-KVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="4451"/>
+            <point key="canvasLocation" x="978" y="4451"/>
         </scene>
         <!--店铺管理-->
         <scene sceneID="6H0-Q8-En8">
@@ -4824,11 +4825,12 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0yz-DO-JMd"/>
+        <segue reference="ep5-xb-kd2"/>
         <segue reference="Cge-eV-Uzy"/>
         <segue reference="tMY-yY-dhf"/>
         <segue reference="6Ku-Vt-ebf"/>
-        <segue reference="ep5-xb-kd2"/>
         <segue reference="SjJ-0Z-ase"/>
+        <segue reference="0yz-DO-JMd"/>
+        <segue reference="eJT-ye-vUc"/>
     </inferredMetricsTieBreakers>
 </document>

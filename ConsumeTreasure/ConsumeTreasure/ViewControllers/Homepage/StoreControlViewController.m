@@ -436,8 +436,7 @@
     
     
     NSDictionary *para = @{
-                           @"type":@"2",
-                           @"member":@{
+                            @"member":@{
                                    @"name":realName,
                                    @"idcardno":IDNum
                                    },
