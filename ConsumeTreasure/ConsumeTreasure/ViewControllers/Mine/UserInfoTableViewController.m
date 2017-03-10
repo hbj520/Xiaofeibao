@@ -128,10 +128,12 @@
 #pragma mark -PrivateMethod
 - (void)recieveNotice:(NSNotification *)noti{
      NSString *auth_code = noti.userInfo[@"auth_code"];
-    [self thirdLoginWithPlatform:@"zfb"
-                          openId:auth_code
-                        nickName:@""
-                         iconUrl:@""];
+    if (auth_code) {
+        [self thirdLoginWithPlatform:@"zfb"
+                              openId:auth_code
+                            nickName:@""
+                             iconUrl:@""];
+    }
 }
 //解绑
 - (void)releaseThirdPlatformLinkIsWX:(BOOL)isWX{
@@ -143,6 +145,7 @@
 }
 //绑定
 - (void)LinkThirdPlatformIsWX:(BOOL)isWX{
+    ApplicationDelegate.isLinkVc = YES;
     if (isWX) {//绑定微信
         ApplicationDelegate.iszfbLink = NO;
         [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
@@ -158,7 +161,6 @@
          }];
     }else{//绑定支付宝
         ApplicationDelegate.iszfbLink = YES;
-        ApplicationDelegate.isLinkVc = YES;
         [[MyAPI sharedAPI] getZfbInfoWithResult:^(BOOL sucess, NSString *msg) {
             if (sucess) {
                 [[AlipaySDK defaultService] auth_V2WithInfo:msg fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {

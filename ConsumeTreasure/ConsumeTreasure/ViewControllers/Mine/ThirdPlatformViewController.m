@@ -9,7 +9,7 @@
 #import "ThirdPlatformViewController.h"
 #import "HexColor.h"
 #import "UIViewController+HUD.h"
-
+#import "AppDelegate.h"
 
 @interface ThirdPlatformViewController ()
 {
@@ -97,7 +97,7 @@
                                                  nickName:nickName
                                                   resulet:^(BOOL sucess, NSString *msg) {
                                                       if (sucess) {
-                                                          [self showHint:@"登录成功!"];
+                                                          [self showHint:@"绑定成功!"];
                                                           [self loginSucessAct];
                                                       }else{
                                                           [self showHint:msg];
@@ -135,7 +135,11 @@
     [self.view endEditing:YES];
 }
 - (void)loginSucessAct{
-    [self.navigationController popViewControllerAnimated:YES];
+    if (ApplicationDelegate.isLinkVc) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
