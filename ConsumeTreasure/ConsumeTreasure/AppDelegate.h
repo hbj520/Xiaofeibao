@@ -23,6 +23,7 @@
 @property (strong,nonatomic) NSString *cityCode;//维度
 @property (assign,nonatomic) BOOL isOne;
 @property (assign,nonatomic) BOOL isLinkVc;//是否在解绑页面
+@property (assign,nonatomic) BOOL iszfbLink;//是否是支付宝解绑绑定
 - (void)changeToMain;
 @end
 

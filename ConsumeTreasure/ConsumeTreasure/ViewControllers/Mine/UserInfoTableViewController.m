@@ -14,6 +14,7 @@
 #import "CHSocialService.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "AppDelegate.h"
+#import "ThirdPlatformViewController.h"
 @interface UserInfoTableViewController ()<UIImagePickerControllerDelegate>
 {
     UIImagePickerController * _picker;                              //照片选择控制器
@@ -118,16 +119,21 @@
         ModfyNickNameViewController *modifyVC = (ModfyNickNameViewController *)segue.destinationViewController;
         modifyVC.title = senderArray[0];
         modifyVC.textfieldContent = senderArray[1];
-    }
-    
+    }else  if ([segue.identifier isEqualToString:@"thirdPlatformLinkSegue"]) {
+            ThirdPlatformViewController *thirdPlatformVC = segue.destinationViewController;
+            thirdPlatformVC.thirdPlatformData = (NSArray *)sender;
+        }
+
 }
 #pragma mark -PrivateMethod
 - (void)recieveNotice:(NSNotification *)noti{
      NSString *auth_code = noti.userInfo[@"auth_code"];
-    [self thirdLoginWithPlatform:@"zfb"
-                          openId:auth_code
-                        nickName:@""
-                         iconUrl:@""];
+    if (auth_code) {
+        [self thirdLoginWithPlatform:@"zfb"
+                              openId:auth_code
+                            nickName:@""
+                             iconUrl:@""];
+    }
 }
 //解绑
 - (void)releaseThirdPlatformLinkIsWX:(BOOL)isWX{
@@ -139,7 +145,9 @@
 }
 //绑定
 - (void)LinkThirdPlatformIsWX:(BOOL)isWX{
+    ApplicationDelegate.isLinkVc = YES;
     if (isWX) {//绑定微信
+        ApplicationDelegate.iszfbLink = NO;
         [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
          (CHSocialResponseData *response) {
              if (response.openId) {
@@ -152,7 +160,7 @@
              
          }];
     }else{//绑定支付宝
-        ApplicationDelegate.isLinkVc = YES;
+        ApplicationDelegate.iszfbLink = YES;
         [[MyAPI sharedAPI] getZfbInfoWithResult:^(BOOL sucess, NSString *msg) {
             if (sucess) {
                 [[AlipaySDK defaultService] auth_V2WithInfo:msg fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
@@ -178,7 +186,8 @@
                                                     if (success) {
                                                         //已经绑定的直接登录
                                                         [self showHint:@"绑定成功!"];
-                                                        [self changeTohom];
+                                                        [self createUI];
+                                                       // [self changeTohom];
                                                     }else{
                                                         //未绑定的进行账号绑定
                                                         [self performSegueWithIdentifier:@"thirdPlatformLinkSegue" sender:@[platform,openId,nickName,iconUrl]];
@@ -322,8 +331,8 @@
                                                                         @"phone":[[XFBConfig Instance] getphoneNum]
                                                                         }result:^(BOOL sucess, NSString *msg) {
                                                                             if (sucess) {
-                                                                                [[XFBConfig Instance] saveWeixin:@""];
-                                                                                self.wxLinkLabel.text = @"未绑定";
+                                                                                [[XFBConfig Instance] saveZFB:@""];
+                                                                                self.zfbLinkLabel.text = @"未绑定";
                                                                             }
                                                                             [self showHint:msg];
                                                                         } errorResult:^(NSError *enginerError) {
@@ -334,6 +343,7 @@
             break;
     }
 }
+
 //- (void)recieveNotice:(NSNotification *)sender{
 //    NSDictionary *noti = sender.userInfo;
 //    NSArray *keys = [noti allKeys];
@@ -407,7 +417,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

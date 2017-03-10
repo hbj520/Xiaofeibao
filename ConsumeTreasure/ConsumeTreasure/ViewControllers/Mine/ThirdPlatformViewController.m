@@ -9,7 +9,7 @@
 #import "ThirdPlatformViewController.h"
 #import "HexColor.h"
 #import "UIViewController+HUD.h"
-
+#import "AppDelegate.h"
 
 @interface ThirdPlatformViewController ()
 {
@@ -38,7 +38,16 @@
     self.confirmPhoneNumBtn.layer.cornerRadius = 6;
     self.confirmPhoneNumBtn.layer.masksToBounds = YES;
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    self.tabBarController.tabBar.hidden = YES;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -88,7 +97,7 @@
                                                  nickName:nickName
                                                   resulet:^(BOOL sucess, NSString *msg) {
                                                       if (sucess) {
-                                                          [self showHint:@"登录成功!"];
+                                                          [self showHint:@"绑定成功!"];
                                                           [self loginSucessAct];
                                                       }else{
                                                           [self showHint:msg];
@@ -109,10 +118,10 @@
     [self setTimeSchedu];
     [[MyAPI sharedAPI] ThirdPlatformVerifyWithParameters:self.phoneNumTextfield.text result:^(BOOL sucess, NSString *msg) {
         if(sucess){
-            [self showHint:@"验证码发送成功，请注意查看短信"];
+            [self showHint:msg];
         }else{
             time = 0;
-            [self showHint:@"验证码发送失败"];
+            [self showHint:msg];
         }
     } errorResult:^(NSError *enginerError) {
         [self showHint:@"验证码发送出错"];
@@ -126,11 +135,11 @@
     [self.view endEditing:YES];
 }
 - (void)loginSucessAct{
-    //@{@"isTech":[NSNumber numberWithBool:self.isTeacher]}
-    // NSNotification * notification = [NSNotification notificationWithName:@"refreshView" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil userInfo:@{@"isTech":[NSNumber numberWithBool:self.isTeacher],@"refresh":@"yes"}];
-    [self dismissModalViewControllerAnimated:YES];
-    [self.tabBarController setSelectedIndex:3];
+    if (ApplicationDelegate.isLinkVc) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     

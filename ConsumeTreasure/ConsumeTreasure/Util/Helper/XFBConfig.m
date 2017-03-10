@@ -50,8 +50,8 @@ static XFBConfig * instance = nil;
     [settings removeObjectForKey:@"username"];
     [settings setObject:username forKey:@"username"];
     
-    [settings removeObjectForKey:@"phonenum"];
-    [settings setObject:PhoneNum forKey:@"phonenum"];
+    [settings removeObjectForKey:@"phone"];
+    [settings setObject:PhoneNum forKey:@"phone"];
     
     [settings removeObjectForKey:@"token"];
     [settings setObject:token forKey:@"token"];
@@ -212,8 +212,8 @@ static XFBConfig * instance = nil;
 }
 - (void)savePhoneNum:(NSString *)phoneNum{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-    [settings removeObjectForKey:@"phonenum"];
-    [settings setObject:phoneNum forKey:@"phonenum"];
+    [settings removeObjectForKey:@"phone"];
+    [settings setObject:phoneNum forKey:@"phone"];
     [settings synchronize];
 }
 - (void)saveCityCode:(NSString *)cityCode{
@@ -295,7 +295,7 @@ static XFBConfig * instance = nil;
 
 - (NSString *)getphoneNum{
     NSUserDefaults * settings =[NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"phonenum"];
+    return [settings stringForKey:@"phone"];
 }
 
 - (NSString*)getUserName
@@ -364,7 +364,7 @@ static XFBConfig * instance = nil;
 - (NSString *)getUserPhoneNum
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
-    return [settings stringForKey:@"phonenum"];
+    return [settings stringForKey:@"phone"];
 }
 - (NSString *)getIcon
 {

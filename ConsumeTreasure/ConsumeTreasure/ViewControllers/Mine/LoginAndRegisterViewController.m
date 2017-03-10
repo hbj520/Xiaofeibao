@@ -305,6 +305,7 @@
 
 
 - (IBAction)wxLogin:(id)sender {
+    ApplicationDelegate.iszfbLink = NO;
     [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
      (CHSocialResponseData *response) {
          if (response.openId) {
@@ -390,7 +391,7 @@
 //    }
     
     //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
-    NSString *appScheme = @"AliJustPay";
+//    NSString *appScheme = @"AliJustPay";
     
     // 将授权信息拼接成字符串
 //    NSString *authInfoStr = [authInfo description];
@@ -409,7 +410,8 @@
 //    // 将签名成功字符串格式化为订单字符串,请严格按照该格式
 //    if (signedString.length > 0) {
 //        authInfoStr = [NSString stringWithFormat:@"%@&sign=%@", authInfoStr, signedString];
-     appdelegate.isLinkVc = NO;
+     ApplicationDelegate.isLinkVc = NO;
+    ApplicationDelegate.iszfbLink = YES;
        [[MyAPI sharedAPI] getZfbInfoWithResult:^(BOOL sucess, NSString *msg) {
            if (sucess) {
                [[AlipaySDK defaultService] auth_V2WithInfo:msg fromScheme:@"AliJustPay" callback:^(NSDictionary *resultDic) {
@@ -445,6 +447,7 @@
                                                     
                                                 }];
 }
+#pragma mark - PerformSegueDelegate
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"thirdplatformSegue"]) {
         ThirdPlatformViewController *thirdPlatformVC = segue.destinationViewController;

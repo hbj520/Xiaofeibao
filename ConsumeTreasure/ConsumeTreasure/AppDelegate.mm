@@ -16,7 +16,8 @@
 #import<AlipaySDK/AlipaySDK.h>
 
 #import <AFNetworking.h>
-
+#import <CrashMaster/CrashMaster.h>
+#import <CrashMaster/CrashMasterConfig.h>
 // 极光推送
 #import "JPUSHService.h"
 #import <AdSupport/AdSupport.h>
@@ -114,7 +115,8 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
         }
     }];
 
-    
+    //测试
+    [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
     return YES;
    
 }
@@ -227,15 +229,19 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-     [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-         //linkzfbNotice
-         if (self.isLinkVc) {
-              [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
-         }else{
-                      [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
-         }
-
-     }];
+    if (self.iszfbLink) {
+        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+            //linkzfbNotice
+            
+            if (self.isLinkVc) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
+            }
+            
+        }];
+    }
+   
     if ([url.host isEqualToString:@"safepay"]) {
         //跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
