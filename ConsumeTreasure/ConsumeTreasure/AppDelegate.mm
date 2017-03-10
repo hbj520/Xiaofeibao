@@ -16,7 +16,8 @@
 #import<AlipaySDK/AlipaySDK.h>
 
 #import <AFNetworking.h>
-
+#import <CrashMaster/CrashMaster.h>
+#import <CrashMaster/CrashMasterConfig.h>
 // 极光推送
 #import "JPUSHService.h"
 #import <AdSupport/AdSupport.h>
@@ -114,7 +115,8 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
         }
     }];
 
-    
+    //测试
+    [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
     return YES;
    
 }

@@ -53,6 +53,9 @@
 		AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
+		AB6142151E7295B600B7C446 /* CrashMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6142141E7295B600B7C446 /* CrashMaster.framework */; };
+		AB6142171E72995B00B7C446 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6142161E72995B00B7C446 /* ImageIO.framework */; };
+		AB6142191E72997500B7C446 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6142181E72997500B7C446 /* AudioToolbox.framework */; };
 		AB61EC9D1E153B580053650A /* StoreConLabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61EC9B1E153B580053650A /* StoreConLabTableViewCell.m */; };
 		AB61EC9E1E153B580053650A /* StoreConLabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB61EC9C1E153B580053650A /* StoreConLabTableViewCell.xib */; };
 		AB678B351DF650D200902C52 /* CollectShopListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB678B341DF650D200902C52 /* CollectShopListModel.m */; };
@@ -445,6 +448,9 @@
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
 		AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
+		AB6142141E7295B600B7C446 /* CrashMaster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashMaster.framework; sourceTree = "<group>"; };
+		AB6142161E72995B00B7C446 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AB6142181E72997500B7C446 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AB61EC9A1E153B580053650A /* StoreConLabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreConLabTableViewCell.h; sourceTree = "<group>"; };
 		AB61EC9B1E153B580053650A /* StoreConLabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreConLabTableViewCell.m; sourceTree = "<group>"; };
 		AB61EC9C1E153B580053650A /* StoreConLabTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreConLabTableViewCell.xib; sourceTree = "<group>"; };
@@ -1023,11 +1029,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6142191E72997500B7C446 /* AudioToolbox.framework in Frameworks */,
+				AB6142171E72995B00B7C446 /* ImageIO.framework in Frameworks */,
 				D15B65481E67BF4300BAB25D /* AdSupport.framework in Frameworks */,
 				D15B65461E67ABAC00BAB25D /* libresolv.tbd in Frameworks */,
 				D15B65441E67AB9700BAB25D /* UserNotifications.framework in Frameworks */,
 				D15B65421E67AB5B00BAB25D /* CoreFoundation.framework in Frameworks */,
 				D1E130B61E557C3B006DF83E /* libiconv.tbd in Frameworks */,
+				AB6142151E7295B600B7C446 /* CrashMaster.framework in Frameworks */,
 				D15B3B091DDC0F0D009122FE /* CoreMotion.framework in Frameworks */,
 				D15B3B071DDC0EF0009122FE /* Foundation.framework in Frameworks */,
 				D15B3B051DDC0EE5009122FE /* UIKit.framework in Frameworks */,
@@ -1084,6 +1093,8 @@
 		578EB4AF2E4319123E151ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB6142181E72997500B7C446 /* AudioToolbox.framework */,
+				AB6142161E72995B00B7C446 /* ImageIO.framework */,
 				D15B65471E67BF4300BAB25D /* AdSupport.framework */,
 				D15B65451E67ABAC00BAB25D /* libresolv.tbd */,
 				D15B65431E67AB9700BAB25D /* UserNotifications.framework */,
@@ -1657,6 +1668,7 @@
 		ABF4E26D1D9B5E57006AD23C = {
 			isa = PBXGroup;
 			children = (
+				AB6142141E7295B600B7C446 /* CrashMaster.framework */,
 				AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */,
 				ABF4E2781D9B5E58006AD23C /* ConsumeTreasure */,
 				ABF4E2921D9B5E58006AD23C /* ConsumeTreasureTests */,
@@ -2281,7 +2293,7 @@
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3S4HP5TK72;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2886,13 +2898,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ConsumeTreasure",
 					"$(PROJECT_DIR)/ConsumeTreasure/AliPay",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ConsumeTreasure/Xiaofei-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3014,8 +3027,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "802f8e68-5c3d-4b19-9fca-1332368162a6";
-				PROVISIONING_PROFILE_SPECIFIER = "XC iOS Ad Hoc: com.youyou.xiaofeibao";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3027,12 +3040,13 @@
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ConsumeTreasure",
 					"$(PROJECT_DIR)/ConsumeTreasure/AliPay",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ConsumeTreasure/Xiaofei-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
