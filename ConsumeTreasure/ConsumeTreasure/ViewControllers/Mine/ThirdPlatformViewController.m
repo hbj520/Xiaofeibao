@@ -118,10 +118,10 @@
     [self setTimeSchedu];
     [[MyAPI sharedAPI] ThirdPlatformVerifyWithParameters:self.phoneNumTextfield.text result:^(BOOL sucess, NSString *msg) {
         if(sucess){
-            [self showHint:@"验证码发送成功，请注意查看短信"];
+            [self showHint:msg];
         }else{
             time = 0;
-            [self showHint:@"验证码发送失败"];
+            [self showHint:msg];
         }
     } errorResult:^(NSError *enginerError) {
         [self showHint:@"验证码发送出错"];
