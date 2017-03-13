@@ -88,12 +88,13 @@
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];
             NSString *qrcode = userDic[@"qrcord"];
-            
+            NSString *memId = userDic[@"userId"];
             NSString *phone = userDic[@"phone"];
             NSString *app_version = userDic[@"app_version"];
             NSString *isNew = @"";
             NSString *wx = userDic[@"wxopenid"];
             NSString *zfb = userDic[@"zfbuserid"];
+            [[XFBConfig Instance] saveMemId:memId];
             [[XFBConfig Instance] saveWeixin:wx];
             [[XFBConfig Instance] saveZFB:zfb];
             if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
@@ -108,7 +109,7 @@
                                      balance:goldNum
                                       qrCode:qrcode
                                        phone:phone];
-            result(YES,@"登陆成功",@[isNew]);
+            result(YES,@"登录成功",@[isNew]);
         }else{
             result(NO,responseObject[@"msg"],nil);
         }
@@ -1582,7 +1583,7 @@
                                          balance:goldNum
                                           qrCode:qrcode
                                            phone:phone];
-                result(YES,@"登陆成功",@[isNew]);
+                result(YES,@"登录成功",@[isNew]);
             }
 
         }
@@ -1600,7 +1601,7 @@
                                 errorResult:(ErrorBlock)errorResult{
     NSDictionary *parameters = @{
                                  @"tokenid": @"",
-                                 @"platform":@"",
+                                 @"platform":@"1",
                                  @"param": @{
                                      @"type":type,
                                      @"phone":phoneNum,
@@ -1643,7 +1644,7 @@
                                          balance:goldNum
                                           qrCode:qrcode
                                            phone:phone];
-                result(YES,@"登陆成功");
+                result(YES,@"登录成功");
             
         }else{
             result(NO,@"绑定失败");

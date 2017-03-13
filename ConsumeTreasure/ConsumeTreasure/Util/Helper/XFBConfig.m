@@ -249,6 +249,15 @@ static XFBConfig * instance = nil;
     [settings setObject:version forKey:@"version"];
     [settings synchronize];
 }
+
+- (void)saveMemId:(NSString*)memId{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"memid"];
+    [settings setObject:memId forKey:@"memid"];
+    [settings synchronize];
+}
+
+
 //是否绑定微信
 - (void)saveWeixin:(NSString *)wx{
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
@@ -262,6 +271,11 @@ static XFBConfig * instance = nil;
     [settings removeObjectForKey:@"zfb"];
     [settings setObject:zfb forKey:@"zfb"];
     [settings synchronize];
+}
+
+- (NSString *)getmemId{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    return [settings stringForKey:@"memid"];
 }
 
 - (NSString *)getloginName{

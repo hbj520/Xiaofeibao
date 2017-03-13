@@ -221,7 +221,7 @@
                                                  }
                                                  
                                              } errorResult:^(NSError *enginerError) {
-                                                 [self showHint:@"登陆出错"];
+                                                 [self showHint:@"登录出错"];
                                              }];
     [self hideHud];
 }
@@ -438,7 +438,7 @@
                                                     
                                                     if (success) {
                                                         //已经绑定的直接登录
-                                                        [self showHint:@"登陆成功!"];
+                                                        [self showHint:@"登录成功!"];
                                                         [self changeTohom];
                                                     }else{
                                                         //未绑定的进行账号绑定
