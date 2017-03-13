@@ -360,7 +360,9 @@
  
     else{
         
-        NSDictionary *para = @{ 
+        NSDictionary *para = @{
+                               
+                               @"type":@"1",
                                @"member":@{
                                        @"name":applyCell.trueName.text,
                                        @"idcardno":applyCell.identiNum.text,
