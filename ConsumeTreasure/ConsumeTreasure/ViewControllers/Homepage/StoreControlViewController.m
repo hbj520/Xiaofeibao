@@ -434,8 +434,15 @@
     NSLog(@"保存数据");
     
     
+    if ([realName isEqualToString:@""]||[strAddr isEqualToString:@""]||[storePhone isEqualToString:@""]||[storeName isEqualToString:@""]||[doorImg isEqualToString:@""]) {
+        showAlert(@"商家姓名、手机号、店铺名称、店铺首图、地址不可为空");
+    }
+    
+    else{
     
     NSDictionary *para = @{
+                           
+                           @"type":@"2",
                             @"member":@{
                                    @"name":realName,
                                    @"idcardno":IDNum
@@ -468,7 +475,7 @@
     } errorResult:^(NSError *enginerError) {
         
     }];
-    
+    }
     
 }
 

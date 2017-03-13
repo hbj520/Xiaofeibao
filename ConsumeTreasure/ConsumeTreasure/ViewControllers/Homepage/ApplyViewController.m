@@ -353,14 +353,16 @@
     }else if ([CheckID deptNameInputShouldChineseWithStr: applyCell.trueName.text] == NO){
         showAlert(@"姓名请输入汉字");
     }
-    /*
+ 
     else if ([_storeId isEqualToString:@""]){
         showAlert(@"请上传必须上传照片项");
     }
-    */
+ 
     else{
         
-        NSDictionary *para = @{ 
+        NSDictionary *para = @{
+                               
+                               @"type":@"1",
                                @"member":@{
                                        @"name":applyCell.trueName.text,
                                        @"idcardno":applyCell.identiNum.text,

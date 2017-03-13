@@ -265,7 +265,7 @@
         }
         
     } errorResult:^(NSError *enginerError) {
-        [self showHint:@"下载出错"];
+       // [self showHint:@"下载出错"];
     }];
    
     //推荐
