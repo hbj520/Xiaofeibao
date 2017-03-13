@@ -99,7 +99,9 @@
 #pragma mark - PrivateMethod
 - (void)recieveZfbNoticeAct:(NSNotification *)userInfo{
     NSString *auth_code = userInfo.userInfo[@"auth_code"];
-    [self thirdLoginWithPlatform:@"zfb" openId:auth_code nickName:@"" iconUrl:@""];
+    if (auth_code) {
+        [self thirdLoginWithPlatform:@"zfb" openId:auth_code nickName:@"" iconUrl:@""];
+    }
 }
 - (void)addAgreeBtn{
   circleSelectBtn =  [self.registerView viewWithTag:16];
