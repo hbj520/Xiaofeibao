@@ -308,9 +308,9 @@
     ApplicationDelegate.iszfbLink = NO;
     [[CHSocialServiceCenter shareInstance]loginInAppliactionType:CHSocialWeChat controller:self completion:^
      (CHSocialResponseData *response) {
-         if (response.openId) {
+         if (response.unionId) {
              [self thirdLoginWithPlatform:@"wx"
-                                   openId:response.openId
+                                   openId:response.unionId
                                  nickName:response.userName
                                   iconUrl:response.iconURL];
             

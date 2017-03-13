@@ -152,7 +152,7 @@
          (CHSocialResponseData *response) {
              if (response.openId) {
                  [self thirdLoginWithPlatform:@"wx"
-                                       openId:response.openId
+                                       openId:response.unionId
                                      nickName:response.userName
                                       iconUrl:response.iconURL];
                  
