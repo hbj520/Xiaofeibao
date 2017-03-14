@@ -51,6 +51,24 @@
             self.manager.requestSerializer=[AFJSONRequestSerializer serializer];
         //    //如果报接受类型不一致请替换一致text/html或别的
             self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+//            [self.manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+//                switch (status) {
+//                    case AFNetworkReachabilityStatusUnknown:
+//                        NSLog(@"未知");
+//                        break;
+//                    case AFNetworkReachabilityStatusNotReachable:
+//                        NSLog(@"没有网络");
+//                        break;
+//                    case AFNetworkReachabilityStatusReachableViaWWAN:
+//                        NSLog(@"3G|4G");
+//                        break;
+//                    case AFNetworkReachabilityStatusReachableViaWiFi:
+//                        NSLog(@"WiFi");
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }];
 
     }
     return self;
@@ -61,6 +79,36 @@
     dispatch_once(&predicate, ^{
         sharedAPIInstance = [[self alloc] init];
     });
+    //1.创建网络状态监测管理者
+    AFNetworkReachabilityManager *manger = [AFNetworkReachabilityManager sharedManager];
+    //开启监听，记得开启，不然不走block
+    [manger startMonitoring];
+    //2.监听改变
+    [manger setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        /*
+         AFNetworkReachabilityStatusUnknown = -1,
+         AFNetworkReachabilityStatusNotReachable = 0,
+         AFNetworkReachabilityStatusReachableViaWWAN = 1,
+         AFNetworkReachabilityStatusReachableViaWiFi = 2,
+         */
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"netIsNotReachabel" object:nil];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"3G|4G");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WiFi");
+                break;
+            default:
+                break;
+        }
+    }];
+    [manger stopMonitoring];
     return sharedAPIInstance;
   
 }
