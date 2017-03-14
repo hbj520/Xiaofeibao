@@ -12,5 +12,5 @@
 @property (nonatomic,copy) NSString *shopName;
 @property (nonatomic,copy) NSString *memid;
 @property (nonatomic,copy) NSString *doorImg;
-@property (nonatomic,copy) NSString *addr2;
+@property (nonatomic,copy) NSString *addr;
 @end

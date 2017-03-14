@@ -1475,12 +1475,9 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *modelArray = [NSMutableArray array];
             NSError *error = nil;
-            NSDictionary *dataDic = responseObject[@"data"];
-            for (NSDictionary *dic in dataDic[@"collectionlst"]) {
-                NSLog(@"dic %@",dic);
-                CollectShopListModel *model = [[CollectShopListModel alloc] initWithDictionary:dic error:&error];
-                [modelArray addObject:model];
-            }
+            
+             modelArray = [CollectShopListModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"collectionlst"] error:&error];
+            
             result(YES,info,modelArray);
         }else{
             result(NO,info,nil);

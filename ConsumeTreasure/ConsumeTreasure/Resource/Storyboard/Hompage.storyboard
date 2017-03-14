@@ -118,7 +118,7 @@
                         <segue destination="Ool-Vj-ovs" kind="push" identifier="chooseLocationSegue" id="Sl8-bL-rZl"/>
                         <segue destination="drU-Dg-2Iw" kind="push" identifier="DaiLiSegue" id="clG-he-p8c"/>
                         <segue destination="sbx-V1-4xj" kind="push" identifier="AgencydesSegue" id="VuB-bj-KMZ"/>
-                        <segue destination="DPX-cv-vdW" kind="push" id="Yac-2Q-5yA"/>
+                        <segue destination="DPX-cv-vdW" kind="push" identifier="collectionSegue" id="Yac-2Q-5yA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,7 +284,7 @@
                         <barButtonItem key="leftBarButtonItem" image="whiteback" id="OWT-NQ-UBE">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="9xC-fh-fAo" id="mwb-c5-Dex"/>
+                                <action selector="back:" destination="DPX-cv-vdW" id="7po-3c-Vow"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
