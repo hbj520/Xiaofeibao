@@ -193,7 +193,7 @@
 }
 
 - (void)registerUserWithParameters:(NSDictionary *)para
-                            result:(StateBlock)result
+                            result:(ArrayBlock)result
                        errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
@@ -201,16 +201,53 @@
                               @"param":para
                               };
     [self.manager POST:@"userinfo/rigister" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
-            result(NO,@"-1");
+            result(NO,@"-1",nil);
             [self cancelAllOperation];
-
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
-            return result(YES,@"注册成功");
+            NSDictionary *userDic = responseObject[@"data"];
+            NSString *gold = userDic[@"all_money"];
+            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
+            NSString *loginName = userDic[@"loginName"];//用户登录名
+            NSString *token = userDic[@"token"];
+            NSString *imgurl = userDic[@"imgUrl"];
+            NSString *qrcode = userDic[@"qrcord"];
+            NSString *memId = userDic[@"userId"];
+            NSString *phone = userDic[@"phone"];
+            NSString *app_version = userDic[@"app_version"];
+            NSString *isNew = @"";
+            NSString *wx = userDic[@"wxopenid"];
+            NSString *zfb = userDic[@"zfbuserid"];
+            [[XFBConfig Instance] saveMemId:memId];
+            [[XFBConfig Instance] saveWeixin:wx];
+            [[XFBConfig Instance] saveZFB:zfb];
+            if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
+                isNew = @"0";
+            }else{
+                [[XFBConfig Instance] saveVersion:app_version];
+                isNew = @"1";
+            }
+            [[XFBConfig Instance] saveImgUrl:imgurl
+                                       token:token
+                                   loginName:loginName
+                                     balance:goldNum
+                                      qrCode:qrcode
+                                       phone:phone];
+            result(YES,@"登录成功",@[isNew]);
         }else{
-            return result(NO,info);
+            result(NO,responseObject[@"msg"],nil);
         }
+       // NSString *info = responseObject[@"msg"];
+        
+//        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+//            result(NO,@"-1");
+//            [self cancelAllOperation];
+//
+//        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+//            return result(YES,@"注册成功");
+//        }else{
+//            return result(NO,info);
+//        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         return errorResult(error);

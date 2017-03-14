@@ -1501,10 +1501,12 @@
                                     <action selector="postCodeBtn:" destination="68u-jb-Srp" eventType="touchUpInside" id="0J3-8O-on9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZW-fC-ro3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZW-fC-ro3">
                                 <rect key="frame" x="7" y="607" width="361" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97180406139999997" green="0.26881610659999999" blue="0.0060212486839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7kH-sH-0vM"/>
+                                </constraints>
                                 <state key="normal" title="手机号验证">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1512,9 +1514,11 @@
                                     <action selector="confirmPhoneNumBtn:" destination="68u-jb-Srp" eventType="touchUpInside" id="fDt-iS-jrY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="绑定手机号，让你的账号更安全" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrG-Ho-Cdh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定手机号，让你的账号更安全" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrG-Ho-Cdh">
                                 <rect key="frame" x="35" y="564" width="306" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="ia6-Ub-4UE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1551,20 +1555,28 @@
                             <constraint firstItem="IJK-Lk-Nal" firstAttribute="top" secondItem="e77-Mm-sQC" secondAttribute="bottom" constant="14" id="3IE-j9-TsI"/>
                             <constraint firstItem="FRg-m4-JQX" firstAttribute="centerX" secondItem="mgP-Gx-fdx" secondAttribute="centerX" id="3gd-Id-hdo"/>
                             <constraint firstAttribute="trailing" secondItem="IJK-Lk-Nal" secondAttribute="trailing" constant="7" id="5s5-fQ-wps"/>
+                            <constraint firstItem="nZW-fC-ro3" firstAttribute="top" secondItem="JrG-Ho-Cdh" secondAttribute="bottom" constant="26" id="6QX-m8-u4P"/>
                             <constraint firstItem="Okz-4y-FDA" firstAttribute="top" secondItem="ptD-dt-noH" secondAttribute="bottom" constant="11" id="7i1-UV-8Za"/>
                             <constraint firstItem="i5h-SY-sZI" firstAttribute="top" secondItem="IJK-Lk-Nal" secondAttribute="bottom" constant="10" id="AdS-iu-bhl"/>
+                            <constraint firstAttribute="trailing" secondItem="nZW-fC-ro3" secondAttribute="trailing" constant="7" id="CAQ-d0-hBv"/>
                             <constraint firstItem="FW7-U7-BUM" firstAttribute="top" secondItem="mgP-Gx-fdx" secondAttribute="top" constant="158" id="EED-JR-vvD"/>
                             <constraint firstAttribute="trailing" secondItem="U4h-GI-w8i" secondAttribute="trailing" constant="7" id="IIc-wl-LtL"/>
                             <constraint firstItem="FRg-m4-JQX" firstAttribute="top" secondItem="ptD-dt-noH" secondAttribute="bottom" constant="29" id="Jj0-qM-KfU"/>
+                            <constraint firstItem="nZW-fC-ro3" firstAttribute="leading" secondItem="mgP-Gx-fdx" secondAttribute="leading" constant="7" id="LbR-wh-TXs"/>
                             <constraint firstItem="Qya-WY-P5K" firstAttribute="leading" secondItem="mgP-Gx-fdx" secondAttribute="leading" constant="7" id="MPN-QL-qtX"/>
                             <constraint firstAttribute="trailing" secondItem="Qya-WY-P5K" secondAttribute="trailing" constant="7" id="NXA-BY-fTu"/>
+                            <constraint firstItem="JrG-Ho-Cdh" firstAttribute="centerX" secondItem="mgP-Gx-fdx" secondAttribute="centerX" id="OiV-6v-pA6"/>
                             <constraint firstItem="e77-Mm-sQC" firstAttribute="leading" secondItem="FW7-U7-BUM" secondAttribute="trailing" constant="12" id="WBE-1o-Ahy"/>
                             <constraint firstItem="bJd-ew-g50" firstAttribute="top" secondItem="mgP-Gx-fdx" secondAttribute="top" constant="158" id="bOg-NW-hG4"/>
                             <constraint firstItem="i5h-SY-sZI" firstAttribute="leading" secondItem="FW7-U7-BUM" secondAttribute="trailing" constant="12" id="bxm-g3-tPW"/>
+                            <constraint firstItem="nZW-fC-ro3" firstAttribute="centerX" secondItem="mgP-Gx-fdx" secondAttribute="centerX" id="csf-JK-cfA"/>
                             <constraint firstItem="waQ-dj-yrF" firstAttribute="top" secondItem="ptD-dt-noH" secondAttribute="bottom" id="ejX-WA-ViA"/>
                             <constraint firstItem="U4h-GI-w8i" firstAttribute="leading" secondItem="mgP-Gx-fdx" secondAttribute="leading" constant="7" id="es0-mo-Mns"/>
+                            <constraint firstAttribute="trailing" secondItem="JrG-Ho-Cdh" secondAttribute="trailing" constant="34" id="gFl-8l-Xa3"/>
                             <constraint firstItem="Qya-WY-P5K" firstAttribute="top" secondItem="waQ-dj-yrF" secondAttribute="bottom" constant="13" id="ga0-Hs-Lak"/>
                             <constraint firstAttribute="trailing" secondItem="bJd-ew-g50" secondAttribute="trailing" constant="6" id="gn1-KU-uLg"/>
+                            <constraint firstItem="JrG-Ho-Cdh" firstAttribute="leading" secondItem="mgP-Gx-fdx" secondAttribute="leading" constant="35" id="hG2-Co-Tqp"/>
+                            <constraint firstItem="syb-Bc-1YN" firstAttribute="top" secondItem="nZW-fC-ro3" secondAttribute="bottom" constant="20" id="hcM-bj-Kmh"/>
                             <constraint firstItem="waQ-dj-yrF" firstAttribute="leading" secondItem="mgP-Gx-fdx" secondAttribute="leading" id="jyK-ab-EEW"/>
                             <constraint firstAttribute="trailing" secondItem="waQ-dj-yrF" secondAttribute="trailing" id="kzE-GS-j3C"/>
                             <constraint firstItem="U4h-GI-w8i" firstAttribute="top" secondItem="mjL-Xm-5n5" secondAttribute="bottom" constant="13" id="mFI-VN-L6j"/>

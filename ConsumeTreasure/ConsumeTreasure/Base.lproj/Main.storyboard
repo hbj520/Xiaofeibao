@@ -999,10 +999,12 @@
                                     <action selector="postCodeBtn:" destination="bXd-5d-3kr" eventType="touchUpInside" id="YN6-fN-25W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIQ-Ux-YqW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIQ-Ux-YqW">
                                 <rect key="frame" x="7" y="607" width="361" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97180406139999997" green="0.26881610659999999" blue="0.0060212486839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Zby-dv-cwD"/>
+                                </constraints>
                                 <state key="normal" title="手机号验证">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1010,9 +1012,11 @@
                                     <action selector="confirmPhoneNumBtn:" destination="bXd-5d-3kr" eventType="touchUpInside" id="qeo-1A-mXk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="绑定手机号，让你的账号更安全" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHY-Le-mpn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定手机号，让你的账号更安全" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHY-Le-mpn">
                                 <rect key="frame" x="35" y="564" width="306" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Dfu-Iw-kRV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1056,20 +1060,28 @@
                             <constraint firstAttribute="trailing" secondItem="uAc-ko-5eQ" secondAttribute="trailing" constant="7" id="MV5-2M-Ds4"/>
                             <constraint firstItem="Re8-on-80P" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" constant="7" id="Mav-ug-GWC"/>
                             <constraint firstItem="kOO-jx-nsy" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" id="NJd-MK-LG7"/>
+                            <constraint firstItem="bmd-hU-5cD" firstAttribute="top" secondItem="kIQ-Ux-YqW" secondAttribute="bottom" constant="20" id="Qlk-Pe-I0y"/>
+                            <constraint firstItem="fHY-Le-mpn" firstAttribute="centerX" secondItem="X2w-e5-FMi" secondAttribute="centerX" id="Rd1-2i-Ch2"/>
                             <constraint firstAttribute="trailing" secondItem="Re8-on-80P" secondAttribute="trailing" constant="7" id="XFB-yd-4eU"/>
+                            <constraint firstItem="kIQ-Ux-YqW" firstAttribute="top" secondItem="fHY-Le-mpn" secondAttribute="bottom" constant="26" id="XbY-9u-JGe"/>
                             <constraint firstItem="uAc-ko-5eQ" firstAttribute="top" secondItem="CB5-bW-yzq" secondAttribute="bottom" constant="14" id="Xcn-Oa-J7m"/>
+                            <constraint firstItem="kIQ-Ux-YqW" firstAttribute="centerX" secondItem="X2w-e5-FMi" secondAttribute="centerX" id="YZ2-L2-Rkv"/>
+                            <constraint firstAttribute="trailing" secondItem="kIQ-Ux-YqW" secondAttribute="trailing" constant="7" id="cJx-i2-JQZ"/>
                             <constraint firstItem="cSv-nQ-aTW" firstAttribute="top" secondItem="uAc-ko-5eQ" secondAttribute="bottom" constant="10" id="cbG-WR-fhf"/>
                             <constraint firstAttribute="trailing" secondItem="cwa-cd-Lvy" secondAttribute="trailing" constant="7" id="dY1-6F-K7b"/>
                             <constraint firstItem="8T5-O6-YvR" firstAttribute="top" secondItem="X2w-e5-FMi" secondAttribute="top" constant="158" id="dcv-bD-cM4"/>
                             <constraint firstItem="cwa-cd-Lvy" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" constant="7" id="eMd-6j-0IU"/>
                             <constraint firstItem="f06-CO-JsF" firstAttribute="top" secondItem="pep-l8-CJ5" secondAttribute="bottom" constant="11" id="hza-SE-GBe"/>
+                            <constraint firstItem="kIQ-Ux-YqW" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" constant="7" id="j80-uw-LWR"/>
                             <constraint firstItem="CB5-bW-yzq" firstAttribute="leading" secondItem="8T5-O6-YvR" secondAttribute="trailing" constant="12" id="jpJ-ir-WLC"/>
                             <constraint firstItem="Re8-on-80P" firstAttribute="top" secondItem="0xg-wN-ar2" secondAttribute="bottom" constant="13" id="mEi-SC-pyI"/>
+                            <constraint firstAttribute="trailing" secondItem="fHY-Le-mpn" secondAttribute="trailing" constant="34" id="ozd-iw-496"/>
                             <constraint firstItem="uAc-ko-5eQ" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" constant="7" id="pOy-7F-qNk"/>
                             <constraint firstItem="8T5-O6-YvR" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" constant="7" id="qEL-fU-ZEv"/>
                             <constraint firstItem="cSv-nQ-aTW" firstAttribute="leading" secondItem="8T5-O6-YvR" secondAttribute="trailing" constant="12" id="sGI-gg-c6l"/>
                             <constraint firstItem="zVp-Ik-8mJ" firstAttribute="centerX" secondItem="X2w-e5-FMi" secondAttribute="centerX" id="tzI-La-tKL"/>
                             <constraint firstItem="zVp-Ik-8mJ" firstAttribute="top" secondItem="pep-l8-CJ5" secondAttribute="bottom" constant="29" id="uvu-Cc-jpM"/>
+                            <constraint firstItem="fHY-Le-mpn" firstAttribute="leading" secondItem="X2w-e5-FMi" secondAttribute="leading" constant="35" id="w5b-uZ-aVo"/>
                             <constraint firstItem="b7f-IZ-Lv7" firstAttribute="leading" secondItem="0xg-wN-ar2" secondAttribute="trailing" constant="8" id="w6p-7O-X6j"/>
                             <constraint firstItem="0xg-wN-ar2" firstAttribute="top" secondItem="uAc-ko-5eQ" secondAttribute="bottom" constant="12" id="yxl-2h-ymD"/>
                         </constraints>
