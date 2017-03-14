@@ -169,7 +169,27 @@
         
     }];
 }
+#pragma mark - 忘记密码
+- (void)forgetPasswordWithParameters:(NSDictionary *)para
+                              result:(StateBlock)result
+                         errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":@"",
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"shop/resetpassword" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *msg = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result(YES,msg);
+        }else{
+            result(NO,msg);
+        }
 
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 #pragma mark -- 修改交易密码
 - (void)postPayPswWithParameters:(NSDictionary *)para
                           result:(StateBlock)result
