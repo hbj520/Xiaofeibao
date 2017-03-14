@@ -28,7 +28,7 @@
     self.storeNameLa.text = tuiModel.shopName;
     [self.starV configWithStarLevel:tuiModel.avgScore.floatValue];
     self.pointLab.text = tuiModel.avgScore;
-    self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
+    self.diatanceLab.text = [NSString stringWithFormat:@"%.3fkm",tuiModel.distance.floatValue];
     self.addressLab.text = tuiModel.addr;
     
     self.disCountLab.text = [NSString stringWithFormat:@"%@",tuiModel.discount];
@@ -39,7 +39,7 @@
     self.storeNameLa.text = data.shopName;
     [self.starV configWithStarLevel:data.avgScore.floatValue];
     self.pointLab.text = data.avgScore;
-    self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",data.distance.floatValue];
+    self.diatanceLab.text = [NSString stringWithFormat:@"%.3fkm",data.distance.floatValue];
     self.addressLab.text = data.addr;
     self.disCountLab.text = [NSString stringWithFormat:@"%@",data.discount];
 }

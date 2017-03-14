@@ -73,6 +73,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 60;
+    //self.tableView.backgroundColor = [UIColor redColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"DaiLiShopsTableViewCell" bundle:nil] forCellReuseIdentifier:@"MYshopscellId"];
     
 }

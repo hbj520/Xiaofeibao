@@ -83,7 +83,7 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
             NSString *gold = userDic[@"all_money"];
-            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
+            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
             NSString *loginName = userDic[@"loginName"];//用户登录名
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];
@@ -1444,6 +1444,7 @@
     }];
     
 }
+
 #pragma mark - 上传头像
 - (void)postIconWithParameters:(NSDictionary *)para
                         result:(StateBlock)result
@@ -1606,7 +1607,7 @@
                 result(NO,responseObject[@"msg"],nil);
             }else{
                 NSString *gold = userDic[@"all_money"];
-                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
+                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
                 NSString *loginName = userDic[@"loginName"];//用户登录名
                 NSString *token = userDic[@"token"];
                 NSString *imgurl = userDic[@"imgUrl"];
@@ -1667,7 +1668,7 @@
             NSString *status = userDic[@"status"];
            
                 NSString *gold = userDic[@"all_money"];
-                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
+                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
                 NSString *loginName = userDic[@"loginName"];//用户登录名
                 NSString *token = userDic[@"token"];
                 NSString *imgurl = userDic[@"imgUrl"];

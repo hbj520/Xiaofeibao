@@ -119,9 +119,9 @@
     [[MyAPI sharedAPI] getStoreMasterDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
         if (success) {
             StoreMmodel = object;
-            self.unionBalance.text = [NSString stringWithFormat:@"余额 : %.2f",StoreMmodel.money];
+            self.unionBalance.text = [NSString stringWithFormat:@"余额 : %.3f",StoreMmodel.money];
             self.dealNumLab.text =  [NSString stringWithFormat:@"%.0f",StoreMmodel.total];
-            self.allIncomeLab.text = [NSString stringWithFormat:@"%.2f",StoreMmodel.turnover];
+            self.allIncomeLab.text = [NSString stringWithFormat:@"%.3f",StoreMmodel.turnover];
             self.shopName.text = StoreMmodel.shopName;
             
             dayStr = StoreMmodel.today_withdrawal;

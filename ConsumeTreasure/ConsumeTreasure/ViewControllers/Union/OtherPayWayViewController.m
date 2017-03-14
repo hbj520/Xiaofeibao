@@ -33,12 +33,12 @@
 }
 
 - (void)needPAY{
-    cashMoney = [NSString stringWithFormat:@"%.2f",[_dataArr[0] floatValue]];
+    cashMoney = [NSString stringWithFormat:@"%.3f",[_dataArr[0] floatValue]];
     tongBaomoney = _dataArr[1];
     toMemId = _dataArr[2];
     pswStr = _dataArr[3];
     
-    self.realPay.text = [NSString stringWithFormat:@"%.2f",([cashMoney floatValue] - [tongBaomoney floatValue])];
+    self.realPay.text = [NSString stringWithFormat:@"%.3f",([cashMoney floatValue] - [tongBaomoney floatValue])];
 }
 
 - (void)choosePayWay{

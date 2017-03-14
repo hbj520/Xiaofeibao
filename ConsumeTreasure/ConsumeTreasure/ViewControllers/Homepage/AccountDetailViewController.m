@@ -52,9 +52,9 @@
         self.shopNameLab2.text = _shanghuModel.title;
         self.shopNameLab.text = _shanghuModel.title;
         if ([_aModel.type isEqualToString:@"0"]) {
-            self.accountChangeLab.text = [NSString stringWithFormat:@"- %.2f",_shanghuModel.money];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"- %.3f",_shanghuModel.money];
         }else{
-            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.2f",_shanghuModel.money];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.3f",_shanghuModel.money];
         }
         self.actionTimeLab.text = _shanghuModel.createtime;
         self.dateLab.text = _shanghuModel.createdate;
@@ -63,9 +63,9 @@
         self.shopNameLab2.text = _daliModel.title;
         self.shopNameLab.text  = _daliModel.title;
         if ([_aModel.type isEqualToString:@"0"]) {
-            self.accountChangeLab.text = [NSString stringWithFormat:@"- %.2f",_daliModel.money];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"- %.3f",_daliModel.money];
         }else{
-            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.2f",_daliModel.money];
+            self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.3f",_daliModel.money];
         }
         self.actionTimeLab.text = _daliModel.createtime;
         self.dateLab.text = _daliModel.createdate;
