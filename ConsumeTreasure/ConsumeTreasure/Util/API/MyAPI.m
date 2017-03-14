@@ -1640,7 +1640,7 @@
                                  }
                                  };
     [self.manager POST:@"thirdUser/thirdBindingZhf" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        NSString *msg = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"1"]) {
             
             NSDictionary *userDic = responseObject[@"data"];
@@ -1672,13 +1672,13 @@
                                          balance:goldNum
                                           qrCode:qrcode
                                            phone:phone];
-                result(YES,@"登录成功");
+                result(YES,msg);
             
         }else{
-            result(NO,@"绑定失败");
+            result(NO,msg);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        errorResult(error);
         
     }];
 }
