@@ -1,32 +1,29 @@
 //
-//  DLIncomeViewController.m
+//  DLStoreCashViewController.m
 //  ConsumeTreasure
 //
-//  Created by youyoumacmini3 on 16/12/20.
-//  Copyright © 2016年 youyou. All rights reserved.
+//  Created by youyoumacmini3 on 17/3/14.
+//  Copyright © 2017年 youyou. All rights reserved.
 //
 
-#import "DLIncomeViewController.h"
+#import "DLStoreCashViewController.h"
 
 #import <MJRefresh/MJRefresh.h>
-#import "OrderControlTableViewCell.h"
-
 #import "NewAccountTableViewCell.h"
-#import "AccountDetailViewController.h"
-@interface DLIncomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@interface DLStoreCashViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *_incomeArray;
     
     NSInteger _page;
     NSString *_pageNum;
-
+    
 }
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation DLIncomeViewController
+@implementation DLStoreCashViewController
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -40,15 +37,44 @@
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     _incomeArray = [NSMutableArray array];
     _page = 1;
     _pageNum = @"10";
     
     [self loadIncomeDetailDataWithPage:_page pageNum:_pageNum];
-    
     [self creatUI];
     [self addRefresh];
+    [self getdefaultStatTimeAndEndTime];
+}
+
+- (void)getdefaultStatTimeAndEndTime{
+    //得到当前的时间
+    NSDate * mydate = [NSDate date];
+    
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+    self.endTime.text = currentDateStr;
+ 
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comps = nil;
+    comps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitMonth fromDate:mydate];
+    NSDateComponents *adcomps = [[NSDateComponents alloc] init];
+    
+    [adcomps setYear:0];
+    [adcomps setMonth:-3];
+    [adcomps setDay:0];
+    
+    NSDate *newdate = [calendar dateByAddingComponents:adcomps toDate:mydate options:0];
+    NSString *beforDate = [dateFormatter stringFromDate:newdate];
+    //NSLog(@"---前两个月 =%@",beforDate);
+    self.startTime.text = beforDate;
+}
+
+- (IBAction)search:(id)sender {
+    
 }
 
 - (void)addRefresh{
@@ -103,6 +129,7 @@
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
 }
+
 - (void)creatUI{
     
     
@@ -118,7 +145,7 @@
 #pragma mark - UITableViewDelegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _incomeArray.count;
+    return 8;//_incomeArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -128,43 +155,31 @@
         levelCell = [[[NSBundle mainBundle] loadNibNamed:@"NewAccountTableViewCell" owner:self options:nil] lastObject];
     }
     
-    if (_incomeArray.count > 0) {
-        levelCell.daliModel = [_incomeArray objectAtIndex:indexPath.row];
-    }
+//    if (_incomeArray.count > 0) {
+//        levelCell.daliModel = [_incomeArray objectAtIndex:indexPath.row];
+//    }
     levelCell.selectionStyle = 0;
     return levelCell;
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-        self.hidesBottomBarWhenPushed = YES;
-        DaLiIncomeModel *model = [_incomeArray objectAtIndex:indexPath.row];
-        [self performSegueWithIdentifier:@"daliIncomeSegue" sender:model];
+- (IBAction)back:(id)sender {
+    [self backTolastPage];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)back:(id)sender {
-    [self backTolastPage];
-}
 
 /*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
- */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"daliIncomeSegue"]) {
-        DaLiIncomeModel *model = (DaLiIncomeModel*)sender;
-        AccountDetailViewController *accDetailVC = segue.destinationViewController;
-        accDetailVC.daliModel = model;
-    }
 }
-
+*/
 
 @end

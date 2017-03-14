@@ -126,6 +126,9 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 #pragma mark --我的商户（代理）
 - (void)getDaLiStoreListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
+#pragma mark -- 商户资金流水
+- (void)getDaLiStoreIncomeListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 #pragma mark --收益明细（代理）
 - (void)getDaLiIncomeListsWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
