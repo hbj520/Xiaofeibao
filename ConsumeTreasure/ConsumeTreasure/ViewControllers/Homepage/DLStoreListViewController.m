@@ -14,6 +14,8 @@
 
 #import "DaiLiShopsTableViewCell.h"
 
+#import "DLStoreCashViewController.h"
+
 @interface DLStoreListViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *_shopsArr;
@@ -136,7 +138,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"cashListSegue" sender:nil];
+    shopModel *model = [_shopsArr objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"cashListSegue" sender:model.memid];
 }
 
 
@@ -156,10 +159,17 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"cashListSegue"]) {
+        NSString *memIdStr = (NSString *)sender;
+        DLStoreCashViewController *dlsCashVC = segue.destinationViewController;
+        dlsCashVC.memId = memIdStr;
+        
+    }
+    
+}
+
 
 @end

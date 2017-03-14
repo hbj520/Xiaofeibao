@@ -859,7 +859,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeV-IN-fYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3343" y="4482"/>
+            <point key="canvasLocation" x="2865" y="4547"/>
         </scene>
         <!--Da Li View Controller-->
         <scene sceneID="Qr4-7c-GhN">
@@ -1704,6 +1704,7 @@
                         <outlet property="endTime" destination="SfA-UV-P9q" id="CX7-Vr-XS4"/>
                         <outlet property="startTime" destination="HnR-NZ-ooE" id="KGA-kt-s6M"/>
                         <outlet property="tableView" destination="gW2-tM-G9O" id="w27-D8-DFT"/>
+                        <segue destination="n7d-Vi-ut9" kind="push" identifier="DLSdetailSegue" id="Nob-6P-ukl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ux-M4-zY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4939,6 +4940,6 @@
         <segue reference="SjJ-0Z-ase"/>
         <segue reference="eJT-ye-vUc"/>
         <segue reference="0yz-DO-JMd"/>
-        <segue reference="hqb-t9-kRK"/>
+        <segue reference="Nob-6P-ukl"/>
     </inferredMetricsTieBreakers>
 </document>

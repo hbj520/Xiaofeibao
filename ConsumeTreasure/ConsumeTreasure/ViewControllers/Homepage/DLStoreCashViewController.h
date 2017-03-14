@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *startTime;
 @property (weak, nonatomic) IBOutlet UITextField *endTime;
 
+@property (nonatomic,copy) NSString *memId;
+
 @end

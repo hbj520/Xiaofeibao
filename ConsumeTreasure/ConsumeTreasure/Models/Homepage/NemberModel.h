@@ -30,7 +30,7 @@
 @interface shopModel : JSONModel
 @property (nonatomic,strong) NSString *doorImg;
 @property (nonatomic,strong) NSString *shopName;
-
+@property (nonatomic,strong) NSString *memid;
 @end
 
 @interface shoplistModel : JSONModel
