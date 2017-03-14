@@ -68,9 +68,12 @@
                                                      @"repassword":securityString,
                                                      @"validatecode":self.valueCode.text,
                                                      @"type":@"1"} result:^(BOOL sucess, NSString *msg) {
-                                                         [self showHint:msg];
                                                          if (sucess) {
                                                              [self.navigationController popViewControllerAnimated:YES];
+                                                             [self showHint:@"修改成功"];
+                                                         }else{
+                                                             [self showHint:msg];
+
                                                          }
                                                          
                                                      } errorResult:^(NSError *enginerError) {
