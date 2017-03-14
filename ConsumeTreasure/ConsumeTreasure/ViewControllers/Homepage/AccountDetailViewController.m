@@ -22,11 +22,19 @@
 
 @implementation AccountDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+   // [self.navigationController setNavigationBarHidden:YES animated:YES];
+   // self.navigationController.navigationBarHidden = YES;
     
     if (incomeType == 1) {
         self.shopNameLab2.text = _aModel.shopName;
