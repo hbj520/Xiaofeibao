@@ -16,7 +16,7 @@
 }
 
 - (void)setShopMo:(shopModel *)shopMo{
-    [self.shopImg sd_setImageWithURL:[NSURL URLWithString:shopMo.doorImg] placeholderImage:[UIImage imageNamed:@"tx"]];
+    [self.shopImg sd_setImageWithURL:[NSURL URLWithString:shopMo.doorImg] placeholderImage:[UIImage imageNamed:@"miniDefault"]];
     self.shopName.text = shopMo.shopName;
     
 }

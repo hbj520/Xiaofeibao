@@ -39,7 +39,7 @@
 {
     UITextField *textFeild = noti.object;
     if (textFeild.text.length >= 2 && textFeild.text.integerValue < 10) {
-        textFeild.text = [NSString stringWithFormat:@"%.2f",textFeild.text.floatValue];
+        textFeild.text = [NSString stringWithFormat:@"%.3f",textFeild.text.floatValue];
     }
     NSInteger allMoney = self.otherPaystyleTextfield.text.integerValue + self.tongbaoCointTextfield.text.integerValue;
     self.allMoney.text = [NSString stringWithFormat:@"%ld",allMoney];
@@ -50,12 +50,12 @@
 }
 - (IBAction)otherPaystyleTextfield:(UITextField *)sender {
     if (sender.text.length > 0) {
-        sender.text = [NSString stringWithFormat:@"%.2f",sender.text.floatValue];
+        sender.text = [NSString stringWithFormat:@"%.3f",sender.text.floatValue];
     }
 }
 - (IBAction)tongbaoCointTextfield:(UITextField *)sender {
     if (sender.text.length > 0) {
-        sender.text = [NSString stringWithFormat:@"%.2f",sender.text.floatValue];
+        sender.text = [NSString stringWithFormat:@"%.3f",sender.text.floatValue];
     }
 }
 - (IBAction)weixinBtn:(UIButton *)sender {

@@ -325,6 +325,9 @@
 		D1A3C0E31E1F9EAD0040AAD9 /* NewAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */; };
 		D1C79B1A1E77922000869008 /* HMDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C79B191E77921F00869008 /* HMDatePickView.m */; };
 		D1C79B1D1E77950A00869008 /* DLStoreCashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C79B1C1E77950A00869008 /* DLStoreCashViewController.m */; };
+		D1C79B201E77DD9100869008 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C79B1F1E77DD9100869008 /* CollectionViewController.m */; };
+		D1C79B241E77E08500869008 /* CollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C79B221E77E08500869008 /* CollectionTableViewCell.m */; };
+		D1C79B251E77E08500869008 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C79B231E77E08500869008 /* CollectionTableViewCell.xib */; };
 		D1E130631E4B2351006DF83E /* CHSocialHandlerData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1305D1E4B2351006DF83E /* CHSocialHandlerData.m */; };
 		D1E130641E4B2351006DF83E /* CHSocialResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E1305F1E4B2351006DF83E /* CHSocialResponseData.m */; };
 		D1E130651E4B2351006DF83E /* CHSocialServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E130621E4B2351006DF83E /* CHSocialServiceCenter.m */; };
@@ -988,6 +991,11 @@
 		D1C79B191E77921F00869008 /* HMDatePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDatePickView.m; sourceTree = "<group>"; };
 		D1C79B1B1E77950A00869008 /* DLStoreCashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStoreCashViewController.h; sourceTree = "<group>"; };
 		D1C79B1C1E77950A00869008 /* DLStoreCashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStoreCashViewController.m; sourceTree = "<group>"; };
+		D1C79B1E1E77DD9100869008 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		D1C79B1F1E77DD9100869008 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		D1C79B211E77E08500869008 /* CollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTableViewCell.h; sourceTree = "<group>"; };
+		D1C79B221E77E08500869008 /* CollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTableViewCell.m; sourceTree = "<group>"; };
+		D1C79B231E77E08500869008 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
 		D1E1305C1E4B2351006DF83E /* CHSocialHandlerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialHandlerData.h; sourceTree = "<group>"; };
 		D1E1305D1E4B2351006DF83E /* CHSocialHandlerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSocialHandlerData.m; sourceTree = "<group>"; };
 		D1E1305E1E4B2351006DF83E /* CHSocialResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSocialResponseData.h; sourceTree = "<group>"; };
@@ -1361,6 +1369,8 @@
 				D1A3C0AB1E1500D80040AAD9 /* MapLocateViewController.m */,
 				D12165A41DB6518F006B06FC /* LookRecordViewController.h */,
 				D12165A51DB6518F006B06FC /* LookRecordViewController.m */,
+				D1C79B1E1E77DD9100869008 /* CollectionViewController.h */,
+				D1C79B1F1E77DD9100869008 /* CollectionViewController.m */,
 				D12165A71DB65998006B06FC /* IncomeViewController.h */,
 				D12165A81DB65998006B06FC /* IncomeViewController.m */,
 				D12165F31DB79D28006B06FC /* MyAccountViewController.h */,
@@ -1582,6 +1592,9 @@
 				D1A3C0DF1E1F9EAC0040AAD9 /* NewAccountTableViewCell.h */,
 				D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */,
 				D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */,
+				D1C79B211E77E08500869008 /* CollectionTableViewCell.h */,
+				D1C79B221E77E08500869008 /* CollectionTableViewCell.m */,
+				D1C79B231E77E08500869008 /* CollectionTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2395,6 +2408,7 @@
 				D15B3B141DDEE5CA009122FE /* IncomeTableHead.xib in Resources */,
 				D15B39721DD46AFB009122FE /* LPNavigationBarView.xib in Resources */,
 				AB0149A71DE7D69D0068067B /* ZanTableViewCell.xib in Resources */,
+				D1C79B251E77E08500869008 /* CollectionTableViewCell.xib in Resources */,
 				D12165FF1DB85AF4006B06FC /* ExplainTableViewCell.xib in Resources */,
 				D150DFB61DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.xib in Resources */,
 				D12165ED1DB70EAE006B06FC /* IncomeContentTableViewCell.xib in Resources */,
@@ -2695,6 +2709,7 @@
 				D15B39671DD414A7009122FE /* EstimateTableViewCell.m in Sources */,
 				D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */,
 				D1A3C0A91E1500AF0040AAD9 /* TextViewController.m in Sources */,
+				D1C79B241E77E08500869008 /* CollectionTableViewCell.m in Sources */,
 				D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */,
 				D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */,
 				D16BF2AD1DEFF15B001A82BF /* JFAreaDataManager.m in Sources */,
@@ -2770,6 +2785,7 @@
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 				AB24F2AD1E681BCE00764DA7 /* RSADataVerifier.m in Sources */,
 				D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */,
+				D1C79B201E77DD9100869008 /* CollectionViewController.m in Sources */,
 				D10EE3E51DB0B28F001C1992 /* GTMBase64.m in Sources */,
 				ABFEA4981DEC118C0002672F /* BasePhotoViewController.m in Sources */,
 				D12165FE1DB85AF4006B06FC /* ExplainTableViewCell.m in Sources */,

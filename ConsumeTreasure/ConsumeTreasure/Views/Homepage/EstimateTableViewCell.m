@@ -20,7 +20,7 @@
 - (void)setCommModel:(CommentModel *)commModel{
     self.estimateName.text = commModel.membername;
     self.estimateTime.text = commModel.createdate;
-    [self.estimateImage sd_setImageWithURL:[NSURL URLWithString:commModel.imgUrl] placeholderImage:[UIImage imageNamed:@"special"]];
+    [self.estimateImage sd_setImageWithURL:[NSURL URLWithString:commModel.imgUrl] placeholderImage:[UIImage imageNamed:@"miniDefault"]];
      [self.estimateStar configWithStarLevel:commModel.totalScore.floatValue];
     self.estimateContent.text = commModel.content;
     

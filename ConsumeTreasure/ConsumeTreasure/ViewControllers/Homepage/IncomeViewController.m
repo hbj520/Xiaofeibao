@@ -75,7 +75,7 @@
     countCell.numLabel.text = [NSString stringWithFormat:@"%ld",(long)a];
    // b = [countCell.moneyLabel.text integerValue];
     c = a * b;
-    countCell.moneyLabel.text = [NSString stringWithFormat:@"¥ %.2f",c];
+    countCell.moneyLabel.text = [NSString stringWithFormat:@"¥ %.3f",c];
     
 }
 
