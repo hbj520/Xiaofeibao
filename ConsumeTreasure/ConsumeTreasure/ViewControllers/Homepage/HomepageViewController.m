@@ -418,6 +418,7 @@
                 [[MyAPI sharedAPI] getInfoPersonalWithParameters:@{} resulet:^(BOOL success, NSString *msg, id object) {
                 if (success) {
                     infoModel = (PersonInfoModel*)object;
+                    [[XFBConfig Instance] saveloginName:infoModel.name];
                     if ([infoModel.isshopchecked isEqualToString:@"1"]) {
                         [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
                     }else{
