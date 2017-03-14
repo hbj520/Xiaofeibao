@@ -284,7 +284,7 @@
                         <barButtonItem key="leftBarButtonItem" image="whiteback" id="OWT-NQ-UBE">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="9xC-fh-fAo" id="mwb-c5-Dex"/>
+                                <action selector="back:" destination="DPX-cv-vdW" id="7po-3c-Vow"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

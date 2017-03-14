@@ -44,6 +44,8 @@
     NSString *longti;
     NSString *lati;
     
+    NSString *typeCollect;//收藏
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
@@ -87,6 +89,9 @@
     
     [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"wsc"] forState:UIControlStateNormal];
     [self.collectNewBtn setBackgroundImage:[UIImage imageNamed:@"ysc"] forState:UIControlStateSelected];
+    
+    
+    
     
    // [self getDiTu];
 }
@@ -193,6 +198,15 @@
                 self.discountBtnLab.text = [NSString stringWithFormat:@"现金支付立返%.f%%",_deModel.shopReturnRate*100];
                 lati = _deModel.latitude;
                 longti = _deModel.longitude;
+                
+                typeCollect = _deModel.collect;
+                
+                if ([typeCollect isEqualToString:@"0"]) {
+                    self.collectNewBtn.selected = NO;
+                }else{
+                    self.collectNewBtn.selected = YES;
+                }
+                
                 [self.tableView reloadData];
             }else{
                 if ([msg isEqualToString:@"-1"]) {

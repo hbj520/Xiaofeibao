@@ -172,6 +172,9 @@
  
     
 }
+- (IBAction)back:(id)sender {
+    [self backTolastPage];
+}
 
 
 @end
