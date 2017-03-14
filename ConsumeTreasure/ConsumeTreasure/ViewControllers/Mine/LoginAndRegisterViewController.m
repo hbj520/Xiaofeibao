@@ -245,7 +245,7 @@
         
         [[MyAPI sharedAPI] registerUserWithParameters:@{
                                                         @"phone":self.registerPhoneTextField.text,
-                                                        @"password":securityString,
+                                                        @"password":@"",
                                                         @"validatecode":self.registerVerifyCodeTextfield.text,
                                                         @"invitecode":self.registerInviteCodeTextfileld.text
                                                         } result:^(BOOL sucess, NSString *msg, NSArray *array) {
