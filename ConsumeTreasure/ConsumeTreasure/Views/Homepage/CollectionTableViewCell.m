@@ -13,6 +13,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    
+    self.cancelBtn.layer.borderColor = RGBACOLOR(251, 156, 64, 1).CGColor;
+    self.cancelBtn.layer.borderWidth = 1;
+    self.cancelBtn.layer.cornerRadius = 5;
+    self.cancelBtn.layer.masksToBounds = YES;
+    
 }
 - (IBAction)cancelClick:(id)sender {
     NSLog(@"删除");
