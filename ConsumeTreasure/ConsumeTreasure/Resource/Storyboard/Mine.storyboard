@@ -1373,7 +1373,7 @@
             </objects>
             <point key="canvasLocation" x="761" y="4370"/>
         </scene>
-        <!--手机号绑定-->
+        <!--手机号验证-->
         <scene sceneID="Cu5-vr-NzH">
             <objects>
                 <viewController id="68u-jb-Srp" customClass="ThirdPlatformViewController" sceneMemberID="viewController">
@@ -1457,7 +1457,7 @@
                                 <rect key="frame" x="7" y="607" width="361" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97180406139999997" green="0.26881610659999999" blue="0.0060212486839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="绑定手机号">
+                                <state key="normal" title="手机号验证">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1528,7 +1528,7 @@
                             <constraint firstItem="IJK-Lk-Nal" firstAttribute="leading" secondItem="mgP-Gx-fdx" secondAttribute="leading" constant="7" id="zH4-Qh-RJX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="手机号绑定" id="gRg-Re-FdV" userLabel="账号绑定">
+                    <navigationItem key="navigationItem" title="手机号验证" id="gRg-Re-FdV" userLabel="账号绑定">
                         <barButtonItem key="leftBarButtonItem" systemItem="organize" id="EAh-x1-In7">
                             <color key="tintColor" red="0.94117647059999998" green="0.2901960784" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
