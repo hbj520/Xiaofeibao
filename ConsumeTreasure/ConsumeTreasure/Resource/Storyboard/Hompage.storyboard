@@ -118,7 +118,7 @@
                         <segue destination="Ool-Vj-ovs" kind="push" identifier="chooseLocationSegue" id="Sl8-bL-rZl"/>
                         <segue destination="drU-Dg-2Iw" kind="push" identifier="DaiLiSegue" id="clG-he-p8c"/>
                         <segue destination="sbx-V1-4xj" kind="push" identifier="AgencydesSegue" id="VuB-bj-KMZ"/>
-                        <segue destination="DPX-cv-vdW" kind="push" id="Yac-2Q-5yA"/>
+                        <segue destination="DPX-cv-vdW" kind="push" identifier="collectionSegue" id="Yac-2Q-5yA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnl-Xz-KrO" userLabel="First Responder" sceneMemberID="firstResponder"/>

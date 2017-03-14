@@ -7,7 +7,7 @@
 //
 
 #import "CollectionTableViewCell.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @implementation CollectionTableViewCell
 
 - (void)awakeFromNib {
@@ -15,6 +15,17 @@
     // Initialization code
 }
 - (IBAction)cancelClick:(id)sender {
+    NSLog(@"删除");
+    if (self.deleteBlock) {
+        self.deleteBlock();
+    }
+}
+
+- (void)setCollectShopMo:(CollectShopListModel *)collectShopMo{
+    self.storeName.text = collectShopMo.shopName;
+    self.storeAddr.text = collectShopMo.addr;
+    [self.storeImage sd_setImageWithURL:[NSURL URLWithString:collectShopMo.doorImg] placeholderImage:[UIImage imageNamed:@"miniDefault"]];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

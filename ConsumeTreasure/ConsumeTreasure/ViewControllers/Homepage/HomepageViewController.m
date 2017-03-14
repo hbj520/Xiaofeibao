@@ -443,10 +443,10 @@
             [self pushToNextWithIdentiField:@"scanSegue" sender:nil];
         };
         firstCell.incomeBlock = ^{//收益权
-           // [self pushToNextWithIdentiField:@"myincomeSegue" sender:nil];
+        [self pushToNextWithIdentiField:@"collectionSegue" sender:nil];
          
 
-            showAlert(@"敬请期待！");
+           // showAlert(@"敬请期待！");
         };
         firstCell.accountBlock =^{
             [self pushToNextWithIdentiField:@"myAccountSegue" sender:nil];
