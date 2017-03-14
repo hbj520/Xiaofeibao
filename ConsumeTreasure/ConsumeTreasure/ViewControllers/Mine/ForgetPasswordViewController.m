@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *postBtn;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 - (IBAction)mBackBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *valueCode;
 
 @end
 
@@ -61,20 +62,43 @@
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-- (IBAction)resetPassWord:(id)sender {
+- (IBAction)resetBtn:(id)sender {
+    [[MyAPI sharedAPI] forgetPasswordWithParameters:@{@"phone":self.phoneTextField.text,
+                                                     @"repassword":self.passwordTextField.text,
+                                                     @"validatecode":self.valueCode.text,
+                                                     @"type":@"1"} result:^(BOOL sucess, NSString *msg) {
+                                                         [self showHint:msg];
+                                                         if (sucess) {
+                                                             [self.navigationController popViewControllerAnimated:YES];
+                                                         }
+                                                         
+                                                     } errorResult:^(NSError *enginerError) {
+                                    
+                                                         
+                                                     }];
 }
+
 
 - (IBAction)postBtn:(id)sender {
     [Tools hideKeyBoard];
     if (self.phoneTextField.text.length < 11) {
         NSLog(@"错");
-        
-        //  [UIAlertView alertWithTitle:@"温馨提示" message:@"登录名不能为空" buttonTitle:nil];
-        
         [self showHint:@"请输入正确的手机号"];
         // return;
     }else{
+        [[MyAPI sharedAPI] postVerifyCodeWithParameters:@{@"phone": self.phoneTextField.text,
+                                                          @"type": @"1"
+                                                          } result:^(BOOL sucess, NSString *msg) {
+                                                              if (sucess) {
+                                                                  [self showHint:msg];
+                                                              }else{
+                                                                  [self showHint:msg];
+                                                              }
+                                                              
+                                                          } errorResult:^(NSError *enginerError) {
+                                                              
+                                                              [self showHint:@"验证码注册出错"];
+                                                          }];
         [self setTimeSchedu];
     }
 }
