@@ -318,7 +318,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 - (void)configThirdLogin{
     [CHSocialServiceCenter setUmengAppkey:@"588085dbc8957617840015a3"];
   
-    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@" " secret:@"dfdec49a41e45c6dbbdbfaa215da1454" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
+    [[CHSocialServiceCenter shareInstance] configurationAppKey:nil AppIdentifier:@"wxbbcf236b07638282" secret:@"dfdec49a41e45c6dbbdbfaa215da1454" redirectURL:nil sourceURL:@"http://www.baidu.com" type:CHSocialWeChat];
   
 }
 
