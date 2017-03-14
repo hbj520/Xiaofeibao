@@ -63,13 +63,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)resetBtn:(id)sender {
+    NSString *securityString = [Tools loginPasswordSecurityLock:self.passwordTextField.text];
     [[MyAPI sharedAPI] forgetPasswordWithParameters:@{@"phone":self.phoneTextField.text,
-                                                     @"repassword":self.passwordTextField.text,
+                                                     @"repassword":securityString,
                                                      @"validatecode":self.valueCode.text,
                                                      @"type":@"1"} result:^(BOOL sucess, NSString *msg) {
-                                                         [self showHint:msg];
                                                          if (sucess) {
                                                              [self.navigationController popViewControllerAnimated:YES];
+                                                             [self showHint:@"修改成功"];
+                                                         }else{
+                                                             [self showHint:msg];
+
                                                          }
                                                          
                                                      } errorResult:^(NSError *enginerError) {
