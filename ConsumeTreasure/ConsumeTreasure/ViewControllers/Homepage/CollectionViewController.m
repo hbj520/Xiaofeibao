@@ -36,7 +36,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _shopsArr = [NSMutableArray array];
     _page = 1;
     _pageNum = @"10";
@@ -102,7 +102,7 @@
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 80;
     //self.tableView.backgroundColor = [UIColor redColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"CollectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionCellId"];
     
 }
