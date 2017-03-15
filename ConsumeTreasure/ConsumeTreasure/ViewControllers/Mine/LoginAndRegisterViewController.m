@@ -238,31 +238,38 @@
 
 - (IBAction)accountRegisterBtn:(id)sender {
     [Tools hideKeyBoard];
-    if ( self.registerPhoneTextField.text.length >= 11 && self.registerPasswordTextfield.text.length >= 6 ) {
+    if ( self.registerPhoneTextField.text.length >= 11  ) {
         
         NSString *securityString = [Tools loginPasswordSecurityLock:self.registerPasswordTextfield.text];
       
         
         [[MyAPI sharedAPI] registerUserWithParameters:@{
                                                         @"phone":self.registerPhoneTextField.text,
-                                                        @"password":securityString,
+                                                        @"password":@"",
                                                         @"validatecode":self.registerVerifyCodeTextfield.text,
                                                         @"invitecode":self.registerInviteCodeTextfileld.text
-                                                        } result:^(BOOL sucess, NSString *msg) {
+                                                        } result:^(BOOL sucess, NSString *msg, NSArray *array) {
+                                                            
                                                             if (sucess) {
-                                                                self.registerArrow.hidden = YES;
-                                                                self.loginArrow.hidden = NO;
-                                                                [self.view bringSubviewToFront:self.loginView];
                                                                 
-                                                                [Tools hideKeyBoard];
-                                                                [self showHint:msg];
+                                                                if ([array[0] isEqualToString:@"1"]) {
+                                                                    
+                                                                    [self.view removeFromSuperview];
+                                                                    [self removeFromParentViewController];
+                                                                    [Tools chooseRootController];
+                                                                }else{
+                                                                    [self changeTohom];
+                                                                }
+                                                                
+                                                                [[XFBConfig Instance] savePhoneNum:self.registerPhoneTextField.text];
+                                                                [self setAlias];
+                                                                
                                                             }else{
-                                                                //[self showHint:msg];
-                                                                showAlert(msg);
+                                                                [self showHint:@"您输入的账号或密码有误"];
                                                             }
                                                             
                                                         } errorResult:^(NSError *enginerError) {
-                                                            [self showHint:@"注册出错"];
+                                                            [self showHint:@"登录出错"];
                                                         }];
 
     }else{

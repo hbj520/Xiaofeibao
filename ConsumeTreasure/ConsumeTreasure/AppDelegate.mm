@@ -117,6 +117,8 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
 
     //测试
     [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
+    //无网络提示
+    [self addNoNetNotice];
     return YES;
    
 }
@@ -297,6 +299,12 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 
 #pragma mark - PrivateMethod
+- (void)addNoNetNotice{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNoNet:) name:@"netIsNotReachabel" object:nil];
+}
+- (void)recieveNoNet:(NSNotification *)noti{
+    showAlert(@"当前无网络，请检查网络连接");
+}
 - (void)changeToMain{
 
     self.latitude = @"31.4450";

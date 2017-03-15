@@ -51,6 +51,24 @@
             self.manager.requestSerializer=[AFJSONRequestSerializer serializer];
         //    //如果报接受类型不一致请替换一致text/html或别的
             self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+//            [self.manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+//                switch (status) {
+//                    case AFNetworkReachabilityStatusUnknown:
+//                        NSLog(@"未知");
+//                        break;
+//                    case AFNetworkReachabilityStatusNotReachable:
+//                        NSLog(@"没有网络");
+//                        break;
+//                    case AFNetworkReachabilityStatusReachableViaWWAN:
+//                        NSLog(@"3G|4G");
+//                        break;
+//                    case AFNetworkReachabilityStatusReachableViaWiFi:
+//                        NSLog(@"WiFi");
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }];
 
     }
     return self;
@@ -61,6 +79,36 @@
     dispatch_once(&predicate, ^{
         sharedAPIInstance = [[self alloc] init];
     });
+    //1.创建网络状态监测管理者
+    AFNetworkReachabilityManager *manger = [AFNetworkReachabilityManager sharedManager];
+    //开启监听，记得开启，不然不走block
+    [manger startMonitoring];
+    //2.监听改变
+    [manger setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        /*
+         AFNetworkReachabilityStatusUnknown = -1,
+         AFNetworkReachabilityStatusNotReachable = 0,
+         AFNetworkReachabilityStatusReachableViaWWAN = 1,
+         AFNetworkReachabilityStatusReachableViaWiFi = 2,
+         */
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"netIsNotReachabel" object:nil];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"3G|4G");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WiFi");
+                break;
+            default:
+                break;
+        }
+    }];
+    [manger stopMonitoring];
     return sharedAPIInstance;
   
 }
@@ -145,7 +193,7 @@
 }
 
 - (void)registerUserWithParameters:(NSDictionary *)para
-                            result:(StateBlock)result
+                            result:(ArrayBlock)result
                        errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":@"",
@@ -153,16 +201,53 @@
                               @"param":para
                               };
     [self.manager POST:@"userinfo/rigister" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *info = responseObject[@"msg"];
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
-            result(NO,@"-1");
+            result(NO,@"-1",nil);
             [self cancelAllOperation];
-
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
-            return result(YES,@"注册成功");
+            NSDictionary *userDic = responseObject[@"data"];
+            NSString *gold = userDic[@"all_money"];
+            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
+            NSString *loginName = userDic[@"loginName"];//用户登录名
+            NSString *token = userDic[@"token"];
+            NSString *imgurl = userDic[@"imgUrl"];
+            NSString *qrcode = userDic[@"qrcord"];
+            NSString *memId = userDic[@"userId"];
+            NSString *phone = userDic[@"phone"];
+            NSString *app_version = userDic[@"app_version"];
+            NSString *isNew = @"";
+            NSString *wx = userDic[@"wxopenid"];
+            NSString *zfb = userDic[@"zfbuserid"];
+            [[XFBConfig Instance] saveMemId:memId];
+            [[XFBConfig Instance] saveWeixin:wx];
+            [[XFBConfig Instance] saveZFB:zfb];
+            if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
+                isNew = @"0";
+            }else{
+                [[XFBConfig Instance] saveVersion:app_version];
+                isNew = @"1";
+            }
+            [[XFBConfig Instance] saveImgUrl:imgurl
+                                       token:token
+                                   loginName:loginName
+                                     balance:goldNum
+                                      qrCode:qrcode
+                                       phone:phone];
+            result(YES,@"登录成功",@[isNew]);
         }else{
-            return result(NO,info);
+            result(NO,responseObject[@"msg"],nil);
         }
+       // NSString *info = responseObject[@"msg"];
+        
+//        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+//            result(NO,@"-1");
+//            [self cancelAllOperation];
+//
+//        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+//            return result(YES,@"注册成功");
+//        }else{
+//            return result(NO,info);
+//        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         return errorResult(error);

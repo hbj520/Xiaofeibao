@@ -26,7 +26,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                          errorResult:(ErrorBlock)errorResult;
 
 - (void)registerUserWithParameters:(NSDictionary *)para
-                            result:(StateBlock)result
+                            result:(ArrayBlock)result
                        errorResult:(ErrorBlock)errorResult;
 #pragma mark - 忘记密码
 - (void)forgetPasswordWithParameters:(NSDictionary *)para
