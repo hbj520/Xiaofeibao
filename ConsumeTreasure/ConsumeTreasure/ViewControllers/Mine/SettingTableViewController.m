@@ -109,7 +109,7 @@
 //            
 //            [vc removeFromSuperview];
 //        }
-        [[XFBConfig Instance] logout];
+  //      [[XFBConfig Instance] logout];
 //         ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
     }
 }

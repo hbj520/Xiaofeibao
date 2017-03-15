@@ -315,6 +315,8 @@
     // ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:loginAndRegisterVC];
     [VC.navigationController presentModalViewController:loginVC animated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"logoutNotice" object:nil];
+    [[XFBConfig Instance] logout];
+
 }
 
 @end

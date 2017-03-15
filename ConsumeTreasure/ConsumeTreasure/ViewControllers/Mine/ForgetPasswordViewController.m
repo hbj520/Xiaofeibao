@@ -34,11 +34,24 @@
     NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = attributeDict;
     self.navigationItem.title = navTitle;
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
     self.navigationController.navigationItem.hidesBackButton = YES;
+    if ([[XFBConfig Instance] getphoneNum]) {
+        self.tabBarController.tabBar.hidden = YES;
+        self.phoneTextField.text = [[XFBConfig Instance] getphoneNum];
+        self.phoneTextField.enabled = NO;
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if ([[XFBConfig Instance] getphoneNum]) {
+        self.navigationController.navigationBarHidden = NO;
+        self.tabBarController.tabBar.hidden = NO;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -64,23 +64,7 @@
         NSString * oldSecurityString = [Tools loginPasswordSecurityLock:self.oldpassword.text];
         NSLog(@"%@",oldSecurityString);
         NSString * newSecurityString = [Tools loginPasswordSecurityLock:self.newpassword.text];
-//        [[MyAPI sharedAPI] reSetPasswordWithOldPassword:oldSecurityString newPassword:newSecurityString Result:^(BOOL sucess, NSString *msg) {
-//            if(sucess){
-//                [[Config Instance] saveUserPassword:newSecurityString];
-//                 [[Config Instance]logout];
-//                [self showHint:@"修改成功"];
-//                [self RebuildlogOut];
-//            }else{
-//                if([msg isEqualToString:@"-1"]){
-//                    [self logOut];
-//                }else{
-//                [self showHint:@"修改失败"];
-//                }
-//            }
-//            [self hideHud];
-//        } errorResult:^(NSError *enginerError) {
-//            [self showHint:@"修改出错"];
-//        }];
+        
     }else{
         [self showHint:@"两次密码输入不一样"];
     }

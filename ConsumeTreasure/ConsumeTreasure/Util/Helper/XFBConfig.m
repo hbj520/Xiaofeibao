@@ -405,6 +405,7 @@ static XFBConfig * instance = nil;
     [settings removeObjectForKey:@"icon"];
     [settings removeObjectForKey:@"username"];
     [settings removeObjectForKey:@"isteacher"];
+    [settings removeObjectForKey:@"phone"];
     
 }
 - (void)deleteTeminate{
