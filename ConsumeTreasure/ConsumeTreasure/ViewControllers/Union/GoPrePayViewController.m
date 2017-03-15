@@ -365,7 +365,6 @@
             
             [self showHint:msg];
 
-            showAlert(msg);
         }
     } errorResult:^(NSError *enginerError) {
         
