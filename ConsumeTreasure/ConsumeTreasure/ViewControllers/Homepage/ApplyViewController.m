@@ -348,8 +348,6 @@
     
     if ([applyCell.rangeText.text isEqualToString:@""]||[applyCell.storeName.text isEqualToString:@""]||[applyCell.trueName.text isEqualToString:@""]||[applyCell.identiNum.text isEqualToString:@""]||[applyCell.phoneText.text isEqualToString:@""]||[applyCell.storeAddrText.text isEqualToString:@""]) {
         showAlert(@"必填项不可为空");
-    }else if ([CheckID verifyIDCardNumber:applyCell.identiNum.text] == NO){
-        showAlert(@"请输入正确格式的身份证号");
     }else if ([CheckID deptNameInputShouldChineseWithStr: applyCell.trueName.text] == NO){
         showAlert(@"姓名请输入汉字");
     }
