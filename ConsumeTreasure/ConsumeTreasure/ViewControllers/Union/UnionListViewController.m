@@ -22,7 +22,12 @@
 #import <MJRefresh/MJRefresh.h>
 
 #import "PYSearch.h"
-
+typedef NS_ENUM(NSInteger , selectType){
+    ISORIGINALTYPE = 0,
+    ISAREATYPE,
+    ISSEPARATETYPE,
+    ISDISTANCETYPE
+};
 @interface UnionListViewController ()
 <
 UITableViewDelegate,
@@ -36,6 +41,8 @@ UICollectionViewDataSource>
     NSMutableArray *areaArray;
     NSMutableArray *cateArray;
     NSInteger page;
+    NSInteger SELECTTYPE;
+    NSInteger selectInX;
 }
 - (IBAction)backBtn:(id)sender;
 - (IBAction)backTitleBtn:(id)sender;
@@ -60,6 +67,7 @@ UICollectionViewDataSource>
     [self addNavBar];
     [self addCollectionViewAndTableView];
     [self addMJRefresh];
+    self.contentTabelView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     //[self postNotification];
    
 }
@@ -120,12 +128,30 @@ UICollectionViewDataSource>
             [dataSource removeAllObjects];
         }
         page = 1;
-
         [weakSelf loadData];
     }];
     self.contentTabelView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        
         page++;
-        [weakSelf searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
+        AreaModel *areaModel = regionArray[selectInX];
+        UnionCategoryModel *cateModel = classTypeArray[selectInX];
+
+        switch (SELECTTYPE) {
+            case ISORIGINALTYPE:
+                [weakSelf searchShopListWithSorting:@"" shopDistrictId:ApplicationDelegate.cityCode categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
+                break;
+                case ISAREATYPE:
+                [weakSelf searchShopListWithSorting:@"" shopDistrictId:areaModel.districtId categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:NO];
+                break;
+                case ISSEPARATETYPE:
+                [weakSelf searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:cateModel.categoryId latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:NO];
+                break;
+                case ISDISTANCETYPE:
+                [weakSelf searchShopListWithSorting:[NSString stringWithFormat:@"%ld",selectInX] shopDistrictId:ApplicationDelegate.cityCode categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:NO];
+                break;
+            default:
+                break;
+        }
     }];
 }
 - (void)addNavBar{
@@ -146,13 +172,17 @@ UICollectionViewDataSource>
     __weak typeof(self) weakSelf = self;
     [self.menu setHandleSelectDataBlock:^(NSString *selectTitle, NSUInteger selectIndex, NSUInteger selectButtonTag) {
         page = 0;
+        selectInX = selectIndex;
         if (selectButtonTag == 0) {
+            SELECTTYPE = ISAREATYPE;
        AreaModel *areaModel =    regionArray[selectIndex];
             [weakSelf searchShopListWithSorting:@"" shopDistrictId:areaModel.districtId categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
         }else if (selectButtonTag == 1){
+            SELECTTYPE = ISSEPARATETYPE;
             UnionCategoryModel *cateModel = classTypeArray[selectIndex];
             [weakSelf searchShopListWithSorting:@"" shopDistrictId:@"" categoryId:cateModel.categoryId latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
         }else if (selectButtonTag == 2){
+            SELECTTYPE = ISDISTANCETYPE;
             [weakSelf searchShopListWithSorting:[NSString stringWithFormat:@"%ld",selectIndex] shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:@"1" pageOffset:@"10" isfristTime:NO];
         }
     }];
@@ -160,6 +190,7 @@ UICollectionViewDataSource>
     
 }
 - (void)loadData{
+    SELECTTYPE = ISORIGINALTYPE;
   //市下辖区县
     [[MyAPI sharedAPI] unionShopAreaWithParameters:@{@"cityCode":ApplicationDelegate.cityCode} result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
@@ -197,7 +228,7 @@ UICollectionViewDataSource>
         [self showHint:@"分类出错"];
     }];
     //商家列表
-    [self searchShopListWithSorting:@"0" shopDistrictId:@"" categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
+    [self searchShopListWithSorting:@"0" shopDistrictId:ApplicationDelegate.cityCode categoryId:@"" latitude:ApplicationDelegate.latitude longitude:ApplicationDelegate.longitude pageNum:[NSString stringWithFormat:@"%ld",page] pageOffset:@"10" isfristTime:YES];
 }
 //查询商家列表
 - (void)searchShopListWithSorting:(NSString *)sorting
