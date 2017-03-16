@@ -11,7 +11,7 @@
 
 
 #import "PSWVertifyViewController.h"
-
+#import "PersonInfoModel.h"
 @interface SetPayPswViewController ()<TXTradePasswordViewDelegate>
 {
     TXTradePasswordView *TXView;
@@ -22,6 +22,8 @@
     NSString *safePsw;//保存加密后的密码
     
     NSString *psw;//保存第一次输入密码
+    BOOL isFirstTime;//判断是否为第一次设置密码
+    tongBaoModel *tongModel;
 }
 
 @end
@@ -36,12 +38,14 @@
     self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = YES;
     [TXView.TF becomeFirstResponder];
+    [self getIfIsFirstTime];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    isFirstTime = NO;
     type = 1;
     same = 1;
     [self.navigationController setNavigationBarHidden:NO];
@@ -75,7 +79,11 @@
         type = 2;
     }else{
         if (same == 2) {
-            [self performSegueWithIdentifier:@"goPostVertifySegue" sender:psw];
+            if (!isFirstTime) {
+                [self performSegueWithIdentifier:@"goPostVertifySegue" sender:psw];
+            }else{
+                [self.navigationController popViewControllerAnimated:YES];
+            }
         }else{
             showAlert(@"两次交易密码不一致，请重新设置");
             [TXView.TF becomeFirstResponder];
@@ -104,7 +112,26 @@
         }
     }
 }
+#pragma mark -PrivateMethod
+- (void)getIfIsFirstTime{
+    [[MyAPI sharedAPI] getTongBaoBiAndPayPswWithParameters:@{} resut:^(BOOL success, NSString *msg, id object) {
+        if (success) {
+            tongModel = (tongBaoModel*)object;
+            
+            if ([tongModel.hasPayPwd isEqualToString:@"0"]) {
+                isFirstTime = YES;
+            }
+        }else{
+            isFirstTime = NO;
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+        }
 
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+}
 - (void)setPSWHide{
     TXView.lable_point.hidden = YES;
     TXView.lable_point2.hidden = YES;
