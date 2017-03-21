@@ -386,6 +386,7 @@
         [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
             if (sucess) {
                 [self showHint:msg];
+                [self.navigationController popToRootViewControllerAnimated:YES];
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [self logout];
