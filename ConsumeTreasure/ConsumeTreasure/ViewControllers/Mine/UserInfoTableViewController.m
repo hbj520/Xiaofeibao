@@ -62,11 +62,10 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Incomplete implementation, return the number of sections
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
     if (section == 0) {
         return 2;
     }else if (section == 1){
@@ -181,23 +180,47 @@
                         openId:(NSString *)openId
                       nickName:(NSString *)nickName
                        iconUrl:(NSString *)iconUrl {
-    [[MyAPI sharedAPI] ThirdPlatformLoginWithParamters:platform
-                                           thirdOpenId:openId
-                                                result:^(BOOL success, NSString *msg, id object) {
-                                                    
-                                                    if (success) {
-                                                        //已经绑定的直接登录
-                                                        [self showHint:@"绑定成功!"];
-                                                        [self createUI];
-                                                       // [self changeTohom];
-                                                    }else{
-                                                        //未绑定的进行账号绑定
-                                                        [self performSegueWithIdentifier:@"thirdPlatformLinkSegue" sender:@[platform,openId,nickName,iconUrl]];
-                                                    }
-                                                } errorResult:^(NSError *enginerError) {
-                                                    
-                                                    
-                                                }];
+    [[MyAPI sharedAPI] ThirdPlatformLinkWithType:platform openid:openId withResult:^(BOOL sucess, NSString *msg) {
+        if (sucess) {
+            //未绑定的进行账号绑定
+            if ([platform isEqualToString:@"wx"]) {
+                [[XFBConfig Instance] saveWeixin:openId];
+            }else{
+                [[XFBConfig Instance] saveZFB:openId];
+            }
+            [self showHint:@"绑定成功!"];
+            [self createUI];
+            
+//                [self performSegueWithIdentifier:@"thirdPlatformLinkSegue" sender:@[platform,openId,nickName,iconUrl]];
+        }else{
+            if ([msg isEqualToString:@"-1"]) {
+                //登录超时
+                 [Tools logoutWithNowVC:self];
+            }else{
+                [self showHint:msg];
+            }
+        }
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+//    [[MyAPI sharedAPI] ThirdPlatformLoginWithParamters:platform
+//                                           thirdOpenId:openId
+//                                                result:^(BOOL success, NSString *msg, id object) {
+//                                                    
+//                                                    if (success) {
+//                                                        //已经绑定的直接登录
+//                                                        [self showHint:@"绑定成功!"];
+//                                                        [self createUI];
+//                                                       // [self changeTohom];
+//                                                    }else{
+//                                                        //未绑定的进行账号绑定
+//                                                        [self performSegueWithIdentifier:@"thirdPlatformLinkSegue" sender:@[platform,openId,nickName,iconUrl]];
+//                                                    }
+//                                                } errorResult:^(NSError *enginerError) {
+//                                                    
+//                                                    
+//                                                }];
 }
 - (void)changeTohom{
     //[self.tabBarController setSelectedIndex:0];

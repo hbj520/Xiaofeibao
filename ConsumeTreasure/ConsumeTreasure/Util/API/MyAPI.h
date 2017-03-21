@@ -235,6 +235,11 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                                errorResult:(ErrorBlock)errorResult;
 - (void)getZfbInfoWithResult:(StateBlock)result
                  errorResult:(ErrorBlock)errorResult;
+//已经登录的用户绑定第三方账户
+- (void)ThirdPlatformLinkWithType:(NSString *)type
+                           openid:(NSString *)openid
+                       withResult:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult;
 #pragma mark -验证支付密码
 - (void)makeSurePassWordWithParameters:(NSDictionary *)para
                                 result:(StateBlock)result

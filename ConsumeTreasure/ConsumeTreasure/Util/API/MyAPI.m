@@ -1841,7 +1841,35 @@
         errorResult(error);
     }];
 }
-
+- (void)ThirdPlatformLinkWithType:(NSString *)type
+                           openid:(NSString *)openid
+                       withResult:(StateBlock)result
+                      errorResult:(ErrorBlock)errorResult{
+    NSDictionary *parameterDic = @{
+                                   @"tokenid":KToken,
+                                   @"platform":@"",
+                                   @"param":@{
+                                       @"type":type,
+                                       @"openid":openid
+                                   }
+                                   };
+    [self.manager POST:@"thirdUser/hadLoginThirdBindingZhf" parameters:parameterDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *code = responseObject[@"code"];
+        NSString *msg = responseObject[@"msg"];
+        if ([code isEqualToString:@"1"]) {
+            result(YES,msg);
+        }else if ([code isEqualToString:@"-2"]) {
+            result(NO,msg);
+        }else if ([code isEqualToString:@"-1"]){
+            result(NO,@"-1");
+        }else{
+            result(NO,msg);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 #pragma mark -验证支付密码
 - (void)makeSurePassWordWithParameters:(NSDictionary *)para
                                 result:(StateBlock)result
