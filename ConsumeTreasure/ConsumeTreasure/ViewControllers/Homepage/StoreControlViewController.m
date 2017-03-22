@@ -50,6 +50,7 @@
     NSString *startTime;
     NSString *endTime;
     NSString *disCount;
+    NSString *cateStr;
     
     NSString *doorImg;//店铺首图
     NSString *yingyeImg;
@@ -122,6 +123,7 @@
             startTime = model.startbusinesstime;
             endTime = model.endbusinesstime;
             disCount = model.discount;
+            cateStr = model.categoryid;
             
             yingyeImg = model.businessimg;
             jingyingImg = model.licenseimg;
@@ -448,6 +450,7 @@
                                    @"idcardno":IDNum
                                    },
                            @"shop":@{
+                                   @"categoryid":cateStr,
                                    @"addr":strAddr,
                                    @"shopPhone":storePhone,
                                    @"doorimg":doorImg,

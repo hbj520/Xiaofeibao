@@ -49,6 +49,7 @@
 @property (nonatomic,strong) NSString *startbusinesstime;//开始时间
 @property (nonatomic,strong) NSString *endbusinesstime;//结束时间
 @property (nonatomic,strong) NSString *discount;//反比比例
+@property (nonatomic,strong) NSString *categoryid;//经营分类
 
 @property (nonatomic,strong) NSString *businessimg;//营业执照
 @property (nonatomic,strong) NSString *licenseimg;//许可证
