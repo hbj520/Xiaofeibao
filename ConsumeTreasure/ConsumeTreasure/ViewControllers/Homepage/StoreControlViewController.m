@@ -443,7 +443,7 @@
     NSDictionary *para = @{
                            
                            @"type":@"2",
-                            @"member":@{
+                           @"member":@{
                                    @"name":realName,
                                    @"idcardno":IDNum
                                    },
@@ -461,8 +461,7 @@
                                    @"introduction":strDescri,
                                    @"endbusinesstime":eTime,
                                    @"startbusinesstime":sTime
-                                   }
-                           
+                                   }                           
                            };
     [[MyAPI sharedAPI] finishStoreInfoWithParameters:para resulet:^(BOOL sucess, NSString *msg) {
         if (sucess) {
