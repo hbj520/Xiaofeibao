@@ -22,7 +22,7 @@
 
 @interface LocationViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>{
    
-    BOOL _isExpand[3];
+    BOOL _isExpand[29];
     
      NSArray* _sectionTitleArray;
     
