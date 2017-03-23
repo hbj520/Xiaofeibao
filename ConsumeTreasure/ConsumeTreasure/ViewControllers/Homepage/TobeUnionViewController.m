@@ -26,8 +26,6 @@
     [super viewWillAppear:animated];
     self.view.backgroundColor = RGBACOLOR(234, 235, 236, 1);
     self.navigationController.navigationBarHidden = NO;
-   
-    //self.navigationController.navigationBar.barTintColor = RGBACOLOR(255, 87, 59, 1);
     self.tabBarController.tabBar.hidden = YES;
 
 }
@@ -77,10 +75,7 @@
     */
 }
 - (void)goApply:(id)sender {
-    
-    
-    NSString *isShopId = [[XFBConfig Instance] getIsShop];
-    if ([isShopId isEqualToString:@"0"]) {
+    if ([self.status isEqualToString:@"0"]) {
         showAlert(@"正在审核中，请耐心等待");
     }else{
         self.hidesBottomBarWhenPushed = YES;

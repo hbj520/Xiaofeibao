@@ -10,6 +10,6 @@
 #import "BaseViewController.h"
 @interface TobeUnionViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UIView *whiteView;
-
+@property (nonatomic,copy) NSString *status;
 
 @end
