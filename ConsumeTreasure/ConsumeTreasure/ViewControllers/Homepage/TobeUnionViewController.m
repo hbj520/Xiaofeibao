@@ -56,11 +56,13 @@
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
+            }else{
+                [self showHint:msg];
             }
         }
  
     } errorResult:^(NSError *enginerError) {
-        
+        [self showHint:@"网络出错"];
     }];
     
     
