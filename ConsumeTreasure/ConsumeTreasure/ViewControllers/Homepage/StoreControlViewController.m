@@ -50,6 +50,7 @@
     NSString *startTime;
     NSString *endTime;
     NSString *disCount;
+    NSString *cateStr;
     
     NSString *doorImg;//店铺首图
     NSString *yingyeImg;
@@ -122,6 +123,7 @@
             startTime = model.startbusinesstime;
             endTime = model.endbusinesstime;
             disCount = model.discount;
+            cateStr = model.categoryid;
             
             yingyeImg = model.businessimg;
             jingyingImg = model.licenseimg;
@@ -443,11 +445,12 @@
     NSDictionary *para = @{
                            
                            @"type":@"2",
-                            @"member":@{
+                           @"member":@{
                                    @"name":realName,
                                    @"idcardno":IDNum
                                    },
                            @"shop":@{
+                                   @"categoryid":cateStr,
                                    @"addr":strAddr,
                                    @"shopPhone":storePhone,
                                    @"doorimg":doorImg,
@@ -461,8 +464,7 @@
                                    @"introduction":strDescri,
                                    @"endbusinesstime":eTime,
                                    @"startbusinesstime":sTime
-                                   }
-                           
+                                   }                           
                            };
     [[MyAPI sharedAPI] finishStoreInfoWithParameters:para resulet:^(BOOL sucess, NSString *msg) {
         if (sucess) {
