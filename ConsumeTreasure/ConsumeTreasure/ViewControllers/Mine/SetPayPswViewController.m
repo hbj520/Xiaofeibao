@@ -129,7 +129,7 @@
         }
 
     } errorResult:^(NSError *enginerError) {
-        
+        [self showHint:@"网络请求出错"];
     }];
 }
 - (void)setPSWHide{
