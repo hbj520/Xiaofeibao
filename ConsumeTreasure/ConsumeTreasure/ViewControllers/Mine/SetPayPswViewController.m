@@ -82,7 +82,29 @@
             if (!isFirstTime) {
                 [self performSegueWithIdentifier:@"goPostVertifySegue" sender:psw];
             }else{
-                [self.navigationController popViewControllerAnimated:YES];
+                NSDictionary *para = @{
+                                       @"phone":[[XFBConfig Instance] getphoneNum
+                                                 
+                                                 ],
+                                       @"repassword":psw,
+                                       @"validatecode":@"",
+                                       @"type":@"2"
+                                       };
+                [[MyAPI sharedAPI] postPayPswWithParameters:para result:^(BOOL sucess, NSString *msg) {
+                    if (sucess) {
+                        showAlert(@"设置成功");
+                        [self.navigationController popViewControllerAnimated:YES];
+                    }else{
+                        if ([msg isEqualToString:@"-1"]) {
+                            [self logout];
+                        }else{
+                            showAlert(msg);
+                        }
+                    }
+                    
+                } errorResult:^(NSError *enginerError) {
+                    [self showHint:@"请求网络出错"];
+                }];
             }
         }else{
             showAlert(@"两次交易密码不一致，请重新设置");
