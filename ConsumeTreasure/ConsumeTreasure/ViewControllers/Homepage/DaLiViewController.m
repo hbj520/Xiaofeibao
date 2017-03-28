@@ -12,6 +12,7 @@
 #import "CHSocialService.h"
 
 #import "StoreMasterModel.h"
+#import "CheckstandViewController.h"
 @interface DaLiViewController ()
 {
     DaLiMasterModel *daliModel;
@@ -59,7 +60,9 @@
     [self.myBCardView addGestureRecognizer:tapbankCard];
     
     UITapGestureRecognizer *tapShare = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareClick:)];
-    [self.shareView addGestureRecognizer:tapShare];
+    [self.shareRegisterView addGestureRecognizer:tapShare];
+    UITapGestureRecognizer *tapShareRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareRegisterClick:)];
+    [self.shareRegisterView addGestureRecognizer:tapShareRegister];
     
 }
 
@@ -96,7 +99,9 @@
     [self pushToNextWithIdentiField:@"incomeDetailSegue" sender:nil];
     
 }
-
+- (void)shareRegisterClick:(id)shareRegisterClick{
+    [self pushToNextWithIdentiField:@"goCheckStandSegue2" sender:@[memIdStr]];
+}
 - (void)getData{
     NSDictionary *para = @{
                            
@@ -152,6 +157,9 @@
          NSArray *arr = (NSArray*)sender;
          CashViewController *cashVC = segue.destinationViewController;
          cashVC.incomeMoney = arr;
+     }else if ([segue.identifier isEqualToString:@"goCheckStandSegue2"]){
+         CheckstandViewController *checkVC = segue.destinationViewController;
+             checkVC.memId = memIdStr;
      }
      
 }

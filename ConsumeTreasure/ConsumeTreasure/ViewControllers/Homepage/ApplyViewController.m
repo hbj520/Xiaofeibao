@@ -268,11 +268,12 @@
                 }else{
                     if ([msg isEqualToString:@"-1"]) {
                         [weakSelf logout];
+                    }else{
+                        [weakSelf showHint:msg];
                     }
-                    [weakSelf showHint:@"错误"];
                 }
             } errorResult:^(NSError *enginerError) {
-                 [weakSelf showHint:@"错误"];
+                 [weakSelf showHint:@"网络错误"];
             }];
             
         }else if (actionSheet.tag == 111){
@@ -385,15 +386,17 @@
         
         [[MyAPI sharedAPI] upDateInfoForBeUnionWith:para result:^(BOOL sucess, NSString *msg) {
             if (sucess) {
-                [self showHint:msg];
+                [self showHint:@"提交成功"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [self logout];
+                }else{
+                    [self showHint:msg];
                 }
             }
         } errorResult:^(NSError *enginerError) {
-            
+            [self showHint:@"网络出错"];
             
         }];
     }

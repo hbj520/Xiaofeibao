@@ -39,7 +39,7 @@
     [self addGes];
     memIdStr = [[XFBConfig Instance]getmemId];
 }
-
+#pragma mark -PrivateMethod
 - (void)addGes{
     UITapGestureRecognizer *tapStore = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(storeClick:)];
     [self.storeControlView addGestureRecognizer:tapStore];
@@ -60,8 +60,9 @@
     [self.incomeView addGestureRecognizer:tapIncome];
     
     UITapGestureRecognizer *tapShare = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareClick:)];
-    [self.shareView addGestureRecognizer:tapShare];
-    
+    [self.shareRegisterView addGestureRecognizer:tapShare];
+    UITapGestureRecognizer *tapShareRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareRegisterClick:)];
+    [self.shareRegisterView addGestureRecognizer:tapShareRegister];
 
 }
 
@@ -72,7 +73,10 @@
     [self performSegueWithIdentifier:identi sender:sender];
     
 }
+- (void)shareRegisterClick:(id)ges{
+    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:@[memIdStr]];
 
+}
 - (void)shareClick:(id)Ges{
     [[CHSocialServiceCenter shareInstance]shareTitle:@"智惠返邀您一起享优惠" content:@"扫码支付实时到账，商户提现秒到，万亿市场等您来享！" imageURL:@"http://p2pguide.sudaotech.com/platform/image/1/20160318/3c896c87-65b6-481d-81ca-1b4a0b6d8dd4/" image:[UIImage imageNamed:@"qrImg"] urlResource:[NSString stringWithFormat:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=%@",memIdStr] controller:self completion:^(BOOL successful) {
         
@@ -161,6 +165,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
  
  */
+#pragma mark - SegueMethod
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
@@ -174,6 +179,8 @@
         if (array.count == 2) {
             checkVC.memId = (NSString *)array[0];
             checkVC.storeName = (NSString *)array[1];
+        }else if (array.count == 1){
+            checkVC.memId = memIdStr;
         }
  
     }

@@ -158,7 +158,7 @@
         accountCell.backBtnBlock =^{
             [self backTolastPage];
         };
-        accountCell.moneyLab.text = accountNum;
+        accountCell.moneyLab.text = [NSString stringWithFormat:@"%.2f",accountNum.floatValue];
         accountCell.explainLab.text = [NSString stringWithFormat:@"可提现金额%@元",accountNum];
         accountCell.selectionStyle = 0;
         return accountCell;

@@ -247,7 +247,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"StoreConLabTableViewCell" bundle:nil] forCellReuseIdentifier:@"labelCellId"];
     
 }
-
+#pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
 }
@@ -260,19 +260,6 @@
     }else{
         return 4;
     }
-}
-
--(void)change:(UITextField*)textField{
-    if (textField.tag == 8888) {
-        storeName = textField.text;
-    }else if (textField.tag == 7777){
-        storePhone = textField.text;
-    }else if (textField.tag == 6666){
-        realName = textField.text;
-    }else{
-        IDNum = textField.text;
-    }
-    
 }
 
 
@@ -426,7 +413,36 @@
         }
     }
 }
-
+#pragma mark -PrivateMethod
+- (void)verifyImage{
+    if ([doorImg hasPrefix:@"http"]) {
+        doorImg = @"";
+    }
+    if ([jingyingImg hasSuffix:@"http"]) {
+        jingyingImg = @"";
+    }
+    if ([yingyeImg hasSuffix:@"http"]) {
+        yingyeImg = @"";
+    }
+    if ([IDFrontImg hasSuffix:@"http"]) {
+        IDFrontImg = @"";
+    }
+    if ([IDBackImg hasSuffix:@"http"]) {
+        IDBackImg = @"";
+    }
+}
+-(void)change:(UITextField*)textField{
+    if (textField.tag == 8888) {
+        storeName = textField.text;
+    }else if (textField.tag == 7777){
+        storePhone = textField.text;
+    }else if (textField.tag == 6666){
+        realName = textField.text;
+    }else{
+        IDNum = textField.text;
+    }
+    
+}
 
 - (IBAction)back:(id)sender {
     [self backTolastPage];
@@ -441,7 +457,7 @@
     }
     
     else{
-    
+        [self verifyImage];
     NSDictionary *para = @{
                            
                            @"type":@"2",
@@ -475,7 +491,7 @@
         }
         
     } errorResult:^(NSError *enginerError) {
-        
+        [self showHint:@"网络请求出错"];
     }];
     }
     
@@ -491,6 +507,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
  */
+#pragma mark -SegueDelegate
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

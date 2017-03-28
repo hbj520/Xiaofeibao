@@ -42,6 +42,7 @@
 
 #import "CHSocialService.h"
 
+#import "TobeUnionViewController.h"
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
 {
     
@@ -388,17 +389,13 @@
         firstCell.selectionStyle = 0;
         
         firstCell.partnerBlock = ^{//合伙人超市partnerSegue
-           // [self performSegueWithIdentifier:@"partnerSegue" sender:nil];
-            //[self pushToNextWithIdentiField:@"partnerSegue" sender:nil];
             [[MyAPI sharedAPI] getInfoPersonalWithParameters:@{} resulet:^(BOOL success, NSString *msg, id object) {
                     if (success) {
                         infoModel = (PersonInfoModel*)object;
                         if ([infoModel.isproxychecked isEqualToString:@"1"]) {
                             [self pushToNextWithIdentiField:@"DaiLiSegue" sender:nil];
                         }else{
-                            
-                            [self pushToNextWithIdentiField:@"AgencydesSegue" sender:nil];
-                            
+                            [self pushToNextWithIdentiField:@"AgencydesSegue" sender:infoModel.isproxychecked];
                         }
                     }else{
                         if ([msg isEqualToString:@"-1"]) {
@@ -423,7 +420,7 @@
                         [self pushToNextWithIdentiField:@"beStoreSegue" sender:nil];
                     }else{
                         
-                        [self pushToNextWithIdentiField:@"unionSegue" sender:nil];
+                        [self pushToNextWithIdentiField:@"unionSegue" sender:infoModel.isshopchecked];
                         
                     }
                 }else{
@@ -645,7 +642,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
  */
- 
+#pragma  mark  -SegueDelegate
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
@@ -676,6 +673,13 @@
             self.locationCityName.text = arr[0];
             ApplicationDelegate.cityCode = arr[1];
         };
+    }else if ([segue.identifier isEqualToString:@"AgencydesSegue"]){
+        
+        
+    }else if ([segue.identifier isEqualToString:@"unionSegue"]){
+        NSString *verifyStaus = (NSString *)sender;
+        TobeUnionViewController *tobeUnionVC = segue.destinationViewController;
+        tobeUnionVC.status = verifyStaus;
     }
 }
 //分享app
