@@ -114,8 +114,8 @@
             self.leftMoney.text =  [NSString stringWithFormat:@"余额 : %.3f",[daliModel.balance floatValue]];
             self.allInMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.total_money floatValue]];
             self.currentMonthMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.month_money floatValue]];
-            dayIncome = daliModel.today_withdrawal;
-            allIncome = daliModel.history_withdrawal;
+            dayIncome = [NSString stringWithFormat:@"%.3f",daliModel.today_withdrawal.floatValue];;
+            allIncome = [NSString stringWithFormat:@"%.3f",daliModel.history_withdrawal.floatValue];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];

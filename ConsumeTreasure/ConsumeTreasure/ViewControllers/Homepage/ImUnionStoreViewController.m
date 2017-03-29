@@ -127,10 +127,8 @@
             self.dealNumLab.text =  [NSString stringWithFormat:@"%.0f",StoreMmodel.total];
             self.allIncomeLab.text = [NSString stringWithFormat:@"%.3f",StoreMmodel.turnover];
             self.shopName.text = StoreMmodel.shopName;
-            
-            dayStr = StoreMmodel.today_withdrawal;
-            allStr = StoreMmodel.history_withdrawal;
-            
+            dayStr = [NSString stringWithFormat:@"%.3f",StoreMmodel.today_withdrawal.floatValue];;
+            allStr = [NSString stringWithFormat:@"%.3f",StoreMmodel.history_withdrawal.floatValue];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];

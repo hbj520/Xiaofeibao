@@ -24,7 +24,7 @@
         self.storeNameLab.text = deModel.shopName;
         self.adresssLab.text = deModel.addr;
         self.phNum = deModel.shopPhone;
-        self.discountLab.text = [NSString stringWithFormat:@"现金支付立返%.f%%",deModel.shopReturnRate*100];
+        self.discountLab.text = [NSString stringWithFormat:@"支付立返%.f%%",deModel.shopReturnRate*100];
 //        if ([deModel.collect isEqualToString:@"1"]) {
 //            self.collectBtn.selected = YES;
 //        }else{

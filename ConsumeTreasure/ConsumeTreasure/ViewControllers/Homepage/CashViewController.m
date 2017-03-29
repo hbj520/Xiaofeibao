@@ -31,8 +31,8 @@
     // Do any additional setup after loading the view.
     
   
-    self.dayIncome.text = strday;
-    self.allIncome.text = strall;
+    self.dayIncome.text = [NSString stringWithFormat:@"%.3f",strday.floatValue];
+    self.allIncome.text = [NSString stringWithFormat:@"%.3f",strall.floatValue];
 }
 
 - (void)setIncomeMoney:(NSArray *)incomeMoney{

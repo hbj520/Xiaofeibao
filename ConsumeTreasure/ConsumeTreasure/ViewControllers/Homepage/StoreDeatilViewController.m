@@ -195,7 +195,7 @@
             if (success) {
                 _deModel = object;
                 _disCountStr = [NSString stringWithFormat:@"%f",_deModel.shopReturnRate];
-                self.discountBtnLab.text = [NSString stringWithFormat:@"现金支付立返%.f%%",_deModel.shopReturnRate*100];
+                self.discountBtnLab.text = [NSString stringWithFormat:@"支付立返%.f%%",_deModel.shopReturnRate*100];
                 lati = _deModel.latitude;
                 longti = _deModel.longitude;
                 
