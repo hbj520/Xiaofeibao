@@ -12,6 +12,8 @@
 #import "SetPayPswViewController.h"
 #import "FileHelper.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+
+#import "JPUSHService.h"
 @interface SettingTableViewController ()<UIAlertViewDelegate>
 - (IBAction)backBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *cash;
@@ -94,6 +96,12 @@
     }else if (indexPath.section == 1){
         
         [Tools logoutWithNowVC:self];
+        
+        NSString *alias = @"";
+        [JPUSHService setTags:nil alias:alias fetchCompletionHandle:^(int iResCode,NSSet *iTags, NSString *iAlias) {
+            NSLog(@"rescode: %d, \n tags: %@, \n alias: %@\n", iResCode, iTags , iAlias);//对应的状态码返回为0，代表成功
+        }];
+        
 //       UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //
 //        UINavigationController *loginVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
