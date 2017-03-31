@@ -35,7 +35,7 @@
 }
 - (IBAction)donePayClick:(id)sender {
     NSLog(@"支付成功");
-    
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 

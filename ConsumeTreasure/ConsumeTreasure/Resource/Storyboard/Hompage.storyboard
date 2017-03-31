@@ -652,6 +652,7 @@
                         <outlet property="aliBtn" destination="ELk-gO-cul" id="BYt-X5-sHa"/>
                         <outlet property="realPay" destination="TiS-WC-Qew" id="090-Ny-HuH"/>
                         <outlet property="wxBtn" destination="7qf-tn-MjY" id="LFy-ac-J80"/>
+                        <segue destination="OE5-VO-ZEt" kind="push" identifier="paySuccessSegue" id="usE-cy-s3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dny-Fw-Jhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2857,7 +2858,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nos-Ed-ehe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680.8" y="2964.4677661169417"/>
+            <point key="canvasLocation" x="1726" y="3001"/>
         </scene>
         <!--收益明细-->
         <scene sceneID="rve-ft-3Z4">
@@ -4633,7 +4634,7 @@
                         <outlet property="tfView" destination="sFV-iq-q68" id="1wi-TF-EIO"/>
                         <outlet property="useLeftMoneyBtn" destination="Ej6-Xr-b91" id="dSM-Rs-Ffu"/>
                         <segue destination="9x2-9j-64B" kind="push" identifier="gotoPay" id="BXQ-Kw-UDD"/>
-                        <segue destination="OE5-VO-ZEt" kind="push" id="Xre-dI-aTe"/>
+                        <segue destination="OE5-VO-ZEt" kind="push" identifier="paySuccessSegue" id="Xre-dI-aTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yda-9U-eQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5159,6 +5160,7 @@
         <segue reference="Cge-eV-Uzy"/>
         <segue reference="eJT-ye-vUc"/>
         <segue reference="SjJ-0Z-ase"/>
+        <segue reference="usE-cy-s3Q"/>
         <segue reference="0yz-DO-JMd"/>
         <segue reference="ep5-xb-kd2"/>
         <segue reference="xhA-la-EUW"/>

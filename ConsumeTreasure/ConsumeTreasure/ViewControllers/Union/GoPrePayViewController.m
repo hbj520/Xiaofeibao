@@ -355,8 +355,10 @@
     [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             //[self showHint:msg];
-            showAlert(msg);
-            [self.navigationController popViewControllerAnimated:YES];
+            //showAlert(msg);
+            //[self.navigationController popViewControllerAnimated:YES];
+            [self performSegueWithIdentifier:@"paySuccessSegue" sender:nil];
+            
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
