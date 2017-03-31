@@ -189,6 +189,9 @@
 		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
+		D133A5A51E8E47A7002725F3 /* PaySuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = D133A5A41E8E47A7002725F3 /* PaySuccessView.m */; };
+		D133A5A71E8E47CA002725F3 /* PaySuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */; };
+		D133A5AC1E8E5E6A002725F3 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D133A5AB1E8E5E6A002725F3 /* PaySuccessViewController.m */; };
 		D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */; };
 		D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */; };
 		D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */; };
@@ -685,6 +688,11 @@
 		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
 		D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImUnionStoreViewController.h; sourceTree = "<group>"; };
 		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
+		D133A5A31E8E47A7002725F3 /* PaySuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessView.h; sourceTree = "<group>"; };
+		D133A5A41E8E47A7002725F3 /* PaySuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessView.m; sourceTree = "<group>"; };
+		D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessView.xib; sourceTree = "<group>"; };
+		D133A5AA1E8E5E6A002725F3 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
+		D133A5AB1E8E5E6A002725F3 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
 		D150DFAD1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRecommendTableViewCell.h; sourceTree = "<group>"; };
 		D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRecommendTableViewCell.m; sourceTree = "<group>"; };
 		D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeRecommendTableViewCell.xib; sourceTree = "<group>"; };
@@ -1449,6 +1457,8 @@
 				D10DC9551E0A572500930F74 /* GoPrePayViewController.m */,
 				D10DC9571E0A579200930F74 /* OtherPayWayViewController.h */,
 				D10DC9581E0A579200930F74 /* OtherPayWayViewController.m */,
+				D133A5AA1E8E5E6A002725F3 /* PaySuccessViewController.h */,
+				D133A5AB1E8E5E6A002725F3 /* PaySuccessViewController.m */,
 			);
 			path = Union;
 			sourceTree = "<group>";
@@ -1595,6 +1605,9 @@
 				D1C79B211E77E08500869008 /* CollectionTableViewCell.h */,
 				D1C79B221E77E08500869008 /* CollectionTableViewCell.m */,
 				D1C79B231E77E08500869008 /* CollectionTableViewCell.xib */,
+				D133A5A31E8E47A7002725F3 /* PaySuccessView.h */,
+				D133A5A41E8E47A7002725F3 /* PaySuccessView.m */,
+				D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2393,6 +2406,7 @@
 				ABCB954A1D9B8EA2008927C7 /* Mine.storyboard in Resources */,
 				D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */,
 				AB61EC9E1E153B580053650A /* StoreConLabTableViewCell.xib in Resources */,
+				D133A5A71E8E47CA002725F3 /* PaySuccessView.xib in Resources */,
 				D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
 				D12054951DED221800EB2707 /* BusinessTableViewCell.xib in Resources */,
@@ -2571,6 +2585,7 @@
 				AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */,
 				D1F916AB1E07BE550091B989 /* BQActivityView.m in Sources */,
 				AB06A9801DF8FF74006F67C2 /* ModfyNickNameViewController.m in Sources */,
+				D133A5A51E8E47A7002725F3 /* PaySuccessView.m in Sources */,
 				ABF4E2811D9B5E58006AD23C /* ViewController.m in Sources */,
 				D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */,
 				D196D5771E0BB5B40062AD91 /* MXWechatSignAdaptor.m in Sources */,
@@ -2769,6 +2784,7 @@
 				D15B39761DD493C8009122FE /* PromptTableViewCell.m in Sources */,
 				D12054991DED269000EB2707 /* OtherLicenseTableViewCell.m in Sources */,
 				D10EE3DA1DB0B28F001C1992 /* ASIDownloadCache.m in Sources */,
+				D133A5AC1E8E5E6A002725F3 /* PaySuccessViewController.m in Sources */,
 				ABFEA49E1DEC11E10002672F /* ZYQAssetPickerController.m in Sources */,
 				D10DC9441E09307600930F74 /* DLPickerView.m in Sources */,
 				D1A3C0AC1E1500D80040AAD9 /* MapLocateViewController.m in Sources */,
