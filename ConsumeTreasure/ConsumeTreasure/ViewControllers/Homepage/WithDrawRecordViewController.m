@@ -120,7 +120,7 @@
         orderCell.orderNumLab.text = reModel.record_description;
         orderCell.twoLab.text = @"提现金额";
         orderCell.moneyLab.text = reModel.money;
-        orderCell.timeLabel.hidden = YES;
+        orderCell.timeLabel.text = reModel.createdate;
     }
     orderCell.selectionStyle = 0;
     
