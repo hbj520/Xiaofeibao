@@ -1340,6 +1340,7 @@
                         <segue destination="9Lz-ZP-R46" kind="push" identifier="DLTXsegue" id="Cge-eV-Uzy"/>
                         <segue destination="MHO-1M-Xv9" kind="push" identifier="myBankCardSegue" id="tMY-yY-dhf"/>
                         <segue destination="bwN-XB-yOi" kind="push" identifier="goCheckStandSegue2" id="xhA-la-EUW"/>
+                        <segue destination="oTK-WR-zXO" kind="push" identifier="goshareSegue2" id="exM-SL-wT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xu-i8-lDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1589,7 +1590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpp-qp-jhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3263" y="3615"/>
+            <point key="canvasLocation" x="-5274" y="3615"/>
         </scene>
         <!--申请-->
         <scene sceneID="GHP-0h-5gy">
@@ -1648,6 +1649,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKt-AK-7Jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-447.19999999999999" y="2612.7436281859073"/>
+        </scene>
+        <!--ShareQR Code View Controller-->
+        <scene sceneID="6kl-a9-TF2">
+            <objects>
+                <viewController id="oTK-WR-zXO" customClass="ShareQRCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eih-WC-RaX"/>
+                        <viewControllerLayoutGuide type="bottom" id="NIg-6s-Jgi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nZS-UQ-Weu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWr-ah-ZTF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kip-L2-cPb">
+                                <rect key="frame" x="18" y="20" width="11" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="11" id="3ar-8M-Mqy"/>
+                                    <constraint firstAttribute="height" constant="22" id="Jbl-kH-Sbs"/>
+                                </constraints>
+                                <state key="normal" image="backWhite"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="oTK-WR-zXO" eventType="touchUpInside" id="Pfe-MM-k6h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xWr-ah-ZTF" firstAttribute="leading" secondItem="nZS-UQ-Weu" secondAttribute="leading" id="1rS-Wx-s6M"/>
+                            <constraint firstAttribute="trailing" secondItem="xWr-ah-ZTF" secondAttribute="trailing" id="Bhq-n0-h5r"/>
+                            <constraint firstItem="kip-L2-cPb" firstAttribute="top" secondItem="nZS-UQ-Weu" secondAttribute="top" constant="20" id="HbF-6p-QoX"/>
+                            <constraint firstItem="kip-L2-cPb" firstAttribute="leading" secondItem="nZS-UQ-Weu" secondAttribute="leading" constant="18" id="Kek-ij-QjR"/>
+                            <constraint firstItem="xWr-ah-ZTF" firstAttribute="top" secondItem="nZS-UQ-Weu" secondAttribute="top" id="fbD-mJ-AQR"/>
+                            <constraint firstItem="NIg-6s-Jgi" firstAttribute="top" secondItem="xWr-ah-ZTF" secondAttribute="bottom" id="ryJ-u5-fc3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bhb-rj-pt7"/>
+                    <connections>
+                        <outlet property="webView" destination="xWr-ah-ZTF" id="Jvd-Wo-wZ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PgA-Ku-Z2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2542" y="3799"/>
         </scene>
         <!--我的银行卡-->
         <scene sceneID="5DW-E0-o9j">
@@ -2921,7 +2969,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFw-Nu-mur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1937" y="3615"/>
+            <point key="canvasLocation" x="-3727" y="3615"/>
         </scene>
         <!--Cash View Controller-->
         <scene sceneID="Icf-1S-4gv">
@@ -3089,7 +3137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FhT-XQ-t47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2628" y="3615"/>
+            <point key="canvasLocation" x="-4471" y="3615"/>
         </scene>
         <!--Im Union Store View Controller-->
         <scene sceneID="u82-kx-ffL">
@@ -3718,6 +3766,7 @@
                         <segue destination="9Lz-ZP-R46" kind="push" identifier="SHTXsegue" id="fkz-Fo-52f"/>
                         <segue destination="MHO-1M-Xv9" kind="push" identifier="myBankCardSegue" id="AMY-WY-xLC"/>
                         <segue destination="TO4-de-1J2" kind="push" identifier="shuanghuIncomeSegue" id="EJ9-gn-bzP"/>
+                        <segue destination="oTK-WR-zXO" kind="push" identifier="goshareSegue" id="2vo-ef-X0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzG-wP-Arj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3998,7 +4047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wtO-1R-b2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3906" y="3615"/>
+            <point key="canvasLocation" x="-6044" y="3615"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f7Y-5e-iJL">
@@ -5088,13 +5137,14 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="eJT-ye-vUc"/>
         <segue reference="xhA-la-EUW"/>
         <segue reference="Cge-eV-Uzy"/>
         <segue reference="tMY-yY-dhf"/>
-        <segue reference="6Ku-Vt-ebf"/>
+        <segue reference="exM-SL-wT4"/>
         <segue reference="hqb-t9-kRK"/>
+        <segue reference="6Ku-Vt-ebf"/>
         <segue reference="0yz-DO-JMd"/>
         <segue reference="SjJ-0Z-ase"/>
-        <segue reference="eJT-ye-vUc"/>
     </inferredMetricsTieBreakers>
 </document>

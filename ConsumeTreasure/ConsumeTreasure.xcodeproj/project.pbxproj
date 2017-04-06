@@ -51,6 +51,7 @@
 		AB50D47D1E0928AA00B427E6 /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4751E0928AA00B427E6 /* SecurityUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB50D47E1E0928AA00B427E6 /* StringEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4771E0928AA00B427E6 /* StringEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB50D4811E095C9B00B427E6 /* PayMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */; };
+		AB5B28DA1E94E41000B39329 /* ShareQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B28D91E94E41000B39329 /* ShareQRCodeViewController.m */; };
 		AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */; };
 		AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB608C321D9D0B1200194FC2 /* TRLiveNetManager.m */; };
 		AB6142151E7295B600B7C446 /* CrashMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6142141E7295B600B7C446 /* CrashMaster.framework */; };
@@ -449,6 +450,8 @@
 		AB50D4771E0928AA00B427E6 /* StringEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEncryption.m; sourceTree = "<group>"; };
 		AB50D47F1E095C9B00B427E6 /* PayMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMoneyTableViewController.h; sourceTree = "<group>"; };
 		AB50D4801E095C9B00B427E6 /* PayMoneyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMoneyTableViewController.m; sourceTree = "<group>"; };
+		AB5B28D81E94E41000B39329 /* ShareQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareQRCodeViewController.h; sourceTree = "<group>"; };
+		AB5B28D91E94E41000B39329 /* ShareQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareQRCodeViewController.m; sourceTree = "<group>"; };
 		AB608C2F1D9D0B1200194FC2 /* NSObject+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFNetworking.h"; sourceTree = "<group>"; };
 		AB608C301D9D0B1200194FC2 /* NSObject+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFNetworking.m"; sourceTree = "<group>"; };
 		AB608C311D9D0B1200194FC2 /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
@@ -1389,6 +1392,8 @@
 				D1A3C08C1E1252D90040AAD9 /* AddBankViewController.m */,
 				D1A3C08E1E12ABDB0040AAD9 /* WithDrawViewController.h */,
 				D1A3C08F1E12ABDB0040AAD9 /* WithDrawViewController.m */,
+				AB5B28D81E94E41000B39329 /* ShareQRCodeViewController.h */,
+				AB5B28D91E94E41000B39329 /* ShareQRCodeViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -2676,6 +2681,7 @@
 				D1A3C0821E123B2F0040AAD9 /* KGModal.m in Sources */,
 				ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */,
 				D1E130651E4B2351006DF83E /* CHSocialServiceCenter.m in Sources */,
+				AB5B28DA1E94E41000B39329 /* ShareQRCodeViewController.m in Sources */,
 				D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */,
 				D15B39621DD4117E009122FE /* StoreSpecialTableViewCell.m in Sources */,
 				D1A3C09F1E14DCAE0040AAD9 /* HMScanner.m in Sources */,

@@ -10,7 +10,7 @@
 #import "CashViewController.h"
 #import "CheckstandViewController.h"
 #import "CHSocialService.h"
-
+#import "ShareQRCodeViewController.h"
 @interface ImUnionStoreViewController ()
 {
     StoreMasterModel *StoreMmodel;
@@ -74,7 +74,7 @@
     
 }
 - (void)shareRegisterClick:(id)ges{
-    [self pushToNextWithIdentiField:@"goCheckStandSegue" sender:@[memIdStr]];
+    [self pushToNextWithIdentiField:@"goshareSegue" sender:memIdStr];
 
 }
 - (void)shareClick:(id)Ges{
@@ -174,13 +174,12 @@
     }else if ([segue.identifier isEqualToString:@"goCheckStandSegue"]){
         CheckstandViewController *checkVC = segue.destinationViewController;
         NSArray *array = sender;
-        if (array.count == 2) {
             checkVC.memId = (NSString *)array[0];
             checkVC.storeName = (NSString *)array[1];
-        }else if (array.count == 1){
-            checkVC.memId = memIdStr;
-        }
- 
+    }else if ([segue.identifier isEqualToString:@"goshareSegue"]){
+        NSString *medId = (NSString *)sender;
+        ShareQRCodeViewController *qrVC = segue.destinationViewController;
+        qrVC.memId = medId;
     }
     
 }

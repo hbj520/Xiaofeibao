@@ -30,7 +30,7 @@
 #define KUserPassword [[XFBConfig Instance] getPassword]
 #define KGesturePsassword [[XFBConfig Instance] getGesturePassword]
 
-#define BaseUrl @"http://192.168.1.221:8888/xfb/"
+#define BaseUrl @"http://192.168.1.12:8888/xfb/"
 
 #define XFBUrl @"http://www.xftb168.com/"//正式
 

@@ -13,6 +13,7 @@
 
 #import "StoreMasterModel.h"
 #import "CheckstandViewController.h"
+#import "ShareQRCodeViewController.h"
 @interface DaLiViewController ()
 {
     DaLiMasterModel *daliModel;
@@ -100,7 +101,7 @@
     
 }
 - (void)shareRegisterClick:(id)shareRegisterClick{
-    [self pushToNextWithIdentiField:@"goCheckStandSegue2" sender:@[memIdStr]];
+    [self pushToNextWithIdentiField:@"goshareSegue2" sender:memIdStr];
 }
 - (void)getData{
     NSDictionary *para = @{
@@ -157,9 +158,10 @@
          NSArray *arr = (NSArray*)sender;
          CashViewController *cashVC = segue.destinationViewController;
          cashVC.incomeMoney = arr;
-     }else if ([segue.identifier isEqualToString:@"goCheckStandSegue2"]){
-         CheckstandViewController *checkVC = segue.destinationViewController;
-             checkVC.memId = memIdStr;
+     }else if ([segue.identifier isEqualToString:@"goshareSegue2"]){
+         NSString *memStr = sender;
+         ShareQRCodeViewController *shareVC = segue.destinationViewController;
+         shareVC.memId = memStr;
      }
      
 }
