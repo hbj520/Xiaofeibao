@@ -105,8 +105,9 @@
         //调支付宝支付
         [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
             if (sucess) {
-                [self.navigationController popToRootViewControllerAnimated:YES];
-                showAlert(msg);
+                //[self.navigationController popToRootViewControllerAnimated:YES];
+                //showAlert(msg);
+                [self performSegueWithIdentifier:@"paySuccessSegue" sender:nil];
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [self logout];
@@ -147,8 +148,9 @@
         [[MyAPI sharedAPI] payMoneyWithParameters:para resut:^(BOOL sucess, NSString *msg) {
             
             if (sucess) {
-                [self.navigationController popToRootViewControllerAnimated:YES];
-                showAlert(msg);
+                //[self.navigationController popToRootViewControllerAnimated:YES];
+                //showAlert(msg);
+                [self performSegueWithIdentifier:@"paySuccessSegue" sender:nil];
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [self logout];

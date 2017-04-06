@@ -38,6 +38,8 @@
 @property (nonatomic,strong) NSString *money;
 @property (nonatomic,strong) NSString *record_description;
 @property (nonatomic,strong) NSString *after_money;
+@property (nonatomic,strong) NSString *createdate;
+
 @end
 
 @interface recordArrayModel : JSONModel

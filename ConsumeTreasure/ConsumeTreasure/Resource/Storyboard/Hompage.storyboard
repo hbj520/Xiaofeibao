@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -651,6 +652,7 @@
                         <outlet property="aliBtn" destination="ELk-gO-cul" id="BYt-X5-sHa"/>
                         <outlet property="realPay" destination="TiS-WC-Qew" id="090-Ny-HuH"/>
                         <outlet property="wxBtn" destination="7qf-tn-MjY" id="LFy-ac-J80"/>
+                        <segue destination="OE5-VO-ZEt" kind="push" identifier="paySuccessSegue" id="usE-cy-s3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dny-Fw-Jhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2843,6 +2845,69 @@
             </objects>
             <point key="canvasLocation" x="1777" y="4451"/>
         </scene>
+        <!--支付成功-->
+        <scene sceneID="S2z-jM-PZ0">
+            <objects>
+                <viewController id="OE5-VO-ZEt" customClass="PaySuccessViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="69y-ol-RWr"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Az-2R-9Z7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="18u-D1-l5L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paySuccess" translatesAutoresizingMaskIntoConstraints="NO" id="dTX-lM-L72">
+                                <rect key="frame" x="139" y="119" width="97.5" height="97.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dTX-lM-L72" secondAttribute="height" id="th8-ry-8SB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的交易已完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnJ-C4-LSb">
+                                <rect key="frame" x="127" y="234.5" width="121.5" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="a7R-Dp-4LV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2D-KB-pUJ">
+                                <rect key="frame" x="47.5" y="304.5" width="281" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Sgi-0E-qmY"/>
+                                </constraints>
+                                <state key="normal" image="donePay"/>
+                                <connections>
+                                    <action selector="donePayClick:" destination="OE5-VO-ZEt" eventType="touchUpInside" id="c54-cY-6Ej"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dTX-lM-L72" firstAttribute="width" secondItem="18u-D1-l5L" secondAttribute="width" multiplier="0.26" id="0bc-uS-hhU"/>
+                            <constraint firstItem="CnJ-C4-LSb" firstAttribute="top" secondItem="dTX-lM-L72" secondAttribute="bottom" constant="18" id="A2q-1h-wNo"/>
+                            <constraint firstItem="E2D-KB-pUJ" firstAttribute="centerX" secondItem="18u-D1-l5L" secondAttribute="centerX" id="DaM-iS-Fgv"/>
+                            <constraint firstItem="CnJ-C4-LSb" firstAttribute="centerX" secondItem="18u-D1-l5L" secondAttribute="centerX" id="Jp7-3c-KdZ"/>
+                            <constraint firstItem="E2D-KB-pUJ" firstAttribute="top" secondItem="CnJ-C4-LSb" secondAttribute="bottom" constant="55" id="RnU-l2-c1e"/>
+                            <constraint firstItem="dTX-lM-L72" firstAttribute="centerX" secondItem="18u-D1-l5L" secondAttribute="centerX" id="STL-ym-doh"/>
+                            <constraint firstItem="E2D-KB-pUJ" firstAttribute="width" secondItem="18u-D1-l5L" secondAttribute="width" multiplier="0.75" id="Zkf-JE-Ght"/>
+                            <constraint firstItem="dTX-lM-L72" firstAttribute="top" secondItem="69y-ol-RWr" secondAttribute="bottom" constant="55" id="isE-X5-3Bi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="支付成功" id="zrc-fT-gXT">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="AOJ-oM-sBg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="OE5-VO-ZEt" id="UM6-MX-1u0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nos-Ed-ehe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="3001"/>
+        </scene>
         <!--收益明细-->
         <scene sceneID="rve-ft-3Z4">
             <objects>
@@ -4618,6 +4683,7 @@
                         <outlet property="tfView" destination="sFV-iq-q68" id="1wi-TF-EIO"/>
                         <outlet property="useLeftMoneyBtn" destination="Ej6-Xr-b91" id="dSM-Rs-Ffu"/>
                         <segue destination="9x2-9j-64B" kind="push" identifier="gotoPay" id="BXQ-Kw-UDD"/>
+                        <segue destination="OE5-VO-ZEt" kind="push" identifier="paySuccessSegue" id="Xre-dI-aTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yda-9U-eQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5119,11 +5185,13 @@
         <image name="dd_bg" width="750" height="169"/>
         <image name="ddgl" width="30" height="31"/>
         <image name="dlSY" width="32" height="32"/>
+        <image name="donePay" width="399" height="68"/>
         <image name="dp" width="80" height="80"/>
         <image name="dpgl" width="35" height="31"/>
         <image name="dq_720" width="29" height="29"/>
         <image name="lo" width="146" height="146"/>
         <image name="location" width="35" height="46"/>
+        <image name="paySuccess" width="128" height="129"/>
         <image name="serach_Map" width="228" height="228"/>
         <image name="share" width="35" height="31"/>
         <image name="syt" width="32" height="32"/>
