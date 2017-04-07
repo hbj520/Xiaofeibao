@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:[NSString stringWithFormat:@"%@web/shopShare?memid=%@",XFBUrl,self.memId]]];
-    NSString *url = [NSString stringWithFormat:@"%@web/shopShare?memid=%@",BaseUrl,self.memId];
+    //NSString *url = [NSString stringWithFormat:@"%@web/shopShare?memid=%@",XFBUrl,self.memId];
     [self.webView loadRequest:request];
 }
 
