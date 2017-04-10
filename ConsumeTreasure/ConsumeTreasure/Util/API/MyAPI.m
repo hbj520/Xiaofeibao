@@ -1700,8 +1700,12 @@
                 NSString *isNew = @"";
                 NSString *wx = userDic[@"wxopenid"];
                 NSString *zfb = userDic[@"zfbuserid"];
+                NSString *memId = userDic[@"userId"];
+                [[XFBConfig Instance] saveMemId:memId];
+
                 [[XFBConfig Instance] saveWeixin:wx];
                 [[XFBConfig Instance] saveZFB:zfb];
+
                 if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
                     isNew = @"0";
                 }else{
@@ -1761,6 +1765,8 @@
                 NSString *isNew = @"";
             NSString *wx = userDic[@"wxopenid"];
             NSString *zfb = userDic[@"zfbuserid"];
+            NSString *memId = userDic[@"userId"];
+            [[XFBConfig Instance] saveMemId:memId];
             [[XFBConfig Instance] saveWeixin:wx];
             [[XFBConfig Instance] saveZFB:zfb];
                 if ([[[XFBConfig Instance] getVersion] isEqualToString:app_version]) {
