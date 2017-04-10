@@ -272,7 +272,11 @@ static XFBConfig * instance = nil;
     [settings setObject:zfb forKey:@"zfb"];
     [settings synchronize];
 }
-
+- (void)saveMoney:(NSString *)money{
+    NSUserDefaults *setttings = [NSUserDefaults standardUserDefaults];
+    [setttings removeObjectForKey:@"balance"];
+    [setttings setObject:money forKey:@"balance"];
+}
 - (NSString *)getmemId{
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     return [settings stringForKey:@"memid"];

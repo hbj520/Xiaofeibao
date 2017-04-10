@@ -322,6 +322,7 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             tongBaoModel *tongModel = [[tongBaoModel alloc]initWithDictionary:responseObject[@"data"] error:&error];
+
             result(YES,info,tongModel);
         }else{
             result(NO,info,nil);
@@ -604,6 +605,7 @@
             
             
             AccountArrayModel *model = [[AccountArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
+            [[XFBConfig Instance] saveMoney:model.balance];
             result(YES,info,@[accountArr,model.balance]);
         }else{
             result(NO,info,nil);

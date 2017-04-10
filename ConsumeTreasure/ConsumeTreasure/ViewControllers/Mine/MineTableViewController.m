@@ -19,6 +19,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CHSocialService.h"
 #import "ShareQRCodeViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface MineTableViewController ()
 {
@@ -50,6 +51,7 @@
     NSString *memId = [[XFBConfig Instance]getmemId];
     tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     [self.moneyView addSubview: tongbaoMoneyView];
+    [self addRefresh];
 
 }
 - (void)didReceiveMemoryWarning {
@@ -186,6 +188,41 @@
 //    
 //}
 #pragma mark - PrivateMethod
+- (void)addRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadAccountDataWithPage:1 pageNum:@"2"];
+    }];
+}
+- (void)loadAccountDataWithPage:(NSInteger)page pageNum:(NSString*)pageNum{
+    NSString *pageNow = [NSString stringWithFormat:@"%ld",(long)page];
+    NSDictionary *dic = @{
+                          @"pageNum":pageNow,
+                          @"pageOffset":@"10"
+                          };
+    [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        if (success) {
+            [self.tableView reloadData];
+            [self createUI];
+
+        }else{
+            
+            if ([msg isEqualToString:@"-1"]) {
+                [self logout];
+            }
+        }
+        
+        [self endRefresh];
+    } errorResult:^(NSError *enginerError) {
+        [self endRefresh];
+    }];
+}
+- (void)logout{
+    [Tools logoutWithNowVC:self];
+}
+-(void)endRefresh{
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
 - (void)createUI{
     isShop = [[XFBConfig Instance] getIsShop];
     UIImageView * navBarHairlineImageView= [self findHairlineImageViewUnder:self.navigationController.navigationBar];

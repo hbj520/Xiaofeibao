@@ -61,7 +61,7 @@
 - (void)saveMemId:(NSString*)memId;//用户Id
 - (void)saveWeixin:(NSString *)wx;//是否绑定微信
 - (void)saveZFB:(NSString *)zfb;//绑定支付宝
-
+- (void)saveMoney:(NSString *)money;
 - (NSString *)getmemId;
 - (NSString *)getloginName;
 - (NSString *)getIsShop;
