@@ -11,6 +11,7 @@
 #import "CheckstandViewController.h"
 #import "CHSocialService.h"
 #import "ShareQRCodeViewController.h"
+#import "MyMemberViewController.h"
 @interface ImUnionStoreViewController ()
 {
     StoreMasterModel *StoreMmodel;
@@ -106,7 +107,7 @@
 
 - (void)myMemClick:(id)Ges{
  
-    [self pushToNextWithIdentiField:@"goMyMemSegue" sender:nil];
+    [self pushToNextWithIdentiField:@"goMyMemSegue" sender:@"1"];
 
 }
 
@@ -180,6 +181,10 @@
         NSString *medId = (NSString *)sender;
         ShareQRCodeViewController *qrVC = segue.destinationViewController;
         qrVC.memId = medId;
+    }else if ([segue.identifier isEqualToString:@"goMyMemSegue"]){
+        NSString *ismem = sender;
+        MyMemberViewController *myMemberVC = segue.destinationViewController;
+        myMemberVC.isMember = ismem.boolValue;
     }
     
 }

@@ -199,6 +199,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)fixUserNameWithParameters:(NSDictionary *)para
                            result:(StateBlock)result
                       errorResult:(ErrorBlock)errorResult;
+#pragma mark - 我的推广会员
+- (void)myRecommendsWithParameters:(NSDictionary *)para
+                            result:(ArrayBlock)result
+                       errorResult:(ErrorBlock)errorResult;
 #pragma mark -修改手机号码
 - (void)fixPhoneNumWithParameters:(NSDictionary *)para
                            result:(StateBlock)result

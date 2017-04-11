@@ -1577,6 +1577,34 @@
         errorResult(error);
     }];
 }
+#pragma mark - 我的推广会员
+- (void)myRecommendsWithParameters:(NSDictionary *)para
+                            result:(ArrayBlock)result
+                       errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/myRecommends" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *error = nil;
+            NSMutableArray *memberArr = [NSMutableArray array];
+            memberArr = [NemberModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memList"] error:&error];
+            result(YES,info,@[memberArr]);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
 #pragma mark -修改手机号码
 - (void)fixPhoneNumWithParameters:(NSDictionary *)para
                            result:(StateBlock)result

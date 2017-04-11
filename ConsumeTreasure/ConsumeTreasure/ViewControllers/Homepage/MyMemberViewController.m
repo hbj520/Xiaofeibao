@@ -81,27 +81,50 @@
                            @"pageNum":pageNow,
                            @"pageOffset":pageNum
                            };
-    
-    [[MyAPI sharedAPI] getMyMemberDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        if (success) {
-            
-            if ([arrays[0] count] == 0) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
-                });
-                _page--;
+    if (self.isMember) {
+        [[MyAPI sharedAPI] getMyMemberDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                
+                if ([arrays[0] count] == 0) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                    });
+                    _page--;
+                }
+                [_memArray addObjectsFromArray:arrays[0]];
+                [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
-            [_memArray addObjectsFromArray:arrays[0]];
-            [self.tableView reloadData];
-        }else{
-            if ([msg isEqualToString:@"-1"]) {
-                [self logout];
+            [self endRefresh];
+        } errorResult:^(NSError *enginerError) {
+            [self endRefresh];
+        }];
+    }else{
+        [[MyAPI sharedAPI] myRecommendsWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                
+                if ([arrays[0] count] == 0) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                    });
+                    _page--;
+                }
+                [_memArray addObjectsFromArray:arrays[0]];
+                [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
-        }
-        [self endRefresh];
-    } errorResult:^(NSError *enginerError) {
-        [self endRefresh];
-    }];
+            [self endRefresh];
+        } errorResult:^(NSError *enginerError) {
+            [self endRefresh];
+        }];
+    }
+  
 }
 
 -(void)endRefresh{

@@ -269,89 +269,96 @@
             NSArray *array = [metadata.stringValue componentsSeparatedByString:@"|"];
 //            DMLog(@"----%@",array);
 //            DMLog(@"+++++%@",metadata.stringValue);
-            if ([array[0] isEqualToString:@"business"]) {
-                NSDictionary * param=@{@"inviteCode":array[1]};
-                
-                /****************
-                [RequstEngine requestHttp:@"1055" paramDic:param blockObject:^(NSDictionary *dic) {
-                    DMLog(@"1055----%@",dic);
-                    DMLog(@"error---%@",dic[@"errorMsg"]);
-                    if ([dic[@"errorCode"] intValue]==00000) {
-                        _headImgUrl=dic[@"member"][@"imgUrl"];
-                        _loginName=dic[@"member"][@"loginName"];
-                        _phone=dic[@"member"][@"phone"];
-                        CollectionViewController * collectionVC=[[CollectionViewController alloc]init];
-                        collectionVC.infoModel=_infoModel;
-                        collectionVC.shopId=array[2];
-                        collectionVC.shopName=array[3];
-                        collectionVC.returnBate=array[4];
-                        collectionVC.whichPage=@"扫描";
-                        [self.navigationController pushViewController:collectionVC animated:YES];
+                if ([array[0] isEqualToString:@"business"]) {
+                    NSDictionary * param=@{@"inviteCode":array[1]};
+                    
+                    /****************
+                     [RequstEngine requestHttp:@"1055" paramDic:param blockObject:^(NSDictionary *dic) {
+                     DMLog(@"1055----%@",dic);
+                     DMLog(@"error---%@",dic[@"errorMsg"]);
+                     if ([dic[@"errorCode"] intValue]==00000) {
+                     _headImgUrl=dic[@"member"][@"imgUrl"];
+                     _loginName=dic[@"member"][@"loginName"];
+                     _phone=dic[@"member"][@"phone"];
+                     CollectionViewController * collectionVC=[[CollectionViewController alloc]init];
+                     collectionVC.infoModel=_infoModel;
+                     collectionVC.shopId=array[2];
+                     collectionVC.shopName=array[3];
+                     collectionVC.returnBate=array[4];
+                     collectionVC.whichPage=@"扫描";
+                     [self.navigationController pushViewController:collectionVC animated:YES];
+                     }
+                     else
+                     {
+                     UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
+                     message:metadata.stringValue
+                     delegate:self
+                     cancelButtonTitle:@"取消"
+                     otherButtonTitles:@"复制内容", nil];
+                     av.delegate=self;
+                     _erweima=metadata.stringValue;
+                     [av show];
+                     
+                     }
+                     }];
+                     *////////////////////
+                }
+                else if([array[0] isEqualToString:@"message"])
+                {
+                    NSDictionary * param=@{@"inviteCode":array[1]};
+                    
+                    /**************
+                     [RequstEngine requestHttp:@"1055" paramDic:param blockObject:^(NSDictionary *dic) {
+                     DMLog(@"1055----%@",dic);
+                     DMLog(@"error---%@",dic[@"errorMsg"]);
+                     if ([dic[@"errorCode"] intValue]==00000) {
+                     _headImgUrl=dic[@"member"][@"imgUrl"];
+                     _loginName=dic[@"member"][@"loginName"];
+                     _phone=dic[@"member"][@"phone"];
+                     AccountViewController * VC=[[AccountViewController alloc]init];
+                     VC.inviteCode=array[1];
+                     VC.headImgUrl=_headImgUrl;
+                     VC.loginName=_loginName;
+                     VC.phone=_phone;
+                     [self.navigationController pushViewController:VC animated:YES];
+                     }
+                     else
+                     {
+                     UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
+                     message:metadata.stringValue
+                     delegate:self
+                     cancelButtonTitle:@"取消"
+                     otherButtonTitles:@"复制内容", nil];
+                     av.delegate=self;
+                     _erweima=metadata.stringValue;
+                     [av show];
+                     
+                     
+                     }
+                     }];
+                     
+                     *////////////////////////
+                }
+                else
+                {
+                    NSArray *separateStringArray = [metadata.stringValue componentsSeparatedByString:@"="];
+                    if (separateStringArray.count > 1) {
+                        [self performSegueWithIdentifier:@"sacanPrePaySegueId" sender:separateStringArray[1]];
+                    }else{
+                        [self showHint:@"暂无数据"];
                     }
-                    else
-                    {
-                        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
-                                                                    message:metadata.stringValue
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"取消"
-                                                          otherButtonTitles:@"复制内容", nil];
-                        av.delegate=self;
-                        _erweima=metadata.stringValue;
-                        [av show];
-                        
-                    }
-                }];
-*////////////////////
-            }
-            else if([array[0] isEqualToString:@"message"])
-            {
-                NSDictionary * param=@{@"inviteCode":array[1]};
-                
-                /**************
-                [RequstEngine requestHttp:@"1055" paramDic:param blockObject:^(NSDictionary *dic) {
-                    DMLog(@"1055----%@",dic);
-                    DMLog(@"error---%@",dic[@"errorMsg"]);
-                    if ([dic[@"errorCode"] intValue]==00000) {
-                        _headImgUrl=dic[@"member"][@"imgUrl"];
-                        _loginName=dic[@"member"][@"loginName"];
-                        _phone=dic[@"member"][@"phone"];
-                        AccountViewController * VC=[[AccountViewController alloc]init];
-                        VC.inviteCode=array[1];
-                        VC.headImgUrl=_headImgUrl;
-                        VC.loginName=_loginName;
-                        VC.phone=_phone;
-                        [self.navigationController pushViewController:VC animated:YES];
-                    }
-                    else
-                    {
-                        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
-                                                                    message:metadata.stringValue
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"取消"
-                                                          otherButtonTitles:@"复制内容", nil];
-                        av.delegate=self;
-                        _erweima=metadata.stringValue;
-                        [av show];
-                        
-                        
-                    }
-                }];
 
-               *////////////////////////
-            }
-            else
-            {
-                NSArray *separateStringArray = [metadata.stringValue componentsSeparatedByString:@"="];
-                [self performSegueWithIdentifier:@"sacanPrePaySegueId" sender:separateStringArray[1]];
-//                UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
-//                                                            message:metadata.stringValue
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"取消"
-//                                                  otherButtonTitles:@"复制内容", nil];
-//                av.delegate=self;
-//                _erweima=metadata.stringValue;
-//                [av show];
-            }
+                    //                UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"已识别此二维码内容为："
+                    //                                                            message:metadata.stringValue
+                    //                                                           delegate:self
+                    //                                                  cancelButtonTitle:@"取消"
+                    //                                                  otherButtonTitles:@"复制内容", nil];
+                    //                av.delegate=self;
+                    //                _erweima=metadata.stringValue;
+                    //                [av show];
+                }
+
+
 
            
          //   DMLog(@"----%@",metadata.stringValue);

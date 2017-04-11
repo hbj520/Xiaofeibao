@@ -18,7 +18,7 @@
 #import "ApplyViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CHSocialService.h"
-#import "ShareQRCodeViewController.h"
+#import "MyMemberViewController.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface MineTableViewController ()
@@ -48,7 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
-    NSString *memId = [[XFBConfig Instance]getmemId];
+//    NSString *memId = [[XFBConfig Instance]getmemId];
     tongbaoMoneyView =  [[TongbaoMoneyView alloc] initWithFrame:CGRectMake(25, 44, 0, 0) money:[[XFBConfig Instance] getMoney].floatValue];
     [self.moneyView addSubview: tongbaoMoneyView];
     [self addRefresh];
@@ -125,11 +125,11 @@
             }
         }else if (indexPath.section == 2 ){
             if (indexPath.row == 0) {
-                [self performSegueWithIdentifier:@"registerShareSegue" sender:[[XFBConfig Instance]getmemId]];
-            }else if (indexPath.row == 1){
                 [[CHSocialServiceCenter shareInstance]shareTitle:@"智惠返邀您一起享优惠" content:@"扫码支付实时到账，商户提现秒到，万亿市场等您来享！" imageURL:@"http://p2pguide.sudaotech.com/platform/image/1/20160318/3c896c87-65b6-481d-81ca-1b4a0b6d8dd4/" image:[UIImage imageNamed:@"qrImg"] urlResource:[NSString stringWithFormat:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=%@",[[XFBConfig Instance]getmemId]] controller:self completion:^(BOOL successful) {
                     
                 }];
+            }else if (indexPath.row == 1){
+              [self performSegueWithIdentifier:@"myShareSegue" sender:@"0"];
             }else if (indexPath.row == 2){
                 [self performSegueWithIdentifier:@"settingSegueId" sender:nil];
 
@@ -319,10 +319,10 @@
 }
 #pragma mark -PrepareSegueDelegate
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-     if ([segue.identifier isEqualToString:@"registerShareSegue"]){
+     if ([segue.identifier isEqualToString:@"myShareSegue"]){
         NSString *memStr = sender;
-        ShareQRCodeViewController *shareVC = segue.destinationViewController;
-        shareVC.memId = memStr;
+        MyMemberViewController *myMemberVC = segue.destinationViewController;
+        myMemberVC.isMember = memStr.boolValue;
     }
 }
 @end
