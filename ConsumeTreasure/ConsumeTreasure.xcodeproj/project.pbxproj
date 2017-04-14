@@ -77,6 +77,9 @@
 		ABD363D41DC330BE00D462AF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD363D01DC330BE00D462AF /* libWeChatSDK.a */; };
 		ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */ = {isa = PBXBuildFile; fileRef = ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */; };
 		ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD8C2901DA89A1D00BBF5B7 /* HomeTabbarViewController.m */; };
+		ABE143691E9F5B5800DA2DF1 /* MyRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE143681E9F5B5800DA2DF1 /* MyRecommendViewController.m */; };
+		ABE1436D1E9F807400DA2DF1 /* RecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE1436B1E9F807400DA2DF1 /* RecommendTableViewCell.m */; };
+		ABE1436E1E9F807400DA2DF1 /* RecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE1436C1E9F807400DA2DF1 /* RecommendTableViewCell.xib */; };
 		ABEBA2581DDEFC8500601187 /* UnionContenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEBA2571DDEFC8500601187 /* UnionContenModel.m */; };
 		ABF4E27B1D9B5E58006AD23C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E27A1D9B5E58006AD23C /* main.m */; };
 		ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABF4E27D1D9B5E58006AD23C /* AppDelegate.mm */; };
@@ -497,6 +500,11 @@
 		ABD8C28D1DA8995A00BBF5B7 /* HomeTabar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HomeTabar.json; sourceTree = "<group>"; };
 		ABD8C2901DA89A1D00BBF5B7 /* HomeTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabbarViewController.m; sourceTree = "<group>"; };
 		ABD8C2911DA89A1D00BBF5B7 /* HomeTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabbarViewController.h; sourceTree = "<group>"; };
+		ABE143671E9F5B5800DA2DF1 /* MyRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecommendViewController.h; sourceTree = "<group>"; };
+		ABE143681E9F5B5800DA2DF1 /* MyRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecommendViewController.m; sourceTree = "<group>"; };
+		ABE1436A1E9F807400DA2DF1 /* RecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTableViewCell.h; sourceTree = "<group>"; };
+		ABE1436B1E9F807400DA2DF1 /* RecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTableViewCell.m; sourceTree = "<group>"; };
+		ABE1436C1E9F807400DA2DF1 /* RecommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendTableViewCell.xib; sourceTree = "<group>"; };
 		ABEBA2561DDEFC8500601187 /* UnionContenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionContenModel.h; sourceTree = "<group>"; };
 		ABEBA2571DDEFC8500601187 /* UnionContenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionContenModel.m; sourceTree = "<group>"; };
 		ABF4E2761D9B5E57006AD23C /* ConsumeTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsumeTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1443,6 +1451,8 @@
 				D196D5731E0B6C310062AD91 /* PSWVertifyViewController.m */,
 				AB1496641E1645C70042637C /* AboutViewController.h */,
 				AB1496651E1645C70042637C /* AboutViewController.m */,
+				ABE143671E9F5B5800DA2DF1 /* MyRecommendViewController.h */,
+				ABE143681E9F5B5800DA2DF1 /* MyRecommendViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1637,6 +1647,9 @@
 				AB06A98A1DF949B1006F67C2 /* AttentionShopTableViewCell.h */,
 				AB06A98B1DF949B1006F67C2 /* AttentionShopTableViewCell.m */,
 				AB06A98C1DF949B1006F67C2 /* AttentionShopTableViewCell.xib */,
+				ABE1436A1E9F807400DA2DF1 /* RecommendTableViewCell.h */,
+				ABE1436B1E9F807400DA2DF1 /* RecommendTableViewCell.m */,
+				ABE1436C1E9F807400DA2DF1 /* RecommendTableViewCell.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2394,6 +2407,7 @@
 			files = (
 				ABCB95481D9B8E94008927C7 /* Union.storyboard in Resources */,
 				ABF4E2891D9B5E58006AD23C /* LaunchScreen.storyboard in Resources */,
+				ABE1436E1E9F807400DA2DF1 /* RecommendTableViewCell.xib in Resources */,
 				D12165F21DB71CCE006B06FC /* SYQMoneyTableViewCell.xib in Resources */,
 				D1A3C08A1E1246DA0040AAD9 /* BankCardTableViewCell.xib in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
@@ -2747,6 +2761,7 @@
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
 				D15B3AFA1DDC0E5E009122FE /* DataVerifier.m in Sources */,
 				ABF5BEED1DF7EFF100D19DFB /* UserInfoTableViewController.m in Sources */,
+				ABE143691E9F5B5800DA2DF1 /* MyRecommendViewController.m in Sources */,
 				D12054941DED221800EB2707 /* BusinessTableViewCell.m in Sources */,
 				D1F916A51E078BF00091B989 /* NemberModel.m in Sources */,
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
@@ -2804,6 +2819,7 @@
 				D10EE3DD1DB0B28F001C1992 /* ASIInputStream.m in Sources */,
 				D10EE3DC1DB0B28F001C1992 /* ASIHTTPRequest.m in Sources */,
 				D121651A1DB4F2B4006B06FC /* YZDisplayViewController.m in Sources */,
+				ABE1436D1E9F807400DA2DF1 /* RecommendTableViewCell.m in Sources */,
 				ABF4E27B1D9B5E58006AD23C /* main.m in Sources */,
 				AB24F2AD1E681BCE00764DA7 /* RSADataVerifier.m in Sources */,
 				D150DFB91DE4166F0045FB2B /* AccountDetailViewController.m in Sources */,
