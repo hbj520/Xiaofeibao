@@ -203,6 +203,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)myRecommendsWithParameters:(NSDictionary *)para
                             result:(ArrayBlock)result
                        errorResult:(ErrorBlock)errorResult;
+#pragma mark - 推荐有奖
+- (void)recmmendPriceWithParameters:(NSDictionary *)para
+                             result:(ModelBlock)result
+                        errorResult:(ErrorBlock)errorResult;
 #pragma mark -修改手机号码
 - (void)fixPhoneNumWithParameters:(NSDictionary *)para
                            result:(StateBlock)result

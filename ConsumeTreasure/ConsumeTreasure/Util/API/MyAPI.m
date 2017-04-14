@@ -35,7 +35,7 @@
 #import "NemberModel.h"
 #import "OrderConModel.h"
 #import "PersonInfoModel.h"
-
+#import "RecommendPriceModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -44,7 +44,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -1597,6 +1597,39 @@
             NSMutableArray *memberArr = [NSMutableArray array];
             memberArr = [NemberModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"memList"] error:&error];
             result(YES,info,@[memberArr]);
+        }else{
+            result(NO,info,nil);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+#pragma mark - 推荐有奖
+- (void)recmmendPriceWithParameters:(NSDictionary *)para
+                             result:(ModelBlock)result
+                        errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"myAccount/myInvitation" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSMutableArray *accountArr = [NSMutableArray array];
+            NSError *err = nil;
+            NSArray *data = responseObject[@"data"][@"moneyList"];
+            accountArr = [RecommendPriceModel arrayOfModelsFromDictionaries:data error:&err];
+            
+            
+            recordArrayModel *model = [[recordArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
+            result(YES,info,model);
         }else{
             result(NO,info,nil);
         }

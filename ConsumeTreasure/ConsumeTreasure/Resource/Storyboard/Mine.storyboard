@@ -685,6 +685,7 @@
                         <outlet property="benifitTableView" destination="X5w-QZ-7q2" id="5jh-DG-3KQ"/>
                         <outlet property="checkrulesLabel" destination="GLE-BI-iD8" id="mki-bJ-HzV"/>
                         <outlet property="invitemenLabel" destination="zKk-Wo-nV3" id="Arx-Ff-sQ8"/>
+                        <segue destination="FNT-7b-4fD" kind="push" identifier="facetofaceSegue" id="Gqi-Z4-J6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mB-P2-tZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1425,7 +1426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TA-Ib-yno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5031" y="3151"/>
+            <point key="canvasLocation" x="-5002" y="3787"/>
         </scene>
         <!--Attention Shop View Controller-->
         <scene sceneID="SoB-vu-vXP">
@@ -2092,6 +2093,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOg-MY-qst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1060" y="2558"/>
+        </scene>
+        <!--ShareQR Code View Controller-->
+        <scene sceneID="HD5-ad-6MT">
+            <objects>
+                <viewController id="FNT-7b-4fD" customClass="ShareQRCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KwE-hp-7gm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ixw-g7-IQm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bWV-x2-yxR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIH-GN-7dS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfT-Kq-QWJ">
+                                <rect key="frame" x="18" y="20" width="11" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="11" id="Jw6-E8-5TV"/>
+                                    <constraint firstAttribute="height" constant="22" id="imL-tt-X1W"/>
+                                </constraints>
+                                <state key="normal" image="backWhite"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="FNT-7b-4fD" eventType="touchUpInside" id="X8j-kf-1KI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vIH-GN-7dS" firstAttribute="leading" secondItem="bWV-x2-yxR" secondAttribute="leading" id="2Zu-Af-C3e"/>
+                            <constraint firstItem="rfT-Kq-QWJ" firstAttribute="top" secondItem="bWV-x2-yxR" secondAttribute="top" constant="20" id="2ft-Cv-ggP"/>
+                            <constraint firstItem="Ixw-g7-IQm" firstAttribute="top" secondItem="vIH-GN-7dS" secondAttribute="bottom" id="3Ec-uI-zNI"/>
+                            <constraint firstItem="vIH-GN-7dS" firstAttribute="top" secondItem="bWV-x2-yxR" secondAttribute="top" id="874-xZ-p7v"/>
+                            <constraint firstItem="rfT-Kq-QWJ" firstAttribute="leading" secondItem="bWV-x2-yxR" secondAttribute="leading" constant="18" id="JMN-kA-1Vx"/>
+                            <constraint firstAttribute="trailing" secondItem="vIH-GN-7dS" secondAttribute="trailing" id="UyT-F4-Vsg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wHc-Ry-OoB"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="vIH-GN-7dS" id="rfs-Jd-YGq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4R2-dg-DTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1732" y="2305"/>
         </scene>
     </scenes>
     <resources>
