@@ -45,7 +45,7 @@
     
     [self setTextField];
     [self judgeBankCard];
-    [self upPayKeyBoard];
+    
     
     self.leftMoney.text = [NSString stringWithFormat:@"可提现余额为%@元",self.moneyType[0]];
     theType = self.moneyType[1];
@@ -173,6 +173,7 @@
 
 - (IBAction)getMoneyNow:(id)sender {
     NSLog(@"立即提现");
+    [self upPayKeyBoard];
    // NSLog(@"========%@======",_bankID);
     if (Tongtf.text.floatValue >= 1) {
         
@@ -213,7 +214,10 @@
             
         }else{
             [BQActivityView hideActiviTy];
+            [self.coverView.payTextField resignFirstResponder];
+            [self.coverView removeFromSuperview];
             showAlert(msg);
+            
         }
         
     } errorResult:^(NSError *enginerError) {
