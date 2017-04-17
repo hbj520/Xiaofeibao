@@ -1622,13 +1622,53 @@
             [self cancelAllOperation];
             
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSDictionary *dicRes = @{
+                                     @"code": @"1",
+                                     @"data": @{
+                                         @"adimg": @"http://www.xftb168.com/img/20170413/05bf51c4-00cb-4d9a-8b23-47ed907d71bc.jpg",
+                                         @"moneyList": @[
+                                                       @{
+                                                           @"createdate": @"2017-01-06 16:52:21",
+                                                           @"money": @"75.000",
+                                                           @"phone": @"18019580142"
+                                                       },
+                                                       @{
+                                                           @"createdate": @"2017-01-07 16:48:28",
+                                                           @"money": @"7.500",
+                                                           @"phone": @"18019580142"
+                                                       },
+                                                       @{
+                                                           @"createdate": @"2017-02-28 09:28:06",
+                                                           @"money": @"0.290",
+                                                           @"phone": @"18019580142"
+                                                       },
+                                                       @{
+                                                           @"createdate": @"2017-03-01 11:28:01",
+                                                           @"money": @"0.003",
+                                                           @"phone": @"17756595878"
+                                                       },
+                                                       @{
+                                                           @"createdate": @"2017-03-21 11:22:09",
+                                                           @"money": @"0.001",
+                                                           @"phone": @"15056013505"
+                                                       },
+                                                       @{
+                                                           @"createdate": @"2017-03-28 12:06:19",
+                                                           @"money": @"0.007",
+                                                           @"phone": @"15056013505"
+                                                       }
+                                                       ],
+                                         @"num": @"6",
+                                         @"total": @"82.801"
+                                     },
+                                     @"msg": @"success"
+                                     };
             NSMutableArray *accountArr = [NSMutableArray array];
             NSError *err = nil;
-            NSArray *data = responseObject[@"data"][@"moneyList"];
+            NSArray *data = dicRes[@"data"][@"moneyList"];
             accountArr = [RecommendPriceModel arrayOfModelsFromDictionaries:data error:&err];
             
-            
-            recordArrayModel *model = [[recordArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
+            RecommendPriceArrayModel *model = [[RecommendPriceArrayModel alloc]initWithDictionary:dicRes[@"data"] error:&err];
             result(YES,info,model);
         }else{
             result(NO,info,nil);

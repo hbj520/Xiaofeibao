@@ -9,13 +9,14 @@
 #import "RecommendPriceModel.h"
 
 @implementation RecommendPriceModel
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+}
 
 @end
 
 @implementation RecommendPriceArrayModel
-
-+(JSONKeyMapper *)keyMapper{
-    return [[JSONKeyMapper alloc]initWithDictionary:@{@"description":@"record_description"}];
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
 }
-
 @end

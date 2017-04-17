@@ -10,10 +10,12 @@
 #import "RecommendTableViewCell.h"
 #import "CHSocialService.h"
 #import "ShareQRCodeViewController.h"
+#import "RecommendPriceModel.h"
 
 @interface MyRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger page;
+    RecommendPriceArrayModel *recommendModel;
 }
 @property (weak, nonatomic) IBOutlet UILabel *allbenifitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *invitemenLabel;
@@ -41,7 +43,10 @@
 - (void)loadDataWithPage:(NSInteger)page{
     [[MyAPI sharedAPI] recmmendPriceWithParameters:@{@"pageNum":[NSString stringWithFormat:@"%ld",page],
                                                     @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, id object) {
-                                                        
+                                                        if (success) {
+                                                            recommendModel = object;
+                                                            [self.benifitTableView reloadData];
+                                                        }
                                                     } errorResult:^(NSError *enginerError) {
                                                         
                                                     }];
@@ -71,13 +76,15 @@
 }
 #pragma mark - UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return recommendModel.moneyList.count;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecommendTableViewCell *recommendCell = [tableView dequeueReusableCellWithIdentifier:RecommendReuseId forIndexPath:indexPath];
+    RecommendPriceModel *model = recommendModel.moneyList[indexPath.row];
+    [recommendCell configWithData:model];
     return recommendCell;
 }
 

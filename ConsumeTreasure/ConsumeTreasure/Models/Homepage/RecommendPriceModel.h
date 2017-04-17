@@ -6,7 +6,7 @@
 //  Copyright © 2017年 youyou. All rights reserved.
 //
 
-#import <JSONModel/JSONModel.h>
+#import "JSONModel.h"
 @protocol RecommendPriceModel
 
 @end
@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *createdate;
 @property (nonatomic, strong) NSString *money;
 @property (nonatomic, strong) NSString *phone;
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key;
+
 @end
 
 @interface RecommendPriceArrayModel : JSONModel
@@ -22,4 +24,6 @@
 @property (nonatomic, strong) NSString *num;
 @property (nonatomic, strong) NSString *total;
 @property (nonatomic, strong) NSArray <RecommendPriceModel>*moneyList;
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key;
+
 @end

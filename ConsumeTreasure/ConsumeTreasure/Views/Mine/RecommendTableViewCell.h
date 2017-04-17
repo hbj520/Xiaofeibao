@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RecommendPriceModel.h"
 #define RecommendReuseId @"recommendCellReuseId"
 @interface RecommendTableViewCell : UITableViewCell
-
+- (void)configWithData:(RecommendPriceModel *)model;
 @end

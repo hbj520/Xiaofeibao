@@ -25,5 +25,10 @@
 
     // Configure the view for the selected state
 }
-
+#pragma mark -PrivateMethod
+- (void)configWithData:(RecommendPriceModel *)model{
+    self.phoneNumLabel.text = model.phone;
+    self.timeLabel.text = model.createdate;
+    self.moneyLabel.text = model.money;
+}
 @end
