@@ -30,6 +30,7 @@
 		AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */; };
 		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
 		AB1BE40D1EA0BC7B00BD7499 /* RecommendPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1BE40C1EA0BC7B00BD7499 /* RecommendPriceModel.m */; };
+		AB1BE4101EA5A58E00BD7499 /* ActivityRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1BE40F1EA5A58E00BD7499 /* ActivityRulesViewController.m */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
 		AB24F2A11E67026200764DA7 /* ThirdPlatformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */; };
 		AB24F2A41E681A0600764DA7 /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A31E681A0600764DA7 /* APAuthV2Info.m */; };
@@ -420,6 +421,8 @@
 		AB1496651E1645C70042637C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		AB1BE40B1EA0BC7B00BD7499 /* RecommendPriceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendPriceModel.h; sourceTree = "<group>"; };
 		AB1BE40C1EA0BC7B00BD7499 /* RecommendPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendPriceModel.m; sourceTree = "<group>"; };
+		AB1BE40E1EA5A58E00BD7499 /* ActivityRulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityRulesViewController.h; sourceTree = "<group>"; };
+		AB1BE40F1EA5A58E00BD7499 /* ActivityRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityRulesViewController.m; sourceTree = "<group>"; };
 		AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinePayViewController.h; sourceTree = "<group>"; };
 		AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinePayViewController.m; sourceTree = "<group>"; };
 		AB24F29F1E67026200764DA7 /* ThirdPlatformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPlatformViewController.h; sourceTree = "<group>"; };
@@ -1464,6 +1467,8 @@
 				AB1496651E1645C70042637C /* AboutViewController.m */,
 				ABE143671E9F5B5800DA2DF1 /* MyRecommendViewController.h */,
 				ABE143681E9F5B5800DA2DF1 /* MyRecommendViewController.m */,
+				AB1BE40E1EA5A58E00BD7499 /* ActivityRulesViewController.h */,
+				AB1BE40F1EA5A58E00BD7499 /* ActivityRulesViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2692,6 +2697,7 @@
 				AB608C331D9D0B1200194FC2 /* NSObject+AFNetworking.m in Sources */,
 				D12054831DEC26A500EB2707 /* StoreMasterModel.m in Sources */,
 				D1A3C0AF1E160F9A0040AAD9 /* cityModel.m in Sources */,
+				AB1BE4101EA5A58E00BD7499 /* ActivityRulesViewController.m in Sources */,
 				ABFEA4A51DEC137E0002672F /* BecomeShopUnionViewController.m in Sources */,
 				D16BF2BE1DF01B5A001A82BF /* ProvinceHeadView.m in Sources */,
 				D196D5811E0C21210062AD91 /* CashViewController.m in Sources */,

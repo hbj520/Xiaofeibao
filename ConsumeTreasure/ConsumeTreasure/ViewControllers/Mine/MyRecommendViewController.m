@@ -11,11 +11,14 @@
 #import "CHSocialService.h"
 #import "ShareQRCodeViewController.h"
 #import "RecommendPriceModel.h"
+#import "ActivityRulesViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface MyRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger page;
     RecommendPriceArrayModel *recommendModel;
+    NSMutableArray *dataSource;
 }
 @property (weak, nonatomic) IBOutlet UILabel *allbenifitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *invitemenLabel;
@@ -31,8 +34,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     page = 1;
+    dataSource = [NSMutableArray array];
     [self loadDataWithPage:page];
     [self configTableView];
+    [self addMJRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,16 +45,44 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark -PrivateMethod
+- (void)addMJRefresh{
+    __weak typeof(self) weakSelf = self;
+    self.benifitTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (dataSource.count > 0 ) {
+            [dataSource removeAllObjects];
+        }
+        page = 1;
+        [weakSelf loadDataWithPage:page];
+    }];
+    self.benifitTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page++;
+        [weakSelf loadDataWithPage:page];
+    }];
+}
 - (void)loadDataWithPage:(NSInteger)page{
     [[MyAPI sharedAPI] recmmendPriceWithParameters:@{@"pageNum":[NSString stringWithFormat:@"%ld",page],
                                                     @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, id object) {
                                                         if (success) {
                                                             recommendModel = object;
-                                                            [self.benifitTableView reloadData];
+                                                            if (recommendModel.moneyList.count == 0) {
+                                                                self.benifitTableView.hidden = YES;
+                                                                [self.benifitTableView.mj_footer endRefreshingWithNoMoreData];
+                                                            }else{
+                                                                [dataSource addObjectsFromArray:recommendModel.moneyList];
+                                                                
+                                                            }
+                                                            [self createUI];
                                                         }
+                                                        [self.benifitTableView.mj_footer endRefreshing];
+                                                        [self.benifitTableView.mj_header endRefreshing];
                                                     } errorResult:^(NSError *enginerError) {
-                                                        
+                                                        [self showHint:@"数据请求出错"];
                                                     }];
+}
+- (void)createUI{
+    self.allbenifitLabel.text = recommendModel.total;
+    self.invitemenLabel.text = recommendModel.num;
+       [self.benifitTableView reloadData];
 }
 - (void)configTableView{
     self.benifitTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -57,6 +90,12 @@
     self.benifitTableView.delegate = self;
     self.benifitTableView.dataSource = self;
     [self.benifitTableView registerNib:[UINib nibWithNibName:@"RecommendTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:RecommendReuseId];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActivityAct:)];
+    self.checkrulesLabel.userInteractionEnabled = YES;
+    [self.checkrulesLabel addGestureRecognizer:tapGes];
+}
+- (void)tapActivityAct:(id)ges{
+        [self performSegueWithIdentifier:@"activitySegue" sender:recommendModel.url];
 }
 - (IBAction)weixinChatBtn:(id)sender {
 [[CHSocialServiceCenter shareInstance] shareTitle:@"智惠返邀您一起享优惠" content:@"扫码支付实时到账，商户提现秒到，万亿市场等您来享！" imageURL:@"http://p2pguide.sudaotech.com/platform/image/1/20160318/3c896c87-65b6-481d-81ca-1b4a0b6d8dd4/" image:[UIImage imageNamed:@"qrImg"] urlResource:[NSString stringWithFormat:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=%@",[[XFBConfig Instance]getmemId]] type:CHSocialWeChat controller:self completion:^(BOOL successful) {
@@ -71,19 +110,18 @@
     }];
 }
 - (IBAction)facetofaceBtn:(id)sender {
-    [self performSegueWithIdentifier:@"facetofaceSegue" sender:[[XFBConfig Instance] getmemId
-                                                                ]];
+    [self performSegueWithIdentifier:@"facetofaceSegue" sender:[[XFBConfig Instance] getmemId]];
 }
 #pragma mark - UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return recommendModel.moneyList.count;
+    return dataSource.count;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecommendTableViewCell *recommendCell = [tableView dequeueReusableCellWithIdentifier:RecommendReuseId forIndexPath:indexPath];
-    RecommendPriceModel *model = recommendModel.moneyList[indexPath.row];
+    RecommendPriceModel *model = dataSource[indexPath.row];
     [recommendCell configWithData:model];
     return recommendCell;
 }
@@ -98,6 +136,10 @@
         NSString *memStr = sender;
         ShareQRCodeViewController *shareVC = segue.destinationViewController;
         shareVC.memId = memStr;
+    }else if ([segue.identifier isEqualToString:@"activitySegue"]){
+        NSString *url = sender;
+        ActivityRulesViewController *activityVC = segue.destinationViewController;
+        activityVC.url = url;
     }
 }
 
