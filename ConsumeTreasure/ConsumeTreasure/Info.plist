@@ -47,6 +47,8 @@
 	<string>1.0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>baidumap</string>
+		<string>iosamap</string>
 		<string>alipayshare</string>
 		<string>alipay</string>
 		<string>wechat</string>

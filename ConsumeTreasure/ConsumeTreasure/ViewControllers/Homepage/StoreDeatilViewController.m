@@ -27,6 +27,8 @@
 #import <Masonry.h>
 #import <MJRefresh/MJRefresh.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+
+#import "JXMapNavigationView.h"
 @interface StoreDeatilViewController ()<UITableViewDelegate,UITableViewDataSource,MKMapViewDelegate>
 {
     MKMapView *mapView;
@@ -39,6 +41,7 @@
     
     NSString *_keepMemId;///商家id
     NSString *_disCountStr;
+    NSString *_shopName;
     
     
     NSString *longti;
@@ -51,11 +54,20 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomBarView;
 - (IBAction)applyNowBtn:(id)sender;
 
+@property (nonatomic, strong)JXMapNavigationView *mapNavigationView;
+
 @property (nonatomic, weak) LPNavigationBarView *navBar;
 
 @end
 
 @implementation StoreDeatilViewController
+
+- (JXMapNavigationView *)mapNavigationView{
+    if (_mapNavigationView == nil) {
+        _mapNavigationView = [[JXMapNavigationView alloc]init];
+    }
+    return _mapNavigationView;
+}
 
 - (void)viewWillDisappear:(BOOL)animated{
     //[self.navigationController setNavigationBarHidden: NO animated: animated];
@@ -116,7 +128,18 @@
         UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [deleteBtn setImage:[UIImage imageNamed:@"deleteMap"] forState:UIControlStateNormal];
         [deleteBtn addTarget:self action:@selector(delete) forControlEvents:UIControlEventTouchUpInside];
+        UIButton *daohangBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [daohangBtn addTarget:self action:@selector(daohang) forControlEvents:UIControlEventTouchUpInside];
+        [daohangBtn setImage:[UIImage imageNamed:@"daohang"] forState:UIControlStateNormal];
+        [mapView addSubview:daohangBtn];
         [mapView addSubview:deleteBtn];
+        
+        [daohangBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(40, 20));
+            make.left.equalTo(@(10));
+            make.top.equalTo(@10);
+        }];
         
         [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(35, 35));
@@ -144,6 +167,11 @@
 //    self.tableView.alpha = 0.65;
 }
 
+- (void)daohang{
+    [self.mapNavigationView showMapNavigationViewWithtargetLatitude:[lati doubleValue] targetLongitute:[longti doubleValue] toName:@""];
+    [self.view addSubview:_mapNavigationView];
+}
+
 - (void)delete{
     
     mapView.hidden = YES;
@@ -162,6 +190,7 @@
 - (void)setStoreModel:(TuiJianModel *)StoreModel{
     NSLog(@"😝%@😋",StoreModel);
     _keepMemId = StoreModel.memid;
+    //_shopName = StoreModel.shopName;
     [self loadDataWithMemId:StoreModel.memid];
 }
 

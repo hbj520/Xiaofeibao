@@ -197,6 +197,8 @@
 		D133A5A51E8E47A7002725F3 /* PaySuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = D133A5A41E8E47A7002725F3 /* PaySuccessView.m */; };
 		D133A5A71E8E47CA002725F3 /* PaySuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */; };
 		D133A5AC1E8E5E6A002725F3 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D133A5AB1E8E5E6A002725F3 /* PaySuccessViewController.m */; };
+		D134492C1EA5B3900005573E /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D13449291EA5B3900005573E /* CLLocation+YCLocation.m */; };
+		D134492D1EA5B3900005573E /* JXMapNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D134492B1EA5B3900005573E /* JXMapNavigationView.m */; };
 		D150DFB01DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */; };
 		D150DFB11DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */; };
 		D150DFB51DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D150DFB31DE3DE9A0045FB2B /* ChangeRecStoreTableViewCell.m */; };
@@ -707,6 +709,10 @@
 		D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessView.xib; sourceTree = "<group>"; };
 		D133A5AA1E8E5E6A002725F3 /* PaySuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessViewController.h; sourceTree = "<group>"; };
 		D133A5AB1E8E5E6A002725F3 /* PaySuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessViewController.m; sourceTree = "<group>"; };
+		D13449281EA5B3900005573E /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
+		D13449291EA5B3900005573E /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
+		D134492A1EA5B3900005573E /* JXMapNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMapNavigationView.h; sourceTree = "<group>"; };
+		D134492B1EA5B3900005573E /* JXMapNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMapNavigationView.m; sourceTree = "<group>"; };
 		D150DFAD1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeRecommendTableViewCell.h; sourceTree = "<group>"; };
 		D150DFAE1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeRecommendTableViewCell.m; sourceTree = "<group>"; };
 		D150DFAF1DE3DCD60045FB2B /* ChangeRecommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeRecommendTableViewCell.xib; sourceTree = "<group>"; };
@@ -1844,6 +1850,7 @@
 		D10EE3911DB0B21D001C1992 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				D13449271EA5B3770005573E /* Daohang */,
 				D1C79B171E77921F00869008 /* HMDatePickView */,
 				AB24F2AE1E69413D00764DA7 /* Lib */,
 				D1E130A21E54216F006DF83E /* PYSearch */,
@@ -1972,6 +1979,18 @@
 				D12165171DB4F2B4006B06FC /* YZFlowLayout.m */,
 			);
 			path = YZDisplayViewController;
+			sourceTree = "<group>";
+		};
+		D13449271EA5B3770005573E /* Daohang */ = {
+			isa = PBXGroup;
+			children = (
+				D13449281EA5B3900005573E /* CLLocation+YCLocation.h */,
+				D13449291EA5B3900005573E /* CLLocation+YCLocation.m */,
+				D134492A1EA5B3900005573E /* JXMapNavigationView.h */,
+				D134492B1EA5B3900005573E /* JXMapNavigationView.m */,
+			);
+			name = Daohang;
+			path = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
 		D15B3A8E1DDC0E5E009122FE /* AliPay */ = {
@@ -2686,6 +2705,7 @@
 				D1E130B01E54216F006DF83E /* PYSearchConst.m in Sources */,
 				D12165F51DB79D28006B06FC /* MyAccountViewController.m in Sources */,
 				D10EE3E01DB0B28F001C1992 /* Reachability.m in Sources */,
+				D134492D1EA5B3900005573E /* JXMapNavigationView.m in Sources */,
 				D16BF2CB1DF106DC001A82BF /* JPullDownMenu.m in Sources */,
 				D16BF2B51DEFF15B001A82BF /* JFSearchView.m in Sources */,
 				D170F2B11DAFB6A500272E57 /* MineViewController.m in Sources */,
@@ -2792,6 +2812,7 @@
 				D16BF2D41DF15004001A82BF /* CommentModel.m in Sources */,
 				D1E130B31E54216F006DF83E /* UIColor+PYExtension.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
+				D134492C1EA5B3900005573E /* CLLocation+YCLocation.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D1E1306B1E52D9F7006DF83E /* WithDrawRecordViewController.m in Sources */,
 				D16BF2BB1DF017B3001A82BF /* LocationViewController.m in Sources */,

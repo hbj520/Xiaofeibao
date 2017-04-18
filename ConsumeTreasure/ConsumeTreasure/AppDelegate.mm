@@ -7,7 +7,7 @@
 //  Created by youyou on 9/28/16.
 //  Copyright © 2016 youyou. All rights reserved.
 //
-
+#import "JXMapNavigationView.h"
 #import "AppDelegate.h"
 #import "LoginAndRegisterViewController.h"
 #import "CHSocialService.h"
@@ -218,6 +218,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [application setApplicationIconBadgeNumber:0];
     [JPUSHService setBadge:0];
     [application cancelAllLocalNotifications];
+    
+    JXMapNavigationView *view = [[JXMapNavigationView alloc]init];
+    [view remove];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
