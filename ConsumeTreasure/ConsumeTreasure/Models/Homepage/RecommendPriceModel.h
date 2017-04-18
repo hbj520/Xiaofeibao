@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSString *num;
 @property (nonatomic, strong) NSString *total;
 @property (nonatomic, strong) NSArray <RecommendPriceModel>*moneyList;
+@property (nonatomic, strong) NSString *url;
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key;
 
 @end
