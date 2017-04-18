@@ -66,12 +66,15 @@
                                                             recommendModel = object;
                                                             if (recommendModel.moneyList.count == 0) {
                                                                 self.benifitTableView.hidden = YES;
+                                                                [self.benifitTableView.mj_footer endRefreshingWithNoMoreData];
                                                             }else{
                                                                 [dataSource addObjectsFromArray:recommendModel.moneyList];
                                                                 
                                                             }
                                                             [self createUI];
                                                         }
+                                                        [self.benifitTableView.mj_footer endRefreshing];
+                                                        [self.benifitTableView.mj_header endRefreshing];
                                                     } errorResult:^(NSError *enginerError) {
                                                         [self showHint:@"数据请求出错"];
                                                     }];
@@ -111,14 +114,14 @@
 }
 #pragma mark - UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return recommendModel.moneyList.count;
+    return dataSource.count;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RecommendTableViewCell *recommendCell = [tableView dequeueReusableCellWithIdentifier:RecommendReuseId forIndexPath:indexPath];
-    RecommendPriceModel *model = recommendModel.moneyList[indexPath.row];
+    RecommendPriceModel *model = dataSource[indexPath.row];
     [recommendCell configWithData:model];
     return recommendCell;
 }
