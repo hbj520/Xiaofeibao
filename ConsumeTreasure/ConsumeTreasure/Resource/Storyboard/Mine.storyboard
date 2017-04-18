@@ -702,37 +702,30 @@
                         <viewControllerLayoutGuide type="bottom" id="UCt-lw-TCD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pd8-dh-of6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmH-MM-C2W">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nse-Ph-cBb">
-                                <rect key="frame" x="18" y="20" width="11" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="LFP-VZ-eCf"/>
-                                    <constraint firstAttribute="width" constant="11" id="mW9-oK-ovx"/>
-                                </constraints>
-                                <state key="normal" image="backWhite"/>
-                                <connections>
-                                    <action selector="backBtn:" destination="wCh-yG-Z3m" eventType="touchUpInside" id="hnZ-Mg-n7u"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nse-Ph-cBb" firstAttribute="top" secondItem="Rzy-At-UYc" secondAttribute="bottom" id="6ux-sy-oOP"/>
                             <constraint firstItem="ZmH-MM-C2W" firstAttribute="leading" secondItem="pd8-dh-of6" secondAttribute="leading" id="7Ci-8F-MFY"/>
                             <constraint firstAttribute="trailing" secondItem="ZmH-MM-C2W" secondAttribute="trailing" id="FaH-uX-ROx"/>
                             <constraint firstItem="UCt-lw-TCD" firstAttribute="top" secondItem="ZmH-MM-C2W" secondAttribute="bottom" id="dlO-Qi-c2V"/>
                             <constraint firstItem="ZmH-MM-C2W" firstAttribute="top" secondItem="pd8-dh-of6" secondAttribute="top" id="lSn-GQ-V8t"/>
-                            <constraint firstItem="nse-Ph-cBb" firstAttribute="leading" secondItem="pd8-dh-of6" secondAttribute="leading" constant="18" id="tfj-Gb-lrO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gdH-bU-YQJ"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="gdH-bU-YQJ">
+                        <barButtonItem key="leftBarButtonItem" image="backWhite" id="Glu-0r-a4Y">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="wCh-yG-Z3m" id="K0D-mc-aYC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="ZmH-MM-C2W" id="G3O-wv-reA"/>
                     </connections>
