@@ -168,7 +168,7 @@
 }
 
 - (void)daohang{
-    [self.mapNavigationView showMapNavigationViewWithtargetLatitude:[lati doubleValue] targetLongitute:[longti doubleValue] toName:@""];
+    [self.mapNavigationView showMapNavigationViewWithtargetLatitude:[lati doubleValue] targetLongitute:[longti doubleValue] toName:_deModel.shopName];
     [self.view addSubview:_mapNavigationView];
 }
 

@@ -66,7 +66,7 @@
     _targetLongitute = targetLongitute;
     _name = name;
     NSArray *appListArr = [JXMapNavigationView checkHasOwnApp];
-    NSString *sheetTitle = [NSString stringWithFormat:@"%@",name];
+    NSString *sheetTitle = [NSString stringWithFormat:@"导航到 %@",name];
     if ([appListArr count] == 1) {
         _sheet = [[UIActionSheet alloc] initWithTitle:sheetTitle delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:appListArr[0], nil];
     }else if ([appListArr count] == 2) {
