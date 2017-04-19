@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "GuideViewController.h"
 
+#import "JPUSHService.h"
+
 @implementation Tools
 
 +(NSString *)countNumAndChangeformat:(NSString *)num
@@ -308,6 +310,12 @@
 }
 //登录超时
 +(void)logoutWithNowVC:(UIViewController *)VC{
+    
+    NSString *alias = @"";
+    [JPUSHService setTags:nil alias:alias fetchCompletionHandle:^(int iResCode,NSSet *iTags, NSString *iAlias) {
+        NSLog(@"rescode: %d, \n tags: %@, \n alias: %@\n", iResCode, iTags , iAlias);//对应的状态码返回为0，代表成功
+    }];
+    
     UIStoryboard *mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     // LoginAndRegisterViewController *loginAndRegisterVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
     UINavigationController *loginVC = [mStorybord instantiateViewControllerWithIdentifier:@"LoginAndRegisterId"];
