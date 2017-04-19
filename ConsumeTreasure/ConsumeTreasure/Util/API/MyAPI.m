@@ -1854,6 +1854,7 @@
     }];
 }
 - (void)ThirdPlatformVerifyWithParameters:(NSString *)phoneNum
+                                 withType:(NSString *)type
                                    result:(StateBlock)result
                               errorResult:(ErrorBlock)errorResult{
     NSDictionary *parameters = @{
@@ -1861,7 +1862,7 @@
         @"platform":@"",
         @"param": @{
             @"phone":phoneNum,
-            @"type":@"0"
+            @"type":type
         }
     };
     [self.manager POST:@"sms/sendBindingMessage" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

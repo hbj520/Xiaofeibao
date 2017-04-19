@@ -236,6 +236,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                                     resulet:(StateBlock)result
                                 errorResult:(ErrorBlock)errorResult;
 - (void)ThirdPlatformVerifyWithParameters:(NSString *)phoneNum
+                                 withType:(NSString *)type
                                    result:(StateBlock)result
                               errorResult:(ErrorBlock)errorResult;
 - (void)releaseThirdPlatformWithParameters:(NSDictionary *)para
