@@ -24,6 +24,7 @@
 - (IBAction)postCodeBtn:(id)sender;
 @property (assign,nonatomic) BOOL isTeacher;
 - (IBAction)back:(id)sender;
+- (IBAction)voiceVerifyCodeBtn:(id)sender;
 
 
 @end
@@ -116,7 +117,7 @@
         return;
     }
     [self setTimeSchedu];
-    [[MyAPI sharedAPI] ThirdPlatformVerifyWithParameters:self.phoneNumTextfield.text result:^(BOOL sucess, NSString *msg) {
+    [[MyAPI sharedAPI] ThirdPlatformVerifyWithParameters:self.phoneNumTextfield.text withType:@"0"  result:^(BOOL sucess, NSString *msg) {
         if(sucess){
             [self showHint:msg];
         }else{
@@ -146,5 +147,22 @@
 }
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)voiceVerifyCodeBtn:(id)sender {
+    [Tools hideKeyBoard];
+    if(self.phoneNumTextfield.text.length < 11){
+        [self showHint:@"请输入正确的手机号"];
+        return;
+    }
+    [[MyAPI sharedAPI] ThirdPlatformVerifyWithParameters:self.phoneNumTextfield.text withType:@"-1" result:^(BOOL sucess, NSString *msg) {
+        if(sucess){
+            [self showHint:msg];
+        }else{
+            [self showHint:msg];
+        }
+    } errorResult:^(NSError *enginerError) {
+        [self showHint:@"语音验证码发送出错"];
+    }];
 }
 @end

@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 - (IBAction)mBackBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *valueCode;
+- (IBAction)voiceVerifyCodeBtn:(id)sender;
 
 @end
 
@@ -141,5 +142,27 @@
 }
 - (IBAction)mBackBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)voiceVerifyCodeBtn:(id)sender {
+    [Tools hideKeyBoard];
+    if (self.phoneTextField.text.length < 11) {
+        NSLog(@"错");
+        [self showHint:@"请输入正确的手机号"];
+        // return;
+    }else{
+        [[MyAPI sharedAPI] postVerifyCodeWithParameters:@{@"phone": self.phoneTextField.text,
+                                                          @"type": @"-2"
+                                                          } result:^(BOOL sucess, NSString *msg) {
+                                                              if (sucess) {
+                                                                  [self showHint:msg];
+                                                              }else{
+                                                                  [self showHint:msg];
+                                                              }
+                                                              
+                                                          } errorResult:^(NSError *enginerError) {
+                                                              
+                                                              [self showHint:@"验证码注册出错"];
+                                                          }];
+    }
 }
 @end

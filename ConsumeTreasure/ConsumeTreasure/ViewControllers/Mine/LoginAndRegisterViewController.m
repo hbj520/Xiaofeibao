@@ -53,6 +53,8 @@
 - (IBAction)accountRegisterBtn:(id)sender;
 //忘记密码
 - (IBAction)forgetPassword:(id)sender;
+- (IBAction)voiceVerifyBtn:(id)sender;
+
 
 @end
 
@@ -293,6 +295,33 @@
 //    ForgetPasswordViewController *forgetVC = [[ForgetPasswordViewController alloc] init];
 //    [self.navigationController pushViewController:forgetVC animated:YES];
     [self performSegueWithIdentifier:@"forgetPasswordSegue" sender:nil];
+}
+//语音验证码
+- (IBAction)voiceVerifyBtn:(id)sender {
+    [Tools hideKeyBoard];
+    UITextField *phoneTextField = [self.registerView viewWithTag:10];
+    if (phoneTextField.text.length < 11) {
+        NSLog(@"错");
+        
+        //  [UIAlertView alertWithTitle:@"温馨提示" message:@"登录名不能为空" buttonTitle:nil];
+        
+        [self showHint:@"请输入正确的手机号"];
+        // return;
+    }else{
+        [[MyAPI sharedAPI] postVerifyCodeWithParameters:@{@"phone": self.registerPhoneTextField.text,
+                                                          @"type": @"-1"
+                                                          } result:^(BOOL sucess, NSString *msg) {
+                                                              if (sucess) {
+                                                                  [self showHint:msg];
+                                                              }else{
+                                                                  [self showHint:msg];
+                                                              }
+                                                              
+                                                          } errorResult:^(NSError *enginerError) {
+                                                              
+                                                              [self showHint:@"语音验证码注册出错"];
+                                                          }];
+    }
 }
 - (void)verifyThirdPlatform{
   
