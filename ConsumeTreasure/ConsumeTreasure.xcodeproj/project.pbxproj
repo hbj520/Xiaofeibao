@@ -46,6 +46,7 @@
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
+		AB4B27901EA8582D00650A1C /* noticeVoice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB4B278F1EA8582D00650A1C /* noticeVoice.mp3 */; };
 		AB50D4791E0928AA00B427E6 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D46D1E0928AA00B427E6 /* NSData+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB50D47A1E0928AA00B427E6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D46F1E0928AA00B427E6 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB50D47B1E0928AA00B427E6 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4711E0928AA00B427E6 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -450,6 +451,7 @@
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
 		AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LianmenRightCollectionViewCell.m; sourceTree = "<group>"; };
 		AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LianmenRightCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB4B278F1EA8582D00650A1C /* noticeVoice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noticeVoice.mp3; sourceTree = "<group>"; };
 		AB50D46C1E0928AA00B427E6 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		AB50D46D1E0928AA00B427E6 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		AB50D46E1E0928AA00B427E6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -1273,6 +1275,7 @@
 		ABCB95311D9B8972008927C7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AB4B278F1EA8582D00650A1C /* noticeVoice.mp3 */,
 				ABD8C28C1DA8994500BBF5B7 /* Json */,
 				ABCB953D1D9B8A35008927C7 /* Storyboard */,
 			);
@@ -2384,7 +2387,7 @@
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3S4HP5TK72;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2461,6 +2464,7 @@
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
+				AB4B27901EA8582D00650A1C /* noticeVoice.mp3 in Resources */,
 				D16BF2C01DF01B78001A82BF /* ProvinceHeadView.xib in Resources */,
 				AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */,
 				D16BF2CA1DF106DC001A82BF /* JPullDown.bundle in Resources */,
@@ -3134,8 +3138,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c682b366-af10-4f4b-a4c9-90c31e830a64";
+				PROVISIONING_PROFILE_SPECIFIER = xiaofeibaoDevProfile;
 			};
 			name = Debug;
 		};
@@ -3275,8 +3279,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "c682b366-af10-4f4b-a4c9-90c31e830a64";
+				PROVISIONING_PROFILE_SPECIFIER = xiaofeibaoDevProfile;
 			};
 			name = Release;
 		};
