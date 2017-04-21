@@ -26,6 +26,7 @@
 		AB0808741E13B4C10074D573 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808721E13B4C10074D573 /* FileHelper.m */; };
 		AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808761E13C53C0074D573 /* GuideViewController.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
+		AB109AC91EA881DB003FDA4C /* noticeVoice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB109AC81EA881DB003FDA4C /* noticeVoice.mp3 */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
 		AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */; };
 		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
@@ -46,7 +47,6 @@
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
 		AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */; };
-		AB4B27901EA8582D00650A1C /* noticeVoice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB4B278F1EA8582D00650A1C /* noticeVoice.mp3 */; };
 		AB50D4791E0928AA00B427E6 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D46D1E0928AA00B427E6 /* NSData+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB50D47A1E0928AA00B427E6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D46F1E0928AA00B427E6 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB50D47B1E0928AA00B427E6 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50D4711E0928AA00B427E6 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -415,6 +415,7 @@
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		AB109AC81EA881DB003FDA4C /* noticeVoice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noticeVoice.mp3; sourceTree = "<group>"; };
 		AB10A8251DF122BD0042586A /* EvaluateListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListModel.h; sourceTree = "<group>"; };
 		AB10A8261DF122BD0042586A /* EvaluateListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListModel.m; sourceTree = "<group>"; };
 		AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -451,7 +452,6 @@
 		AB4A22381DB75B390057C838 /* LianmenRightCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LianmenRightCollectionViewCell.h; sourceTree = "<group>"; };
 		AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LianmenRightCollectionViewCell.m; sourceTree = "<group>"; };
 		AB4A223A1DB75B390057C838 /* LianmenRightCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LianmenRightCollectionViewCell.xib; sourceTree = "<group>"; };
-		AB4B278F1EA8582D00650A1C /* noticeVoice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noticeVoice.mp3; sourceTree = "<group>"; };
 		AB50D46C1E0928AA00B427E6 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		AB50D46D1E0928AA00B427E6 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		AB50D46E1E0928AA00B427E6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -1275,7 +1275,7 @@
 		ABCB95311D9B8972008927C7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AB4B278F1EA8582D00650A1C /* noticeVoice.mp3 */,
+				AB109AC81EA881DB003FDA4C /* noticeVoice.mp3 */,
 				ABD8C28C1DA8994500BBF5B7 /* Json */,
 				ABCB953D1D9B8A35008927C7 /* Storyboard */,
 			);
@@ -2464,7 +2464,6 @@
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
 				D15B396D1DD417D6009122FE /* BottomFootView.xib in Resources */,
-				AB4B27901EA8582D00650A1C /* noticeVoice.mp3 in Resources */,
 				D16BF2C01DF01B78001A82BF /* ProvinceHeadView.xib in Resources */,
 				AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */,
 				D16BF2CA1DF106DC001A82BF /* JPullDown.bundle in Resources */,
@@ -2483,6 +2482,7 @@
 				D11736BC1DFE7FAE00270D26 /* StoreControlTableViewCell.xib in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
+				AB109AC91EA881DB003FDA4C /* noticeVoice.mp3 in Resources */,
 				D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */,
 				D12054901DED20A100EB2707 /* IdentiPhotoTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
