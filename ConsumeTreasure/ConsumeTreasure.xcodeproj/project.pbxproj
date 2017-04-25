@@ -26,12 +26,12 @@
 		AB0808741E13B4C10074D573 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808721E13B4C10074D573 /* FileHelper.m */; };
 		AB0808771E13C53C0074D573 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0808761E13C53C0074D573 /* GuideViewController.m */; };
 		AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */; };
-		AB109AC91EA881DB003FDA4C /* noticeVoice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB109AC81EA881DB003FDA4C /* noticeVoice.mp3 */; };
 		AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB10A8261DF122BD0042586A /* EvaluateListModel.m */; };
 		AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */; };
 		AB1496661E1645C70042637C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1496651E1645C70042637C /* AboutViewController.m */; };
 		AB1BE40D1EA0BC7B00BD7499 /* RecommendPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1BE40C1EA0BC7B00BD7499 /* RecommendPriceModel.m */; };
 		AB1BE4101EA5A58E00BD7499 /* ActivityRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1BE40F1EA5A58E00BD7499 /* ActivityRulesViewController.m */; };
+		AB1DA5A81EAEDA8800FDDB24 /* noticeVoice.wav in Resources */ = {isa = PBXBuildFile; fileRef = AB1DA5A71EAEDA8800FDDB24 /* noticeVoice.wav */; };
 		AB22A4671E07E3E100A3DCB7 /* OnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */; };
 		AB24F2A11E67026200764DA7 /* ThirdPlatformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A01E67026200764DA7 /* ThirdPlatformViewController.m */; };
 		AB24F2A41E681A0600764DA7 /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A31E681A0600764DA7 /* APAuthV2Info.m */; };
@@ -415,7 +415,6 @@
 		AB0F64461DB0846B00A5EB1E /* Marco.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
 		AB0F64471DB0D0C100A5EB1E /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB0F64481DB0D0C100A5EB1E /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
-		AB109AC81EA881DB003FDA4C /* noticeVoice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = noticeVoice.mp3; sourceTree = "<group>"; };
 		AB10A8251DF122BD0042586A /* EvaluateListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListModel.h; sourceTree = "<group>"; };
 		AB10A8261DF122BD0042586A /* EvaluateListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateListModel.m; sourceTree = "<group>"; };
 		AB11EC6C1E28A644000ECAE7 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -425,6 +424,7 @@
 		AB1BE40C1EA0BC7B00BD7499 /* RecommendPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendPriceModel.m; sourceTree = "<group>"; };
 		AB1BE40E1EA5A58E00BD7499 /* ActivityRulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityRulesViewController.h; sourceTree = "<group>"; };
 		AB1BE40F1EA5A58E00BD7499 /* ActivityRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityRulesViewController.m; sourceTree = "<group>"; };
+		AB1DA5A71EAEDA8800FDDB24 /* noticeVoice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeVoice.wav; sourceTree = "<group>"; };
 		AB22A4651E07E3E100A3DCB7 /* OnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlinePayViewController.h; sourceTree = "<group>"; };
 		AB22A4661E07E3E100A3DCB7 /* OnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlinePayViewController.m; sourceTree = "<group>"; };
 		AB24F29F1E67026200764DA7 /* ThirdPlatformViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPlatformViewController.h; sourceTree = "<group>"; };
@@ -1275,7 +1275,7 @@
 		ABCB95311D9B8972008927C7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AB109AC81EA881DB003FDA4C /* noticeVoice.mp3 */,
+				AB1DA5A71EAEDA8800FDDB24 /* noticeVoice.wav */,
 				ABD8C28C1DA8994500BBF5B7 /* Json */,
 				ABCB953D1D9B8A35008927C7 /* Storyboard */,
 			);
@@ -2482,7 +2482,6 @@
 				D11736BC1DFE7FAE00270D26 /* StoreControlTableViewCell.xib in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
-				AB109AC91EA881DB003FDA4C /* noticeVoice.mp3 in Resources */,
 				D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */,
 				D12054901DED20A100EB2707 /* IdentiPhotoTableViewCell.xib in Resources */,
 				D170F2651DAF292A00272E57 /* ImageTableViewCell.xib in Resources */,
@@ -2498,6 +2497,7 @@
 				AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
+				AB1DA5A81EAEDA8800FDDB24 /* noticeVoice.wav in Resources */,
 				D10DC9461E09363300930F74 /* Time.plist in Resources */,
 				D196D5861E0CC3490062AD91 /* DaiLiShopsTableViewCell.xib in Resources */,
 				D15450FC1DF936D8002F4057 /* TuiJianTableViewCell.xib in Resources */,
