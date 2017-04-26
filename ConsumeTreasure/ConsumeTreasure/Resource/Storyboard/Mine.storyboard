@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jYo-yR-Jwc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jYo-yR-Jwc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -642,15 +642,6 @@
                                     <constraint firstItem="zKk-Wo-nV3" firstAttribute="leading" secondItem="0Gb-ES-BV1" secondAttribute="trailing" constant="25" id="xXW-1P-clI"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看活动规则&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-BI-iD8">
-                                <rect key="frame" x="0.0" y="585" width="375" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="sFL-vE-fT8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -658,14 +649,11 @@
                             <constraint firstItem="NPn-hY-Bto" firstAttribute="top" secondItem="VGE-qL-qbA" secondAttribute="bottom" id="7iR-Ug-1mG"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="trailing" secondItem="VGE-qL-qbA" secondAttribute="trailing" id="Hvb-7K-gmT"/>
                             <constraint firstItem="VGE-qL-qbA" firstAttribute="top" secondItem="6fd-0P-oMR" secondAttribute="bottom" id="JNU-lw-JeP"/>
-                            <constraint firstItem="GLE-BI-iD8" firstAttribute="leading" secondItem="OYZ-2S-QrP" secondAttribute="leading" id="Uuv-VP-ioW"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="leading" secondItem="VGE-qL-qbA" secondAttribute="leading" id="cmR-Q6-q9x"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="top" secondItem="NPn-hY-Bto" secondAttribute="bottom" constant="8" id="eMB-xp-5oG"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="top" secondItem="OYZ-2S-QrP" secondAttribute="top" constant="298" id="etB-Va-2ac"/>
-                            <constraint firstItem="7ax-9o-Rsx" firstAttribute="top" secondItem="GLE-BI-iD8" secondAttribute="bottom" id="m1L-Fg-xAu"/>
                             <constraint firstItem="NPn-hY-Bto" firstAttribute="top" secondItem="OYZ-2S-QrP" secondAttribute="top" constant="170" id="p2g-lU-WfP"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="top" secondItem="NPn-hY-Bto" secondAttribute="bottom" constant="8" symbolic="YES" id="pTP-FQ-7EI"/>
-                            <constraint firstAttribute="trailing" secondItem="GLE-BI-iD8" secondAttribute="trailing" id="qPb-u2-U69"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="trailing" secondItem="NPn-hY-Bto" secondAttribute="trailing" id="syz-Su-goe"/>
                             <constraint firstItem="jon-yu-d2w" firstAttribute="leading" secondItem="NPn-hY-Bto" secondAttribute="leading" id="xEe-ZY-FSe"/>
                             <constraint firstAttribute="trailing" secondItem="jon-yu-d2w" secondAttribute="trailing" id="xkb-XL-7Pb"/>
@@ -679,11 +667,16 @@
                                 <action selector="backBtn:" destination="my1-tc-jGx" id="SrT-zN-FRT"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="活动规则" id="LUS-dp-5Gt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="activityRulesBtn:" destination="my1-tc-jGx" id="caz-QO-gvE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="allbenifitLabel" destination="ekN-9P-Raf" id="3CF-jW-nrv"/>
                         <outlet property="benifitTableView" destination="X5w-QZ-7q2" id="5jh-DG-3KQ"/>
-                        <outlet property="checkrulesLabel" destination="GLE-BI-iD8" id="mki-bJ-HzV"/>
                         <outlet property="invitemenLabel" destination="zKk-Wo-nV3" id="Arx-Ff-sQ8"/>
                         <segue destination="FNT-7b-4fD" kind="push" identifier="facetofaceSegue" id="Gqi-Z4-J6v"/>
                         <segue destination="wCh-yG-Z3m" kind="push" identifier="activitySegue" id="JTX-Py-Jq1"/>

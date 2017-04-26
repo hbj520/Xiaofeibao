@@ -476,6 +476,7 @@
                                                         //已经绑定的直接登录
                                                         [self showHint:@"登录成功!"];
                                                         [self changeTohom];
+                                                        [self setAlias];
                                                     }else{
                                                         //未绑定的进行账号绑定
                                                         [self performSegueWithIdentifier:@"thirdplatformSegue" sender:@[platform,openId,nickName,iconUrl]];

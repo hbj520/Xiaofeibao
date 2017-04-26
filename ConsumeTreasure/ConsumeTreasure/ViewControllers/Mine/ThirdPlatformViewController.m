@@ -10,6 +10,8 @@
 #import "HexColor.h"
 #import "UIViewController+HUD.h"
 #import "AppDelegate.h"
+#import "JPUSHService.h"
+
 
 @interface ThirdPlatformViewController ()
 {
@@ -100,6 +102,7 @@
                                                       if (sucess) {
                                                           [self showHint:@"绑定成功!"];
                                                           [self loginSucessAct];
+                                                          [self setAlias];
                                                       }else{
                                                           [self showHint:msg];
                                                       }
@@ -109,6 +112,15 @@
        
    }] ;
     
+}
+- (void)setAlias{
+    //[JPUSHService registrationID];
+    // NSLog(@"registrationID:%@",[JPUSHService registrationID]);
+    
+    NSString *alias = self.phoneNumTextfield.text;
+    [JPUSHService setTags:nil alias:alias fetchCompletionHandle:^(int iResCode,NSSet *iTags, NSString *iAlias) {
+        NSLog(@"rescode: %d, \n tags: %@, \n alias: %@\n", iResCode, iTags , iAlias);//对应的状态码返回为0，代表成功
+    }];
 }
 - (IBAction)postCodeBtn:(id)sender {
     [Tools hideKeyBoard];
