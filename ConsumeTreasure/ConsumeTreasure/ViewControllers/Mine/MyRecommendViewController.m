@@ -13,6 +13,7 @@
 #import "RecommendPriceModel.h"
 #import "ActivityRulesViewController.h"
 #import <MJRefresh/MJRefresh.h>
+#import <UIImageView+WebCache.h>
 
 @interface MyRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -24,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *invitemenLabel;
 @property (weak, nonatomic) IBOutlet UITableView *benifitTableView;
 - (IBAction)activityRulesBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *headImgView;
 @property (weak, nonatomic) IBOutlet UILabel *checkrulesLabel;
 - (IBAction)backBtn:(id)sender;
 
@@ -73,6 +75,10 @@
                                                                 
                                                             }
                                                             [self createUI];
+                                                        }else{
+                                                            if ([msg isEqualToString:@"-1"]) {
+                                                                [self logout];
+                                                            } 
                                                         }
                                                         [self.benifitTableView.mj_footer endRefreshing];
                                                         [self.benifitTableView.mj_header endRefreshing];
@@ -83,6 +89,7 @@
 - (void)createUI{
     self.allbenifitLabel.text = recommendModel.total;
     self.invitemenLabel.text = recommendModel.num;
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:recommendModel.adimg] placeholderImage:[UIImage imageNamed:@"recommendBanner"]];
        [self.benifitTableView reloadData];
 }
 - (void)configTableView{

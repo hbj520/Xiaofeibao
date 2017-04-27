@@ -22,7 +22,9 @@
 #import "JPUSHService.h"
 #import <AdSupport/AdSupport.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
-#import <UserNotifications/UserNotifications.h> // 这里是iOS10需要用到的框架
+#import <UserNotifications/UserNotifications.h> 
+// 这里是iOS10需要用到的框架
+#import "UnionIncomeViewController.h"
 #endif
 
 
@@ -99,7 +101,7 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
     // 如不需要使用IDFA，advertisingIdentifier 可为nil
     // 注册极光推送
     [JPUSHService setupWithOption:launchOptions appKey:JPUSHAPPKEY channel:channel apsForProduction:isProduction advertisingIdentifier:advertisingId];
-    
+
     //2.1.9版本新增获取registration id block接口。
     [JPUSHService registrationIDCompletionHandler:^(int resCode, NSString *registrationID) {
         if(resCode == 0)
@@ -168,7 +170,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     {
         [JPUSHService handleRemoteNotification:userInfo];
         NSString *message = [NSString stringWithFormat:@"will%@", [userInfo[@"aps"] objectForKey:@"alert"]];
-        NSLog(@"iOS10程序在前台时收到的推送: %@", message);
+  //      NSLog(@"iOS10程序在前台时收到的推送: %@", message);
 //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil, nil];
 //        [alert show];
     }
@@ -185,9 +187,12 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     {
         [JPUSHService handleRemoteNotification:userInfo];
         NSString *message = [NSString stringWithFormat:@"did%@", [userInfo[@"aps"] objectForKey:@"alert"]];
-        NSLog(@"iOS10程序关闭后通过点击推送进入程序弹出的通知: %@", message);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil ,nil];
-        [alert show];
+        if ([[userInfo[@"aps"] objectForKey:@"sound"] isEqualToString:@"noticeVoice.wav"]) {
+            UIStoryboard *incomeStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:[NSBundle mainBundle]];
+            UnionIncomeViewController *incomeVC = [incomeStorybord instantiateViewControllerWithIdentifier:@"incomeDetailStorybordId"];
+            incomeVC.title = @"收益明细";
+            self.window.rootViewController = incomeVC;
+        }
     }
     
     completionHandler();  // 系统要求执行这个方法
@@ -302,6 +307,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 
 #pragma mark - PrivateMethod
+- (void)incomeBackAct:(UIBarButtonItem *)btn{
+}
 - (void)addNoNetNotice{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNoNet:) name:@"netIsNotReachabel" object:nil];
 }
