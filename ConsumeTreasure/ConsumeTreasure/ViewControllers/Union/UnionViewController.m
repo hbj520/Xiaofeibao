@@ -10,6 +10,7 @@
 #import "LianmenRightCollectionViewCell.h"
 #import "UnionCategoryModel.h"
 #import "AreaModel.h"
+#import "AppDelegate.h"
 #define CollectionViewReuseId @"collectionReuseId"
 #define TableViewReuseId @"unionReuseId"
 @interface UnionViewController ()
@@ -44,7 +45,7 @@ UICollectionViewDataSource>
 #pragma mark -PrivateMethod
 - (void)loadData{
     [[MyAPI sharedAPI] unionShopAreaWithParameters:@{
-                                                     @"citycode": @"127"
+                                                     @"citycode": ApplicationDelegate.cityCode
                                                     }result:^(BOOL success, NSString *msg, NSArray *arrays) {
                                                         if (success) {
                                                             areaArray = [NSMutableArray arrayWithArray:arrays];

@@ -145,10 +145,9 @@
 
 - (IBAction)back:(id)sender {
     
-    ApplicationDelegate.mStorybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomepageViewController *homVC = [ApplicationDelegate.mStorybord instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
-    ApplicationDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homVC];
-    homVC.navigationController.navigationBarHidden = YES;
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

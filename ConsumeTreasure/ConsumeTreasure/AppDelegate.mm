@@ -14,7 +14,7 @@
 #import "UMSocialConfig.h"
 #import "UMSocialControllerService.h"
 #import<AlipaySDK/AlipaySDK.h>
-
+#import "HomeTabbarViewController.h"
 #import <AFNetworking.h>
 #import <CrashMaster/CrashMaster.h>
 #import <CrashMaster/CrashMasterConfig.h>
@@ -191,7 +191,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
             UIStoryboard *incomeStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:[NSBundle mainBundle]];
             UnionIncomeViewController *incomeVC = [incomeStorybord instantiateViewControllerWithIdentifier:@"incomeDetailStorybordId"];
             incomeVC.title = @"收益明细";
-            self.window.rootViewController = incomeVC;
+            UIViewController *presentVc = [self currentViewController];
+            [presentVc presentViewController:incomeVC animated:YES completion:^{
+                
+            }];
         }
     }
     
@@ -307,7 +310,33 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 
 #pragma mark - PrivateMethod
-- (void)incomeBackAct:(UIBarButtonItem *)btn{
+-(UIViewController *)currentViewController
+{
+    
+    UIViewController * currVC = nil;
+    UIViewController * Rootvc = self.window.rootViewController ;
+    do {
+        if ([Rootvc isKindOfClass:[UINavigationController class]]) {
+            UINavigationController * nav = (UINavigationController *)Rootvc;
+            UIViewController * v = [nav.viewControllers lastObject];
+            currVC = v;
+            Rootvc = v.presentedViewController;
+            continue;
+        }else if([Rootvc isKindOfClass:[UITabBarController class]]){
+            UITabBarController * tabVC = (UITabBarController *)Rootvc;
+            currVC = tabVC;
+            Rootvc = [tabVC.viewControllers objectAtIndex:tabVC.selectedIndex];
+            continue;
+        }else if ([Rootvc isKindOfClass:[HomeTabbarViewController class]]){
+            HomeTabbarViewController * tabVC = (HomeTabbarViewController *)Rootvc;
+            currVC = tabVC;
+            Rootvc = tabVC.selectedViewController;
+            continue;
+        }
+    } while (Rootvc!=nil);
+    
+    
+    return currVC;
 }
 - (void)addNoNetNotice{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNoNet:) name:@"netIsNotReachabel" object:nil];
