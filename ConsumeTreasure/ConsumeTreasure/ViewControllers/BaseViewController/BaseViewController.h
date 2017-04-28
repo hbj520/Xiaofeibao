@@ -11,4 +11,6 @@
 @interface BaseViewController : UIViewController
 - (void)backTolastPage;
 - (void)logout;
+
+- (void)startBaseMap;
 @end

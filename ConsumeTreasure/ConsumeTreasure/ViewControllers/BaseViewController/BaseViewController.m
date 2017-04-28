@@ -7,9 +7,22 @@
 //
 
 #import "BaseViewController.h"
+#import "AppDelegate.h"
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
 
-@interface BaseViewController ()<UIGestureRecognizerDelegate>
+@interface BaseViewController ()<UIGestureRecognizerDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
+{
+    BMKLocationService* _locService;//定位
+    BMKOfflineMap * _offlineMap;
+    
+    
+    NSString *longitudeStr;
+    NSString *latitudeStr;
 
+}
 @end
 
 @implementation BaseViewController
@@ -52,6 +65,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)startBaseMap{
+    _locService = [[BMKLocationService alloc]init];//定位功能的初始化
+    _locService.delegate = self;//设置代理位self
+    //启动LocationService
+    [_locService startUserLocationService];//启动定位服务
+    
+    //    _geocodesearch = [[BMKGeoCodeSearch alloc] init];
+    //    //编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
+    //    _geocodesearch.delegate = self;//设置代理为self
+    _offlineMap = [[BMKOfflineMap alloc] init];
+    
+}
+
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation{
+    
+    BMKCoordinateRegion region;
+    
+    region.center.latitude  = userLocation.location.coordinate.latitude;
+    region.center.longitude = userLocation.location.coordinate.longitude;
+    region.span.latitudeDelta = 0;
+    region.span.longitudeDelta = 0;
+    NSLog(@"当前的坐标是:%f,%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    longitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.longitude];
+    latitudeStr = [NSString stringWithFormat:@"%f",userLocation.location.coordinate.latitude];
+    // ApplicationDelegate
+    ApplicationDelegate.latitude = latitudeStr;
+    ApplicationDelegate.longitude = longitudeStr;
+}
 
 - (void)backTolastPage{
     [self.navigationController popViewControllerAnimated:YES];

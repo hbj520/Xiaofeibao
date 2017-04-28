@@ -126,6 +126,7 @@ UICollectionViewDataSource>
     self.contentTabelView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (dataSource.count > 0 ) {
             [dataSource removeAllObjects];
+            [self startBaseMap];
         }
         page = 1;
         [weakSelf loadData];
