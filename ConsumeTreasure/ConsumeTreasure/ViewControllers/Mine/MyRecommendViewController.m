@@ -67,26 +67,36 @@
                                                     @"pageOffset":@"10"} result:^(BOOL success, NSString *msg, id object) {
                                                         if (success) {
                                                             recommendModel = object;
-                                                            if (recommendModel.moneyList.count == 0) {
-                                                                self.benifitTableView.hidden = YES;
-                                                                [self.benifitTableView.mj_footer endRefreshingWithNoMoreData];
+                                                            if (recommendModel.moneyList.count != 0) {
+                                                                 [dataSource addObjectsFromArray:recommendModel.moneyList];
+                                                                [self.benifitTableView.mj_footer endRefreshing];
+                                                                [self.benifitTableView.mj_header endRefreshing];
                                                             }else{
-                                                                [dataSource addObjectsFromArray:recommendModel.moneyList];
-                                                                
+                                                                 [self.benifitTableView.mj_header endRefreshing];
+                                                                 [self.benifitTableView.mj_footer endRefreshingWithNoMoreData];
                                                             }
+                                                          
                                                             [self createUI];
                                                         }else{
+                                                            [self.benifitTableView.mj_footer endRefreshing];
+                                                            [self.benifitTableView.mj_header endRefreshing];
                                                             if ([msg isEqualToString:@"-1"]) {
                                                                 [self logout];
                                                             } 
                                                         }
-                                                        [self.benifitTableView.mj_footer endRefreshing];
-                                                        [self.benifitTableView.mj_header endRefreshing];
+
                                                     } errorResult:^(NSError *enginerError) {
                                                         [self showHint:@"数据请求出错"];
+                                                        [self.benifitTableView.mj_footer endRefreshing];
+                                                        [self.benifitTableView.mj_header endRefreshing];
                                                     }];
 }
 - (void)createUI{
+    if (dataSource.count == 0) {
+        self.benifitTableView.hidden = YES;
+    }else{
+        self.benifitTableView.hidden = NO;
+    }
     self.allbenifitLabel.text = recommendModel.total;
     self.invitemenLabel.text = recommendModel.num;
     [self.headImgView sd_setImageWithURL:[NSURL URLWithString:recommendModel.adimg] placeholderImage:[UIImage imageNamed:@"recommendBanner"]];
