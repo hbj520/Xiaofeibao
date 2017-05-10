@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQt-7w-eQk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -5521,15 +5521,15 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SjJ-0Z-ase"/>
-        <segue reference="8y3-EJ-Rdo"/>
-        <segue reference="2vo-ef-X0i"/>
-        <segue reference="fkz-Fo-52f"/>
-        <segue reference="zMk-Cc-iId"/>
-        <segue reference="cJN-Ke-JUr"/>
-        <segue reference="6Ku-Vt-ebf"/>
         <segue reference="eJT-ye-vUc"/>
-        <segue reference="hqb-t9-kRK"/>
+        <segue reference="0yz-DO-JMd"/>
+        <segue reference="QTk-gp-c9n"/>
+        <segue reference="SjJ-0Z-ase"/>
         <segue reference="usE-cy-s3Q"/>
+        <segue reference="Cge-eV-Uzy"/>
+        <segue reference="tMY-yY-dhf"/>
+        <segue reference="xhA-la-EUW"/>
+        <segue reference="exM-SL-wT4"/>
+        <segue reference="6Ku-Vt-ebf"/>
     </inferredMetricsTieBreakers>
 </document>

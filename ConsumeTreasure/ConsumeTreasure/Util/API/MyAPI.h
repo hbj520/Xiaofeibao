@@ -17,6 +17,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 //取消所有网路全部请求
 - (void)cancelAllOperation;
 #pragma mark - 登录和注册
+
 - (void)loginWithParameters:(NSDictionary *)para
                      result:(ArrayBlock)result
                 errorResult:(ErrorBlock)errorResult;

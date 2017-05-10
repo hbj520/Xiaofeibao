@@ -75,7 +75,7 @@
     
     [qrImage drawInRect:rect];
     
-    CGSize avatarSize = CGSizeMake(rect.size.width * scale, rect.size.height * scale);
+    CGSize avatarSize = CGSizeMake(rect.size.width * 0.3, rect.size.height * 0.3);
     CGFloat x = (rect.size.width - avatarSize.width) * 0.5;
     CGFloat y = (rect.size.height - avatarSize.height) * 0.5;
     [avatar drawInRect:CGRectMake(x, y, avatarSize.width, avatarSize.height)];
