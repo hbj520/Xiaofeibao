@@ -188,6 +188,7 @@
             result(NO,message);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult(error);
         NSLog(@"验证码发送出错");
     }];
 }

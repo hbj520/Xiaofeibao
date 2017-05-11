@@ -9,8 +9,14 @@
 #import "MapLocateViewController.h"
 
 #import "cityModel.h"
+#import "KGModal.h"
 
-@interface MapLocateViewController ()<BMKMapViewDelegate,BMKGeoCodeSearchDelegate,BMKLocationServiceDelegate>
+@interface MapLocateViewController ()<
+BMKMapViewDelegate,
+BMKGeoCodeSearchDelegate
+,BMKLocationServiceDelegate,
+UITableViewDelegate,
+UITableViewDataSource>
 {
     //BMKPinAnnotationView *newAnnotation;
     
@@ -19,12 +25,16 @@
     BMKReverseGeoCodeOption *_reverseGeoCodeOption;
     
     BMKLocationService *_locService;
+    NSString *address;
 }
 @property (weak, nonatomic) IBOutlet BMKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *mapPin;//大头针
 @property (weak, nonatomic) IBOutlet UILabel *longtitudeLab;//经度
 @property (weak, nonatomic) IBOutlet UILabel *latitudeLab;//纬度
-
+- (IBAction)selectNearbyLocation:(id)sender;
+@property (nonatomic, strong)  NSMutableArray *cityDataArr;
+@property (weak, nonatomic) IBOutlet UILabel *areaLabel;
+@property (nonatomic, strong) UITableView *cityTableview;
 @end
 
 @implementation MapLocateViewController
@@ -57,7 +67,7 @@
 #pragma mark 初始化地图，定位
 -(void)initLocationService
 {
-    
+    self.cityDataArr = [NSMutableArray arrayWithCapacity:10];
     [_mapView setMapType:BMKMapTypeStandard];// 地图类型 ->卫星／标准、
     
     _mapView.zoomLevel=17;
@@ -134,20 +144,21 @@
 {
     //获取周边用户信息
     if (error==BMK_SEARCH_NO_ERROR) {
-        
-      //  [self.cityDataArr removeAllObjects];
+        address = result.address;
+        self.areaLabel.text = address;
+        [self.cityDataArr removeAllObjects];
         for(BMKPoiInfo *poiInfo in result.poiList)
         {
             
             
-           // cityModel *model=[[cityModel alloc]init];
-//            model.name=poiInfo.name;
-//            model.address=poiInfo.address;
-         //   CLLocationCoordinate2D _pt
+            cityModel *model=[[cityModel alloc]init];
+            model.name=poiInfo.name;
+            model.address=poiInfo.address;
+            CLLocationCoordinate2D _pt;
          
             
-          //  [self.cityDataArr addObject:model];
-           // [self.cityTableview reloadData];
+           [self.cityDataArr addObject:model];
+           [self.cityTableview reloadData];
         }
     }else{
         
@@ -166,7 +177,7 @@
 - (IBAction)sure:(id)sender {
     
     if (self.jwdBlock) {
-        self.jwdBlock(@[self.latitudeLab.text,self.longtitudeLab.text]);
+        self.jwdBlock(@[self.latitudeLab.text,self.longtitudeLab.text,self.areaLabel.text]);
         
     }
     [self.navigationController popViewControllerAnimated:YES];
@@ -182,4 +193,33 @@
 }
 */
 
+- (IBAction)selectNearbyLocation:(id)sender {
+    self.cityTableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 240) style:UITableViewStylePlain];
+    [self.cityTableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseId"];
+    self.cityTableview.delegate = self;
+    self.cityTableview.dataSource = self;
+    [[KGModal sharedInstance] setCloseButtonType:KGModalCloseButtonTypeNone];
+    [KGModal sharedInstance].modalBackgroundColor = [UIColor whiteColor];
+    [[KGModal sharedInstance] showWithContentView:self.cityTableview andAnimated:YES];
+}
+#pragma mark - TableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.cityDataArr.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 40;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *cellReuseId = @"reuseId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseId forIndexPath:indexPath];
+    cityModel *model = self.cityDataArr[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@(%@)",model.address,model.name];
+    cell.textLabel.font = [UIFont systemFontOfSize:10];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    cityModel *model = self.cityDataArr[indexPath.row];
+    self.areaLabel.text = [NSString stringWithFormat:@"%@(%@)",model.address,model.name];
+    [[KGModal sharedInstance] hideAnimated:YES];
+}
 @end

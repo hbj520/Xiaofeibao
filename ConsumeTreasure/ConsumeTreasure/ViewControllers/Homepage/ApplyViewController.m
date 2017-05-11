@@ -420,12 +420,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+  __weak  ApplyContentTableViewCell *applyCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     if([segue.identifier isEqualToString:@"getPositionSegue"]){
         MapLocateViewController *locaVC = segue.destinationViewController;
         locaVC.jwdBlock =^(NSArray *locaArray){
             longtitudeStr = locaArray[1];
             latituedeStr = locaArray[0];
-            
+            [applyCell.goPositon setTitle:locaArray[2] forState:UIControlStateNormal];
+            [applyCell.goPositon setTintColor:[UIColor blackColor]];
+            [applyCell.goPositon.titleLabel setFont:[UIFont systemFontOfSize:10]];
+            applyCell.storeAddrText.text = locaArray[2];
         };
     }
 }
