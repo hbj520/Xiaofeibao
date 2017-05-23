@@ -10,6 +10,7 @@
 
 #import <MJRefresh/MJRefresh.h>
 #import "OrderControlTableViewCell.h"
+#import "AccountNewFixTableViewCell.h"
 
 #import "NewAccountTableViewCell.h"
 #import "AccountDetailViewController.h"
@@ -111,7 +112,7 @@
     self.tableView.rowHeight = 65;
     self.tableView.backgroundColor = RGBACOLOR(235, 235, 235, 0.8);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[UINib nibWithNibName:@"NewAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"newAccountCellId"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"AccountNewFixTableViewCell" bundle:nil] forCellReuseIdentifier:@"newFixAccountCellId"];
     
 }
 
@@ -123,9 +124,9 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NewAccountTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"newAccountCellId"];
+    AccountNewFixTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"newFixAccountCellId"];
     if (levelCell == nil) {
-        levelCell = [[[NSBundle mainBundle] loadNibNamed:@"NewAccountTableViewCell" owner:self options:nil] lastObject];
+        levelCell = [[[NSBundle mainBundle] loadNibNamed:@"AccountNewFixTableViewCell" owner:self options:nil] lastObject];
     }
     
     if (_incomeArray.count > 0) {

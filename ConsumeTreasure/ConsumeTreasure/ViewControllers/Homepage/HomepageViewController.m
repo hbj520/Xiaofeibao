@@ -439,7 +439,7 @@
         firstCell.scanBlock =^{ //扫一扫
             [self pushToNextWithIdentiField:@"scanSegue" sender:nil];
         };
-        firstCell.incomeBlock = ^{//收益权
+        firstCell.incomeBlock = ^{
         [self pushToNextWithIdentiField:@"collectionSegue" sender:nil];
          
 

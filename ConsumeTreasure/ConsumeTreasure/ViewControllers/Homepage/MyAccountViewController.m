@@ -15,6 +15,8 @@
 #import "LevelTableViewCell.h"
 #import "DetailCountHeadView.h"
 #import "NewAccountTableViewCell.h"
+#import "AccountNewFixTableViewCell.h"
+
 
 #import "AccountModel.h"
 
@@ -133,6 +135,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MyAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"accountCelleId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"NewAccountTableViewCell" bundle:nil] forCellReuseIdentifier:@"newAccountCellId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SpreadTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuiguangCelleId"];
+     [self.tableView registerNib:[UINib nibWithNibName:@"AccountNewFixTableViewCell" bundle:nil] forCellReuseIdentifier:@"newFixAccountCellId"];
+    
+    
    }
 
 #pragma mark - UITableViewDelegate
@@ -164,9 +169,9 @@
         return accountCell;
     }else{
     
-            NewAccountTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"newAccountCellId"];
+            AccountNewFixTableViewCell *levelCell = [tableView dequeueReusableCellWithIdentifier:@"newFixAccountCellId"];
             if (levelCell == nil) {
-                levelCell = [[[NSBundle mainBundle] loadNibNamed:@"NewAccountTableViewCell" owner:self options:nil] lastObject];
+                levelCell = [[[NSBundle mainBundle] loadNibNamed:@"AccountNewFixTableViewCell" owner:self options:nil] lastObject];
             }
         
         if (levelArr.count > 0) {

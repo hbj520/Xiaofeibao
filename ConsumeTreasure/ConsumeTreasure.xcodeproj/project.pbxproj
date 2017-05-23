@@ -358,6 +358,8 @@
 		D1F275A71DAD0B6E005B9849 /* ScanerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275A61DAD0B6E005B9849 /* ScanerVC.m */; };
 		D1F275AB1DAD0B93005B9849 /* UIAlertView+flash.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */; };
 		D1F275B41DAD0C20005B9849 /* ConsumeHomepageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */; };
+		D1F6ED361ECA95FE002AA486 /* AccountNewFixTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F6ED341ECA95FE002AA486 /* AccountNewFixTableViewCell.m */; };
+		D1F6ED371ECA95FE002AA486 /* AccountNewFixTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1F6ED351ECA95FE002AA486 /* AccountNewFixTableViewCell.xib */; };
 		D1F916A51E078BF00091B989 /* NemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F916A41E078BF00091B989 /* NemberModel.m */; };
 		D1F916A81E07B4D70091B989 /* DaLiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F916A71E07B4D70091B989 /* DaLiViewController.m */; };
 		D1F916AB1E07BE550091B989 /* BQActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F916AA1E07BE550091B989 /* BQActivityView.m */; };
@@ -1065,6 +1067,9 @@
 		D1F275AA1DAD0B93005B9849 /* UIAlertView+flash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+flash.m"; sourceTree = "<group>"; };
 		D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumeHomepageHeaderView.m; sourceTree = "<group>"; };
 		D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumeHomepageHeaderView.h; sourceTree = "<group>"; };
+		D1F6ED331ECA95FE002AA486 /* AccountNewFixTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountNewFixTableViewCell.h; sourceTree = "<group>"; };
+		D1F6ED341ECA95FE002AA486 /* AccountNewFixTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountNewFixTableViewCell.m; sourceTree = "<group>"; };
+		D1F6ED351ECA95FE002AA486 /* AccountNewFixTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountNewFixTableViewCell.xib; sourceTree = "<group>"; };
 		D1F916A31E078BF00091B989 /* NemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NemberModel.h; sourceTree = "<group>"; };
 		D1F916A41E078BF00091B989 /* NemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NemberModel.m; sourceTree = "<group>"; };
 		D1F916A61E07B4D70091B989 /* DaLiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaLiViewController.h; sourceTree = "<group>"; };
@@ -1641,6 +1646,9 @@
 				D1A3C0DF1E1F9EAC0040AAD9 /* NewAccountTableViewCell.h */,
 				D1A3C0E01E1F9EAC0040AAD9 /* NewAccountTableViewCell.m */,
 				D1A3C0E11E1F9EAC0040AAD9 /* NewAccountTableViewCell.xib */,
+				D1F6ED331ECA95FE002AA486 /* AccountNewFixTableViewCell.h */,
+				D1F6ED341ECA95FE002AA486 /* AccountNewFixTableViewCell.m */,
+				D1F6ED351ECA95FE002AA486 /* AccountNewFixTableViewCell.xib */,
 				D1C79B211E77E08500869008 /* CollectionTableViewCell.h */,
 				D1C79B221E77E08500869008 /* CollectionTableViewCell.m */,
 				D1C79B231E77E08500869008 /* CollectionTableViewCell.xib */,
@@ -2501,6 +2509,7 @@
 				D170F26A1DAF2CD800272E57 /* HomeListHeadView.xib in Resources */,
 				AB057DEB1DE5883C00F6A9C2 /* PreEvaluateTableViewCell.xib in Resources */,
 				AB6FBA5F1DB4AB8D00C682F8 /* mapapi.bundle in Resources */,
+				D1F6ED371ECA95FE002AA486 /* AccountNewFixTableViewCell.xib in Resources */,
 				D1F275A31DAD0A5A005B9849 /* ff_QRCodeScanLine.png in Resources */,
 				AB1DA5A81EAEDA8800FDDB24 /* noticeVoice.wav in Resources */,
 				D10DC9461E09363300930F74 /* Time.plist in Resources */,
@@ -2799,6 +2808,7 @@
 				D196D5741E0B6C310062AD91 /* PSWVertifyViewController.m in Sources */,
 				AB0808731E13B4C10074D573 /* MyEnum.m in Sources */,
 				D15B3A491DDB0807009122FE /* MyIncomeViewController.m in Sources */,
+				D1F6ED361ECA95FE002AA486 /* AccountNewFixTableViewCell.m in Sources */,
 				ABF4E27E1D9B5E58006AD23C /* AppDelegate.mm in Sources */,
 				D170F25F1DAF1ABE00272E57 /* BeforeChartTableViewCell.m in Sources */,
 				D15B3AFA1DDC0E5E009122FE /* DataVerifier.m in Sources */,
