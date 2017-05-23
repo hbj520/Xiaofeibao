@@ -44,6 +44,7 @@
 @property (nonatomic,strong) NSString *createtime;
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,assign) double money;
+@property (nonatomic,assign) double after_money;
 @property (nonatomic,strong) NSString *type;
 
 
@@ -69,6 +70,7 @@
 @property (nonatomic,strong) NSString *createtime;
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,assign) double money;
+@property (nonatomic,assign) double after_money;
 @property (nonatomic,strong) NSString *type;
 
 

@@ -18,6 +18,7 @@
 @property (nonatomic,strong) NSString *createyear;
 @property (nonatomic,strong) NSString *account_description;
 @property (nonatomic,strong) NSString *goldnum;
+@property (nonatomic,strong) NSString *after_goldnum;
 @property (nonatomic,strong) NSString *shopName;
 @property (nonatomic,strong) NSString *type;
 @property (nonatomic,strong) NSString *title;
@@ -39,6 +40,7 @@
 @property (nonatomic,strong) NSString *record_description;
 @property (nonatomic,strong) NSString *after_money;
 @property (nonatomic,strong) NSString *createdate;
+
 
 @end
 
