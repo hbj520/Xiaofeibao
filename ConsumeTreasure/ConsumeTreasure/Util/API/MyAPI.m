@@ -1502,6 +1502,35 @@
 
     }];
 }
+#pragma mark - 招商联盟收益明细
+- (void)cashMoneyListWithPara:(NSDictionary *)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult{
+        NSDictionary *dicPara = @{
+                                  @"tokenid":KToken,
+                                  @"platform":@"1",
+                                  @"param":para
+                                  };
+        [self.manager POST:@"userinfo/recommendProxyMoneyDetail" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSString *info = responseObject[@"msg"];
+            if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+                result(NO,@"-1",nil);
+                [self cancelAllOperation];
+                
+            }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+                NSError *error = nil;
+                NSMutableArray *IncomeListsArr = [NSMutableArray array];
+                IncomeListsArr = [InvestIncomeModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"billlogList"] error:&error];
+                result(YES,info,@[IncomeListsArr]);
+            }else{
+                result(NO,info,nil);
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            errorResult(error);
+        }];
+        
+}
+#pragma mark -招商加盟收益明细
+
 #pragma mark - 待评价列表
 - (void)NoEvalueteListWithPara:(NSDictionary *)para
                         result:(ArrayBlock)result

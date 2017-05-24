@@ -37,7 +37,14 @@
     }
     
 }
-
+- (void)setInvestModel:(InvestIncomeModel *)investModel{
+    if (investModel) {
+        self.payWayType.text = investModel.title;
+        self.leftMoney.text = [NSString stringWithFormat:@"%@",investModel.after_money];
+        self.payTime.text = [NSString stringWithFormat:@"%@-%@",investModel.createyear,investModel.createdate];
+        self.moneyNum.text = [NSString stringWithFormat:@"%@",investModel.money];
+    }
+}
 -(void)setDaliModel:(DaLiIncomeModel *)daliModel{
     if (daliModel) {
         self.payWayType.text = daliModel.title;

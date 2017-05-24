@@ -13,7 +13,7 @@
     AccountModel *_aModel;
     ShangHuIncomeModel *_shanghuModel;
     DaLiIncomeModel *_daliModel;
-    
+    InvestIncomeModel *_investModel;
     
     NSInteger incomeType;
     
@@ -59,14 +59,19 @@
         self.actionTimeLab.text = _shanghuModel.createtime;
         self.dateLab.text = _shanghuModel.createdate;
         self.accountDescripTextView.text = _shanghuModel.shop_description;
+    }else if (incomeType == 3){
+        self.shopNameLab2.text = _investModel.title;
+        self.shopNameLab.text = _investModel.title;
+       
+       self.accountChangeLab.text = [NSString stringWithFormat:@"%@",_investModel.money];
+        self.actionTimeLab.text = _investModel.createtime;
+        self.dateLab.text = _investModel.createdate;
+        self.accountDescripTextView.text = _investModel.record_description;
     }else{
         self.shopNameLab2.text = _daliModel.title;
         self.shopNameLab.text  = _daliModel.title;
-        if ([_aModel.type isEqualToString:@"0"]) {
             self.accountChangeLab.text = [NSString stringWithFormat:@"- %.3f",_daliModel.money];
-        }else{
             self.accountChangeLab.text = [NSString stringWithFormat:@"+ %.3f",_daliModel.money];
-        }
         self.actionTimeLab.text = _daliModel.createtime;
         self.dateLab.text = _daliModel.createdate;
         self.accountDescripTextView.text = _daliModel.bill_description;
@@ -94,7 +99,11 @@
     self.changeStr.text = @"类型";
     incomeType = 3;
 }
-
+- (void)setInvestModel:(InvestIncomeModel *)investModel{
+    _investModel = investModel;
+    self.changeStr.text = @"类型";
+    incomeType = 4;
+}
 
 
 

@@ -34,7 +34,13 @@
 @end
 
 
+@implementation InvestIncomeModel
++(JSONKeyMapper *)keyMapper{
+    return [[JSONKeyMapper alloc]initWithDictionary:@{@"description":@"record_description"}];
+}
+@end
 
+@implementation InvestIncomeArrModel
 
-
+@end
 

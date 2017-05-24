@@ -23,5 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *withdrawView;
 
 @property (nonatomic,strong) NSArray *moneyType;
+@property (nonatomic,assign) BOOL isInvest;//是否为招商联盟进入
+
 
 @end

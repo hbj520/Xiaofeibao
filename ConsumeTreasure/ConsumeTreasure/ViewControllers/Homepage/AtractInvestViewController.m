@@ -9,10 +9,14 @@
 #import "AtractInvestViewController.h"
 #import "AttractInvestModel.h"
 #import "AttractInvestTableViewCell.h"
+#import <MJRefresh/MJRefresh.h>
+#import "WithDrawViewController.h"
+#import "UnionIncomeViewController.h"
 @interface AtractInvestViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *dataSource;
     AttractInvestModelAray *model;
+    NSInteger page;
 }
 - (IBAction)backBtn:(id)sender;
 - (IBAction)detailBtn:(id)sender;
@@ -28,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    dataSource = [NSMutableArray array];
+    page = 1;
     [self loadData];
     [self addRefresh];
 }
@@ -52,12 +58,7 @@
 
 }
 - (void)loadData{
-    if (dataSource) {
-        [dataSource removeAllObjects];
-    }else{
-        dataSource = [NSMutableArray array];
-    }
-    [[MyAPI sharedAPI] attractInvestWith:@{@"pageNum":@"1",
+    [[MyAPI sharedAPI] attractInvestWith:@{@"pageNum":[NSString stringWithFormat:@"%ld",page],
                                           @"pageOffset":@"10" }result:^(BOOL success, NSString *msg, id object) {
                                               
                                               if (success) {
@@ -65,35 +66,67 @@
                                                   [dataSource addObjectsFromArray:model.myRecommendProxyList];
                                                   [self.tableview reloadData];
                                                   [self createUI];
+                                                  if (model.myRecommendProxyList.count == 0) {
+                                                      [self.tableview.mj_footer endRefreshingWithNoMoreData];
 
+                                                  }else{
+                                                      [self.tableview.mj_footer endRefreshing];
+
+                                                  }
+                                                  [self.tableview.mj_header endRefreshing];
+                                              }else{
+                                                  [self.tableview.mj_footer endRefreshing];
+                                                  [self.tableview.mj_header endRefreshing];
                                               }
+                                             
                                           } errorResult:^(NSError *enginerError) {
-                                              
+                                              [self.tableview.mj_footer endRefreshing];
+                                              [self.tableview.mj_header endRefreshing];
                                           }];
 }
 - (void)addRefresh{
-    
+    __weak typeof(self) weakSelf = self;
+    self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (dataSource.count > 0 ) {
+            [dataSource removeAllObjects];
+        }
+        page = 1;
+        [weakSelf loadData];
+    }];
+    self.tableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page++;
+        [weakSelf loadData];
+          }];
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"cashMoneySegueId"]) {
+        WithDrawViewController *cashVC  = ( WithDrawViewController *)segue.destinationViewController;
+        cashVC.moneyType = @[_restMoneyLabel.text,@""];
+        cashVC.isInvest = YES;
+    }else if ([segue.identifier isEqualToString:@"benifitDetailSegueId"]){
+        UnionIncomeViewController *inconVC = (UnionIncomeViewController *)segue.destinationViewController;
+        inconVC.isInvest = YES;
+    }
 }
-*/
+
 
 - (IBAction)backBtn:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)detailBtn:(id)sender {
-    [self performSegueWithIdentifier:@"benifitDetailSegueId" sender:nil];
+  //  [self performSegueWithIdentifier:@"benifitDetailSegueId" sender:nil];
 }
 - (IBAction)cashMoneyBtn:(id)sender {
-    [self performSegueWithIdentifier:@"cashMoneySegueId" sender:nil];
+ //   [self performSegueWithIdentifier:@"cashMoneySegueId" sender:nil];
 }
+
 #pragma mark -UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return dataSource.count;

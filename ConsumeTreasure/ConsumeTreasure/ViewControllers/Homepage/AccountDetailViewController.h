@@ -14,7 +14,7 @@
 @property (nonatomic,strong) AccountModel *model;
 @property (nonatomic,strong) ShangHuIncomeModel *shanghuModel;
 @property (nonatomic,strong) DaLiIncomeModel *daliModel;
-
+@property (nonatomic,strong) InvestIncomeModel *investModel;
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *accountChangeLab;
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLab2;

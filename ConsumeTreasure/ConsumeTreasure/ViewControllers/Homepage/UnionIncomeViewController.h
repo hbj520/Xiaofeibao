@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface UnionIncomeViewController : BaseViewController
-
+@property (nonatomic,assign) BOOL isInvest;//是否为招商联盟；
 @end

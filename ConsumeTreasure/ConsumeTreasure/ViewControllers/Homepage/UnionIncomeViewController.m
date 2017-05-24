@@ -72,27 +72,51 @@
                            @"pageNum":pageNow,
                            @"pageOffset":pageNum
                            };
-    
-    [[MyAPI sharedAPI] getIncomeOfShangHuWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        if (success) {
-            
-            if ([arrays[0] count] == 0) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
-                });
-                _page--;
+    if (self.isInvest) {
+        [[MyAPI sharedAPI] cashMoneyListWithPara:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                
+                if ([arrays[0] count] == 0) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                    });
+                    _page--;
+                }
+                [_incomeArray addObjectsFromArray:arrays[0]];
+                [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
-            [_incomeArray addObjectsFromArray:arrays[0]];
-            [self.tableView reloadData];
-        }else{
-            if ([msg isEqualToString:@"-1"]) {
-                [self logout];
+            [self endRefresh];
+        } errorResult:^(NSError *enginerError) {
+            [self endRefresh];
+
+        }];
+    }else{
+        [[MyAPI sharedAPI] getIncomeOfShangHuWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
+                
+                if ([arrays[0] count] == 0) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                    });
+                    _page--;
+                }
+                [_incomeArray addObjectsFromArray:arrays[0]];
+                [self.tableView reloadData];
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }
             }
-        }
-        [self endRefresh];
-    } errorResult:^(NSError *enginerError) {
-        [self endRefresh];
-    }];
+            [self endRefresh];
+        } errorResult:^(NSError *enginerError) {
+            [self endRefresh];
+        }];
+    }
+   
 }
 
 -(void)endRefresh{
@@ -126,7 +150,12 @@
     }
     
     if (_incomeArray.count > 0) {
-        levelCell.shanghuModel = [_incomeArray objectAtIndex:indexPath.row];
+        if (self.isInvest) {
+            levelCell.investModel = [_incomeArray objectAtIndex:indexPath.row];
+        }else{
+            levelCell.shanghuModel = [_incomeArray objectAtIndex:indexPath.row];
+ 
+        }
     }
     levelCell.selectionStyle = 0;
     return levelCell;
@@ -136,8 +165,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
         self.hidesBottomBarWhenPushed = YES;
+    if (self.isInvest) {
+        InvestIncomeModel *model = [_incomeArray objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"shanghuIncomeSegue" sender:model];
+    }else{
         ShangHuIncomeModel *model = [_incomeArray objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"shanghuIncomeSegue" sender:model];
+    }
+    
   
     
 }
@@ -164,9 +199,16 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"shanghuIncomeSegue"]) {
-        ShangHuIncomeModel *model = (ShangHuIncomeModel*)sender;
-        AccountDetailViewController *accDetailVC = segue.destinationViewController;
-        accDetailVC.shanghuModel = model;
+        if (self.isInvest) {
+            InvestIncomeModel *model = (InvestIncomeModel*)sender;
+            AccountDetailViewController *accDetailVC = segue.destinationViewController;
+            accDetailVC.investModel = model;
+        }else{
+            ShangHuIncomeModel *model = (ShangHuIncomeModel*)sender;
+            AccountDetailViewController *accDetailVC = segue.destinationViewController;
+            accDetailVC.shanghuModel = model;
+        }
+       
     }
     
     

@@ -1783,7 +1783,7 @@
                                         </state>
                                         <connections>
                                             <action selector="detailBtn:" destination="cvB-QW-Ldm" eventType="touchUpInside" id="feU-d8-ww9"/>
-                                            <segue destination="TO4-de-1J2" kind="push" identifier="cashMoneySegueId" id="SBL-jk-t8o"/>
+                                            <segue destination="TO4-de-1J2" kind="push" identifier="benifitDetailSegueId" id="SBL-jk-t8o"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="招商加盟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bg-60-pcZ">

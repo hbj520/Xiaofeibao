@@ -79,4 +79,25 @@
 @interface ShangHuincomeArrModel : JSONModel
 @property (nonatomic,strong) NSArray<ShangHuIncomeModel>* shopList;
 @end
+/*
+ 收益明细（招商联盟）
+ */
+@protocol InvestIncomeModel
 
+@end
+
+@interface InvestIncomeModel : JSONModel
+
+@property (nonatomic,strong) NSString *record_description;
+@property (nonatomic,strong) NSString *createdate;
+@property (nonatomic,strong) NSString *createyear;
+@property (nonatomic,strong) NSString *createtime;
+@property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *money;
+@property (nonatomic,strong) NSString *after_money;
+
+@end
+
+@interface InvestIncomeArrModel : JSONModel
+@property (nonatomic,strong) NSArray<InvestIncomeModel>* billlogList;
+@end
