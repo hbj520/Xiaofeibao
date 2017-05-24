@@ -36,6 +36,7 @@
 #import "OrderConModel.h"
 #import "PersonInfoModel.h"
 #import "RecommendPriceModel.h"
+#import "AttractInvestModel.h"
 
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -44,7 +45,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -1469,7 +1470,38 @@
         errorResult (error);
     }];
 }
+#pragma mark -- 招商加盟
+- (void)attractInvestWith:(NSDictionary *)para result:(ModelBlock)result errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/recommendNewProxy" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        NSArray *data = responseObject[@"data"][@"myRecommendProxyList"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSError *err = nil;
 
+            NSMutableArray *investArr = [NSMutableArray array];
+            
+            investArr = [AttractInvestModel arrayOfModelsFromDictionaries:data error:&err];
+
+            
+            AttractInvestModelAray *model = [[AttractInvestModelAray alloc]initWithDictionary:responseObject[@"data"] error:&err];
+            result(YES,info,model);
+        }else{
+            
+        }
+       
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        errorResult (error);
+
+    }];
+}
 #pragma mark - 待评价列表
 - (void)NoEvalueteListWithPara:(NSDictionary *)para
                         result:(ArrayBlock)result

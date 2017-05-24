@@ -183,7 +183,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 
 #pragma mark -- 申请成为商户
 - (void)upDateInfoForBeUnionWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
-
+#pragma mark -- 招商加盟
+- (void)attractInvestWith:(NSDictionary *)para result:(ModelBlock)result errorResult:(ErrorBlock)errorResult;
 #pragma mark - 待评价列表
 - (void)NoEvalueteListWithPara:(NSDictionary *)para
                         result:(ArrayBlock)result

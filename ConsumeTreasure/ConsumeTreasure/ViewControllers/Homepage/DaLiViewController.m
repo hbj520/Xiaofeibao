@@ -14,6 +14,7 @@
 #import "StoreMasterModel.h"
 #import "CheckstandViewController.h"
 #import "ShareQRCodeViewController.h"
+#import "AtractInvestViewController.h"
 @interface DaLiViewController ()
 {
     DaLiMasterModel *daliModel;
@@ -63,7 +64,9 @@
     UITapGestureRecognizer *tapShare = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareClick:)];
     [self.shareView addGestureRecognizer:tapShare];
     UITapGestureRecognizer *tapShareRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareRegisterClick:)];
-    [self.shareRegisterView addGestureRecognizer:tapShareRegister];
+    [self.attractInverstmentView addGestureRecognizer:tapShareRegister];
+    UITapGestureRecognizer *tapAttractRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareAttractClick:)];
+    [self.attractInverstmentView addGestureRecognizer:tapAttractRegister];
     
 }
 
@@ -72,7 +75,10 @@
     [self performSegueWithIdentifier:identi sender:sender];
     
 }
-
+///点击招商按钮
+- (void)shareAttractClick:(id)Ges{
+    [self pushToNextWithIdentiField:@"InvestSegueId" sender:nil];
+}
 - (void)shareClick:(id)Ges{
     [[CHSocialServiceCenter shareInstance]shareTitle:@"智惠返邀您一起享优惠" content:@"扫码支付实时到账，商户提现秒到，万亿市场等您来享！" imageURL:@"http://p2pguide.sudaotech.com/platform/image/1/20160318/3c896c87-65b6-481d-81ca-1b4a0b6d8dd4/" image:[UIImage imageNamed:@"qrImg"] urlResource:[NSString stringWithFormat:@"http://www.xftb168.com/web/toWxRegister?merchantMemId=%@",memIdStr] controller:self completion:^(BOOL successful) {
         

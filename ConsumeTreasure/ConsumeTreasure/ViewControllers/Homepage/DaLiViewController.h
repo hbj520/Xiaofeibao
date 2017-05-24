@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIView *myBCardView;
 @property (weak, nonatomic) IBOutlet UIView *shareView;
 @property (weak, nonatomic) IBOutlet UIView *shareRegisterView;
+@property (weak, nonatomic) IBOutlet UIView *attractInverstmentView;
 
 @end
