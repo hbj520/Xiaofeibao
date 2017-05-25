@@ -22,7 +22,11 @@
     NSString *theType;//区分今日或历史
     
     NSString *_bankID;
+    NSString *bankName;
+    NSString *bankUserName;
 }
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel2;
 @property (nonatomic, strong) JHCoverView *coverView;
 @end
 
@@ -32,6 +36,10 @@
     [super viewWillAppear:animated];
     //[self judgeBankCard];
     self.navigationController.navigationBarHidden = NO;
+    if (self.isInvest) {
+        self.warningLabel1.text = @"*注意:提现金额将在1个工作日后到账";
+        self.warningLabel2.text = @"*提现时间:t+1";
+    }
 }
 
 - (void)viewDidLoad {
@@ -79,6 +87,8 @@
                 self.defaultCardType.text = @"储蓄卡";
                 
                 _bankID = model.bank_id;
+                bankName = model.bankname;
+                bankUserName = model.bankusername;
             }else{
                 self.defaultBank.text = @"尚未设置银行卡";
                 self.defaultBankNum.text = @"请点击前往添加";
@@ -197,32 +207,72 @@
         showAlert(@"请确认提现额度不得低于1元");
     }
 }
-
+- (BOOL)verifyData{
+    if (Tongtf.text.length > 0 && bankUserName.length > 0 && bankName.length > 0 && _bankID.length > 0) {
+        
+        return YES;
+    }else{
+        
+        return NO;
+    }
+}
 - (void)postDataWithStr:(NSString*)str{
-
+    
     [BQActivityView showActiviTy];
-    NSDictionary *para = @{
-                           @"total_fee":Tongtf.text,
-                           @"trade_type":theType,
-                           @"bankid":_bankID,
-                           @"zfpass":str
-                           };
-    [[MyAPI sharedAPI] getMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
-        if (sucess) {
-            [BQActivityView hideActiviTy];
-            showAlert(msg);
-            
+    if ([self verifyData]) {
+        if (self.isInvest) {
+            NSDictionary *para = @{
+                                   @"money":Tongtf.text,
+                                   @"bankusername":bankUserName,
+                                   @"bankno":_bankID,
+                                   @"bankname":bankName
+                                   };
+            [[MyAPI sharedAPI] applyMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
+                if (sucess) {
+                    [BQActivityView hideActiviTy];
+                    showAlert(msg);
+                    
+                }else{
+                    [BQActivityView hideActiviTy];
+                    [self.coverView.payTextField resignFirstResponder];
+                    [self.coverView removeFromSuperview];
+                    showAlert(msg);
+                    
+                }
+            } errorResult:^(NSError *enginerError) {
+                [BQActivityView hideActiviTy];
+                
+            }];
         }else{
-            [BQActivityView hideActiviTy];
-            [self.coverView.payTextField resignFirstResponder];
-            [self.coverView removeFromSuperview];
-            showAlert(msg);
+            NSDictionary *para = @{
+                                   @"total_fee":Tongtf.text,
+                                   @"trade_type":theType,
+                                   @"bankid":_bankID,
+                                   @"zfpass":str
+                                   };
+            [[MyAPI sharedAPI] getMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
+                if (sucess) {
+                    [BQActivityView hideActiviTy];
+                    showAlert(msg);
+                    
+                }else{
+                    [BQActivityView hideActiviTy];
+                    [self.coverView.payTextField resignFirstResponder];
+                    [self.coverView removeFromSuperview];
+                    showAlert(msg);
+                    
+                }
+                
+            } errorResult:^(NSError *enginerError) {
+                [BQActivityView hideActiviTy];
+            }];
             
         }
         
-    } errorResult:^(NSError *enginerError) {
+    }else{
+        [self showHint:@"请填写完整您的提现信息"];
         [BQActivityView hideActiviTy];
-    }];
+    }
 
 
 }

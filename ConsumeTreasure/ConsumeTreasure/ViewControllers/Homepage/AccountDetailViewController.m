@@ -59,7 +59,7 @@
         self.actionTimeLab.text = _shanghuModel.createtime;
         self.dateLab.text = _shanghuModel.createdate;
         self.accountDescripTextView.text = _shanghuModel.shop_description;
-    }else if (incomeType == 3){
+    }else if (incomeType == 4){
         self.shopNameLab2.text = _investModel.title;
         self.shopNameLab.text = _investModel.title;
        

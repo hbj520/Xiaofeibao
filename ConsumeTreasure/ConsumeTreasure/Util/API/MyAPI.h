@@ -118,7 +118,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 
 #pragma mark -- 提现
 - (void)getMoneyWithDrawWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
-
+#pragma mark -商家联盟（申请提现）
+- (void)applyMoneyWithDrawWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 #pragma mark -- 我的银行卡
 - (void)getMyBankCardDataWithParameters:(NSDictionary*)para result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 

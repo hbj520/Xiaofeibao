@@ -2216,8 +2216,8 @@
                                 <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现时间：9:00-22:00；不分节假日(每周一:11:00~22:00)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH5-c7-rGd">
-                                <rect key="frame" x="22" y="363" width="319" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*提现时间：9:00-22:00；不分节假日(每周一:11:00~22:00)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH5-c7-rGd">
+                                <rect key="frame" x="15" y="363" width="325" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="hhc-DN-BRV"/>
                                 </constraints>
@@ -2244,8 +2244,8 @@
                                     <action selector="getMoneyNow:" destination="hnI-Wk-1sj" eventType="touchUpInside" id="Hx1-2n-9fN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部分银行10元以下提现额度无短信提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq1-8n-dE9">
-                                <rect key="frame" x="22" y="387" width="209.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*部分银行10元以下提现额度无短信提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq1-8n-dE9">
+                                <rect key="frame" x="15" y="387" width="215.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="g5d-Oj-AeX"/>
                                 </constraints>
@@ -2259,13 +2259,13 @@
                             <constraint firstItem="dPD-HQ-Api" firstAttribute="top" secondItem="Nbc-eT-cHg" secondAttribute="bottom" constant="15" id="0Ze-4K-hIE"/>
                             <constraint firstItem="AXB-im-wKg" firstAttribute="top" secondItem="L7u-hm-YkP" secondAttribute="bottom" constant="24" id="2rL-5D-zsb"/>
                             <constraint firstItem="L7u-hm-YkP" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" id="4wx-kH-CBb"/>
-                            <constraint firstItem="sH5-c7-rGd" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" constant="22" id="6pA-m4-UxJ"/>
+                            <constraint firstItem="sH5-c7-rGd" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" constant="15" id="6pA-m4-UxJ"/>
                             <constraint firstItem="AXB-im-wKg" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" constant="15" id="7W9-9s-QgE"/>
                             <constraint firstItem="L7u-hm-YkP" firstAttribute="top" secondItem="M0l-FE-e2d" secondAttribute="bottom" constant="1" id="9g5-7H-9xO"/>
                             <constraint firstAttribute="trailing" secondItem="M0l-FE-e2d" secondAttribute="trailing" id="E1G-Q2-1ND"/>
                             <constraint firstAttribute="trailing" secondItem="bdg-zh-Rqo" secondAttribute="trailing" constant="15" id="HKN-bB-Q9y"/>
                             <constraint firstItem="sH5-c7-rGd" firstAttribute="top" secondItem="AXB-im-wKg" secondAttribute="bottom" constant="6" id="IBP-h0-D0e"/>
-                            <constraint firstItem="oq1-8n-dE9" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" constant="22" id="JMG-8r-mBN"/>
+                            <constraint firstItem="oq1-8n-dE9" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" constant="15" id="JMG-8r-mBN"/>
                             <constraint firstItem="bdg-zh-Rqo" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" constant="15" id="JMU-Q5-WIq"/>
                             <constraint firstItem="M0l-FE-e2d" firstAttribute="leading" secondItem="wd5-ps-oni" secondAttribute="leading" id="Qnz-EG-Gr9"/>
                             <constraint firstAttribute="trailing" secondItem="dPD-HQ-Api" secondAttribute="trailing" id="a69-vf-hSb"/>
@@ -2291,6 +2291,8 @@
                         <outlet property="defaultBankNum" destination="5w6-Wd-5cd" id="VVu-eK-52S"/>
                         <outlet property="defaultCardType" destination="UYI-5Q-cE0" id="CmY-d6-LVl"/>
                         <outlet property="leftMoney" destination="RkI-bO-YfR" id="ZJW-YM-p2Q"/>
+                        <outlet property="warningLabel1" destination="AXB-im-wKg" id="KjQ-Y8-B9C"/>
+                        <outlet property="warningLabel2" destination="sH5-c7-rGd" id="S7k-y1-sec"/>
                         <outlet property="withdrawView" destination="M0l-FE-e2d" id="5ES-mW-dbV"/>
                         <segue destination="MHO-1M-Xv9" kind="push" identifier="goBankSegue" id="cJN-Ke-JUr"/>
                         <segue destination="BGt-8R-QaP" kind="push" identifier="goAddBankCardSegue" id="6Ku-Vt-ebf"/>
@@ -2298,7 +2300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yw-BT-Wr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2882" y="4447"/>
+            <point key="canvasLocation" x="-2882.4000000000001" y="4446.9265367316348"/>
         </scene>
         <!--添加银行卡-->
         <scene sceneID="pF4-d3-5xr">
@@ -5681,17 +5683,17 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="exM-SL-wT4"/>
-        <segue reference="SjJ-0Z-ase"/>
-        <segue reference="Xre-dI-aTe"/>
         <segue reference="eJT-ye-vUc"/>
         <segue reference="0yz-DO-JMd"/>
         <segue reference="Cge-eV-Uzy"/>
+        <segue reference="exM-SL-wT4"/>
         <segue reference="xhA-la-EUW"/>
-        <segue reference="SBL-jk-t8o"/>
         <segue reference="qAO-az-G1s"/>
-        <segue reference="ep5-xb-kd2"/>
-        <segue reference="6Ku-Vt-ebf"/>
+        <segue reference="SBL-jk-t8o"/>
         <segue reference="cJN-Ke-JUr"/>
+        <segue reference="6Ku-Vt-ebf"/>
+        <segue reference="ep5-xb-kd2"/>
+        <segue reference="SjJ-0Z-ase"/>
+        <segue reference="Xre-dI-aTe"/>
     </inferredMetricsTieBreakers>
 </document>
