@@ -1797,7 +1797,7 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSMutableArray *recordArr = [NSMutableArray array];
             NSError *err = nil;
-            NSArray *data = responseObject[@"data"];
+            NSArray *data = responseObject[@"data"][@"appliWithdrawallist"];
             recordArr = [ApplyCashModel arrayOfModelsFromDictionaries:data error:&err];
             
             result(YES,info,recordArr);

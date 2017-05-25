@@ -2029,7 +2029,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jce-aM-h76">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2055,7 +2055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTR-ie-elP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4665" y="5234"/>
+            <point key="canvasLocation" x="-4265" y="4551"/>
         </scene>
         <!--提现-->
         <scene sceneID="i2K-Wc-iIh">
@@ -2287,6 +2287,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cashCardRecordBtn:" destination="hnI-Wk-1sj" id="XBd-Gy-2Zl"/>
+                                <segue destination="yFa-aU-XPR" kind="show" identifier="cashRecordSegue" id="lCz-4w-Yb3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -5693,13 +5694,14 @@
         <segue reference="fkz-Fo-52f"/>
         <segue reference="zMk-Cc-iId"/>
         <segue reference="2vo-ef-X0i"/>
+        <segue reference="xr8-XJ-Bqb"/>
+        <segue reference="6Ku-Vt-ebf"/>
+        <segue reference="lCz-4w-Yb3"/>
+        <segue reference="cJN-Ke-JUr"/>
+        <segue reference="hqb-t9-kRK"/>
+        <segue reference="SBL-jk-t8o"/>
         <segue reference="eJT-ye-vUc"/>
         <segue reference="0yz-DO-JMd"/>
-        <segue reference="qAO-az-G1s"/>
-        <segue reference="SBL-jk-t8o"/>
-        <segue reference="cJN-Ke-JUr"/>
-        <segue reference="6Ku-Vt-ebf"/>
-        <segue reference="Nob-6P-ukl"/>
         <segue reference="SjJ-0Z-ase"/>
         <segue reference="Xre-dI-aTe"/>
     </inferredMetricsTieBreakers>

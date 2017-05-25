@@ -13,6 +13,7 @@
 #import "AccountModel.h"
 #import <MJRefresh/MJRefresh.h>
 #import "CashBankRecordTableViewCell.h"
+#import "ApplyCashModel.h"
 
 @interface WithDrawRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -68,7 +69,7 @@
                            @"pageNum":pageNow,
                            @"pageOffset":pageNum
                            };
-    if (self.isInvest) {
+    if (self.isInvest == YES) {
         [[MyAPI sharedAPI] applyWithDrawRecordWithWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
             if (success) {
                 
@@ -128,6 +129,7 @@
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"OrderControlTableViewCell" bundle:nil] forCellReuseIdentifier:@"orderCellId"];
     [self.tableView registerNib:[UINib nibWithNibName:@"CashBankRecordTableViewCell" bundle:nil] forCellReuseIdentifier:CashBankReuseId];
+    self.tableView.backgroundView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     
@@ -135,15 +137,18 @@
 #pragma mark - UITableViewDelegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (self.isInvest == YES) {
+        return applyCashRecordDataSource.count;
+    }
     return _recordArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.isInvest) {
+    if (self.isInvest == NO) {
         OrderControlTableViewCell *orderCell = [tableView dequeueReusableCellWithIdentifier:@"orderCellId"];
-//        if (orderCell == nil) {
-//            orderCell = [[[NSBundle mainBundle] loadNibNamed:@"OrderControlTableViewCell" owner:self options:nil] lastObject];
-//        }
+        if (orderCell == nil) {
+            orderCell = [[[NSBundle mainBundle] loadNibNamed:@"OrderControlTableViewCell" owner:self options:nil] lastObject];
+        }
         if (_recordArray.count > 0) {
             recordModel *reModel = [_recordArray objectAtIndex:indexPath.row];
             orderCell.oneLab.text = @"提现详情";
@@ -157,8 +162,9 @@
         return orderCell;
     }else{
         CashBankRecordTableViewCell *cashRecordCell = [tableView dequeueReusableCellWithIdentifier:CashBankReuseId forIndexPath:indexPath];
-        
-        return nil;
+        ApplyCashModel *model = [applyCashRecordDataSource objectAtIndex:indexPath.row];
+        [cashRecordCell configData:model];
+        return cashRecordCell;
     }
     
     

@@ -11,6 +11,7 @@
 #import <Masonry.h>
 
 #import "JHCoverView.h"
+#import "WithDrawRecordViewController.h"
 
 @interface WithDrawViewController ()<XWMoneyTextFieldLimitDelegate,JHCoverViewDelegate>
 {
@@ -293,7 +294,7 @@
     
     if ([segue.identifier isEqualToString:@"goBankSegue"]) {
         NSString *str = (NSString*)sender;
-        MyBankCardViewController *bankVC = segue.destinationViewController;
+        MyBankCardViewController *bankVC = (MyBankCardViewController *)segue.destinationViewController;
         bankVC.type = str;
         
         bankVC.bankBlock =^(bankCardModel *model){
@@ -303,6 +304,9 @@
             _bankID = model.bank_id;
         };
         
+    }else if([segue.identifier isEqualToString:@"cashRecordSegue"]){
+        WithDrawRecordViewController *recordVC = (WithDrawRecordViewController *)segue.destinationViewController;
+        recordVC.isInvest = YES;
     }
     
     
@@ -310,5 +314,6 @@
 
 
 - (IBAction)cashCardRecordBtn:(id)sender {
+    
 }
 @end
