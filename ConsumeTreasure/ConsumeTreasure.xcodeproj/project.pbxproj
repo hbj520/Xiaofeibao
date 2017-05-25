@@ -48,6 +48,9 @@
 		AB379B8F1ED5413000224165 /* AttractInvestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB379B8D1ED5413000224165 /* AttractInvestTableViewCell.xib */; };
 		AB3A61B61DAF87730071EBA1 /* LoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */; };
 		AB4621A31ED40BFC00857D65 /* AtractInvestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4621A21ED40BFC00857D65 /* AtractInvestViewController.m */; };
+		AB4667321ED68749000FF58A /* CashBankRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4667301ED68749000FF58A /* CashBankRecordTableViewCell.m */; };
+		AB4667331ED68749000FF58A /* CashBankRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4667311ED68749000FF58A /* CashBankRecordTableViewCell.xib */; };
+		AB4667391ED69015000FF58A /* ApplyCashModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4667381ED69015000FF58A /* ApplyCashModel.m */; };
 		AB4826191DE689EE0001EA8B /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4826181DE689EE0001EA8B /* EvaluateViewController.m */; };
 		AB49638F1ED52B100072E474 /* AttractInvestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB49638E1ED52B100072E474 /* AttractInvestModel.m */; };
 		AB4A223B1DB75B390057C838 /* LianmenRightCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4A22391DB75B390057C838 /* LianmenRightCollectionViewCell.m */; };
@@ -461,6 +464,11 @@
 		AB3A61B51DAF87730071EBA1 /* LoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAndRegisterViewController.m; sourceTree = "<group>"; };
 		AB4621A11ED40BFC00857D65 /* AtractInvestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtractInvestViewController.h; sourceTree = "<group>"; };
 		AB4621A21ED40BFC00857D65 /* AtractInvestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtractInvestViewController.m; sourceTree = "<group>"; };
+		AB46672F1ED68749000FF58A /* CashBankRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashBankRecordTableViewCell.h; sourceTree = "<group>"; };
+		AB4667301ED68749000FF58A /* CashBankRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashBankRecordTableViewCell.m; sourceTree = "<group>"; };
+		AB4667311ED68749000FF58A /* CashBankRecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CashBankRecordTableViewCell.xib; sourceTree = "<group>"; };
+		AB4667371ED69015000FF58A /* ApplyCashModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyCashModel.h; sourceTree = "<group>"; };
+		AB4667381ED69015000FF58A /* ApplyCashModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyCashModel.m; sourceTree = "<group>"; };
 		AB4826171DE689EE0001EA8B /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		AB4826181DE689EE0001EA8B /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		AB49638D1ED52B100072E474 /* AttractInvestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractInvestModel.h; sourceTree = "<group>"; };
@@ -1344,6 +1352,8 @@
 				D150DFBE1DE433180045FB2B /* TuiJianModel.m */,
 				D19B6E191DE7DA65002A5667 /* AccountModel.h */,
 				D19B6E1A1DE7DA65002A5667 /* AccountModel.m */,
+				AB4667371ED69015000FF58A /* ApplyCashModel.h */,
+				AB4667381ED69015000FF58A /* ApplyCashModel.m */,
 				AB1BE40B1EA0BC7B00BD7499 /* RecommendPriceModel.h */,
 				AB1BE40C1EA0BC7B00BD7499 /* RecommendPriceModel.m */,
 				D12054811DEC26A500EB2707 /* StoreMasterModel.h */,
@@ -1646,6 +1656,9 @@
 				D11736AF1DFE42EF00270D26 /* OrderControlTableViewCell.h */,
 				D11736B01DFE42EF00270D26 /* OrderControlTableViewCell.m */,
 				D11736B11DFE42EF00270D26 /* OrderControlTableViewCell.xib */,
+				AB46672F1ED68749000FF58A /* CashBankRecordTableViewCell.h */,
+				AB4667301ED68749000FF58A /* CashBankRecordTableViewCell.m */,
+				AB4667311ED68749000FF58A /* CashBankRecordTableViewCell.xib */,
 				D11736B81DFE7FAE00270D26 /* StoreControlTableViewCell.h */,
 				D11736B91DFE7FAE00270D26 /* StoreControlTableViewCell.m */,
 				D11736BA1DFE7FAE00270D26 /* StoreControlTableViewCell.xib */,
@@ -2482,6 +2495,7 @@
 				AB4A223C1DB75B390057C838 /* LianmenRightCollectionViewCell.xib in Resources */,
 				D170F2601DAF1ABE00272E57 /* BeforeChartTableViewCell.xib in Resources */,
 				D10EE3DF1DB0B28F001C1992 /* README-GHUnit in Resources */,
+				AB4667331ED68749000FF58A /* CashBankRecordTableViewCell.xib in Resources */,
 				AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */,
 				D12165A31DB64EA9006B06FC /* LookRecordHeadView.xib in Resources */,
 				AB11EC6D1E28A644000ECAE7 /* MJRefresh.bundle in Resources */,
@@ -2767,6 +2781,7 @@
 				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
 				D10DC9521E0A307400930F74 /* XWMoneyTextField.m in Sources */,
 				AB608C341D9D0B1200194FC2 /* TRLiveNetManager.m in Sources */,
+				AB4667391ED69015000FF58A /* ApplyCashModel.m in Sources */,
 				D10EE45B1DB1CF3F001C1992 /* UIViewController+HUD.m in Sources */,
 				D15B393D1DCC6E00009122FE /* StoreDeatilViewController.m in Sources */,
 				D15B3AF71DDC0E5E009122FE /* Order.m in Sources */,
@@ -2820,6 +2835,7 @@
 				D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */,
 				D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */,
 				D16BF2AD1DEFF15B001A82BF /* JFAreaDataManager.m in Sources */,
+				AB4667321ED68749000FF58A /* CashBankRecordTableViewCell.m in Sources */,
 				D12165181DB4F2B4006B06FC /* UIView+Frame.m in Sources */,
 				AB6FBA571DB4A00100C682F8 /* MineTableViewController.m in Sources */,
 				D12165191DB4F2B4006B06FC /* YZDisplayTitleLabel.m in Sources */,

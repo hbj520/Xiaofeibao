@@ -21,6 +21,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *withdrawView;
+- (IBAction)cashCardRecordBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cashCardBtn;
 
 @property (nonatomic,strong) NSArray *moneyType;
 @property (nonatomic,assign) BOOL isInvest;//是否为招商联盟进入

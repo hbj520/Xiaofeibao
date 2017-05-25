@@ -1797,7 +1797,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvE-aH-yWi">
-                                        <rect key="frame" x="150" y="122" width="75" height="20"/>
+                                        <rect key="frame" x="150" y="113" width="75" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="8Fi-a1-wNd"/>
                                             <constraint firstAttribute="height" constant="20" id="huS-Mv-3C2"/>
@@ -1821,7 +1821,7 @@
                                     <constraint firstItem="63b-VG-o2L" firstAttribute="centerX" secondItem="5yN-MW-P8o" secondAttribute="centerX" id="YO9-MY-hve"/>
                                     <constraint firstItem="xvE-aH-yWi" firstAttribute="centerX" secondItem="5yN-MW-P8o" secondAttribute="centerX" id="YXy-ud-m0O"/>
                                     <constraint firstItem="63b-VG-o2L" firstAttribute="top" secondItem="4Bg-60-pcZ" secondAttribute="bottom" constant="29" id="ZIX-uw-988"/>
-                                    <constraint firstAttribute="bottom" secondItem="xvE-aH-yWi" secondAttribute="bottom" constant="6" id="a2c-ZP-dlE"/>
+                                    <constraint firstAttribute="bottom" secondItem="xvE-aH-yWi" secondAttribute="bottom" constant="15" id="a2c-ZP-dlE"/>
                                     <constraint firstItem="4Bg-60-pcZ" firstAttribute="top" secondItem="5yN-MW-P8o" secondAttribute="top" constant="25" id="ij6-T8-pYT"/>
                                 </constraints>
                             </view>
@@ -2283,9 +2283,16 @@
                                 <action selector="back:" destination="hnI-Wk-1sj" id="Yfx-q6-1vu"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="提现记录" id="ufZ-Oa-RE8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cashCardRecordBtn:" destination="hnI-Wk-1sj" id="XBd-Gy-2Zl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="cashCardBtn" destination="ufZ-Oa-RE8" id="L0v-JI-Axb"/>
                         <outlet property="chargeNum" destination="dM4-GX-yid" id="Kry-e7-mk3"/>
                         <outlet property="defaultBank" destination="NBA-0G-4j0" id="SGH-He-2oK"/>
                         <outlet property="defaultBankNum" destination="5w6-Wd-5cd" id="VVu-eK-52S"/>
@@ -5683,16 +5690,16 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fkz-Fo-52f"/>
+        <segue reference="zMk-Cc-iId"/>
+        <segue reference="2vo-ef-X0i"/>
         <segue reference="eJT-ye-vUc"/>
         <segue reference="0yz-DO-JMd"/>
-        <segue reference="Cge-eV-Uzy"/>
-        <segue reference="exM-SL-wT4"/>
-        <segue reference="xhA-la-EUW"/>
         <segue reference="qAO-az-G1s"/>
         <segue reference="SBL-jk-t8o"/>
         <segue reference="cJN-Ke-JUr"/>
         <segue reference="6Ku-Vt-ebf"/>
-        <segue reference="ep5-xb-kd2"/>
+        <segue reference="Nob-6P-ukl"/>
         <segue reference="SjJ-0Z-ase"/>
         <segue reference="Xre-dI-aTe"/>
     </inferredMetricsTieBreakers>

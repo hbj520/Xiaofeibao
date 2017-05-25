@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface WithDrawRecordViewController : BaseViewController
-
+@property (nonatomic,assign) BOOL isInvest;
 @end

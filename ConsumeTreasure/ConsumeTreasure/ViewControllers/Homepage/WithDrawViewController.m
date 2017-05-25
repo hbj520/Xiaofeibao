@@ -39,6 +39,9 @@
     if (self.isInvest) {
         self.warningLabel1.text = @"*注意:提现金额将在1个工作日后到账";
         self.warningLabel2.text = @"*提现时间:t+1";
+    }else{
+        UIBarButtonItem *btn = [[UIBarButtonItem alloc] init];
+        self.navigationItem.rightBarButtonItems = @[btn];
     }
 }
 
@@ -306,4 +309,6 @@
 }
 
 
+- (IBAction)cashCardRecordBtn:(id)sender {
+}
 @end

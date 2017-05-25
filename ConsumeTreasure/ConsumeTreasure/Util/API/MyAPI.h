@@ -221,6 +221,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)getWithDrawRecordWithWithParameters:(NSDictionary*)para
                                      result:(ArrayBlock)result
                                 errorResult:(ErrorBlock)errorResult;
+#pragma mark -提现申请记录
+- (void)applyWithDrawRecordWithWithParameters:(NSDictionary*)para
+                                       result:(ArrayBlock)result
+                                  errorResult:(ErrorBlock)errorResult;
 
 #pragma mark -- 搜索
 - (void)getSearchResultWithParameters:(NSDictionary*)para
