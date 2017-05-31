@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182140F21EDEC301001C7EBA /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182140F11EDEC301001C7EBA /* iflyMSC.framework */; };
+		182140F41EDEC31F001C7EBA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182140F31EDEC31F001C7EBA /* AVFoundation.framework */; };
+		182140F61EDEC382001C7EBA /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182140F51EDEC382001C7EBA /* Contacts.framework */; };
+		182140F81EDEC38E001C7EBA /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182140F71EDEC38E001C7EBA /* AddressBook.framework */; };
+		1821410C1EDEC45E001C7EBA /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182141041EDEC45E001C7EBA /* AlertView.m */; };
+		1821410D1EDEC45E001C7EBA /* PcmPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 182141081EDEC45E001C7EBA /* PcmPlayer.m */; };
+		1821410E1EDEC45E001C7EBA /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821410B1EDEC45E001C7EBA /* PopupView.m */; };
 		8D209B7BB9660C487FA741EC /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 761C910A58A7DEFA02F98B03 /* libPods-ConsumeTreasure.a */; };
 		AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0076471DD066D4000E5181 /* UnionCategoryModel.m */; };
 		AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0076491DD06F73000E5181 /* TestUnion.json */; };
@@ -391,6 +398,18 @@
 
 /* Begin PBXFileReference section */
 		0A0B893EA1ECABC8400E4944 /* Pods-ConsumeTreasure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsumeTreasure.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsumeTreasure/Pods-ConsumeTreasure.release.xcconfig"; sourceTree = "<group>"; };
+		182140F11EDEC301001C7EBA /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		182140F31EDEC31F001C7EBA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		182140F51EDEC382001C7EBA /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		182140F71EDEC38E001C7EBA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		182141031EDEC45E001C7EBA /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		182141041EDEC45E001C7EBA /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		182141051EDEC45E001C7EBA /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
+		182141071EDEC45E001C7EBA /* PcmPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcmPlayer.h; sourceTree = "<group>"; };
+		182141081EDEC45E001C7EBA /* PcmPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PcmPlayer.m; sourceTree = "<group>"; };
+		182141091EDEC45E001C7EBA /* PcmPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcmPlayerDelegate.h; sourceTree = "<group>"; };
+		1821410A1EDEC45E001C7EBA /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
+		1821410B1EDEC45E001C7EBA /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
 		761C910A58A7DEFA02F98B03 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0076461DD066D4000E5181 /* UnionCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionCategoryModel.h; sourceTree = "<group>"; };
 		AB0076471DD066D4000E5181 /* UnionCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionCategoryModel.m; sourceTree = "<group>"; };
@@ -1103,23 +1122,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182140F81EDEC38E001C7EBA /* AddressBook.framework in Frameworks */,
+				182140F61EDEC382001C7EBA /* Contacts.framework in Frameworks */,
 				AB6142191E72997500B7C446 /* AudioToolbox.framework in Frameworks */,
+				D12164B11DB47528006B06FC /* CoreTelephony.framework in Frameworks */,
+				D10EE3F01DB0B66F001C1992 /* SystemConfiguration.framework in Frameworks */,
+				182140F41EDEC31F001C7EBA /* AVFoundation.framework in Frameworks */,
 				AB6142171E72995B00B7C446 /* ImageIO.framework in Frameworks */,
 				D15B65481E67BF4300BAB25D /* AdSupport.framework in Frameworks */,
 				D15B65461E67ABAC00BAB25D /* libresolv.tbd in Frameworks */,
 				D15B65441E67AB9700BAB25D /* UserNotifications.framework in Frameworks */,
 				D15B65421E67AB5B00BAB25D /* CoreFoundation.framework in Frameworks */,
+				182140F21EDEC301001C7EBA /* iflyMSC.framework in Frameworks */,
 				D1E130B61E557C3B006DF83E /* libiconv.tbd in Frameworks */,
 				AB6142151E7295B600B7C446 /* CrashMaster.framework in Frameworks */,
 				D15B3B091DDC0F0D009122FE /* CoreMotion.framework in Frameworks */,
 				D15B3B071DDC0EF0009122FE /* Foundation.framework in Frameworks */,
 				D15B3B051DDC0EE5009122FE /* UIKit.framework in Frameworks */,
 				D15B3B031DDC0ED4009122FE /* CoreText.framework in Frameworks */,
-				D10EE3F01DB0B66F001C1992 /* SystemConfiguration.framework in Frameworks */,
 				D10EE3EC1DB0B65E001C1992 /* libz.tbd in Frameworks */,
 				D15B3B011DDC0E8B009122FE /* libc++.tbd in Frameworks */,
 				D12164B31DB47539006B06FC /* libstdc++.6.0.9.tbd in Frameworks */,
-				D12164B11DB47528006B06FC /* CoreTelephony.framework in Frameworks */,
 				D12164AF1DB47521006B06FC /* libsqlite3.0.tbd in Frameworks */,
 				D12164AD1DB47519006B06FC /* Security.framework in Frameworks */,
 				D12164BA1DB48046006B06FC /* MapKit.framework in Frameworks */,
@@ -1164,9 +1187,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182141061EDEC45E001C7EBA /* pcmPlayerCode */ = {
+			isa = PBXGroup;
+			children = (
+				182141071EDEC45E001C7EBA /* PcmPlayer.h */,
+				182141081EDEC45E001C7EBA /* PcmPlayer.m */,
+				182141091EDEC45E001C7EBA /* PcmPlayerDelegate.h */,
+			);
+			path = pcmPlayerCode;
+			sourceTree = "<group>";
+		};
 		578EB4AF2E4319123E151ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				182140F71EDEC38E001C7EBA /* AddressBook.framework */,
+				182140F51EDEC382001C7EBA /* Contacts.framework */,
+				182140F31EDEC31F001C7EBA /* AVFoundation.framework */,
+				182140F11EDEC301001C7EBA /* iflyMSC.framework */,
+				AB6142141E7295B600B7C446 /* CrashMaster.framework */,
 				AB6142181E72997500B7C446 /* AudioToolbox.framework */,
 				AB6142161E72995B00B7C446 /* ImageIO.framework */,
 				D15B65471E67BF4300BAB25D /* AdSupport.framework */,
@@ -1271,6 +1309,12 @@
 		AB608C201D9CB7A900194FC2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				182141031EDEC45E001C7EBA /* AlertView.h */,
+				182141041EDEC45E001C7EBA /* AlertView.m */,
+				182141051EDEC45E001C7EBA /* Definition.h */,
+				182141061EDEC45E001C7EBA /* pcmPlayerCode */,
+				1821410A1EDEC45E001C7EBA /* PopupView.h */,
+				1821410B1EDEC45E001C7EBA /* PopupView.m */,
 				AB05A7101E1C9C7300881EFE /* NSDate+Utilities.h */,
 				AB05A7111E1C9C7300881EFE /* NSDate+Utilities.m */,
 				AB08086F1E13B4C10074D573 /* MyEnum.h */,
@@ -1783,7 +1827,6 @@
 		ABF4E26D1D9B5E57006AD23C = {
 			isa = PBXGroup;
 			children = (
-				AB6142141E7295B600B7C446 /* CrashMaster.framework */,
 				AB6FBA5E1DB4AB8D00C682F8 /* mapapi.bundle */,
 				ABF4E2781D9B5E58006AD23C /* ConsumeTreasure */,
 				ABF4E2921D9B5E58006AD23C /* ConsumeTreasureTests */,
@@ -2462,6 +2505,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = ABF4E26D1D9B5E57006AD23C;
 			productRefGroup = ABF4E2771D9B5E57006AD23C /* Products */;
@@ -2776,6 +2820,7 @@
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
 				AB6FBA651DB5B82500C682F8 /* TongbaoMoneyView.m in Sources */,
 				AB8D453B1DADC89400694E6C /* Tools.m in Sources */,
+				1821410C1EDEC45E001C7EBA /* AlertView.m in Sources */,
 				D10DC9561E0A572500930F74 /* GoPrePayViewController.m in Sources */,
 				D170CA041DC1DB87001BCEE4 /* starView.m in Sources */,
 				D10DC9521E0A307400930F74 /* XWMoneyTextField.m in Sources */,
@@ -2851,6 +2896,7 @@
 				ABF5BEED1DF7EFF100D19DFB /* UserInfoTableViewController.m in Sources */,
 				ABE143691E9F5B5800DA2DF1 /* MyRecommendViewController.m in Sources */,
 				D12054941DED221800EB2707 /* BusinessTableViewCell.m in Sources */,
+				1821410E1EDEC45E001C7EBA /* PopupView.m in Sources */,
 				D1F916A51E078BF00091B989 /* NemberModel.m in Sources */,
 				AB0F64491DB0D0C100A5EB1E /* ForgetPasswordViewController.m in Sources */,
 				D15B3A441DDAFB30009122FE /* DetailCountHeadView.m in Sources */,
@@ -2875,6 +2921,7 @@
 				D1E130B31E54216F006DF83E /* UIColor+PYExtension.m in Sources */,
 				ABD8C2921DA89A1D00BBF5B7 /* HomeTabbarViewController.m in Sources */,
 				D134492C1EA5B3900005573E /* CLLocation+YCLocation.m in Sources */,
+				1821410D1EDEC45E001C7EBA /* PcmPlayer.m in Sources */,
 				D1F2759D1DAD0A4B005B9849 /* SellerDataModel.m in Sources */,
 				D1E1306B1E52D9F7006DF83E /* WithDrawRecordViewController.m in Sources */,
 				D16BF2BB1DF017B3001A82BF /* LocationViewController.m in Sources */,

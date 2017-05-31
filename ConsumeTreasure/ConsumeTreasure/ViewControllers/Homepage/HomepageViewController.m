@@ -43,7 +43,10 @@
 #import "CHSocialService.h"
 
 #import "TobeUnionViewController.h"
-@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>
+
+//讯飞
+#import "iflyMSC/IFlyMSC.h"
+@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate,IFlySpeechSynthesizerDelegate>
 {
     
    // BMKMapView* mapView;
@@ -66,7 +69,7 @@
     TuiJianModel *Tmodel;
     PersonInfoModel *infoModel;
 }
-
+@property (nonatomic, strong) IFlySpeechSynthesizer *iFlySpeechSynthesizer;
 @end
 
 @implementation HomepageViewController
@@ -89,7 +92,7 @@
     //[self loadHotStoreData];
      //localStr = @"模拟定位";//后   需删除
     [self loadHotStoreAndTuiJianStoreData];
-   
+    [self setupIfly];
 }
 
 
@@ -177,7 +180,28 @@
 }
 
 #pragma mark-PrivateMethod
+- (void)setupIfly{
+    //获取语音合成单例
+    _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+    //设置协议委托对象
+    _iFlySpeechSynthesizer.delegate = self;
+    //设置合成参数
+    //设置在线工作方式
+    [_iFlySpeechSynthesizer setParameter:[IFlySpeechConstant TYPE_CLOUD]
+                                  forKey:[IFlySpeechConstant ENGINE_TYPE]];
+    //设置音量，取值范围 0~100
+    [_iFlySpeechSynthesizer setParameter:@"50"
+                                  forKey: [IFlySpeechConstant VOLUME]];
+    //发音人，默认为”xiaoyan”，可以设置的参数列表可参考“合成发音人列表”
+    [_iFlySpeechSynthesizer setParameter:@" xiaoyan "
+                                  forKey: [IFlySpeechConstant VOICE_NAME]];
+    //保存合成文件名，如不再需要，设置为nil或者为空表示取消，默认目录位于library/cache下
+    [_iFlySpeechSynthesizer setParameter:@" tts.pcm"
+                                  forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
+    //启动合成会话
+    //IFlySpeechSynthesizerDelegate协议实现
 
+}
 
 - (void)addRefresh{
     __weak typeof(self) weakSelf = self;
@@ -314,7 +338,23 @@
      [self.tableView registerNib:[UINib nibWithNibName:@"TuiJianTableViewCell" bundle:nil] forCellReuseIdentifier:@"tuijianCelleId"];
     
 }
+#pragma IflyDelegate
+//合成结束
+- (void) onCompleted:(IFlySpeechError *) error {
 
+}
+//合成开始
+- (void) onSpeakBegin {
+
+}
+//合成缓冲进度
+- (void) onBufferProgress:(int) progress message:(NSString *)msg {
+
+}
+//合成播放进度
+- (void) onSpeakProgress:(int) progress beginPos:(int)beginPos endPos:(int)endPos {
+    
+}
 #pragma mark - UIScrollviewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     //NSLog(@"scrollview offsety %f",scrollView.contentOffset.y);
@@ -600,6 +640,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [_iFlySpeechSynthesizer startSpeaking: @"大涛哥确实蛮屌的"];
+
+    
+    
     if (indexPath.section == 1) {
         
         if (indexPath.row != 3) {

@@ -25,6 +25,10 @@
 #import <UserNotifications/UserNotifications.h> 
 // 这里是iOS10需要用到的框架
 #import "UnionIncomeViewController.h"
+
+
+#import "iflyMSC/IFlyMSC.h"
+#import "Definition.h"
 #endif
 
 
@@ -121,6 +125,23 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
     [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
     //无网络提示
     [self addNoNetNotice];
+    //讯飞
+    //设置sdk的log等级，log保存在下面设置的工作路径中
+    [IFlySetting setLogFile:LVL_ALL];
+    
+    //打开输出在console的log开关
+    [IFlySetting showLogcat:YES];
+    
+    //设置sdk的工作路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachePath = [paths objectAtIndex:0];
+    [IFlySetting setLogFilePath:cachePath];
+    
+    //创建语音配置,appid必须要传入，仅执行一次则可
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",APPID_VALUE];
+    
+    //所有服务启动前，需要确保执行createUtility
+    [IFlySpeechUtility createUtility:initString];
     return YES;
    
 }
@@ -275,6 +296,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
             }
         }];
     }
+    [[IFlySpeechUtility getUtility] handleOpenURL:url];
     
     return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
     
