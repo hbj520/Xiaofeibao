@@ -25,6 +25,7 @@
     NSString *_bankID;
     NSString *bankName;
     NSString *bankUserName;
+    NSString *bankNo;
 }
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel2;
@@ -93,6 +94,8 @@
                 _bankID = model.bank_id;
                 bankName = model.bankname;
                 bankUserName = model.bankusername;
+                bankNo = model.bankno;
+                
             }else{
                 self.defaultBank.text = @"尚未设置银行卡";
                 self.defaultBankNum.text = @"请点击前往添加";
@@ -228,8 +231,9 @@
             NSDictionary *para = @{
                                    @"money":Tongtf.text,
                                    @"bankusername":bankUserName,
-                                   @"bankno":_bankID,
-                                   @"bankname":bankName
+                                   @"bankno":bankNo,
+                                   @"bankname":bankName,
+                                   @"bankid":_bankID
                                    };
             [[MyAPI sharedAPI] applyMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
                 if (sucess) {
