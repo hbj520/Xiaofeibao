@@ -27,8 +27,7 @@
 #import "UnionIncomeViewController.h"
 
 
-#import "iflyMSC/IFlyMSC.h"
-#import "Definition.h"
+
 #endif
 
 
@@ -142,6 +141,9 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
     
     //所有服务启动前，需要确保执行createUtility
     [IFlySpeechUtility createUtility:initString];
+    
+    [self setupIfly];
+
     return YES;
    
 }
@@ -304,34 +306,30 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
 }
 
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-//    if ([url.host isEqualToString:@"safepay"]) {
-//        //跳转支付宝钱包进行支付，处理支付结果
-//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-//            NSLog(@"result = %@",resultDic);
-//            
-//            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
-//            int resultStatus = resultStatusStr.intValue;
-//            NSLog(@"reslut = %d",resultStatus);
-//            
-//            
-//            if (resultStatus == 9000) {
-//                
-//                showAlert(@"成功");
-//                
-//            }else{
-//                
-//                showAlert(@"失败");
-//            }
-//        }];
-//    }
-//    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
-//}
-
-
-
 
 #pragma mark - PrivateMethod
+- (void)setupIfly{
+    //获取语音合成单例
+    _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+    //设置协议委托对象
+    _iFlySpeechSynthesizer.delegate = self;
+    //设置合成参数
+    //设置在线工作方式
+    [_iFlySpeechSynthesizer setParameter:[IFlySpeechConstant TYPE_CLOUD]
+                                  forKey:[IFlySpeechConstant ENGINE_TYPE]];
+    //设置音量，取值范围 0~100
+    [_iFlySpeechSynthesizer setParameter:@"50"
+                                  forKey: [IFlySpeechConstant VOLUME]];
+    //发音人，默认为”xiaoyan”，可以设置的参数列表可参考“合成发音人列表”
+    [_iFlySpeechSynthesizer setParameter:@" xiaoyan "
+                                  forKey: [IFlySpeechConstant VOICE_NAME]];
+    //保存合成文件名，如不再需要，设置为nil或者为空表示取消，默认目录位于library/cache下
+    [_iFlySpeechSynthesizer setParameter:@" tts.pcm"
+                                  forKey: [IFlySpeechConstant TTS_AUDIO_PATH]];
+    //启动合成会话
+    //IFlySpeechSynthesizerDelegate协议实现
+    
+}
 -(UIViewController *)currentViewController
 {
     
@@ -412,6 +410,23 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
                 break;
         }
     }
+    
+}
+#pragma  mark -IflyDelegate
+//合成结束
+- (void) onCompleted:(IFlySpeechError *) error {
+    
+}
+//合成开始
+- (void) onSpeakBegin {
+    
+}
+//合成缓冲进度
+- (void) onBufferProgress:(int) progress message:(NSString *)msg {
+    
+}
+//合成播放进度
+- (void) onSpeakProgress:(int) progress beginPos:(int)beginPos endPos:(int)endPos {
     
 }
 
