@@ -119,6 +119,9 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
             NSLog(@"registrationID获取失败，code：%d",resCode);
         }
     }];
+    //自定义消息
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];
 
     //测试
     [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
@@ -174,8 +177,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     {
         // 程序在前台或通过点击推送进来的会弹这个alert
         NSString *message = [NSString stringWithFormat:@"iOS7-8-9收到的推送%@", [userInfo[@"aps"] objectForKey:@"alert"]];
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil, nil];
-//        [alert show];
+
     }
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -192,10 +194,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]])
     {
         [JPUSHService handleRemoteNotification:userInfo];
-        NSString *message = [NSString stringWithFormat:@"will%@", [userInfo[@"aps"] objectForKey:@"alert"]];
-  //      NSLog(@"iOS10程序在前台时收到的推送: %@", message);
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil, nil];
-//        [alert show];
+        NSString *message = userInfo[@"msg"];
+         [_iFlySpeechSynthesizer startSpeaking: message];
+
     }
     
     completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
@@ -308,6 +309,17 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 
 #pragma mark - PrivateMethod
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    NSString *content = [userInfo valueForKey:@"content"];
+
+    [_iFlySpeechSynthesizer startSpeaking: content];
+    //服务端传递的Extras附加字段，key是自己定义的
+
+    NSDictionary *extras = [userInfo valueForKey:@"extras"];
+    NSString *customizeField1 = [extras valueForKey:@"customizeField1"];
+    
+}
 - (void)setupIfly{
     //获取语音合成单例
     _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
@@ -430,6 +442,11 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
 }
 
- 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kJPFNetworkDidReceiveMessageNotification object:nil];
+    [_iFlySpeechSynthesizer stopSpeaking];
+    _iFlySpeechSynthesizer.delegate = nil;
+  
+}
  
 @end

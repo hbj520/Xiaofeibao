@@ -2473,7 +2473,8 @@
 				TargetAttributes = {
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 3S4HP5TK72;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -3110,7 +3111,7 @@
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3251,7 +3252,7 @@
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3S4HP5TK72;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

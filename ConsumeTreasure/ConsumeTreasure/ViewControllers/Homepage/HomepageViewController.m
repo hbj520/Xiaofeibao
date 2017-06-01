@@ -598,7 +598,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  //  [_iFlySpeechSynthesizer startSpeaking: @"大涛哥确实蛮屌的"];
 
     
     

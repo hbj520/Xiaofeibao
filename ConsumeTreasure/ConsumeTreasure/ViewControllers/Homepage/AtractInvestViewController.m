@@ -50,7 +50,11 @@
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     [self.tableview registerNib:[UINib nibWithNibName:@"AttractInvestTableViewCell" bundle:nil] forCellReuseIdentifier:ATTRACTCELLREUSEID];
-    self.restMoneyLabel.text =  [NSString stringWithFormat:@"余额:%@",model.balance];
+   // self.restMoneyLabel.text =  @"123456789.56";
+    self.tableview.sectionFooterHeight = 0;
+    self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    self.restMoneyLabel.text =  model.balance;
     self.cashMoneyBtn.layer.borderWidth = 1;
     self.cashMoneyBtn.layer.borderColor = [UIColor whiteColor].CGColor;
     self.cashMoneyBtn.layer.cornerRadius = 9.;
