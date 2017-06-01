@@ -299,7 +299,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
             }
         }];
     }
-    [[IFlySpeechUtility getUtility] handleOpenURL:url];
+   // [[IFlySpeechUtility getUtility] handleOpenURL:url];
     
     return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
     

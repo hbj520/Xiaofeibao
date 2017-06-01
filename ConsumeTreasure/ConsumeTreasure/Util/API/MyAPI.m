@@ -603,8 +603,8 @@
             NSMutableArray *accountArr = [NSMutableArray array];
             NSError *err = nil;
             NSArray *data = responseObject[@"data"][@"list"];
-            NSString *wx = responseObject[@"wxopenid"];
-            NSString *zfb = responseObject[@"zfbuserid"];
+            NSString *wx = responseObject[@"data"][@"wxopenid"];
+            NSString *zfb = responseObject[@"data"][@"zfbuserid"];
             [[XFBConfig Instance] saveWeixin:wx];
             [[XFBConfig Instance] saveZFB:zfb];
             accountArr = [AccountModel arrayOfModelsFromDictionaries:data error:&err];
