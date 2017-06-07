@@ -16,4 +16,5 @@ pod 'TPKeyboardAvoiding'
 pod 'UMengSocialCOM'
 pod 'JSONModel'
 pod ‘SDCycleScrollView’
+pod 'JPush'
 end

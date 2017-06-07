@@ -18,18 +18,9 @@
 #import <AFNetworking.h>
 #import <CrashMaster/CrashMaster.h>
 #import <CrashMaster/CrashMasterConfig.h>
-// 极光推送
-#import "JPUSHService.h"
-#import <AdSupport/AdSupport.h>
-#ifdef NSFoundationVersionNumber_iOS_9_x_Max
-#import <UserNotifications/UserNotifications.h> 
+
 // 这里是iOS10需要用到的框架
 #import "UnionIncomeViewController.h"
-
-
-
-#endif
-
 
 static NSString * const JPUSHAPPKEY = @"d405d2a2e20ec28537f2d63a"; // 极光appKey
 static NSString * const channel = @"channel"; // 固定的
@@ -44,7 +35,7 @@ static BOOL const isProduction = TRUE; // 极光TRUE为生产环境
 
 #endif
 
-@interface AppDelegate ()<JPUSHRegisterDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -89,43 +80,43 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 #pragma mark- JPUSHRegisterDelegate
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 // 当程序在前台时, 收到推送弹出的通知
-//- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
-//    
-//    NSDictionary * userInfo = notification.request.content.userInfo;
-//    
-//    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]])
-//    {
-//        [JPUSHService handleRemoteNotification:userInfo];
-//        NSString *message = userInfo[@"msg"];
-//         [_iFlySpeechSynthesizer startSpeaking: message];
-//
-//    }
-//    
-//    completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
-//}
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]])
+    {
+        [JPUSHService handleRemoteNotification:userInfo];
+        NSString *message = userInfo[@"msg"];
+         [_iFlySpeechSynthesizer startSpeaking: message];
+
+    }
+    
+    completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+}
 //
 //// 程序关闭后, 通过点击推送弹出的通知
-//- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
-//    
-//    NSDictionary * userInfo = response.notification.request.content.userInfo;
-//    
-//    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]])
-//    {
-//        [JPUSHService handleRemoteNotification:userInfo];
-//        NSString *message = [NSString stringWithFormat:@"did%@", [userInfo[@"aps"] objectForKey:@"alert"]];
-//        if ([[userInfo[@"aps"] objectForKey:@"sound"] isEqualToString:@"noticeVoice.wav"]) {
-//            UIStoryboard *incomeStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:[NSBundle mainBundle]];
-//            UnionIncomeViewController *incomeVC = [incomeStorybord instantiateViewControllerWithIdentifier:@"incomeDetailStorybordId"];
-//            incomeVC.title = @"收益明细";
-//            UIViewController *presentVc = [self currentViewController];
-//            [presentVc presentViewController:incomeVC animated:YES completion:^{
-//                
-//            }];
-//        }
-//    }
-//    
-//    completionHandler();  // 系统要求执行这个方法
-//}
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]])
+    {
+        [JPUSHService handleRemoteNotification:userInfo];
+        NSString *message = [NSString stringWithFormat:@"did%@", [userInfo[@"aps"] objectForKey:@"alert"]];
+        if ([[userInfo[@"aps"] objectForKey:@"sound"] isEqualToString:@"noticeVoice.wav"]) {
+            UIStoryboard *incomeStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:[NSBundle mainBundle]];
+            UnionIncomeViewController *incomeVC = [incomeStorybord instantiateViewControllerWithIdentifier:@"incomeDetailStorybordId"];
+            incomeVC.title = @"收益明细";
+            UIViewController *presentVc = [self currentViewController];
+            [presentVc presentViewController:incomeVC animated:YES completion:^{
+                
+            }];
+        }
+    }
+    
+    completionHandler();  // 系统要求执行这个方法
+}
 #endif
 //IOS10之后 推送消息接收
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center
@@ -135,12 +126,12 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 }
 
-//- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-//    
-//    // Required,For systems with less than or equal to iOS6
-//    [JPUSHService handleRemoteNotification:userInfo];
-//    
-//}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
+    
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -155,18 +146,21 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 }
 -(void)application:(UIApplication* )application didReceiveRemoteNotification:(NSDictionary* )userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     
+     [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
     
 }
-
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
+    
+}
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [application setApplicationIconBadgeNumber:0];
-    [JPUSHService setBadge:0];
-    [application cancelAllLocalNotifications];
-    
-    JXMapNavigationView *view = [[JXMapNavigationView alloc]init];
-    [view remove];
+//    [application setApplicationIconBadgeNumber:0];
+//    [JPUSHService setBadge:0];
+//    [application cancelAllLocalNotifications];
+//    
+//    JXMapNavigationView *view = [[JXMapNavigationView alloc]init];
+//    [view remove];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -186,44 +180,44 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-    if (self.iszfbLink) {
-        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-            //linkzfbNotice
-            
-            if (self.isLinkVc) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
-            }else{
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
-            }
-            
-        }];
-    }
-   
-    if ([url.host isEqualToString:@"safepay"]) {
-        //跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
-            
-            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
-            int resultStatus = resultStatusStr.intValue;
-            NSLog(@"reslut = %d",resultStatus);
-            
-            
-            if (resultStatus == 9000) {
-                
-                showAlert(@"成功");
-                
-            }else{
-                
-                showAlert(@"失败");
-            }
-        }];
-    }
-   // [[IFlySpeechUtility getUtility] handleOpenURL:url];
+//    if (self.iszfbLink) {
+//        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            //linkzfbNotice
+//            
+//            if (self.isLinkVc) {
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
+//            }else{
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
+//            }
+//            
+//        }];
+//    }
+//   
+//    if ([url.host isEqualToString:@"safepay"]) {
+//        //跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"result = %@",resultDic);
+//            
+//            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
+//            int resultStatus = resultStatusStr.intValue;
+//            NSLog(@"reslut = %d",resultStatus);
+//            
+//            
+//            if (resultStatus == 9000) {
+//                
+//                showAlert(@"成功");
+//                
+//            }else{
+//                
+//                showAlert(@"失败");
+//            }
+//        }];
+//    }
+//   // [[IFlySpeechUtility getUtility] handleOpenURL:url];
+//    
+//    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
     
-    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
-    
-    
+    return nil;
     
 }
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
@@ -277,7 +271,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     
     
     //测试
-    [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
+  //  [CrashMaster init:@"4067ca4fc934ddc0757d1eacf96b505b" channel:@"AppStore" config:[CrashMasterConfig defaultConfig]];
 }
 - (void)setupBaidu{
     self.cityCode = @"127";
