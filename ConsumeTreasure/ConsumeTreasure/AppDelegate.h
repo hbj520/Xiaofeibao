@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import "WXApi.h"
-
+#import <UserNotifications/UserNotifications.h>
 #import "iflyMSC/IFlyMSC.h"
 #import "Definition.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate,BMKGeneralDelegate,WXApiDelegate,IFlySpeechSynthesizerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,BMKGeneralDelegate,WXApiDelegate,IFlySpeechSynthesizerDelegate,UNUserNotificationCenterDelegate>
 {
     BMKMapManager* _mapManager;
 }
