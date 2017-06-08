@@ -147,6 +147,8 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 -(void)application:(UIApplication* )application didReceiveRemoteNotification:(NSDictionary* )userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
     
      [JPUSHService handleRemoteNotification:userInfo];
+    NSString *message = userInfo[@"msg"];
+    [_iFlySpeechSynthesizer startSpeaking: message];
     completionHandler(UIBackgroundFetchResultNewData);
     
 }
@@ -155,12 +157,12 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-//    [application setApplicationIconBadgeNumber:0];
-//    [JPUSHService setBadge:0];
-//    [application cancelAllLocalNotifications];
-//    
-//    JXMapNavigationView *view = [[JXMapNavigationView alloc]init];
-//    [view remove];
+    [application setApplicationIconBadgeNumber:0];
+    [JPUSHService setBadge:0];
+    [application cancelAllLocalNotifications];
+    
+    JXMapNavigationView *view = [[JXMapNavigationView alloc]init];
+    [view remove];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -180,42 +182,42 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-//    if (self.iszfbLink) {
-//        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-//            //linkzfbNotice
-//            
-//            if (self.isLinkVc) {
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
-//            }else{
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
-//            }
-//            
-//        }];
-//    }
-//   
-//    if ([url.host isEqualToString:@"safepay"]) {
-//        //跳转支付宝钱包进行支付，处理支付结果
-//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-//            NSLog(@"result = %@",resultDic);
-//            
-//            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
-//            int resultStatus = resultStatusStr.intValue;
-//            NSLog(@"reslut = %d",resultStatus);
-//            
-//            
-//            if (resultStatus == 9000) {
-//                
-//                showAlert(@"成功");
-//                
-//            }else{
-//                
-//                showAlert(@"失败");
-//            }
-//        }];
-//    }
-//   // [[IFlySpeechUtility getUtility] handleOpenURL:url];
-//    
-//    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
+    if (self.iszfbLink) {
+        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+            //linkzfbNotice
+            
+            if (self.isLinkVc) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"linkzfbNotice" object:nil userInfo:resultDic];
+            }else{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"zfbNotification" object:nil userInfo:resultDic];
+            }
+            
+        }];
+    }
+   
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            
+            NSString *resultStatusStr = [NSString stringWithFormat:@"%@",resultDic[@"resultStatus"]];
+            int resultStatus = resultStatusStr.intValue;
+            NSLog(@"reslut = %d",resultStatus);
+            
+            
+            if (resultStatus == 9000) {
+                
+                showAlert(@"成功");
+                
+            }else{
+                
+                showAlert(@"失败");
+            }
+        }];
+    }
+   // [[IFlySpeechUtility getUtility] handleOpenURL:url];
+    
+    return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
     
     return nil;
     

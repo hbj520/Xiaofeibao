@@ -8,6 +8,10 @@
 
 #import "StoreDetailTableViewCell.h"
 #import "UIAlertView+flash.h"
+@interface StoreDetailTableViewCell()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageVIew;
+
+@end
 @implementation StoreDetailTableViewCell
 
 - (void)awakeFromNib {
@@ -24,7 +28,13 @@
         self.storeNameLab.text = deModel.shopName;
         self.adresssLab.text = deModel.addr;
         self.phNum = deModel.shopPhone;
-        self.discountLab.text = [NSString stringWithFormat:@"支付立返%.f%%",deModel.shopReturnRate*100];
+        if (deModel.shopReturnRate > 0) {
+            self.discountLab.text = [NSString stringWithFormat:@"支付立返%.f%%",deModel.shopReturnRate*100];
+
+        }else{
+            self.discountLab.hidden = YES;
+            self.iconImageVIew.hidden = YES;
+        }
 //        if ([deModel.collect isEqualToString:@"1"]) {
 //            self.collectBtn.selected = YES;
 //        }else{

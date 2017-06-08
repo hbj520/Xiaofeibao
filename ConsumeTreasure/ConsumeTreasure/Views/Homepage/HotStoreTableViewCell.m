@@ -15,7 +15,6 @@
     [super awakeFromNib];
     // Initialization code
     self.discountLab.layer.borderColor = RGBACOLOR(251, 156, 64, 1).CGColor;
-    self.discountLab.layer.borderWidth = 1;
     self.discountLab.layer.cornerRadius = 8;
     self.discountLab.layer.masksToBounds = YES;
 }
@@ -25,7 +24,19 @@
     [self.storeImage sd_setImageWithURL:[NSURL URLWithString:storeModel.doorimg] placeholderImage:[UIImage imageNamed:DEFAULTSTOREIMAGE]];
     self.distance.text = [NSString stringWithFormat:@"%.3fkm",storeModel.distance.floatValue];
     self.storeAddress.text = storeModel.addr;
-    self.discountLab.text = [NSString stringWithFormat:@"%@",storeModel.discount];
+    NSArray *strArray = [storeModel.discount componentsSeparatedByString:@"返币"];
+    NSString *subStr = strArray[1];
+    NSArray *subArray = [subStr componentsSeparatedByString:@"%"];
+    NSString *numStr = subArray[0];
+    if (numStr.floatValue == 0) {
+        self.discountLab.text = @"";
+        self.discountLab.layer.borderWidth = 0;
+
+    }else{
+        self.discountLab.text = [NSString stringWithFormat:@"%@",storeModel.discount];
+        self.discountLab.layer.borderWidth = 1;
+
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
