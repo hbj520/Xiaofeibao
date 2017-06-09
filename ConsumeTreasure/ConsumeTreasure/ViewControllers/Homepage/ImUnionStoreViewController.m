@@ -62,6 +62,7 @@
     
     UITapGestureRecognizer *tapShare = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareClick:)];
     [self.shareView addGestureRecognizer:tapShare];
+    
     UITapGestureRecognizer *tapShareRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareRegisterClick:)];
     [self.shareRegisterView addGestureRecognizer:tapShareRegister];
 
