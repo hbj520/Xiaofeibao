@@ -63,8 +63,10 @@
     
     UITapGestureRecognizer *tapShare = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareClick:)];
     [self.shareView addGestureRecognizer:tapShare];
+    
     UITapGestureRecognizer *tapShareRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareRegisterClick:)];
-    [self.attractInverstmentView addGestureRecognizer:tapShareRegister];
+    [self.shareRegisterView addGestureRecognizer:tapShareRegister];
+    
     UITapGestureRecognizer *tapAttractRegister = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shareAttractClick:)];
     [self.attractInverstmentView addGestureRecognizer:tapAttractRegister];
     
