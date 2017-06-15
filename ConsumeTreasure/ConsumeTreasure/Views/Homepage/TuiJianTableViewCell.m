@@ -15,11 +15,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
     self.disCountLab.layer.borderColor = RGBACOLOR(251, 156, 64, 1).CGColor;
-    self.disCountLab.layer.borderWidth = 1;
     self.disCountLab.layer.cornerRadius = 8;
     self.disCountLab.layer.masksToBounds = YES;
+
+
 }
 
 
@@ -30,8 +30,19 @@
     self.pointLab.text = tuiModel.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",tuiModel.distance.floatValue];
     self.addressLab.text = tuiModel.addr;
-    
-    self.disCountLab.text = [NSString stringWithFormat:@"%@",tuiModel.discount];
+    NSArray *strArray = [tuiModel.discount componentsSeparatedByString:@"返币"];
+    NSString *subStr = strArray[1];
+    NSArray *subArray = [subStr componentsSeparatedByString:@"%"];
+    NSString *numStr = subArray[0];
+    if (numStr.floatValue == 0) {
+        self.diatanceLab.text = @"";
+        self.disCountLab.layer.borderWidth = 0;
+
+    }else{
+        self.disCountLab.text = [NSString stringWithFormat:@"%@",tuiModel.discount];
+        self.disCountLab.layer.borderWidth = 1;
+
+    }
     
 }
 - (void)configWithData:(UnionContenModel *)data{
@@ -41,7 +52,19 @@
     self.pointLab.text = data.avgScore;
     self.diatanceLab.text = [NSString stringWithFormat:@"%.2fkm",data.distance.floatValue];
     self.addressLab.text = data.addr;
-    self.disCountLab.text = [NSString stringWithFormat:@"%@",data.discount];
+    NSArray *strArray = [data.discount componentsSeparatedByString:@"返币"];
+    NSString *subStr = strArray[1];
+    NSArray *subArray = [subStr componentsSeparatedByString:@"%"];
+    NSString *numStr = subArray[0];
+    if (numStr.floatValue == 0) {
+        self.disCountLab.text = @"";
+        self.disCountLab.layer.borderWidth = 0;
+
+    }else{
+        self.disCountLab.text = [NSString stringWithFormat:@"%@",data.discount];
+        self.disCountLab.layer.borderWidth = 1;
+
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import "WXApi.h"
-
+#import <UserNotifications/UserNotifications.h>
 #import "iflyMSC/IFlyMSC.h"
 #import "Definition.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate,BMKGeneralDelegate,WXApiDelegate,IFlySpeechSynthesizerDelegate>
+// 极光推送
+#import "JPUSHService.h"
+#import <AdSupport/AdSupport.h>
+#import <UserNotifications/UserNotifications.h>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,BMKGeneralDelegate,WXApiDelegate,IFlySpeechSynthesizerDelegate,UNUserNotificationCenterDelegate,JPUSHRegisterDelegate>
 {
     BMKMapManager* _mapManager;
 }
@@ -28,6 +32,7 @@
 @property (assign,nonatomic) BOOL isLinkVc;//是否在解绑页面
 @property (assign,nonatomic) BOOL iszfbLink;//是否是支付宝解绑绑定
 @property (nonatomic, strong) IFlySpeechSynthesizer *iFlySpeechSynthesizer;
+
 
 - (void)changeToMain;
 @end

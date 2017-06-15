@@ -196,7 +196,9 @@
             }
             
             [FileHelper deleteSub:[FileHelper getNotePath]];
-            [[SDImageCache sharedImageCache] clearDisk];
+            [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+                
+            }];
             self.cash.text = @"0.0M";
 
         }

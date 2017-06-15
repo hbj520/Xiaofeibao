@@ -45,8 +45,6 @@
 		AB24F2A71E681A9A00764DA7 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A61E681A9A00764DA7 /* RSADataSigner.m */; };
 		AB24F2AA1E681BA400764DA7 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2A91E681BA400764DA7 /* openssl_wrapper.m */; };
 		AB24F2AD1E681BCE00764DA7 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24F2AC1E681BCE00764DA7 /* RSADataVerifier.m */; };
-		AB24F2B21E69413D00764DA7 /* jcore-ios-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB24F2AF1E69413D00764DA7 /* jcore-ios-1.1.1.a */; };
-		AB24F2B31E69413D00764DA7 /* jpush-ios-3.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB24F2B01E69413D00764DA7 /* jpush-ios-3.0.2.a */; };
 		AB2AC78E1EB1F1E600B59652 /* NoticeIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2AC78D1EB1F1E500B59652 /* NoticeIncomeViewController.m */; };
 		AB32FCC11DE41A9000032D38 /* EvaluateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC01DE41A9000032D38 /* EvaluateListViewController.m */; };
 		AB32FCC51DE425BA00032D38 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB32FCC31DE425BA00032D38 /* EvaluateTableViewCell.m */; };
@@ -466,9 +464,6 @@
 		AB24F2A91E681BA400764DA7 /* openssl_wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
 		AB24F2AB1E681BCE00764DA7 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		AB24F2AC1E681BCE00764DA7 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
-		AB24F2AF1E69413D00764DA7 /* jcore-ios-1.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.1.1.a"; sourceTree = "<group>"; };
-		AB24F2B01E69413D00764DA7 /* jpush-ios-3.0.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.2.a"; sourceTree = "<group>"; };
-		AB24F2B11E69413D00764DA7 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		AB2AC78C1EB1F1E500B59652 /* NoticeIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeIncomeViewController.h; sourceTree = "<group>"; };
 		AB2AC78D1EB1F1E500B59652 /* NoticeIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeIncomeViewController.m; sourceTree = "<group>"; };
 		AB32FCBF1DE41A9000032D38 /* EvaluateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateListViewController.h; sourceTree = "<group>"; };
@@ -1147,7 +1142,6 @@
 				D12164AD1DB47519006B06FC /* Security.framework in Frameworks */,
 				D12164BA1DB48046006B06FC /* MapKit.framework in Frameworks */,
 				D12164AB1DB47513006B06FC /* CoreGraphics.framework in Frameworks */,
-				AB24F2B31E69413D00764DA7 /* jpush-ios-3.0.2.a in Frameworks */,
 				ABD363D41DC330BE00D462AF /* libWeChatSDK.a in Frameworks */,
 				D12164A91DB47506006B06FC /* OpenGLES.framework in Frameworks */,
 				D12164A71DB474FF006B06FC /* QuartzCore.framework in Frameworks */,
@@ -1159,7 +1153,6 @@
 				D121649F1DB4745A006B06FC /* BaiduMapAPI_Map.framework in Frameworks */,
 				D12164991DB4744D006B06FC /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				D12164A01DB4745A006B06FC /* BaiduMapAPI_Radar.framework in Frameworks */,
-				AB24F2B21E69413D00764DA7 /* jcore-ios-1.1.1.a in Frameworks */,
 				D15B3AF41DDC0E5E009122FE /* AlipaySDK.framework in Frameworks */,
 				D10EE3EE1DB0B668001C1992 /* MobileCoreServices.framework in Frameworks */,
 				D12164981DB4744D006B06FC /* BaiduMapAPI_Base.framework in Frameworks */,
@@ -1247,16 +1240,6 @@
 				ABEBA2571DDEFC8500601187 /* UnionContenModel.m */,
 			);
 			path = Union;
-			sourceTree = "<group>";
-		};
-		AB24F2AE1E69413D00764DA7 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				AB24F2AF1E69413D00764DA7 /* jcore-ios-1.1.1.a */,
-				AB24F2B01E69413D00764DA7 /* jpush-ios-3.0.2.a */,
-				AB24F2B11E69413D00764DA7 /* JPUSHService.h */,
-			);
-			path = Lib;
 			sourceTree = "<group>";
 		};
 		AB50D4681E0928AA00B427E6 /* Security */ = {
@@ -1947,7 +1930,6 @@
 			children = (
 				D13449271EA5B3770005573E /* Daohang */,
 				D1C79B171E77921F00869008 /* HMDatePickView */,
-				AB24F2AE1E69413D00764DA7 /* Lib */,
 				D1E130A21E54216F006DF83E /* PYSearch */,
 				D1A3C0911E14DCAE0040AAD9 /* QRCode */,
 				D1A3C07F1E123B2F0040AAD9 /* KGModel */,
@@ -3111,7 +3093,7 @@
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3S4HP5TK72;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3252,7 +3234,7 @@
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3S4HP5TK72;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
