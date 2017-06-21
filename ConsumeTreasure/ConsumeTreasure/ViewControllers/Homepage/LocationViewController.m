@@ -22,7 +22,8 @@
 
 @interface LocationViewController ()<UITableViewDelegate,UITableViewDataSource,BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKOfflineMapDelegate>{
    
-    BOOL _isExpand[29];
+    
+    BOOL _isExpand[100];
     
      NSArray* _sectionTitleArray;
     
@@ -193,6 +194,11 @@
     cell.rightImage.hidden = NO;
     
     locationModel *model = _locationArray[indexPath.section][indexPath.row];
+    
+    if (model.cityCode == nil) {
+        model.cityCode = @"";
+    }
+    
     if (self.locaBlock) {
         self.locaBlock(@[model.city,model.cityCode]);
     }
