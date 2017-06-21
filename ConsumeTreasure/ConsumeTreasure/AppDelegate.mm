@@ -118,13 +118,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     completionHandler();  // 系统要求执行这个方法
 }
 #endif
-//IOS10之后 推送消息接收
--(void)userNotificationCenter:(UNUserNotificationCenter *)center
-didReceiveNotificationResponse:(UNNotificationResponse *)response
-        withCompletionHandler:(void (^)())completionHandler{
-    
-
-}
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
@@ -218,9 +211,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
    // [[IFlySpeechUtility getUtility] handleOpenURL:url];
     
     return [CHSocialServiceCenter handleOpenURL:url delegate:nil];
-    
-    return nil;
-    
 }
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {

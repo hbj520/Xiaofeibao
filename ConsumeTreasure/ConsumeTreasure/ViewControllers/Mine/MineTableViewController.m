@@ -240,7 +240,6 @@
         tongbaoMoneyView.moneyLabel.text = @"****";
     }else{
         self.usernamelabel.text = [[XFBConfig Instance] getUserName];
-        // self.navigationController.navigationBar.barTintColor = RGBACOLOR(253, 87, 54, 1);
         NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18.0],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil];
         self.navigationController.navigationBar.titleTextAttributes = attributeDict;
         self.navigationItem.title = navTitle;
