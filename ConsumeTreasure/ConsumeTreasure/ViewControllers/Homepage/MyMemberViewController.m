@@ -45,13 +45,10 @@
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16],NSForegroundColorAttributeName:[UIColor whiteColor]}];
      self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    
     _memArray = [NSMutableArray array];
     _page = 1;
     _pageNum = @"10";
     [self loadMemberDataWithPage:_page pageNum:_pageNum];
-    
     [self creatUI];
     [self addRefresh];
 }
@@ -136,6 +133,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"MemberTableViewCell" bundle:nil] forCellReuseIdentifier:@"memCellId"];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     
 }
 
