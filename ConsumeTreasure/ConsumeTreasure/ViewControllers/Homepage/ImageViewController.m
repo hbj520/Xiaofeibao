@@ -82,12 +82,6 @@
         if (success) {
             imageOne = (NSString*)object;
             
-//            NSData *imageData = UIImageJPEGRepresentation(img, 0.1);
-//            
-//            UIImage *image =   [UIImage imageWithData:imageData];
-            
-            //  + (UIImage *)imageWithData:(NSData *)data;
-            
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [weakSelf logout];

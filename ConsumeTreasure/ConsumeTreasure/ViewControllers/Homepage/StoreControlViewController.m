@@ -418,18 +418,19 @@
     if ([doorImg hasPrefix:@"http"]) {
         doorImg = @"";
     }
-    if ([jingyingImg hasSuffix:@"http"]) {
+    if ([jingyingImg hasPrefix:@"http"]) {
         jingyingImg = @"";
     }
-    if ([yingyeImg hasSuffix:@"http"]) {
+    if ([yingyeImg hasPrefix:@"http"]) {
         yingyeImg = @"";
     }
-    if ([IDFrontImg hasSuffix:@"http"]) {
+    if ([IDFrontImg hasPrefix:@"http"]) {
         IDFrontImg = @"";
     }
-    if ([IDBackImg hasSuffix:@"http"]) {
+    if ([IDBackImg hasPrefix:@"http"]) {
         IDBackImg = @"";
     }
+    
 }
 -(void)change:(UITextField*)textField{
     if (textField.tag == 8888) {
@@ -449,14 +450,10 @@
 }
 
 - (IBAction)PostData:(id)sender {
-    NSLog(@"保存数据");
-    
     
     if ([realName isEqualToString:@""]||[strAddr isEqualToString:@""]||[storePhone isEqualToString:@""]||[storeName isEqualToString:@""]||[doorImg isEqualToString:@""]) {
         showAlert(@"商家姓名、手机号、店铺名称、店铺首图、地址不可为空");
-    }
-    
-    else{
+    }else{
         [self verifyImage];
     NSDictionary *para = @{
                            
@@ -484,8 +481,8 @@
                            };
     [[MyAPI sharedAPI] finishStoreInfoWithParameters:para resulet:^(BOOL sucess, NSString *msg) {
         if (sucess) {
-            
             [self showHint:@"上传成功"];
+            [self.navigationController popViewControllerAnimated:YES];
         }else{
             [self showHint:msg];
         }
