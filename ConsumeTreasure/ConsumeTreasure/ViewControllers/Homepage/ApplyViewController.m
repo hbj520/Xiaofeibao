@@ -33,7 +33,7 @@
     NSString *_nameStr;
     NSString *_identiId;
     NSString *_storeName;
-    //NSString *_inviteCode;
+    NSString *_inviteCode;
     
     NSString *_phoneStr;//手机号
     NSString *_storeAddr;//地址
@@ -164,7 +164,7 @@
         
         _nameStr = applyCell.trueName.text;
         _storeName = applyCell.storeName.text;
-        //_inviteCode = applyCell.inviteCodeText.text;
+        _inviteCode = applyCell.inviteCodeText.text;
         _identiId = applyCell.identiNum.text;
         
         _phoneStr = applyCell.phoneText.text;
@@ -217,7 +217,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 308;
+        return 350;
     }else if (indexPath.section == 1){
         return 138;
     }else{
@@ -370,6 +370,7 @@
                                        //@"invitecode":_inviteCode
                                        },
                                @"shop":@{
+                                       @"shopRefreePhone":applyCell.inviteCodeText.text,
                                        @"shopname":applyCell.storeName.text,
                                        @"categoryid":cateId,
                                        @"businessimg":_licenseId,
