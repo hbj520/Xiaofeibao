@@ -371,8 +371,11 @@ UICollectionViewDataSource>
         cell = [tableView dequeueReusableCellWithIdentifier:tableViewContentReuseId forIndexPath:indexPath];
     }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (dataSource.count > 0) {
         UnionContenModel *model = [dataSource objectAtIndex:indexPath.row];
         [cell configWithData:model];
+    }
+
         return cell;
 
  
@@ -387,11 +390,8 @@ UICollectionViewDataSource>
     return 10.;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == self.titleTableView) {
-        
-        
-    }else if (tableView == self.contentTabelView){
-        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
+    if (tableView == self.contentTabelView){
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:[NSBundle mainBundle]];
         StoreDeatilViewController *deatilVC = [storybord instantiateViewControllerWithIdentifier:@"detailSB"];
         deatilVC.StoreModel = [dataSource objectAtIndex:indexPath.row];
         //self.hidesBottomBarWhenPushed = YES;

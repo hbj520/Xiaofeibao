@@ -20,9 +20,14 @@
     if (accountModel) {
         
         self.payWayType.text = accountModel.title;
-        self.leftMoney.text = [NSString stringWithFormat:@"%.3f",accountModel.after_goldnum.doubleValue];
+        self.leftMoney.text = [NSString stringWithFormat:@"余额:%.3f",accountModel.after_goldnum.doubleValue];
         self.payTime.text = [NSString stringWithFormat:@"%@-%@",accountModel.createyear,accountModel.createdate];
-        self.moneyNum.text = [NSString stringWithFormat:@"%.3f",accountModel.goldnum.doubleValue];
+        if ([accountModel.type isEqualToString:@"0"]) {
+                    self.moneyNum.text = [NSString stringWithFormat:@"-%.3f",accountModel.goldnum.doubleValue];
+        }else{
+                    self.moneyNum.text = [NSString stringWithFormat:@"+%.3f",accountModel.goldnum.doubleValue];
+        }
+
         
     }
 }
@@ -33,7 +38,11 @@
         self.payWayType.text = shanghuModel.title;
         self.leftMoney.text = [NSString stringWithFormat:@"%.3f",shanghuModel.after_money];
         self.payTime.text = [NSString stringWithFormat:@"%@-%@",shanghuModel.createyear,shanghuModel.createdate];
-        self.moneyNum.text = [NSString stringWithFormat:@"%.3f",shanghuModel.money];
+        
+        if ([shanghuModel.type isEqualToString:@"0"]) {
+            self.moneyNum.text = [NSString stringWithFormat:@"-%.3f",shanghuModel.money];
+        }else{
+            self.moneyNum.text = [NSString stringWithFormat:@"+%.3f",shanghuModel.money];}
     }
     
 }
@@ -50,7 +59,12 @@
         self.payWayType.text = daliModel.title;
         self.leftMoney.text = [NSString stringWithFormat:@"%.3f",daliModel.after_money];
         self.payTime.text = [NSString stringWithFormat:@"%@-%@",daliModel.createyear,daliModel.createdate];
-        self.moneyNum.text = [NSString stringWithFormat:@"%.3f",daliModel.money];    }
+        if ([daliModel.type isEqualToString:@"0"]) {
+                   self.moneyNum.text = [NSString stringWithFormat:@"-%.3f",daliModel.money];
+    }else{
+               self.moneyNum.text = [NSString stringWithFormat:@"+%.3f",daliModel.money];    }
+    }
+ 
 }
 
 
