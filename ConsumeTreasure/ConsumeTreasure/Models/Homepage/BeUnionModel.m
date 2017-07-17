@@ -9,10 +9,28 @@
 #import "BeUnionModel.h"
 
 @implementation BeUnionModel
-
 @end
 
 @implementation arrayUnionModel
+@end
 
 
+@implementation AddressTypeModel
+@end
+
+@implementation ArrAddrTypeModel
+@end
+
+
+@implementation BusinessTypeModel
+@end
+
+@implementation ArrBusiTypeModel
+@end
+
+
+@implementation ContactTypeModel
+@end
+
+@implementation ArrConTypeModel
 @end

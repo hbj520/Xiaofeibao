@@ -10,8 +10,8 @@
 
 @interface PersonInfoModel : JSONModel
 
-@property (nonatomic,strong) NSString *isshopchecked;
-@property (nonatomic,strong) NSString *isproxychecked;
+@property (nonatomic,strong) NSString<Optional> *isshopchecked;
+@property (nonatomic,strong) NSString<Optional> *isproxychecked;
 @property (nonatomic,strong) NSString<Optional> *name;
 
 @end

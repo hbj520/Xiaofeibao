@@ -11,5 +11,8 @@
 @interface ApplyViewController : BasePhotoViewController
 
 @property (nonatomic,strong) NSArray *listArr;
+@property (nonatomic,strong) NSArray *addrArr;
+@property (nonatomic,strong) NSArray *businessArr;
+@property (nonatomic,strong) NSArray *contactArr;
 
 @end

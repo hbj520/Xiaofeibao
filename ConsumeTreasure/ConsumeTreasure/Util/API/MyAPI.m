@@ -45,7 +45,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:testURL]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -722,8 +722,15 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSError *error = nil;
             NSMutableArray *typeArray = [NSMutableArray array];
+            NSMutableArray *addrArray = [NSMutableArray array];
+            NSMutableArray *busiArray = [NSMutableArray array];
+            NSMutableArray *contactArray = [NSMutableArray array];
             typeArray = [BeUnionModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"list"] error:&error];
-            result(YES,info,typeArray);
+            addrArray = [AddressTypeModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"addressTypeList"] error:&error];
+            busiArray = [BusinessTypeModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"businessList"] error:&error];
+            contactArray = [ContactTypeModel arrayOfModelsFromDictionaries:responseObject[@"data"][@"contactTypeList"] error:&error];
+            
+            result(YES,info,@[typeArray,addrArray,busiArray,contactArray]);
             
         }else{
             result(NO,info,nil);

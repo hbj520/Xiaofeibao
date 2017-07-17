@@ -20,6 +20,50 @@
 
     // Configure the view for the selected state
 }
+
+
+- (IBAction)getName:(UITextField *)tf {
+    if (self.trueNameBlock) {
+        self.trueNameBlock(tf.text);
+    }
+}
+
+- (IBAction)identiNum:(UITextField *)tf {
+    if (self.identiNumBlock) {
+        self.identiNumBlock(tf.text);
+    }
+}
+
+
+- (IBAction)storeName:(UITextField *)tf {
+    if (self.storeNameBlock) {
+        self.storeNameBlock(tf.text);
+    }
+}
+
+- (IBAction)phoneText:(UITextField *)tf {
+    if (self.phoneTextBlock) {
+        self.phoneTextBlock(tf.text);
+    }
+}
+
+- (IBAction)storeAddrText:(UITextField *)tf {
+    if (self.storeAddrTextBlock) {
+        self.storeAddrTextBlock(tf.text);
+    }
+}
+
+- (IBAction)inviteCodeText:(UITextField *)tf {
+    if (self.inviteCodeTextBlock) {
+        self.inviteCodeTextBlock(tf.text);
+    }
+}
+
+
+
+
+
+
 - (IBAction)choose:(id)sender {
     if (self.chooseBlock) {
         self.chooseBlock();

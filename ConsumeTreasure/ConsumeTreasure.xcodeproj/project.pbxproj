@@ -209,6 +209,10 @@
 		D12166081DB85B28006B06FC /* LevelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12166061DB85B28006B06FC /* LevelTableViewCell.m */; };
 		D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12166071DB85B28006B06FC /* LevelTableViewCell.xib */; };
 		D121660C1DB8BF8E006B06FC /* ImUnionStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */; };
+		D12FB2CE1F1C6B8F0000AE30 /* NewAddContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12FB2CC1F1C6B8F0000AE30 /* NewAddContentTableViewCell.m */; };
+		D12FB2CF1F1C6B8F0000AE30 /* NewAddContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12FB2CD1F1C6B8F0000AE30 /* NewAddContentTableViewCell.xib */; };
+		D12FB2D31F1C87C50000AE30 /* TypeChooseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D12FB2D11F1C87C50000AE30 /* TypeChooseTableViewCell.m */; };
+		D12FB2D41F1C87C50000AE30 /* TypeChooseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12FB2D21F1C87C50000AE30 /* TypeChooseTableViewCell.xib */; };
 		D133A5A51E8E47A7002725F3 /* PaySuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = D133A5A41E8E47A7002725F3 /* PaySuccessView.m */; };
 		D133A5A71E8E47CA002725F3 /* PaySuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */; };
 		D133A5AC1E8E5E6A002725F3 /* PaySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D133A5AB1E8E5E6A002725F3 /* PaySuccessViewController.m */; };
@@ -747,6 +751,12 @@
 		D12166071DB85B28006B06FC /* LevelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelTableViewCell.xib; sourceTree = "<group>"; };
 		D121660A1DB8BF8E006B06FC /* ImUnionStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImUnionStoreViewController.h; sourceTree = "<group>"; };
 		D121660B1DB8BF8E006B06FC /* ImUnionStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImUnionStoreViewController.m; sourceTree = "<group>"; };
+		D12FB2CB1F1C6B8F0000AE30 /* NewAddContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAddContentTableViewCell.h; sourceTree = "<group>"; };
+		D12FB2CC1F1C6B8F0000AE30 /* NewAddContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAddContentTableViewCell.m; sourceTree = "<group>"; };
+		D12FB2CD1F1C6B8F0000AE30 /* NewAddContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAddContentTableViewCell.xib; sourceTree = "<group>"; };
+		D12FB2D01F1C87C50000AE30 /* TypeChooseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeChooseTableViewCell.h; sourceTree = "<group>"; };
+		D12FB2D11F1C87C50000AE30 /* TypeChooseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeChooseTableViewCell.m; sourceTree = "<group>"; };
+		D12FB2D21F1C87C50000AE30 /* TypeChooseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TypeChooseTableViewCell.xib; sourceTree = "<group>"; };
 		D133A5A31E8E47A7002725F3 /* PaySuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessView.h; sourceTree = "<group>"; };
 		D133A5A41E8E47A7002725F3 /* PaySuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessView.m; sourceTree = "<group>"; };
 		D133A5A61E8E47CA002725F3 /* PaySuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessView.xib; sourceTree = "<group>"; };
@@ -1660,6 +1670,12 @@
 				D12054871DED1C0200EB2707 /* ApplyContentTableViewCell.h */,
 				D12054881DED1C0200EB2707 /* ApplyContentTableViewCell.m */,
 				D12054891DED1C0200EB2707 /* ApplyContentTableViewCell.xib */,
+				D12FB2CB1F1C6B8F0000AE30 /* NewAddContentTableViewCell.h */,
+				D12FB2CC1F1C6B8F0000AE30 /* NewAddContentTableViewCell.m */,
+				D12FB2CD1F1C6B8F0000AE30 /* NewAddContentTableViewCell.xib */,
+				D12FB2D01F1C87C50000AE30 /* TypeChooseTableViewCell.h */,
+				D12FB2D11F1C87C50000AE30 /* TypeChooseTableViewCell.m */,
+				D12FB2D21F1C87C50000AE30 /* TypeChooseTableViewCell.xib */,
 				D120548C1DED20A100EB2707 /* IdentiPhotoTableViewCell.h */,
 				D120548D1DED20A100EB2707 /* IdentiPhotoTableViewCell.m */,
 				D120548E1DED20A100EB2707 /* IdentiPhotoTableViewCell.xib */,
@@ -2515,6 +2531,7 @@
 				D1A3C08A1E1246DA0040AAD9 /* BankCardTableViewCell.xib in Resources */,
 				D170F2581DAE6AAE00272E57 /* chartTableViewCell.xib in Resources */,
 				D15B3AF31DDC0E5E009122FE /* AlipaySDK.bundle in Resources */,
+				D12FB2D41F1C87C50000AE30 /* TypeChooseTableViewCell.xib in Resources */,
 				ABF4E2861D9B5E58006AD23C /* Assets.xcassets in Resources */,
 				D15B39771DD493C8009122FE /* PromptTableViewCell.xib in Resources */,
 				D15B3B211DDEF0D6009122FE /* DetailIncomeTableViewCell.xib in Resources */,
@@ -2532,6 +2549,7 @@
 				D133A5A71E8E47CA002725F3 /* PaySuccessView.xib in Resources */,
 				D15B3B191DDEEBFE009122FE /* MyIncoSectionView.xib in Resources */,
 				ABD8C28E1DA8995A00BBF5B7 /* HomeTabar.json in Resources */,
+				D12FB2CF1F1C6B8F0000AE30 /* NewAddContentTableViewCell.xib in Resources */,
 				D12054951DED221800EB2707 /* BusinessTableViewCell.xib in Resources */,
 				D12166091DB85B28006B06FC /* LevelTableViewCell.xib in Resources */,
 				D15B39531DD32AF0009122FE /* StoreDetailTableViewCell.xib in Resources */,
@@ -2743,6 +2761,7 @@
 				ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */,
 				D12165251DB4FF1A006B06FC /* PartnerTableViewCell.m in Sources */,
 				D16BF2AF1DEFF15B001A82BF /* JFButton.m in Sources */,
+				D12FB2D31F1C87C50000AE30 /* TypeChooseTableViewCell.m in Sources */,
 				D1E130B41E54216F006DF83E /* UIView+PYExtension.m in Sources */,
 				D15B3B0C1DDC129E009122FE /* XFBConfig.m in Sources */,
 				D170F2571DAE6AAE00272E57 /* chartTableViewCell.m in Sources */,
@@ -2771,6 +2790,7 @@
 				D15B3A4D1DDB08D8009122FE /* MyIncomeTableViewCell.m in Sources */,
 				D15B39521DD32AF0009122FE /* StoreDetailTableViewCell.m in Sources */,
 				AB0149A61DE7D69D0068067B /* ZanTableViewCell.m in Sources */,
+				D12FB2CE1F1C6B8F0000AE30 /* NewAddContentTableViewCell.m in Sources */,
 				AB06A98D1DF949B1006F67C2 /* AttentionShopTableViewCell.m in Sources */,
 				AB49638F1ED52B100072E474 /* AttractInvestModel.m in Sources */,
 				D1A3C0851E123E3B0040AAD9 /* MyBankCardViewController.m in Sources */,

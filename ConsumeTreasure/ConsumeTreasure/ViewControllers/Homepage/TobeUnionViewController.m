@@ -13,7 +13,11 @@
 @interface TobeUnionViewController ()
 {
     NSString *infoStr;
+    
     NSArray *listArr;
+    NSArray *addrArr;
+    NSArray *businessArr;
+    NSArray *contactArr;
  
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
@@ -52,7 +56,10 @@
                           };
     [[MyAPI sharedAPI] getShangHuRequestDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
-            listArr = arrays;
+            listArr = arrays[0];
+            addrArr = arrays[1];
+            businessArr = arrays[2];
+            contactArr = arrays[3];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
@@ -81,7 +88,7 @@
         showAlert(@"正在审核中，请耐心等待");
     }else{
         self.hidesBottomBarWhenPushed = YES;
-        [self performSegueWithIdentifier:@"ApplySegue" sender:listArr];
+        [self performSegueWithIdentifier:@"ApplySegue" sender:@[listArr,addrArr,businessArr,contactArr]];
     }
 };
 
@@ -107,7 +114,10 @@
     if ([segue.identifier isEqualToString:@"ApplySegue"]) {
         NSArray *array = (NSArray*)sender;
         ApplyViewController *ApplyVC = segue.destinationViewController;
-        ApplyVC.listArr = array;
+        ApplyVC.listArr = array[0];
+        ApplyVC.addrArr = array[1];
+        ApplyVC.businessArr = array[2];
+        ApplyVC.contactArr = array[3];
     }
     
 }
