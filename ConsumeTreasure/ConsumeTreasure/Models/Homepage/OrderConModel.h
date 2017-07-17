@@ -95,6 +95,7 @@
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *money;
 @property (nonatomic,strong) NSString *after_money;
+@property (nonatomic,strong) NSString<Optional>  *type;
 
 @end
 
