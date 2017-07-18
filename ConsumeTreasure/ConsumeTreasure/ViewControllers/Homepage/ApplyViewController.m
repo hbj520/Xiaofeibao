@@ -24,7 +24,7 @@
 
 
 
-@interface ApplyViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
+@interface ApplyViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UITextFieldDelegate>
 {
     NSMutableArray *_nameArr;
     NSMutableArray *_addrArr;
@@ -214,6 +214,7 @@
 }
 
 - (void)configTableView{
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.sectionFooterHeight = 12;
@@ -228,11 +229,20 @@
 
 #pragma mark -- UITabelViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField.tag == 55) {
+        [UIView animateWithDuration:0.26 animations:^{
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:1 animated:YES];
+        }];
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -335,6 +345,19 @@
             _cardNameStr = str;
         };
         
+//        for (UITextField *tf in newAddCell.contentView.subviews) {
+//            tf.delegate = self;
+//        }
+
+        newAddCell.serviceTF.delegate = self;
+        newAddCell.aliasNameTF.delegate = self;
+        newAddCell.emailTF.delegate = self;
+        newAddCell.shopreturnrateTF.delegate = self;
+        newAddCell.posrateTF.delegate = self;
+        newAddCell.businessLicenseTF.delegate = self;
+        newAddCell.cardNoTF.delegate = self;
+        newAddCell.cardNameTF.delegate = self;
+        
         _serviceStr = newAddCell.serviceTF.text;
         _aliasNameStr = newAddCell.aliasNameTF.text;
         _emailStr = newAddCell.emailTF.text;
@@ -382,7 +405,9 @@
         return typeCell;
         
         
-    }else if (indexPath.section == 3){
+    }
+    /*
+    else if (indexPath.section == 3){
         IdentiPhotoTableViewCell *IdentiCell = [tableView dequeueReusableCellWithIdentifier:@"identiPhotoId"];
         if (IdentiCell == nil) {
             IdentiCell = [[[NSBundle mainBundle] loadNibNamed:@"IdentiPhotoTableViewCell" owner:self options:nil] lastObject];
@@ -408,7 +433,9 @@
         BusinessCell.selectionStyle = 0;
         return BusinessCell;
 
-    }else{
+    }
+     */
+    else{
         OtherLicenseTableViewCell *OtherCell = [tableView dequeueReusableCellWithIdentifier:@"otherCellId"];
         if (OtherCell == nil) {
             OtherCell = [[[NSBundle mainBundle] loadNibNamed:@"OtherLicenseTableViewCell" owner:self options:nil] lastObject];
@@ -423,18 +450,22 @@
  
 }
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         return 350;
     }else if (indexPath.section == 1){
-        return 352;
+        return 364;
     }else if (indexPath.section == 2)
     
         return 131;
-    
+    /*
     else if (indexPath.section == 3){
         return 138;
-    }else{
+    }
+     */
+    else{
         return 185;
     }
     

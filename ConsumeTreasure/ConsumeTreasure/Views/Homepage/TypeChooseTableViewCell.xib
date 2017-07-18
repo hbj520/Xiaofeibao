@@ -66,18 +66,39 @@
                             <action selector="contactClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="o6d-Tk-F1b"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="DOc-Na-Sf8">
+                        <rect key="frame" x="350" y="14" width="10" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="e15-Wz-DZa"/>
+                            <constraint firstAttribute="width" constant="10" id="zCP-Wg-Qlz"/>
+                        </constraints>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzx-Fg-TSS">
                         <rect key="frame" x="0.0" y="43" width="375" height="44"/>
                         <connections>
                             <action selector="addrClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hMo-Jo-Rkw"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="NEH-v5-bxZ">
+                        <rect key="frame" x="350" y="58" width="10" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="dpP-QS-w5V"/>
+                            <constraint firstAttribute="width" constant="10" id="z2Y-G7-BGt"/>
+                        </constraints>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3e-7j-Qpy">
-                        <rect key="frame" x="0.0" y="87" width="375" height="43.5"/>
+                        <rect key="frame" x="0.0" y="87" width="375" height="44"/>
                         <connections>
                             <action selector="licenseClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Evl-tU-nTN"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="VPa-2S-JdU">
+                        <rect key="frame" x="350" y="102" width="10" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="6lG-je-lZj"/>
+                            <constraint firstAttribute="width" constant="10" id="9xg-Ml-MZR"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="GuH-MM-slk" secondAttribute="bottom" constant="9" id="2Qw-Mw-OQC"/>
@@ -89,19 +110,27 @@
                     <constraint firstAttribute="trailing" secondItem="GuH-MM-slk" secondAttribute="trailing" constant="50" id="FnH-zt-l3o"/>
                     <constraint firstAttribute="trailing" secondItem="X3e-7j-Qpy" secondAttribute="trailing" id="Gmc-gy-gbq"/>
                     <constraint firstItem="RWG-UB-VVM" firstAttribute="top" secondItem="Vok-5b-uBf" secondAttribute="bottom" id="KZi-cn-TY6"/>
+                    <constraint firstItem="VPa-2S-JdU" firstAttribute="top" secondItem="IMR-N7-mBd" secondAttribute="bottom" constant="14" id="N1q-hj-jHe"/>
                     <constraint firstAttribute="trailing" secondItem="Vok-5b-uBf" secondAttribute="trailing" id="P68-ge-Y6i"/>
+                    <constraint firstItem="NEH-v5-bxZ" firstAttribute="top" secondItem="RWG-UB-VVM" secondAttribute="bottom" constant="14" id="QgL-QS-sHx"/>
                     <constraint firstItem="tzx-Fg-TSS" firstAttribute="top" secondItem="Vok-5b-uBf" secondAttribute="bottom" id="XX4-nF-dyj"/>
                     <constraint firstItem="RWG-UB-VVM" firstAttribute="top" secondItem="N2v-xg-5Yz" secondAttribute="bottom" constant="9" id="Xds-5W-w5u"/>
                     <constraint firstItem="IMR-N7-mBd" firstAttribute="top" secondItem="tzx-Fg-TSS" secondAttribute="bottom" id="YfY-O0-uYN"/>
+                    <constraint firstAttribute="trailing" secondItem="VPa-2S-JdU" secondAttribute="trailing" constant="15" id="Zud-qx-bFC"/>
                     <constraint firstAttribute="trailing" secondItem="N2v-xg-5Yz" secondAttribute="trailing" constant="50" id="bMb-58-mEw"/>
                     <constraint firstItem="GuH-MM-slk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dGL-fF-42f"/>
                     <constraint firstItem="IMR-N7-mBd" firstAttribute="top" secondItem="Bun-42-eXa" secondAttribute="bottom" constant="9" id="fjz-QH-g7d"/>
+                    <constraint firstItem="DOc-Na-Sf8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="geU-aQ-LdU"/>
                     <constraint firstAttribute="trailing" secondItem="Bun-42-eXa" secondAttribute="trailing" constant="50" id="hN7-hL-XLD"/>
+                    <constraint firstItem="tzx-Fg-TSS" firstAttribute="top" secondItem="DOc-Na-Sf8" secondAttribute="bottom" constant="14" id="jeZ-DP-TPg"/>
+                    <constraint firstAttribute="trailing" secondItem="DOc-Na-Sf8" secondAttribute="trailing" constant="15" id="kOy-5M-hq5"/>
                     <constraint firstAttribute="bottom" secondItem="X3e-7j-Qpy" secondAttribute="bottom" id="oA3-9a-qKc"/>
                     <constraint firstAttribute="trailing" secondItem="tzx-Fg-TSS" secondAttribute="trailing" id="sck-gd-LeZ"/>
                     <constraint firstItem="tzx-Fg-TSS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="t8Y-8A-h8k"/>
+                    <constraint firstItem="X3e-7j-Qpy" firstAttribute="top" secondItem="NEH-v5-bxZ" secondAttribute="bottom" constant="14" id="tA9-qC-zTx"/>
                     <constraint firstItem="IMR-N7-mBd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="urc-yI-tHo"/>
                     <constraint firstItem="Vok-5b-uBf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uu5-Vf-Wum"/>
+                    <constraint firstAttribute="trailing" secondItem="NEH-v5-bxZ" secondAttribute="trailing" constant="15" id="vfm-SP-Paf"/>
                     <constraint firstItem="IMR-N7-mBd" firstAttribute="top" secondItem="RWG-UB-VVM" secondAttribute="bottom" constant="43" id="vo4-YG-Het"/>
                     <constraint firstItem="Vok-5b-uBf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wIm-s0-2wU"/>
                     <constraint firstItem="RWG-UB-VVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="43" id="x9a-bF-KiP"/>
@@ -120,4 +149,7 @@
             <point key="canvasLocation" x="26.5" y="52.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow" width="14" height="25"/>
+    </resources>
 </document>
