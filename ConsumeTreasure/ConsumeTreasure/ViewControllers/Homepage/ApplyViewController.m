@@ -638,7 +638,7 @@
         
         NSDictionary *para = @{
                                
-                               @"type":@"1",
+                               @"type":_typeStr,
                                @"member":@{
                                        @"name":_nameStr,
                                        @"idcardno":_identiId,

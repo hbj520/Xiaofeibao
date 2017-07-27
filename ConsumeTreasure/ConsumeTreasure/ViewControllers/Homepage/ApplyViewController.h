@@ -15,4 +15,6 @@
 @property (nonatomic,strong) NSArray *businessArr;
 @property (nonatomic,strong) NSArray *contactArr;
 
+@property (nonatomic,strong) NSString *typeStr;
+
 @end
