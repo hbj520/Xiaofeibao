@@ -21,8 +21,10 @@
 #import "DetailHeadView.h"
 
 #import "DLPickerView.h"
+#import "ValuePickerView.h"
 
 #import "StoreMasterModel.h"
+#import "BeUnionModel.h"
 
 @interface StoreControlViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
@@ -50,7 +52,38 @@
     NSString *startTime;
     NSString *endTime;
     NSString *disCount;
-    NSString *cateStr;
+    
+    
+    // 新增
+    NSString *servicephoneStr;//客服电话
+    NSString *aliasnameStr;//商户简称
+    NSString *emailStr;// 联系人邮箱
+    NSString *cardnoStr;//银行卡号
+    NSString *cardnameStr;//银行卡持卡人姓名
+    NSString *businessLicenseStr;//营业执照编号
+    
+
+    
+    NSArray *catelistArr;
+    NSArray *addrlistArr;
+    NSArray *businesslistArr;
+    NSArray *contactlistArr;
+    
+    NSMutableArray *_cateArr;
+    NSMutableArray *_addrArr;
+    NSMutableArray *_busiArr;
+    NSMutableArray *_contactArr;
+    
+    NSString *cateStr;// "经营类型名称
+    NSString *contactStr;//联系人类型名称
+    NSString *addressStr;//地址类型名称
+    NSString *businesslicenseStr;//营业执照类型名称
+    
+    NSString *cateId;//经营分类id
+    NSString *contactId;//联系人类型id
+    NSString *addressId;//地址类型id
+    NSString *businesslicenseId;//营业执照类型id
+    
     
     NSString *doorImg;//店铺首图
     NSString *yingyeImg;
@@ -77,6 +110,22 @@
     
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) ValuePickerView *pickerView;
+@property (nonatomic, strong) NSArray *stateArr;
+
+
+
+@property (nonatomic, strong) NSMutableArray *cateIdArr;//经营范围id
+@property (nonatomic, strong) NSMutableArray *addrIdArr;//地址类型id
+@property (nonatomic, strong) NSMutableArray *busiIdArr;//营业执照类型id
+@property (nonatomic, strong) NSMutableArray *contactIdArr;//联系人类型id
+
+
+@property (nonatomic,copy) NSString *cateIdStr;
+@property (nonatomic,copy) NSString *addrIdStr;
+@property (nonatomic,copy) NSString *conIdStr;
+@property (nonatomic,copy) NSString *busiIdStr;
 
 @end
 
@@ -108,78 +157,157 @@
     NSDictionary *para = @{
                            
                            };
-    [[MyAPI sharedAPI] getStoreControlInfoDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
-        if (success) {
-            storeInfoModel *model = (storeInfoModel*)object;
-            storeName = model.shopname;
-            storePhone = model.shopPhone;
-            realName = model.name;
-            IDNum = model.idcardno;
-            
-            strAddr = model.addr;
-            latituedeStr = model.latitude;
-            longtitudeStr = model.longitude;
-            strDescri = model.introduction;
-            startTime = model.startbusinesstime;
-            endTime = model.endbusinesstime;
-            disCount = model.discount;
-            cateStr = model.categoryid;
-            
-            yingyeImg = model.businessimg;
-            jingyingImg = model.licenseimg;
-            IDFrontImg = model.idcardnofrontimg;
-            IDBackImg = model.idcardnobackimg;
-            doorImg = model.doorimg;
-            
-            if (startTime.length > 0) {
-                sTime = startTime;
-            }else{
-                sTime = @"9:00";
+    
+    
+   
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t q = dispatch_get_global_queue(0, 0);
+    
+    dispatch_group_async(group, q, ^{
+        [[MyAPI sharedAPI] getStoreControlInfoDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
+            if (success) {
+                storeInfoModel *model = (storeInfoModel*)object;
+                
+                servicephoneStr = model.servicephone;
+                aliasnameStr = model.aliasname;
+                emailStr = model.email;
+                cardnoStr = model.cardno;
+                cardnameStr = model.cardname;
+                businessLicenseStr = model.businessLicense;
+                
+                cateStr = model.categorynanme;
+                contactStr = model.contactname;
+                addressStr = model.addressname;
+                businesslicenseStr = model.businesslicensename;
+                
+                cateId = model.categoryid;
+                contactId = model.contacttype;
+                addressId = model.addresstype;
+                businesslicenseId = model.businesslicensetype;
+                
+                storeName = model.shopname;
+                storePhone = model.shopPhone;
+                realName = model.name;
+                IDNum = model.idcardno;
+                
+                strAddr = model.addr;
+                latituedeStr = model.latitude;
+                longtitudeStr = model.longitude;
+                strDescri = model.introduction;
+                startTime = model.startbusinesstime;
+                endTime = model.endbusinesstime;
+                disCount = model.discount;
+                
+                
+                yingyeImg = model.businessimg;
+                jingyingImg = model.licenseimg;
+                IDFrontImg = model.idcardnofrontimg;
+                IDBackImg = model.idcardnobackimg;
+                doorImg = model.doorimg;
+                
+                if (startTime.length > 0) {
+                    sTime = startTime;
+                }else{
+                    sTime = @"9:00";
+                }
+                
+                if (endTime.length > 0) {
+                    eTime = endTime;
+                }else{
+                    eTime = @"18:00";
+                }
+                
+                
+                if (jingyingImg.length > 0) {
+                    img1 = @"已上传";
+                }else{
+                    img1 = @"未上传";
+                }
+                if (yingyeImg.length > 0) {
+                    img2 = @"已上传";
+                }else{
+                    img2 = @"未上传";
+                }  if (IDFrontImg.length > 0) {
+                    img3 = @"已上传";
+                }else{
+                    img3 = @"未上传";
+                }  if (IDBackImg.length > 0) {
+                    img4 = @"已上传";
+                }else{
+                    img4 = @"未上传";
+                }
+                
+                secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号",@"客服电话",@"商户简称",@"联系人邮箱",@"银行卡号",@"银行卡持卡人姓名",@"营业执照编号"];
+                secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例",@"经营类型",@"联系人类型",@"地址类型",@"营业执照类型"];
+                secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
+                
+                placeOne = @[storeName,storePhone,realName,IDNum,servicephoneStr,aliasnameStr,emailStr,cardnoStr,cardnameStr,businessLicenseStr,];
+                placeTwo = @[strAddr,@"开始定位",strDescri,sTime,eTime,disCount,cateStr,contactStr,addressStr,businesslicenseStr];
+                placeThr = @[img1,img2,img3,img4];
+                
+                [self head:doorImg];
+                
+                
+                //[self.tableView reloadData];
             }
             
-            if (endTime.length > 0) {
-                eTime = endTime;
-            }else{
-                eTime = @"18:00";
-            }
+        } errorResult:^(NSError *enginerError) {
             
-            
-            if (jingyingImg.length > 0) {
-                img1 = @"已上传";
-            }else{
-                img1 = @"未上传";
-            }
-            if (yingyeImg.length > 0) {
-                img2 = @"已上传";
-            }else{
-                img2 = @"未上传";
-            }  if (IDFrontImg.length > 0) {
-                img3 = @"已上传";
-            }else{
-                img3 = @"未上传";
-            }  if (IDBackImg.length > 0) {
-                img4 = @"已上传";
-            }else{
-                img4 = @"未上传";
-            }
+        }];
+    });
+    
+    dispatch_group_async(group, q, ^{
+        [[MyAPI sharedAPI] getShangHuRequestDataWithParameters:para result:^(BOOL success, NSString *msg, NSArray *arrays) {
+            if (success) {
 
-            secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号"];
-            secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例"];
-            secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
+                
+                _addrArr = [NSMutableArray array];
+                _addrIdArr = [NSMutableArray array];
+                _busiArr = [NSMutableArray array];
+                _busiIdArr = [NSMutableArray array];
+                _contactArr = [NSMutableArray array];
+                _contactIdArr = [NSMutableArray array];
+                _cateArr = [NSMutableArray array];
+                _cateIdArr = [NSMutableArray array];
+                
+                for (AddressTypeModel *model in arrays[1]) {
+                    [_addrArr addObject:model.val];
+                    [_addrIdArr addObject:model.addressType];
+                }
+                for (BusinessTypeModel *model in arrays[2]) {
+                    [_busiArr addObject:model.licenseName];
+                    [_busiIdArr addObject:model.licenseId];
+                }
+                for (ContactTypeModel *model in arrays[3]) {
+                    [_contactArr addObject:model.typeName];
+                    [_contactIdArr addObject:model.typeId];
+                }
+                for (BeUnionModel *model in arrays[0]) {
+                    [_cateArr addObject:model.name];
+                    [_cateIdArr addObject:model.categoryId];
+                }
+                
+            }else{
+                if ([msg isEqualToString:@"-1"]) {
+                    [self logout];
+                }else{
+                    [self showHint:msg];
+                }
+            }
             
-            placeOne = @[storeName,storePhone,realName,IDNum];
-            placeTwo = @[strAddr,@"开始定位",strDescri,sTime,eTime,disCount];
-            placeThr = @[img1,img2,img3,img4];
-            
-            [self head:doorImg];
-          
-            
-            [self.tableView reloadData];
-        }
-        
-    } errorResult:^(NSError *enginerError) {
-        
-    }];
+        } errorResult:^(NSError *enginerError) {
+            [self showHint:@"网络出错"];
+        }];
+
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    
+        [self.tableView reloadData];
+    });
+    
+    
+   
     
 
 }
@@ -254,9 +382,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 4;
+        return 10;
     }else if (section == 1){
-        return 6;
+        return 10;
     }else{
         return 4;
     }
@@ -285,8 +413,20 @@
             storeConCell.placetextfield.tag = 7777;
         }else if (indexPath.row == 2){
             storeConCell.placetextfield.tag = 6666;
-        }else{
+        }else if (indexPath.row == 3){
             storeConCell.placetextfield.tag = 5555;
+        }else if (indexPath.row == 4){
+            storeConCell.placetextfield.tag = 4444;
+        }else if (indexPath.row == 5){
+            storeConCell.placetextfield.tag = 3333;
+        }else if (indexPath.row == 6){
+            storeConCell.placetextfield.tag = 2222;
+        }else if (indexPath.row == 7){
+            storeConCell.placetextfield.tag = 1111;
+        }else if (indexPath.row == 8){
+            storeConCell.placetextfield.tag = 0000;
+        }else{
+            storeConCell.placetextfield.tag = 9999;
         }
         
         
@@ -307,7 +447,24 @@
         if (indexPath.section == 1) {
             labCell.leftLab.text = secTwo[indexPath.row];
             labCell.detailLab.text = placeTwo[indexPath.row];
-            if (indexPath.row == 3 ||indexPath.row == 4) {
+            if (indexPath.row == 6) {
+                labCell.cateBlock = ^{
+                    [self upPikerViewWithName:_cateArr nameId:_cateIdArr AndTypeNum:0];
+                };
+                
+            }else if (indexPath.row == 7) {
+                labCell.contactBlock = ^{
+                    [self upPikerViewWithName:_contactArr nameId:_contactIdArr AndTypeNum:1];
+                };
+            }else if (indexPath.row == 8) {
+                labCell.addrBlock = ^{
+                    [self upPikerViewWithName:_addrArr nameId:_addrIdArr AndTypeNum:2];
+                };
+            }else if (indexPath.row == 9) {
+                labCell.licenseBlock = ^{
+                    [self upPikerViewWithName:_busiArr nameId:_busiIdArr AndTypeNum:3];
+                };
+            }else if (indexPath.row == 3 ||indexPath.row == 4) {
               
                 
                 __weak typeof(labCell) weakCell  = labCell;
@@ -370,9 +527,46 @@
         
         return labCell;
     }
+}
+
+- (void)upPikerViewWithName:(NSArray* )nameArr nameId:(NSArray* )nameIdArr AndTypeNum:(NSInteger )typeId{
     
-  
-  
+    self.pickerView = [[ValuePickerView alloc]init];
+    self.pickerView.dataSource = nameArr;
+    __weak typeof(self) weakSelf = self;
+
+    self.pickerView.valueDidSelect = ^(NSString *value){
+        _stateArr = [value componentsSeparatedByString:@"/"];
+        
+        StoreConLabTableViewCell *cateCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:1]];
+        StoreConLabTableViewCell *contactCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:7 inSection:1]];
+        StoreConLabTableViewCell *addrCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:8 inSection:1]];
+        StoreConLabTableViewCell *busiCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:9 inSection:1]];
+
+        
+        
+        if (typeId == 0) {
+            cateCell.detailLab.text = cateStr = weakSelf.stateArr[0];
+            _cateIdStr = weakSelf.stateArr[1];
+            cateId = [nameIdArr objectAtIndex:[weakSelf.cateIdStr integerValue]-1];
+        }else if (typeId == 1){
+            
+            contactCell.detailLab.text = contactStr = weakSelf.stateArr[0];
+            _conIdStr = weakSelf.stateArr[1];
+            contactId = [nameIdArr objectAtIndex:[weakSelf.conIdStr integerValue]-1];
+        }else if (typeId == 2){
+            
+            addrCell.detailLab.text = addressStr = weakSelf.stateArr[0];
+            _addrIdStr = weakSelf.stateArr[1];
+            addressId = [nameIdArr objectAtIndex:[weakSelf.addrIdStr integerValue]-1];
+        }else{
+            busiCell.detailLab.text = businessLicenseStr = weakSelf.stateArr[0];
+            _busiIdStr = weakSelf.stateArr[1];
+            businesslicenseId = [nameIdArr objectAtIndex:[weakSelf.busiIdStr integerValue]-1];
+        }
+        
+    };
+    [self.pickerView show];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -439,9 +633,26 @@
         storePhone = textField.text;
     }else if (textField.tag == 6666){
         realName = textField.text;
-    }else{
+    }else if (textField.tag == 5555){
         IDNum = textField.text;
+    }else if (textField.tag == 4444){
+        servicephoneStr = textField.text;
+    }else if (textField.tag == 3333){
+        aliasnameStr = textField.text;
+    }else if (textField.tag == 2222){
+        emailStr = textField.text;
+    }else if (textField.tag == 1111){
+        cardnoStr = textField.text;
+    }else if (textField.tag == 0000){
+        cardnameStr = textField.text;
+    }else if (textField.tag == 9999){
+        businessLicenseStr = textField.text;
     }
+
+
+
+
+
     
 }
 
@@ -451,7 +662,7 @@
 
 - (IBAction)PostData:(id)sender {
     
-    if ([realName isEqualToString:@""]||[strAddr isEqualToString:@""]||[storePhone isEqualToString:@""]||[storeName isEqualToString:@""]||[doorImg isEqualToString:@""]) {
+    if ([realName isEqualToString:@""]||[strAddr isEqualToString:@""]||[storePhone isEqualToString:@""]||[storeName isEqualToString:@""]) {
         showAlert(@"商家姓名、手机号、店铺名称、店铺首图、地址不可为空");
     }else{
         [self verifyImage];
@@ -463,7 +674,7 @@
                                    @"idcardno":IDNum
                                    },
                            @"shop":@{
-                                   @"categoryid":cateStr,
+                                   @"categoryid":cateId,
                                    @"addr":strAddr,
                                    @"shopPhone":storePhone,
                                    @"doorimg":doorImg,
