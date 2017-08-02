@@ -671,10 +671,10 @@
                            @"type":@"2",
                            @"member":@{
                                    @"name":realName,
-                                   @"idcardno":IDNum
+                                   @"idcardno":IDNum,
+                                   @"email":emailStr
                                    },
                            @"shop":@{
-                                   @"categoryid":cateId,
                                    @"addr":strAddr,
                                    @"shopPhone":storePhone,
                                    @"doorimg":doorImg,
@@ -687,7 +687,16 @@
                                    @"longitude":longtitudeStr,
                                    @"introduction":strDescri,
                                    @"endbusinesstime":eTime,
-                                   @"startbusinesstime":sTime
+                                   @"startbusinesstime":sTime,
+                                   @"servicePhone":servicephoneStr,
+                                   @"aliasName":aliasnameStr,
+                                   @"cardNo":cardnoStr,
+                                   @"cardName":cardnameStr,
+                                   @"businessLicense":businessLicenseStr,
+                                   @"categoryid":cateId,
+                                   @"contactType":contactId,
+                                   @"addressType":addressId,
+                                   @"businessLicenseType":businesslicenseId,
                                    }                           
                            };
     [[MyAPI sharedAPI] finishStoreInfoWithParameters:para resulet:^(BOOL sucess, NSString *msg) {
@@ -760,11 +769,15 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if (textField.tag == 8888 ||textField.tag == 7777||textField.tag == 6666||textField.tag == 5555) {
+    if (textField.tag == 8888 ||textField.tag == 7777||textField.tag == 6666||textField.tag == 5555 ||textField.tag == 4444 ||textField.tag == 3333) {
         [UIView animateWithDuration:0.26 animations:^{
             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:1 animated:YES];
         }];
         
+    }else if (textField.tag == 2222 ||textField.tag == 1111 ||textField.tag == 0000 ||textField.tag == 9999) {
+        [UIView animateWithDuration:0.26 animations:^{
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0] atScrollPosition:1 animated:YES];
+        }];
     }
     
     
