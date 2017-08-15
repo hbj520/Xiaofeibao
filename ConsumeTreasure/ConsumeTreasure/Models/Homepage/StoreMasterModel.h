@@ -54,13 +54,31 @@
 @property (nonatomic,strong) NSString *startbusinesstime;//开始时间
 @property (nonatomic,strong) NSString *endbusinesstime;//结束时间
 @property (nonatomic,strong) NSString *discount;//反比比例
-@property (nonatomic,strong) NSString *categoryid;//经营分类
+
 
 @property (nonatomic,strong) NSString *businessimg;//营业执照
 @property (nonatomic,strong) NSString *licenseimg;//许可证
 @property (nonatomic,strong) NSString *idcardnofrontimg;//正面
 @property (nonatomic,strong) NSString *idcardnobackimg;//反面
 @property (nonatomic,strong) NSString *doorimg;//反面
+
+// 新增
+@property (nonatomic,strong) NSString *servicephone;//客服电话
+@property (nonatomic,strong) NSString *aliasname;//商户简称
+@property (nonatomic,strong) NSString *email;// 联系人邮箱
+@property (nonatomic,strong) NSString *cardno;//银行卡号
+@property (nonatomic,strong) NSString *cardname;//银行卡持卡人姓名
+@property (nonatomic,strong) NSString *businessLicense;//营业执照编号
+
+@property (nonatomic,strong) NSString *categorynanme;// "经营类型名称
+@property (nonatomic,strong) NSString *contactname;//联系人类型名称
+@property (nonatomic,strong) NSString *addressname;//地址类型名称
+@property (nonatomic,strong) NSString *businesslicensename;//营业执照类型名称
+
+@property (nonatomic,strong) NSString *categoryid;//经营分类id
+@property (nonatomic,strong) NSString *contacttype;//联系人类型id
+@property (nonatomic,strong) NSString *addresstype;//地址类型id
+@property (nonatomic,strong) NSString *businesslicensetype;//营业执照类型id
 
 @end
 

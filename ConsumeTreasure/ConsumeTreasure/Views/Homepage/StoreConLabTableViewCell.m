@@ -18,6 +18,20 @@
     if (self.pikerBlock) {
         self.pikerBlock();
     }
+    
+    if (self.cateBlock) {
+        self.cateBlock();
+    }
+    if (self.contactBlock) {
+        self.contactBlock();
+    }
+    if (self.addrBlock) {
+        self.addrBlock();
+    }
+    if (self.licenseBlock) {
+        self.licenseBlock();
+    }
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

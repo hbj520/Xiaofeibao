@@ -86,9 +86,12 @@
 - (void)goApply:(id)sender {
     if ([self.status isEqualToString:@"0"]) {
         showAlert(@"正在审核中，请耐心等待");
+    }else if ([self.status isEqualToString:@"2"]){
+        self.hidesBottomBarWhenPushed = YES;
+        [self performSegueWithIdentifier:@"ApplySegue" sender:@[listArr,addrArr,businessArr,contactArr,@"2"]];
     }else{
         self.hidesBottomBarWhenPushed = YES;
-        [self performSegueWithIdentifier:@"ApplySegue" sender:@[listArr,addrArr,businessArr,contactArr]];
+        [self performSegueWithIdentifier:@"ApplySegue" sender:@[listArr,addrArr,businessArr,contactArr,@"1"]];
     }
 };
 
@@ -118,6 +121,7 @@
         ApplyVC.addrArr = array[1];
         ApplyVC.businessArr = array[2];
         ApplyVC.contactArr = array[3];
+        ApplyVC.typeStr = array[4];
     }
     
 }
