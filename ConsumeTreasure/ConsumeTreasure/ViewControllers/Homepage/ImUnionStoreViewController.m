@@ -126,6 +126,7 @@
         if (success) {
             StoreMmodel = object;
             self.unionBalance.text = [NSString stringWithFormat:@"总余额 : %.3f",StoreMmodel.total_money.floatValue];
+            //settlementing_money
             self.dealNumLab.text =  [NSString stringWithFormat:@"%.3f",StoreMmodel.settlementing_money.floatValue];
             self.allIncomeLab.text = [NSString stringWithFormat:@"%.3f",StoreMmodel.withdrawal_money.floatValue];
             self.shopName.text = StoreMmodel.shopName;
