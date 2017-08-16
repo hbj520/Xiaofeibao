@@ -39,8 +39,8 @@
         self.disCountLab.layer.borderWidth = 0;
 
     }else{
-        self.disCountLab.text = [NSString stringWithFormat:@"%@",tuiModel.discount];
-        self.disCountLab.layer.borderWidth = 1;
+        //self.disCountLab.text = [NSString stringWithFormat:@"%@",tuiModel.discount];
+        //self.disCountLab.layer.borderWidth = 1;
 
     }
     
@@ -61,8 +61,8 @@
         self.disCountLab.layer.borderWidth = 0;
 
     }else{
-        self.disCountLab.text = [NSString stringWithFormat:@"%@",data.discount];
-        self.disCountLab.layer.borderWidth = 1;
+        //self.disCountLab.text = [NSString stringWithFormat:@"%@",data.discount];
+        //self.disCountLab.layer.borderWidth = 1;
 
     }
 }

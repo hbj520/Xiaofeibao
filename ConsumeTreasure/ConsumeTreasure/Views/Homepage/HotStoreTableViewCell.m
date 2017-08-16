@@ -33,8 +33,8 @@
         self.discountLab.layer.borderWidth = 0;
 
     }else{
-        self.discountLab.text = [NSString stringWithFormat:@"%@",storeModel.discount];
-        self.discountLab.layer.borderWidth = 1;
+        //self.discountLab.text = [NSString stringWithFormat:@"%@",storeModel.discount];
+        //self.discountLab.layer.borderWidth = 1;
 
     }
 }
