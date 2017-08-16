@@ -3314,8 +3314,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_720-1" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-wq-iJB">
                                 <rect key="frame" x="8" y="313.66666666666674" width="398" height="210.33333333333326"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智惠币提现 (元):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whn-ow-T73">
-                                <rect key="frame" x="16.999999999999993" y="326.66666666666669" width="110.33333333333331" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠收益提现 (元):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whn-ow-T73">
+                                <rect key="frame" x="17" y="326.66666666666669" width="125.66666666666666" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="qeD-cy-Bbo"/>
                                 </constraints>
@@ -5711,17 +5711,17 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EJ9-gn-bzP"/>
-        <segue reference="gvg-yc-zFR"/>
-        <segue reference="6Ku-Vt-ebf"/>
-        <segue reference="lCz-4w-Yb3"/>
-        <segue reference="hqb-t9-kRK"/>
-        <segue reference="0yz-DO-JMd"/>
         <segue reference="SjJ-0Z-ase"/>
-        <segue reference="Xre-dI-aTe"/>
-        <segue reference="eJT-ye-vUc"/>
         <segue reference="zMk-Cc-iId"/>
         <segue reference="2vo-ef-X0i"/>
         <segue reference="AMY-WY-xLC"/>
+        <segue reference="EJ9-gn-bzP"/>
+        <segue reference="xr8-XJ-Bqb"/>
+        <segue reference="q7Y-f0-QLD"/>
+        <segue reference="6Ku-Vt-ebf"/>
+        <segue reference="eJT-ye-vUc"/>
+        <segue reference="0yz-DO-JMd"/>
+        <segue reference="hqb-t9-kRK"/>
+        <segue reference="Xre-dI-aTe"/>
     </inferredMetricsTieBreakers>
 </document>
