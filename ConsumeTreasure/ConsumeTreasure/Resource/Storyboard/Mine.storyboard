@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jYo-yR-Jwc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jYo-yR-Jwc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -222,29 +222,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="店铺关注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZD-vX-UUW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="推广收益" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ZD-vX-UUW">
                                                     <rect key="frame" x="22" y="16" width="63" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dpgz" translatesAutoresizingMaskIntoConstraints="NO" id="jcd-7B-ahK">
-                                                    <rect key="frame" x="304" y="16" width="21" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="21" id="J26-EB-4bU"/>
-                                                        <constraint firstAttribute="height" constant="21" id="ath-jZ-GXW"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JX1-Gc-xAh">
                                                     <rect key="frame" x="14" y="54" width="362" height="1"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-52-XOU">
+                                                    <rect key="frame" x="301" y="17" width="24" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="jcd-7B-ahK" secondAttribute="trailing" constant="17" id="cOZ-dv-KV8"/>
-                                                <constraint firstItem="jcd-7B-ahK" firstAttribute="top" secondItem="Xtd-aD-12V" secondAttribute="top" constant="16" id="jnR-Pt-qwe"/>
+                                                <constraint firstAttribute="trailing" secondItem="UTz-52-XOU" secondAttribute="trailing" constant="17" id="BVn-5Y-sEt"/>
+                                                <constraint firstItem="UTz-52-XOU" firstAttribute="centerY" secondItem="Xtd-aD-12V" secondAttribute="centerY" id="Kyw-GR-eff"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -370,6 +369,7 @@
                     <connections>
                         <outlet property="iconImageView" destination="dKF-fN-Ve8" id="foy-YC-3zK"/>
                         <outlet property="moneyView" destination="WSW-QU-8s6" id="Eyh-ay-Fmx"/>
+                        <outlet property="recommendBenifitLabel" destination="UTz-52-XOU" id="dPr-w8-cgs"/>
                         <outlet property="usernamelabel" destination="EW3-bY-SFb" id="X24-Oa-Qgd"/>
                         <segue destination="GL4-Ec-gVQ" kind="show" identifier="evaluaListSegue" id="aNY-Mf-FMf"/>
                         <segue destination="ba2-Ch-Pwq" kind="push" identifier="becomeShopUnionSegue" id="04q-KI-PEa"/>
@@ -378,6 +378,7 @@
                         <segue destination="hwq-nh-pG6" kind="push" identifier="attentionShopSegueId" id="FXZ-bt-0JK"/>
                         <segue destination="KOf-RN-DxD" kind="push" identifier="myShareSegue" id="P5s-as-8Ye"/>
                         <segue destination="my1-tc-jGx" kind="push" identifier="myrecommendSegueId" id="qpt-Eu-oqa"/>
+                        <segue destination="eUo-dG-cKB" kind="show" identifier="recommendBenifitSegue" id="WDG-Db-btL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvE-S0-GFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -755,7 +756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YxS-BI-48U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="354"/>
+            <point key="canvasLocation" x="-23" y="142"/>
         </scene>
         <!--账户信息-->
         <scene sceneID="XcT-g6-WBs">
@@ -1025,7 +1026,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86A-Zc-eKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="1592"/>
+            <point key="canvasLocation" x="-23" y="1460"/>
         </scene>
         <!--设置-->
         <scene sceneID="ERc-jo-Sva">
@@ -1042,7 +1043,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nx1-Gd-23M" id="MYk-sW-P7c">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="清除图片缓存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQg-JE-iCp">
@@ -1073,7 +1074,7 @@
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EDq-QD-hii" id="F5B-Ri-wUN">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新手入门" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIe-zS-Zox">
@@ -1090,7 +1091,7 @@
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dbO-LR-Xjo" id="69k-EA-eXq">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="关于智惠返" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDL-w1-EYY">
@@ -1107,7 +1108,7 @@
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="47u-0L-nCk" id="6gv-WO-pOX">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置支付密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9o-Md-MGB">
@@ -1124,7 +1125,7 @@
                                         <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RLt-UE-E1l" id="MLu-xA-IQw">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="修改密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O60-9W-1QB">
@@ -1145,7 +1146,7 @@
                                         <rect key="frame" x="0.0" y="220" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oRV-q6-RTM" id="Ufu-th-8Fl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="退出登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USU-Ez-3RI">
@@ -1389,7 +1390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ew-YT-DvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="-342"/>
+            <point key="canvasLocation" x="-22" y="-501"/>
         </scene>
         <!--Evaluate View Controller-->
         <scene sceneID="Rjr-pL-Z1i">
@@ -1443,7 +1444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w69-sb-hn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="-342"/>
+            <point key="canvasLocation" x="850" y="-501"/>
         </scene>
         <!--Mine View Controller-->
         <scene sceneID="c69-8u-NsS">
@@ -1503,7 +1504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiP-sE-itE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.3999999999999999" y="951.27436281859082"/>
+            <point key="canvasLocation" x="-23" y="799"/>
         </scene>
         <!--Modfy Nick Name View Controller-->
         <scene sceneID="HVQ-mA-blW">
@@ -2199,13 +2200,263 @@
             </objects>
             <point key="canvasLocation" x="-1422" y="2515"/>
         </scene>
+        <!--提现-->
+        <scene sceneID="Vst-Ph-Tjb">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="eUo-dG-cKB" customClass="WithDrawViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FK3-tm-vFw"/>
+                        <viewControllerLayoutGuide type="bottom" id="ktL-9s-lr5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Udr-cY-Myb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zI-MU-EXa">
+                                <rect key="frame" x="0.0" y="79" width="375" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-F6-gRB">
+                                        <rect key="frame" x="22" y="15" width="70" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="j8l-OR-fj0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尾号7941" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR9-AX-fZj">
+                                        <rect key="frame" x="22" y="49" width="69" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="A0k-Lq-bad"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="储蓄卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6x-oK-amj">
+                                        <rect key="frame" x="96" y="49" width="49" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Mh8-lK-EUH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="1YH-WT-IHK">
+                                        <rect key="frame" x="353" y="37" width="14" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="14" id="6sP-rJ-inT"/>
+                                            <constraint firstAttribute="height" constant="22" id="oUI-al-Q6i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDz-Al-587">
+                                        <rect key="frame" x="155" y="0.0" width="220" height="85"/>
+                                        <connections>
+                                            <action selector="chooseBankClick:" destination="eUo-dG-cKB" eventType="touchUpInside" id="J0l-T0-Co2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EDz-Al-587" secondAttribute="trailing" id="3m7-cI-JZp"/>
+                                    <constraint firstItem="EDz-Al-587" firstAttribute="top" secondItem="0zI-MU-EXa" secondAttribute="top" id="3tz-5w-2Qp"/>
+                                    <constraint firstItem="EDz-Al-587" firstAttribute="leading" secondItem="p6x-oK-amj" secondAttribute="trailing" constant="10" id="N55-cv-fPH"/>
+                                    <constraint firstAttribute="bottom" secondItem="EDz-Al-587" secondAttribute="bottom" id="Rku-Gl-986"/>
+                                    <constraint firstAttribute="trailing" secondItem="1YH-WT-IHK" secondAttribute="trailing" constant="8" id="VPY-Dx-vrA"/>
+                                    <constraint firstAttribute="bottom" secondItem="TR9-AX-fZj" secondAttribute="bottom" constant="11" id="Zqd-Dd-X5a"/>
+                                    <constraint firstItem="p6x-oK-amj" firstAttribute="leading" secondItem="TR9-AX-fZj" secondAttribute="trailing" constant="5" id="c7k-ou-Urs"/>
+                                    <constraint firstItem="nrA-F6-gRB" firstAttribute="top" secondItem="0zI-MU-EXa" secondAttribute="top" constant="15" id="mFL-mT-nvW"/>
+                                    <constraint firstAttribute="height" constant="85" id="mTD-gs-uJe"/>
+                                    <constraint firstItem="1YH-WT-IHK" firstAttribute="centerY" secondItem="0zI-MU-EXa" secondAttribute="centerY" constant="5" id="ncb-c1-oyH"/>
+                                    <constraint firstItem="TR9-AX-fZj" firstAttribute="leading" secondItem="0zI-MU-EXa" secondAttribute="leading" constant="22" id="qxa-WK-egY"/>
+                                    <constraint firstItem="nrA-F6-gRB" firstAttribute="leading" secondItem="0zI-MU-EXa" secondAttribute="leading" constant="22" id="tws-nt-TKp"/>
+                                    <constraint firstAttribute="bottom" secondItem="p6x-oK-amj" secondAttribute="bottom" constant="11" id="wD6-ai-qo5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogD-FE-NFr">
+                                <rect key="frame" x="0.0" y="179" width="375" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1E-1f-YOB">
+                                        <rect key="frame" x="22" y="12" width="66" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="jOy-5q-RQc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drs-12-sXG">
+                                        <rect key="frame" x="25" y="50" width="11" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="4Wu-H3-aal"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga8-q6-KcJ">
+                                        <rect key="frame" x="357" y="51" width="0.0" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="Wus-Sb-nbv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="s1E-1f-YOB" firstAttribute="top" secondItem="ogD-FE-NFr" secondAttribute="top" constant="12" id="8v7-Uq-Ps1"/>
+                                    <constraint firstAttribute="bottom" secondItem="ga8-q6-KcJ" secondAttribute="bottom" constant="11" id="MT7-bc-q2n"/>
+                                    <constraint firstItem="drs-12-sXG" firstAttribute="leading" secondItem="ogD-FE-NFr" secondAttribute="leading" constant="25" id="MY2-9f-Xhb"/>
+                                    <constraint firstItem="s1E-1f-YOB" firstAttribute="leading" secondItem="ogD-FE-NFr" secondAttribute="leading" constant="22" id="OJ4-bu-aEi"/>
+                                    <constraint firstAttribute="bottom" secondItem="drs-12-sXG" secondAttribute="bottom" constant="15" id="ne6-Pw-NK3"/>
+                                    <constraint firstAttribute="height" constant="85" id="qin-IL-bv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="ga8-q6-KcJ" secondAttribute="trailing" constant="18" id="soe-jw-KKU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4b-em-jh1">
+                                <rect key="frame" x="0.0" y="265" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可提现余额为1.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j31-Wd-GG5">
+                                        <rect key="frame" x="26" y="14" width="136" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="w12-Vg-S37"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmH-H8-kFJ">
+                                        <rect key="frame" x="295" y="0.0" width="80" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="hOp-cq-ZbK"/>
+                                        </constraints>
+                                        <state key="normal" title="全部提现">
+                                            <color key="titleColor" red="0.99215686270000003" green="0.3411764706" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getAllLeftMoney:" destination="eUo-dG-cKB" eventType="touchUpInside" id="bq9-Xm-Ldl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xmH-H8-kFJ" firstAttribute="top" secondItem="b4b-em-jh1" secondAttribute="top" id="54A-np-LFR"/>
+                                    <constraint firstAttribute="bottom" secondItem="xmH-H8-kFJ" secondAttribute="bottom" id="76P-cV-UMq"/>
+                                    <constraint firstItem="j31-Wd-GG5" firstAttribute="leading" secondItem="b4b-em-jh1" secondAttribute="leading" constant="26" id="C34-4b-zVN"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ktn-ee-GIN"/>
+                                    <constraint firstAttribute="trailing" secondItem="xmH-H8-kFJ" secondAttribute="trailing" id="iE1-hb-gtg"/>
+                                    <constraint firstItem="j31-Wd-GG5" firstAttribute="centerY" secondItem="b4b-em-jh1" secondAttribute="centerY" id="wWD-iV-Qu4"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*提现金额小于1000元0.5元/次；大于等于1000元免手续费。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFN-0b-GXR">
+                                <rect key="frame" x="15" y="339" width="330" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="It0-F7-hHK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*提现时间：9:00-22:00；不分节假日(每周一:11:00~22:00)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CN-Ml-yxf">
+                                <rect key="frame" x="15" y="363" width="325" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="NH9-Rb-tZ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-31-LHZ">
+                                <rect key="frame" x="15" y="427" width="345" height="40"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.3411764706" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YKH-Pl-gnd"/>
+                                </constraints>
+                                <state key="normal" title="立即提现">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getMoneyNow:" destination="eUo-dG-cKB" eventType="touchUpInside" id="jFu-cO-5f3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*部分银行10元以下提现额度无短信提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgC-5y-EhA">
+                                <rect key="frame" x="15" y="387" width="216" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="fSG-06-0tm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.35686274509999999" green="0.36470588240000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.91372549020000005" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="b4b-em-jh1" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" id="057-8I-uLi"/>
+                            <constraint firstItem="tFN-0b-GXR" firstAttribute="top" secondItem="b4b-em-jh1" secondAttribute="bottom" constant="24" id="0CT-6j-j1b"/>
+                            <constraint firstAttribute="trailing" secondItem="b4b-em-jh1" secondAttribute="trailing" id="4Oy-uO-y5x"/>
+                            <constraint firstAttribute="trailing" secondItem="ogD-FE-NFr" secondAttribute="trailing" id="7gO-9T-eqO"/>
+                            <constraint firstItem="0zI-MU-EXa" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" id="C6m-6l-dyG"/>
+                            <constraint firstItem="ogD-FE-NFr" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" id="Eyr-lL-1bu"/>
+                            <constraint firstItem="4CN-Ml-yxf" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" constant="15" id="RPq-ho-Wm9"/>
+                            <constraint firstItem="0zI-MU-EXa" firstAttribute="top" secondItem="FK3-tm-vFw" secondAttribute="bottom" constant="15" id="RTA-8N-PGj"/>
+                            <constraint firstAttribute="trailing" secondItem="0zI-MU-EXa" secondAttribute="trailing" id="SoU-UF-z33"/>
+                            <constraint firstItem="4CN-Ml-yxf" firstAttribute="top" secondItem="tFN-0b-GXR" secondAttribute="bottom" constant="6" id="UVv-rU-db0"/>
+                            <constraint firstItem="b4b-em-jh1" firstAttribute="top" secondItem="ogD-FE-NFr" secondAttribute="bottom" constant="1" id="Ugz-jm-8jo"/>
+                            <constraint firstItem="dr1-31-LHZ" firstAttribute="top" secondItem="wgC-5y-EhA" secondAttribute="bottom" constant="22" id="Xwh-cA-hkT"/>
+                            <constraint firstItem="tFN-0b-GXR" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" constant="15" id="dEl-9X-24t"/>
+                            <constraint firstAttribute="trailing" secondItem="dr1-31-LHZ" secondAttribute="trailing" constant="15" id="mXj-JX-c8H"/>
+                            <constraint firstItem="ogD-FE-NFr" firstAttribute="top" secondItem="0zI-MU-EXa" secondAttribute="bottom" constant="15" id="neE-QR-31E"/>
+                            <constraint firstItem="dr1-31-LHZ" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" constant="15" id="sE8-jf-eFM"/>
+                            <constraint firstItem="wgC-5y-EhA" firstAttribute="top" secondItem="4CN-Ml-yxf" secondAttribute="bottom" constant="6" id="vKH-vh-Ndf"/>
+                            <constraint firstItem="wgC-5y-EhA" firstAttribute="leading" secondItem="Udr-cY-Myb" secondAttribute="leading" constant="15" id="y4d-Yu-7GL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="提现" id="o2w-hG-iQR">
+                        <barButtonItem key="leftBarButtonItem" image="whiteback" id="8Gl-eL-zel">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="eUo-dG-cKB" id="KcT-Sb-aNa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="提现记录" id="diV-y9-KA9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cashCardRecordBtn:" destination="eUo-dG-cKB" id="5F0-t8-Yih"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cashCardBtn" destination="diV-y9-KA9" id="yNM-j2-IUy"/>
+                        <outlet property="chargeNum" destination="ga8-q6-KcJ" id="LH5-0r-MKv"/>
+                        <outlet property="defaultBank" destination="nrA-F6-gRB" id="MtP-8j-bof"/>
+                        <outlet property="defaultBankNum" destination="TR9-AX-fZj" id="8N1-sM-Sgu"/>
+                        <outlet property="defaultCardType" destination="p6x-oK-amj" id="rS8-2G-Jjr"/>
+                        <outlet property="leftMoney" destination="j31-Wd-GG5" id="ss0-w6-vQe"/>
+                        <outlet property="warningLabel1" destination="tFN-0b-GXR" id="3V8-Ec-ZYA"/>
+                        <outlet property="warningLabel2" destination="4CN-Ml-yxf" id="JlW-BF-ZSr"/>
+                        <outlet property="withdrawView" destination="ogD-FE-NFr" id="3Ll-5n-HlL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxh-wl-txn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-666" y="1144"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="14" height="25"/>
         <image name="backWhite" width="11" height="19"/>
         <image name="dash" width="2" height="57"/>
         <image name="defualMoney" width="46" height="53"/>
         <image name="dl_header_bg" width="720" height="345"/>
-        <image name="dpgz" width="50" height="42"/>
         <image name="dpj" width="43" height="41"/>
         <image name="ewm" width="52" height="52"/>
         <image name="facetoface" width="73" height="73"/>

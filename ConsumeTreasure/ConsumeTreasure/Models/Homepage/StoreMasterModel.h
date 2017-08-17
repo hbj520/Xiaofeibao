@@ -12,11 +12,15 @@
 @property (nonatomic,strong) NSString *history_withdrawal;//
 @property (nonatomic,strong) NSString *today_withdrawal;//余额
 @property (nonatomic,strong) NSString *day_turnover;//日成交额
-@property (nonatomic,assign) double money;//余额
+@property (nonatomic,assign) double money;//营收可提现金额
 @property (nonatomic,assign) double turnover;//累计成交额
 @property (nonatomic,assign) double total;//订单总数
 @property (nonatomic,strong) NSString *shopName;//商户名称
 @property (nonatomic,strong) NSString *memid;//商户id
+@property (nonatomic,strong) NSString *shop_money;//通宝币可提现金额
+@property (nonatomic,strong) NSString *total_money;//商户总金额
+@property (nonatomic,strong) NSString *settlementing_money;//在途金额
+@property (nonatomic,strong) NSString *withdrawal_money;//可提现总金额
 
 @end
 
@@ -27,10 +31,11 @@
 @property (nonatomic,strong) NSString *proxyname;
 @property (nonatomic,strong) NSString *day_money;//日收入
 @property (nonatomic,strong) NSString *type;//代理类型
-@property (nonatomic,strong) NSString *balance;
+@property (nonatomic,strong) NSString *balance;//代理商账户总余额
 @property (nonatomic,strong) NSString *month_money;//月累计收入
 @property (nonatomic,strong) NSString *total_money;//累计收入
-
+@property (nonatomic,strong) NSString *settlementing_money;//在途金额
+@property (nonatomic,strong) NSString *shop_money;
 
 @end
 

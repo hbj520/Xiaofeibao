@@ -39,9 +39,9 @@
     
     if (incomeMoney.count > 0) {
         
-        strday = incomeMoney[0];
-        strall = incomeMoney[1];
-    
+        strall = incomeMoney[0];
+        strday = incomeMoney[1];
+
     }
    
 }
@@ -60,11 +60,12 @@
     [self performSegueWithIdentifier:@"withDrawRecordSegue" sender:nil];
 }
 - (IBAction)getMoneyNow:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strday,@"2"]];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strall,@"1"]];
     
 }
 - (IBAction)getHistoryMoney:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strall,@"1"]];
+    //strday
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strday,@"2"]];
 }
 
 /*

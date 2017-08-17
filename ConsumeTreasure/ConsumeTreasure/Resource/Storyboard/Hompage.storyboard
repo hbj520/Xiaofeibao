@@ -942,8 +942,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额：680.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO2-mk-xpK">
-                                        <rect key="frame" x="137" y="126" width="140" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="代理收益：680.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO2-mk-xpK">
+                                        <rect key="frame" x="116" y="126" width="182" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="2dP-Fh-cPa"/>
                                         </constraints>
@@ -984,9 +984,9 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lh5-Gv-e4s">
-                                        <rect key="frame" x="0.0" y="210" width="206" height="60"/>
+                                        <rect key="frame" x="0.0" y="270" width="206" height="0.0"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666.66" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05O-zD-JXq">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="666.66" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05O-zD-JXq">
                                                 <rect key="frame" x="65.666666666666657" y="8" width="74.999999999999972" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="g55-Wa-fWZ"/>
@@ -995,8 +995,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计收入(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsN-h9-fLl">
-                                                <rect key="frame" x="68.666666666666657" y="31" width="69.999999999999972" height="18"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结算中金额(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsN-h9-fLl">
+                                                <rect key="frame" x="62.666666666666671" y="31" width="82.333333333333329" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="ebQ-FP-ArZ"/>
                                                 </constraints>
@@ -1011,11 +1011,11 @@
                                             <constraint firstItem="05O-zD-JXq" firstAttribute="centerX" secondItem="Lh5-Gv-e4s" secondAttribute="centerX" id="83o-jS-nWQ"/>
                                             <constraint firstItem="DsN-h9-fLl" firstAttribute="top" secondItem="05O-zD-JXq" secondAttribute="bottom" constant="-2" id="K40-Mh-iqZ"/>
                                             <constraint firstItem="05O-zD-JXq" firstAttribute="top" secondItem="Lh5-Gv-e4s" secondAttribute="top" constant="8" id="Scf-mm-JCH"/>
-                                            <constraint firstAttribute="height" constant="60" id="j5R-BD-hC2"/>
+                                            <constraint firstAttribute="height" id="j5R-BD-hC2"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-3n-2bL">
-                                        <rect key="frame" x="207" y="210" width="207" height="60"/>
+                                        <rect key="frame" x="207" y="270" width="207" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1532" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8X-ia-794">
                                                 <rect key="frame" x="77.666666666666686" y="8" width="51" height="25"/>
@@ -1027,8 +1027,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月收入(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwD-ap-zke">
-                                                <rect key="frame" x="68.666666666666686" y="31" width="70" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可提现金额(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwD-ap-zke">
+                                                <rect key="frame" x="62.666666666666686" y="31" width="82.333333333333314" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="7vH-G7-mHu"/>
                                                     <constraint firstAttribute="height" constant="18" id="WI2-7w-CEI"/>
@@ -1044,7 +1044,7 @@
                                             <constraint firstItem="i8X-ia-794" firstAttribute="centerX" secondItem="TUe-3n-2bL" secondAttribute="centerX" id="JdH-k9-Cm6"/>
                                             <constraint firstItem="kwD-ap-zke" firstAttribute="centerX" secondItem="TUe-3n-2bL" secondAttribute="centerX" id="ME3-jJ-GeX"/>
                                             <constraint firstItem="i8X-ia-794" firstAttribute="top" secondItem="TUe-3n-2bL" secondAttribute="top" constant="8" id="SgI-9y-ecq"/>
-                                            <constraint firstAttribute="height" constant="60" id="esP-Qm-mJl"/>
+                                            <constraint firstAttribute="height" id="esP-Qm-mJl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1393,11 +1393,11 @@
                         <outlet property="shareView" destination="Fbo-qw-pj8" id="aAg-CH-q57"/>
                         <segue destination="cq0-aG-nzK" kind="push" identifier="myStoreListSegue" id="ajV-c1-eYv"/>
                         <segue destination="peC-ar-6qe" kind="push" identifier="incomeDetailSegue" id="JBh-6K-Wd5"/>
-                        <segue destination="9Lz-ZP-R46" kind="push" identifier="DLTXsegue" id="Cge-eV-Uzy"/>
                         <segue destination="MHO-1M-Xv9" kind="push" identifier="myBankCardSegue" id="tMY-yY-dhf"/>
                         <segue destination="bwN-XB-yOi" kind="push" identifier="goCheckStandSegue2" id="xhA-la-EUW"/>
                         <segue destination="oTK-WR-zXO" kind="push" identifier="goshareSegue2" id="exM-SL-wT4"/>
                         <segue destination="cvB-QW-Ldm" kind="show" identifier="InvestSegueId" id="L85-xa-Hbc"/>
+                        <segue destination="hnI-Wk-1sj" kind="show" identifier="DLTXsegue" id="gvg-yc-zFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xu-i8-lDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1922,7 +1922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8k-Eq-Z49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-991.20000000000005" y="3614.8425787106448"/>
+            <point key="canvasLocation" x="-872" y="3730"/>
         </scene>
         <!--资金流水-->
         <scene sceneID="ye1-cP-BDe">
@@ -2328,7 +2328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yw-BT-Wr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2882.4000000000001" y="4446.9265367316348"/>
+            <point key="canvasLocation" x="-2533" y="4592"/>
         </scene>
         <!--添加银行卡-->
         <scene sceneID="pF4-d3-5xr">
@@ -3302,8 +3302,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_720-1" translatesAutoresizingMaskIntoConstraints="NO" id="y2R-I4-yfC">
                                 <rect key="frame" x="8" y="84" width="398" height="209.66666666666669"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日收益余额（元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NJ-4N-tdy">
-                                <rect key="frame" x="17" y="97" width="138" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="营收提现 (元):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NJ-4N-tdy">
+                                <rect key="frame" x="17" y="97" width="95" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="oUm-aH-PVg"/>
                                 </constraints>
@@ -3314,8 +3314,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_720-1" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-wq-iJB">
                                 <rect key="frame" x="8" y="313.66666666666674" width="398" height="210.33333333333326"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史收益余额（元）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whn-ow-T73">
-                                <rect key="frame" x="17" y="326.66666666666669" width="138" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠收益提现 (元):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whn-ow-T73">
+                                <rect key="frame" x="17" y="326.66666666666669" width="125.66666666666666" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="qeD-cy-Bbo"/>
                                 </constraints>
@@ -3440,8 +3440,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额：00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-8W-gvW">
-                                        <rect key="frame" x="144" y="126" width="126" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总余额：00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxr-8W-gvW">
+                                        <rect key="frame" x="133.66666666666669" y="126" width="147.00000000000006" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3QM-wQ-H1y"/>
                                         </constraints>
@@ -3492,8 +3492,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="累计收入(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh6-Or-fkx">
-                                                <rect key="frame" x="68.666666666666657" y="31" width="69.999999999999972" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="营收金额(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh6-Or-fkx">
+                                                <rect key="frame" x="69" y="31" width="70" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="v8J-P3-uCC"/>
                                                 </constraints>
@@ -3524,8 +3524,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月销量(单)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbv-6Z-xDN">
-                                                <rect key="frame" x="68.000000000000028" y="31" width="70" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠收益余额(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbv-6Z-xDN">
+                                                <rect key="frame" x="56.000000000000028" y="31" width="94.333333333333314" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="18" id="7PT-Vb-Bca"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="rzk-is-bsb"/>
@@ -5711,18 +5711,17 @@
         <image name="zfb" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AMY-WY-xLC"/>
-        <segue reference="eJT-ye-vUc"/>
-        <segue reference="0yz-DO-JMd"/>
-        <segue reference="qAO-az-G1s"/>
-        <segue reference="6Ku-Vt-ebf"/>
-        <segue reference="lCz-4w-Yb3"/>
         <segue reference="SjJ-0Z-ase"/>
-        <segue reference="Xre-dI-aTe"/>
-        <segue reference="fkz-Fo-52f"/>
         <segue reference="zMk-Cc-iId"/>
         <segue reference="2vo-ef-X0i"/>
+        <segue reference="AMY-WY-xLC"/>
         <segue reference="EJ9-gn-bzP"/>
-        <segue reference="ep5-xb-kd2"/>
+        <segue reference="xr8-XJ-Bqb"/>
+        <segue reference="q7Y-f0-QLD"/>
+        <segue reference="6Ku-Vt-ebf"/>
+        <segue reference="eJT-ye-vUc"/>
+        <segue reference="0yz-DO-JMd"/>
+        <segue reference="hqb-t9-kRK"/>
+        <segue reference="Xre-dI-aTe"/>
     </inferredMetricsTieBreakers>
 </document>

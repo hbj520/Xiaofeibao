@@ -1,3 +1,4 @@
+
 //
 //  DaLiViewController.m
 //  ConsumeTreasure
@@ -15,6 +16,7 @@
 #import "CheckstandViewController.h"
 #import "ShareQRCodeViewController.h"
 #import "AtractInvestViewController.h"
+#import "WithDrawViewController.h"
 @interface DaLiViewController ()
 {
     DaLiMasterModel *daliModel;
@@ -120,11 +122,13 @@
             daliModel = (DaLiMasterModel*)object;
             self.daliArea.text = daliModel.proxyname;
             canGetMoney = daliModel.balance;
-            self.leftMoney.text =  [NSString stringWithFormat:@"余额 : %.3f",[daliModel.balance floatValue]];
-            self.allInMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.total_money floatValue]];
-            self.currentMonthMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.month_money floatValue]];
-            dayIncome = [NSString stringWithFormat:@"%.3f",daliModel.today_withdrawal.floatValue];;
-            allIncome = [NSString stringWithFormat:@"%.3f",daliModel.history_withdrawal.floatValue];
+            self.leftMoney.text =  [NSString stringWithFormat:@"代理收益 : %.3f",[daliModel.balance floatValue]];
+//            daliModel.settlementing_money = @"100";
+//            daliModel.shop_money = @"200" ;
+            self.allInMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.settlementing_money floatValue]];
+            self.currentMonthMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.shop_money floatValue]];
+//            dayIncome = [NSString stringWithFormat:@"%.3f",daliModel.today_withdrawal.floatValue];;
+//            allIncome = [NSString stringWithFormat:@"%.3f",daliModel.history_withdrawal.floatValue];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];
@@ -139,7 +143,7 @@
 - (IBAction)getMoney:(id)sender {
     NSLog(@"提现");
     
-    [self pushToNextWithIdentiField:@"DLTXsegue" sender:@[dayIncome,allIncome]];
+    [self pushToNextWithIdentiField:@"DLTXsegue" sender:nil];
 
 }
 
@@ -163,9 +167,13 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
      if ([segue.identifier isEqualToString:@"DLTXsegue"]) {
-         NSArray *arr = (NSArray*)sender;
-         CashViewController *cashVC = segue.destinationViewController;
-         cashVC.incomeMoney = arr;
+//         NSArray *arr = (NSArray*)sender;
+//         CashViewController *cashVC = segue.destinationViewController;
+//         cashVC.incomeMoney = arr;
+         WithDrawViewController *cashVC = segue.destinationViewController;
+         
+         cashVC.moneyType = @[(daliModel.shop_money != nil) ? daliModel.shop_money : @"0.00",@"2"];
+         
      }else if ([segue.identifier isEqualToString:@"goshareSegue2"]){
          NSString *memStr = sender;
          ShareQRCodeViewController *shareVC = segue.destinationViewController;

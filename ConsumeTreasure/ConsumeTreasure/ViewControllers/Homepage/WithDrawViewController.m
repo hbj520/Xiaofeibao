@@ -63,6 +63,7 @@
     
     self.leftMoney.text = [NSString stringWithFormat:@"可提现余额为%@元",self.moneyType[0]];
     theType = self.moneyType[1];
+    
 }
 
 - (void)upPayKeyBoard{

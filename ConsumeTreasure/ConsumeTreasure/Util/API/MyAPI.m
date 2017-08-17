@@ -605,6 +605,7 @@
             NSArray *data = responseObject[@"data"][@"list"];
             NSString *wx = responseObject[@"data"][@"wxopenid"];
             NSString *zfb = responseObject[@"data"][@"zfbuserid"];
+            NSString *settingMoney = responseObject[@"data"][@"settlementing_money"];//在途金额
             [[XFBConfig Instance] saveWeixin:wx];
             [[XFBConfig Instance] saveZFB:zfb];
             accountArr = [AccountModel arrayOfModelsFromDictionaries:data error:&err];
@@ -612,7 +613,7 @@
             
             AccountArrayModel *model = [[AccountArrayModel alloc]initWithDictionary:responseObject[@"data"] error:&err];
             [[XFBConfig Instance] saveMoney:model.balance];
-            result(YES,info,@[accountArr,model.balance]);
+            result(YES,info,@[accountArr,model.balance,settingMoney]);
         }else{
             result(NO,info,nil);
         }

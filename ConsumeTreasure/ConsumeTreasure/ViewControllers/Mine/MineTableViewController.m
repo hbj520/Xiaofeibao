@@ -20,6 +20,7 @@
 #import "CHSocialService.h"
 #import "MyMemberViewController.h"
 #import <MJRefresh/MJRefresh.h>
+#import "WithDrawViewController.h"
 
 @interface MineTableViewController ()
 {
@@ -32,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet UIView *moneyView;
 - (IBAction)settingBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *recommendBenifitLabel;
+@property (strong,nonatomic) NSArray *userArray;
 
 @end
 
@@ -42,6 +45,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.tabBarController.tabBar.hidden = NO;
     [self createUI];
+    [self loadAccountDataWithPage:1 pageNum:@"2"];
 }
 
 
@@ -109,8 +113,8 @@
                 [self performSegueWithIdentifier:@"evaluaListSegue" sender:nil];
                 
             }else if (indexPath.row == 2){
-                showAlert(@"正在建设中. . .");
-                // [self performSegueWithIdentifier:@"attentionShopSegueId" sender:nil];
+             //   showAlert(@"正在建设中. . .");
+                 [self performSegueWithIdentifier:@"recommendBenifitSegue" sender:nil];
                 
             }else if (indexPath.row == 3){
                 self.mStorybord = [UIStoryboard storyboardWithName:@"Hompage" bundle:nil];
@@ -189,6 +193,7 @@
 //    
 //}
 #pragma mark - PrivateMethod
+
 - (void)addRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self loadAccountDataWithPage:1 pageNum:@"2"];
@@ -203,6 +208,7 @@
     [[MyAPI sharedAPI] getMyAccountDataWithParameters:dic result:^(BOOL success, NSString *msg, NSArray *arrays) {
         if (success) {
             [self.tableView reloadData];
+            self.userArray = arrays;
             [self createUI];
 
         }else{
@@ -249,10 +255,10 @@
         [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
         self.iconImageView.layer.masksToBounds = YES;
     }
-    
-
-
-   
+    if (self.userArray.count == 3) {
+        NSNumber *moneyNum = self.userArray[2];
+        self.recommendBenifitLabel.text = moneyNum.stringValue;
+    }
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -323,6 +329,14 @@
         NSString *memStr = sender;
         MyMemberViewController *myMemberVC = segue.destinationViewController;
         myMemberVC.isMember = memStr.boolValue;
-    }
+     }else if ([segue.identifier isEqualToString:@"recommendBenifitSegue"]){
+         WithDrawViewController *cashVC = segue.destinationViewController;
+         if (self.userArray.count == 3) {
+             NSNumber *moneyNum = self.userArray[2];
+             self.recommendBenifitLabel.text = moneyNum.stringValue;
+              cashVC.moneyType = @[(moneyNum.stringValue != nil) ? moneyNum.stringValue : @"0.00",@"2"];
+         }
+        
+     }
 }
 @end
