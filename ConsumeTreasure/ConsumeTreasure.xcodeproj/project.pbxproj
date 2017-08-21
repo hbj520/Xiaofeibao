@@ -84,6 +84,8 @@
 		AB79B38F1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB79B38D1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.m */; };
 		AB79B3901DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */; };
 		AB8D453B1DADC89400694E6C /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8D453A1DADC89400694E6C /* Tools.m */; };
+		ABC596741F4AB368004BD538 /* HBJJpullButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC596731F4AB368004BD538 /* HBJJpullButton.m */; };
+		ABC596761F4AB37A004BD538 /* HBJJpullButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC596751F4AB37A004BD538 /* HBJJpullButton.xib */; };
 		ABCB95411D9B8D72008927C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95401D9B8D72008927C7 /* BaseViewController.m */; };
 		ABCB95441D9B8E56008927C7 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB95431D9B8E56008927C7 /* HomepageViewController.m */; };
 		ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCB95451D9B8E88008927C7 /* Hompage.storyboard */; };
@@ -536,6 +538,9 @@
 		AB79B38E1DB9EE2F00A7F96A /* UnionTitleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnionTitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB8D45391DADC89400694E6C /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		AB8D453A1DADC89400694E6C /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		ABC596721F4AB368004BD538 /* HBJJpullButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBJJpullButton.h; sourceTree = "<group>"; };
+		ABC596731F4AB368004BD538 /* HBJJpullButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBJJpullButton.m; sourceTree = "<group>"; };
+		ABC596751F4AB37A004BD538 /* HBJJpullButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBJJpullButton.xib; sourceTree = "<group>"; };
 		ABCB953F1D9B8D72008927C7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		ABCB95401D9B8D72008927C7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABCB95421D9B8E56008927C7 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
@@ -2263,6 +2268,9 @@
 				D16BF2C71DF106DC001A82BF /* JPullDown.bundle */,
 				D16BF2C81DF106DC001A82BF /* JPullDownMenu.h */,
 				D16BF2C91DF106DC001A82BF /* JPullDownMenu.m */,
+				ABC596721F4AB368004BD538 /* HBJJpullButton.h */,
+				ABC596731F4AB368004BD538 /* HBJJpullButton.m */,
+				ABC596751F4AB37A004BD538 /* HBJJpullButton.xib */,
 			);
 			path = JPullDownMenu;
 			sourceTree = "<group>";
@@ -2570,6 +2578,7 @@
 				D120549A1DED269000EB2707 /* OtherLicenseTableViewCell.xib in Resources */,
 				ABCB95461D9B8E88008927C7 /* Hompage.storyboard in Resources */,
 				D11736BC1DFE7FAE00270D26 /* StoreControlTableViewCell.xib in Resources */,
+				ABC596761F4AB37A004BD538 /* HBJJpullButton.xib in Resources */,
 				D170F26F1DAF2F6F00272E57 /* HotStoreTableViewCell.xib in Resources */,
 				D15B39681DD414A7009122FE /* EstimateTableViewCell.xib in Resources */,
 				D111711F1DFAA8F500AD88DE /* MemberTableViewCell.xib in Resources */,
@@ -2921,6 +2930,7 @@
 				D15B3A441DDAFB30009122FE /* DetailCountHeadView.m in Sources */,
 				AB10A8271DF122BD0042586A /* EvaluateListModel.m in Sources */,
 				D1E130641E4B2351006DF83E /* CHSocialResponseData.m in Sources */,
+				ABC596741F4AB368004BD538 /* HBJJpullButton.m in Sources */,
 				D170F2641DAF292A00272E57 /* ImageTableViewCell.m in Sources */,
 				D10EE3E21DB0B28F001C1992 /* PKDownload.m in Sources */,
 				AB24F2A41E681A0600764DA7 /* APAuthV2Info.m in Sources */,

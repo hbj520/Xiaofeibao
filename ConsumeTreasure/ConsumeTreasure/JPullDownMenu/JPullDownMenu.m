@@ -84,22 +84,16 @@
     for (int index=0; index<self.titleArray.count; index++) {
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(Kscreen_width/3 *(index +1)-1, 10, 1, KTitleButtonHeight/2)];
         lineView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        UIButton *titleButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        HBJJpullButton *titleButton= [HBJJpullButton loadNib];
         
         titleButton.frame= CGRectMake((width+0.5) * index, 0, width-0.5, KTitleButtonHeight);
         titleButton.backgroundColor = [UIColor whiteColor];
         titleButton.titleLabel.textColor = [UIColor lightGrayColor];
-        [titleButton setTitle:self.titleArray[index] forState:UIControlStateNormal];
-        [titleButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        titleButton.titleLabel.text = self.titleArray[index];
         titleButton.tag =KTitleButtonTag + index ;
         [titleButton addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         titleButton.titleLabel.font = [UIFont systemFontOfSize:15];
         titleButton.titleLabel.textAlignment = NSTextAlignmentLeft;
-        [titleButton setTitleColor:[[UIColor lightGrayColor]colorWithAlphaComponent:0.3] forState:UIControlStateSelected];
-        [titleButton setImage:[UIImage imageNamed:@"down_sj"] forState:UIControlStateNormal];
-
-        titleButton.imageEdgeInsets = UIEdgeInsetsMake(4, 80, 0, 0);
-        titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
         [self addSubview:titleButton];
         [self.buttonArray addObject:titleButton];
         [self addSubview:lineView];
@@ -165,8 +159,8 @@
     downMenuCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.isSelected = YES;
     
-    [self.tempButton setTitle:cell.textLabel.text forState:UIControlStateNormal];
-    
+    //[self.tempButton setTitle:cell.textLabel.text forState:UIControlStateNormal];
+    self.tempButton.titleLabel.text = cell.textLabel.text;
     KOBJCSetObject(self.tempButton, cell.textLabel.text);
     
     if (self.handleSelectDataBlock) {
@@ -229,6 +223,7 @@
             
             NSString *title = self.tableDataArray.firstObject;
             KOBJCSetObject(self.tempButton, title);
+            [self.tempButton setNeedsLayout];
             
         }
         

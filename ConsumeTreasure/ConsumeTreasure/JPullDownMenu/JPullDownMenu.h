@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HBJJpullButton.h"
 
 //@protocol JPullDOwnMenuDelegate <NSObject>
 //
@@ -19,7 +20,7 @@
 /*!@brief 分别为:选中cell的text、cell的index、cell对应的Button。 */
 @property (nonatomic,copy) void (^handleSelectDataBlock) (NSString *selectTitle, NSUInteger selectIndex ,NSUInteger selectButtonTag);
 
-@property (nonatomic) UIButton  *tempButton;
+@property (nonatomic)  HBJJpullButton *tempButton;
 
 /*!@brief 二维数组，存放每个Button对应下的TableView数据。。 */
 @property (nonatomic) NSMutableArray *menuDataArray;
