@@ -468,7 +468,7 @@
                            errorResult:(ErrorBlock)errorResult{
   
     NSDictionary *dicPara = @{
-                              @"tokenid":@"",
+                             // @"tokenid":@"",
                               @"platform":@"1",
                               @"param":para
                               };
@@ -535,7 +535,7 @@
                               result:(ArrayBlock)result
                          errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
-                              @"tokenid":@"",
+                              //@"tokenid":@"",
                               @"platform":@"1",
                               @"param":para
                               };
@@ -891,7 +891,9 @@
 }
 
 #pragma mark -- 提现
-- (void)getMoneyWithDrawWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
+- (void)getMoneyWithDrawWithParameters:(NSDictionary*)para
+                                result:(StateBlock)result
+                           errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{
                               @"tokenid":KToken,
                               @"platform":@"1",

@@ -38,14 +38,14 @@
 
 @interface DaLiIncomeModel : JSONModel
 
-@property (nonatomic,strong) NSString *bill_description;
-@property (nonatomic,strong) NSString *createdate;
-@property (nonatomic,strong) NSString *createyear;
-@property (nonatomic,strong) NSString *createtime;
-@property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString<Optional> *bill_description;
+@property (nonatomic,strong) NSString<Optional> *createdate;
+@property (nonatomic,strong) NSString<Optional> *createyear;
+@property (nonatomic,strong) NSString<Optional> *createtime;
+@property (nonatomic,strong) NSString<Optional> *title;
 @property (nonatomic,assign) double money;
-@property (nonatomic,assign) double after_money;
-@property (nonatomic,strong) NSString *type;
+@property (nonatomic,assign) double after_money ;
+@property (nonatomic,strong) NSString<Optional> *type;
 
 
 @end
