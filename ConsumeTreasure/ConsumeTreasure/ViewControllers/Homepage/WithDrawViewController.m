@@ -241,7 +241,8 @@
                 if (sucess) {
                     [BQActivityView hideActiviTy];
                     showAlert(msg);
-                    
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+
                 }else{
                     [BQActivityView hideActiviTy];
                     [self.coverView.payTextField resignFirstResponder];
@@ -254,6 +255,7 @@
                 
             }];
         }else{
+          
             NSDictionary *para = @{
                                    @"total_fee":Tongtf.text,
                                    @"trade_type":theType,
@@ -263,6 +265,7 @@
             [[MyAPI sharedAPI] getMoneyWithDrawWithParameters:para result:^(BOOL sucess, NSString *msg) {
                 if (sucess) {
                     [BQActivityView hideActiviTy];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
                     showAlert(msg);
                     
                 }else{

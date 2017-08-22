@@ -122,11 +122,11 @@
             daliModel = (DaLiMasterModel*)object;
             self.daliArea.text = daliModel.proxyname;
             canGetMoney = daliModel.balance;
-            self.leftMoney.text =  [NSString stringWithFormat:@"代理收益 : %.3f",[daliModel.balance floatValue]];
+            self.leftMoney.text =   [NSString stringWithFormat:@"%.3f",[daliModel.settlementing_money floatValue]];
 //            daliModel.settlementing_money = @"100";
 //            daliModel.shop_money = @"200" ;
-            self.allInMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.settlementing_money floatValue]];
-            self.currentMonthMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.shop_money floatValue]];
+//            self.allInMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.settlementing_money floatValue]];
+//            self.currentMonthMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.shop_money floatValue]];
 //            dayIncome = [NSString stringWithFormat:@"%.3f",daliModel.today_withdrawal.floatValue];;
 //            allIncome = [NSString stringWithFormat:@"%.3f",daliModel.history_withdrawal.floatValue];
         }else{
@@ -172,7 +172,7 @@
 //         cashVC.incomeMoney = arr;
          WithDrawViewController *cashVC = segue.destinationViewController;
          
-         cashVC.moneyType = @[(daliModel.shop_money != nil) ? daliModel.shop_money : @"0.00",@"2"];
+         cashVC.moneyType = @[(daliModel.settlementing_money != nil) ? daliModel.settlementing_money : @"0.00",@"2"];
          
      }else if ([segue.identifier isEqualToString:@"goshareSegue2"]){
          NSString *memStr = sender;

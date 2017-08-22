@@ -60,12 +60,13 @@
     [self performSegueWithIdentifier:@"withDrawRecordSegue" sender:nil];
 }
 - (IBAction)getMoneyNow:(id)sender {
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strall,@"1"]];
-    
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strday,@"1"]];
+
 }
 - (IBAction)getHistoryMoney:(id)sender {
     //strday
-    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strday,@"2"]];
+    [self performSegueWithIdentifier:@"goWithdrawSegue" sender:@[strall,@"2"]];
+
 }
 
 /*
