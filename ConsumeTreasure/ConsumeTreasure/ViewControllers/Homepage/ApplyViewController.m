@@ -52,11 +52,12 @@
     NSString *_aliasNameStr;
     NSString *_emailStr;
     NSString *_shopreturnrateStr;
+    NSString *_shopreturnIdStr;
     NSString *_posrateStr;
     NSString *_businessLicenseStr;
     NSString *_cardNoStr;
     NSString *_cardNameStr;
-    
+    /*
     NSString *addrCateId;
     NSString *conCateId;
     NSString *busiCateId;
@@ -64,6 +65,7 @@
     NSString *addrCateStr;
     NSString *conCateStr;
     NSString *busiCateStr;
+    */
     NSString *storeCateStr;
    
     
@@ -93,6 +95,12 @@
 @property (nonatomic, strong) NSMutableArray *busiIdArr;//经营范围id
 @property (nonatomic, strong) NSMutableArray *contactIdArr;//经营范围id
 
+@property (nonatomic, strong) NSMutableArray *returnIdArr;//折扣后台数组
+@property (nonatomic, strong) NSMutableArray *returnArr;//折扣数组
+@property (nonatomic, strong) NSMutableArray *posArr;//折扣数组
+
+@property (nonatomic,copy) NSString *idReturnStr;
+
 @property (nonatomic,copy) NSString *idStr;
 @property (nonatomic,copy) NSString *addrIdStr;
 @property (nonatomic,copy) NSString *conIdStr;
@@ -101,6 +109,27 @@
 
 @implementation ApplyViewController
 
+- (NSMutableArray *)returnIdArr {
+    if (!_returnIdArr) {
+        _returnIdArr = [NSMutableArray array];
+    }
+    return _returnIdArr;
+}
+
+- (NSMutableArray *)returnArr {
+    if (!_returnArr) {
+        _returnArr = [NSMutableArray array];
+    }
+    return _returnArr;
+}
+
+- (NSMutableArray *)posArr {
+    if (!_posArr) {
+        _posArr = [NSMutableArray array];
+    }
+    return _posArr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -108,6 +137,33 @@
     _downId = @"";
     _licenseId = @"";
     _storeId = @"";
+    
+    for (int i = 51 ; i<99; i++) {
+        
+        NSString *str = [NSString stringWithFormat:@"%d",i];
+        str = [str stringByAppendingString:@"折"];
+        [self.returnArr addObject:str];
+        
+    }
+    [self.returnArr addObject:@"无折扣"];
+
+    for (int a = 49 ; a>1; a--) {
+        
+        NSString *str = [NSString stringWithFormat:@"%d",a];
+        NSString *str2 = [NSString stringWithFormat:@"%.2f",[str floatValue]/100];
+        [self.returnIdArr addObject:str2];
+        
+    }
+    [self.returnIdArr addObject:@"0"];
+    
+    
+    for (int j = 45; j<100; j++) {
+        
+        NSString *str = [NSString stringWithFormat:@"%d",j];
+        NSString *str2 = [NSString stringWithFormat:@"%.2f",[str floatValue]/100];
+        [self.posArr addObject:str2];
+    }
+    
     
     // Do any additional setup after loading the view.
     
@@ -186,14 +242,37 @@
         _stateArr = [value componentsSeparatedByString:@"/"];
         
         ApplyContentTableViewCell *applyCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        TypeChooseTableViewCell *typeCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-
+        //TypeChooseTableViewCell *typeCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+        NewAddContentTableViewCell *newCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
         
         if (typeId == 0) {
             applyCell.rangeText.text = storeCateStr = weakSelf.stateArr[0];
             _idStr = weakSelf.stateArr[1];
             cateId = [nameIdArr objectAtIndex:[weakSelf.idStr integerValue]-1];
+        }else if (typeId == 2){
+            
+            newCell.posrateTF.text = _posrateStr = weakSelf.stateArr[0];
+            
+            //_posrateStr = weakSelf.stateArr[1];
+            //addrCateId = [nameIdArr objectAtIndex:[weakSelf.addrIdStr integerValue]-1];
         }else if (typeId == 1){
+            
+            newCell.shopreturnrateTF.text = _shopreturnrateStr = weakSelf.stateArr[0];
+            if ([_shopreturnrateStr isEqualToString:@"无折扣"]) {
+                newCell.posBtn.enabled = YES;
+                newCell.posrateTF.text = @"";
+            }else{
+                newCell.posBtn.enabled = NO;
+                newCell.posrateTF.enabled = NO;
+                newCell.posrateTF.text = @"此处不用填写";
+                _posrateStr = @"";
+            }
+            
+            _idReturnStr = weakSelf.stateArr[1];
+            _shopreturnIdStr = [nameIdArr objectAtIndex:[weakSelf.idReturnStr integerValue]-1];
+        }
+        /*
+        else if (typeId == 1){
         
             typeCell.conTf.text = conCateStr = weakSelf.stateArr[0];
             _conIdStr = weakSelf.stateArr[1];
@@ -208,6 +287,7 @@
             _busiIdStr = weakSelf.stateArr[1];
             busiCateId = [nameIdArr objectAtIndex:[weakSelf.busiIdStr integerValue]-1];
         }
+         */
 
     };
     [self.pickerView show];
@@ -229,7 +309,7 @@
 
 #pragma mark -- UITabelViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -308,21 +388,31 @@
         if (newAddCell == nil) {
             newAddCell = [[[NSBundle mainBundle] loadNibNamed:@"NewAddContentTableViewCell" owner:self options:nil] lastObject];
         }
+        // 新增费率选择
+        newAddCell.posBlock = ^{
+            [self upPikerViewWithName:self.posArr nameId:self.posArr AndTypeNum:2];
+
+        };
         
+        newAddCell.shopReturnBlock = ^{
+            [self upPikerViewWithName:self.returnArr nameId:self.returnIdArr AndTypeNum:1];
+        };
+        
+        /*
         newAddCell.serviceBlock = ^(NSString *str) {
             _serviceStr = str;
             
         };
-        
+        */
         newAddCell.aliasNameBlock = ^(NSString *str) {
             _aliasNameStr = str;
         };
-        
+        /*
         newAddCell.emailBlock = ^(NSString *str) {
             _emailStr = str;
             
         };
-        
+        */
         newAddCell.shopreturnrateBlock = ^(NSString *str) {
             _shopreturnrateStr = str;
         };
@@ -349,18 +439,18 @@
 //            tf.delegate = self;
 //        }
 
-        newAddCell.serviceTF.delegate = self;
+        //newAddCell.serviceTF.delegate = self;
         newAddCell.aliasNameTF.delegate = self;
-        newAddCell.emailTF.delegate = self;
+        //newAddCell.emailTF.delegate = self;
         newAddCell.shopreturnrateTF.delegate = self;
         newAddCell.posrateTF.delegate = self;
         newAddCell.businessLicenseTF.delegate = self;
         newAddCell.cardNoTF.delegate = self;
         newAddCell.cardNameTF.delegate = self;
         
-        _serviceStr = newAddCell.serviceTF.text;
+        //_serviceStr = newAddCell.serviceTF.text;
         _aliasNameStr = newAddCell.aliasNameTF.text;
-        _emailStr = newAddCell.emailTF.text;
+        //_emailStr = newAddCell.emailTF.text;
         _shopreturnrateStr = newAddCell.shopreturnrateTF.text;
         _posrateStr = newAddCell.posrateTF.text;
         _businessLicenseStr = newAddCell.businessLicenseTF.text;
@@ -370,7 +460,9 @@
         newAddCell.selectionStyle = 0;
         return newAddCell;
 
-    }else if (indexPath.section == 2){
+    }
+    /*
+    else if (indexPath.section == 2){
      
         TypeChooseTableViewCell *typeCell = [tableView dequeueReusableCellWithIdentifier:@"typeCelleId"];
         if (typeCell == nil) {
@@ -406,6 +498,9 @@
         
         
     }
+    
+    */
+    
     /*
     else if (indexPath.section == 3){
         IdentiPhotoTableViewCell *IdentiCell = [tableView dequeueReusableCellWithIdentifier:@"identiPhotoId"];
@@ -456,11 +551,13 @@
     if (indexPath.section == 0) {
         return 350;
     }else if (indexPath.section == 1){
-        return 364;
-    }else if (indexPath.section == 2)
+        return 277;
+    }
+    /*
+    else if (indexPath.section == 2)
     
         return 131;
-    /*
+    
     else if (indexPath.section == 3){
         return 138;
     }
@@ -611,7 +708,7 @@
 //    _cardNameStr = newAddCell.cardNameTF.text;
     
     
-    if ([storeCateStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_storeName isEqualToString:@""]||[_nameStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_phoneStr isEqualToString:@""]||[_storeAddr isEqualToString:@""]||[_serviceStr isEqualToString:@""]||[_aliasNameStr isEqualToString:@""]||[_emailStr isEqualToString:@""]) {
+    if ([storeCateStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_storeName isEqualToString:@""]||[_nameStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_phoneStr isEqualToString:@""]||[_storeAddr isEqualToString:@""]||[_aliasNameStr isEqualToString:@""]) {
         showAlert(@"必填项不可为空");
     }
     
@@ -642,7 +739,7 @@
                                @"member":@{
                                        @"name":_nameStr,
                                        @"idcardno":_identiId,
-                                       @"email":_emailStr,
+                                       //@"email":_emailStr,
                                       
                                        //@"invitecode":_inviteCode
                                        },
@@ -658,16 +755,18 @@
                                        @"addr":_storeAddr,
                                        @"latitude":latituedeStr,
                                        @"longitude":longtitudeStr,
-                                       @"servicePhone":_serviceStr,
+                                       //@"servicePhone":_serviceStr,
                                        @"aliasName":_aliasNameStr,
-                                       @"shopreturnrate":_shopreturnrateStr,
+                                       @"shopreturnrate":_shopreturnIdStr,
                                        @"posrate":_posrateStr,
                                        @"businessLicense":_businessLicenseStr,
                                        @"cardNo":_cardNoStr,
                                        @"cardName":_cardNameStr,
+                                       /*
                                        @"contactType":conCateId,
                                        @"addressType":addrCateId,
                                        @"businessLicenseType":busiCateId,
+                                        */
                                        }
                                };
         

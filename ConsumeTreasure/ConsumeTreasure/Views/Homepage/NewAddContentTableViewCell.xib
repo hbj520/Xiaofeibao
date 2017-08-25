@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newAddCellId" rowHeight="410" id="KGk-i7-Jjw" customClass="NewAddContentTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="364"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newAddCellId" rowHeight="323" id="KGk-i7-Jjw" customClass="NewAddContentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="364"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTd-fX-Ud4">
@@ -83,37 +83,16 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-aH-psG">
-                        <rect key="frame" x="15" y="319" width="345" height="1"/>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.92156862750000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="2hj-Dn-M6W"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="xBS-Th-Fhd"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lj2-uj-9RS">
-                        <rect key="frame" x="15" y="363" width="345" height="1"/>
+                        <rect key="frame" x="15" y="275.5" width="345" height="1"/>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.92156862750000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="WXl-wM-Uig"/>
                             <constraint firstAttribute="height" constant="1" id="Wlu-Ei-nlI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入客服电话 (必填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-g3-MRN">
-                        <rect key="frame" x="25" y="17" width="300" height="17"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                        <connections>
-                            <action selector="service:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="ri1-Ov-VWi"/>
-                        </connections>
-                    </textField>
                     <textField opaque="NO" clipsSubviews="YES" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的商户简称 (必填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQM-0Z-5pd">
                         <rect key="frame" x="25" y="61" width="300" height="17"/>
                         <nil key="textColor"/>
@@ -123,16 +102,7 @@
                             <action selector="aliasName:" destination="KGk-i7-Jjw" eventType="editingChanged" id="Zqc-08-f1a"/>
                         </connections>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入联系人邮箱 (必填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSa-tI-6wd">
-                        <rect key="frame" x="25" y="105" width="300" height="17"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                        <connections>
-                            <action selector="email:" destination="KGk-i7-Jjw" eventType="editingChanged" id="EpM-5G-YWB"/>
-                        </connections>
-                    </textField>
-                    <textField opaque="NO" clipsSubviews="YES" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入消费返币比例 (选填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-7x-sXU">
+                    <textField opaque="NO" clipsSubviews="YES" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择消费折扣" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJa-7x-sXU">
                         <rect key="frame" x="25" y="161" width="300" height="17"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -141,7 +111,7 @@
                             <action selector="shopreturnrate:" destination="KGk-i7-Jjw" eventType="editingChanged" id="duK-5O-Zts"/>
                         </connections>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入POS费率 (选填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-OD-LWN">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择POS费率 " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAC-OD-LWN">
                         <rect key="frame" x="25" y="205" width="300" height="17"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -159,17 +129,8 @@
                             <action selector="businessLicense:" destination="KGk-i7-Jjw" eventType="editingChanged" id="SWr-UV-dFO"/>
                         </connections>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的银行卡号 (选填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KqZ-MJ-ybm">
-                        <rect key="frame" x="25" y="293" width="300" height="17"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                        <connections>
-                            <action selector="cardNoTF:" destination="KGk-i7-Jjw" eventType="editingChanged" id="dBj-gV-1VB"/>
-                        </connections>
-                    </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行卡持卡人姓名 (选填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAm-vp-ruR">
-                        <rect key="frame" x="25" y="337" width="300" height="17"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行卡持卡人姓名 (必填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAm-vp-ruR">
+                        <rect key="frame" x="25" y="105" width="300" height="17"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
@@ -177,6 +138,31 @@
                             <action selector="cardNameTF:" destination="KGk-i7-Jjw" eventType="editingChanged" id="Myi-7B-CFj"/>
                         </connections>
                     </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的银行卡号 (必填)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KqZ-MJ-ybm">
+                        <rect key="frame" x="25" y="17" width="300" height="17"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                        <connections>
+                            <action selector="cardNoTF:" destination="KGk-i7-Jjw" eventType="editingChanged" id="dBj-gV-1VB"/>
+                        </connections>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nq-Sg-ZAc">
+                        <rect key="frame" x="25" y="194" width="321" height="36"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="pos费率"/>
+                        <connections>
+                            <action selector="posClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Stp-YT-IAq"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXj-uW-W0s">
+                        <rect key="frame" x="25" y="148" width="327" height="38"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="反比比例"/>
+                        <connections>
+                            <action selector="shopReturnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kQk-xX-7PQ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="MBe-Iq-Um1" firstAttribute="top" secondItem="SeN-bv-lTy" secondAttribute="bottom" constant="43" id="0Ac-Vv-7xI"/>
@@ -184,27 +170,21 @@
                     <constraint firstItem="tO3-G8-Q1r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="3O0-na-oys"/>
                     <constraint firstItem="uAm-vp-ruR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="6Y9-b1-RJR"/>
                     <constraint firstItem="SeN-bv-lTy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6ve-H8-LpR"/>
-                    <constraint firstAttribute="trailing" secondItem="dSa-tI-6wd" secondAttribute="trailing" constant="50" id="7T6-Aq-IPe"/>
                     <constraint firstAttribute="trailing" secondItem="tO3-G8-Q1r" secondAttribute="trailing" constant="15" id="9f9-PV-DvU"/>
                     <constraint firstAttribute="trailing" secondItem="KqZ-MJ-ybm" secondAttribute="trailing" constant="50" id="A93-r5-YvI"/>
                     <constraint firstItem="oZQ-8B-uJs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="AjR-Or-yek"/>
-                    <constraint firstItem="SeN-bv-lTy" firstAttribute="top" secondItem="dSa-tI-6wd" secondAttribute="bottom" constant="9" id="Blv-N0-GSK"/>
                     <constraint firstItem="paz-0X-cth" firstAttribute="top" secondItem="QAC-OD-LWN" secondAttribute="bottom" constant="9" id="DXL-4h-d3G"/>
                     <constraint firstAttribute="trailing" secondItem="PJa-7x-sXU" secondAttribute="trailing" constant="50" id="FNx-tS-ag3"/>
                     <constraint firstAttribute="trailing" secondItem="pTd-fX-Ud4" secondAttribute="trailing" constant="15" id="FgV-Ph-VS5"/>
                     <constraint firstAttribute="trailing" secondItem="nEw-0N-HXf" secondAttribute="trailing" constant="15" id="IQw-rG-Gu9"/>
-                    <constraint firstItem="dSa-tI-6wd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="L00-9m-DSM"/>
-                    <constraint firstItem="pTd-fX-Ud4" firstAttribute="top" secondItem="gaf-g3-MRN" secondAttribute="bottom" constant="9" id="MJZ-14-mmq"/>
-                    <constraint firstItem="Lj2-uj-9RS" firstAttribute="top" secondItem="hbG-aH-psG" secondAttribute="bottom" constant="43" id="MqL-kj-6BX"/>
                     <constraint firstItem="KqZ-MJ-ybm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="Nh0-BO-x2l"/>
                     <constraint firstItem="PJa-7x-sXU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="OQs-ld-oX0"/>
                     <constraint firstItem="nEw-0N-HXf" firstAttribute="top" secondItem="oZQ-8B-uJs" secondAttribute="bottom" constant="9" id="T6d-Bk-FTR"/>
-                    <constraint firstItem="hbG-aH-psG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="U7k-1k-btw"/>
+                    <constraint firstItem="pTd-fX-Ud4" firstAttribute="top" secondItem="KqZ-MJ-ybm" secondAttribute="bottom" constant="9" id="TzW-f9-PA3"/>
                     <constraint firstAttribute="trailing" secondItem="oZQ-8B-uJs" secondAttribute="trailing" constant="50" id="UPQ-Mp-rR4"/>
-                    <constraint firstItem="gaf-g3-MRN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="UmV-Qk-X6j"/>
                     <constraint firstAttribute="trailing" secondItem="lQM-0Z-5pd" secondAttribute="trailing" constant="50" id="Wbp-vz-V3c"/>
                     <constraint firstAttribute="trailing" secondItem="SeN-bv-lTy" secondAttribute="trailing" id="X27-dZ-hNX"/>
-                    <constraint firstItem="hbG-aH-psG" firstAttribute="top" secondItem="nEw-0N-HXf" secondAttribute="bottom" constant="43" id="e38-UR-PCW"/>
+                    <constraint firstItem="SeN-bv-lTy" firstAttribute="top" secondItem="uAm-vp-ruR" secondAttribute="bottom" constant="9" id="cAl-3U-sq4"/>
                     <constraint firstItem="lQM-0Z-5pd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="giP-T9-oGz"/>
                     <constraint firstAttribute="trailing" secondItem="paz-0X-cth" secondAttribute="trailing" constant="15" id="hTg-fU-y6R"/>
                     <constraint firstItem="tO3-G8-Q1r" firstAttribute="top" secondItem="pTd-fX-Ud4" secondAttribute="bottom" constant="43" id="k7T-Ls-eax"/>
@@ -212,21 +192,18 @@
                     <constraint firstItem="nEw-0N-HXf" firstAttribute="top" secondItem="paz-0X-cth" secondAttribute="bottom" constant="43" id="lNa-Mc-FNB"/>
                     <constraint firstAttribute="trailing" secondItem="MBe-Iq-Um1" secondAttribute="trailing" constant="15" id="nON-eI-AGX"/>
                     <constraint firstItem="MBe-Iq-Um1" firstAttribute="top" secondItem="PJa-7x-sXU" secondAttribute="bottom" constant="9" id="nqK-O8-J8b"/>
+                    <constraint firstAttribute="bottom" secondItem="Lj2-uj-9RS" secondAttribute="bottom" id="o7f-Yb-j8y"/>
                     <constraint firstItem="QAC-OD-LWN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="ohW-Vy-XZM"/>
-                    <constraint firstAttribute="trailing" secondItem="hbG-aH-psG" secondAttribute="trailing" constant="15" id="p0f-7p-v8I"/>
                     <constraint firstItem="MBe-Iq-Um1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="pAU-wZ-xmb"/>
                     <constraint firstItem="paz-0X-cth" firstAttribute="top" secondItem="MBe-Iq-Um1" secondAttribute="bottom" constant="43" id="ptL-iV-SKg"/>
                     <constraint firstItem="SeN-bv-lTy" firstAttribute="top" secondItem="tO3-G8-Q1r" secondAttribute="bottom" constant="43" id="q49-zc-kLR"/>
                     <constraint firstItem="tO3-G8-Q1r" firstAttribute="top" secondItem="lQM-0Z-5pd" secondAttribute="bottom" constant="9" id="qsy-3G-HZr"/>
                     <constraint firstItem="paz-0X-cth" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rSj-56-3aT"/>
                     <constraint firstAttribute="trailing" secondItem="QAC-OD-LWN" secondAttribute="trailing" constant="50" id="tzf-Bl-p7Z"/>
-                    <constraint firstItem="hbG-aH-psG" firstAttribute="top" secondItem="KqZ-MJ-ybm" secondAttribute="bottom" constant="9" id="ufM-95-S0s"/>
                     <constraint firstItem="pTd-fX-Ud4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vGq-aI-BTY"/>
-                    <constraint firstItem="Lj2-uj-9RS" firstAttribute="top" secondItem="uAm-vp-ruR" secondAttribute="bottom" constant="9" id="woK-bB-5eY"/>
                     <constraint firstAttribute="trailing" secondItem="Lj2-uj-9RS" secondAttribute="trailing" constant="15" id="woN-I9-fzX"/>
                     <constraint firstItem="Lj2-uj-9RS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wod-43-I7T"/>
                     <constraint firstItem="nEw-0N-HXf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xpI-8G-5p0"/>
-                    <constraint firstAttribute="trailing" secondItem="gaf-g3-MRN" secondAttribute="trailing" constant="50" id="zU4-Or-P40"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -234,12 +211,12 @@
                 <outlet property="businessLicenseTF" destination="oZQ-8B-uJs" id="84K-9S-IyD"/>
                 <outlet property="cardNameTF" destination="uAm-vp-ruR" id="l9X-ef-AOI"/>
                 <outlet property="cardNoTF" destination="KqZ-MJ-ybm" id="DdS-eD-N2V"/>
-                <outlet property="emailTF" destination="dSa-tI-6wd" id="eBC-t2-AEG"/>
+                <outlet property="posBtn" destination="0Nq-Sg-ZAc" id="gaf-W6-4jn"/>
                 <outlet property="posrateTF" destination="QAC-OD-LWN" id="6Gc-RA-jNw"/>
-                <outlet property="serviceTF" destination="gaf-g3-MRN" id="GtD-T0-a58"/>
+                <outlet property="shopReturnBtn" destination="wXj-uW-W0s" id="NqS-xX-o0R"/>
                 <outlet property="shopreturnrateTF" destination="PJa-7x-sXU" id="shn-74-TY3"/>
             </connections>
-            <point key="canvasLocation" x="-17.5" y="-127"/>
+            <point key="canvasLocation" x="-17.5" y="-170.5"/>
         </tableViewCell>
     </objects>
 </document>

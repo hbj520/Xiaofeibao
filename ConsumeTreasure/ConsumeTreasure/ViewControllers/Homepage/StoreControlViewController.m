@@ -237,12 +237,12 @@
                     img4 = @"未上传";
                 }
                 
-                secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号",@"客服电话",@"商户简称",@"联系人邮箱",@"银行卡号",@"银行卡持卡人姓名",@"营业执照编号"];
-                secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"反币比例",@"经营类型",@"联系人类型",@"地址类型",@"营业执照类型"];
+                secOne = @[@"店铺名称",@"门面电话",@"真实姓名",@"身份证号",@"商户简称",@"营业执照编号"];
+                secTwo = @[@"门面地址",@"定位地址",@"商家介绍",@"开始经营时间",@"结束经营时间",@"经营类型"];
                 secThr = @[@"营业执照图片",@"经营许可证图片",@"身份证正面",@"身份证反面"];
                 
-                placeOne = @[storeName,storePhone,realName,IDNum,servicephoneStr,aliasnameStr,emailStr,cardnoStr,cardnameStr,businessLicenseStr,];
-                placeTwo = @[strAddr,@"开始定位",strDescri,sTime,eTime,disCount,cateStr,contactStr,addressStr,businesslicenseStr];
+                placeOne = @[storeName,storePhone,realName,IDNum,aliasnameStr,businessLicenseStr,];
+                placeTwo = @[strAddr,@"开始定位",strDescri,sTime,eTime,cateStr];
                 placeThr = @[img1,img2,img3,img4];
                 
                 [self head:doorImg];
@@ -382,9 +382,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 10;
+        return 6;
     }else if (section == 1){
-        return 10;
+        return 6;
     }else{
         return 4;
     }
@@ -416,16 +416,16 @@
         }else if (indexPath.row == 3){
             storeConCell.placetextfield.tag = 5555;
         }else if (indexPath.row == 4){
-            storeConCell.placetextfield.tag = 4444;
-        }else if (indexPath.row == 5){
             storeConCell.placetextfield.tag = 3333;
-        }else if (indexPath.row == 6){
-            storeConCell.placetextfield.tag = 2222;
-        }else if (indexPath.row == 7){
+        }
+        /*
+        else if (indexPath.row == 5){
             storeConCell.placetextfield.tag = 1111;
-        }else if (indexPath.row == 8){
+        }else if (indexPath.row == 6){
             storeConCell.placetextfield.tag = 0000;
-        }else{
+        }
+        */
+        else{
             storeConCell.placetextfield.tag = 9999;
         }
         
@@ -452,7 +452,9 @@
                     [self upPikerViewWithName:_cateArr nameId:_cateIdArr AndTypeNum:0];
                 };
                 
-            }else if (indexPath.row == 7) {
+            }
+            /*
+            else if (indexPath.row == 7) {
                 labCell.contactBlock = ^{
                     [self upPikerViewWithName:_contactArr nameId:_contactIdArr AndTypeNum:1];
                 };
@@ -464,7 +466,9 @@
                 labCell.licenseBlock = ^{
                     [self upPikerViewWithName:_busiArr nameId:_busiIdArr AndTypeNum:3];
                 };
-            }else if (indexPath.row == 3 ||indexPath.row == 4) {
+            }
+            */
+            else if (indexPath.row == 3 ||indexPath.row == 4) {
               
                 
                 __weak typeof(labCell) weakCell  = labCell;
@@ -635,17 +639,17 @@
         realName = textField.text;
     }else if (textField.tag == 5555){
         IDNum = textField.text;
-    }else if (textField.tag == 4444){
-        servicephoneStr = textField.text;
     }else if (textField.tag == 3333){
         aliasnameStr = textField.text;
-    }else if (textField.tag == 2222){
-        emailStr = textField.text;
-    }else if (textField.tag == 1111){
+    }
+    /*
+    else if (textField.tag == 1111){
         cardnoStr = textField.text;
     }else if (textField.tag == 0000){
         cardnameStr = textField.text;
-    }else if (textField.tag == 9999){
+    }
+     */
+     else if (textField.tag == 9999){
         businessLicenseStr = textField.text;
     }
 
