@@ -39,10 +39,10 @@
         self.easyContent.text = shanghuModel.title;
         if ([shanghuModel.type isEqualToString:@"0"]) {
             self.shouzhiImage.image = [UIImage imageNamed:@"zhi"];
-            self.moneyStr.text = [NSString stringWithFormat:@"- %.3f",shanghuModel.money];
+            self.moneyStr.text = [NSString stringWithFormat:@"- %.2f",shanghuModel.money];
         }else{
             self.shouzhiImage.image = [UIImage imageNamed:@"shou"];
-            self.moneyStr.text = [NSString stringWithFormat:@"+ %.3f",shanghuModel.money];
+            self.moneyStr.text = [NSString stringWithFormat:@"+ %.2f",shanghuModel.money];
         }
     }
 
@@ -56,10 +56,10 @@
         
         if ([daliModel.type isEqualToString:@"0"]) {
             self.shouzhiImage.image = [UIImage imageNamed:@"zhi"];
-            self.moneyStr.text = [NSString stringWithFormat:@"- %.3f",daliModel.money];
+            self.moneyStr.text = [NSString stringWithFormat:@"- %.2f",daliModel.money];
         }else{
             self.shouzhiImage.image = [UIImage imageNamed:@"shou"];
-            self.moneyStr.text = [NSString stringWithFormat:@"+ %.3f",daliModel.money];
+            self.moneyStr.text = [NSString stringWithFormat:@"+ %.2f",daliModel.money];
         }
     }
 }

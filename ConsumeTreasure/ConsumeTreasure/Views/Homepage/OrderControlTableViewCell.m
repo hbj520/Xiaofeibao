@@ -44,14 +44,14 @@
     self.oneLab.text = @"收益时间：";
     self.twoLab.text = @"收益金额：";
     self.orderNumLab.text = daliIncomeModel.createdate;
-    self.moneyLab.text = [NSString stringWithFormat:@"%.3f元",daliIncomeModel.money];
+    self.moneyLab.text = [NSString stringWithFormat:@"%.2f元",daliIncomeModel.money];
 }
 
 - (void)setShanghuIncomeModel:(ShangHuIncomeModel *)shanghuIncomeModel{
     self.oneLab.text = @"收益时间：";
     self.twoLab.text = @"收益金额：";
     self.orderNumLab.text = shanghuIncomeModel.createdate;
-    self.moneyLab.text = [NSString stringWithFormat:@"%.3f元",shanghuIncomeModel.money];
+    self.moneyLab.text = [NSString stringWithFormat:@"%.2f元",shanghuIncomeModel.money];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

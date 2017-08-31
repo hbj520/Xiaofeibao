@@ -250,7 +250,7 @@
         self.navigationController.navigationBar.titleTextAttributes = attributeDict;
         self.navigationItem.title = navTitle;
         if (!tongbaoMoneyView.enableSeeButton.selected) {
-            tongbaoMoneyView.money = [NSString stringWithFormat:@"%.3f",[[XFBConfig Instance] getMoney].floatValue];
+            tongbaoMoneyView.money = [NSString stringWithFormat:@"%.2f",[[XFBConfig Instance] getMoney].floatValue];
         }
         [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"tx"]];
         self.iconImageView.layer.masksToBounds = YES;

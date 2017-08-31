@@ -95,7 +95,7 @@
             tongModel = (tongBaoModel*)object;
             leftMoney = [tongModel.goldNum floatValue];
             realMoney = [tongModel.goldNum floatValue];
-            self.leftTongMoney.text = [NSString stringWithFormat:@"可用余额%.3f",[tongModel.goldNum floatValue]];
+            self.leftTongMoney.text = [NSString stringWithFormat:@"可用余额%.2f",[tongModel.goldNum floatValue]];
 
             if ([tongModel.hasPayPwd isEqualToString:@"0"]) {
                 UIAlertView * alert=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"您尚未设置支付密码，是否立即前往设置。或者您可以在”我“->“设置”中去设置" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"去设置", nil];
@@ -181,18 +181,18 @@
         leftMoney = 0;
         useZHB = @"0";
         self.realPay.text = Tongtf.text;
-        self.getTongMoney.text = [NSString stringWithFormat:@"%.3f",([self.realPay.text floatValue]*discountStr)];
+        self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];
     }else{
         leftMoney = realMoney;
         useZHB = @"1";
         if ([Tongtf.text floatValue] <= realMoney) {
-            self.disCountMoney.text = [NSString stringWithFormat:@"- %.3f",[Tongtf.text floatValue]];
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %.2f",[Tongtf.text floatValue]];
             self.realPay.text = @"0";
             self.getTongMoney.text = @"0";
         }else{
-            self.disCountMoney.text = [NSString stringWithFormat:@"- %.3f",realMoney];
-            self.realPay.text = [NSString stringWithFormat:@"%.3f",([Tongtf.text floatValue] - leftMoney)];
-            self.getTongMoney.text = [NSString stringWithFormat:@"%.3f",([self.realPay.text floatValue]*discountStr)];
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %.2f",realMoney];
+            self.realPay.text = [NSString stringWithFormat:@"%.2f",([Tongtf.text floatValue] - leftMoney)];
+            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];
         }
         
         
@@ -215,10 +215,10 @@
         
         
         if ([tf.text floatValue] > leftMoney) {
-            self.disCountMoney.text = [NSString stringWithFormat:@"- %.3f",leftMoney];//折扣
+            self.disCountMoney.text = [NSString stringWithFormat:@"- %.2f",leftMoney];//折扣
             
-            self.realPay.text = [NSString stringWithFormat:@"%.3f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
-            self.getTongMoney.text = [NSString stringWithFormat:@"%.3f",([self.realPay.text floatValue]*discountStr)];//获得智惠币
+            self.realPay.text = [NSString stringWithFormat:@"%.2f",([tf.text floatValue] - leftMoney)]; // ([tf.text floatValue] - leftMoney);//实付
+            self.getTongMoney.text = [NSString stringWithFormat:@"%.2f",([self.realPay.text floatValue]*discountStr)];//获得智惠币
             
         }else{
             self.disCountMoney.text = [NSString stringWithFormat:@"- %@",tf.text];
@@ -270,7 +270,7 @@
                     [self.coverView.payTextField resignFirstResponder];
                     [self.coverView removeFromSuperview];
                     // NSString *needPayStr = [NSString stringWithFormat:@"%f",([Tongtf.text floatValue] - leftMoney)];
-                    NSString *leftMoneyStr = [NSString stringWithFormat:@"%.3f",leftMoney];
+                    NSString *leftMoneyStr = [NSString stringWithFormat:@"%.2f",leftMoney];
                     
                     [self performSegueWithIdentifier:@"gotoPay" sender:@[Tongtf.text,leftMoneyStr,self.toMemId,SafeStr]];
                     

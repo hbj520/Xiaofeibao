@@ -125,13 +125,13 @@
     [[MyAPI sharedAPI] getStoreMasterDataWithParameters:para result:^(BOOL success, NSString *msg, id object) {
         if (success) {
             StoreMmodel = object;
-            self.unionBalance.text = [NSString stringWithFormat:@"总余额 : %.3f",StoreMmodel.total_money.floatValue];
+            self.unionBalance.text = [NSString stringWithFormat:@"总余额 : %.2f",StoreMmodel.total_money.floatValue];
             //withdrawal_money
-            self.dealNumLab.text =  [NSString stringWithFormat:@"%.3f",StoreMmodel.settlementing_money.floatValue];
-            self.allIncomeLab.text = [NSString stringWithFormat:@"%.3f",StoreMmodel.withdrawal_money.floatValue];
+            self.dealNumLab.text =  [NSString stringWithFormat:@"%.2f",StoreMmodel.settlementing_money.floatValue];
+            self.allIncomeLab.text = [NSString stringWithFormat:@"%.2f",StoreMmodel.withdrawal_money.floatValue];
             self.shopName.text = StoreMmodel.shopName;
-            dayStr = [NSString stringWithFormat:@"%.3f",StoreMmodel.settlementing_money.floatValue];;
-            allStr = [NSString stringWithFormat:@"%.3f",StoreMmodel.withdrawal_money.floatValue];
+            dayStr = [NSString stringWithFormat:@"%.2f",StoreMmodel.settlementing_money.floatValue];;
+            allStr = [NSString stringWithFormat:@"%.2f",StoreMmodel.withdrawal_money.floatValue];
         }else{
             if ([msg isEqualToString:@"-1"]) {
                 [self logout];

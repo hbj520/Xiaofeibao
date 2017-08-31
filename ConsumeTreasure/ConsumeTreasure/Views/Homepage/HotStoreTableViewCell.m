@@ -22,7 +22,7 @@
 - (void)setStoreModel:(HomeStoreModel *)storeModel{
     self.storeName.text = storeModel.shopname;
     [self.storeImage sd_setImageWithURL:[NSURL URLWithString:storeModel.doorimg] placeholderImage:[UIImage imageNamed:DEFAULTSTOREIMAGE]];
-    self.distance.text = [NSString stringWithFormat:@"%.3fkm",storeModel.distance.floatValue];
+    self.distance.text = [NSString stringWithFormat:@"%.2fkm",storeModel.distance.floatValue];
     self.storeAddress.text = storeModel.addr;
     NSArray *strArray = [storeModel.discount componentsSeparatedByString:@"返币"];
     NSString *subStr = strArray[1];
