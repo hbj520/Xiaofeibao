@@ -817,6 +817,7 @@
             [applyCell.goPositon setTintColor:[UIColor blackColor]];
             [applyCell.goPositon.titleLabel setFont:[UIFont systemFontOfSize:10]];
             applyCell.storeAddrText.text = locaArray[2];
+            _storeAddr = locaArray[2];
         };
     }
 }
