@@ -122,7 +122,7 @@
             daliModel = (DaLiMasterModel*)object;
             self.daliArea.text = daliModel.proxyname;
             canGetMoney = daliModel.balance;
-            self.leftMoney.text =   [NSString stringWithFormat:@"%.3f",[daliModel.settlementing_money floatValue]];
+            self.leftMoney.text =   [NSString stringWithFormat:@"%.2f",[daliModel.settlementing_money floatValue]];
 //            daliModel.settlementing_money = @"100";
 //            daliModel.shop_money = @"200" ;
 //            self.allInMoney.text = [NSString stringWithFormat:@"%.3f",[daliModel.settlementing_money floatValue]];

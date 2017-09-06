@@ -45,7 +45,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:testURL]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -132,7 +132,7 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
             NSString *gold = userDic[@"all_money"];
-            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
+            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
             NSString *loginName = userDic[@"loginName"];//用户登录名
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];
@@ -209,7 +209,7 @@
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             NSDictionary *userDic = responseObject[@"data"];
             NSString *gold = userDic[@"all_money"];
-            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
+            NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
             NSString *loginName = userDic[@"loginName"];//用户登录名
             NSString *token = userDic[@"token"];
             NSString *imgurl = userDic[@"imgUrl"];
@@ -1877,7 +1877,7 @@
                 result(NO,responseObject[@"msg"],nil);
             }else{
                 NSString *gold = userDic[@"all_money"];
-                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
+                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
                 NSString *loginName = userDic[@"loginName"];//用户登录名
                 NSString *token = userDic[@"token"];
                 NSString *imgurl = userDic[@"imgUrl"];
@@ -1942,7 +1942,7 @@
             NSString *status = userDic[@"status"];
            
                 NSString *gold = userDic[@"all_money"];
-                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.3f",gold.floatValue];//用户余额
+                NSString * goldNum = (NSString *)[NSString stringWithFormat:@"%.2f",gold.floatValue];//用户余额
                 NSString *loginName = userDic[@"loginName"];//用户登录名
                 NSString *token = userDic[@"token"];
                 NSString *imgurl = userDic[@"imgUrl"];

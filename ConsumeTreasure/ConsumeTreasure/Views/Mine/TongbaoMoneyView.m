@@ -17,7 +17,7 @@
     return self;
 }
 - (void)createUIWithmoney:(float)money{
-    NSString *moneyString = [NSString stringWithFormat:@"%.3f",money];
+    NSString *moneyString = [NSString stringWithFormat:@"%.2f",money];
     NSArray *moneyArray = [moneyString componentsSeparatedByString:@"."];
     NSString *integerMoney = moneyArray[0];
     NSString *newInterMoney = [self newMoneyString:integerMoney];
@@ -37,7 +37,7 @@
     
 }
 - (void)setMoney:(NSString *)money{
-    NSString *moneyString = [NSString stringWithFormat:@"%.3f",money.floatValue];
+    NSString *moneyString = [NSString stringWithFormat:@"%.2f",money.floatValue];
     NSArray *moneyArray = [moneyString componentsSeparatedByString:@"."];
     NSString *integerMoney = moneyArray[0];
     NSString *newInterMoney = [self newMoneyString:integerMoney];
