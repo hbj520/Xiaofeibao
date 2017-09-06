@@ -515,20 +515,13 @@
                    [self performSegueWithIdentifier:@"goGetLocationSegue" sender:nil];
                     
                 };
-                
-               
             }
-            
         }else{
             labCell.btn.enabled = NO;
             labCell.leftLab.text = secThr[indexPath.row];
             labCell.detailLab.text = placeThr[indexPath.row];
-            
-            
-            
-            
-        }
         
+        }
         return labCell;
     }
 }
