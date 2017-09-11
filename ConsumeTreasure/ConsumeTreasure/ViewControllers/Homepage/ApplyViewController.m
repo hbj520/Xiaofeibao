@@ -138,6 +138,8 @@
     _licenseId = @"";
     _storeId = @"";
     
+    _shopreturnIdStr = @"";
+    
     for (int i = 51 ; i<99; i++) {
         
         NSString *str = [NSString stringWithFormat:@"%d",i];
@@ -708,7 +710,7 @@
 //    _cardNameStr = newAddCell.cardNameTF.text;
     
     
-    if ([storeCateStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_storeName isEqualToString:@""]||[_nameStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_phoneStr isEqualToString:@""]||[_storeAddr isEqualToString:@""]||[_aliasNameStr isEqualToString:@""]) {
+    if ([storeCateStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_storeName isEqualToString:@""]||[_nameStr isEqualToString:@""]||[_identiId isEqualToString:@""]||[_phoneStr isEqualToString:@""]||[_storeAddr isEqualToString:@""]||[_aliasNameStr isEqualToString:@""]||[_shopreturnIdStr isEqualToString:@""]) {
         showAlert(@"必填项不可为空");
     }
     
