@@ -889,7 +889,47 @@
     }];
     
 }
+#pragma mark -- 代理商申请资料
+- (void)applyDaliDataWithParameters:(NSDictionary *)para
+                             result:(StateBlock)result
+                        errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"userinfo/applyToProxy" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1");
+            [self cancelAllOperation];
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            result (YES,info);
+        }else{
+            result (NO,info);
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+#pragma mark - 购买经纪人支付接口
+- (void)buyAgencyWithParameters:(NSDictionary *)para
+                         result:(StateBlock)result
+                    errorResult:(ErrorBlock)errorResult{
+    NSDictionary *dicPara = @{
+                              @"tokenid":KToken,
+                              @"platform":@"1",
+                              @"param":para
+                              };
+    [self.manager POST:@"agent/getAgentOrder" parameters:dicPara progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 
+}
 #pragma mark -- 提现
 - (void)getMoneyWithDrawWithParameters:(NSDictionary*)para
                                 result:(StateBlock)result
@@ -904,7 +944,6 @@
         if ([responseObject[@"code"] isEqualToString:@"-1"]) {
             result(NO,@"-1");
             [self cancelAllOperation];
-            
         }if ([responseObject[@"code"] isEqualToString:@"1"]) {
             result (YES,info);
         }else{

@@ -115,7 +115,14 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)getDaiLiMasterDataWithParameters:(NSDictionary*)para
                                   result:(ModelBlock)result
                              errorResult:(ErrorBlock)errorResult;
-
+#pragma mark -- 代理商申请资料
+- (void)applyDaliDataWithParameters:(NSDictionary *)para
+                             result:(StateBlock)result
+                        errorResult:(ErrorBlock)errorResult;
+#pragma mark - 购买经纪人支付接口
+- (void)buyAgencyWithParameters:(NSDictionary *)para
+                         result:(StateBlock)result
+                    errorResult:(ErrorBlock)errorResult;
 #pragma mark -- 提现
 - (void)getMoneyWithDrawWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 #pragma mark -商家联盟（申请提现）

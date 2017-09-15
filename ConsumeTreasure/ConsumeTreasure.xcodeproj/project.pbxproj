@@ -14,6 +14,8 @@
 		1821410C1EDEC45E001C7EBA /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182141041EDEC45E001C7EBA /* AlertView.m */; };
 		1821410D1EDEC45E001C7EBA /* PcmPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 182141081EDEC45E001C7EBA /* PcmPlayer.m */; };
 		1821410E1EDEC45E001C7EBA /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821410B1EDEC45E001C7EBA /* PopupView.m */; };
+		187625BB1F6A3049007C7F75 /* AgencyOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187625BA1F6A3049007C7F75 /* AgencyOnlinePayViewController.m */; };
+		187625BE1F6AAC4E007C7F75 /* CompeletePayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187625BD1F6AAC4E007C7F75 /* CompeletePayController.m */; };
 		8D209B7BB9660C487FA741EC /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 761C910A58A7DEFA02F98B03 /* libPods-ConsumeTreasure.a */; };
 		AB0076481DD066D4000E5181 /* UnionCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0076471DD066D4000E5181 /* UnionCategoryModel.m */; };
 		AB00764A1DD06F73000E5181 /* TestUnion.json in Resources */ = {isa = PBXBuildFile; fileRef = AB0076491DD06F73000E5181 /* TestUnion.json */; };
@@ -414,6 +416,10 @@
 		182141091EDEC45E001C7EBA /* PcmPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcmPlayerDelegate.h; sourceTree = "<group>"; };
 		1821410A1EDEC45E001C7EBA /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
 		1821410B1EDEC45E001C7EBA /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
+		187625B91F6A3049007C7F75 /* AgencyOnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgencyOnlinePayViewController.h; sourceTree = "<group>"; };
+		187625BA1F6A3049007C7F75 /* AgencyOnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgencyOnlinePayViewController.m; sourceTree = "<group>"; };
+		187625BC1F6AAC4E007C7F75 /* CompeletePayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompeletePayController.h; sourceTree = "<group>"; };
+		187625BD1F6AAC4E007C7F75 /* CompeletePayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompeletePayController.m; sourceTree = "<group>"; };
 		761C910A58A7DEFA02F98B03 /* libPods-ConsumeTreasure.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConsumeTreasure.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0076461DD066D4000E5181 /* UnionCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnionCategoryModel.h; sourceTree = "<group>"; };
 		AB0076471DD066D4000E5181 /* UnionCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnionCategoryModel.m; sourceTree = "<group>"; };
@@ -1456,6 +1462,10 @@
 				D196D58B1E0CFB9E0062AD91 /* TobeAgencyViewController.m */,
 				D196D5871E0CFB850062AD91 /* AgencyIntroViewController.h */,
 				D196D5881E0CFB850062AD91 /* AgencyIntroViewController.m */,
+				187625B91F6A3049007C7F75 /* AgencyOnlinePayViewController.h */,
+				187625BA1F6A3049007C7F75 /* AgencyOnlinePayViewController.m */,
+				187625BC1F6AAC4E007C7F75 /* CompeletePayController.h */,
+				187625BD1F6AAC4E007C7F75 /* CompeletePayController.m */,
 				D1F916A61E07B4D70091B989 /* DaLiViewController.h */,
 				D1F916A71E07B4D70091B989 /* DaLiViewController.m */,
 				AB4621A11ED40BFC00857D65 /* AtractInvestViewController.h */,
@@ -2481,7 +2491,7 @@
 					ABF4E2751D9B5E57006AD23C = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 3S4HP5TK72;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2748,6 +2758,7 @@
 				D1A3C0E21E1F9EAC0040AAD9 /* NewAccountTableViewCell.m in Sources */,
 				D15B3AFC1DDC0E5E009122FE /* NSDataEx.m in Sources */,
 				D16BF2B01DEFF15B001A82BF /* JFCityCollectionFlowLayout.m in Sources */,
+				187625BE1F6AAC4E007C7F75 /* CompeletePayController.m in Sources */,
 				D15B3AF91DDC0E5E009122FE /* DataSigner.m in Sources */,
 				D16BF2C41DF01C10001A82BF /* LocationTableViewCell.m in Sources */,
 				D10DC93E1E08D0A300930F74 /* PersonInfoModel.m in Sources */,
@@ -2905,6 +2916,7 @@
 				D1A3C0A91E1500AF0040AAD9 /* TextViewController.m in Sources */,
 				D1C79B241E77E08500869008 /* CollectionTableViewCell.m in Sources */,
 				D196D57A1E0BCA3C0062AD91 /* MDEncryption.m in Sources */,
+				187625BB1F6A3049007C7F75 /* AgencyOnlinePayViewController.m in Sources */,
 				D150DFBF1DE433180045FB2B /* TuiJianModel.m in Sources */,
 				D16BF2AD1DEFF15B001A82BF /* JFAreaDataManager.m in Sources */,
 				AB4667321ED68749000FF58A /* CashBankRecordTableViewCell.m in Sources */,
@@ -3138,8 +3150,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3S4HP5TK72;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3267,8 +3279,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c2c75eaa-0dba-42d9-843c-e96428d5cd99";
-				PROVISIONING_PROFILE_SPECIFIER = APPDISTRIBUPROFILE;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -3279,8 +3291,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ConsumeTreasure/ConsumeTreasure.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 3S4HP5TK72;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3408,8 +3420,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.xiaofeibao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c2c75eaa-0dba-42d9-843c-e96428d5cd99";
-				PROVISIONING_PROFILE_SPECIFIER = APPDISTRIBUPROFILE;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
