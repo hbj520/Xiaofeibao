@@ -8,6 +8,7 @@
 
 #import "TobeAgencyViewController.h"
 #import "CheckID.h"
+#import "AgencyOnlinePayViewController.h"
 @interface TobeAgencyViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *IDCardTextfeild;
 @property (weak, nonatomic) IBOutlet UITextField *recommendPhone;
@@ -43,6 +44,8 @@
 }
 
 - (IBAction)upInfo:(id)sender {
+ ///   [self performSegueWithIdentifier:@"AgencyOnlinePaySegueId" sender:nil];
+
     if ([CheckID deptNameInputShouldChineseWithStr:self.realName.text] == NO) {
         showAlert(@"请输入汉字格式的真实姓名");
     }else if ([CheckID isMobileNumber:self.realPhone.text] == NO){
@@ -58,10 +61,10 @@
                                        @"idCardNo":self.IDCardTextfeild.text,
                                        @"recommendPhone":self.recommendPhone.text
                                };
+        
         [[MyAPI sharedAPI] applyDaliDataWithParameters:para result:^(BOOL sucess, NSString *msg) {
             if (sucess) {
                 [self performSegueWithIdentifier:@"AgencyOnlinePaySegueId" sender:nil];
-               // showAlert(@"已申请成功，请等候客服人员与您联系");
             }else{
                 if ([msg isEqualToString:@"-1"]) {
                     [self logout];
@@ -82,7 +85,11 @@
 - (IBAction)back:(id)sender {
     [self backTolastPage];
 }
-
+#pragma mark - prepareSegue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    AgencyOnlinePayViewController *onlineVC = (AgencyOnlinePayViewController *)segue.destinationViewController;
+    onlineVC.recommendPhone = self.recommendPhone.text;
+}
 /*
 #pragma mark - Navigation
 

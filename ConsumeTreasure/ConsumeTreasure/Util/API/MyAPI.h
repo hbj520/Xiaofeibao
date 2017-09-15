@@ -121,7 +121,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
                         errorResult:(ErrorBlock)errorResult;
 #pragma mark - 购买经纪人支付接口
 - (void)buyAgencyWithParameters:(NSDictionary *)para
-                         result:(StateBlock)result
+                         result:(ModelBlock)result
                     errorResult:(ErrorBlock)errorResult;
 #pragma mark -- 提现
 - (void)getMoneyWithDrawWithParameters:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;

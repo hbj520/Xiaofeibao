@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface AgencyOnlinePayViewController : BaseViewController
-
+@property (nonatomic,copy) NSString *recommendPhone;
 @end

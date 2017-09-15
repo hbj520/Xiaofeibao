@@ -6455,18 +6455,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3B-1x-Os9">
-                                <rect key="frame" x="0.0" y="621" width="375" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99215686270000003" green="0.3411764706" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="确认提交">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="confirmUpdate:" destination="MRs-ew-4Z8" eventType="touchUpInside" id="3Ea-Cp-69W"/>
-                                    <action selector="upInfo:" destination="Spq-yB-Y98" eventType="touchUpInside" id="Bcv-DQ-nid"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuX-Ov-AF6">
                                 <rect key="frame" x="23.5" y="83" width="36" height="36"/>
                                 <subviews>
@@ -6738,6 +6726,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="payMoneyLabel" destination="omk-iK-qe1" id="fsf-Cq-6js"/>
+                        <outlet property="paymenLabel" destination="h27-Rs-EJH" id="J1W-gL-GLT"/>
+                        <outlet property="paytypeLabel" destination="gSo-kN-h8g" id="xrD-pn-CyP"/>
+                        <outlet property="phoneLabel" destination="7pj-4Q-ULY" id="hCU-0s-xah"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJL-Sw-pXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6790,14 +6784,14 @@
         <segue reference="8y3-EJ-Rdo"/>
         <segue reference="tWF-ah-xlW"/>
         <segue reference="usE-cy-s3Q"/>
-        <segue reference="eJT-ye-vUc"/>
-        <segue reference="exM-SL-wT4"/>
-        <segue reference="tMY-yY-dhf"/>
-        <segue reference="hqb-t9-kRK"/>
-        <segue reference="SBL-jk-t8o"/>
-        <segue reference="yDC-V5-ZwH"/>
         <segue reference="zMk-Cc-iId"/>
         <segue reference="q7Y-f0-QLD"/>
         <segue reference="xr8-XJ-Bqb"/>
+        <segue reference="eJT-ye-vUc"/>
+        <segue reference="tMY-yY-dhf"/>
+        <segue reference="exM-SL-wT4"/>
+        <segue reference="yDC-V5-ZwH"/>
+        <segue reference="hqb-t9-kRK"/>
+        <segue reference="SBL-jk-t8o"/>
     </inferredMetricsTieBreakers>
 </document>

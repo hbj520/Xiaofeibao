@@ -9,6 +9,10 @@
 #import "CompeletePayController.h"
 
 @interface CompeletePayController ()
+@property (weak, nonatomic) IBOutlet UILabel *paytypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *paymenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *payMoneyLabel;
 
 @end
 

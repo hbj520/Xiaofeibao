@@ -14,6 +14,8 @@
 		1821410C1EDEC45E001C7EBA /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182141041EDEC45E001C7EBA /* AlertView.m */; };
 		1821410D1EDEC45E001C7EBA /* PcmPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 182141081EDEC45E001C7EBA /* PcmPlayer.m */; };
 		1821410E1EDEC45E001C7EBA /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821410B1EDEC45E001C7EBA /* PopupView.m */; };
+		182F126F1F6B811B00A3A123 /* DaliStarLevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F126E1F6B811B00A3A123 /* DaliStarLevelButton.m */; };
+		182F12711F6B812F00A3A123 /* DaliStarLevelButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182F12701F6B812F00A3A123 /* DaliStarLevelButton.xib */; };
 		187625BB1F6A3049007C7F75 /* AgencyOnlinePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187625BA1F6A3049007C7F75 /* AgencyOnlinePayViewController.m */; };
 		187625BE1F6AAC4E007C7F75 /* CompeletePayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187625BD1F6AAC4E007C7F75 /* CompeletePayController.m */; };
 		8D209B7BB9660C487FA741EC /* libPods-ConsumeTreasure.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 761C910A58A7DEFA02F98B03 /* libPods-ConsumeTreasure.a */; };
@@ -416,6 +418,9 @@
 		182141091EDEC45E001C7EBA /* PcmPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcmPlayerDelegate.h; sourceTree = "<group>"; };
 		1821410A1EDEC45E001C7EBA /* PopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
 		1821410B1EDEC45E001C7EBA /* PopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
+		182F126D1F6B811B00A3A123 /* DaliStarLevelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaliStarLevelButton.h; sourceTree = "<group>"; };
+		182F126E1F6B811B00A3A123 /* DaliStarLevelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaliStarLevelButton.m; sourceTree = "<group>"; };
+		182F12701F6B812F00A3A123 /* DaliStarLevelButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DaliStarLevelButton.xib; sourceTree = "<group>"; };
 		187625B91F6A3049007C7F75 /* AgencyOnlinePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgencyOnlinePayViewController.h; sourceTree = "<group>"; };
 		187625BA1F6A3049007C7F75 /* AgencyOnlinePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgencyOnlinePayViewController.m; sourceTree = "<group>"; };
 		187625BC1F6AAC4E007C7F75 /* CompeletePayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompeletePayController.h; sourceTree = "<group>"; };
@@ -1211,6 +1216,16 @@
 			path = pcmPlayerCode;
 			sourceTree = "<group>";
 		};
+		182F126C1F6B80D900A3A123 /* daliView */ = {
+			isa = PBXGroup;
+			children = (
+				182F126D1F6B811B00A3A123 /* DaliStarLevelButton.h */,
+				182F126E1F6B811B00A3A123 /* DaliStarLevelButton.m */,
+				182F12701F6B812F00A3A123 /* DaliStarLevelButton.xib */,
+			);
+			path = daliView;
+			sourceTree = "<group>";
+		};
 		578EB4AF2E4319123E151ED8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1587,6 +1602,7 @@
 		ABCB953A1D9B8A05008927C7 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				182F126C1F6B80D900A3A123 /* daliView */,
 				D1F275B21DAD0C20005B9849 /* ConsumeHomepageHeaderView.h */,
 				D1F275B11DAD0C20005B9849 /* ConsumeHomepageHeaderView.m */,
 				D1F2759E1DAD0A5A005B9849 /* ScanerView */,
@@ -2575,6 +2591,7 @@
 				D16BF2C01DF01B78001A82BF /* ProvinceHeadView.xib in Resources */,
 				AB32FCC61DE425BA00032D38 /* EvaluateTableViewCell.xib in Resources */,
 				D16BF2CA1DF106DC001A82BF /* JPullDown.bundle in Resources */,
+				182F12711F6B812F00A3A123 /* DaliStarLevelButton.xib in Resources */,
 				D161807D1DAE2AFA0052C94D /* HomePageFirstTableViewCell.xib in Resources */,
 				D15B3A461DDAFB48009122FE /* DetailCountHeadView.xib in Resources */,
 				AB06A98E1DF949B1006F67C2 /* AttentionShopTableViewCell.xib in Resources */,
@@ -2854,6 +2871,7 @@
 				D1C79B1D1E77950A00869008 /* DLStoreCashViewController.m in Sources */,
 				D16BF2B11DEFF15B001A82BF /* JFCityCollectionViewCell.m in Sources */,
 				AB06A9891DF940D4006F67C2 /* AttentionShopViewController.m in Sources */,
+				182F126F1F6B811B00A3A123 /* DaliStarLevelButton.m in Sources */,
 				ABCB95501D9BEED5008927C7 /* UnionViewController.m in Sources */,
 				D15B39581DD40948009122FE /* StoreContentTableViewCell.m in Sources */,
 				D170F25B1DAE6B3400272E57 /* FoldLineView.m in Sources */,
