@@ -44,7 +44,7 @@
 }
 
 - (IBAction)upInfo:(id)sender {
- ///   [self performSegueWithIdentifier:@"AgencyOnlinePaySegueId" sender:nil];
+   // [self performSegueWithIdentifier:@"AgencyOnlinePaySegueId" sender:nil];
 
     if ([CheckID deptNameInputShouldChineseWithStr:self.realName.text] == NO) {
         showAlert(@"请输入汉字格式的真实姓名");

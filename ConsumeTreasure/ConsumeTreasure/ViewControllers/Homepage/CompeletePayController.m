@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *payMoneyLabel;
 
+
 @end
 
 @implementation CompeletePayController
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpUI];
     // Do any additional setup after loading the view.
 }
 
@@ -40,5 +42,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark -PrivateMethod
+- (void)setUpUI{
+    self.paytypeLabel.text = self.paytype;
+    self.payMoneyLabel.text = self.payMoney;
+}
 @end

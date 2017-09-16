@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface CompeletePayController : BaseViewController
-
+@property (strong,nonatomic) NSString *paytype;
+@property (strong,nonatomic) NSString *payMoney;
 @end

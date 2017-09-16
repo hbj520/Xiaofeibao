@@ -8,6 +8,7 @@
 
 #import "AgencyOnlinePayViewController.h"
 #import "DaliStarLevelButton.h"
+#import "CompeletePayController.h"
 #import "WXApi.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *wxbtn;
 @property (weak, nonatomic) IBOutlet UIButton *zfbbtn;
 @property (strong,nonatomic) NSMutableArray *buttonAraay;
+@property (strong,nonatomic) NSString *moneyStr;
 @end
 
 @implementation AgencyOnlinePayViewController
@@ -32,6 +34,7 @@
 
 }
 - (IBAction)paynowBtn:(id)sender {
+//[self performSegueWithIdentifier:@"comepelePaySegueId" sender:nil];
     NSString *agenttype = @"";
     for (DaliStarLevelButton *btn  in _buttonAraay) {
         if (btn.selectImageView.hidden == NO) {
@@ -59,9 +62,10 @@
             request.package = responseObject[@"data"][@"packageStr"];
             request.nonceStr= responseObject[@"data"][@"noncestr"];
             request.sign=responseObject[@"data"][@"sign"];
-            request.timeStamp=stamp.intValue;[self performSegueWithIdentifier:@"comepelePaySegueId" sender:nil];
-            
-            [WXApi sendAuthReq:request viewController:self delegate:self];
+            request.timeStamp=stamp.intValue;
+            [WXApi sendReq:request];
+            [self performSegueWithIdentifier:@"comepelePaySegueId" sender:nil];
+
         }else if ([dic[@"paytype"] isEqualToString:@"2"]){//支付宝支付
             NSString *orderString = responseObject[@"data"];
             NSString *appScheme = @"AliJustPay";
@@ -115,17 +119,44 @@
         [self.view addSubview:button];
         [_buttonAraay addObject:button];
     }
+    //defual money
+    _moneyStr = @"6000元";
 }
 - (void)clickButton:(id)sender{
     DaliStarLevelButton *btn =  (DaliStarLevelButton *)sender;
     for (DaliStarLevelButton *daliBtn in _buttonAraay) {
         BOOL selectState = (daliBtn == btn) ? NO : YES;
         daliBtn.selectImageView.hidden = selectState;
+        if (!selectState) {
+            switch (daliBtn.tag) {
+                case 3:
+                    _moneyStr = @"6000元";
+                    break;
+                case 4:
+                    _moneyStr = @"12000元";
+                    break;
+                case 5:
+                    _moneyStr = @"36000元";
+                    break;
+                    
+                default:
+                    _moneyStr = @"请联系客服:0551-65411866";
+                    break;
+            }
+        }
+       
+
     }
 }
 #pragma mark - WXDelegate
 - (void)onReq:(BaseReq *)req{
     
+}
+#pragma mark - PrepareSegueDelegate
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CompeletePayController *comepeVC = (CompeletePayController *)segue.destinationViewController;
+    comepeVC.paytype = (_wxbtn.isSelected == YES) ? @"微信支付" : @"支付宝支付";
+    comepeVC.payMoney = _moneyStr;
 }
 /*
 #pragma mark - Navigation

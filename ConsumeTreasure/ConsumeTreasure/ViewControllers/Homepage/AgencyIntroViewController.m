@@ -23,7 +23,7 @@
     BOOL checked = self.checkedBtn.isSelected;
     self.sureBtn.enabled = checked;
     if (checked) {
-        self.sureBtn.backgroundColor = [UIColor colorWithHexString:@"FC4601"];
+        self.sureBtn.backgroundColor = [UIColor colorWithHexString:@"FD573B"];
     }else{
         self.sureBtn.backgroundColor = [UIColor lightGrayColor];
     }
