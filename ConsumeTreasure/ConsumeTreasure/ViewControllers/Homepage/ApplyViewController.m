@@ -315,6 +315,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    if (section == 2) {
+        return 2;
+    }
+    
     return 1;
 }
 
@@ -537,14 +542,21 @@
         if (OtherCell == nil) {
             OtherCell = [[[NSBundle mainBundle] loadNibNamed:@"OtherLicenseTableViewCell" owner:self options:nil] lastObject];
         }
-        OtherCell.otherBlock =^{
-          [self pickPhotosWithTag:444];
-        };
-        OtherCell.selectionStyle = 0;
-        return OtherCell;
-
+        
+        if (indexPath.row == 0) {
+            OtherCell.otherBlock =^{
+                [self pickPhotosWithTag:444];
+            };
+            OtherCell.selectionStyle = 0;
+            return OtherCell;
+        }else{
+            OtherCell.otherBlock =^{
+                [self pickPhotosWithTag:123];
+            };
+            OtherCell.selectionStyle = 0;
+            return OtherCell;
+        }
     }
- 
 }
 
 
