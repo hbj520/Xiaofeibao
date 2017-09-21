@@ -71,11 +71,20 @@
     
     
     //保存照片
+    // 银行卡正反面
     NSString *_upId;
     NSString *_downId;
-    NSString *_licenseId;
+    
+    // 店铺照
     NSString *_storeId;
     
+    // 协议图
+    NSString *_protocalId;
+    // 营业执照
+    NSString *_licenseId;
+    
+    // 银行卡照
+    NSString *_bankId;
     
 }
 
@@ -311,13 +320,13 @@
 
 #pragma mark -- UITabelViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (section == 2) {
-        return 2;
+        return 4;
     }
     
     return 1;
@@ -508,7 +517,7 @@
     
     */
     
-    /*
+    
     else if (indexPath.section == 3){
         IdentiPhotoTableViewCell *IdentiCell = [tableView dequeueReusableCellWithIdentifier:@"identiPhotoId"];
         if (IdentiCell == nil) {
@@ -524,7 +533,9 @@
         
         IdentiCell.selectionStyle = 0;
         return IdentiCell;
-    }else if (indexPath.section == 4){
+    }
+    /*
+     else if (indexPath.section == 4){
         BusinessTableViewCell *BusinessCell = [tableView dequeueReusableCellWithIdentifier:@"businessId"];
         if (BusinessCell == nil) {
             BusinessCell = [[[NSBundle mainBundle] loadNibNamed:@"BusinessTableViewCell" owner:self options:nil] lastObject];
@@ -549,13 +560,30 @@
             };
             OtherCell.selectionStyle = 0;
             return OtherCell;
-        }else{
+        }else if (indexPath.row == 1){
             OtherCell.otherBlock =^{
                 [self pickPhotosWithTag:123];
             };
+            OtherCell.imgLabel.text = @"协议书图片";
             OtherCell.selectionStyle = 0;
             return OtherCell;
+        }else if (indexPath.row == 2){
+            OtherCell.otherBlock =^{
+                [self pickPhotosWithTag:456];
+            };
+            OtherCell.imgLabel.text = @"营业执照";
+            OtherCell.selectionStyle = 0;
+            return OtherCell;
+        }else{
+            OtherCell.otherBlock =^{
+                [self pickPhotosWithTag:789];
+            };
+            OtherCell.imgLabel.text = @"法人结算银行卡照片";
+            OtherCell.selectionStyle = 0;
+            return OtherCell;
+
         }
+
     }
 }
 
@@ -571,11 +599,11 @@
     else if (indexPath.section == 2)
     
         return 131;
-    
+    */
     else if (indexPath.section == 3){
         return 138;
     }
-     */
+     
     else{
         return 185;
     }
@@ -613,40 +641,35 @@
     }
     self.imageBlock = ^(UIImage *img){
         if (actionSheet.tag == 000) {
-            IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+            IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
      
             //上传图片
             
-            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+            [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[img] result:^(BOOL success, NSString *msg, id object) {
                 if (success) {
                     _upId = (NSString*)object;
                     [cell.onePhoto setImage:img forState:0];
                 }else{
-                    if ([msg isEqualToString:@"-1"]) {
-                        [weakSelf logout];
-                    }else{
-                        [weakSelf showHint:msg];
-                    }
+                    [weakSelf showHint:@"错误"];
                 }
+                
             } errorResult:^(NSError *enginerError) {
-                 [weakSelf showHint:@"网络错误"];
+                [weakSelf showHint:@"错误"];
             }];
             
         }else if (actionSheet.tag == 111){
-            IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+            IdentiPhotoTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
 
             //上传图片
             
-            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+            [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[img] result:^(BOOL success, NSString *msg, id object) {
                 if (success) {
                     _downId = (NSString*)object;
-                   [cell.twoPhoto setImage:img forState:0];
+                    [cell.twoPhoto setImage:img forState:0];
                 }else{
-                    if ([msg isEqualToString:@"-1"]) {
-                        [weakSelf logout];
-                    }
                     [weakSelf showHint:@"错误"];
                 }
+                
             } errorResult:^(NSError *enginerError) {
                 [weakSelf showHint:@"错误"];
             }];
@@ -670,22 +693,73 @@
                 [weakSelf showHint:@"错误"];
             }];
             
-        }else{
+        }else if(actionSheet.tag == 123){
+            OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:2]];
+            
+            //上传图片
+            
+            [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _protocalId = (NSString*)object;
+                    [cell.otherBtn setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+
+            } errorResult:^(NSError *enginerError) {
+                [weakSelf showHint:@"错误"];
+            }];
+            
+        }else if(actionSheet.tag == 456){
+            OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:2]];
+            
+            //上传图片
+            
+            [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _licenseId = (NSString*)object;
+                    [cell.otherBtn setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+                
+            } errorResult:^(NSError *enginerError) {
+                [weakSelf showHint:@"错误"];
+            }];
+            
+        }else if(actionSheet.tag == 789){
+            OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:2]];
+            
+            //上传图片
+            
+            [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[img] result:^(BOOL success, NSString *msg, id object) {
+                if (success) {
+                    _bankId = (NSString*)object;
+                    [cell.otherBtn setImage:img forState:0];
+                }else{
+                    [weakSelf showHint:@"错误"];
+                }
+                
+            } errorResult:^(NSError *enginerError) {
+                [weakSelf showHint:@"错误"];
+            }];
+            
+        }
+        else{
             
             OtherLicenseTableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
         
             //上传图片
             
-            [[MyAPI sharedAPI] postFilesWithFormData:@[img] result:^(BOOL success, NSString *msg, id object) {
+            [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[img] result:^(BOOL success, NSString *msg, id object) {
                 if (success) {
                     _storeId = (NSString*)object;
                     [cell.otherBtn setImage:img forState:0];
                 }else{
-                    if ([msg isEqualToString:@"-1"]) {
-                        [weakSelf logout];
-                    }
+            
                     [weakSelf showHint:@"错误"];
                 }
+
             } errorResult:^(NSError *enginerError) {
                 [weakSelf showHint:@"错误"];
             }];
@@ -763,12 +837,14 @@
                                        @"shopname":_storeName,
                                        @"categoryid":cateId,
                                        @"businessimg":_licenseId,
-                                       @"doorimg":_storeId,
+                                       @"shop_pic":_storeId,
                                        @"idcardnofrontimg":_upId,
                                        @"idcardnobackimg":_downId,
+                                       @"bankcard_pic":_bankId,
                                        @"addr":_storeAddr,
                                        @"latitude":latituedeStr,
                                        @"longitude":longtitudeStr,
+                                       @"extra_pic1":_protocalId,
                                        //@"servicePhone":_serviceStr,
                                        @"aliasName":_aliasNameStr,
                                        @"shopreturnrate":_shopreturnIdStr,

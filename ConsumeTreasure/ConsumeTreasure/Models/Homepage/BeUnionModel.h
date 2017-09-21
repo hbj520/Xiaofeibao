@@ -12,9 +12,9 @@
 @end
 
 @interface BeUnionModel : JSONModel
-@property (nonatomic,strong) NSString *iconurl;
-@property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong) NSString *categoryId;
+@property (nonatomic,strong) NSString<Optional> *iconurl;
+@property (nonatomic,strong) NSString<Optional> *name;
+@property (nonatomic,strong) NSString<Optional> *categoryId;
 @end
 
 @interface arrayUnionModel : JSONModel

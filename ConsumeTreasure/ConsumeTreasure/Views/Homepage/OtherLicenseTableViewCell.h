@@ -11,4 +11,8 @@ typedef void(^PhotoBlock) ();
 @interface OtherLicenseTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *otherBtn;
 @property (nonatomic,copy) PhotoBlock otherBlock;
+
+@property (weak, nonatomic) IBOutlet UILabel *imgLabel;
+
+
 @end
