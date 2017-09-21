@@ -45,7 +45,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:testURL2]] ;
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
@@ -1500,7 +1500,66 @@
         errorResult(error);
     }];
 }
-
+#pragma mark - 上传博士科技图片
+- (void)postDocTecImagesWithPhotoArr:(NSArray *)photosArr
+                              result:(ModelBlock)result
+                         errorResult:(ErrorBlock)errorResult{
+    self.manager.requestSerializer.timeoutInterval = 20;
+    // 在parameters里存放照片以外的对象
+    [self.manager POST:@"common/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        // formData: 专门用于拼接需要上传的数据,在此位置生成一个要上传的数据体
+        // 这里的_photoArr是你存放图片的数组
+        for (int i = 0; i < photosArr.count; i++) {
+            
+            UIImage *image = photosArr[i];
+            NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+            
+            // 在网络开发中，上传文件时，是文件不允许被覆盖，文件重名
+            // 要解决此问题，
+            // 可以在上传时使用当前的系统事件作为文件名
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            // 设置时间格式
+            [formatter setDateFormat:@"yyyyMMddHHmmss"];
+            NSString *dateString = [formatter stringFromDate:[NSDate date]];
+            NSString *fileName = [NSString  stringWithFormat:@"%@.jpg", dateString];
+            /*
+             *该方法的参数
+             1. appendPartWithFileData：要上传的照片[二进制流]
+             2. name：对应网站上[upload.php中]处理文件的字段（比如upload）
+             3. fileName：要保存在服务器上的文件名
+             4. mimeType：上传的文件的类型
+             */
+            
+            [formData appendPartWithFileData:imageData name:@"file" fileName:fileName mimeType:@"image/jpeg"]; //
+        }
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        NSLog(@"---上传进度--- %@",uploadProgress);
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@"```上传成功``` %@",responseObject);
+        NSString *info = responseObject[@"msg"];
+        if ([responseObject[@"code"] isEqualToString:@"-1"]) {
+            result(NO,@"-1",nil);
+            [self cancelAllOperation];
+            
+        }if ([responseObject[@"code"] isEqualToString:@"1"]) {
+            NSString *imgStr = responseObject[@"data"][@"filePath"];
+            result(YES,imgStr,imgStr);
+        }else{
+            result(NO,info,nil);
+        }
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"xxx上传失败xxx %@", error);
+        errorResult(error);
+    }];
+}
 #pragma mark -- 申请成为代理
 - (void)PostNameAndPhoneWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult{
     NSDictionary *dicPara = @{

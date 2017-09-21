@@ -262,33 +262,38 @@
     
     //NSData * data = UIImageJPEGRepresentation(image, 0.1);
     
-    [self showHudInView:self.view hint:@"上传图片中"];
-    [[MyAPI sharedAPI] postFilesWithFormData:@[image] result:^(BOOL success, NSString *msg, id object) {
-        if (success) {
-            imageUrl = msg;
-            [[MyAPI sharedAPI] postIconWithParameters:@{@"imgUrl":msg} result:^(BOOL sucess, NSString *msg) {
-                if (success) {
-                    NSString *Url = [NSString stringWithFormat:@"%@img%@",XFBUrl,imageUrl];
-                    [[XFBConfig Instance] saveIcon:Url];
-                    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
-                }else{
-                    if ([msg isEqualToString:@"-1"]) {
-                        [Tools logoutWithNowVC:self];
-                    }
-                    [self showHint:@"上传失败"];
-                }
-                [self hideHud];
-            } errorResult:^(NSError *enginerError) {
-                [self hideHud];
-            }];
-        }else{
-            [self showHint:@"上传失败"];
-            [self hideHud];
-        }
+   // [self showHudInView:self.view hint:@"上传图片中"];
+    [[MyAPI sharedAPI] postDocTecImagesWithPhotoArr:@[image] result:^(BOOL success, NSString *msg, id object) {
+        
     } errorResult:^(NSError *enginerError) {
-        [self showHint:@"上传出错"];
-        [self hideHud];
+        
     }];
+//    [[MyAPI sharedAPI] postFilesWithFormData:@[image] result:^(BOOL success, NSString *msg, id object) {
+//        if (success) {
+//            imageUrl = msg;
+//            [[MyAPI sharedAPI] postIconWithParameters:@{@"imgUrl":msg} result:^(BOOL sucess, NSString *msg) {
+//                if (success) {
+//                    NSString *Url = [NSString stringWithFormat:@"%@img%@",XFBUrl,imageUrl];
+//                    [[XFBConfig Instance] saveIcon:Url];
+//                    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:[[XFBConfig Instance] getIcon]] placeholderImage:[UIImage imageNamed:@"logo"]];
+//                }else{
+//                    if ([msg isEqualToString:@"-1"]) {
+//                        [Tools logoutWithNowVC:self];
+//                    }
+//                    [self showHint:@"上传失败"];
+//                }
+//                [self hideHud];
+//            } errorResult:^(NSError *enginerError) {
+//                [self hideHud];
+//            }];
+//        }else{
+//            [self showHint:@"上传失败"];
+//            [self hideHud];
+//        }
+//    } errorResult:^(NSError *enginerError) {
+//        [self showHint:@"上传出错"];
+//        [self hideHud];
+//    }];
 
 }
 //初始化照片选择控制器

@@ -186,6 +186,10 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)postFilesWithFormData:(NSArray *)photosArr
                            result:(ModelBlock)result
                       errorResult:(ErrorBlock)errorResult;
+#pragma mark - 上传博士科技图片
+- (void)postDocTecImagesWithPhotoArr:(NSArray *)photosArr
+                              result:(ModelBlock)result
+                         errorResult:(ErrorBlock)errorResult;
 #pragma mark -- 申请成为代理
 - (void)PostNameAndPhoneWith:(NSDictionary*)para result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 
