@@ -40,18 +40,25 @@
 #import "ApplyCashModel.h"
 @interface MyAPI()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) AFHTTPSessionManager *docManager;
+
 @end
 @implementation MyAPI
 - (id)init{
     self = [super init];
     if (self) {
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:testURL2]] ;
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:XFBUrl]];
+        self.docManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:testURL2]];
         //申明返回的结果是json类型
             self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        self.docManager.responseSerializer = [AFJSONResponseSerializer serializer];
         //    //申明请求的数据是json类型
             self.manager.requestSerializer=[AFJSONRequestSerializer serializer];
+        self.docManager.requestSerializer=[AFJSONRequestSerializer serializer];
+
         //    //如果报接受类型不一致请替换一致text/html或别的
             self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
+         self.docManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"text/plain", nil];
 //            [self.manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
 //                switch (status) {
 //                    case AFNetworkReachabilityStatusUnknown:
@@ -1504,9 +1511,9 @@
 - (void)postDocTecImagesWithPhotoArr:(NSArray *)photosArr
                               result:(ModelBlock)result
                          errorResult:(ErrorBlock)errorResult{
-    self.manager.requestSerializer.timeoutInterval = 20;
+    self.docManager.requestSerializer.timeoutInterval = 20;
     // 在parameters里存放照片以外的对象
-    [self.manager POST:@"common/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    [self.docManager POST:@"common/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         // formData: 专门用于拼接需要上传的数据,在此位置生成一个要上传的数据体
         // 这里的_photoArr是你存放图片的数组
         for (int i = 0; i < photosArr.count; i++) {
