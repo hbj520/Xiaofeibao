@@ -35,7 +35,7 @@
 #define XFBUrl @"http://www.xftb168.com/"//正式
 
 #define testURL @"http://192.168.1.25:8080/xfb/"
-#define testURL2 @"http://192.168.1.227:8080/oem/v3/"
+#define testURL2 @"http://116.62.34.84/oem/v3/"
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
